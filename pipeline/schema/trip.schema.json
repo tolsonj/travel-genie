@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-genie/schema/trip.schema.json",
+  "title": "Canonical Trip Aspect",
+  "description": "One extracted aspect of a trip plan. Generic by design so it generalizes across single- and multi-country trips. Every field beyond `aspect`/`type` is optional; the renderer hides absent sections rather than erroring.",
+  "type": "object",
+  "required": ["aspect", "type", "trip"],
+  "properties": {
+    "aspect": { "type": "string", "description": "Aspect id, e.g. route-optimization." },
+    "type": { "type": "string", "description": "Canonical type used to pick a slide template." },
+    "trip": { "type": "string", "description": "Trip slug, e.g. china-vietnam-2026." },
+    "title": { "type": "string" },
+    "slide_title": { "type": "string" },
+
+    "recommended_route": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "name": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hub": { "type": "string" },
+          "days": { "type": "string" },
+          "region": { "type": "string" },
+          "primary_draw": { "type": "string" }
+        }
+      }
+    },
+    "map_nodes": {
+      "type": "array",
+      "description": "Geographic markers plotted from REAL coordinates.",
+      "items": {
+        "type": "object",
+        "required": ["label", "lng", "lat"],
+        "properties": {
+          "label": { "type": "string" },
+          "marker": { "type": "string", "description": "Short glyph shown in the node circle." },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" },
+          "color": { "type": "string" },
+          "labelDy": { "type": "number", "description": "Vertical label offset in px (negative = above)." }
+        }
+      }
+    },
+    "map_bounds": {
+      "type": "object",
+      "properties": {
+        "west": { "type": "number" },
+        "south": { "type": "number" },
+        "east": { "type": "number" },
+        "north": { "type": "number" }
+      }
+    },
+    "highlight_countries": { "type": "array", "items": { "type": "string" } },
+    "country_labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" }
+        }
+      }
+    },
+    "transit_legs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "mode": { "type": "string" },
+          "duration": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "headline": { "type": "string" },
+        "detail": { "type": "string" }
+      }
+    },
+
+    "intro": { "type": "string", "description": "Generic-layout: lead paragraph." },
+    "tables": {
+      "type": "array",
+      "description": "Generic-layout: zero or more tables.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caption": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+    "bullets": {
+      "type": "array",
+      "description": "Generic-layout: grouped bullet lists.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "callouts": {
+      "type": "array",
+      "description": "Generic-layout: status callouts (validation checks, warnings).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    }
+  }
+}

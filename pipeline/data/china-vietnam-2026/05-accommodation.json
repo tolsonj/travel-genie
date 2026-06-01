@@ -1,0 +1,83 @@
+{
+  "aspect": "05-accommodation",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Accommodation",
+  "slide_title": "ACCOMMODATION",
+  "intro": "4–5 star throughout; US booking platforms (Marriott, Hilton, IHG, Hyatt, Expedia). Value-conscious in Beijing; splurge in Vietnam. Beachfront resort base in Đà Nẵng for the perfect-day template.",
+  "tables": [
+    {
+      "caption": "Beijing — 5 Nights (Sept 1–6)",
+      "columns": ["Hotel", "Stars", "Rate Est.", "Why"],
+      "rows": [
+        ["Rosewood Beijing", "5★", "$400–550/night", "Best luxury in Dongcheng; spa; Wangfujing walking distance"],
+        ["The Peninsula Beijing", "5★", "$350–500/night", "Legend property; closest to Forbidden City — RECOMMENDED"],
+        ["Waldorf Astoria Beijing", "5★", "$300–450/night", "Excellent pool; Hilton Honors bookable"],
+        ["The Opposite House", "5★ boutique", "$280–400/night", "Sanlitun nightlife; design hotel"]
+      ]
+    },
+    {
+      "caption": "Hanoi — 2 Nights (Sept 6–8)",
+      "columns": ["Hotel", "Stars", "Rate Est.", "Why"],
+      "rows": [
+        ["Sofitel Legend Metropole Hanoi", "5★", "$280–400/night", "Iconic 1901 property; Hoan Kiem walk — RECOMMENDED"],
+        ["La Siesta Classic Hang Be", "4★ boutique", "$90–130/night", "Best value luxury in Old Quarter"],
+        ["JW Marriott Hanoi", "5★", "$200–300/night", "Business district; larger rooms; Marriott Bonvoy"]
+      ]
+    },
+    {
+      "caption": "Đà Nẵng — 5 Nights (Sept 8–13)",
+      "columns": ["Hotel", "Stars", "Rate Est.", "Why"],
+      "rows": [
+        ["InterContinental Sun Peninsula", "5★ resort", "$450–700/night", "Cliff-top Son Trà; private beach — SPLURGE PICK"],
+        ["Fusion Maia Đà Nẵng", "5★", "$320–500/night", "All-spa-included; beachfront — VALUE SPLURGE"],
+        ["Pullman Đà Nẵng Beach Resort", "5★", "$250–380/night", "Mỹ Khê Beach; Accor bookable"],
+        ["Hyatt Regency Đà Nẵng", "5★", "$280–400/night", "World of Hyatt; multiple pools"]
+      ]
+    },
+    {
+      "caption": "Budget Summary",
+      "columns": ["City", "Nights", "Est. Cost", "Notes"],
+      "rows": [
+        ["Beijing (Peninsula)", "5", "$2,000–2,500", "Value-conscious luxury"],
+        ["Hanoi (Metropole)", "2", "$600–800", "Iconic; worth the premium"],
+        ["Đà Nẵng (InterCon or Fusion)", "5", "$2,000–3,500", "Designated splurge segment"],
+        ["Total", "12", "$4,600–6,800", "Leaves $13–15K for flights, activities, food, shopping"]
+      ]
+    },
+    {
+      "caption": "Booking Strategy",
+      "columns": ["Segment", "When to Book", "Platform"],
+      "rows": [
+        ["Đà Nẵng resort", "NOW — 3–4 months out", "IHG.com, Fusion direct, or Hyatt.com"],
+        ["Beijing", "6–8 weeks out", "peninsula.com direct or Hotels.com"],
+        ["Hanoi Metropole", "6–8 weeks out", "Accor.com or Booking.com"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Neighborhood Rationale",
+      "items": [
+        "Beijing: Dongcheng / Wangfujing — walking distance to Forbidden City, Wangfujing, hutongs",
+        "Hanoi: Old Quarter / Hoan Kiem Lake — all activities walkable; safe at night",
+        "Đà Nẵng: Mỹ Khê / Non Nước Beach (NOT Hội An town) — 20 min to Hội An, 15 min to Marble Mountains"
+      ]
+    },
+    {
+      "heading": "Cross-Border Logistics",
+      "items": [
+        "Beijing Day 1: Request early check-in; bags held if room not ready",
+        "Hanoi Day 6: Room pre-blocked; Metropole concierge at airport if arranged",
+        "Đà Nẵng Day 8: Early check-in; resort lunch before room ready",
+        "Đà Nẵng Day 14: Late checkout (2 PM typical); luggage storage available"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "pass", "text": "All properties bookable on US platforms; 4–5 star throughout — no hostels or Airbnb" },
+    { "status": "pass", "text": "All accommodations within 30 min of 60%+ of planned activities" },
+    { "status": "pass", "text": "Splurge allocated to Vietnam (Đà Nẵng resort) as per profile" },
+    { "status": "warn", "text": "Book Đà Nẵng resort with free cancellation — typhoon risk in September justifies flexible booking" }
+  ]
+}

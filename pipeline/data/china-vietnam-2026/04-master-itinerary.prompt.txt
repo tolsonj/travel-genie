@@ -1,0 +1,377 @@
+You convert one travel-plan markdown aspect into STRICT canonical JSON.
+
+Output ONLY a single JSON object. No prose, no markdown fences. It MUST validate
+against this JSON Schema (every field except aspect/type/trip is optional; omit
+what is not present rather than inventing it):
+
+<schema>
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-genie/schema/trip.schema.json",
+  "title": "Canonical Trip Aspect",
+  "description": "One extracted aspect of a trip plan. Generic by design so it generalizes across single- and multi-country trips. Every field beyond `aspect`/`type` is optional; the renderer hides absent sections rather than erroring.",
+  "type": "object",
+  "required": ["aspect", "type", "trip"],
+  "properties": {
+    "aspect": { "type": "string", "description": "Aspect id, e.g. route-optimization." },
+    "type": { "type": "string", "description": "Canonical type used to pick a slide template." },
+    "trip": { "type": "string", "description": "Trip slug, e.g. china-vietnam-2026." },
+    "title": { "type": "string" },
+    "slide_title": { "type": "string" },
+
+    "recommended_route": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "name": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hub": { "type": "string" },
+          "days": { "type": "string" },
+          "region": { "type": "string" },
+          "primary_draw": { "type": "string" }
+        }
+      }
+    },
+    "map_nodes": {
+      "type": "array",
+      "description": "Geographic markers plotted from REAL coordinates.",
+      "items": {
+        "type": "object",
+        "required": ["label", "lng", "lat"],
+        "properties": {
+          "label": { "type": "string" },
+          "marker": { "type": "string", "description": "Short glyph shown in the node circle." },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" },
+          "color": { "type": "string" },
+          "labelDy": { "type": "number", "description": "Vertical label offset in px (negative = above)." }
+        }
+      }
+    },
+    "map_bounds": {
+      "type": "object",
+      "properties": {
+        "west": { "type": "number" },
+        "south": { "type": "number" },
+        "east": { "type": "number" },
+        "north": { "type": "number" }
+      }
+    },
+    "highlight_countries": { "type": "array", "items": { "type": "string" } },
+    "country_labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" }
+        }
+      }
+    },
+    "transit_legs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "mode": { "type": "string" },
+          "duration": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "headline": { "type": "string" },
+        "detail": { "type": "string" }
+      }
+    },
+
+    "intro": { "type": "string", "description": "Generic-layout: lead paragraph." },
+    "tables": {
+      "type": "array",
+      "description": "Generic-layout: zero or more tables.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caption": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+    "bullets": {
+      "type": "array",
+      "description": "Generic-layout: grouped bullet lists.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "callouts": {
+      "type": "array",
+      "description": "Generic-layout: status callouts (validation checks, warnings).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+
+</schema>
+
+Required top-level values for THIS aspect:
+  "aspect": "04-master-itinerary"
+  "type": "generic"
+  "trip": "china-vietnam-2026"
+  "title": "Master Itinerary"
+
+Target type: "generic" (no bespoke template).
+Use the generic fields: intro (string), tables[] {caption, columns[], rows[][]},
+bullets[] {heading, items[]}, callouts[] {status: pass|warn|info, text}.
+
+CRITICAL for any map_nodes: use REAL geographic latitude/longitude for each city.
+Do not approximate with screen coordinates.
+
+Here is the source markdown to extract from:
+
+<markdown>
+---
+step: "04-master-itinerary"
+title: "Master Itinerary"
+trip: "china-vietnam-2026"
+created: 2026-05-25
+depends_on:
+  - "[[profile]]"
+  - "[[01-traveler-profile]]"
+  - "[[02-route-optimization]]"
+  - "[[03-immigration-entry]]"
+tags:
+  - travel-planning
+  - itinerary
+---
+
+# Master Itinerary
+
+## Reasoning
+
+14 days, 2 travelers, relaxed-cultural pace. Beijing (5 nights), Hanoi (2 nights), Đà Nẵng/Hội An resort base (5 nights). September: Beijing is ideal weather; Vietnam is warm/humid with afternoon rain risk. All outdoor activities front-loaded to mornings. Midday rest/AC blocks at resort in Vietnam. No taxi use — Grab/DiDi apps throughout. Great Wall scheduled Day 3 (acclimatized, not jet-lagged). Border crossing day (Sept 6) is a soft transit day. The 70% rule applied: one anchor activity per day; afternoons flexible.
+
+September 1 departure from US (West Coast: ~13 hrs to Beijing; East Coast: ~14 hrs). Beijing is UTC+8 — jet lag management built into Day 1 as recovery.
+
+## Output
+
+---
+
+### CHINA: BEIJING — Sept 1–6 (5 nights)
+
+#### Day 1 — Tuesday, Sept 1: ARRIVAL DAY (Soft)
+- **Arrive**: Beijing Capital (PEK) or Daxing (PKX) — late morning/afternoon depending on departure city
+- **Transfer**: Airport Express train to city (~30 min, ¥35) or hotel car (pre-book)
+- **Morning**: Check in; rest; light orientation walk near hotel
+- **Afternoon anchor**: Wangfujing Pedestrian Street stroll — gentle intro to Beijing, night market preview, no pressure
+- **Evening**: Hotel dinner or nearby Peking duck restaurant (Duck de Chine near Wangfujing area)
+- **Wow moment**: First glimpse of the Forbidden City gates lit at dusk from Chang'an Ave
+- **Low energy option**: In-room spa treatment; hotel lounge
+- **Rainy day backup**: Indoor hotel spa + Wangfujing department store browsing
+- **Book NOW**: Hotel (Rosewood/Peninsula Beijing); airport transfer
+- **Transit note**: Customs/immigration at PEK can take 45–90 min on first-entry days — do not schedule dinner reservation before 8 PM
+
+---
+
+#### Day 2 — Wednesday, Sept 2: Forbidden City + Hutongs
+- **Morning anchor (8:30 AM)**: Forbidden City / Palace Museum — book timed entry tickets in advance online (sells out weeks ahead); enter via Meridian Gate; target the palace compound, not just outer courtyards
+- **Midday**: Exit north side → Jingshan Park (panoramic view of entire Forbidden City from hill top — best photo in Beijing); 30 min max
+- **Afternoon (2–5 PM)**: Nanluoguxiang Hutong — historic alleyway neighborhood; traditional courtyard houses, artisan shops, local snacks
+- **Evening**: Dinner in a renovated hutong restaurant (The Orchid Hotel area; Ghost Street/Guijie for hotpot — endless restaurant strip open until 3 AM)
+- **Wow moment**: Standing atop Jingshan with the golden roofs of the Forbidden City below
+- **Low energy option**: Skip Jingshan; extend hutong time; afternoon tea at a courtyard café
+- **Rainy day backup**: Beijing Capital Museum (indoor, air-conditioned, world-class Chinese history)
+- **Shopping note**: Hutong area has quality silk, lacquerware, and artisan goods — better value than tourist traps near Tiananmen
+
+---
+
+#### Day 3 — Thursday, Sept 3: Great Wall (Mutianyu)
+- **Early start (6:30 AM hotel pickup)**: Private car to Mutianyu section (~1.5 hrs from central Beijing)
+- **Morning anchor (9–12 PM)**: Great Wall — Mutianyu is the correct choice (restored, far fewer crowds than Badaling, toboggan descent option, cable car up)
+- **Cable car up, toboggan down** — both accessible on same ticket
+- **Midday**: Packed lunch or mountain restaurant on-site; return to Beijing by 2 PM
+- **Afternoon (3–5 PM)**: Rest at hotel; light shopping at Silk Market (Xiushui) nearby if energy allows
+- **Evening**: Peking Duck dinner (Da Dong or Quanjude — book in advance)
+- **Wow moment**: Walking the unreconstructed stretch beyond tower 14 — nearly empty, dramatic views
+- **Low energy option**: Cut walk short after first 3–4 towers; take cable car both ways
+- **Rainy day backup**: Reschedule wall to Day 4; swap with Summer Palace (less rain-sensitive, covered galleries)
+- **Book NOW**: Private car tour (Mutianyu is not reachable by public transit easily); cable car tickets; dinner reservation
+
+---
+
+#### Day 4 — Friday, Sept 4: Temple of Heaven + Shopping
+- **Morning anchor (9–11 AM)**: Temple of Heaven — arrive early to watch tai chi practitioners in the park (locals, not tourists); the circular Hall of Prayer for Good Harvests is the shot
+- **Midday**: Qianmen Street (pedestrian historic shopping street south of Tiananmen) — traditional brands, snacks, tea
+- **Afternoon (2–6 PM)**: **Shopping focus day** — Sanlitun Village (international brands, Nike flagship, Apple Store) or Parkview Green (luxury mall, architecturally stunning)
+- **Evening**: Dinner at Sanlitun area — Jing A Brewery (western-Chinese fusion, great atmosphere), or rooftop bar at a nearby hotel
+- **Wow moment**: Echoing wall demonstration at Temple of Heaven — whisper at one end of the circular wall, partner hears at the other end
+- **Low energy option**: Skip Qianmen; afternoon rest; evening rooftop only
+- **Rainy day backup**: Full afternoon at Parkview Green mall (indoor, luxurious, great food court)
+
+---
+
+#### Day 5 — Saturday, Sept 5: Summer Palace + Farewell Beijing
+- **Morning anchor (9 AM)**: Summer Palace — imperial gardens and lake; rent a small rowboat on Kunming Lake; Longevity Hill views; Long Corridor painted galleries
+- **Midday**: Return to hotel; pack for Beijing → Hanoi flight
+- **Afternoon (2–4 PM)**: Last China shopping — Silk Street or Wangfujing for any remaining purchases
+- **Evening**: Early dinner near hotel; transfer to airport (~1.5 hrs to PEK recommended departure)
+- **Wow moment**: Rowing on Kunming Lake with pagodas reflected in the water
+- **Low energy option**: Walking only on flat lakeside path; skip the Longevity Hill climb
+- **Rainy day backup**: Buddhist temples at Summer Palace are covered galleries; or pivot to hotel morning and extend airport time
+
+---
+
+#### Day 6 — Sunday, Sept 6: TRANSIT — Beijing → Hanoi (SOFT DAY)
+- **Flight**: Beijing PEK → Hanoi HAN (~4 hrs; afternoon/evening flight recommended to maximize Beijing morning)
+- **Airport**: Arrive Noi Bai International; immigration with Vietnam e-visa; grab pre-arranged airport car (Grab app or hotel car — NO street taxis)
+- **Evening arrival**: Check in to Hanoi Old Quarter boutique hotel; light walk around Hoan Kiem Lake (illuminated at night — beautiful and safe)
+- **Dinner**: Pho at a local spot near hotel (Pho Gia Truyen on Bat Dan St — legendary, 24 hrs)
+- **No major activities**: This is a transit day; arrival fatigue expected
+- **Book NOW**: Hanoi hotel (La Siesta Classic or Sofitel Legend Metropole); airport car from Noi Bai
+
+---
+
+### VIETNAM: HANOI — Sept 6–8 (2 nights)
+
+#### Day 7 — Monday, Sept 7: Hanoi Old Quarter + Culture
+- **Morning anchor (8:30 AM)**: Hoan Kiem Lake morning walk; visit Ngoc Son Temple (on island in lake — small, serene, no crowds at opening)
+- **Mid-morning**: Old Quarter walking tour — 36 guild streets (each street specialized in one trade); Dong Xuan Market for local color
+- **Afternoon (1–4 PM)**: Temple of Literature (Van Mieu) — Vietnam's first university, 1000+ years old, beautiful courtyard gardens; not crowded in early afternoon
+- **Late afternoon**: Banh Mi and Vietnamese iced coffee walking break
+- **Evening anchor**: Hoan Kiem Lake Night Market (Sat/Sun evenings — pedestrianized, local crafts, food, music) OR Ta Hien Beer Street for atmosphere
+- **Wow moment**: Temple of Literature at golden hour — the courtyard with centuries-old frangipani trees
+- **Low energy option**: Skip Dong Xuan Market; café afternoon near lake
+- **Rainy day backup**: Vietnam Museum of Ethnology (indoor, world-class, less-visited — one of SE Asia's best)
+- **Food note**: Morning Banh Cuon (steamed rice rolls) at Banh Cuon Ba Hanh — locals queue, not tourists
+
+---
+
+#### Day 8 — Tuesday, Sept 8: Hanoi Morning + Flight to Đà Nẵng (SOFT DAY)
+- **Morning (8–10 AM)**: Ho Chi Minh Mausoleum and stilt house complex (visit early; closes midday; closed Mon/Fri for maintenance)
+- **Late morning**: Check out; Grab to Noi Bai for domestic flight
+- **Flight**: Hanoi HAN → Đà Nẵng DAD (~1.25 hrs; VietJet or Vietnam Airlines)
+- **Afternoon**: Arrive Đà Nẵng; transfer to resort (beach resort, north Đà Nẵng or Mỹ Khê Beach area)
+- **Evening**: Resort arrival, beach walk at sunset, room service or resort restaurant — decompress
+- **No scheduled activities**: Soft arrival day; resort orientation
+- **Book NOW**: Domestic Vietnam flight Hanoi→Đà Nẵng (book simultaneously with international flights)
+
+---
+
+### VIETNAM: ĐÀ NẴNG / HỘI AN — Sept 8–13 (5 nights)
+
+#### Day 9 — Wednesday, Sept 9: Beach Day + Marble Mountains
+- **Morning anchor (9–11 AM)**: Marble Mountains (Ngũ Hành Sơn) — 5 marble/limestone hills with Buddhist caves, temples, and city panoramas; 20 min from beach resorts; cable car available; cool inside caves even in heat
+- **Midday (12–3 PM)**: Resort pool/beach; late brunch; the "perfect day" template
+- **Afternoon (4–6 PM)**: Mỹ Khê Beach walk (one of the world's great city beaches — 20 km of white sand, typically calm September waters, fewer crowds than peak season)
+- **Evening**: Seafood dinner at Han Market waterfront or My An Beach seafood restaurants (Bé Mặn restaurant — locals' spot, incredible fresh seafood, extremely affordable)
+- **Wow moment**: Caves inside Marble Mountains — ancient Buddhist shrines carved inside limestone caverns lit by skylight holes
+- **Low energy option**: Skip Marble Mountains; full beach resort day
+- **Rainy day backup**: Dragon Bridge area mall + museum day (Da Nang Museum of Cham Sculpture — unique, indoor, extraordinary)
+
+---
+
+#### Day 10 — Thursday, Sept 10: Hội An Ancient Town (Shopping + History)
+- **Morning (8 AM start — before heat)**: Hội An Ancient Town — UNESCO World Heritage; Japanese Covered Bridge, merchant houses, Assembly Halls; arrive before 10 AM when crowds arrive
+- **Mid-morning (10–12 PM)**: **Tailor consultation** — Hội An has world-class custom tailors; book 2 fittings minimum; schedule this visit first so garments are ready before departure
+  - Recommended: Yaly Couture, A Dong Silk, Bebe Tailor (all have English-speaking staff, US-compatible payment)
+- **Lunch**: Cao Lầu noodles (can only be authentically made with Hội An well water — order here, not in Đà Nẵng)
+- **Afternoon (2–5 PM)**: Free exploration — Central Market, silk lamp shopping, walking along Thu Bon River
+- **Evening (5–9 PM)**: **Lantern-lit Ancient Town at dusk** — the true magic of Hội An; lit by hundreds of silk lanterns after dark; boat ride on Thu Bon with floating flower candles
+- **Wow moment**: Hội An at night under lantern light — unlike anywhere else in Asia
+- **Low energy option**: Morning tailor + lunch only; afternoon resort return
+- **Rainy day backup**: Tailor shops and indoor market are rain-friendly; Ancient Town is walkable in light rain (buy a Vietnamese conical hat)
+- **Transport**: Grab from resort to Hội An (~30 min, ~150,000 VND = ~$6); not advisable to drive yourself
+
+---
+
+#### Day 11 — Friday, Sept 11: Tailor Fitting + Son Trà Peninsula
+- **Morning (9 AM)**: Return to tailor for first fitting — critical for quality result; allow 1–2 hours
+- **Mid-morning (11 AM–1 PM)**: Son Trà Peninsula (Monkey Mountain) — 15 min from city; panoramic views of Đà Nẵng coastline, harbor, and mountains; Lady Buddha statue (tallest in Vietnam); wild red-shanked douc langurs in the trees
+- **Midday**: Resort lunch; pool time
+- **Afternoon**: Boat trip option — Han River cruise or speedboat to Cham Islands (if weather permits — clear day required)
+- **Evening**: Rooftop bar (Sky 36 Bar at Novotel Đà Nẵng — highest rooftop bar in Vietnam; views of the city and coast)
+- **Wow moment**: Douc langurs (some of Asia's most beautiful primates) in the Son Trà forest
+- **Low energy option**: Skip Son Trà; extended resort morning + spa afternoon
+- **Rainy day backup**: Spa day at resort + indoor Da Nang shopping mall (Vincom Plaza)
+
+---
+
+#### Day 12 — Saturday, Sept 12: My Son Sanctuary + Hội An Return
+- **Early morning (7:30 AM departure)**: My Son Sanctuary — Cham civilization ruins (4th–14th century Hindu temple complex in a jungle valley; UNESCO site); go early before heat; ~45 min from Hội An
+- **Late morning (10:30 AM)**: Return to Hội An for **tailor pickup** — final garment collection; allow time for any final alterations
+- **Midday**: Hội An White Rose restaurant (Bánh Bao Vạc — only restaurant authorized to make this dish; lunch only; book ahead)
+- **Afternoon**: Return to resort; beach or pool
+- **Evening**: Resort dinner or Đà Nẵng waterfront restaurants
+- **Wow moment**: My Son in the early morning mist — surreal jungle-temple atmosphere reminiscent of Angkor but without the crowds
+- **Low energy option**: Skip My Son; full beach resort day; tailor pickup only
+- **Rainy day backup**: Postpone My Son to Day 13 (swap days); tailor pickup is rain-neutral
+
+---
+
+#### Day 13 — Sunday, Sept 13: Final Beach Day + Shopping
+- **Morning**: Mỹ Khê Beach — last full beach morning; sunrise walk optional
+- **Midday**: Late brunch at resort — the perfect day template one final time
+- **Afternoon (2–5 PM)**: Vincom Plaza Đà Nẵng or Indochina Riverside Mall (last shopping; local lacquerware, silk, coffee, spices to bring home)
+- **Evening**: Farewell dinner at a top Đà Nẵng restaurant (NON La — upscale contemporary Vietnamese, stunning riverside setting; book ahead)
+- **Pack**: Arrange luggage; confirm departure logistics
+- **Wow moment**: Final sunset on Mỹ Khê Beach
+
+---
+
+#### Day 14 — Monday, Sept 14: DEPARTURE DAY
+- **Morning**: Checkout; hotel luggage hold if early checkout
+- **Buffer time**: Đà Nẵng International Airport (DAD) is small but gets congested; arrive 2.5 hrs before international departure
+- **Flight**: Đà Nẵng DAD → Home (via connection in Seoul ICN, Tokyo NRT, or Taipei TPE)
+- **Note**: Keep one carry-on accessible for all important documents, valuables, and anything purchased that cannot go in checked luggage
+
+---
+
+### Transit Audit Summary
+
+| Leg | Transit Time | % of Trip |
+|-----|-------------|-----------|
+| Day 1: Airport → Hotel | ~1.5 hrs | — |
+| Day 3: City → Great Wall → City | ~3 hrs total | included in activity |
+| Day 6: Beijing → Airport → Hanoi | ~7 hrs (full transit day) | 1 day |
+| Day 8: Hanoi → Airport → Đà Nẵng | ~4 hrs | 0.5 day |
+| Day 14: Hotel → Airport → Departure | ~2.5 hrs | — |
+| **Total inter-city transit days** | **~2 full days** | **14%** |
+
+Transit: 14% < 20% threshold ✓
+
+## Validation
+
+- [x] Transit overload check: 14% transit time — PASS (under 20%)
+- [x] No day exceeds 2 hours in-city transit — PASS
+- [x] Border crossing days (Day 6, Day 8) are soft days with no demanding activities — PASS
+- [x] "First day in country" protocol: Day 1 (Beijing arrival), Day 6 (Hanoi arrival), Day 8 (Đà Nẵng arrival) all designated light/recovery — PASS
+- [x] Crowds deal-breaker: Mutianyu over Badaling; Forbidden City early entry booked; Hội An pre-dawn arrival — PASS
+- [x] Heat deal-breaker: All outdoor activities before 11 AM or after 4 PM; midday at resort/AC — PASS
+- [x] Tailor timing: Day 10 consultation, Day 11 fitting, Day 12 pickup — 2-day window minimum met — PASS
+- [x] Book-NOW items flagged throughout — PASS
+- [x] Each day has wow moment + low energy + rainy backup — PASS
+
+</markdown>

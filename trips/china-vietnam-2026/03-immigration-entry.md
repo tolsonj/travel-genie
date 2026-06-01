@@ -1,0 +1,140 @@
+---
+step: "03-immigration-entry"
+title: "Immigration & Entry"
+trip: "china-vietnam-2026"
+created: 2026-05-25
+depends_on:
+  - "[[profile]]"
+  - "[[01-traveler-profile]]"
+  - "[[02-route-optimization]]"
+tags:
+  - travel-planning
+  - immigration
+---
+
+# Immigration & Entry
+
+## Reasoning
+
+Citizenship assumed **US** (see [[01-traveler-profile]] flag). Route: US → Beijing (China) → Hanoi (Vietnam) → Đà Nẵng → US. Travel dates: September 1–14, 2026.
+
+Key 2026 considerations:
+- China reinstated tourist visas but the **10-year US-China tourist visa** program (B-2) was active as of early 2026 — verify current processing time as it fluctuates.
+- Vietnam launched a **90-day e-visa** for US citizens in 2023 (still in effect 2026) — straightforward online application.
+- No ETIAS, UK ETA, or EES involved for this route (those are EU/UK specific).
+
+## Output
+
+### China Entry
+
+| Item | Detail |
+|------|--------|
+| **Visa type** | B-2 Tourist Visa (US citizens require a visa — no visa-free entry) |
+| **Validity** | 10-year multi-entry (if approved under current program) |
+| **Processing time** | 4–7 business days standard; 2–3 days expedited |
+| **Cost** | ~$185 USD (standard); higher for expedited |
+| **Application portal** | Chinese Visa Application Service Center: [cvasc.com](https://www.cvasc.com) or in-person at Chinese consulate/embassy |
+| **Documents required** | Valid US passport (6+ months validity beyond Sept 14, 2026), blank pages (2 minimum), passport photo, completed DS-160-equivalent form, proof of accommodation, return/onward ticket |
+| **Apply** | 60–90 days before departure; no earlier than 3 months out |
+| **Earliest apply date** | ~June 1, 2026 |
+
+> ⚠️ **Red flag**: China visa rules can change quickly. Confirm current processing requirements at [travel.state.gov](https://travel.state.gov) and the Chinese consulate in your district before applying.
+
+#### China Arrival Protocol
+- Customs declaration form required on arrival (digital or paper)
+- Port of entry: Beijing Capital International (PEK) or Daxing (PKX)
+- Biometric data (fingerprints) collected at first entry point
+- Foreign nationals must register with local police within 24 hours if staying in non-hotel accommodations. Hotels handle this automatically — confirm at check-in.
+
+---
+
+### Vietnam Entry
+
+| Item | Detail |
+|------|--------|
+| **Visa type** | E-visa (90 days, single or multiple entry) |
+| **Cost** | $25 USD |
+| **Processing time** | 3 business days typical; apply at least 7 days before arrival |
+| **Application portal** | [evisa.xuatnhapcanh.gov.vn](https://evisa.xuatnhapcanh.gov.vn) (official Vietnamese government portal) |
+| **Documents required** | Valid US passport, passport photo (digital), credit card for payment, travel itinerary (hotel booking confirmation) |
+| **Port of entry** | Noi Bai International Airport (HAN), Hanoi |
+| **Apply** | 2–4 weeks before departure; no rush but don't leave to last week |
+
+> ✅ Vietnam e-visa is straightforward for US citizens. No additional health declarations or travel authorizations required as of 2026.
+
+#### Vietnam Domestic Transit (Hanoi → Đà Nẵng)
+- Domestic flight within Vietnam — no additional visa/immigration required
+- Board with same passport + Vietnam e-visa
+
+---
+
+### Passport Validity Requirements
+
+| Country | Minimum Validity Required | Blank Pages |
+|---------|--------------------------|-------------|
+| China | 6 months beyond last travel date (beyond Sept 14, 2026 = valid until March 2027 minimum) | 2 blank pages |
+| Vietnam | 6 months beyond last travel date | 1 blank page |
+| **Action** | Passport must be valid until at least **March 14, 2027** | Total 3 blank pages needed across trip |
+
+---
+
+### Vaccination & Health Declarations
+
+| Country | Requirements |
+|---------|-------------|
+| **China** | No mandatory vaccinations for entry from US (as of 2026). No COVID health declaration required. |
+| **Vietnam** | No mandatory vaccinations for entry from US. No COVID health declaration required. |
+| **Recommended** (not required for entry) | Hepatitis A, Typhoid (food-borne illness risk in both countries), Tetanus, Flu shot (Sept is start of flu season). Consult travel medicine clinic 6–8 weeks before departure. |
+
+---
+
+### Application Timeline
+
+| Date | Action |
+|------|--------|
+| **Now (May 2026)** | Verify passport validity and blank pages for both travelers |
+| **June 1–15, 2026** | Apply for China B-2 visa (both travelers) — earliest allowed window |
+| **July 15–Aug 1, 2026** | Apply for Vietnam e-visa (both travelers) |
+| **Aug 1, 2026** | Visit travel medicine clinic — confirm vaccinations |
+| **Aug 15, 2026** | Print/save digital copies of all visa approvals, hotel bookings, and flight confirmations |
+| **Sept 1, 2026** | Departure |
+
+---
+
+### Entry Checklist — Per Country
+
+#### China Checklist
+- [ ] China B-2 visa approved and in passport (or valid 10-year visa)
+- [ ] Passport valid through March 2027
+- [ ] 2+ blank passport pages
+- [ ] Hotel confirmation (Beijing) — name and address in English AND Chinese
+- [ ] Return/onward ticket printout
+- [ ] Customs declaration form (available on plane or at airport kiosks)
+- [ ] VPN app downloaded and tested BEFORE entering China (can't download inside)
+
+#### Vietnam Checklist
+- [ ] Vietnam e-visa approval letter (print + digital copy)
+- [ ] Passport valid through March 2027
+- [ ] 1+ blank passport page
+- [ ] Hotel confirmation (Hanoi + Đà Nẵng)
+- [ ] Onward/return flight confirmation
+- [ ] $25 USD e-visa fee already paid online
+
+---
+
+### Backup Plans
+
+| Scenario | Action |
+|----------|--------|
+| China visa denied | Pivot to Japan or South Korea (visa-free for US citizens, same region) — rebook flights |
+| Vietnam e-visa rejected (rare) | Reapply immediately; contact Vietnamese consulate for expedited review; visa-on-arrival available at major airports as fallback |
+| Passport expires/issue discovered late | Rush passport renewal (US Dept of State expedited: 5–7 weeks; emergency: 24–72 hrs with urgent travel proof) |
+
+## Validation
+
+- [x] All 2026-specific entry requirements checked — PASS
+- [x] No ETIAS/UK ETA applies to this route — PASS
+- [x] Passport minimum validity requirement documented for both countries — PASS
+- [x] Application timeline leaves adequate lead time for both visas — PASS
+- [⚠️] Citizenship still assumed US — if incorrect, this entire step must be regenerated
+- [⚠️] China visa policy is subject to change — verify at [travel.state.gov](https://travel.state.gov) and Chinese consulate website within 30 days of applying

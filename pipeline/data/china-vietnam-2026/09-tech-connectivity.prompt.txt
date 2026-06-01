@@ -1,0 +1,295 @@
+You convert one travel-plan markdown aspect into STRICT canonical JSON.
+
+Output ONLY a single JSON object. No prose, no markdown fences. It MUST validate
+against this JSON Schema (every field except aspect/type/trip is optional; omit
+what is not present rather than inventing it):
+
+<schema>
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-genie/schema/trip.schema.json",
+  "title": "Canonical Trip Aspect",
+  "description": "One extracted aspect of a trip plan. Generic by design so it generalizes across single- and multi-country trips. Every field beyond `aspect`/`type` is optional; the renderer hides absent sections rather than erroring.",
+  "type": "object",
+  "required": ["aspect", "type", "trip"],
+  "properties": {
+    "aspect": { "type": "string", "description": "Aspect id, e.g. route-optimization." },
+    "type": { "type": "string", "description": "Canonical type used to pick a slide template." },
+    "trip": { "type": "string", "description": "Trip slug, e.g. china-vietnam-2026." },
+    "title": { "type": "string" },
+    "slide_title": { "type": "string" },
+
+    "recommended_route": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "name": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hub": { "type": "string" },
+          "days": { "type": "string" },
+          "region": { "type": "string" },
+          "primary_draw": { "type": "string" }
+        }
+      }
+    },
+    "map_nodes": {
+      "type": "array",
+      "description": "Geographic markers plotted from REAL coordinates.",
+      "items": {
+        "type": "object",
+        "required": ["label", "lng", "lat"],
+        "properties": {
+          "label": { "type": "string" },
+          "marker": { "type": "string", "description": "Short glyph shown in the node circle." },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" },
+          "color": { "type": "string" },
+          "labelDy": { "type": "number", "description": "Vertical label offset in px (negative = above)." }
+        }
+      }
+    },
+    "map_bounds": {
+      "type": "object",
+      "properties": {
+        "west": { "type": "number" },
+        "south": { "type": "number" },
+        "east": { "type": "number" },
+        "north": { "type": "number" }
+      }
+    },
+    "highlight_countries": { "type": "array", "items": { "type": "string" } },
+    "country_labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" }
+        }
+      }
+    },
+    "transit_legs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "mode": { "type": "string" },
+          "duration": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "headline": { "type": "string" },
+        "detail": { "type": "string" }
+      }
+    },
+
+    "intro": { "type": "string", "description": "Generic-layout: lead paragraph." },
+    "tables": {
+      "type": "array",
+      "description": "Generic-layout: zero or more tables.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caption": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+    "bullets": {
+      "type": "array",
+      "description": "Generic-layout: grouped bullet lists.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "callouts": {
+      "type": "array",
+      "description": "Generic-layout: status callouts (validation checks, warnings).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+
+</schema>
+
+Required top-level values for THIS aspect:
+  "aspect": "09-tech-connectivity"
+  "type": "generic"
+  "trip": "china-vietnam-2026"
+  "title": "Tech Connectivity"
+
+Target type: "generic" (no bespoke template).
+Use the generic fields: intro (string), tables[] {caption, columns[], rows[][]},
+bullets[] {heading, items[]}, callouts[] {status: pass|warn|info, text}.
+
+CRITICAL for any map_nodes: use REAL geographic latitude/longitude for each city.
+Do not approximate with screen coordinates.
+
+Here is the source markdown to extract from:
+
+<markdown>
+---
+step: "09-tech-connectivity"
+title: "Tech & Connectivity"
+trip: "china-vietnam-2026"
+created: 2026-05-25
+depends_on:
+  - "[[profile]]"
+  - "[[01-traveler-profile]]"
+  - "[[02-route-optimization]]"
+tags:
+  - travel-planning
+  - tech
+---
+
+# Tech & Connectivity
+
+## Reasoning
+
+China is a unique tech challenge: major Western services (Google, WhatsApp, Instagram, Facebook, YouTube, Gmail, Google Maps) are blocked behind the Great Firewall. A VPN must be installed and tested BEFORE entering China — you cannot download or configure VPN apps once in-country. Vietnam has no such restrictions. Two countries, two different connectivity profiles. eSIM strategy is the cleanest multi-country solution for US travelers.
+
+## Output
+
+### Connectivity Strategy
+
+#### Option A: Multi-Country eSIM (Recommended)
+- **Provider**: Airalo (airalo.com) or Holafly — both support China + Vietnam in one package or separate regional eSIMs
+- **China eSIM**: Mainland China data via local carrier (China Unicom or China Mobile); Airalo "China" package: ~$15–25 for 5–10 GB, 15 days
+- **Vietnam eSIM**: Airalo "Vietnam" package or SE Asia regional plan: ~$10–18 for 5–10 GB
+- **Install procedure**: Buy and download eSIM QR codes BEFORE traveling; activate upon landing each country
+- **Note**: Keep US physical SIM in phone for iMessage/SMS/calls — eSIM provides local data
+
+#### Option B: Physical SIMs Per Country
+- **China**: China Unicom SIM available at Beijing Capital Airport arrivals hall (Gate area); ~¥100 for 10 GB, valid 30 days
+- **Vietnam**: Viettel or Vietnamobile SIM at Noi Bai Airport arrivals; ~$5 for 5 GB
+- **Downside**: Requires SIM swap at each border; potential phone lock issues
+
+**Recommendation**: Airalo eSIM — manage entirely from phone before departure; no SIM swapping needed.
+
+---
+
+### China VPN — CRITICAL
+
+> ⚠️ **Must install VPN BEFORE entering China**. Once inside, VPN app stores are blocked.
+
+| VPN | Notes |
+|-----|-------|
+| **ExpressVPN** | Most reliable for China; obfuscation protocol gets through Great Firewall |
+| **NordVPN** | Good alternative; Obfuscated servers feature required |
+| **Astrill** | Specifically tuned for China; slightly more expensive |
+
+**Setup checklist**:
+- [ ] Download VPN app on both phones (iOS/Android) at home
+- [ ] Purchase subscription; activate; test connection through Chinese servers
+- [ ] Save VPN app login credentials in offline password manager (not Google)
+- [ ] Set VPN to auto-connect on WiFi
+- [ ] Note: VPN may slow connection by 20–40%; acceptable tradeoff for access to Google Maps, WhatsApp, Gmail
+
+---
+
+### Offline Survival Kit (Download Before Departure)
+
+#### China
+- [ ] **Baidu Maps** (百度地图) — Works offline in China; has English interface; use for navigation instead of Google Maps
+- [ ] **DiDi app** — Chinese Uber; works in English; link US credit card before arriving; essential for city transport
+- [ ] **WeChat** — Even as a foreigner, needed for payments (link US Visa/Mastercard); also used by many vendors and hotels
+- [ ] **Google Translate** — Download Chinese (Simplified) offline pack; camera translation works for menus
+- [ ] **Hotel addresses in Chinese script**: The Peninsula Beijing — 北京王府半岛酒店, 8 Jinyu Hutong, Dongcheng; save as phone note
+- [ ] **Emergency contacts** (see Step 14)
+
+#### Vietnam
+- [ ] **Grab** — SE Asia's Uber; works throughout Vietnam; book in advance; better and cheaper than taxis
+- [ ] **Maps.me** — Offline maps for Vietnam; better than Google Maps offline for rural areas
+- [ ] **Google Maps** — Works normally in Vietnam; download offline maps for Hanoi, Đà Nẵng, Hội An
+- [ ] **Google Translate** — Download Vietnamese offline pack
+- [ ] **Hotel addresses in Vietnamese**: Have concierge print Vietnamese address cards for Grab/taxis
+
+---
+
+### Power & Plugs
+
+| Country | Plug Type | Voltage | Notes |
+|---------|-----------|---------|-------|
+| **China** | Type A (US flat pins) + Type I (Australian diagonal) — both common | 220V | US devices mostly work (check dual voltage: look for "100–240V" on charger); bring universal adapter |
+| **Vietnam** | Type A (US flat pins) + Type C (European round) — both common | 220V | Same as China |
+| **Recommendation** | **One universal travel adapter** covers both countries | — | Anker or Belkin universal adapter; QC 3.0 at minimum |
+
+**Portable battery**: Bring a 20,000 mAh USB-C power bank for Great Wall day and long Hội An walking days. Planes: check airline rules — most allow up to 100 Wh (26,800 mAh equivalent) in carry-on only.
+
+---
+
+### Digital Security
+
+| Risk | Mitigation |
+|------|-----------|
+| China public WiFi surveillance | Use VPN on ALL China WiFi; hotel WiFi is safer but still use VPN |
+| Noi Bai Airport WiFi (Vietnam) | Avoid for banking; use eSIM data instead |
+| Document backup | Scan all passports, visas, insurance cards → upload to iCloud/Google Drive BEFORE China entry (accessible via VPN); also email to self |
+| Social media | In China, access Instagram, WhatsApp, Twitter only via VPN |
+| Banking | Notify all banks and credit cards of travel to China AND Vietnam before departure; US banks regularly block international charges without notification |
+
+---
+
+### Payment Apps
+
+| Country | What Works | What Doesn't |
+|---------|------------|-------------|
+| **China** | WeChat Pay (link US Visa/MC before arrival — now possible for foreigners), Alipay (similar), Cash (¥ CNY), Visa/Mastercard at 4–5 star hotels | AmEx less accepted; many local vendors are WeChat Pay / Alipay only |
+| **Vietnam** | Credit cards at all 4–5 star hotels and tourist restaurants; Grab uses app payment; Cash (₫ VND) for street food and markets | WeChat Pay not used in Vietnam |
+
+**Multi-currency card**: Charles Schwab debit card (zero ATM fees worldwide, ATM fee reimbursed) or Wise card (multi-currency, competitive exchange rates). Carry both.
+
+---
+
+### Tech Setup Checklist
+
+**Do BEFORE leaving home:**
+- [ ] Install and test VPN (ExpressVPN or NordVPN) — verify China servers work
+- [ ] Purchase and download Airalo eSIMs for China and Vietnam
+- [ ] Install DiDi (China transport)
+- [ ] Install Grab (Vietnam transport)
+- [ ] Install WeChat; link US credit card
+- [ ] Download Google Translate offline packs: Chinese (Simplified), Vietnamese
+- [ ] Download Baidu Maps; test offline mode
+- [ ] Download Maps.me Vietnam maps
+- [ ] Notify banks of travel to China and Vietnam
+- [ ] Scan passports + visas + insurance → iCloud/Google Drive
+- [ ] Confirm all device chargers are 100–240V dual voltage
+- [ ] Pack universal travel adapter + 20,000 mAh power bank
+- [ ] Save hotel addresses in Chinese and Vietnamese as offline notes
+
+## Validation
+
+- [x] Connectivity covered for both countries — PASS
+- [x] China VPN requirement flagged with must-install-before-departure warning — PASS
+- [x] Offline maps, translation, and transport apps per country — PASS
+- [x] Plug types identified for both countries; single universal adapter sufficient — PASS
+- [x] Payment apps mapped per country; WeChat Pay for China flagged — PASS
+- [x] Digital security risks and mitigations documented — PASS
+
+</markdown>

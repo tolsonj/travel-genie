@@ -1,0 +1,115 @@
+{
+  "aspect": "14-health-safety",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Health Safety",
+  "slide_title": "HEALTH & SAFETY",
+  "intro": "Both travelers in excellent condition. September risks: Vietnam heat (28\u201332\u00b0C), monsoon food hygiene, mosquito-borne illness (dengue, Japanese encephalitis). Travel insurance with medical evacuation is non-negotiable for China.",
+  "tables": [
+    {
+      "caption": "Vaccinations (clinic 6\u20138 weeks before; June\u2013July 2026)",
+      "columns": ["Vaccine", "Entry required?", "Recommended?"],
+      "rows": [
+        ["Hepatitis A", "No", "Yes \u2014 food/water-borne"],
+        ["Hepatitis B", "No", "Yes if not previously vaccinated"],
+        ["Typhoid", "No", "Yes \u2014 street food"],
+        ["Japanese Encephalitis", "No", "Yes \u2014 rural Vietnam (My Son); Sept active season"],
+        ["Tetanus/Tdap", "No", "Yes if >10 years since last"],
+        ["Influenza", "No", "Yes \u2014 Sept flu season in Asia"],
+        ["COVID booster", "No", "Recommended"],
+        ["Yellow Fever", "No", "Not needed"],
+        ["Malaria prophylaxis", "No", "Not needed (urban itinerary)"]
+      ]
+    },
+    {
+      "caption": "Emergency Numbers",
+      "columns": ["Country", "Police", "Ambulance", "Fire"],
+      "rows": [
+        ["China", "110", "120", "119"],
+        ["Vietnam", "113", "115", "114"]
+      ]
+    },
+    {
+      "caption": "Hospitals Near Stays",
+      "columns": ["Hospital", "Distance", "Notes"],
+      "rows": [
+        ["Beijing United Family Hospital", "5 km (~15 min DiDi)", "International; English; foreign insurance"],
+        ["Peking Union Medical College Hospital", "2 km walk", "Top Chinese hospital; less English"],
+        ["Vinmec International Hanoi", "8 km", "Best intl Hanoi; +84-24-3974-3556"],
+        ["Family Medical Practice Đà Nẵng", "5\u201310 km from resorts", "+84-236-3582-699; 24/7 emergency"]
+      ]
+    },
+    {
+      "caption": "Beijing Safety Risks",
+      "columns": ["Risk", "Level", "Mitigation"],
+      "rows": [
+        ["Petty theft", "Low", "Front pocket wallet; camera strap on wrist"],
+        ["Scam (tea ceremony, art gallery, English student)", "Moderate", "Decline all impromptu invitations"],
+        ["Traffic", "Moderate", "Look right THEN left; silent e-scooters on sidewalks"],
+        ["Political", "Very Low", "No political talk; no military photos"]
+      ]
+    },
+    {
+      "caption": "Vietnam Safety Risks",
+      "columns": ["Risk", "Level", "Mitigation"],
+      "rows": [
+        ["Bag snatching (Hanoi)", "Moderate", "Don't dangle phone/purse from shoulder"],
+        ["Taxi scams (airports)", "High", "Grab exclusively"],
+        ["Flooding/typhoon (Sept)", "Moderate", "Monitor weather; resort as shelter"],
+        ["Traffic crossing", "High (perceived)", "Steady pace; motorbikes flow around you"]
+      ]
+    },
+    {
+      "caption": "Document Backup",
+      "columns": ["Document", "Digital", "Physical"],
+      "rows": [
+        ["Passports", "iCloud + Google Drive", "Photocopy in each bag"],
+        ["China/Vietnam visas", "Same", "Print in luggage"],
+        ["Insurance + hotel bookings", "Email + Notes", "Print confirmations"],
+        ["Credit cards + bank numbers", "1Password encrypted", "Paper in secured luggage"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Travel Insurance (must-have)",
+      "items": [
+        "Medical evacuation (China care for foreigners is complex/expensive)",
+        "Trip cancellation for typhoon (Vietnam leg)",
+        "Pre-existing conditions waiver; hiking + snorkeling coverage",
+        "World Nomads Explorer or Allianz OneTrip Prime",
+        "Purchase same day as first flight booking"
+      ]
+    },
+    {
+      "heading": "Prescriptions & First Aid",
+      "items": [
+        "14 days + 3-day buffer; doctor note in English; check controlled-substance import rules",
+        "Imodium + oral rehydration salts in carry-on",
+        "DEET 30%+ repellent; SPF 50 sunscreen; electrolyte tablets for Đà Nẵng heat",
+        "Motion sickness bands for Cham Islands boat"
+      ]
+    },
+    {
+      "heading": "Per-Country Health Notes",
+      "items": [
+        "China: do NOT drink tap water; Sept AQI usually Moderate/Good\u2014N95 if AQI >150; jet lag 12\u201313 hr from US East",
+        "Hanoi: bottled water only; DEET at dusk; dengue prevention only (no vaccine)",
+        "Đà Nẵng: Sept ~32\u00b0C, real-feel 37\u201340\u00b0C; 3+ L water/day; midday rest; SPF every 2 hrs at beach"
+      ]
+    },
+    {
+      "heading": "US Embassy & STEP",
+      "items": [
+        "Beijing: 55 An Jia Lou Rd; +86-10-8531-4000 (24/7)",
+        "Hanoi: 7 Lang Ha, Ba Dinh; +84-24-3850-5000 (24/7)",
+        "Register: travel.state.gov/STEP"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "warn", "text": "Tea ceremony scam near Tiananmen/Wangfujing \u2014 polite decline (¥2,000+ bill)" },
+    { "status": "warn", "text": "Đà Nẵng heat: electrolytes, hydration, mandatory midday rest in September" },
+    { "status": "pass", "text": "Excellent physical condition \u2014 no mobility limits; adventure activities moderate-intensity only" }
+  ]
+}

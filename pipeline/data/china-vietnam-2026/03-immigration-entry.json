@@ -1,0 +1,103 @@
+{
+  "aspect": "03-immigration-entry",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Immigration Entry",
+  "slide_title": "IMMIGRATION & ENTRY",
+  "intro": "Route: US → Beijing (China) → Hanoi (Vietnam) → Đà Nẵng → US. Citizenship assumed US. Travel dates September 1–14, 2026. No ETIAS, UK ETA, or EES applies to this route.",
+  "tables": [
+    {
+      "caption": "China Entry",
+      "columns": ["Item", "Detail"],
+      "rows": [
+        ["Visa type", "B-2 Tourist Visa (US citizens require a visa)"],
+        ["Validity", "10-year multi-entry (if approved under current program)"],
+        ["Processing", "4–7 business days standard; 2–3 days expedited"],
+        ["Cost", "~$185 USD standard; higher for expedited"],
+        ["Portal", "cvasc.com or Chinese consulate/embassy"],
+        ["Apply window", "60–90 days before departure; earliest ~June 1, 2026"],
+        ["Port of entry", "Beijing Capital (PEK) or Daxing (PKX)"]
+      ]
+    },
+    {
+      "caption": "Vietnam Entry",
+      "columns": ["Item", "Detail"],
+      "rows": [
+        ["Visa type", "E-visa (90 days, single or multiple entry)"],
+        ["Cost", "$25 USD"],
+        ["Processing", "3 business days typical; apply at least 7 days before arrival"],
+        ["Portal", "evisa.xuatnhapcanh.gov.vn (official government portal)"],
+        ["Port of entry", "Noi Bai International Airport (HAN), Hanoi"],
+        ["Apply window", "2–4 weeks before departure"]
+      ]
+    },
+    {
+      "caption": "Passport Validity",
+      "columns": ["Country", "Requirement"],
+      "rows": [
+        ["China", "6 months beyond Sept 14, 2026; 2 blank pages"],
+        ["Vietnam", "6 months beyond Sept 14, 2026; 1 blank page"],
+        ["Action", "Valid until at least March 14, 2027; 3 blank pages total"]
+      ]
+    },
+    {
+      "caption": "Application Timeline",
+      "columns": ["Date", "Action"],
+      "rows": [
+        ["Now (May 2026)", "Verify passport validity and blank pages (both travelers)"],
+        ["June 1–15, 2026", "Apply for China B-2 visa (both travelers)"],
+        ["July 15–Aug 1, 2026", "Apply for Vietnam e-visa (both travelers)"],
+        ["Aug 1, 2026", "Travel medicine clinic — confirm vaccinations"],
+        ["Aug 15, 2026", "Print/save visa approvals, hotel bookings, flight confirmations"],
+        ["Sept 1, 2026", "Departure"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "China Arrival Protocol",
+      "items": [
+        "Customs declaration form required on arrival",
+        "Biometric data (fingerprints) collected at first entry",
+        "Hotels register foreign nationals with police — confirm at check-in",
+        "Download and test VPN before entering China"
+      ]
+    },
+    {
+      "heading": "Vietnam Domestic Transit",
+      "items": [
+        "Hanoi → Đà Nẵng domestic flight — no additional visa required",
+        "Board with same passport + Vietnam e-visa"
+      ]
+    },
+    {
+      "heading": "Recommended Vaccinations (not required)",
+      "items": ["Hepatitis A", "Typhoid", "Tetanus", "Flu shot (Sept is start of flu season)", "Consult travel medicine clinic 6–8 weeks before departure"]
+    },
+    {
+      "heading": "Entry Checklist — China",
+      "items": [
+        "China B-2 visa approved (or valid 10-year visa)",
+        "Passport valid through March 2027; 2+ blank pages",
+        "Hotel confirmation (Beijing) in English and Chinese",
+        "Return/onward ticket; customs declaration form",
+        "VPN app downloaded and tested before entry"
+      ]
+    },
+    {
+      "heading": "Entry Checklist — Vietnam",
+      "items": [
+        "E-visa approval letter (print + digital)",
+        "Passport valid through March 2027; 1+ blank page",
+        "Hotel confirmation (Hanoi + Đà Nẵng)",
+        "Onward/return flight confirmation; $25 fee paid online"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "warn", "text": "China visa rules can change quickly — verify at travel.state.gov and Chinese consulate within 30 days of applying" },
+    { "status": "warn", "text": "Citizenship assumed US — if incorrect, regenerate this step" },
+    { "status": "pass", "text": "Vietnam e-visa straightforward for US citizens — no additional health declarations required as of 2026" },
+    { "status": "info", "text": "Backup: China visa denied → pivot to Japan or South Korea (visa-free); Vietnam e-visa rejected → reapply or visa-on-arrival at major airports" }
+  ]
+}

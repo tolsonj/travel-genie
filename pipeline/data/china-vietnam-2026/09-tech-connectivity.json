@@ -1,0 +1,103 @@
+{
+  "aspect": "09-tech-connectivity",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Tech Connectivity",
+  "slide_title": "TECH & CONNECTIVITY",
+  "intro": "Two countries, two connectivity profiles. China blocks Google, WhatsApp, Instagram, Facebook, YouTube, Gmail, and Google Maps. Install and test VPN BEFORE entering China — app stores are blocked in-country. Vietnam has no restrictions. eSIM is the cleanest multi-country solution for US travelers.",
+  "tables": [
+    {
+      "caption": "Connectivity Options",
+      "columns": ["Option", "Details"],
+      "rows": [
+        ["A: Multi-Country eSIM (Recommended)", "Airalo or Holafly — China ~$15–25 (5–10 GB, 15 days); Vietnam ~$10–18 (5–10 GB); buy QR codes before travel; activate on landing"],
+        ["B: Physical SIMs", "China Unicom at PEK (~¥100/10 GB); Viettel/Vietnamobile at Noi Bai (~$5/5 GB); requires SIM swap at border"],
+        ["Recommendation", "Airalo eSIM — manage from phone before departure; no SIM swapping; keep US physical SIM for iMessage/SMS"]
+      ]
+    },
+    {
+      "caption": "China VPN — CRITICAL",
+      "columns": ["VPN", "Notes"],
+      "rows": [
+        ["ExpressVPN", "Most reliable; obfuscation protocol gets through Great Firewall"],
+        ["NordVPN", "Good alternative; Obfuscated servers required"],
+        ["Astrill", "Specifically tuned for China; slightly more expensive"]
+      ]
+    },
+    {
+      "caption": "Power & Plugs",
+      "columns": ["Country", "Plug / Voltage", "Notes"],
+      "rows": [
+        ["China", "Type A + Type I / 220V", "US devices mostly work (check 100–240V on charger); universal adapter"],
+        ["Vietnam", "Type A + Type C / 220V", "Same as China"],
+        ["Recommendation", "One universal adapter (Anker/Belkin); 20,000 mAh USB-C power bank for Great Wall and Hội An walking days"]
+      ]
+    },
+    {
+      "caption": "Digital Security",
+      "columns": ["Risk", "Mitigation"],
+      "rows": [
+        ["China public WiFi", "Use VPN on ALL China WiFi; hotel WiFi safer but still use VPN"],
+        ["Noi Bai Airport WiFi", "Avoid for banking; use eSIM data instead"],
+        ["Document backup", "Scan passports, visas, insurance → iCloud/Google Drive before China entry; email to self"],
+        ["Social media in China", "Instagram, WhatsApp, Twitter only via VPN"],
+        ["Banking", "Notify all banks/credit cards of travel to China AND Vietnam before departure"]
+      ]
+    },
+    {
+      "caption": "Payment Apps",
+      "columns": ["Country", "Works", "Doesn't Work"],
+      "rows": [
+        ["China", "WeChat Pay (link US Visa/MC before arrival), Alipay, Cash (¥), Visa/MC at 4–5 star hotels", "AmEx less accepted; many vendors WeChat/Alipay only"],
+        ["Vietnam", "Credit cards at 4–5 star hotels/restaurants; Grab app payment; Cash (₫) for street food", "WeChat Pay not used"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Offline Kit — China",
+      "items": [
+        "Baidu Maps — offline navigation (English interface); replaces Google Maps",
+        "DiDi — Chinese Uber; link US credit card before arrival",
+        "WeChat — payments + vendor/hotel communication",
+        "Google Translate — Chinese (Simplified) offline pack; camera mode for menus",
+        "Hotel addresses in Chinese script saved as offline phone notes"
+      ]
+    },
+    {
+      "heading": "Offline Kit — Vietnam",
+      "items": [
+        "Grab — book in advance; better and cheaper than taxis",
+        "Maps.me — offline maps for rural areas",
+        "Google Maps — works normally; download offline for Hanoi, Đà Nẵng, Hội An",
+        "Google Translate — Vietnamese offline pack",
+        "Hotel address cards in Vietnamese for Grab/taxis"
+      ]
+    },
+    {
+      "heading": "VPN Setup Checklist",
+      "items": [
+        "Download VPN app on both phones at home (iOS/Android)",
+        "Purchase subscription; test connection through Chinese servers",
+        "Save VPN credentials in offline password manager (not Google)",
+        "Set VPN to auto-connect on WiFi",
+        "Expect 20–40% speed reduction — acceptable for Google Maps, WhatsApp, Gmail"
+      ]
+    },
+    {
+      "heading": "Pre-Departure Checklist",
+      "items": [
+        "Install/test VPN; purchase Airalo eSIMs for China and Vietnam",
+        "Install DiDi, Grab, WeChat (link US credit card)",
+        "Download offline translation packs; Baidu Maps; Maps.me Vietnam",
+        "Notify banks; scan passports/visas/insurance to cloud",
+        "Confirm dual-voltage chargers; pack universal adapter + power bank"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "warn", "text": "Must install VPN BEFORE entering China — app stores blocked in-country" },
+    { "status": "info", "text": "Multi-currency cards: Charles Schwab debit (zero ATM fees) or Wise card — carry both" },
+    { "status": "pass", "text": "Connectivity, VPN, offline apps, plugs, payments, and security covered for both countries" }
+  ]
+}

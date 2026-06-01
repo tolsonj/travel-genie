@@ -1,0 +1,347 @@
+You convert one travel-plan markdown aspect into STRICT canonical JSON.
+
+Output ONLY a single JSON object. No prose, no markdown fences. It MUST validate
+against this JSON Schema (every field except aspect/type/trip is optional; omit
+what is not present rather than inventing it):
+
+<schema>
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-genie/schema/trip.schema.json",
+  "title": "Canonical Trip Aspect",
+  "description": "One extracted aspect of a trip plan. Generic by design so it generalizes across single- and multi-country trips. Every field beyond `aspect`/`type` is optional; the renderer hides absent sections rather than erroring.",
+  "type": "object",
+  "required": ["aspect", "type", "trip"],
+  "properties": {
+    "aspect": { "type": "string", "description": "Aspect id, e.g. route-optimization." },
+    "type": { "type": "string", "description": "Canonical type used to pick a slide template." },
+    "trip": { "type": "string", "description": "Trip slug, e.g. china-vietnam-2026." },
+    "title": { "type": "string" },
+    "slide_title": { "type": "string" },
+
+    "recommended_route": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "name": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hub": { "type": "string" },
+          "days": { "type": "string" },
+          "region": { "type": "string" },
+          "primary_draw": { "type": "string" }
+        }
+      }
+    },
+    "map_nodes": {
+      "type": "array",
+      "description": "Geographic markers plotted from REAL coordinates.",
+      "items": {
+        "type": "object",
+        "required": ["label", "lng", "lat"],
+        "properties": {
+          "label": { "type": "string" },
+          "marker": { "type": "string", "description": "Short glyph shown in the node circle." },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" },
+          "color": { "type": "string" },
+          "labelDy": { "type": "number", "description": "Vertical label offset in px (negative = above)." }
+        }
+      }
+    },
+    "map_bounds": {
+      "type": "object",
+      "properties": {
+        "west": { "type": "number" },
+        "south": { "type": "number" },
+        "east": { "type": "number" },
+        "north": { "type": "number" }
+      }
+    },
+    "highlight_countries": { "type": "array", "items": { "type": "string" } },
+    "country_labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" }
+        }
+      }
+    },
+    "transit_legs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "mode": { "type": "string" },
+          "duration": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "headline": { "type": "string" },
+        "detail": { "type": "string" }
+      }
+    },
+
+    "intro": { "type": "string", "description": "Generic-layout: lead paragraph." },
+    "tables": {
+      "type": "array",
+      "description": "Generic-layout: zero or more tables.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caption": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+    "bullets": {
+      "type": "array",
+      "description": "Generic-layout: grouped bullet lists.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "callouts": {
+      "type": "array",
+      "description": "Generic-layout: status callouts (validation checks, warnings).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+
+</schema>
+
+Required top-level values for THIS aspect:
+  "aspect": "07-transport-money"
+  "type": "generic"
+  "trip": "china-vietnam-2026"
+  "title": "Transport Money"
+
+Target type: "generic" (no bespoke template).
+Use the generic fields: intro (string), tables[] {caption, columns[], rows[][]},
+bullets[] {heading, items[]}, callouts[] {status: pass|warn|info, text}.
+
+CRITICAL for any map_nodes: use REAL geographic latitude/longitude for each city.
+Do not approximate with screen coordinates.
+
+Here is the source markdown to extract from:
+
+<markdown>
+---
+step: "07-transport-money"
+title: "Transport & Money"
+trip: "china-vietnam-2026"
+created: 2026-05-25
+depends_on:
+  - "[[profile]]"
+  - "[[01-traveler-profile]]"
+  - "[[02-route-optimization]]"
+  - "[[04-master-itinerary]]"
+tags:
+  - travel-planning
+  - transport
+  - money
+---
+
+# Transport & Money
+
+## Reasoning
+
+Profile: past positive experience with local mass transit; past negative with taxis (rip-offs). Strategy is app-based transport (DiDi in China, Grab in Vietnam) everywhere possible. Chinese metro is excellent in Beijing and highly recommended. Money: China is increasingly cashless (WeChat Pay) but foreign tourists have limited access — hybrid strategy of WeChat Pay + US credit cards + some cash. Vietnam is more cash-reliant at street level. Budget of $20K is well-managed with a multi-currency card for ATM access.
+
+## Output
+
+---
+
+### LEG 1: Home → Beijing
+
+- **Mode**: International flight (United, American, Air China, Cathay Pacific)
+- **Best airports**: PEK (Capital International, Terminal 3) or PKX (Daxing, newer, larger gate area)
+- **Time**: ~13 hrs from LAX/SFO; ~14 hrs from JFK/EWR; ~16 hrs from ORD
+- **Booking platform**: Google Flights for comparison; book direct on airline for flexibility; or American Express Travel for points/credits
+- **Scams**: None specific to booking; avoid third-party booking sites with non-refundable fares
+- **Cost estimate**: $1,200–2,000/person roundtrip in business class (recommended for comfort on 13+ hr flight)
+
+**Airport → Hotel (Beijing)**
+- **Option A (Recommended)**: Airport Express Train (机场快轨) from Terminal 3 → Dongzhimen → taxi/DiDi last mile; ¥35/person; 30 min; no language barriers; runs 6 AM–11 PM
+- **Option B**: Hotel car pre-arranged through The Peninsula; ~¥400; comfortable; English-speaking driver
+- **Option C**: DiDi from airport (can book from arrivals after clearing customs; use DiDi Hitch for English interface)
+- **Avoid**: Unmarked taxis at arrivals — notorious overcharging; any driver approaching you inside the terminal
+
+---
+
+### WITHIN BEIJING
+
+| Mode | When to Use | Cost | Notes |
+|------|-------------|------|-------|
+| **Beijing Subway** | Tiananmen, Temple of Heaven, Summer Palace, Sanlitun | ¥3–6/trip | Best urban transit in Asia; bilingual signage; AC; buy transit card at Airport Express station |
+| **DiDi** | Great Wall day, late nights, luggage-heavy trips, outer areas | ¥20–80/trip | Set to English mode; pay by Visa/MC or WeChat; never negotiate |
+| **Walk** | Forbidden City → Tiananmen → Wangfujing corridor | Free | 15 min between most Dongcheng sites |
+| **Avoid** | Street taxis without meter | Variable | Will overcharge without meter running |
+
+**DiDi setup**: Download before China entry; link US Visa/Mastercard; set to English in Settings > Language. DiDi Express or Comfort class is fine.
+
+**Transit Card (IC Card)**: Get at PEK arrivals; ¥20 deposit + top up with ¥100; covers all subway and some buses; faster than individual tickets at peak hours.
+
+---
+
+### LEG 2: Beijing → Hanoi
+
+- **Mode**: Flight
+- **Recommended carriers**: Vietnam Airlines (direct); Air China (direct); China Southern (via Guangzhou)
+- **Flight time**: ~4 hrs direct
+- **Airports**: PEK → HAN (Noi Bai International)
+- **Booking platform**: Google Flights, Vietnam Airlines app, or book through your international ticket consolidator
+- **Cost estimate**: $150–350/person
+- **Scams**: None; airport boarding is standard
+- **Book simultaneously with international flights** as one open-jaw ticket when possible
+
+---
+
+### WITHIN HANOI
+
+| Mode | When to Use | Cost | Notes |
+|------|-------------|------|-------|
+| **Walk** | All Old Quarter sites (Hoan Kiem Lake, temples, markets) | Free | Most sites within 1–2 km of each other |
+| **Grab** | Airport, longer distances, late night | ₫50,000–200,000 (~$2–8) | Pre-select destination in app; payment in app or cash |
+| **Cyclo** (cycle rickshaw) | Short scenic trip in Old Quarter if desired | Negotiate (~₫200,000/hr) | Agree on price BEFORE getting in; treat as an experience, not primary transport |
+| **Avoid** | Street taxis at Noi Bai Airport | — | Use Grab or hotel car only; taxi scams at this airport are extremely well-documented |
+
+---
+
+### LEG 3: Hanoi → Đà Nẵng
+
+- **Mode**: Domestic flight (strongly preferred over 14-hr train for this trip)
+- **Carriers**: VietJet Air (cheapest, reliable), Vietnam Airlines (more comfortable, slightly more)
+- **Flight time**: ~1.25 hrs
+- **Airports**: HAN (Noi Bai) → DAD (Đà Nẵng International)
+- **Booking platform**: VietJet app, Vietnam Airlines app, or 12go.asia
+- **Cost estimate**: $30–80/person
+- **Alternative (scenic, budget)**: Reunification Express train (~14 hrs overnight); has sleeper cabins; see cliffs and rice paddies; not recommended for this trip given pace preference
+
+---
+
+### WITHIN ĐÀ NẴNG / HỘI AN
+
+| Mode | When to Use | Cost | Notes |
+|------|-------------|------|-------|
+| **Resort car/shuttle** | Airport pickup; resort-arranged excursions | Included or ₫200,000–400,000 | Book through resort concierge |
+| **Grab** | Đà Nẵng city; Hội An day trips | ₫80,000–200,000 (~$3–8 each way) | Most reliable; app payment |
+| **Bicycle** | Hội An Ancient Town (30 min from central point); An Bang Beach | ₫60,000/day rental | Perfect for Hội An flat terrain; very local experience |
+| **Motorbike taxi (Xe ôm)** | Short hops in Hội An if feeling adventurous | Negotiate ~₫30,000–50,000 | Use Grab's motorbike option for fixed pricing |
+| **Avoid** | Metered taxis at airport | — | Use Grab or pre-arranged resort car |
+
+---
+
+### LEG 4: Đà Nẵng → Home
+
+- **Mode**: International flight from DAD (direct to some Asian hubs; connection usually required for US)
+- **Common connections**: DAD → Seoul ICN → US (Korean Air); DAD → Tokyo NRT → US (ANA); DAD → Taipei TPE → US (EVA Air)
+- **Transfer time**: Most require 2+ hrs layover; confirm layover minimum at booking
+- **Cost estimate**: $1,200–2,000/person (open-jaw business class with DAD as return)
+
+---
+
+### MONEY MANAGEMENT
+
+#### Currencies
+
+| Country | Currency | Code | Approx Rate (2026) |
+|---------|----------|------|-------------------|
+| China | Chinese Yuan Renminbi | CNY (¥) | ~7.1 CNY = $1 USD |
+| Vietnam | Vietnamese Dong | VND (₫) | ~25,000 VND = $1 USD |
+
+#### Exchange Strategy
+
+**China (CNY)**
+- **Best**: ATM withdrawal at Bank of China or ICBC ATMs in Beijing; ~2–4% fee vs cash exchange
+- **Alternative**: Exchange US dollars at authorized bank counters at PEK (reasonable rate; avoid exchange booths outside banks)
+- **WeChat Pay**: Link US Visa/Mastercard directly in WeChat; works at most Chinese vendors including smaller shops (foreigners can now link foreign cards — activate before travel)
+- **Cash recommendation**: Keep ¥1,000–1,500 (~$140–210) for incidentals; most 5-star hotels and tourist areas accept cards
+- **Avoid**: Dynamic currency conversion (DCC) — always choose to pay in CNY, not USD, at any card terminal
+
+**Vietnam (VND)**
+- **Best**: ATM withdrawal at Vietcombank or Agribank ATMs; most charge ₫50,000–100,000 (~$2–4) fixed fee; Charles Schwab card reimburses all fees
+- **Cash requirement**: More cash-heavy than China for street food, markets, tailor payments, bicycle rentals
+- **Cash recommendation**: Keep ₫3,000,000–5,000,000 (~$120–200) on hand at all times
+- **Hotels and restaurants**: All 4–5 star properties accept Visa/Mastercard
+
+#### Multi-Currency Cards (Recommended)
+
+| Card | Best For | Why |
+|------|---------|-----|
+| **Charles Schwab Debit** | ATM withdrawals | Zero foreign transaction fees; reimburses ALL ATM fees globally |
+| **Wise Card** | Everyday purchases | Multi-currency; competitive exchange rate; load CNY and VND in advance |
+| **Chase Sapphire Preferred / Reserve** | Hotels, flights, restaurants | 3x travel points; no foreign transaction fee; trip delay insurance built in |
+| **Backup Visa/MC** | Emergency | Notify of China AND Vietnam travel; freeze one card at home as backup |
+
+#### ATM Strategy
+- Withdraw larger amounts less frequently (minimize fixed ATM fees)
+- Beijing: Withdraw ¥2,000–3,000 at airport; top up at Bank of China ATMs in city
+- Vietnam: Withdraw ₫2,000,000–3,000,000 at Noi Bai; top up at Vietcombank ATMs
+- Always use ATMs at bank branches or inside 4–5 star hotels — not standalone street ATMs
+
+#### Tipping Summary (Cross-reference [[13-etiquette]])
+
+| Service | China | Vietnam |
+|---------|-------|---------|
+| Restaurant (table service) | No tip | 10–15% or round up |
+| Street food | No tip | Round up is kind |
+| Hotel housekeeping | ¥20–50/day (optional) | ₫50,000–100,000/day |
+| Tour guide / private driver | ¥50–100/day | ₫200,000–300,000/day |
+| Grab/DiDi driver | Not customary | Round up or rate highly |
+| Tailor (Hội An) | Not standard | ₫100,000–200,000 extra for rush/quality work |
+
+#### Budget Tracking
+- **Recommended app**: Trabee Pocket (multi-currency budget tracker for travel) or Trail Wallet
+- Set daily budget in each currency; log expenses in the evening
+- **China daily budget for 2**: ¥2,000–3,000 ($280–420) covers hotel, 2 meals out, transport, incidentals (accommodation separate)
+- **Vietnam daily budget for 2**: ₫2,000,000–4,000,000 ($80–160) for food/transport/activities (resort accommodation separate)
+
+---
+
+### Duty-Free & Customs Overview
+
+*(Full detail in [[08-customs-borders]])*
+
+- **From US to China**: US allowance for carry-on duty-free goods entering China is $5,000 value; declare anything above
+- **From China to Vietnam**: Internal airport transit; keep receipts for expensive items
+- **Returning to US**: $800/person duty-free exemption; above $800 = 3–5% duty on most goods; expensive watches/jewelry should be registered with US Customs before departure (CBP Form 4457)
+
+## Validation
+
+- [x] All transport legs covered with options, booking platforms, cost estimates — PASS
+- [x] Profile preference (local transit vs taxis): subway/Grab/DiDi strategy fully implemented — PASS
+- [x] Money strategy: multi-currency ATM card + WeChat Pay + cash hybrid — PASS
+- [x] Tipping norms per country documented — PASS
+- [x] Dynamic currency conversion warning included — PASS
+- [x] Daily budget estimates per country — PASS
+- [x] No street taxi use recommended anywhere — consistent with profile deal-breaker — PASS
+
+</markdown>

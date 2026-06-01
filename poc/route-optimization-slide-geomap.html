@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Route Optimization — China & Vietnam 2026 (POC · geomap)</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <style>
+    :root {
+      --slide-w: 1280px;
+      --slide-h: 720px;
+      --gold: #b8860b;
+      --gold-dark: #8b6914;
+      --banner-bg: #3d4f5f;
+      --banner-text: #f5f5f0;
+      --table-head: #2c3e50;
+      --table-stripe: #f4f6f8;
+      --border: #d0d7de;
+      --text: #1a1a1a;
+      --muted: #5a6570;
+      --pass-green: #27ae60;
+      --route-line: #d4a017;
+      --sea: #dbe7f0;
+      --land: #e2e6df;
+      --land-line: #b9c2b0;
+      --land-hi: #cfe0c6;
+      --land-hi-line: #9bbf8e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: #e8eaed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      gap: 16px;
+    }
+
+    .meta {
+      max-width: var(--slide-w);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    .meta code { background: #fff; padding: 1px 5px; border-radius: 4px; }
+
+    .slide {
+      width: var(--slide-w);
+      height: var(--slide-h);
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      padding: 36px 44px 28px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+    }
+
+    .banner {
+      background: var(--banner-bg);
+      color: var(--banner-text);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .banner strong { display: block; font-size: 14px; margin-bottom: 4px; color: #fff; }
+
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .map-panel {
+      background: var(--sea);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-panel svg { width: 100%; height: 100%; display: block; }
+    .map-caption {
+      position: absolute;
+      left: 10px;
+      top: 9px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--table-head);
+      background: rgba(255, 255, 255, 0.8);
+      padding: 3px 8px;
+      border-radius: 5px;
+      z-index: 2;
+    }
+    .country-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      fill: #8a94a0;
+      text-transform: uppercase;
+    }
+    .city-label {
+      font-size: 12px;
+      font-weight: 700;
+      fill: #26303b;
+      paint-order: stroke;
+      stroke: #ffffff;
+      stroke-width: 3px;
+      stroke-linejoin: round;
+    }
+    .node-letter { font-size: 12px; font-weight: 700; fill: #fff; }
+
+    .table-panel table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    .table-panel th {
+      background: var(--table-head);
+      color: #fff;
+      text-align: left;
+      padding: 8px 10px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .table-panel td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.35;
+    }
+    .table-panel tr:nth-child(even) td { background: var(--table-stripe); }
+    .table-panel td:first-child { font-weight: 600; white-space: nowrap; }
+
+    .footer { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: end; }
+
+    .transit-path {
+      background: #fafbfc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .transit-path .arrow { color: var(--gold); font-weight: 700; margin: 0 2px; }
+    .transit-path .bracket { color: var(--muted); font-style: italic; }
+
+    .summary-box {
+      background: var(--banner-bg);
+      color: var(--banner-text);
+      border-radius: 8px;
+      padding: 12px 16px;
+      min-width: 280px;
+      font-size: 12px;
+      line-height: 1.45;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .summary-box .check { color: var(--pass-green); font-size: 18px; line-height: 1; flex-shrink: 0; }
+
+    .watermark {
+      position: absolute;
+      bottom: 8px;
+      right: 12px;
+      font-size: 10px;
+      color: #bbb;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <p class="meta">
+    POC Step A (v1 design · real geo map) — Route Optimization from
+    <code>trips/china-vietnam-2026/02-route-optimization.md</code>. Nodes plotted from real lat/long.
+  </p>
+
+  <div class="slide" id="slide"></div>
+
+  <script>
+    const DATA = {
+      "trip": "china-vietnam-2026",
+      "slide_title": "ROUTE OPTIMIZATION",
+      "recommended_route": {
+        "label": "Recommended Route (14 Days)",
+        "name": "China-then-Vietnam Open-Jaw Circuit",
+        "rationale": "Selected: Beijing → Hanoi → Đà Nẵng/Hội An — best match for History #4, Food #2, and resort wind-down in Vietnam. Open-jaw (PEK in / DAD out) eliminates backtracking."
+      },
+      "hubs": [
+        { "hub": "Beijing", "days": "1–5", "region": "North China", "primary_draw": "Forbidden City, Great Wall (Mutianyu), hutongs, Wangfujing shopping" },
+        { "hub": "Hanoi", "days": "6–8", "region": "Northern Vietnam", "primary_draw": "Old Quarter food, Hoan Kiem Lake, Temple of Literature" },
+        { "hub": "Đà Nẵng / Hội An", "days": "9–13", "region": "Central Vietnam", "primary_draw": "Beach resort base, Ancient Town, Marble Mountains, My Son" },
+        { "hub": "Home", "days": "14", "region": "Departure", "primary_draw": "Open-jaw exit via Đà Nẵng (DAD)" }
+      ],
+      "map_nodes": [
+        { "label": "Beijing", "marker": "B", "lng": 116.4074, "lat": 39.9042, "color": "#c0392b", "labelDy": -18 },
+        { "label": "Hanoi", "marker": "H", "lng": 105.8542, "lat": 21.0285, "color": "#d4a017", "labelDy": -18 },
+        { "label": "Đà Nẵng", "marker": "D", "lng": 108.2022, "lat": 16.0544, "color": "#27ae60", "labelDy": 26 }
+      ],
+      "map_bounds": { "west": 95, "south": 6, "east": 128, "north": 46 },
+      "highlight_countries": ["China", "Vietnam"],
+      "country_labels": [
+        { "name": "CHINA", "lng": 103.5, "lat": 34.5 },
+        { "name": "VIETNAM", "lng": 106.8, "lat": 12.5 }
+      ],
+      "transit_legs": [
+        { "from": "Home", "to": "Beijing", "mode": "International flight", "duration": "~13–14h" },
+        { "from": "Beijing", "to": "Hanoi", "mode": "Flight", "duration": "~4h" },
+        { "from": "Hanoi", "to": "Đà Nẵng", "mode": "Flight", "duration": "~1.25h" },
+        { "from": "Đà Nẵng", "to": "Home", "mode": "Flight (connection)", "duration": "~15–20h" }
+      ],
+      "summary": {
+        "message": "Total in-country intercity transit: ~5.25h across 2 moves = 18% transit days (under 20% threshold)"
+      }
+    };
+
+    const TOPO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+
+    function renderTable(hubs) {
+      const rows = hubs.map(h => `
+        <tr>
+          <td>${h.hub}</td>
+          <td>${h.days}</td>
+          <td>${h.region}</td>
+          <td>${h.primary_draw}</td>
+        </tr>`).join("");
+      return `
+        <table>
+          <thead><tr><th>Hub</th><th>Days</th><th>Region</th><th>Primary Draw</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    }
+
+    function renderTransitPath(legs) {
+      return legs.map((leg, i) => {
+        const bracket = `[${leg.from === "Home" ? leg.to : leg.from + " → " + leg.to}: ${leg.mode} ${leg.duration}]`;
+        const prefix = i === 0 ? `<span class="leg">${leg.from} (arrive)</span>` : "";
+        const arrow = `<span class="arrow"> → </span>`;
+        return `${prefix}${arrow}<span class="bracket">${bracket}</span>`;
+      }).join("");
+    }
+
+    function buildSlideShell() {
+      document.getElementById("slide").innerHTML = `
+        <h1 class="slide-title">${DATA.slide_title}</h1>
+        <div class="banner">
+          <strong>${DATA.recommended_route.label}: ${DATA.recommended_route.name}</strong>
+          ${DATA.recommended_route.rationale}
+        </div>
+        <div class="main">
+          <div class="map-panel"><span class="map-caption">Open-Jaw Route</span></div>
+          <div class="table-panel">${renderTable(DATA.hubs)}</div>
+        </div>
+        <div class="footer">
+          <div class="transit-path">${renderTransitPath(DATA.transit_legs)}</div>
+          <div class="summary-box">
+            <span class="check" aria-hidden="true">✓</span>
+            <span>${DATA.summary.message}</span>
+          </div>
+        </div>
+        <div class="watermark">travel-genie POC · ${DATA.trip}</div>`;
+    }
+
+    async function drawMap() {
+      const panel = document.querySelector(".map-panel");
+      const w = panel.clientWidth;
+      const h = panel.clientHeight;
+
+      const svg = d3.select(panel).append("svg")
+        .attr("viewBox", `0 0 ${w} ${h}`)
+        .attr("width", w).attr("height", h);
+
+      svg.append("rect").attr("width", w).attr("height", h).attr("fill", "var(--sea)");
+
+      const b = DATA.map_bounds;
+      // MultiPoint of the corners — avoids d3-geo spherical polygon winding-order
+      // ambiguity that can make fitExtent frame the whole globe.
+      const boundsGeo = {
+        type: "MultiPoint",
+        coordinates: [
+          [b.west, b.south], [b.east, b.south],
+          [b.east, b.north], [b.west, b.north]
+        ]
+      };
+
+      const projection = d3.geoMercator();
+      const path = d3.geoPath(projection);
+
+      let world;
+      try {
+        world = await fetch(TOPO_URL).then(r => r.json());
+      } catch (e) {
+        svg.append("text").attr("x", w / 2).attr("y", h / 2)
+          .attr("text-anchor", "middle").attr("fill", "#888")
+          .text("Map data unavailable (offline)");
+        return;
+      }
+
+      const countries = topojson.feature(world, world.objects.countries).features;
+
+      projection.fitExtent([[14, 16], [w - 14, h - 14]], boundsGeo);
+
+      const isHi = name => DATA.highlight_countries.includes(name);
+
+      svg.append("g").selectAll("path")
+        .data(countries).join("path")
+        .attr("d", path)
+        .attr("fill", d => isHi(d.properties.name) ? "var(--land-hi)" : "var(--land)")
+        .attr("stroke", d => isHi(d.properties.name) ? "var(--land-hi-line)" : "var(--land-line)")
+        .attr("stroke-width", d => isHi(d.properties.name) ? 1 : 0.5);
+
+      svg.append("g").selectAll("text")
+        .data(DATA.country_labels).join("text")
+        .attr("class", "country-label")
+        .attr("x", d => projection([d.lng, d.lat])[0])
+        .attr("y", d => projection([d.lng, d.lat])[1])
+        .attr("text-anchor", "middle")
+        .text(d => d.name);
+
+      const pts = DATA.map_nodes.map(n => ({ ...n, p: projection([n.lng, n.lat]) }));
+
+      const lineD = pts.map((n, i) => `${i === 0 ? "M" : "L"} ${n.p[0]} ${n.p[1]}`).join(" ");
+      svg.append("path").attr("d", lineD)
+        .attr("fill", "none").attr("stroke", "var(--route-line)")
+        .attr("stroke-width", 2.5).attr("stroke-dasharray", "6 4").attr("stroke-linecap", "round");
+
+      const last = pts[pts.length - 1].p;
+      const departEnd = [Math.min(last[0] + 70, w - 8), Math.min(last[1] + 48, h - 8)];
+      svg.append("path")
+        .attr("d", `M ${last[0]} ${last[1]} L ${departEnd[0]} ${departEnd[1]}`)
+        .attr("fill", "none").attr("stroke", "var(--banner-bg)")
+        .attr("stroke-width", 2).attr("stroke-dasharray", "4 3");
+      svg.append("text")
+        .attr("x", departEnd[0]).attr("y", departEnd[1] + 4)
+        .attr("text-anchor", "middle").attr("font-size", "14px").text("✈");
+      svg.append("text")
+        .attr("x", departEnd[0]).attr("y", departEnd[1] + 18)
+        .attr("text-anchor", "middle").attr("class", "city-label").style("font-size", "10px")
+        .text("Depart (DAD)");
+
+      const node = svg.append("g").selectAll("g")
+        .data(pts).join("g");
+      node.append("text")
+        .attr("class", "city-label")
+        .attr("x", d => d.p[0])
+        .attr("y", d => d.p[1] + (d.labelDy || -18))
+        .attr("text-anchor", "middle")
+        .text(d => d.label);
+      node.append("circle")
+        .attr("cx", d => d.p[0]).attr("cy", d => d.p[1]).attr("r", 13)
+        .attr("fill", d => d.color).attr("stroke", "#fff").attr("stroke-width", 2.5);
+      node.append("text")
+        .attr("class", "node-letter")
+        .attr("x", d => d.p[0]).attr("y", d => d.p[1] + 4)
+        .attr("text-anchor", "middle")
+        .text(d => d.marker);
+    }
+
+    buildSlideShell();
+    window.addEventListener("load", drawMap);
+  </script>
+</body>
+</html>

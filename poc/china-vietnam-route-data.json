@@ -1,0 +1,84 @@
+{
+  "aspect": "02-route-optimization",
+  "trip": "china-vietnam-2026",
+  "title": "Route Optimization",
+  "slide_title": "ROUTE OPTIMIZATION",
+  "recommended_route": {
+    "label": "Recommended Route (14 Days)",
+    "name": "China-then-Vietnam Open-Jaw Circuit",
+    "rationale": "Selected: Beijing → Hanoi → Đà Nẵng/Hội An — best match for History #4, Food #2, and resort wind-down in Vietnam. Open-jaw (PEK in / DAD out) eliminates backtracking."
+  },
+  "hubs": [
+    {
+      "hub": "Beijing",
+      "days": "1–5",
+      "region": "North China",
+      "primary_draw": "Forbidden City, Great Wall (Mutianyu), hutongs, Wangfujing shopping"
+    },
+    {
+      "hub": "Hanoi",
+      "days": "6–8",
+      "region": "Northern Vietnam",
+      "primary_draw": "Old Quarter food, Hoan Kiem Lake, Temple of Literature"
+    },
+    {
+      "hub": "Đà Nẵng / Hội An",
+      "days": "9–13",
+      "region": "Central Vietnam",
+      "primary_draw": "Beach resort base, Ancient Town, Marble Mountains, My Son"
+    },
+    {
+      "hub": "Home",
+      "days": "14",
+      "region": "Departure",
+      "primary_draw": "Open-jaw exit via Đà Nẵng (DAD)"
+    }
+  ],
+  "map_nodes": [
+    { "id": "beijing", "label": "Beijing", "marker": "B", "x": 72, "y": 28, "color": "#c0392b" },
+    { "id": "hanoi", "label": "Hanoi", "marker": "H", "x": 58, "y": 62, "color": "#d4a017" },
+    { "id": "danang", "label": "Đà Nẵng", "marker": "D", "x": 62, "y": 78, "color": "#27ae60" },
+    { "id": "end", "label": "End", "marker": "✈", "x": 78, "y": 82, "color": "#2c3e50" }
+  ],
+  "transit_legs": [
+    {
+      "from": "Home",
+      "to": "Beijing",
+      "mode": "International flight",
+      "duration": "~13–14h",
+      "note": "Book 2–3 months out"
+    },
+    {
+      "from": "Beijing",
+      "to": "Hanoi",
+      "mode": "Flight",
+      "duration": "~4h",
+      "note": "Vietnam Airlines, Air China"
+    },
+    {
+      "from": "Hanoi",
+      "to": "Đà Nẵng",
+      "mode": "Flight",
+      "duration": "~1.25h",
+      "note": "VietJet, Vietnam Airlines"
+    },
+    {
+      "from": "Đà Nẵng",
+      "to": "Home",
+      "mode": "Flight (connection)",
+      "duration": "~15–20h",
+      "note": "Via Tokyo, Seoul, or Hong Kong"
+    }
+  ],
+  "summary": {
+    "intercity_hours": 5.25,
+    "intercity_moves": 2,
+    "transit_ratio_percent": 18,
+    "message": "Total in-country intercity transit: ~5.25h across 2 moves = 18% transit days (under 20% threshold)"
+  },
+  "validation_checks": [
+    { "status": "pass", "text": "Open-jaw routing eliminates backtracking" },
+    { "status": "pass", "text": "Transit ratio 18% < 20% threshold" },
+    { "status": "pass", "text": "Relaxed pace: resort base in Vietnam, no daily packing" }
+  ]
+}

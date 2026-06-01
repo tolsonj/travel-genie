@@ -1,0 +1,97 @@
+{
+  "aspect": "17-time-optimization",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Time Optimization",
+  "slide_title": "TIME OPTIMIZATION",
+  "intro": "14 days at relaxed pace. \"Early\" = 8\u20139 AM at sites (not 6 AM) to match late-morning profile. 70% rule fits Vietnam flexibility; border days 6, 8, 14 run at 100%.",
+  "tables": [
+    {
+      "caption": "Transit Time Minimization",
+      "columns": ["Strategy", "Applied?", "Result"],
+      "rows": [
+        ["Red-eye US\u2192China (Sun eve arrive Mon/Tue AM)", "Yes", "Saves full calendar day"],
+        ["Open-jaw PEK in / DAD out", "Yes", "No backtracking day"],
+        ["Beijing Airport Express vs taxi", "Yes", "~1 hr saved on arrival"],
+        ["Hanoi\u2192Đà Nẵng flight vs 14hr train", "Fly", "Correct for profile"],
+        ["Beijing\u2192Hanoi direct ~4hr", "Yes", "Best border option"]
+      ]
+    },
+    {
+      "caption": "70% Rule by Day",
+      "columns": ["Day", "Planned", "Flex buffer"],
+      "rows": [
+        ["1 Beijing arrival", "Rest + evening walk", "Skippable if tired"],
+        ["2 Forbidden City", "City + hutong + dinner", "Evening optional"],
+        ["6, 8, 14 Transit", "100% scheduled", "No flexibility"],
+        ["7 Hanoi", "Lake + temple + night market", "Afternoon open"],
+        ["9\u201310 Resort + Hội An", "Marble Mts + Ancient Town", "Afternoons open"],
+        ["13 Beach + farewell", "Beach + shopping + dinner", "Buffer day in spirit"]
+      ]
+    },
+    {
+      "caption": "Early / Late Access",
+      "columns": ["Site", "Opens", "Best time"],
+      "rows": [
+        ["Forbidden City", "8:30 AM", "8:30 AM (before 9:30 tour buses)"],
+        ["Great Wall Mutianyu", "8:00 AM", "8 AM first cable car"],
+        ["My Son Sanctuary", "7:30 AM", "7:30 AM (heat + crowds)"],
+        ["Hội An Ancient Town", "24 hrs", "8 AM or after 5 PM (lanterns)"],
+        ["Temple of Heaven park", "6:00 AM", "7\u20139 AM (tai chi, cool air)"]
+      ]
+    },
+    {
+      "caption": "Efficiency Scorecard",
+      "columns": ["Metric", "Value", "Target", "Status"],
+      "rows": [
+        ["Transit days", "2 (14%)", "<20%", "Pass"],
+        ["Experience hours/day", "8\u201310 hrs", ">6 hrs", "Pass"],
+        ["70% rule days", "10 of 14", ">70%", "Pass"],
+        ["Border days with heavy activities", "0", "0", "Pass"],
+        ["Open-jaw routing", "Yes", "Yes", "Pass"],
+        ["Overall grade", "A", "\u2014", "Pass"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "PTO Hacking",
+      "items": [
+        "Optimal: depart Sat Aug 30 or Sun Aug 31; arrive Beijing Mon Sept 1 (Labor Day 2026 = Sept 7)",
+        "Return Sat Sept 13 or Sun Sept 14 \u2014 weekend travel saves PTO",
+        "Net PTO: ~9 days (Mon Sept 1\u2013Fri Sept 12) vs 10 with midweek-only travel",
+        "Power play: +1 PTO Sept 15 \u2192 extra Đà Nẵng resort night (~$700\u20131,400)"
+      ]
+    },
+    {
+      "heading": "Jet Lag (US \u2192 Beijing, +12 hr Eastern)",
+      "items": [
+        "Flight: stay awake until local 9\u201310 PM; align from Day 1",
+        "Day 1: no nap; afternoon light walk; bed 10 PM; alarm 8 AM",
+        "Melatonin 0.5\u20131 mg local bedtime Days 1\u20132 (not 5\u201310 mg)",
+        "Resolved by Day 3 (Great Wall); return eastbound easier in 2\u20133 days"
+      ]
+    },
+    {
+      "heading": "Activity Clustering",
+      "items": [
+        "Beijing: Forbidden City \u2192 Jingshan \u2192 Wangfujing (1.5 km); Wall Day 3 standalone; Summer Palace standalone",
+        "Hanoi: Hoan Kiem \u2192 Ngoc Son \u2192 36 Streets \u2192 Dong Xuan \u2192 Ta Hien (1 km walk)",
+        "Đà Nẵng: Son Trà + Mỹ Khê north; Marble Mts \u2192 Hội An south; My Son own day"
+      ]
+    },
+    {
+      "heading": "Power Play (+2\u20133 PTO)",
+      "items": [
+        "Best extension: Sept 15\u201316 extra Đà Nẵng resort (beach, Cham Islands weather window, Hội An shopping)",
+        "Alt: Aug 28 depart for +2 Beijing days (Xi'an Terra Cotta day trip)",
+        "Recommendation: resort extension over Xi'an for this profile"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "pass", "text": "Border days 6, 8, 14 at 100% schedule \u2014 only days with zero flex" },
+    { "status": "info", "text": "Book now: Da Dong Peking Duck, NON La Đà Nẵng, White Rose Hội An (weeks ahead)" },
+    { "status": "pass", "text": "Depart Sun Aug 31 instead of Tue Sept 1 saves 1 PTO; Day 1 light recovery intact" }
+  ]
+}

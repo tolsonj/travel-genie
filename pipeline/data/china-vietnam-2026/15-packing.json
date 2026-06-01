@@ -1,0 +1,113 @@
+{
+  "aspect": "15-packing",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Packing",
+  "slide_title": "PACKING",
+  "intro": "14 days, China then Vietnam, September (Beijing 20\u201328\u00b0C; Vietnam 28\u201332\u00b0C humid). Plan return luggage expansion for Vietnam shopping; light outbound, packable duffel for haul.",
+  "tables": [
+    {
+      "caption": "Border-Crossing Day Bag (Days 6, 8, 14)",
+      "columns": ["Item", "Why"],
+      "rows": [
+        ["Both passports + printed visas", "Primary entry documents"],
+        ["All cards + split cash", "Never in checked bag"],
+        ["Phone, cable, power bank", "Active all day"],
+        ["Prescription meds", "Never checked"],
+        ["1 outfit each + snacks", "Bag-delay backup"],
+        ["Offline entertainment + confirmations", "No internet guaranteed"]
+      ]
+    },
+    {
+      "caption": "Tech for Long Transit",
+      "columns": ["Item", "Use"],
+      "rows": [
+        ["20,000 mAh power bank", "4\u20135 phone charges; 2 iPad charges"],
+        ["USB-C 65W laptop charger + adapter", "Gate/lounge charging"],
+        ["Dual-port USB-C cube", "Two devices at hotel"],
+        ["Noise-canceling earbuds", "13-hr flight focus"],
+        ["Downloaded maps/movies", "No inflight WiFi assumed"]
+      ]
+    },
+    {
+      "caption": "Document Folder Sections",
+      "columns": ["Section", "Contents"],
+      "rows": [
+        ["US", "Passports; CBP Form 4457"],
+        ["China", "Visa; hotel; Great Wall + Forbidden City confirmations"],
+        ["Vietnam", "E-visa (2 copies); Hanoi hotel; resort; domestic flight; tailor appointment"],
+        ["Universal", "Insurance; card list; emergency contacts card"]
+      ]
+    },
+    {
+      "caption": "Luggage Setup",
+      "columns": ["Item", "Type", "Notes"],
+      "rows": [
+        ["Primary checked", "27\" hardshell spinner", "Per person; Asia overhead protection"],
+        ["Carry-on", "Cabin-size", "Under seat or overhead per airline"],
+        ["Day bag", "20L packable", "Great Wall hike; beach; city"],
+        ["Return duffel", "Osprey Ultralight or similar", "Fist-size packed; second checked bag for purchases"]
+      ]
+    },
+    {
+      "caption": "Border-Crossing Outfit",
+      "columns": ["Item", "Why"],
+      "rows": [
+        ["Slip-on shoes, no belt", "Fast security"],
+        ["Linen trousers or joggers + polo/button-down", "Comfortable + lounge-presentable"],
+        ["Light jacket + compression socks", "Plane AC; 4+ hr circulation"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Core Do Not Forget (15)",
+      "items": [
+        "Passports valid through March 2027; China visa; Vietnam e-visa (2 printed each)",
+        "Insurance policy + 24/7 line (phone + paper)",
+        "VPN on both phones BEFORE China entry; Airalo eSIMs downloaded",
+        "Schwab debit + backup credit card; banks notified",
+        "Prescriptions 14+3 days; universal adapter (A/C plugs both countries)",
+        "20,000 mAh power bank; DEET 30%; SPF 50 (2 bottles); packing cubes",
+        "Packable daypack; CBP Form 4457; hotel/flight confirmations (cloud + print)"
+      ]
+    },
+    {
+      "heading": "China Gear (Beijing)",
+      "items": [
+        "Walking shoes with grip (Great Wall); light layer for AC/temples",
+        "Foldable umbrella; temple wear (shoulders + knees)",
+        "Real camera for Wall, Forbidden City, Jingshan sunset"
+      ]
+    },
+    {
+      "heading": "Vietnam Gear",
+      "items": [
+        "2 swimsuits; linen/cotton shirts; sandals + flip-flops",
+        "Rain poncho (typhoon season); long sleeve for evening mosquitoes",
+        "Modest temple wear or buy linen shirt in Hội An; GoPro for Cham Islands"
+      ]
+    },
+    {
+      "heading": "Health Kit Placement",
+      "items": [
+        "Prescriptions + OTC (Imodium, antihistamine, ibuprofen) in carry-on",
+        "DEET + first aid in checked; 1 sunscreen carry-on (<100ml) or buy second in Vietnam",
+        "Oral rehydration sachets in carry-on"
+      ]
+    },
+    {
+      "heading": "Shopping Return Strategy",
+      "items": [
+        "Foldable duffel becomes second checked bag; tailor compression for suits",
+        "Non Nước marble ships internationally\u2014don't carry",
+        "CBP 4457 valuables in carry-on; if zipper strains, ship via DHL Vietnam (7\u201310 days US)"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "warn", "text": "Install VPN and eSIMs before China entry\u2014not after arrival" },
+    { "status": "info", "text": "TSA: consolidate carry-on liquids in one quart bag; buy extra sunscreen in Vietnam if needed" },
+    { "status": "pass", "text": "One universal adapter covers China and Vietnam plug types A and C" }
+  ]
+}

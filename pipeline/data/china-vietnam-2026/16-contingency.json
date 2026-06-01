@@ -1,0 +1,90 @@
+{
+  "aspect": "16-contingency",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Contingency",
+  "slide_title": "CONTINGENCY PLANS",
+  "intro": "September: typhoon risk in Đà Nẵng is highest-probability disruption; China visa/entry is second. $20K budget allows rebooking flexibility. Verify all contacts before travel (as of May 2026).",
+  "tables": [
+    {
+      "caption": "Emergency Quick Reference",
+      "columns": ["Country", "Police", "Ambulance", "Fire", "US Embassy"],
+      "rows": [
+        ["China", "110", "120", "119", "+86-10-8531-4000"],
+        ["Vietnam", "113", "115", "114", "+84-24-3850-5000"]
+      ]
+    },
+    {
+      "caption": "Đà Nẵng Typhoon Levels",
+      "columns": ["Level", "Action"],
+      "rows": [
+        ["Watch", "Continue plan; cancel sea activities; Ancient Town OK (covered walkways)"],
+        ["Warning", "Cancel Cham Islands; reschedule outdoor; stay at resort (spa/pool)"],
+        ["Direct hit", "Resort is shelter; do not move cities; storms pass 12\u201318 hrs"]
+      ]
+    },
+    {
+      "caption": "Missed Flight Recovery",
+      "columns": ["Leg", "Immediate action", "Contacts"],
+      "rows": [
+        ["Beijing \u2192 Hanoi (Day 6)", "Gate agent for next flight; hold Metropole", "Vietnam Airlines +84-24-3832-0320; Metropole +84-24-3826-6919"],
+        ["Hanoi \u2192 Đà Nẵng (Day 8)", "Same-day rebook; late check-in standard", "VietJet 1900 1886; Vietnam Airlines 1900 1100"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Weather Pivot \u2014 Beijing Rain",
+      "items": [
+        "Forbidden City: covered walkways; Summer Palace: Long Corridor light rain only",
+        "Pivot: Beijing Capital Museum (indoor, free) or Parkview Green Mall"
+      ]
+    },
+    {
+      "heading": "Sick in Vietnam",
+      "items": [
+        "Mild: rest 1 day Hanoi; rebook domestic flight; push resort arrival",
+        "Serious: call insurer 24/7 FIRST; Vinmec Hanoi +84-24-3974-3556; do not fly with high fever",
+        "Đà Nẵng resort days absorb 1 lost day"
+      ]
+    },
+    {
+      "heading": "Visa / Entry Denied",
+      "items": [
+        "China PEK: stay at immigration; supervisor; hotel + return flight + visa letter",
+        "Backup route: Seoul or Tokyo (visa-free) then start Vietnam instead",
+        "Vietnam: printed e-visa; VOA letter fallback if needed"
+      ]
+    },
+    {
+      "heading": "Lost Passport",
+      "items": [
+        "Police report immediately (China 110 / Vietnam 113) with official stamp",
+        "US Embassy emergency passport 1\u20132 business days; $170; digital passport copy from cloud",
+        "Notify insurer; hold flights until replacement confirmed"
+      ]
+    },
+    {
+      "heading": "Budget Overrun in China",
+      "items": [
+        "Cut Silk Market buys; Da Dong \u2192 market duck (~¥150 vs ¥400/person)",
+        "Private Great Wall car \u2192 shared shuttle (~¥80 vs ¥400 RT)",
+        "Don't cut Vietnam resort\u2014reduce Hội An shopping instead"
+      ]
+    },
+    {
+      "heading": "Other Scenarios",
+      "items": [
+        "Split itinerary: vote per profile; share FindMy; Grab/DiDi for solo days",
+        "Luggage lost: file at claim; carry-on has 2 days clothes + all docs/meds; insurance receipts >6 hrs",
+        "DAD airport closed (typhoon): train via 12go.asia; insurer trip interruption clause",
+        "Political: State Dept 1-888-407-4747; shelter at hotel; STEP registration"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "warn", "text": "Typhoon \u2014 monitor weather.com, NOAA Pacific Typhoon Center, NOAA alerts for Da Nang" },
+    { "status": "info", "text": "Insurance: World Nomads or Allianz; book day of first flight; typhoon cancellation + medevac + baggage delay" },
+    { "status": "pass", "text": "Trip insurance: activate if flight delay >4 hrs; document boarding passes and gate notices" }
+  ]
+}

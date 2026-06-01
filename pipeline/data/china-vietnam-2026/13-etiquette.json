@@ -1,0 +1,92 @@
+{
+  "aspect": "13-etiquette",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Etiquette",
+  "slide_title": "ETIQUETTE",
+  "intro": "US baseline is fine; tipping norms are nearly opposite (no tip in China, soft tip in Vietnam). Photo rules at temples, dress codes, and polite food refusal matter. China\u2192Vietnam shift is noticeable but navigable.",
+  "tables": [
+    {
+      "caption": "China Survival Phrases (Mandarin)",
+      "columns": ["Phrase", "Pronunciation", "Use"],
+      "rows": [
+        ["你好", "Nǐ hǎo", "Hello"],
+        ["谢谢", "Xièxiè", "Thank you"],
+        ["多少钱？", "Duōshǎo qián?", "How much?"],
+        ["太贵了", "Tài guì le", "Too expensive"],
+        ["我不要", "Wǒ bùyào", "I don't want it"],
+        ["厕所在哪里？", "Cèsuǒ zài nǎlǐ?", "Where is the toilet?"],
+        ["能帮我叫滴滴吗？", "Néng bāng wǒ jiào Dīdī ma?", "Can you call me a DiDi?"]
+      ]
+    },
+    {
+      "caption": "Vietnam Survival Phrases",
+      "columns": ["Phrase", "Pronunciation", "Use"],
+      "rows": [
+        ["Xin chào", "Sin Chow", "Hello"],
+        ["Cảm ơn", "Kahm Uhn", "Thank you"],
+        ["Bao nhiêu tiền?", "Bow Nyew Tyen?", "How much?"],
+        ["Đắt quá", "Dat Kwah", "Too expensive"],
+        ["Không, cảm ơn", "Khong, Kahm Uhn", "No, thank you"],
+        ["Ngon quá!", "Ngon Kwah!", "Very delicious!"],
+        ["Gọi Grab cho tôi", "Goy Grab Cho Toy", "Please call me a Grab"]
+      ]
+    },
+    {
+      "caption": "Cross-Cultural Transition: China \u2192 Vietnam",
+      "columns": ["Aspect", "China (Beijing)", "Vietnam (Hanoi/Hội An)"],
+      "rows": [
+        ["Greeting", "Nod, no touch", "Friendly, may attempt handshake"],
+        ["Tipping", "Mostly no", "Yes, appreciated"],
+        ["Pace", "Efficient, direct", "Relaxed, meandering"],
+        ["English", "Very limited", "Moderate in tourist areas"],
+        ["Bargaining", "Aggressive (markets)", "Gentler, playful"],
+        ["Food pace", "Fast", "Slow and social"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "China \u2014 Key Norms (Beijing)",
+      "items": [
+        "Don't tip (exception: tour guides/porters \u00a520\u201350/day; 5-star hotel staff follow international norms)",
+        "Two hands for business cards/gifts; inspect before putting away",
+        "Decline food firmly if needed: \"我吃饱了\" (I'm full); multiple declines expected",
+        "No photos where 禁止拍照 signs; ask at temples; dress modestly (shoulders/knees)",
+        "Bargain in markets (start 20\u201330% of ask); fixed price in malls/restaurants",
+        "Open hand to gesture; don't point; restaurant loudness is normal, not rude"
+      ]
+    },
+    {
+      "heading": "Vietnam \u2014 Key Norms",
+      "items": [
+        "Tip softly: 10\u201315% table service; round up at stalls; $1\u20132/person/day for guides/drivers",
+        "Remove shoes at temples; dress modestly (sarongs often available)",
+        "Don't touch heads; eldest served/seated first at family tables",
+        "Cross streets at steady pace\u2014motorbikes flow around you; don't freeze or rush",
+        "Don't raise voice publicly; resolve disputes quietly (face/thể diện matters)",
+        "Haggle at markets with a smile; V-sign in photos is friendly, not political"
+      ]
+    },
+    {
+      "heading": "Gestures & Taboos",
+      "items": [
+        "China avoid: clock gifts, green hats, chopsticks upright in rice, Taiwan/Tibet politics",
+        "Vietnam avoid: index-finger pointing, crossed fingers in photos, feet toward people, finger-snapping servers",
+        "Both: thumbs up and OK sign acceptable in both countries"
+      ]
+    },
+    {
+      "heading": "Supporting Locals",
+      "items": [
+        "China: hutong artisan shops over tourist stalls; local restaurants vs Tiananmen tourist spots; DiDi over exploitative ride-hail",
+        "Vietnam: boutique Hội An hotels; buy from Kim Bong/Thanh Ha artisans; local coffee shops vs Highlands chain; tip Grab drivers"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "warn", "text": "Tipping flip: no tip in China (except guides/porters); 10\u201315% appreciated in Vietnam" },
+    { "status": "info", "text": "Cultural whiplash buffer: Vietnam feels warmer and more English-friendly\u2014slow down, smile, linger (tà tà)" },
+    { "status": "pass", "text": "Mindset shift at border: Beijing = efficiency; Vietnam = relationships" }
+  ]
+}

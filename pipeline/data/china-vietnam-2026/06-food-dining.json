@@ -1,0 +1,102 @@
+{
+  "aspect": "06-food-dining",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Food Dining",
+  "slide_title": "FOOD & DINING",
+  "intro": "Food ranked #2 interest. Mix of high-end and street dining within $20K budget. No dietary restrictions. September ideal for produce. Vietnam street food culture; China needs more language navigation. Hội An is a culinary destination.",
+  "tables": [
+    {
+      "caption": "Beijing — 5 Must-Try Dishes",
+      "columns": ["Dish", "Where", "Price"],
+      "rows": [
+        ["Peking Duck (北京烤鸭)", "Da Dong; Quanjude; Duck de Chine", "¥200–400/person (~$28–55)"],
+        ["Zhajiangmian (炸酱面)", "Old Beijing noodle restaurants", "¥20–40 (~$3–6)"],
+        ["Dumplings / Jiaozi (饺子)", "Din Tai Fung; hutong street shops", "¥30–80 (~$4–11)"],
+        ["Hotpot / Huoguo (火锅)", "Hai Di Lao; Ghost Street (Guijie)", "¥100–200/person (~$14–28)"],
+        ["Bing Tang Hulu (冰糖葫芦)", "Street vendors near Wangfujing", "¥5–10 (~$1)"]
+      ]
+    },
+    {
+      "caption": "Hanoi — 5 Must-Try Dishes",
+      "columns": ["Dish", "Where", "Price"],
+      "rows": [
+        ["Phở Bò (beef pho)", "Phở Gia Truyền (49 Bat Dan); Phở Lý Quốc Sư", "50,000–80,000 VND (~$2–3)"],
+        ["Bún Chả", "Bún Chả Hương Liên (Obama ate here)", "50,000–70,000 VND (~$2–3)"],
+        ["Bánh Cuốn", "Bánh Cuốn Bà Hanh; morning-only spots", "40,000–60,000 VND (~$2)"],
+        ["Chả Cá Lã Vọng", "Chả Cá Lã Vọng restaurant (original)", "200,000–350,000 VND (~$8–14)"],
+        ["Egg Coffee (Cà phê trứng)", "Cafe Đinh; Giang Cafe", "30,000–50,000 VND (~$1.50–2)"]
+      ]
+    },
+    {
+      "caption": "Hội An / Đà Nẵng — 5 Must-Try Dishes",
+      "columns": ["Dish", "Where", "Price"],
+      "rows": [
+        ["Cao Lầu", "Morning Glory restaurant (Hội An only)", "70,000–120,000 VND (~$3–5)"],
+        ["Bánh Mì Phượng", "Bánh Mì Phượng, Hội An (Bourdain pick)", "25,000–40,000 VND (~$1–2)"],
+        ["Bánh Bao Vạc (White Rose)", "White Rose Restaurant — lunch only", "80,000–120,000 VND (~$3–5)"],
+        ["Mì Quảng", "Local com binh dan eateries in Hội An", "40,000–70,000 VND (~$2–3)"],
+        ["Fresh Seafood", "Bé Mặn Beach; Mỹ Khê seafood row", "200,000–500,000 VND (~$8–20/dish)"]
+      ]
+    },
+    {
+      "caption": "Food Budget Estimate",
+      "columns": ["City", "Daily Food Budget", "Notes"],
+      "rows": [
+        ["Beijing", "$100–150/day for two", "Mix of street + one upscale dinner per day"],
+        ["Hanoi", "$60–100/day for two", "Street food cheap; Metropole breakfast included"],
+        ["Đà Nẵng / Hội An", "$100–200/day for two", "Resort meals priced up; street food very cheap"],
+        ["Total ~14 days", "~$1,600–2,500", "Well within budget"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Hands-On Food Experiences",
+      "items": [
+        "Beijing: Peking Duck ceremony at Da Dong (book 2–3 weeks ahead); hutong food walk through Nanluoguxiang",
+        "Hanoi: Old Quarter evening food walk via Ta Hien Beer Street; egg coffee ritual at Cafe Đinh or Giang",
+        "Hội An: Morning Glory Cooking School — market tour 8 AM + hands-on (~$35/person); White Rose Restaurant lunch"
+      ]
+    },
+    {
+      "heading": "Border Crossing Meals",
+      "items": [
+        "Day 6 Beijing → Hanoi: PEK terminal 3 dining; pack snacks; pho on arrival (Pho 24 or street pho near hotel)",
+        "Day 8 Hanoi → Đà Nẵng: Metropole breakfast; eat before Noi Bai (limited airport food); resort or Mỹ Khê seafood on arrival"
+      ]
+    },
+    {
+      "heading": "Dining Customs — China",
+      "items": [
+        "No tipping (can cause confusion); family-style shared dishes — order 1 dish per person + 1 extra",
+        "Slurping noodles shows appreciation; free tea refills — 再来一壶 (zài lái yī hú)",
+        "Meal timing: Lunch 12–1:30 PM; Dinner 6–8 PM"
+      ]
+    },
+    {
+      "heading": "Dining Customs — Vietnam",
+      "items": [
+        "Tip 10–15% at tourist restaurants; round up at street stalls",
+        "Meals served all at once, shared; locals eat fast — don't wait for everyone",
+        "Timing: Breakfast 6–8 AM; Lunch 11:30–1 PM; Dinner 5:30–7:30 PM",
+        "Decline politely: Không, cảm ơn (No thank you)"
+      ]
+    },
+    {
+      "heading": "Food Safety",
+      "items": [
+        "Tap water: DO NOT DRINK in either country — bottled water always",
+        "Street food: Choose busy high-turnover stalls; avoid uncovered food sitting in heat",
+        "Ice: Confirm filtered water at hotels; street stalls — ask if filtered (đá lọc)",
+        "Raw vegetables: Fine at established restaurants; caution at market stalls"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "pass", "text": "5 must-try dishes per region documented; meal mapping cross-referenced with itinerary" },
+    { "status": "pass", "text": "One hands-on food experience per country; border crossing meal contingencies covered" },
+    { "status": "warn", "text": "Book Da Dong Peking Duck 2–3 weeks ahead; White Rose Restaurant reservations strongly recommended (lunch only)" },
+    { "status": "info", "text": "No dietary restrictions noted — no vegetarian/allergy accommodations needed" }
+  ]
+}

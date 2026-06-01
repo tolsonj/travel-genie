@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Route Optimization — China &amp; Vietnam 2026 (POC v2)</title>
+  <style>
+    :root {
+      --slide-w: 1280px;
+      --slide-h: 720px;
+      --ink: #1f2733;
+      --gold: #c08a1e;
+      --gold-deep: #9a6c12;
+      --navy: #2b3a4a;
+      --navy-soft: #36485b;
+      --panel: #eef2f6;
+      --panel-line: #d4dbe3;
+      --stripe: #f5f8fb;
+      --muted: #61707f;
+      --green: #2e9e5b;
+      --sea: #dce9f2;
+      --land: #d9e4d2;
+      --land-line: #aebfa4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: #e6e9ed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      gap: 14px;
+      color: var(--ink);
+    }
+
+    .meta {
+      max-width: var(--slide-w);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .meta code { background: #fff; padding: 1px 5px; border-radius: 4px; }
+
+    .slide {
+      width: var(--slide-w);
+      height: var(--slide-h);
+      background: #fff;
+      border: 1px solid var(--panel-line);
+      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.14);
+      padding: 34px 44px 26px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .title-row { display: flex; align-items: baseline; gap: 14px; }
+
+    .slide-title {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .slide-title .accent { color: var(--gold); }
+    .slide-title .rest { color: var(--navy); }
+
+    .title-rule {
+      flex: 1;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      border-radius: 2px;
+      align-self: center;
+    }
+
+    .banner {
+      background: var(--navy);
+      color: #eef2f6;
+      border-radius: 10px;
+      padding: 11px 18px;
+      font-size: 13px;
+      line-height: 1.5;
+      border-left: 5px solid var(--gold);
+    }
+    .banner strong { display: block; font-size: 14px; margin-bottom: 3px; color: #fff; }
+
+    .main {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .map-panel {
+      background: var(--sea);
+      border: 1px solid var(--panel-line);
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-panel svg { width: 100%; height: 100%; display: block; }
+
+    .map-caption {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: rgba(255,255,255,0.78);
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+
+    .table-panel { display: flex; flex-direction: column; min-height: 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+    thead th {
+      background: var(--navy);
+      color: #fff;
+      text-align: left;
+      padding: 9px 11px;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+    }
+    tbody td {
+      padding: 9px 11px;
+      border-bottom: 1px solid var(--panel-line);
+      vertical-align: top;
+      line-height: 1.38;
+    }
+    tbody tr:nth-child(even) td { background: var(--stripe); }
+    tbody td:first-child { font-weight: 700; white-space: nowrap; color: var(--navy); }
+    .pill {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .footer { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: stretch; }
+
+    .transit-path {
+      background: #fafcfe;
+      border: 1px solid var(--panel-line);
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 11.5px;
+      line-height: 1.6;
+    }
+    .transit-path .label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .chip {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid var(--panel-line);
+      border-radius: 6px;
+      padding: 3px 8px;
+      margin: 2px 0;
+    }
+    .chip b { color: var(--navy); }
+    .arrow { color: var(--gold); font-weight: 800; margin: 0 3px; }
+
+    .summary-box {
+      background: var(--navy);
+      color: #eef2f6;
+      border-radius: 10px;
+      padding: 13px 16px;
+      max-width: 300px;
+      font-size: 12px;
+      line-height: 1.45;
+      display: flex;
+      gap: 11px;
+      align-items: center;
+      border-left: 5px solid var(--green);
+    }
+    .summary-box .check { color: var(--green); font-size: 22px; line-height: 1; flex-shrink: 0; }
+    .summary-box .big { font-size: 19px; font-weight: 800; color: #fff; display: block; }
+
+    .watermark {
+      position: absolute;
+      bottom: 7px;
+      right: 14px;
+      font-size: 10px;
+      color: #c2c8cf;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <p class="meta">
+    POC Step A (v2 · Opus) — Route Optimization slide from <code>trips/china-vietnam-2026/02-route-optimization.md</code>. Rendered at 1280×720.
+  </p>
+
+  <div class="slide" id="slide"></div>
+
+  <script>
+    const DATA = {
+      "trip": "china-vietnam-2026",
+      "slide_title_accent": "ROUTE",
+      "slide_title_rest": "OPTIMIZATION",
+      "recommended_route": {
+        "label": "Recommended Route — 14 Days",
+        "name": "China-then-Vietnam Open-Jaw Circuit",
+        "rationale": "Beijing → Hanoi → Đà Nẵng/Hội An — best match for History (#4) and Food (#2), with a resort wind-down in Vietnam. Open-jaw (PEK in / DAD out) eliminates backtracking."
+      },
+      "hubs": [
+        { "hub": "Beijing", "days": "1–5", "region": "North China", "primary_draw": "Forbidden City · Great Wall (Mutianyu) · hutongs · Wangfujing shopping" },
+        { "hub": "Hanoi", "days": "6–8", "region": "Northern Vietnam", "primary_draw": "Old Quarter food · Hoan Kiem Lake · Temple of Literature" },
+        { "hub": "Đà Nẵng / Hội An", "days": "9–13", "region": "Central Vietnam", "primary_draw": "Beach resort base · Ancient Town · Marble Mountains · My Son" },
+        { "hub": "Home", "days": "14", "region": "Departure", "primary_draw": "Open-jaw exit via Đà Nẵng (DAD)" }
+      ],
+      "map_nodes": [
+        { "label": "Beijing", "marker": "1", "x": 70, "y": 24, "color": "#c0392b" },
+        { "label": "Hanoi", "marker": "2", "x": 49, "y": 64, "color": "#c08a1e" },
+        { "label": "Đà Nẵng", "marker": "3", "x": 60, "y": 79, "color": "#2e9e5b" },
+        { "label": "Depart", "marker": "✈", "x": 74, "y": 88, "color": "#2b3a4a" }
+      ],
+      "transit_legs": [
+        { "leg": "Home → Beijing", "mode": "Intl flight", "duration": "~13–14h" },
+        { "leg": "Beijing → Hanoi", "mode": "Flight", "duration": "~4h" },
+        { "leg": "Hanoi → Đà Nẵng", "mode": "Flight", "duration": "~1.25h" },
+        { "leg": "Đà Nẵng → Home", "mode": "Flight (conn.)", "duration": "~15–20h" }
+      ],
+      "summary": {
+        "headline": "18% transit",
+        "detail": "~5.25h intercity across 2 in-country moves — under the 20% threshold."
+      }
+    };
+
+    function renderMap(nodes) {
+      const line = nodes.map((n, i) => `${i === 0 ? "M" : "L"} ${n.x} ${n.y}`).join(" ");
+      const markers = nodes.map(n => `
+        <g>
+          <circle cx="${n.x}" cy="${n.y}" r="3.2" fill="${n.color}" stroke="#fff" stroke-width="0.9"/>
+          <text x="${n.x}" y="${n.y + 1.1}" text-anchor="middle" fill="#fff" font-size="3" font-weight="700">${n.marker}</text>
+          <text x="${n.x}" y="${n.y - 4.4}" text-anchor="middle" fill="#26303b" font-size="3.4" font-weight="700" paint-order="stroke" stroke="#ffffff" stroke-width="0.9">${n.label}</text>
+        </g>`).join("");
+      return `
+        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" role="img" aria-label="China to Vietnam route map">
+          <rect width="100" height="100" fill="var(--sea)"/>
+          <path d="M40 6 L62 4 L78 10 L86 22 L84 34 L74 40 L72 30 L60 30 L52 40 L58 50 L50 58 L46 70 L40 82 L34 70 L30 54 L26 40 L30 24 Z"
+                fill="var(--land)" stroke="var(--land-line)" stroke-width="0.6"/>
+          <path d="M46 56 L54 52 L60 60 L64 74 L60 88 L50 90 L44 78 L44 66 Z"
+                fill="#cfe0c6" stroke="var(--land-line)" stroke-width="0.5"/>
+          <path d="${line}" fill="none" stroke="#c08a1e" stroke-width="0.9" stroke-dasharray="2 1.6" stroke-linecap="round"/>
+          ${markers}
+        </svg>`;
+    }
+
+    function renderTable(hubs) {
+      const rows = hubs.map(h => `
+        <tr>
+          <td>${h.hub}</td>
+          <td><span class="pill">${h.days}</span></td>
+          <td>${h.region}</td>
+          <td>${h.primary_draw}</td>
+        </tr>`).join("");
+      return `<table><thead><tr><th>Hub</th><th>Days</th><th>Region</th><th>Primary Draw</th></tr></thead><tbody>${rows}</tbody></table>`;
+    }
+
+    function renderTransit(legs) {
+      const chips = legs.map((l, i) =>
+        `${i ? '<span class="arrow">→</span>' : ''}<span class="chip"><b>${l.leg}</b> · ${l.mode} ${l.duration}</span>`
+      ).join(" ");
+      return `<span class="label">Transit Path</span>${chips}`;
+    }
+
+    document.getElementById("slide").innerHTML = `
+      <div class="title-row">
+        <h1 class="slide-title"><span class="accent">${DATA.slide_title_accent}</span> <span class="rest">${DATA.slide_title_rest}</span></h1>
+        <span class="title-rule"></span>
+      </div>
+
+      <div class="banner">
+        <strong>${DATA.recommended_route.label} · ${DATA.recommended_route.name}</strong>
+        ${DATA.recommended_route.rationale}
+      </div>
+
+      <div class="main">
+        <div class="map-panel">
+          <span class="map-caption">Open-Jaw Route</span>
+          ${renderMap(DATA.map_nodes)}
+        </div>
+        <div class="table-panel">${renderTable(DATA.hubs)}</div>
+      </div>
+
+      <div class="footer">
+        <div class="transit-path">${renderTransit(DATA.transit_legs)}</div>
+        <div class="summary-box">
+          <span class="check" aria-hidden="true">✓</span>
+          <span><span class="big">${DATA.summary.headline}</span>${DATA.summary.detail}</span>
+        </div>
+      </div>
+
+      <div class="watermark">travel-genie POC v2 · ${DATA.trip}</div>
+    `;
+  </script>
+</body>
+</html>

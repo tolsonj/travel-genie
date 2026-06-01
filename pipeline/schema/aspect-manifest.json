@@ -1,0 +1,65 @@
+{
+  "$comment": "Registry of trip aspects. Each entry maps a source markdown file (matched by `match` regex against the basename) to a canonical aspect `type`, a slide `template`, and extraction `hints`. Adding a new aspect = adding one entry here; no code changes required. Unmatched aspects fall back to `template: generic`.",
+  "version": 1,
+  "fallback": {
+    "template": "generic"
+  },
+  "aspects": [
+    {
+      "id": "route-optimization",
+      "match": "^02-route-optimization$",
+      "type": "route-optimization",
+      "template": "route-optimization",
+      "title": "Route Optimization",
+      "hints": {
+        "summary": "Recommended multi-hub route, day allocation, transit legs, transit-ratio validation.",
+        "fields": [
+          "recommended_route.name",
+          "recommended_route.label",
+          "recommended_route.rationale",
+          "hubs[] { hub, days, region, primary_draw }",
+          "map_nodes[] { label, marker, lng, lat, color, labelDy }",
+          "map_bounds { west, south, east, north }",
+          "highlight_countries[]",
+          "country_labels[] { name, lng, lat }",
+          "transit_legs[] { from, to, mode, duration }",
+          "summary.message"
+        ],
+        "image_categories": ["map"],
+        "notes": "map_nodes must use REAL lat/long for each hub city. map_bounds should pad the hub extent by ~8-12 degrees. Pick map_bounds + country highlights from the actual countries visited."
+      }
+    },
+    {
+      "id": "traveler-profile",
+      "match": "^01-traveler-profile$",
+      "type": "profile",
+      "template": "generic",
+      "title": "Traveler Profile",
+      "hints": {
+        "summary": "Core identifiers, style/pace, budget, ranked interests, deal-breakers.",
+        "fields": [
+          "intro",
+          "tables[] { caption, columns[], rows[][] }",
+          "bullets[] { heading, items[] }",
+          "callouts[] { status, text }"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    }
+  ],
+  "image_vocabulary": {
+    "$comment": "Controlled vocabulary for the asset library. Stage-1 extraction tags items with one of these category keys; the renderer looks up <category>.svg|png in assets/. Missing categories trigger the AI-gen fallback, then get saved here.",
+    "map": "Data-driven geographic route map (rendered, not a static asset).",
+    "temple": "Temple / shrine / religious site",
+    "great-wall": "Great Wall of China",
+    "forbidden-city": "Forbidden City / palace",
+    "beach-resort": "Beach / coastal resort",
+    "ramen": "Ramen / noodle dish",
+    "pho": "Vietnamese pho",
+    "banh-mi": "Vietnamese banh mi",
+    "takoyaki": "Takoyaki / street food",
+    "lantern": "Lanterns (Hoi An)",
+    "onsen": "Hot spring / onsen",
+    "profile-icon": "Generic profile / info icon"
+  }
+}

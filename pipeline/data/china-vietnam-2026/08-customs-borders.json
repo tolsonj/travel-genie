@@ -1,0 +1,117 @@
+{
+  "aspect": "08-customs-borders",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Customs Borders",
+  "slide_title": "CUSTOMS & BORDERS",
+  "intro": "Three international airport crossings: US→China (PEK/PKX), China→Vietnam (PEK→HAN), Vietnam→US (DAD). No overland crossings. US→China most complex; US re-entry most relevant for shopping strategy.",
+  "tables": [
+    {
+      "caption": "Border 1: US → China (PEK/PKX)",
+      "columns": ["Item", "Rule"],
+      "rows": [
+        ["Cash", "Declare if carrying >¥20,000 CNY or >$5,000 USD equivalent"],
+        ["Electronics", "No declaration for personal-use laptops, phones, cameras"],
+        ["Medications", "Prescription drugs: carry original prescription + doctor's note"],
+        ["Food", "Fresh fruits, vegetables, most US meat products prohibited"],
+        ["Tobacco / Alcohol", "400 cigarettes; 1.5 liters alcohol duty-free"],
+        ["Goods", "Personal-use under ¥5,000 (~$700 USD) generally duty-free"]
+      ]
+    },
+    {
+      "caption": "Border 2: China → Vietnam (PEK → HAN)",
+      "columns": ["Side", "Key Rules"],
+      "rows": [
+        ["China exit (PEK)", "Emigration stamp; carry out up to ¥20,000 CNY or $5,000 USD; VAT refund at PEK for eligible purchases"],
+        ["Vietnam entry (Noi Bai)", "1.5L wine + 1.5L spirits; 400 cigarettes; declare cash >$5,000 USD"],
+        ["Vietnam restricted", "No pornography, politically sensitive material; no VPN hardware (software fine)"],
+        ["Crossing duration", "10–30 min for e-visa holders at dedicated queue"]
+      ]
+    },
+    {
+      "caption": "Border 3: Vietnam → US (DAD → US) — US Duty-Free",
+      "columns": ["Category", "Allowance"],
+      "rows": [
+        ["Total goods value", "$800/person duty-free"],
+        ["Per couple combined", "$1,600 duty-free"],
+        ["Alcohol", "1 liter duty-free"],
+        ["Tobacco", "200 cigarettes (1 carton) duty-free"],
+        ["Above $800", "3–5% duty on next $1,000; higher brackets for luxury goods"]
+      ]
+    },
+    {
+      "caption": "Restricted Items Across Borders",
+      "columns": ["Item", "China Entry", "Vietnam Entry", "US Return"],
+      "rows": [
+        ["Prescription medications", "Allowed with prescription", "Allowed with prescription", "Allowed"],
+        ["Fresh food", "NOT allowed from US", "NOT allowed from China", "NOT allowed"],
+        ["Alcohol", "1.5L duty-free", "1.5L duty-free", "1L duty-free"],
+        ["Knives (chef/utility)", "Checked luggage only", "Checked luggage only", "Checked luggage only"],
+        ["Cultural antiques", "Export permit if >100 years old", "Export permit required", "Proof of purchase required"],
+        ["Counterfeit goods", "—", "—", "Confiscated; fines possible"]
+      ]
+    },
+    {
+      "caption": "VAT Refund",
+      "columns": ["Country", "Rate", "Minimum", "Process"],
+      "rows": [
+        ["China (PEK)", "11–13%", "¥500 (~$70) per receipt, same store", "Tax Free form at purchase → Customs stamp at PEK → refund counter before security"],
+        ["Vietnam (DAD)", "10%", "₫2,000,000 (~$80) per item", "VAT invoice (hóa đơn VAT) → refund form → DAD airport counter"],
+        ["Eligible shops", "Luxury malls, Wangfujing dept stores — NOT Silk Street markets", "Higher-end shops and dept stores most reliable", "—"]
+      ]
+    },
+    {
+      "caption": "Purchasing Strategy by Country",
+      "columns": ["Country", "Best Buy", "VAT Refund", "Notes"],
+      "rows": [
+        ["China", "Silk goods, lacquerware, tea, traditional crafts", "Yes; 11–13%", "Collect forms at purchase; redeem at PEK"],
+        ["Vietnam (Hội An)", "Tailored clothing, silk, lanterns, lacquerware, coffee", "Yes; 10%", "Collect forms; redeem at DAD"],
+        ["Vietnam (Đà Nẵng)", "Marble carvings, contemporary art", "Limited infrastructure", "Focus on authentic crafts"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "US → China Protocol",
+      "items": [
+        "Fill out Chinese customs declaration card on plane or at kiosk",
+        "Green channel (nothing to declare) vs Red channel (items to declare)",
+        "First-ever China entry: biometric enrollment (fingerprints + photo)",
+        "Immigration queue: 30–60 min typical at PEK; do NOT accept \"help\" outside formal queue"
+      ]
+    },
+    {
+      "heading": "US Re-Entry Strategy",
+      "items": [
+        "Register high-value items leaving US (watches, jewelry) on CBP Form 4457 at departure",
+        "Declare all merchandise acquired abroad on CBP Form 6059B — gifts and commercial quantities included",
+        "Keep ALL receipts separated by country for Customs inspection",
+        "Luxury goods duty 3–5% above first $800; on $5,000 purchases rough duty ~$170–250"
+      ]
+    },
+    {
+      "heading": "Prohibited US Entry Items",
+      "items": [
+        "No fresh fruits, vegetables, or meats (even packaged fresh products)",
+        "No live plants without USDA permit",
+        "No cultural artifacts without export permit from originating country",
+        "No counterfeit goods; no endangered species products (coral, ivory, certain shells)"
+      ]
+    },
+    {
+      "heading": "Cheapest Country by Category",
+      "items": [
+        "Silk: Vietnam > China (comparable quality; Vietnam cheaper)",
+        "Tailored clothing: Vietnam (Hội An) — best value on earth for custom garments",
+        "Electronics: Buy nothing — prices not better than US",
+        "Luxury watches/handbags: NOT cheaper vs US authorized dealers"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "pass", "text": "All 3 border crossings documented with duty-free allowances and restricted items" },
+    { "status": "pass", "text": "VAT refund process documented for China (PEK) and Vietnam (DAD)" },
+    { "status": "warn", "text": "Shopping likely exceeds $1,600 combined duty-free — register valuables on CBP Form 4457 before departure" },
+    { "status": "info", "text": "Estimated duty on $3,000 above exemption: ~$90–150 — manageable vs savings; declare honestly" }
+  ]
+}

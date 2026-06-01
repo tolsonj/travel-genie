@@ -1,0 +1,122 @@
+{
+  "aspect": "07-transport-money",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Transport Money",
+  "slide_title": "TRANSPORT & MONEY",
+  "intro": "App-based transport everywhere: DiDi (China), Grab (Vietnam). Beijing subway excellent. Hybrid money strategy: WeChat Pay + US credit cards + ATM cash. Vietnam more cash-reliant at street level. No street taxis — profile deal-breaker.",
+  "tables": [
+    {
+      "caption": "Intercity Legs",
+      "columns": ["Leg", "Mode", "Duration", "Cost Estimate"],
+      "rows": [
+        ["Home → Beijing", "International flight (PEK/PKX)", "~13–16 hrs", "$1,200–2,000/person RT business"],
+        ["Beijing → Hanoi", "Flight (Vietnam Airlines, Air China direct)", "~4 hrs", "$150–350/person"],
+        ["Hanoi → Đà Nẵng", "Domestic flight (VietJet, Vietnam Airlines)", "~1.25 hrs", "$30–80/person"],
+        ["Đà Nẵng → Home", "International flight (via ICN/NRT/TPE)", "~15–20 hrs", "$1,200–2,000/person business"]
+      ]
+    },
+    {
+      "caption": "Within Beijing",
+      "columns": ["Mode", "When to Use", "Cost", "Notes"],
+      "rows": [
+        ["Beijing Subway", "Tiananmen, Temple of Heaven, Summer Palace, Sanlitun", "¥3–6/trip", "Best urban transit; bilingual signage; get IC card at PEK"],
+        ["DiDi", "Great Wall day, late nights, luggage-heavy trips", "¥20–80/trip", "English mode; pay Visa/MC or WeChat; never negotiate"],
+        ["Walk", "Forbidden City → Tiananmen → Wangfujing", "Free", "15 min between most Dongcheng sites"],
+        ["Avoid", "Street taxis without meter", "Variable", "Notorious overcharging"]
+      ]
+    },
+    {
+      "caption": "Within Hanoi",
+      "columns": ["Mode", "When to Use", "Cost", "Notes"],
+      "rows": [
+        ["Walk", "Old Quarter sites (Hoan Kiem, temples, markets)", "Free", "Most sites within 1–2 km"],
+        ["Grab", "Airport, longer distances, late night", "₫50,000–200,000 (~$2–8)", "Pre-select destination; app or cash payment"],
+        ["Cyclo", "Short scenic Old Quarter trip", "Negotiate ~₫200,000/hr", "Agree price BEFORE getting in"],
+        ["Avoid", "Street taxis at Noi Bai Airport", "—", "Use Grab or hotel car only"]
+      ]
+    },
+    {
+      "caption": "Within Đà Nẵng / Hội An",
+      "columns": ["Mode", "When to Use", "Cost", "Notes"],
+      "rows": [
+        ["Resort car/shuttle", "Airport pickup; resort excursions", "Included or ₫200,000–400,000", "Book through resort concierge"],
+        ["Grab", "Đà Nẵng city; Hội An day trips", "₫80,000–200,000 (~$3–8)", "Most reliable; app payment"],
+        ["Bicycle", "Hội An Ancient Town; An Bang Beach", "₫60,000/day rental", "Perfect for flat terrain"],
+        ["Avoid", "Metered taxis at airport", "—", "Use Grab or pre-arranged resort car"]
+      ]
+    },
+    {
+      "caption": "Currencies & Exchange",
+      "columns": ["Country", "Currency", "Approx Rate", "Cash Recommendation"],
+      "rows": [
+        ["China", "CNY (¥)", "~7.1 CNY = $1 USD", "Keep ¥1,000–1,500 (~$140–210) for incidentals"],
+        ["Vietnam", "VND (₫)", "~25,000 VND = $1 USD", "Keep ₫3,000,000–5,000,000 (~$120–200) on hand"]
+      ]
+    },
+    {
+      "caption": "Recommended Cards",
+      "columns": ["Card", "Best For", "Why"],
+      "rows": [
+        ["Charles Schwab Debit", "ATM withdrawals", "Zero FX fees; reimburses ALL ATM fees globally"],
+        ["Wise Card", "Everyday purchases", "Multi-currency; competitive rate; load CNY/VND in advance"],
+        ["Chase Sapphire Preferred / Reserve", "Hotels, flights, restaurants", "3x travel points; no FX fee; trip delay insurance"],
+        ["Backup Visa/MC", "Emergency", "Notify of China AND Vietnam travel"]
+      ]
+    },
+    {
+      "caption": "Tipping Summary",
+      "columns": ["Service", "China", "Vietnam"],
+      "rows": [
+        ["Restaurant (table service)", "No tip", "10–15% or round up"],
+        ["Street food", "No tip", "Round up is kind"],
+        ["Hotel housekeeping", "¥20–50/day (optional)", "₫50,000–100,000/day"],
+        ["Tour guide / private driver", "¥50–100/day", "₫200,000–300,000/day"],
+        ["Grab/DiDi driver", "Not customary", "Round up or rate highly"],
+        ["Tailor (Hội An)", "Not standard", "₫100,000–200,000 extra for rush/quality"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Beijing Airport → Hotel",
+      "items": [
+        "Option A (Recommended): Airport Express Train T3 → Dongzhimen → DiDi last mile; ¥35/person; 30 min; 6 AM–11 PM",
+        "Option B: Hotel car via The Peninsula; ~¥400; English-speaking driver",
+        "Option C: DiDi from airport after clearing customs (DiDi Hitch for English interface)",
+        "Avoid: Unmarked taxis at arrivals — notorious overcharging"
+      ]
+    },
+    {
+      "heading": "DiDi Setup (China)",
+      "items": [
+        "Download before China entry; link US Visa/Mastercard",
+        "Set to English in Settings > Language; DiDi Express or Comfort class is fine",
+        "WeChat Pay: Link foreign Visa/Mastercard — works at most vendors including smaller shops"
+      ]
+    },
+    {
+      "heading": "Money Strategy",
+      "items": [
+        "China: ATM at Bank of China or ICBC; WeChat Pay for most vendors; avoid DCC — always pay in CNY",
+        "Vietnam: ATM at Vietcombank or Agribank; more cash-heavy for street food, markets, tailors",
+        "Withdraw larger amounts less frequently; use ATMs at bank branches or inside 4–5 star hotels",
+        "Beijing: Withdraw ¥2,000–3,000 at airport; Vietnam: ₫2,000,000–3,000,000 at Noi Bai"
+      ]
+    },
+    {
+      "heading": "Daily Budget Estimates (2 travelers)",
+      "items": [
+        "China: ¥2,000–3,000/day ($280–420) — hotel, 2 meals, transport, incidentals (accommodation separate)",
+        "Vietnam: ₫2,000,000–4,000,000/day ($80–160) — food/transport/activities (resort accommodation separate)",
+        "Track with Trabee Pocket or Trail Wallet; log expenses each evening"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "pass", "text": "Subway/Grab/DiDi strategy fully implemented — no street taxi use anywhere" },
+    { "status": "pass", "text": "All transport legs covered with booking platforms and cost estimates" },
+    { "status": "warn", "text": "Avoid dynamic currency conversion (DCC) — always choose local currency at card terminals" },
+    { "status": "info", "text": "Book Beijing → Hanoi flight as open-jaw with international ticket when possible" }
+  ]
+}

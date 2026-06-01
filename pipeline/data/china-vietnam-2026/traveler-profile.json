@@ -1,0 +1,49 @@
+{
+  "aspect": "traveler-profile",
+  "type": "profile",
+  "trip": "china-vietnam-2026",
+  "title": "Traveler Profile",
+  "slide_title": "TRAVELER PROFILE",
+  "intro": "Couple, relaxed-cultural pace, 14 days China \u2192 Vietnam. Value-conscious in China, splurge in Vietnam. App-based transit only (DiDi/Grab); no street taxis.",
+  "tables": [
+    {
+      "caption": "Core Identifiers",
+      "columns": ["Field", "Value"],
+      "rows": [
+        ["Countries", "China \u2192 Vietnam"],
+        ["Travel window", "September 1\u201314, 2026 (14 days)"],
+        ["Travel party", "Couple (traveler + wife)"],
+        ["Decision authority", "Vote (consensus)"],
+        ["Citizenship", "Assumed US (verify before Step 03)"]
+      ]
+    },
+    {
+      "caption": "Budget",
+      "columns": ["Category", "Notes"],
+      "rows": [
+        ["Total", "$20,000 USD for both travelers"],
+        ["Allocation intent", "Splurge in Vietnam; value-conscious in China"],
+        ["Per-day estimate", "~$1,428/day total across 14 days"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Interests (ranked)",
+      "items": ["Shopping \u2014 tailored clothing, designer goods", "Food \u2014 local dining priority", "Nature \u2014 scenic views, beach walks", "History \u2014 cultural sites, not museum marathons"]
+    },
+    {
+      "heading": "Style & Pace",
+      "items": ["Relaxed, culturally immersive", "Late mornings; avoid long transit days", "Ideal day: brunch \u2192 beach walk \u2192 dusk city views"]
+    },
+    {
+      "heading": "Accommodation",
+      "items": ["4\u20135 star hotels; resorts preferred in Vietnam", "Must be bookable on US platforms", "No hostels / uncertain Airbnb"]
+    }
+  ],
+  "callouts": [
+    { "status": "warn", "text": "Large crowds \u2014 avoid peak hours, book early-entry tickets" },
+    { "status": "warn", "text": "Heat \u2014 schedule outdoor activity for early morning / late afternoon" },
+    { "status": "pass", "text": "Both travelers in excellent physical condition \u2014 no mobility limits" }
+  ]
+}

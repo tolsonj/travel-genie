@@ -1,0 +1,39 @@
+{
+  "aspect": "route-optimization",
+  "type": "route-optimization",
+  "trip": "china-vietnam-2026",
+  "title": "Route Optimization",
+  "slide_title": "ROUTE OPTIMIZATION",
+  "recommended_route": {
+    "label": "Recommended Route (14 Days)",
+    "name": "China-then-Vietnam Open-Jaw Circuit",
+    "rationale": "Selected: Beijing \u2192 Hanoi \u2192 \u0110\u00e0 N\u1eb5ng/H\u1ed9i An \u2014 best match for History #4, Food #2, and resort wind-down in Vietnam. Open-jaw (PEK in / DAD out) eliminates backtracking."
+  },
+  "hubs": [
+    { "hub": "Beijing", "days": "1\u20135", "region": "North China", "primary_draw": "Forbidden City, Great Wall (Mutianyu), hutongs, Wangfujing shopping" },
+    { "hub": "Hanoi", "days": "6\u20138", "region": "Northern Vietnam", "primary_draw": "Old Quarter food, Hoan Kiem Lake, Temple of Literature" },
+    { "hub": "\u0110\u00e0 N\u1eb5ng / H\u1ed9i An", "days": "9\u201313", "region": "Central Vietnam", "primary_draw": "Beach resort base, Ancient Town, Marble Mountains, My Son" },
+    { "hub": "Home", "days": "14", "region": "Departure", "primary_draw": "Open-jaw exit via \u0110\u00e0 N\u1eb5ng (DAD)" }
+  ],
+  "map_nodes": [
+    { "label": "Beijing", "marker": "B", "lng": 116.4074, "lat": 39.9042, "color": "#c0392b", "labelDy": -18 },
+    { "label": "Hanoi", "marker": "H", "lng": 105.8542, "lat": 21.0285, "color": "#d4a017", "labelDy": -18 },
+    { "label": "\u0110\u00e0 N\u1eb5ng", "marker": "D", "lng": 108.2022, "lat": 16.0544, "color": "#27ae60", "labelDy": 26 }
+  ],
+  "map_bounds": { "west": 95, "south": 6, "east": 128, "north": 46 },
+  "highlight_countries": ["China", "Vietnam"],
+  "country_labels": [
+    { "name": "CHINA", "lng": 103.5, "lat": 34.5 },
+    { "name": "VIETNAM", "lng": 106.8, "lat": 12.5 }
+  ],
+  "depart_node": { "from_label": "\u0110\u00e0 N\u1eb5ng", "caption": "Depart (DAD)" },
+  "transit_legs": [
+    { "from": "Home", "to": "Beijing", "mode": "International flight", "duration": "~13\u201314h" },
+    { "from": "Beijing", "to": "Hanoi", "mode": "Flight", "duration": "~4h" },
+    { "from": "Hanoi", "to": "\u0110\u00e0 N\u1eb5ng", "mode": "Flight", "duration": "~1.25h" },
+    { "from": "\u0110\u00e0 N\u1eb5ng", "to": "Home", "mode": "Flight (connection)", "duration": "~15\u201320h" }
+  ],
+  "summary": {
+    "message": "Total in-country intercity transit: ~5.25h across 2 moves = 18% transit days (under 20% threshold)"
+  }
+}

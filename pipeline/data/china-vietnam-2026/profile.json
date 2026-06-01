@@ -1,0 +1,50 @@
+{
+  "aspect": "profile",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Profile",
+  "slide_title": "PROFILE",
+  "intro": "Couple traveling Sept 1–14, 2026. Relaxed, cultural pace across China and Vietnam. $20,000 total budget with splurge in Vietnam. Decision-making by consensus (vote).",
+  "tables": [
+    {
+      "caption": "Trip Basics",
+      "columns": ["Field", "Value"],
+      "rows": [
+        ["Countries", "China and Vietnam"],
+        ["Travel dates", "September 1–14, 2026"],
+        ["Travel party", "Couple (traveler + wife)"],
+        ["Decision style", "Vote (consensus)"],
+        ["Total budget", "$20,000 USD — splurge in Vietnam"]
+      ]
+    },
+    {
+      "caption": "Preferences",
+      "columns": ["Category", "Detail"],
+      "rows": [
+        ["Travel style", "Relaxed and cultural experience"],
+        ["Top interests", "Shopping, nature, food, history"],
+        ["Ideal perfect day", "Late brunch, beach walk, exciting city/nature views"],
+        ["Accommodation", "4–5 star; resorts OK; US booking sites"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Physical & Mobility",
+      "items": ["No physical limitations", "Wife is in great shape"]
+    },
+    {
+      "heading": "Past Travel Lessons",
+      "items": ["Local mass transit worked great in prior multi-country trips", "Taxis were a ripoff — avoid street taxis"]
+    },
+    {
+      "heading": "Deal-Breakers",
+      "items": ["Large crowds", "Heat"]
+    }
+  ],
+  "callouts": [
+    { "status": "warn", "text": "Large crowds — avoid peak hours, book early-entry tickets" },
+    { "status": "warn", "text": "Heat — schedule outdoor activity for early morning / late afternoon" },
+    { "status": "pass", "text": "Both travelers in excellent physical condition — no mobility limits" }
+  ]
+}

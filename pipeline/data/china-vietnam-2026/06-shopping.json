@@ -1,0 +1,129 @@
+{
+  "aspect": "06-shopping",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Shopping",
+  "slide_title": "SHOPPING STRATEGY",
+  "intro": "Shopping ranked #1 trip interest. Budget ~$4,000–6,800 for shopping ($13–15K remaining for flights, hotels, food, activities). Splurge in Vietnam. Categories: tailored clothing, silk, artisan crafts, China-exclusive sneakers. Skip authorized luxury watches/handbags — no price advantage vs US.",
+  "tables": [
+    {
+      "caption": "Country Shopping Strength Matrix",
+      "columns": ["Category", "Beijing", "Hanoi", "Hội An / Đà Nẵng", "Winner"],
+      "rows": [
+        ["Tailored / Bespoke Clothing", "⭐⭐", "⭐⭐", "⭐⭐⭐⭐⭐ (400+ tailors)", "Hội An"],
+        ["Silk & Fabric Goods", "⭐⭐⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐⭐", "Hội An / Beijing tie"],
+        ["Designer Watches (Authorized)", "⭐⭐", "⭐", "⭐", "None — buy at home or Hong Kong"],
+        ["Designer Handbags (Authorized)", "⭐⭐", "⭐", "⭐", "None — no price advantage"],
+        ["Athletic / Sneakers", "⭐⭐⭐", "⭐⭐", "⭐", "Beijing"],
+        ["Artisan Crafts / Souvenirs", "⭐⭐⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐⭐", "Hội An"],
+        ["Coffee / Food Souvenirs", "⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐", "Hanoi"]
+      ]
+    },
+    {
+      "caption": "Hội An Recommended Tailors",
+      "columns": ["Shop", "Specialty", "Price Range"],
+      "rows": [
+        ["Yaly Couture", "Full wardrobe: suits, dresses, shirts", "$80–400/garment"],
+        ["A Dong Silk", "Silk dresses, ao dai, shirts", "$60–250/garment"],
+        ["Bebe Tailor", "Casual and formal; fast turnaround", "$50–200/garment"],
+        ["Mango Mango", "Dresses, women's resort wear", "$40–150/garment"],
+        ["Lantern Town Tailor", "Suits and formal wear", "$150–500/garment"]
+      ]
+    },
+    {
+      "caption": "Tailoring Timeline (Days 10–12)",
+      "columns": ["Garment", "Minimum Time", "Recommended Lead"],
+      "rows": [
+        ["Simple shirt / blouse", "24 hours", "48 hours"],
+        ["Dress (mid-complexity)", "36–48 hours", "3 days"],
+        ["Suit (jacket + trousers)", "48–72 hours", "3–4 days"],
+        ["Ao dai", "24–48 hours", "2 days"],
+        ["Full wardrobe (5+ pieces)", "3–5 days", "5 days"]
+      ]
+    },
+    {
+      "caption": "Shopping Priority Matrix",
+      "columns": ["Priority", "Category", "Country", "Budget", "Days"],
+      "rows": [
+        ["#1", "Custom tailoring (suits, shirts, dresses, ao dai)", "Hội An", "$1,500–3,000", "Days 10–12"],
+        ["#2", "Silk goods (scarves, fabric, accessories)", "Beijing + Hội An", "$300–800", "Days 4, 10, 13"],
+        ["#3", "Artisan crafts (lacquerware, lanterns, pottery)", "Hội An + Hanoi", "$300–600", "Days 7, 10, 12"],
+        ["#4", "China-exclusive sneakers (Li-Ning, Nike China)", "Beijing", "$200–600", "Day 4"],
+        ["#5", "Vietnamese coffee + spices", "Hanoi + Đà Nẵng", "$50–150", "Days 7, 13"]
+      ]
+    },
+    {
+      "caption": "VAT Refund Summary",
+      "columns": ["Country", "Rate", "Minimum Purchase", "Claim Location"],
+      "rows": [
+        ["China", "11–13%", "¥500 (~$70) per receipt, same store", "PEK Airport departure terminal"],
+        ["Vietnam", "10%", "₫2,000,000 (~$80) per item", "DAD Airport (Đà Nẵng)"],
+        ["Global Blue / Planet", "Varies", "—", "PEK and major Vietnam airports"]
+      ]
+    },
+    {
+      "caption": "US Customs Duty (On Return)",
+      "columns": ["Category", "Duty-Free Per Person", "Above Exemption"],
+      "rows": [
+        ["Total goods", "$800", "3–5% duty on next $1,000"],
+        ["Per couple total", "$1,600", "—"],
+        ["Estimated shopping total", "$4,000–6,800", "Est. duty $72–260 at 3–5%"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Hội An — What to Order",
+      "items": [
+        "✅ Linen shirts (2–3 each; ~$40–80); silk blouse or dress (~$80–150)",
+        "✅ Lightweight wool-linen suit (~$200–350); ao dai (~$80–200)",
+        "❌ Avoid heavy wool suits (Vietnam can't source premium wool reliably)",
+        "❌ Avoid designer replicas (inconsistent quality; legal risk at US customs)"
+      ]
+    },
+    {
+      "heading": "Tailor Red Flags",
+      "items": [
+        "Pushes same-day decision without measuring — reseller, not real tailor",
+        "No fitting offered — no quality control",
+        "Price drops dramatically when pushed back — inflated 300%+",
+        "Commission scam: \"My cousin owns the fabric store\"",
+        "For garments over $100: insist on 2 fittings minimum"
+      ]
+    },
+    {
+      "heading": "Recommended Shopping Days",
+      "items": [
+        "Beijing Day 4 (primary): AM Wangfujing + Qianmen; PM Sanlitun Taikoo Li — ¥2,000–6,000 (~$280–840)",
+        "Hanoi Day 7: AM Hang Gai silk; PM Dong Xuan Market coffee/spices — ₫500,000–2,000,000 (~$20–80)",
+        "Hội An Day 10: Tailor consultation + Ancient Town browsing — $500–1,500 (excl. deposit)",
+        "Hội An Day 12: Tailor pickup + final Ancient Town pass",
+        "Đà Nẵng Day 13: Vincom Plaza; Non Nước marble carvings — $100–300"
+      ]
+    },
+    {
+      "heading": "Luggage & Shipping Logic",
+      "items": [
+        "Buy bulky/fragile items in Vietnam (last stop) — tailored clothing, marble, lacquerware",
+        "DHL Vietnam: 5–7 days to US, ~$40–80 for 5kg; tailor vacuum-pack for carry-on when possible",
+        "Skip Beijing tailoring entirely — save all custom clothing budget for Hội An"
+      ]
+    },
+    {
+      "heading": "Safe Zones vs Counterfeit Districts",
+      "items": [
+        "✅ Beijing: SKP Mall, Shin Kong Place, Sanlitun Taikoo Li, brand flagships",
+        "❌ Beijing: Silk Street (Xiushui), Yaxiu Market — counterfeit capital",
+        "✅ Hanoi: Hang Gai silk shops; Dong Xuan Market for local goods",
+        "✅ Hội An: Yaly, A Dong, shops with street presence and reviews"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "pass", "text": "Tailoring timeline validated: Day 10 consult → Day 11 fitting → Day 12 pickup" },
+    { "status": "pass", "text": "Shopping days on non-transit days (Days 4, 10, 12, 13); September 2 not a Chinese holiday" },
+    { "status": "warn", "text": "Counterfeit handbags ILLEGAL to import to US — confiscation + fines up to $10,000" },
+    { "status": "warn", "text": "Register valuables leaving US on CBP Form 4457 — prevents double-tax on re-entry" },
+    { "status": "info", "text": "Best handbag purchase: hand-embroidered silk clutch or lacquerware purse from Hội An (~$20–100)" }
+  ]
+}

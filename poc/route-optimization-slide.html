@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Route Optimization — China & Vietnam 2026 (POC)</title>
+  <style>
+    :root {
+      --slide-w: 1280px;
+      --slide-h: 720px;
+      --gold: #b8860b;
+      --gold-dark: #8b6914;
+      --banner-bg: #3d4f5f;
+      --banner-text: #f5f5f0;
+      --table-head: #2c3e50;
+      --table-stripe: #f4f6f8;
+      --border: #d0d7de;
+      --text: #1a1a1a;
+      --muted: #5a6570;
+      --pass-green: #27ae60;
+      --route-line: #d4a017;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: #e8eaed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      gap: 16px;
+    }
+
+    .meta {
+      max-width: var(--slide-w);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .slide {
+      width: var(--slide-w);
+      height: var(--slide-h);
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      padding: 36px 44px 28px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+    }
+
+    .banner {
+      background: var(--banner-bg);
+      color: var(--banner-text);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .banner strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .map-panel {
+      background: #eef1f4;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-panel svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .table-panel table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    .table-panel th {
+      background: var(--table-head);
+      color: #fff;
+      text-align: left;
+      padding: 8px 10px;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .table-panel td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.35;
+    }
+
+    .table-panel tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    .table-panel td:first-child {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: end;
+    }
+
+    .transit-path {
+      background: #fafbfc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .transit-path .leg {
+      display: inline;
+    }
+
+    .transit-path .arrow {
+      color: var(--gold);
+      font-weight: 700;
+      margin: 0 2px;
+    }
+
+    .transit-path .bracket {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .summary-box {
+      background: var(--banner-bg);
+      color: var(--banner-text);
+      border-radius: 8px;
+      padding: 12px 16px;
+      min-width: 280px;
+      font-size: 12px;
+      line-height: 1.45;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .summary-box .check {
+      color: var(--pass-green);
+      font-size: 18px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .watermark {
+      position: absolute;
+      bottom: 8px;
+      right: 12px;
+      font-size: 10px;
+      color: #bbb;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <p class="meta">
+    POC Step A — Route Optimization slide from <code>trips/china-vietnam-2026/02-route-optimization.md</code>.
+    Open this file in a browser and screenshot at 1280×720.
+  </p>
+
+  <div class="slide" id="slide"></div>
+
+  <script>
+    const DATA = {
+      "aspect": "02-route-optimization",
+      "trip": "china-vietnam-2026",
+      "slide_title": "ROUTE OPTIMIZATION",
+      "recommended_route": {
+        "label": "Recommended Route (14 Days)",
+        "name": "China-then-Vietnam Open-Jaw Circuit",
+        "rationale": "Selected: Beijing → Hanoi → Đà Nẵng/Hội An — best match for History #4, Food #2, and resort wind-down in Vietnam. Open-jaw (PEK in / DAD out) eliminates backtracking."
+      },
+      "hubs": [
+        { "hub": "Beijing", "days": "1–5", "region": "North China", "primary_draw": "Forbidden City, Great Wall (Mutianyu), hutongs, Wangfujing shopping" },
+        { "hub": "Hanoi", "days": "6–8", "region": "Northern Vietnam", "primary_draw": "Old Quarter food, Hoan Kiem Lake, Temple of Literature" },
+        { "hub": "Đà Nẵng / Hội An", "days": "9–13", "region": "Central Vietnam", "primary_draw": "Beach resort base, Ancient Town, Marble Mountains, My Son" },
+        { "hub": "Home", "days": "14", "region": "Departure", "primary_draw": "Open-jaw exit via Đà Nẵng (DAD)" }
+      ],
+      "map_nodes": [
+        { "label": "Beijing", "marker": "B", "x": 72, "y": 28, "color": "#c0392b" },
+        { "label": "Hanoi", "marker": "H", "x": 58, "y": 62, "color": "#d4a017" },
+        { "label": "Đà Nẵng", "marker": "D", "x": 62, "y": 78, "color": "#27ae60" },
+        { "label": "End", "marker": "✈", "x": 78, "y": 82, "color": "#2c3e50" }
+      ],
+      "transit_legs": [
+        { "from": "Home", "to": "Beijing", "mode": "International flight", "duration": "~13–14h" },
+        { "from": "Beijing", "to": "Hanoi", "mode": "Flight", "duration": "~4h" },
+        { "from": "Hanoi", "to": "Đà Nẵng", "mode": "Flight", "duration": "~1.25h" },
+        { "from": "Đà Nẵng", "to": "Home", "mode": "Flight (connection)", "duration": "~15–20h" }
+      ],
+      "summary": {
+        "message": "Total in-country intercity transit: ~5.25h across 2 moves = 18% transit days (under 20% threshold)"
+      }
+    };
+
+    function renderMap(nodes) {
+      const pathD = nodes.slice(0, -1).map((n, i) => {
+        const next = nodes[i + 1];
+        return `${i === 0 ? "M" : "L"} ${n.x} ${n.y} L ${next.x} ${next.y}`;
+      }).join(" ");
+
+      const nodeMarkup = nodes.map(n => `
+        <g>
+          <circle cx="${n.x}" cy="${n.y}" r="14" fill="${n.color}" stroke="#fff" stroke-width="2"/>
+          <text x="${n.x}" y="${n.y + 4}" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">${n.marker}</text>
+          <text x="${n.x}" y="${n.y + 26}" text-anchor="middle" fill="#333" font-size="10" font-weight="600">${n.label}</text>
+        </g>
+      `).join("");
+
+      return `
+        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-label="Route map">
+          <rect width="100" height="100" fill="#eef1f4"/>
+          <!-- Simplified East Asia landmass -->
+          <path d="M45 8 L78 12 L88 28 L85 48 L75 58 L68 72 L55 88 L42 92 L30 78 L22 58 L28 38 L38 22 Z" fill="#d8e2dc" stroke="#b8c4bc" stroke-width="0.5"/>
+          <path d="M48 52 L62 50 L72 58 L74 72 L68 86 L52 88 L44 76 Z" fill="#c5d4c0" stroke="#a8b8a3" stroke-width="0.4" opacity="0.9"/>
+          <path d="${pathD}" fill="none" stroke="#d4a017" stroke-width="1.8" stroke-dasharray="3 2" opacity="0.9"/>
+          ${nodeMarkup}
+        </svg>
+      `;
+    }
+
+    function renderTransitPath(legs) {
+      return legs.map((leg, i) => {
+        const bracket = `[${leg.from === "Home" ? leg.to : leg.from + " → " + leg.to}: ${leg.mode} ${leg.duration}]`;
+        const prefix = i === 0 ? `<span class="leg">${leg.from} (arrive)</span>` : "";
+        const arrow = i === 0 ? `<span class="arrow"> → </span>` : `<span class="arrow"> → </span>`;
+        const bracketSpan = `<span class="bracket">${bracket}</span>`;
+        return i === 0 ? `${prefix}${arrow}${bracketSpan}` : `${arrow}${bracketSpan}`;
+      }).join("");
+    }
+
+    function renderTable(hubs) {
+      const rows = hubs.map(h => `
+        <tr>
+          <td>${h.hub}</td>
+          <td>${h.days}</td>
+          <td>${h.region}</td>
+          <td>${h.primary_draw}</td>
+        </tr>
+      `).join("");
+
+      return `
+        <table>
+          <thead>
+            <tr>
+              <th>Hub</th>
+              <th>Days</th>
+              <th>Region</th>
+              <th>Primary Draw</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+    }
+
+    document.getElementById("slide").innerHTML = `
+      <h1 class="slide-title">${DATA.slide_title}</h1>
+
+      <div class="banner">
+        <strong>${DATA.recommended_route.label}: ${DATA.recommended_route.name}</strong>
+        ${DATA.recommended_route.rationale}
+      </div>
+
+      <div class="main">
+        <div class="map-panel">${renderMap(DATA.map_nodes)}</div>
+        <div class="table-panel">${renderTable(DATA.hubs)}</div>
+      </div>
+
+      <div class="footer">
+        <div class="transit-path">${renderTransitPath(DATA.transit_legs)}</div>
+        <div class="summary-box">
+          <span class="check" aria-hidden="true">✓</span>
+          <span>${DATA.summary.message}</span>
+        </div>
+      </div>
+
+      <div class="watermark">travel-genie POC · ${DATA.trip}</div>
+    `;
+  </script>
+</body>
+</html>

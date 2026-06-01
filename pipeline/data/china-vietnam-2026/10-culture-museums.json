@@ -1,0 +1,91 @@
+{
+  "aspect": "10-culture-museums",
+  "type": "generic",
+  "trip": "china-vietnam-2026",
+  "title": "Culture Museums",
+  "slide_title": "CULTURE & MUSEUMS",
+  "intro": "One cultural anchor per day — no museum marathons. September Beijing is less crowded than summer peak. Hội An is a living cultural museum. Early opening slots essential for crowd avoidance. Both travelers in excellent shape for walking-heavy sites.",
+  "tables": [
+    {
+      "caption": "Beijing — Site Strategy",
+      "columns": ["Day", "Site", "Timing & Hidden Corners"],
+      "rows": [
+        ["Day 2", "Forbidden City", "8:30 AM Meridian Gate entry; Treasure Gallery + Clock Gallery; book online at pm.com.cn; 3–5 hrs"],
+        ["Day 3", "Great Wall (Mutianyu)", "First cable car at 8 AM; walk northeast past Tower 14 to unrestored section"],
+        ["Day 4", "Temple of Heaven", "8–9 AM for tai chi/erhu locals; Echo Wall whisper technique; book at tiantanpark.com"],
+        ["Day 5", "Summer Palace", "9 AM weekday; Garden of Harmonious Interests (谐趣园) in northeast corner"]
+      ]
+    },
+    {
+      "caption": "Hanoi — Site Strategy",
+      "columns": ["Day", "Site", "Timing & Notes"],
+      "rows": [
+        ["Day 7", "Ngoc Son Temple + Temple of Literature", "Ngoc Son 8 AM (30 min); Temple 9–11 AM weekdays; Khue Van Cac Pavilion in third courtyard"],
+        ["Day 8", "Ho Chi Minh Mausoleum", "Tue ✓ — 7:30–10:30 AM only; dress code enforced; 15–20 min; stilt house garden worth 15 min"]
+      ]
+    },
+    {
+      "caption": "Hội An — Site Strategy",
+      "columns": ["Day", "Site", "Timing & Notes"],
+      "rows": [
+        ["Day 10", "Hội An Ancient Town", "8 AM before tour buses or after 5 PM lanterns; UNESCO ticket ~120,000 VND (5 sites); 2–3 sites max"],
+        ["Day 12", "My Son Sanctuary", "7:30 AM opening; Groups B/C/D off main path; hire local guide (~$5–10); 1.5–2 hrs"]
+      ]
+    },
+    {
+      "caption": "Museum Fatigue Check",
+      "columns": ["Days", "Cultural Load"],
+      "rows": [
+        ["Days 1–2 (Beijing)", "Moderate — arrival light; Day 2 one major site"],
+        ["Day 3 (Great Wall)", "High physical, single focus — no fatigue risk"],
+        ["Days 4–5 (Beijing)", "Light — park and garden walks"],
+        ["Days 6–7 (Hanoi)", "Moderate — 2 temple visits + walking"],
+        ["Day 8 (Mausoleum)", "Light — 30 min only"],
+        ["Days 9–10 (Đà Nẵng/Hội An)", "Day 9: zero museums; Day 10: 2–3 sites max"],
+        ["Day 12 (My Son)", "One focused site — no fatigue risk"]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Alternative Culture",
+      "items": [
+        "Beijing: Peking Opera at Lao She Teahouse (~$30/person, English surtitles); White Cloud Temple (active Taoist monastery, free)",
+        "Hanoi: Water Puppet Theatre (~$5–8, book 1–2 days ahead); Tay Ho West Lake neighborhood walk",
+        "Hội An: Lantern-making class (~$10/person); Phuc Kien Assembly Hall (1697, active worship)"
+      ]
+    },
+    {
+      "heading": "China → Vietnam Cultural Shifts",
+      "items": [
+        "Greeting: Chinese nod/slight bow → Vietnamese bow or two-hand handshake",
+        "Dining: hot tea → iced coffee and iced tea",
+        "Pace: fast Beijing → slower Hanoi and Hội An",
+        "Religion: secular/Taoist/Buddhist Beijing → actively Buddhist Vietnam",
+        "Transition is significant but positive — Vietnam feels warmer (temperature and people)"
+      ]
+    },
+    {
+      "heading": "Survival Phrases — China",
+      "items": [
+        "你好 (Nǐ hǎo) — Hello; 谢谢 (Xièxiè) — Thank you; 多少钱 — How much?",
+        "我不要 — I don't want it; 帮我叫滴滴 — Call me a DiDi; 厕所在哪里 — Where is the toilet?",
+        "English: low outside luxury hotels/tourist sites; Google Translate camera mode essential"
+      ]
+    },
+    {
+      "heading": "Survival Phrases — Vietnam",
+      "items": [
+        "Xin chào — Hello; Cảm ơn — Thank you; Bao nhiêu tiền? — How much?",
+        "Không — No; Gọi cho tôi Grab — Call me a Grab",
+        "English: high in tourist zones (Hội An, Old Quarter, Đà Nẵng resorts); lower in rural/markets"
+      ]
+    }
+  ],
+  "callouts": [
+    { "status": "warn", "text": "Forbidden City tickets MUST be booked online in advance — timed entry, no walk-up sales" },
+    { "status": "warn", "text": "Hội An Ancient Town: don't hit all 5 UNESCO sites — 2–3 is the sweet spot for relaxed pace" },
+    { "status": "pass", "text": "No consecutive heavy museum days; max 2 cultural sites/day; resort days (9, 11, 13) are full recovery" },
+    { "status": "pass", "text": "All major sites have early-entry crowd avoidance strategy" }
+  ]
+}
