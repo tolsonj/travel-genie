@@ -1,81 +1,39 @@
 {
   "aspect": "12-hidden-gems",
-  "type": "generic",
+  "type": "dashboard",
   "trip": "china-vietnam-2026",
   "title": "Hidden Gems",
-  "slide_title": "HIDDEN GEMS",
-  "intro": "Locally-known spots beyond tourist traps. September timing favorable (fewer tourists than peak summer). Lesser-known sites doubly valuable for crowd avoidance. Deepens shopping, food, and nature interests with authentic local experiences.",
-  "tables": [
-    {
-      "caption": "Beijing — 5 Places Locals Love",
-      "columns": ["Place", "When / Access"],
-      "rows": [
-        ["Wudaoying Hutong", "Sat/Sun morning 9:30 AM — hip hutong parallel to Nanluoguxiang; coffee, vintage, craft beer"],
-        ["798 Art Zone", "Weekday afternoon (galleries closed Mon) — former factory district; Asia's best urban art space; 30 min taxi"],
-        ["Sanlitun Soho Rooftop", "5:30–7 PM golden hour — unmarked terrace; sunset over eastern skyline"],
-        ["Ghost Street (Guijie)", "11 PM–2 AM — 150+ 24hr restaurants; fried crayfish and hotpot; 10 min DiDi from Dongcheng"],
-        ["Coal Hill (Jingshan) North View", "5:30–6:30 PM Sept — sunset glow on Forbidden City rooftops; far fewer people than midday"]
-      ]
-    },
-    {
-      "caption": "Hanoi — 5 Places Locals Love",
-      "columns": ["Place", "When / Access"],
-      "rows": [
-        ["Tay Ho West Lake Circuit", "6–8 AM dawn — 17 km lakeside path; bicycle ~50,000 VND/day; temple islands"],
-        ["Long Bien Bridge at Dawn", "5–7 AM — 1902 French-colonial iron bridge; local vendors; train crosses twice daily"],
-        ["Pho Thin Bo Ho (13 Lò Đúc)", "6–9 AM only; arrive by 7:30 — 60-year recipe; locals' pho, no tourists"],
-        ["Dong Tac Market", "7–9 AM peak — neighborhood wet market; fresh flowers, live fish; no tourist pricing"],
-        ["Nhan My Bakery", "From 6 AM — best bánh mì locals keep secret; ask hotel or \"Bánh mì ngon nhất gần đây?\""]
-      ]
-    },
-    {
-      "caption": "Hội An / Đà Nẵng — 5 Places Locals Love",
-      "columns": ["Place", "When / Access"],
-      "rows": [
-        ["An Bang Beach", "Morning Sept weekdays — locals' beach vs tourist Cua Dai; bicycle ~15 min from Old Town"],
-        ["Kim Bong Carpentry Village", "8–11 AM workshops active — basket boat from dock ~30,000 VND; centuries-old woodworking"],
-        ["Tra Que Vegetable Village", "7–10 AM before heat — organic farm 3 km away; farm-to-table ~$20/person"],
-        ["Thanh Ha Pottery Village", "Bicycle ~20 min — 400+ year foot-operated wheels; wheel-throwing experience"],
-        ["Non Nước Stone Carving Village", "Between Marble Mountains and Đà Nẵng — 500+ workshops; buy direct from artisans"]
-      ]
-    }
-  ],
+  "slide_title": "HIDDEN",
+  "intro": "1. Wudaoying Hutong — A quieter, hipper hutong parallel to the tourist-heavy Nanluoguxiang; independent coffee shops, vintage clothing, craft beer bars, and fewer crowds; Beijing's creative class hangs out here on weekends    - When to visit: Saturday or Sunday morning; cafés open by 9:30 AM    - Seasonality: Year-round",
+  "tables": [],
   "bullets": [
-    {
-      "heading": "\"Only Here\" Experiences",
-      "items": [
-        "Beijing: Peking Opera masks painted to order in Liulichang; siheyuan courtyard breakfast in 600-year-old hutong",
-        "Hanoi: Bia Hoi Corner — fresh beer 5,000–10,000 VND at plastic stools; Water Puppet Theatre (11th-century art form)",
-        "Hội An: Floating flower candles on Thu Bon River at dusk (~10,000 VND); Cao Lầu noodles from Cham well water — unique to this town"
-      ]
-    },
-    {
-      "heading": "Neighborhood Deep-Dives",
-      "items": [
-        "Beijing: Beixinqiao — young Beijingers live/eat here; zero tourist infrastructure; century-old teahouse",
-        "Hanoi: Tay Ho (West Lake) — expat area, Tran Quoc Pagoda on island, far fewer tourists than Old Quarter"
-      ]
-    },
-    {
-      "heading": "Nighttime Secrets",
-      "items": [
-        "Beijing: Drum/Bell Tower squares after 10 PM — guitars, snacks, conversation under ancient towers",
-        "Hanoi: Nha Tho Street (Cathedral) — wine bars, boutique shops; 7–10 PM Parisian vibe",
-        "Hội An: Ancient Town lantern light after 7 PM; Full Moon Festival turns off electricity (confirm lunar calendar)"
-      ]
-    },
     {
       "heading": "Cross-Border Connections",
       "items": [
-        "Confucian traditions in both — ancestor shrines in homes; ask and locals light up",
-        "Chinese immigrants brought Won Ton → evolved into Cao Lầu; Phung Kien Assembly Hall is pure Southern Chinese temple style",
-        "Bánh mì (French-Vietnamese fusion) parallels Beijing duck and Vietnamese thịt heo quay — shared Cantonese roasting roots"
+        "Cultural thread: Both China and Vietnam have deep Confucian traditions (education, family, respect for elders); entering each other's homes you'll see ancestor shrines — ask about them and locals light up",
+        "Food thread: Chinese immigrants in Hội An (17th century) brought Won Ton soup, which evolved into Cao Lầu; the Phung Kien Assembly Hall in Hội An is built in pure Southern Chinese temple style; the architectural DNA crosses borders",
+        "Regional food spanning both countries: Bánh mì's French bread foundation + Vietnamese fillings is a colonial-era fusion; similarly, Beijing roasted meats (Beijing duck) have parallels in Vietnamese roast pork (thịt heo quay) — both traditions come from the same Cantonese roasting technique"
       ]
     }
   ],
-  "callouts": [
-    { "status": "info", "text": "798 Art Zone: add to Day 4 afternoon if shopping energy is low" },
-    { "status": "info", "text": "Non Nước Village: large pieces shippable internationally; small pieces (under $50) perfect carry-home buys" },
-    { "status": "pass", "text": "5 hidden gems per location; 2 \"only here\" experiences each; all explicitly lower-crowd alternatives" }
-  ]
+  "callouts": [],
+  "slide_title_accent": "GEMS",
+  "section_label": "Hidden Gems",
+  "section_kicker": "Local favorites · tourist traps · solo swaps",
+  "banner": {
+    "text": "1. Wudaoying Hutong — A quieter, hipper hutong parallel to the tourist-heavy Nanluoguxiang; independent coffee shops, vintage clothing, craft beer bars, and fewer crowds; Beijing's creative class hangs out here on weekends    - When to visit: Saturday or Sunday morning; cafés open by 9:30 AM    - Seasonality: Year-round"
+  },
+  "sidebar": [
+    {
+      "type": "list",
+      "caption": "Cross-Border Connections",
+      "items": [
+        "Cultural thread: Both China and Vietnam have deep Confucian traditions (education, family, respect for elders); entering each other's homes you'll see ancestor shrines — ask about them and locals light up",
+        "Food thread: Chinese immigrants in Hội An (17th century) brought Won Ton soup, which evolved into Cao Lầu; the Phung Kien Assembly Hall in Hội An is built in pure Southern Chinese temple style; the architectural DNA crosses borders",
+        "Regional food spanning both countries: Bánh mì's French bread foundation + Vietnamese fillings is a colonial-era fusion; similarly, Beijing roasted meats (Beijing duck) have parallels in Vietnamese roast pork (thịt heo quay) — both traditions come from the same Cantonese roasting technique"
+      ],
+      "ordered": false
+    }
+  ],
+  "panels": []
 }

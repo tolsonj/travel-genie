@@ -1,55 +1,249 @@
 {
   "aspect": "17-time-optimization",
-  "type": "generic",
+  "type": "dashboard",
   "trip": "china-vietnam-2026",
   "title": "Time Optimization",
-  "slide_title": "TIME OPTIMIZATION",
-  "intro": "14 days at relaxed pace. \"Early\" = 8\u20139 AM at sites (not 6 AM) to match late-morning profile. 70% rule fits Vietnam flexibility; border days 6, 8, 14 run at 100%.",
+  "slide_title": "TIME",
+  "intro": "Current dates: September 1–14, 2026 (Tuesday to Monday) - Departure: Tuesday Sept 1 — uses 1 PTO (Monday is Labor Day in US — Sept 7, 2026 is Labor Day) - Wait: Labor Day 2026 is September 7 — if trip departs on Tuesday Sept 2, Labor Day weekend extends without using it as PTO - Revised suggestion: Depart Monday Sept 1 (use 0 PTO; Labor Day is a holiday) → or depart Sunday Aug 31 (evening flight, arrive Beijing Tuesday) → land Beijing Sept 1 (Day 1 is essentially \"free\" because you crossed the date line)",
   "tables": [
     {
       "caption": "Transit Time Minimization",
-      "columns": ["Strategy", "Applied?", "Result"],
+      "columns": [
+        "Strategy",
+        "Applied?",
+        "Result"
+      ],
       "rows": [
-        ["Red-eye US\u2192China (Sun eve arrive Mon/Tue AM)", "Yes", "Saves full calendar day"],
-        ["Open-jaw PEK in / DAD out", "Yes", "No backtracking day"],
-        ["Beijing Airport Express vs taxi", "Yes", "~1 hr saved on arrival"],
-        ["Hanoi\u2192Đà Nẵng flight vs 14hr train", "Fly", "Correct for profile"],
-        ["Beijing\u2192Hanoi direct ~4hr", "Yes", "Best border option"]
+        [
+          "Red-eye / overnight flight (US→China)",
+          "Yes — depart Sunday evening, arrive Beijing Monday-Tuesday morning",
+          "Saves a full calendar day"
+        ],
+        [
+          "Overnight train option",
+          "Not used (domestic Vietnam: Hanoi→Đà Nẵng is 1.25 hr flight vs 14 hr train)",
+          "Fly is correct for this profile"
+        ],
+        [
+          "Open-jaw routing",
+          "Yes — fly into PEK, fly out of DAD",
+          "Eliminates backtracking day"
+        ],
+        [
+          "Beijing domestic transit",
+          "Airport Express train (~30 min) vs taxi (~90 min in traffic)",
+          "Saves 1 hr on arrival day"
+        ],
+        [
+          "Quickest border crossing",
+          "Beijing → Hanoi by direct flight (~4 hrs)",
+          "Best option; no faster alternative"
+        ]
       ]
     },
     {
-      "caption": "70% Rule by Day",
-      "columns": ["Day", "Planned", "Flex buffer"],
+      "caption": "The 70% Rule Applied",
+      "columns": [
+        "Day",
+        "Planned (100%)",
+        "Flex (30%) buffer"
+      ],
       "rows": [
-        ["1 Beijing arrival", "Rest + evening walk", "Skippable if tired"],
-        ["2 Forbidden City", "City + hutong + dinner", "Evening optional"],
-        ["6, 8, 14 Transit", "100% scheduled", "No flexibility"],
-        ["7 Hanoi", "Lake + temple + night market", "Afternoon open"],
-        ["9\u201310 Resort + Hội An", "Marble Mts + Ancient Town", "Afternoons open"],
-        ["13 Beach + farewell", "Beach + shopping + dinner", "Buffer day in spirit"]
+        [
+          "Day 1 (Beijing arrival)",
+          "Rest + evening walk",
+          "Skippable if tired"
+        ],
+        [
+          "Day 2 (Forbidden City)",
+          "City + hutong + dinner",
+          "Evening optional"
+        ],
+        [
+          "Day 3 (Great Wall)",
+          "Wall + toboggan + dinner",
+          "Silk Street = optional"
+        ],
+        [
+          "Day 4 (Temple + shopping)",
+          "Temple + Sanlitun",
+          "Full afternoon open"
+        ],
+        [
+          "Day 5 (Summer Palace)",
+          "Palace + packing",
+          "Afternoon shopping = flex"
+        ],
+        [
+          "Day 6 (Transit)",
+          "100% scheduled — border day",
+          "No flexibility; execute exactly"
+        ],
+        [
+          "Day 7 (Hanoi)",
+          "Lake + temple + night market",
+          "Afternoon completely open"
+        ],
+        [
+          "Day 8 (Transit Hanoi→DAD)",
+          "100% scheduled",
+          "Execute; no flexibility"
+        ],
+        [
+          "Days 9–10 (resort + Hội An)",
+          "Marble Mts + Hội An",
+          "Afternoons = open"
+        ],
+        [
+          "Day 11 (Son Trà + fitting)",
+          "Fitting + peninsula",
+          "Snorkeling = 100% optional"
+        ],
+        [
+          "Day 12 (My Son + pickup)",
+          "My Son + tailor",
+          "Afternoon fully open"
+        ],
+        [
+          "Day 13 (Beach + farewell)",
+          "Beach + shopping + dinner",
+          "100% buffer day in spirit"
+        ],
+        [
+          "Day 14 (Departure)",
+          "100% scheduled",
+          "No flexibility; airport on time"
+        ]
       ]
     },
     {
       "caption": "Early / Late Access",
-      "columns": ["Site", "Opens", "Best time"],
+      "columns": [
+        "Site",
+        "Opens",
+        "Best Time",
+        "Why"
+      ],
       "rows": [
-        ["Forbidden City", "8:30 AM", "8:30 AM (before 9:30 tour buses)"],
-        ["Great Wall Mutianyu", "8:00 AM", "8 AM first cable car"],
-        ["My Son Sanctuary", "7:30 AM", "7:30 AM (heat + crowds)"],
-        ["Hội An Ancient Town", "24 hrs", "8 AM or after 5 PM (lanterns)"],
-        ["Temple of Heaven park", "6:00 AM", "7\u20139 AM (tai chi, cool air)"]
+        [
+          "Forbidden City",
+          "8:30 AM",
+          "8:30 AM",
+          "Before tour buses at 9:30; best light"
+        ],
+        [
+          "Temple of Heaven",
+          "6:00 AM (park)",
+          "7–9 AM",
+          "Tai chi practitioners; locals; cool air"
+        ],
+        [
+          "Great Wall Mutianyu",
+          "8:00 AM",
+          "8 AM (first cable car)",
+          "Crowds arrive 10 AM; quiet first 2 hours"
+        ],
+        [
+          "Summer Palace",
+          "7:00 AM",
+          "9 AM",
+          "Doesn't need early entry; avoid peak summer months"
+        ],
+        [
+          "Ngoc Son Temple",
+          "8:00 AM",
+          "8 AM",
+          "Pre-tourist serenity"
+        ],
+        [
+          "Hội An Ancient Town",
+          "Open 24hrs",
+          "8 AM OR after 5 PM",
+          "Before tour buses / lantern evening"
+        ],
+        [
+          "My Son Sanctuary",
+          "7:30 AM",
+          "7:30 AM",
+          "Critical — beat heat AND crowds"
+        ],
+        [
+          "Marble Mountains",
+          "7:30 AM",
+          "9 AM",
+          "Caves are cool; pre-heat"
+        ]
       ]
     },
     {
       "caption": "Efficiency Scorecard",
-      "columns": ["Metric", "Value", "Target", "Status"],
+      "columns": [
+        "Metric",
+        "Value",
+        "Target",
+        "Status"
+      ],
       "rows": [
-        ["Transit days", "2 (14%)", "<20%", "Pass"],
-        ["Experience hours/day", "8\u201310 hrs", ">6 hrs", "Pass"],
-        ["70% rule days", "10 of 14", ">70%", "Pass"],
-        ["Border days with heavy activities", "0", "0", "Pass"],
-        ["Open-jaw routing", "Yes", "Yes", "Pass"],
-        ["Overall grade", "A", "\u2014", "Pass"]
+        [
+          "Transit days (inter-city)",
+          "2 full days",
+          "<20% of total",
+          "✅ 14%"
+        ],
+        [
+          "Pure experience hours/day",
+          "~8–10 hrs",
+          ">6 hrs",
+          "✅ PASS"
+        ],
+        [
+          "Daily in-city transit",
+          "30–60 min average",
+          "<2 hrs",
+          "✅ PASS"
+        ],
+        [
+          "Border crossing days with demanding activities",
+          "0",
+          "0",
+          "✅ PASS"
+        ],
+        [
+          "Soft arrival days per new city",
+          "3 of 3",
+          "All",
+          "✅ PASS"
+        ],
+        [
+          "70% rule days",
+          "10 of 14",
+          ">70%",
+          "✅ PASS"
+        ],
+        [
+          "Open-jaw routing used",
+          "Yes",
+          "Yes",
+          "✅ PASS"
+        ],
+        [
+          "Jet lag mitigation",
+          "Day 1 recovery scheduled",
+          "Required",
+          "✅ PASS"
+        ],
+        [
+          "Activity clustering",
+          "Applied in all 3 cities",
+          "Applied",
+          "✅ PASS"
+        ],
+        [
+          "Early morning access at key sites",
+          "7 of 8 sites",
+          "Max possible",
+          "✅ PASS"
+        ]
       ]
     }
   ],
@@ -57,41 +251,345 @@
     {
       "heading": "PTO Hacking",
       "items": [
-        "Optimal: depart Sat Aug 30 or Sun Aug 31; arrive Beijing Mon Sept 1 (Labor Day 2026 = Sept 7)",
-        "Return Sat Sept 13 or Sun Sept 14 \u2014 weekend travel saves PTO",
-        "Net PTO: ~9 days (Mon Sept 1\u2013Fri Sept 12) vs 10 with midweek-only travel",
-        "Power play: +1 PTO Sept 15 \u2192 extra Đà Nẵng resort night (~$700\u20131,400)"
+        "Departure: Tuesday Sept 1 — uses 1 PTO (Monday is Labor Day in US — Sept 7, 2026 is Labor Day)",
+        "Wait: Labor Day 2026 is September 7 — if trip departs on Tuesday Sept 2, Labor Day weekend extends without using it as PTO",
+        "Revised suggestion: Depart Monday Sept 1 (use 0 PTO; Labor Day is a holiday) → or depart Sunday Aug 31 (evening flight, arrive Beijing Tuesday) → land Beijing Sept 1 (Day 1 is essentially \"free\" because you crossed the date line)",
+        "Depart: Saturday Aug 30 or Sunday Aug 31 (use no PTO for travel days; weekend departure)",
+        "Arrive Beijing: Monday Sept 1 (Labor Day back home — not a PTO day)",
+        "Return: Saturday Sept 13 or Sunday Sept 14 (weekend return = no PTO used for travel day)",
+        "Net PTO used: 9 days (Mon Sept 1 through Fri Sept 12) instead of 10 if flying over the weekend",
+        "Power play: Use 1 extra PTO day to add Sept 15 (Monday) → extends to 15 days; best extension would be an extra night in Đà Nẵng at the resort"
       ]
     },
     {
-      "heading": "Jet Lag (US \u2192 Beijing, +12 hr Eastern)",
+      "heading": "Jet Lag Management",
       "items": [
-        "Flight: stay awake until local 9\u201310 PM; align from Day 1",
-        "Day 1: no nap; afternoon light walk; bed 10 PM; alarm 8 AM",
-        "Melatonin 0.5\u20131 mg local bedtime Days 1\u20132 (not 5\u201310 mg)",
-        "Resolved by Day 3 (Great Wall); return eastbound easier in 2\u20133 days"
+        "Day 0 (flight): Stay awake until Beijing local time ~9–10 PM; force alignment to local timezone from Day 1",
+        "Day 1 (Beijing): Do NOT nap; exposure to natural light (afternoon walk to Wangfujing) resets circadian rhythm; go to bed at 10 PM local time; set alarm for 8 AM",
+        "Day 2: Near-normal; slight fatigue afternoon is normal",
+        "Day 3 (Great Wall): Full energy; jet lag typically resolved by Day 3 with this protocol",
+        "Beijing arrival Day 1: Light, no demanding activities — CORRECT ✓",
+        "Hanoi arrival Day 6 evening: Arrive, walk lake, sleep — CORRECT ✓",
+        "Đà Nẵng arrival Day 8 midday: Resort check-in, beach walk, room service — CORRECT ✓"
       ]
     },
     {
       "heading": "Activity Clustering",
       "items": [
-        "Beijing: Forbidden City \u2192 Jingshan \u2192 Wangfujing (1.5 km); Wall Day 3 standalone; Summer Palace standalone",
-        "Hanoi: Hoan Kiem \u2192 Ngoc Son \u2192 36 Streets \u2192 Dong Xuan \u2192 Ta Hien (1 km walk)",
-        "Đà Nẵng: Son Trà + Mỹ Khê north; Marble Mts \u2192 Hội An south; My Son own day"
+        "Dongcheng Historical Circuit: Forbidden City → Jingshan → Wangfujing (all within 1.5 km walking)",
+        "Temple of Heaven is standalone (metro from hotel, 25 min)",
+        "Great Wall is a full day excursion — not clusterable; correctly placed mid-trip on Day 3",
+        "Summer Palace is standalone (metro or DiDi, 40 min)",
+        "Old Quarter Circuit: Hoan Kiem Lake → Ngoc Son Temple → 36 Streets → Dong Xuan Market → Ta Hien Beer Street (all walkable in 1 km radius)",
+        "Temple of Literature is a 15-min Grab from the Old Quarter; do as one excursion",
+        "North corridor: Son Trà Peninsula + Mỹ Khê Beach (adjacent; same area as resort)",
+        "South corridor: Marble Mountains → Hội An (same direction; Day 9 and Day 10 are correctly clustered)",
+        "My Son: standalone excursion; correctly placed on its own day (Day 12)"
       ]
     },
     {
-      "heading": "Power Play (+2\u20133 PTO)",
+      "heading": "The \"Power Play\" — If Adding 2–3 PTO Days",
       "items": [
-        "Best extension: Sept 15\u201316 extra Đà Nẵng resort (beach, Cham Islands weather window, Hội An shopping)",
-        "Alt: Aug 28 depart for +2 Beijing days (Xi'an Terra Cotta day trip)",
-        "Recommendation: resort extension over Xi'an for this profile"
+        "Maximum return: Two more beach/resort days at the splurge property; Cham Islands snorkeling with better weather window (one more day of flexibility); extra Hội An day for leisurely shopping",
+        "Cost: ~$700–1,400 extra accommodation; minimal flight change fees",
+        "Extra 2 days in Beijing: Possible day trip to Xi'an (Terra Cotta Warriors — 1 hr flight; historically extraordinary)",
+        "Return: Xi'an is worth 2 days if itinerary extends; single greatest addition to China experience",
+        "Cost: ~$400–600 domestic China flight; ¥200 extra accommodation"
       ]
     }
   ],
   "callouts": [
-    { "status": "pass", "text": "Border days 6, 8, 14 at 100% schedule \u2014 only days with zero flex" },
-    { "status": "info", "text": "Book now: Da Dong Peking Duck, NON La Đà Nẵng, White Rose Hội An (weeks ahead)" },
-    { "status": "pass", "text": "Depart Sun Aug 31 instead of Tue Sept 1 saves 1 PTO; Day 1 light recovery intact" }
+    {
+      "status": "pass",
+      "text": "10 validation check(s) passed in source plan."
+    }
+  ],
+  "slide_title_accent": "OPTIMIZATION",
+  "section_label": "Time Optimization",
+  "section_kicker": "PTO · clustering · crowd timing · scorecard",
+  "banner": {
+    "text": "Current dates: September 1–14, 2026 (Tuesday to Monday) - Departure: Tuesday Sept 1 — uses 1 PTO (Monday is Labor Day in US — Sept 7, 2026 is Labor Day) - Wait: Labor Day 2026 is September 7 — if trip departs on Tuesday Sept 2, Labor Day weekend extends without using it as PTO - Revised suggestion: Depart Monday Sept 1 (use 0 PTO; Labor Day is a holiday) → or depart Sunday Aug 31 (evening flight, arrive Beijing Tuesday) → land Beijing Sept 1 (Day 1 is essentially \"free\" because you crossed the date line)"
+  },
+  "sidebar": [
+    {
+      "type": "list",
+      "caption": "PTO Hacking",
+      "items": [
+        "Departure: Tuesday Sept 1 — uses 1 PTO (Monday is Labor Day in US — Sept 7, 2026 is Labor Day)",
+        "Wait: Labor Day 2026 is September 7 — if trip departs on Tuesday Sept 2, Labor Day weekend extends without using it as PTO",
+        "Revised suggestion: Depart Monday Sept 1 (use 0 PTO; Labor Day is a holiday) → or depart Sunday Aug 31 (evening flight, arrive Beijing Tuesday) → land Beijing Sept 1 (Day 1 is essentially \"free\" because you crossed the date line)",
+        "Depart: Saturday Aug 30 or Sunday Aug 31 (use no PTO for travel days; weekend departure)",
+        "Arrive Beijing: Monday Sept 1 (Labor Day back home — not a PTO day)",
+        "Return: Saturday Sept 13 or Sunday Sept 14 (weekend return = no PTO used for travel day)",
+        "Net PTO used: 9 days (Mon Sept 1 through Fri Sept 12) instead of 10 if flying over the weekend",
+        "Power play: Use 1 extra PTO day to add Sept 15 (Monday) → extends to 15 days; best extension would be an extra night in Đà Nẵng at the resort"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "list",
+      "caption": "Jet Lag Management",
+      "items": [
+        "Day 0 (flight): Stay awake until Beijing local time ~9–10 PM; force alignment to local timezone from Day 1",
+        "Day 1 (Beijing): Do NOT nap; exposure to natural light (afternoon walk to Wangfujing) resets circadian rhythm; go to bed at 10 PM local time; set alarm for 8 AM",
+        "Day 2: Near-normal; slight fatigue afternoon is normal",
+        "Day 3 (Great Wall): Full energy; jet lag typically resolved by Day 3 with this protocol",
+        "Beijing arrival Day 1: Light, no demanding activities — CORRECT ✓",
+        "Hanoi arrival Day 6 evening: Arrive, walk lake, sleep — CORRECT ✓",
+        "Đà Nẵng arrival Day 8 midday: Resort check-in, beach walk, room service — CORRECT ✓"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "validations",
+      "items": [
+        {
+          "status": "pass",
+          "text": "10 validation check(s) passed in source plan."
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "caption": "Transit Time Minimization",
+      "columns": [
+        "Strategy",
+        "Applied?",
+        "Result"
+      ],
+      "rows": [
+        [
+          "Red-eye / overnight flight (US→China)",
+          "Yes — depart Sunday evening, arrive Beijing Monday-Tuesday morning",
+          "Saves a full calendar day"
+        ],
+        [
+          "Overnight train option",
+          "Not used (domestic Vietnam: Hanoi→Đà Nẵng is 1.25 hr flight vs 14 hr train)",
+          "Fly is correct for this profile"
+        ],
+        [
+          "Open-jaw routing",
+          "Yes — fly into PEK, fly out of DAD",
+          "Eliminates backtracking day"
+        ],
+        [
+          "Beijing domestic transit",
+          "Airport Express train (~30 min) vs taxi (~90 min in traffic)",
+          "Saves 1 hr on arrival day"
+        ],
+        [
+          "Quickest border crossing",
+          "Beijing → Hanoi by direct flight (~4 hrs)",
+          "Best option; no faster alternative"
+        ]
+      ]
+    },
+    {
+      "caption": "The 70% Rule Applied",
+      "columns": [
+        "Day",
+        "Planned (100%)",
+        "Flex (30%) buffer"
+      ],
+      "rows": [
+        [
+          "Day 1 (Beijing arrival)",
+          "Rest + evening walk",
+          "Skippable if tired"
+        ],
+        [
+          "Day 2 (Forbidden City)",
+          "City + hutong + dinner",
+          "Evening optional"
+        ],
+        [
+          "Day 3 (Great Wall)",
+          "Wall + toboggan + dinner",
+          "Silk Street = optional"
+        ],
+        [
+          "Day 4 (Temple + shopping)",
+          "Temple + Sanlitun",
+          "Full afternoon open"
+        ],
+        [
+          "Day 5 (Summer Palace)",
+          "Palace + packing",
+          "Afternoon shopping = flex"
+        ],
+        [
+          "Day 6 (Transit)",
+          "100% scheduled — border day",
+          "No flexibility; execute exactly"
+        ],
+        [
+          "Day 7 (Hanoi)",
+          "Lake + temple + night market",
+          "Afternoon completely open"
+        ],
+        [
+          "Day 8 (Transit Hanoi→DAD)",
+          "100% scheduled",
+          "Execute; no flexibility"
+        ],
+        [
+          "Days 9–10 (resort + Hội An)",
+          "Marble Mts + Hội An",
+          "Afternoons = open"
+        ],
+        [
+          "Day 11 (Son Trà + fitting)",
+          "Fitting + peninsula",
+          "Snorkeling = 100% optional"
+        ],
+        [
+          "Day 12 (My Son + pickup)",
+          "My Son + tailor",
+          "Afternoon fully open"
+        ],
+        [
+          "Day 13 (Beach + farewell)",
+          "Beach + shopping + dinner",
+          "100% buffer day in spirit"
+        ],
+        [
+          "Day 14 (Departure)",
+          "100% scheduled",
+          "No flexibility; airport on time"
+        ]
+      ]
+    },
+    {
+      "caption": "Early / Late Access",
+      "columns": [
+        "Site",
+        "Opens",
+        "Best Time",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Forbidden City",
+          "8:30 AM",
+          "8:30 AM",
+          "Before tour buses at 9:30; best light"
+        ],
+        [
+          "Temple of Heaven",
+          "6:00 AM (park)",
+          "7–9 AM",
+          "Tai chi practitioners; locals; cool air"
+        ],
+        [
+          "Great Wall Mutianyu",
+          "8:00 AM",
+          "8 AM (first cable car)",
+          "Crowds arrive 10 AM; quiet first 2 hours"
+        ],
+        [
+          "Summer Palace",
+          "7:00 AM",
+          "9 AM",
+          "Doesn't need early entry; avoid peak summer months"
+        ],
+        [
+          "Ngoc Son Temple",
+          "8:00 AM",
+          "8 AM",
+          "Pre-tourist serenity"
+        ],
+        [
+          "Hội An Ancient Town",
+          "Open 24hrs",
+          "8 AM OR after 5 PM",
+          "Before tour buses / lantern evening"
+        ],
+        [
+          "My Son Sanctuary",
+          "7:30 AM",
+          "7:30 AM",
+          "Critical — beat heat AND crowds"
+        ],
+        [
+          "Marble Mountains",
+          "7:30 AM",
+          "9 AM",
+          "Caves are cool; pre-heat"
+        ]
+      ]
+    },
+    {
+      "caption": "Efficiency Scorecard",
+      "columns": [
+        "Metric",
+        "Value",
+        "Target",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Transit days (inter-city)",
+          "2 full days",
+          "<20% of total",
+          "✅ 14%"
+        ],
+        [
+          "Pure experience hours/day",
+          "~8–10 hrs",
+          ">6 hrs",
+          "✅ PASS"
+        ],
+        [
+          "Daily in-city transit",
+          "30–60 min average",
+          "<2 hrs",
+          "✅ PASS"
+        ],
+        [
+          "Border crossing days with demanding activities",
+          "0",
+          "0",
+          "✅ PASS"
+        ],
+        [
+          "Soft arrival days per new city",
+          "3 of 3",
+          "All",
+          "✅ PASS"
+        ],
+        [
+          "70% rule days",
+          "10 of 14",
+          ">70%",
+          "✅ PASS"
+        ],
+        [
+          "Open-jaw routing used",
+          "Yes",
+          "Yes",
+          "✅ PASS"
+        ],
+        [
+          "Jet lag mitigation",
+          "Day 1 recovery scheduled",
+          "Required",
+          "✅ PASS"
+        ],
+        [
+          "Activity clustering",
+          "Applied in all 3 cities",
+          "Applied",
+          "✅ PASS"
+        ],
+        [
+          "Early morning access at key sites",
+          "7 of 8 sites",
+          "Max possible",
+          "✅ PASS"
+        ]
+      ]
+    }
   ]
 }

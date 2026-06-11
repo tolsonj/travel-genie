@@ -1,92 +1,345 @@
 {
   "aspect": "11-adventure",
-  "type": "generic",
+  "type": "dashboard",
   "trip": "china-vietnam-2026",
   "title": "Adventure",
   "slide_title": "ADVENTURE",
-  "intro": "Scenic and nature-focused adventure calibrated to relaxed-cultural profile. Both travelers in excellent physical condition. Great Wall (Day 3) is the China anchor. September Vietnam: warm water (~28°C), calm inshore at Mỹ Khê; typhoon watch on open-ocean activities. No extreme sports.",
+  "intro": "Great Wall Hike (Mutianyu) — Day 3 - Activity: 4–6 km ridge walk between restored towers; elevation change ~200 m over walk - Difficulty: Moderate — steps are uneven; some steep sections between towers 14–20 - Duration: 2–3 hours of active walking - Highlights: Dramatic ridge views; option to continue to unrestored \"wild wall\" section beyond Tower 20 (bring good shoes for this) - Toboggan descent: Metal luge track from Tower 6 to base — 580 m descent, ~3 min; exhilarating and crowd-appropriate (it's fast but not extreme) - Fitness required: Moderate; their fitness level is more than sufficient - Gear: Comfortable walking shoes (NOT sandals); sunscreen; water; the wall vendors at the top charge ¥25 for water - Border crossing rule: Day 3 is not a border day — CLEAR ✓",
   "tables": [
     {
-      "caption": "Adventure Calendar",
-      "columns": ["Day", "Activity", "Notes"],
+      "caption": "Cross-Border Gear Strategy",
+      "columns": [
+        "Item",
+        "Bring?",
+        "Notes"
+      ],
       "rows": [
-        ["Day 2", "Jingshan Hill (30 min)", "Light; 300 steps; best Forbidden City panorama post-visit"],
-        ["Day 3", "Great Wall Mutianyu + toboggan", "Main China anchor — 4–6 km ridge walk, 2–3 hrs; toboggan from Tower 6"],
-        ["Day 5", "Kunming Lake rowboat", "Gentle — 1–2 hrs, ~¥100/hr among lotus flowers"],
-        ["Day 9", "Marble Mountains + beach + SUP", "Full activity day; caves 9–11 AM before heat"],
-        ["Day 10", "Hội An walking", "Cultural but physical"],
-        ["Day 11", "Son Trà Peninsula + optional snorkeling", "Nature walk; langurs 7:30–10 AM; snorkeling weather-dependent"],
-        ["Day 12", "My Son sanctuary walk", "Early AM; 1.5–2 hrs; uneven jungle terrain"],
-        ["Day 13", "Final beach morning", "Pure relaxation"]
+        [
+          "Hiking/walking shoes",
+          "Yes",
+          "Mutianyu requires good grip; Marble Mountains has uneven steps"
+        ],
+        [
+          "Sandals/flip-flops",
+          "Yes",
+          "Temple visits, beach, resort"
+        ],
+        [
+          "Swimwear (2 sets)",
+          "Yes",
+          "Daily beach use in Vietnam"
+        ],
+        [
+          "Light rain jacket",
+          "Yes",
+          "Monsoon season in both countries; also doubles as layer"
+        ],
+        [
+          "Trekking poles",
+          "Not needed",
+          "No serious trekking planned; would add luggage complexity"
+        ],
+        [
+          "Snorkel gear",
+          "No",
+          "Available for rent at Cham Islands; not worth packing"
+        ],
+        [
+          "Underwater camera",
+          "Yes",
+          "GoPro or waterproof case for beach/snorkeling"
+        ]
       ]
     },
     {
-      "caption": "China — Beijing Adventures",
-      "columns": ["Activity", "Difficulty", "Details"],
+      "caption": "Operator Vetting Guide",
+      "columns": [
+        "Activity",
+        "Questions to Ask"
+      ],
       "rows": [
-        ["Great Wall (Mutianyu)", "Moderate", "4–6 km ridge; ~200 m elevation; uneven steps; wild wall beyond Tower 20; good shoes required"],
-        ["Jingshan Hill", "Easy", "88 m hill, 300 steps; 30 min round trip; summit panorama of Forbidden City"],
-        ["Summer Palace Rowboat", "Leisurely", "Kunming Lake; 1–2 hrs; pagodas from water; peaceful"]
+        [
+          "Cham Islands snorkeling",
+          "\"Are your guides PADI certified?\" \"What is your boat capacity?\" \"Do you have life jackets?\""
+        ],
+        [
+          "Any water activity",
+          "\"Is the equipment inspected daily?\" \"What is the cancellation/refund policy if weather deteriorates?\""
+        ],
+        [
+          "Son Trà guide",
+          "\"Does your vehicle have insurance?\" \"How many in the group?\" (Private guide preferred)"
+        ]
       ]
     },
     {
-      "caption": "Vietnam — Water & Land",
-      "columns": ["Activity", "Viability", "Details"],
+      "caption": "Adventure Calendar Integration",
+      "columns": [
+        "Day",
+        "Adventure Activity",
+        "Notes"
+      ],
       "rows": [
-        ["Mỹ Khê Beach swim (Days 9, 13)", "Excellent", "~28°C water; mild surf; resort loungers provided"],
-        ["Stand-Up Paddleboarding", "Good", "Resort rental (Hyatt, Fusion Maia); morning flat conditions; ~$15–20/hr or included"],
-        ["Cham Islands Snorkeling", "Marginal", "50–60% clear conditions in Sept; check weather 48 hrs; ~$35–50/person; weather-dependent bonus"],
-        ["Son Trà Peninsula", "Easy–Moderate", "Rainforest walk; Lady Buddha; douc langurs 7:30–10 AM; 2–3 hrs"],
-        ["Marble Mountains", "Easy", "Stairs + caverns; cable car available; Huyen Khong + Van Thong caves; 1.5–2 hrs"],
-        ["My Son Sanctuary", "Easy", "Flat mostly; muddy after rain; 7:30 AM opening"]
-      ]
-    },
-    {
-      "caption": "Cross-Border Gear",
-      "columns": ["Item", "Bring?", "Notes"],
-      "rows": [
-        ["Hiking/walking shoes", "Yes", "Mutianyu grip; Marble Mountains uneven steps"],
-        ["Sandals/flip-flops", "Yes", "Temple visits, beach, resort"],
-        ["Swimwear (2 sets)", "Yes", "Daily beach use in Vietnam"],
-        ["Light rain jacket", "Yes", "Monsoon season; doubles as layer"],
-        ["Underwater camera", "Yes", "GoPro or waterproof case for beach/snorkeling"],
-        ["Trekking poles / snorkel gear", "No", "Not needed; snorkel gear rentable at Cham Islands"]
+        [
+          "Day 2",
+          "Jingshan Hill (30 min)",
+          "Light; post-Forbidden City"
+        ],
+        [
+          "Day 3",
+          "Great Wall Mutianyu + toboggan",
+          "Main adventure anchor in China"
+        ],
+        [
+          "Day 5",
+          "Kunming Lake rowboat",
+          "Gentle water activity"
+        ],
+        [
+          "Day 9",
+          "Marble Mountains + beach + SUP",
+          "Full activity day"
+        ],
+        [
+          "Day 10",
+          "Hội An walking",
+          "Cultural but physical"
+        ],
+        [
+          "Day 11",
+          "Son Trà Peninsula + optional snorkeling (weather)",
+          "Nature + possible water"
+        ],
+        [
+          "Day 12",
+          "My Son sanctuary walk (early AM)",
+          "Moderate walking"
+        ],
+        [
+          "Day 13",
+          "Final beach morning",
+          "Pure relaxation"
+        ]
       ]
     }
   ],
   "bullets": [
     {
-      "heading": "Great Wall Gear & Tips",
+      "heading": "CHINA — BEIJING",
       "items": [
-        "Comfortable walking shoes (NOT sandals); sunscreen; water",
-        "Wall vendors charge ¥25 for water at top",
-        "Toboggan: 580 m descent from Tower 6, ~3 min — exhilarating but not extreme",
-        "Day 3 is not a border day — CLEAR"
+        "Activity: 4–6 km ridge walk between restored towers; elevation change ~200 m over walk",
+        "Difficulty: Moderate — steps are uneven; some steep sections between towers 14–20",
+        "Duration: 2–3 hours of active walking",
+        "Highlights: Dramatic ridge views; option to continue to unrestored \"wild wall\" section beyond Tower 20 (bring good shoes for this)",
+        "Toboggan descent: Metal luge track from Tower 6 to base — 580 m descent, ~3 min; exhilarating and crowd-appropriate (it's fast but not extreme)",
+        "Fitness required: Moderate; their fitness level is more than sufficient",
+        "Gear: Comfortable walking shoes (NOT sandals); sunscreen; water; the wall vendors at the top charge ¥25 for water",
+        "Border crossing rule: Day 3 is not a border day — CLEAR ✓",
+        "Activity: 88-meter artificial hill; 300 steps to the Wanchun Pavilion at summit",
+        "Duration: 30 minutes up and down",
+        "Reward: Best panoramic view of Forbidden City's full symmetry — worth every step",
+        "Activity: Rowboat rental on Kunming Lake (⅔ the size of New York's Central Park)",
+        "Duration: 1–2 hours; ~¥100/hour for rental",
+        "Character: Leisurely — paddles among lotus flowers; pagodas visible from water; peaceful rather than strenuous"
       ]
     },
     {
-      "heading": "Cham Islands Snorkeling",
+      "heading": "VIETNAM — ĐÀ NẴNG / HỘI AN",
       "items": [
-        "18 km offshore; speedboat ~45 min; Cham Island Diving Center (PADI certified)",
-        "Book 1 day ahead, not in advance; full-day trip with lunch",
-        "Plan Day 11 afternoon after fitting; treat as weather-dependent bonus",
-        "Operators cancel if sea conditions deteriorate"
+        "September water: ~28°C; generally calm on the Đà Nẵng side (protected by the peninsula)",
+        "Waves: Mild surf; safe swimming year-round on this stretch",
+        "Equipment: Resort provides loungers and umbrellas; no equipment needed",
+        "Availability: Most 4–5 star beach resorts in Đà Nẵng offer SUP rental (Hyatt Regency, Fusion Maia)",
+        "September viability: Good — morning conditions are typically flat; avoid afternoons if wind picks up",
+        "Duration: 30 min–1 hr; no instruction needed for beginners",
+        "Cost: Often included at Fusion Maia (all-inclusive) or ~$15–20/hr elsewhere",
+        "Location: 18 km offshore from Hội An; accessible by speedboat (~45 min)",
+        "September viability: Marginal — visibility varies (50–60% chance of clear conditions); water clarity peaks March–August; September is end of good season",
+        "Typhoon risk: Check weather 48 hrs before booking; operators cancel if sea conditions deteriorate",
+        "Operator: Cham Island Diving Center (reputable; PADI certified); book 1 day ahead, not in advance",
+        "Duration: Full-day trip including boat + snorkeling + lunch on island",
+        "Cost: ~$35–50/person",
+        "Recommendation: Plan for Day 11 afternoon (after fitting); treat as weather-dependent bonus, not scheduled anchor",
+        "Activity: Scenic drive/walk through protected rainforest; Lady Buddha lookout; douc langur spotting",
+        "Difficulty: Easy to moderate depending on path chosen; road access by car/motorbike taxi",
+        "Wildlife: Red-shanked douc langurs — one of the most colorful primates in the world; visible most mornings in the trees near the road",
+        "Duration: 2–3 hours including Lady Buddha visit",
+        "Best time: Early morning (7:30–10 AM) for langur sighting and pre-heat",
+        "Activity: Stairs and cavern exploration inside marble hills",
+        "Difficulty: Easy — stairs are well-maintained; cable car available for ascent",
+        "Caves: Huyen Khong Cave (natural light shafts illuminate Buddhist shrines) and Van Thong Cave (natural chimney; views from top)",
+        "Duration: 1.5–2 hours",
+        "Best time: 9–11 AM before midday heat peaks inside the stone",
+        "Activity: Archaeological site walking tour; uneven jungle terrain between temple groups",
+        "Difficulty: Easy — flat mostly; muddy after rain",
+        "Duration: 1.5–2 hours",
+        "Best time: 7:30 AM opening"
       ]
     },
     {
-      "heading": "Operator Vetting",
+      "heading": "Cross-Border Gear Strategy",
       "items": [
-        "Snorkeling: ask PADI certification, boat capacity, life jackets",
-        "Water activities: daily equipment inspection; cancellation/refund policy",
-        "Son Trà: vehicle insurance; private guide preferred",
-        "Book through resort concierge or TripAdvisor-rated operators — avoid street touts"
+        "No adventure gear restrictions for this route (no knives, no dive equipment that would flag)",
+        "GoPro and cameras are fine",
+        "Selfie sticks are fine"
       ]
     }
   ],
-  "callouts": [
-    { "status": "warn", "text": "Cham Islands snorkeling: September end of good season — check weather 48 hrs before; visibility varies" },
-    { "status": "warn", "text": "All outdoor adventure before 11 AM or in protected cave/water environments (heat deal-breaker)" },
-    { "status": "pass", "text": "Border crossing days (6, 8) have NO adventure activities" },
-    { "status": "pass", "text": "Recovery built in: Days 1, 6, 8, 13 are soft/rest days — no adventure fatigue risk" }
+  "callouts": [],
+  "slide_title_accent": "",
+  "section_label": "Adventure",
+  "section_kicker": "Day hikes · Kamikochi option · gear · safety",
+  "banner": {
+    "text": "Great Wall Hike (Mutianyu) — Day 3 - Activity: 4–6 km ridge walk between restored towers; elevation change ~200 m over walk - Difficulty: Moderate — steps are uneven; some steep sections between towers 14–20 - Duration: 2–3 hours of active walking - Highlights: Dramatic ridge views; option to continue to unrestored \"wild wall\" section beyond Tower 20 (bring good shoes for this) - Toboggan descent: Metal luge track from Tower 6 to base — 580 m descent, ~3 min; exhilarating and crowd-appropriate (it's fast but not extreme) - Fitness required: Moderate; their fitness level is more than sufficient - Gear: Comfortable walking shoes (NOT sandals); sunscreen; water; the wall vendors at the top charge ¥25 for water - Border crossing rule: Day 3 is not a border day — CLEAR ✓"
+  },
+  "sidebar": [
+    {
+      "type": "list",
+      "caption": "CHINA — BEIJING",
+      "items": [
+        "Activity: 4–6 km ridge walk between restored towers; elevation change ~200 m over walk",
+        "Difficulty: Moderate — steps are uneven; some steep sections between towers 14–20",
+        "Duration: 2–3 hours of active walking",
+        "Highlights: Dramatic ridge views; option to continue to unrestored \"wild wall\" section beyond Tower 20 (bring good shoes for this)",
+        "Toboggan descent: Metal luge track from Tower 6 to base — 580 m descent, ~3 min; exhilarating and crowd-appropriate (it's fast but not extreme)",
+        "Fitness required: Moderate; their fitness level is more than sufficient",
+        "Gear: Comfortable walking shoes (NOT sandals); sunscreen; water; the wall vendors at the top charge ¥25 for water",
+        "Border crossing rule: Day 3 is not a border day — CLEAR ✓"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "list",
+      "caption": "VIETNAM — ĐÀ NẴNG / HỘI AN",
+      "items": [
+        "September water: ~28°C; generally calm on the Đà Nẵng side (protected by the peninsula)",
+        "Waves: Mild surf; safe swimming year-round on this stretch",
+        "Equipment: Resort provides loungers and umbrellas; no equipment needed",
+        "Availability: Most 4–5 star beach resorts in Đà Nẵng offer SUP rental (Hyatt Regency, Fusion Maia)",
+        "September viability: Good — morning conditions are typically flat; avoid afternoons if wind picks up",
+        "Duration: 30 min–1 hr; no instruction needed for beginners",
+        "Cost: Often included at Fusion Maia (all-inclusive) or ~$15–20/hr elsewhere",
+        "Location: 18 km offshore from Hội An; accessible by speedboat (~45 min)"
+      ],
+      "ordered": false
+    }
+  ],
+  "panels": [
+    {
+      "caption": "Cross-Border Gear Strategy",
+      "columns": [
+        "Item",
+        "Bring?",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Hiking/walking shoes",
+          "Yes",
+          "Mutianyu requires good grip; Marble Mountains has uneven steps"
+        ],
+        [
+          "Sandals/flip-flops",
+          "Yes",
+          "Temple visits, beach, resort"
+        ],
+        [
+          "Swimwear (2 sets)",
+          "Yes",
+          "Daily beach use in Vietnam"
+        ],
+        [
+          "Light rain jacket",
+          "Yes",
+          "Monsoon season in both countries; also doubles as layer"
+        ],
+        [
+          "Trekking poles",
+          "Not needed",
+          "No serious trekking planned; would add luggage complexity"
+        ],
+        [
+          "Snorkel gear",
+          "No",
+          "Available for rent at Cham Islands; not worth packing"
+        ],
+        [
+          "Underwater camera",
+          "Yes",
+          "GoPro or waterproof case for beach/snorkeling"
+        ]
+      ]
+    },
+    {
+      "caption": "Operator Vetting Guide",
+      "columns": [
+        "Activity",
+        "Questions to Ask"
+      ],
+      "rows": [
+        [
+          "Cham Islands snorkeling",
+          "\"Are your guides PADI certified?\" \"What is your boat capacity?\" \"Do you have life jackets?\""
+        ],
+        [
+          "Any water activity",
+          "\"Is the equipment inspected daily?\" \"What is the cancellation/refund policy if weather deteriorates?\""
+        ],
+        [
+          "Son Trà guide",
+          "\"Does your vehicle have insurance?\" \"How many in the group?\" (Private guide preferred)"
+        ]
+      ]
+    },
+    {
+      "caption": "Adventure Calendar Integration",
+      "columns": [
+        "Day",
+        "Adventure Activity",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Day 2",
+          "Jingshan Hill (30 min)",
+          "Light; post-Forbidden City"
+        ],
+        [
+          "Day 3",
+          "Great Wall Mutianyu + toboggan",
+          "Main adventure anchor in China"
+        ],
+        [
+          "Day 5",
+          "Kunming Lake rowboat",
+          "Gentle water activity"
+        ],
+        [
+          "Day 9",
+          "Marble Mountains + beach + SUP",
+          "Full activity day"
+        ],
+        [
+          "Day 10",
+          "Hội An walking",
+          "Cultural but physical"
+        ],
+        [
+          "Day 11",
+          "Son Trà Peninsula + optional snorkeling (weather)",
+          "Nature + possible water"
+        ],
+        [
+          "Day 12",
+          "My Son sanctuary walk (early AM)",
+          "Moderate walking"
+        ],
+        [
+          "Day 13",
+          "Final beach morning",
+          "Pure relaxation"
+        ]
+      ]
+    }
   ]
 }

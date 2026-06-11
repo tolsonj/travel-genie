@@ -1,122 +1,601 @@
 {
   "aspect": "07-transport-money",
-  "type": "generic",
+  "type": "dashboard",
   "trip": "china-vietnam-2026",
   "title": "Transport Money",
-  "slide_title": "TRANSPORT & MONEY",
-  "intro": "App-based transport everywhere: DiDi (China), Grab (Vietnam). Beijing subway excellent. Hybrid money strategy: WeChat Pay + US credit cards + ATM cash. Vietnam more cash-reliant at street level. No street taxis — profile deal-breaker.",
+  "slide_title": "TRANSPORT",
+  "intro": "- Mode: International flight (Cathay Pacific, United, Singapore Airlines) - Airport: HKG (Hong Kong International) - Time: ~15–18 hrs from US West; ~16–20 hrs from US East (1 stop typical) - Cost estimate: $900–1,800/person economy; $3,000+ business - Open-jaw: Return from DAD (Đà Nẵng) — book as single itinerary",
   "tables": [
     {
-      "caption": "Intercity Legs",
-      "columns": ["Leg", "Mode", "Duration", "Cost Estimate"],
+      "caption": "WITHIN HONG KONG",
+      "columns": [
+        "Mode",
+        "When to Use",
+        "Cost",
+        "Notes"
+      ],
       "rows": [
-        ["Home → Beijing", "International flight (PEK/PKX)", "~13–16 hrs", "$1,200–2,000/person RT business"],
-        ["Beijing → Hanoi", "Flight (Vietnam Airlines, Air China direct)", "~4 hrs", "$150–350/person"],
-        ["Hanoi → Đà Nẵng", "Domestic flight (VietJet, Vietnam Airlines)", "~1.25 hrs", "$30–80/person"],
-        ["Đà Nẵng → Home", "International flight (via ICN/NRT/TPE)", "~15–20 hrs", "$1,200–2,000/person business"]
+        [
+          "MTR",
+          "Peak Tram area, Central, TST, Causeway Bay",
+          "HK$5–15",
+          "Octopus card; English signage"
+        ],
+        [
+          "Star Ferry",
+          "Central ↔ TST sunset",
+          "HK$3–5",
+          "Iconic, fast"
+        ],
+        [
+          "Bus 6/6X/260",
+          "Stanley",
+          "HK$10–25",
+          "Scenic"
+        ],
+        [
+          "Uber HK",
+          "Peak late night, Stanley return with bags",
+          "HK$80–200",
+          "App-only"
+        ]
       ]
     },
     {
-      "caption": "Within Beijing",
-      "columns": ["Mode", "When to Use", "Cost", "Notes"],
+      "caption": "WITHIN GUANGZHOU",
+      "columns": [
+        "Mode",
+        "When to Use",
+        "Cost",
+        "Notes"
+      ],
       "rows": [
-        ["Beijing Subway", "Tiananmen, Temple of Heaven, Summer Palace, Sanlitun", "¥3–6/trip", "Best urban transit; bilingual signage; get IC card at PEK"],
-        ["DiDi", "Great Wall day, late nights, luggage-heavy trips", "¥20–80/trip", "English mode; pay Visa/MC or WeChat; never negotiate"],
-        ["Walk", "Forbidden City → Tiananmen → Wangfujing", "Free", "15 min between most Dongcheng sites"],
-        ["Avoid", "Street taxis without meter", "Variable", "Notorious overcharging"]
+        [
+          "Metro",
+          "Taikoo Hui, Beijing Road, Chen Clan Hall",
+          "¥2–8",
+          "DiDi + metro; VPN/maps before mainland"
+        ],
+        [
+          "DiDi",
+          "Rain, late night, Shamian with luggage",
+          "¥15–50",
+          "English mode; card linked"
+        ],
+        [
+          "Walk",
+          "Shamian Island",
+          "Free",
+          "Flat, shaded"
+        ]
       ]
     },
     {
-      "caption": "Within Hanoi",
-      "columns": ["Mode", "When to Use", "Cost", "Notes"],
+      "caption": "WITHIN HANOI",
+      "columns": [
+        "Mode",
+        "When to Use",
+        "Cost",
+        "Notes"
+      ],
       "rows": [
-        ["Walk", "Old Quarter sites (Hoan Kiem, temples, markets)", "Free", "Most sites within 1–2 km"],
-        ["Grab", "Airport, longer distances, late night", "₫50,000–200,000 (~$2–8)", "Pre-select destination; app or cash payment"],
-        ["Cyclo", "Short scenic Old Quarter trip", "Negotiate ~₫200,000/hr", "Agree price BEFORE getting in"],
-        ["Avoid", "Street taxis at Noi Bai Airport", "—", "Use Grab or hotel car only"]
+        [
+          "Walk",
+          "All Old Quarter sites (Hoan Kiem Lake, temples, markets)",
+          "Free",
+          "Most sites within 1–2 km of each other"
+        ],
+        [
+          "Grab",
+          "Airport, longer distances, late night",
+          "₫50,000–200,000 (~$2–8)",
+          "Pre-select destination in app; payment in app or cash"
+        ],
+        [
+          "Cyclo (cycle rickshaw)",
+          "Short scenic trip in Old Quarter if desired",
+          "Negotiate (~₫200,000/hr)",
+          "Agree on price BEFORE getting in; treat as an experience, not primary transport"
+        ],
+        [
+          "Avoid",
+          "Street taxis at Noi Bai Airport",
+          "—",
+          "Use Grab or hotel car only; taxi scams at this airport are extremely well-documented"
+        ]
       ]
     },
     {
-      "caption": "Within Đà Nẵng / Hội An",
-      "columns": ["Mode", "When to Use", "Cost", "Notes"],
+      "caption": "WITHIN ĐÀ NẴNG / HỘI AN",
+      "columns": [
+        "Mode",
+        "When to Use",
+        "Cost",
+        "Notes"
+      ],
       "rows": [
-        ["Resort car/shuttle", "Airport pickup; resort excursions", "Included or ₫200,000–400,000", "Book through resort concierge"],
-        ["Grab", "Đà Nẵng city; Hội An day trips", "₫80,000–200,000 (~$3–8)", "Most reliable; app payment"],
-        ["Bicycle", "Hội An Ancient Town; An Bang Beach", "₫60,000/day rental", "Perfect for flat terrain"],
-        ["Avoid", "Metered taxis at airport", "—", "Use Grab or pre-arranged resort car"]
+        [
+          "Resort car/shuttle",
+          "Airport pickup; resort-arranged excursions",
+          "Included or ₫200,000–400,000",
+          "Book through resort concierge"
+        ],
+        [
+          "Grab",
+          "Đà Nẵng city; Hội An day trips",
+          "₫80,000–200,000 (~$3–8 each way)",
+          "Most reliable; app payment"
+        ],
+        [
+          "Bicycle",
+          "Hội An Ancient Town (30 min from central point); An Bang Beach",
+          "₫60,000/day rental",
+          "Perfect for Hội An flat terrain; very local experience"
+        ],
+        [
+          "Motorbike taxi (Xe ôm)",
+          "Short hops in Hội An if feeling adventurous",
+          "Negotiate ~₫30,000–50,000",
+          "Use Grab's motorbike option for fixed pricing"
+        ],
+        [
+          "Avoid",
+          "Metered taxis at airport",
+          "—",
+          "Use Grab or pre-arranged resort car"
+        ]
       ]
     },
     {
-      "caption": "Currencies & Exchange",
-      "columns": ["Country", "Currency", "Approx Rate", "Cash Recommendation"],
+      "caption": "Currencies",
+      "columns": [
+        "Country",
+        "Currency",
+        "Code",
+        "Approx Rate (2026)"
+      ],
       "rows": [
-        ["China", "CNY (¥)", "~7.1 CNY = $1 USD", "Keep ¥1,000–1,500 (~$140–210) for incidentals"],
-        ["Vietnam", "VND (₫)", "~25,000 VND = $1 USD", "Keep ₫3,000,000–5,000,000 (~$120–200) on hand"]
+        [
+          "China",
+          "Chinese Yuan Renminbi",
+          "CNY (¥)",
+          "~7.1 CNY = $1 USD"
+        ],
+        [
+          "Vietnam",
+          "Vietnamese Dong",
+          "VND (₫)",
+          "~25,000 VND = $1 USD"
+        ]
       ]
     },
     {
-      "caption": "Recommended Cards",
-      "columns": ["Card", "Best For", "Why"],
+      "caption": "Multi-Currency Cards (Recommended)",
+      "columns": [
+        "Card",
+        "Best For",
+        "Why"
+      ],
       "rows": [
-        ["Charles Schwab Debit", "ATM withdrawals", "Zero FX fees; reimburses ALL ATM fees globally"],
-        ["Wise Card", "Everyday purchases", "Multi-currency; competitive rate; load CNY/VND in advance"],
-        ["Chase Sapphire Preferred / Reserve", "Hotels, flights, restaurants", "3x travel points; no FX fee; trip delay insurance"],
-        ["Backup Visa/MC", "Emergency", "Notify of China AND Vietnam travel"]
+        [
+          "Charles Schwab Debit",
+          "ATM withdrawals",
+          "Zero foreign transaction fees; reimburses ALL ATM fees globally"
+        ],
+        [
+          "Wise Card",
+          "Everyday purchases",
+          "Multi-currency; competitive exchange rate; load CNY and VND in advance"
+        ],
+        [
+          "Chase Sapphire Preferred / Reserve",
+          "Hotels, flights, restaurants",
+          "3x travel points; no foreign transaction fee; trip delay insurance built in"
+        ],
+        [
+          "Backup Visa/MC",
+          "Emergency",
+          "Notify of China AND Vietnam travel; freeze one card at home as backup"
+        ]
       ]
     },
     {
-      "caption": "Tipping Summary",
-      "columns": ["Service", "China", "Vietnam"],
+      "caption": "Tipping Summary (Cross-reference 13-etiquette)",
+      "columns": [
+        "Service",
+        "China",
+        "Vietnam"
+      ],
       "rows": [
-        ["Restaurant (table service)", "No tip", "10–15% or round up"],
-        ["Street food", "No tip", "Round up is kind"],
-        ["Hotel housekeeping", "¥20–50/day (optional)", "₫50,000–100,000/day"],
-        ["Tour guide / private driver", "¥50–100/day", "₫200,000–300,000/day"],
-        ["Grab/DiDi driver", "Not customary", "Round up or rate highly"],
-        ["Tailor (Hội An)", "Not standard", "₫100,000–200,000 extra for rush/quality"]
+        [
+          "Restaurant (table service)",
+          "No tip",
+          "10–15% or round up"
+        ],
+        [
+          "Street food",
+          "No tip",
+          "Round up is kind"
+        ],
+        [
+          "Hotel housekeeping",
+          "¥20–50/day (optional)",
+          "₫50,000–100,000/day"
+        ],
+        [
+          "Tour guide / private driver",
+          "¥50–100/day",
+          "₫200,000–300,000/day"
+        ],
+        [
+          "Grab/DiDi driver",
+          "Not customary",
+          "Round up or rate highly"
+        ],
+        [
+          "Tailor (Hội An)",
+          "Not standard",
+          "₫100,000–200,000 extra for rush/quality work"
+        ]
       ]
     }
   ],
   "bullets": [
     {
-      "heading": "Beijing Airport → Hotel",
+      "heading": "LEG 1: Home → Hong Kong",
       "items": [
-        "Option A (Recommended): Airport Express Train T3 → Dongzhimen → DiDi last mile; ¥35/person; 30 min; 6 AM–11 PM",
-        "Option B: Hotel car via The Peninsula; ~¥400; English-speaking driver",
-        "Option C: DiDi from airport after clearing customs (DiDi Hitch for English interface)",
-        "Avoid: Unmarked taxis at arrivals — notorious overcharging"
+        "Mode: International flight (Cathay Pacific, United, Singapore Airlines)",
+        "Airport: HKG (Hong Kong International)",
+        "Time: ~15–18 hrs from US West; ~16–20 hrs from US East (1 stop typical)",
+        "Cost estimate: $900–1,800/person economy; $3,000+ business",
+        "Open-jaw: Return from DAD (Đà Nẵng) — book as single itinerary",
+        "Airport Express to Central/Kowloon (~24 min); Octopus card at station",
+        "Uber HK / hotel car — reliable; avoid unmarked curbside taxis per profile",
+        "Avoid: Unlicensed “taxi” touts in arrivals hall"
       ]
     },
     {
-      "heading": "DiDi Setup (China)",
+      "heading": "LEG 1b: Hong Kong → Guangzhou",
       "items": [
-        "Download before China entry; link US Visa/Mastercard",
-        "Set to English in Settings > Language; DiDi Express or Comfort class is fine",
-        "WeChat Pay: Link foreign Visa/Mastercard — works at most vendors including smaller shops"
+        "Mode: High-speed rail — West Kowloon → Guangzhou South",
+        "Time: ~47 min",
+        "Book: Trip.com, MTR, or station kiosk — passport required at joint immigration",
+        "Cost: ~¥200–350/person"
       ]
     },
     {
-      "heading": "Money Strategy",
+      "heading": "LEG 2: Guangzhou → Hanoi",
       "items": [
-        "China: ATM at Bank of China or ICBC; WeChat Pay for most vendors; avoid DCC — always pay in CNY",
-        "Vietnam: ATM at Vietcombank or Agribank; more cash-heavy for street food, markets, tailors",
-        "Withdraw larger amounts less frequently; use ATMs at bank branches or inside 4–5 star hotels",
-        "Beijing: Withdraw ¥2,000–3,000 at airport; Vietnam: ₫2,000,000–3,000,000 at Noi Bai"
+        "Mode: Flight",
+        "Carriers: China Southern, Vietnam Airlines",
+        "Flight time: ~2.5 hrs",
+        "Airports: CAN → HAN",
+        "Booking platform: Google Flights, Vietnam Airlines app, or book through your international ticket consolidator",
+        "Cost estimate: $150–350/person",
+        "Scams: None; airport boarding is standard",
+        "Book simultaneously with international flights as one open-jaw ticket when possible"
       ]
     },
     {
-      "heading": "Daily Budget Estimates (2 travelers)",
+      "heading": "LEG 3: Hanoi → Đà Nẵng",
       "items": [
-        "China: ¥2,000–3,000/day ($280–420) — hotel, 2 meals, transport, incidentals (accommodation separate)",
-        "Vietnam: ₫2,000,000–4,000,000/day ($80–160) — food/transport/activities (resort accommodation separate)",
-        "Track with Trabee Pocket or Trail Wallet; log expenses each evening"
+        "Mode: Domestic flight (strongly preferred over 14-hr train for this trip)",
+        "Carriers: VietJet Air (cheapest, reliable), Vietnam Airlines (more comfortable, slightly more)",
+        "Flight time: ~1.25 hrs",
+        "Airports: HAN (Noi Bai) → DAD (Đà Nẵng International)",
+        "Booking platform: VietJet app, Vietnam Airlines app, or 12go.asia",
+        "Cost estimate: $30–80/person",
+        "Alternative (scenic, budget): Reunification Express train (~14 hrs overnight); has sleeper cabins; see cliffs and rice paddies; not recommended for this trip given pace preference"
+      ]
+    },
+    {
+      "heading": "LEG 4: Đà Nẵng → Home",
+      "items": [
+        "Mode: International flight from DAD (direct to some Asian hubs; connection usually required for US)",
+        "Common connections: DAD → Seoul ICN → US (Korean Air); DAD → Tokyo NRT → US (ANA); DAD → Taipei TPE → US (EVA Air)",
+        "Transfer time: Most require 2+ hrs layover; confirm layover minimum at booking",
+        "Cost estimate: $1,200–2,000/person (open-jaw business class with DAD as return)"
+      ]
+    },
+    {
+      "heading": "MONEY MANAGEMENT",
+      "items": [
+        "Best: ATM withdrawal at Bank of China or ICBC ATMs in Beijing; ~2–4% fee vs cash exchange",
+        "Alternative: Exchange US dollars at authorized bank counters at PEK (reasonable rate; avoid exchange booths outside banks)",
+        "WeChat Pay: Link US Visa/Mastercard directly in WeChat; works at most Chinese vendors including smaller shops (foreigners can now link foreign cards — activate before travel)",
+        "Cash recommendation: Keep ¥1,000–1,500 (~$140–210) for incidentals; most 5-star hotels and tourist areas accept cards",
+        "Avoid: Dynamic currency conversion (DCC) — always choose to pay in CNY, not USD, at any card terminal",
+        "Best: ATM withdrawal at Vietcombank or Agribank ATMs; most charge ₫50,000–100,000 (~$2–4) fixed fee; Charles Schwab card reimburses all fees",
+        "Cash requirement: More cash-heavy than China for street food, markets, tailor payments, bicycle rentals",
+        "Cash recommendation: Keep ₫3,000,000–5,000,000 (~$120–200) on hand at all times",
+        "Hotels and restaurants: All 4–5 star properties accept Visa/Mastercard",
+        "Withdraw larger amounts less frequently (minimize fixed ATM fees)",
+        "Beijing: Withdraw ¥2,000–3,000 at airport; top up at Bank of China ATMs in city",
+        "Vietnam: Withdraw ₫2,000,000–3,000,000 at Noi Bai; top up at Vietcombank ATMs",
+        "Always use ATMs at bank branches or inside 4–5 star hotels — not standalone street ATMs",
+        "Recommended app: Trabee Pocket (multi-currency budget tracker for travel) or Trail Wallet",
+        "Set daily budget in each currency; log expenses in the evening",
+        "China daily budget for 2: ¥2,000–3,000 ($280–420) covers hotel, 2 meals out, transport, incidentals (accommodation separate)",
+        "Vietnam daily budget for 2: ₫2,000,000–4,000,000 ($80–160) for food/transport/activities (resort accommodation separate)"
+      ]
+    },
+    {
+      "heading": "Duty-Free & Customs Overview",
+      "items": [
+        "From US to China: US allowance for carry-on duty-free goods entering China is $5,000 value; declare anything above",
+        "From China to Vietnam: Internal airport transit; keep receipts for expensive items",
+        "Returning to US: $800/person duty-free exemption; above $800 = 3–5% duty on most goods; expensive watches/jewelry should be registered with US Customs before departure (CBP Form 4457)"
       ]
     }
   ],
-  "callouts": [
-    { "status": "pass", "text": "Subway/Grab/DiDi strategy fully implemented — no street taxi use anywhere" },
-    { "status": "pass", "text": "All transport legs covered with booking platforms and cost estimates" },
-    { "status": "warn", "text": "Avoid dynamic currency conversion (DCC) — always choose local currency at card terminals" },
-    { "status": "info", "text": "Book Beijing → Hanoi flight as open-jaw with international ticket when possible" }
+  "callouts": [],
+  "slide_title_accent": "MONEY",
+  "section_label": "Transport Money",
+  "section_kicker": "JR Pass verdict · legs · airport transfers · yen",
+  "banner": {
+    "text": "Mode: International flight (Cathay Pacific, United, Singapore Airlines) - Airport: HKG (Hong Kong International) - Time: ~15–18 hrs from US West; ~16–20 hrs from US East (1 stop typical) - Cost estimate: $900–1,800/person economy; $3,000+ business - Open-jaw: Return from DAD (Đà Nẵng) — book as single itinerary"
+  },
+  "sidebar": [
+    {
+      "type": "list",
+      "caption": "LEG 1: Home → Hong Kong",
+      "items": [
+        "Mode: International flight (Cathay Pacific, United, Singapore Airlines)",
+        "Airport: HKG (Hong Kong International)",
+        "Time: ~15–18 hrs from US West; ~16–20 hrs from US East (1 stop typical)",
+        "Cost estimate: $900–1,800/person economy; $3,000+ business",
+        "Open-jaw: Return from DAD (Đà Nẵng) — book as single itinerary",
+        "Airport Express to Central/Kowloon (~24 min); Octopus card at station",
+        "Uber HK / hotel car — reliable; avoid unmarked curbside taxis per profile",
+        "Avoid: Unlicensed “taxi” touts in arrivals hall"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "list",
+      "caption": "LEG 1b: Hong Kong → Guangzhou",
+      "items": [
+        "Mode: High-speed rail — West Kowloon → Guangzhou South",
+        "Time: ~47 min",
+        "Book: Trip.com, MTR, or station kiosk — passport required at joint immigration",
+        "Cost: ~¥200–350/person"
+      ],
+      "ordered": false
+    }
+  ],
+  "panels": [
+    {
+      "caption": "WITHIN HONG KONG",
+      "columns": [
+        "Mode",
+        "When to Use",
+        "Cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "MTR",
+          "Peak Tram area, Central, TST, Causeway Bay",
+          "HK$5–15",
+          "Octopus card; English signage"
+        ],
+        [
+          "Star Ferry",
+          "Central ↔ TST sunset",
+          "HK$3–5",
+          "Iconic, fast"
+        ],
+        [
+          "Bus 6/6X/260",
+          "Stanley",
+          "HK$10–25",
+          "Scenic"
+        ],
+        [
+          "Uber HK",
+          "Peak late night, Stanley return with bags",
+          "HK$80–200",
+          "App-only"
+        ]
+      ]
+    },
+    {
+      "caption": "WITHIN GUANGZHOU",
+      "columns": [
+        "Mode",
+        "When to Use",
+        "Cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Metro",
+          "Taikoo Hui, Beijing Road, Chen Clan Hall",
+          "¥2–8",
+          "DiDi + metro; VPN/maps before mainland"
+        ],
+        [
+          "DiDi",
+          "Rain, late night, Shamian with luggage",
+          "¥15–50",
+          "English mode; card linked"
+        ],
+        [
+          "Walk",
+          "Shamian Island",
+          "Free",
+          "Flat, shaded"
+        ]
+      ]
+    },
+    {
+      "caption": "WITHIN HANOI",
+      "columns": [
+        "Mode",
+        "When to Use",
+        "Cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Walk",
+          "All Old Quarter sites (Hoan Kiem Lake, temples, markets)",
+          "Free",
+          "Most sites within 1–2 km of each other"
+        ],
+        [
+          "Grab",
+          "Airport, longer distances, late night",
+          "₫50,000–200,000 (~$2–8)",
+          "Pre-select destination in app; payment in app or cash"
+        ],
+        [
+          "Cyclo (cycle rickshaw)",
+          "Short scenic trip in Old Quarter if desired",
+          "Negotiate (~₫200,000/hr)",
+          "Agree on price BEFORE getting in; treat as an experience, not primary transport"
+        ],
+        [
+          "Avoid",
+          "Street taxis at Noi Bai Airport",
+          "—",
+          "Use Grab or hotel car only; taxi scams at this airport are extremely well-documented"
+        ]
+      ]
+    },
+    {
+      "caption": "WITHIN ĐÀ NẴNG / HỘI AN",
+      "columns": [
+        "Mode",
+        "When to Use",
+        "Cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Resort car/shuttle",
+          "Airport pickup; resort-arranged excursions",
+          "Included or ₫200,000–400,000",
+          "Book through resort concierge"
+        ],
+        [
+          "Grab",
+          "Đà Nẵng city; Hội An day trips",
+          "₫80,000–200,000 (~$3–8 each way)",
+          "Most reliable; app payment"
+        ],
+        [
+          "Bicycle",
+          "Hội An Ancient Town (30 min from central point); An Bang Beach",
+          "₫60,000/day rental",
+          "Perfect for Hội An flat terrain; very local experience"
+        ],
+        [
+          "Motorbike taxi (Xe ôm)",
+          "Short hops in Hội An if feeling adventurous",
+          "Negotiate ~₫30,000–50,000",
+          "Use Grab's motorbike option for fixed pricing"
+        ],
+        [
+          "Avoid",
+          "Metered taxis at airport",
+          "—",
+          "Use Grab or pre-arranged resort car"
+        ]
+      ]
+    },
+    {
+      "caption": "Currencies",
+      "columns": [
+        "Country",
+        "Currency",
+        "Code",
+        "Approx Rate (2026)"
+      ],
+      "rows": [
+        [
+          "China",
+          "Chinese Yuan Renminbi",
+          "CNY (¥)",
+          "~7.1 CNY = $1 USD"
+        ],
+        [
+          "Vietnam",
+          "Vietnamese Dong",
+          "VND (₫)",
+          "~25,000 VND = $1 USD"
+        ]
+      ]
+    },
+    {
+      "caption": "Multi-Currency Cards (Recommended)",
+      "columns": [
+        "Card",
+        "Best For",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Charles Schwab Debit",
+          "ATM withdrawals",
+          "Zero foreign transaction fees; reimburses ALL ATM fees globally"
+        ],
+        [
+          "Wise Card",
+          "Everyday purchases",
+          "Multi-currency; competitive exchange rate; load CNY and VND in advance"
+        ],
+        [
+          "Chase Sapphire Preferred / Reserve",
+          "Hotels, flights, restaurants",
+          "3x travel points; no foreign transaction fee; trip delay insurance built in"
+        ],
+        [
+          "Backup Visa/MC",
+          "Emergency",
+          "Notify of China AND Vietnam travel; freeze one card at home as backup"
+        ]
+      ]
+    },
+    {
+      "caption": "Tipping Summary (Cross-reference 13-etiquette)",
+      "columns": [
+        "Service",
+        "China",
+        "Vietnam"
+      ],
+      "rows": [
+        [
+          "Restaurant (table service)",
+          "No tip",
+          "10–15% or round up"
+        ],
+        [
+          "Street food",
+          "No tip",
+          "Round up is kind"
+        ],
+        [
+          "Hotel housekeeping",
+          "¥20–50/day (optional)",
+          "₫50,000–100,000/day"
+        ],
+        [
+          "Tour guide / private driver",
+          "¥50–100/day",
+          "₫200,000–300,000/day"
+        ],
+        [
+          "Grab/DiDi driver",
+          "Not customary",
+          "Round up or rate highly"
+        ],
+        [
+          "Tailor (Hội An)",
+          "Not standard",
+          "₫100,000–200,000 extra for rush/quality work"
+        ]
+      ]
+    }
   ]
 }

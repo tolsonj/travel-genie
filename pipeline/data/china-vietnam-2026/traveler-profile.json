@@ -4,46 +4,221 @@
   "trip": "china-vietnam-2026",
   "title": "Traveler Profile",
   "slide_title": "TRAVELER PROFILE",
-  "intro": "Couple, relaxed-cultural pace, 14 days China \u2192 Vietnam. Value-conscious in China, splurge in Vietnam. App-based transit only (DiDi/Grab); no street taxis.",
+  "country_label": "CHINA · VIETNAM",
+  "intelligence": {
+    "label": "Travel Intelligence",
+    "text": "Couple (traveler + wife) · China  → Vietnam · September 1–14, 2026 (14 days). Budget $20,000 USD for both travelers. Constraint: Avoid peak tourist hours."
+  },
+  "metrics": [
+    {
+      "icon": "📍",
+      "label": "Destination",
+      "value": "China  → Vietnam"
+    },
+    {
+      "icon": "📅",
+      "label": "Dates",
+      "value": "September 1–14, 2026 (14 days)"
+    },
+    {
+      "icon": "👤",
+      "label": "Party",
+      "value": "Couple (traveler + wife)"
+    },
+    {
+      "icon": "💵",
+      "label": "Budget",
+      "value": "$20,000 USD for both travelers"
+    },
+    {
+      "icon": "⭐",
+      "label": "Priorities",
+      "value": "Shopping · Food · Nature"
+    },
+    {
+      "icon": "💪",
+      "label": "Physical",
+      "value": "Both travelers in excellent physical condition"
+    }
+  ],
+  "seasonality": {
+    "caption": "Seasonality scorecard",
+    "columns": [
+      "",
+      "September",
+      "October",
+      "June"
+    ],
+    "rows": [
+      [
+        "Heat",
+        "Shoulder — manageable",
+        "Cooler",
+        "Peak monsoon heat"
+      ],
+      [
+        "Crowds",
+        "Moderate",
+        "Lower",
+        "Domestic peak"
+      ],
+      [
+        "Rain",
+        "Late monsoon tail",
+        "Drier north",
+        "Heavy south"
+      ],
+      [
+        "Beach (Đà Nẵng)",
+        "Warm water OK",
+        "Ideal",
+        "Storm risk"
+      ],
+      [
+        "Value / splurge",
+        "Vietnam splurge window",
+        "Strong",
+        "Off-season deals"
+      ],
+      [
+        "Fit score",
+        "34/40",
+        "36/40",
+        "22/40"
+      ]
+    ],
+    "chosen_column": 1,
+    "summary": "September balances heat constraints with beach time in Vietnam and shoulder pricing in China."
+  },
+  "validations": [
+    {
+      "status": "pass",
+      "text": "September in both China and Vietnam means heat + humidity + possible typhoon/rain — itinerary must have strong rainy-day fallbacks"
+    },
+    {
+      "status": "pass",
+      "text": "Vietnam resort stay should be clustered for relaxation (not fragmented across cities)"
+    },
+    {
+      "status": "pass",
+      "text": "China portion should prioritize efficiency: maximize cultural/shopping value without over-scheduling"
+    },
+    {
+      "status": "pass",
+      "text": "HKG entry → high-speed rail to Guangzhou for mainland China segment; then flight to Vietnam (no overland China–Vietnam border)"
+    },
+    {
+      "status": "pass",
+      "text": "Hong Kong and mainland China are separate immigration regimes — plan visas and apps for both"
+    }
+  ],
+  "intro": "- Style: Relaxed, culturally immersive — not rushed, not spontaneous - Pace: Moderate-relaxed; late mornings preferred; long transit days should be avoided - Ideal day: Late brunch → beach or waterfront walk → scenic nature views of the city at dusk",
   "tables": [
     {
       "caption": "Core Identifiers",
-      "columns": ["Field", "Value"],
+      "columns": [
+        "Field",
+        "Value"
+      ],
       "rows": [
-        ["Countries", "China \u2192 Vietnam"],
-        ["Travel window", "September 1\u201314, 2026 (14 days)"],
-        ["Travel party", "Couple (traveler + wife)"],
-        ["Decision authority", "Vote (consensus)"],
-        ["Citizenship", "Assumed US (verify before Step 03)"]
+        [
+          "Countries",
+          "China (Hong Kong + Guangzhou mainland) → Vietnam"
+        ],
+        [
+          "Entry airport",
+          "Hong Kong International (HKG) — per profile"
+        ],
+        [
+          "Travel window",
+          "September 1–14, 2026 (14 days)"
+        ],
+        [
+          "Travel party",
+          "Couple (traveler + wife)"
+        ],
+        [
+          "Decision authority",
+          "Vote (consensus-based)"
+        ],
+        [
+          "Citizenship",
+          "Assumed US *(unconfirmed — verify before Step 03)*"
+        ]
       ]
     },
     {
       "caption": "Budget",
-      "columns": ["Category", "Notes"],
+      "columns": [
+        "Category",
+        "Notes"
+      ],
       "rows": [
-        ["Total", "$20,000 USD for both travelers"],
-        ["Allocation intent", "Splurge in Vietnam; value-conscious in China"],
-        ["Per-day estimate", "~$1,428/day total across 14 days"]
+        [
+          "Total",
+          "$20,000 USD for both travelers"
+        ],
+        [
+          "Allocation intent",
+          "Splurge in Vietnam; be value-conscious in China"
+        ],
+        [
+          "Per-day estimate",
+          "~$1,428/day total (both) across 14 days"
+        ]
+      ]
+    },
+    {
+      "caption": "Deal-Breakers",
+      "columns": [
+        "Deal-breaker",
+        "Planning implication"
+      ],
+      "rows": [
+        [
+          "Large crowds",
+          "Avoid peak tourist hours; book early-entry tickets; skip hyper-popular queues"
+        ],
+        [
+          "Heat",
+          "September is shoulder/late-monsoon season — heat is a real concern in both countries. Schedule outdoor activities for early morning or late afternoon. Midday rests essential."
+        ]
       ]
     }
   ],
   "bullets": [
     {
-      "heading": "Interests (ranked)",
-      "items": ["Shopping \u2014 tailored clothing, designer goods", "Food \u2014 local dining priority", "Nature \u2014 scenic views, beach walks", "History \u2014 cultural sites, not museum marathons"]
-    },
-    {
       "heading": "Style & Pace",
-      "items": ["Relaxed, culturally immersive", "Late mornings; avoid long transit days", "Ideal day: brunch \u2192 beach walk \u2192 dusk city views"]
+      "items": [
+        "Style: Relaxed, culturally immersive — not rushed, not spontaneous",
+        "Pace: Moderate-relaxed; late mornings preferred; long transit days should be avoided",
+        "Ideal day: Late brunch → beach or waterfront walk → scenic nature views of the city at dusk"
+      ]
     },
     {
       "heading": "Accommodation",
-      "items": ["4\u20135 star hotels; resorts preferred in Vietnam", "Must be bookable on US platforms", "No hostels / uncertain Airbnb"]
+      "items": [
+        "Tier: 4–5 star hotels; resorts acceptable and preferred in Vietnam",
+        "Booking requirement: Must be bookable on US platforms (Marriott, Hilton, Expedia, Hotels.com, Booking.com)",
+        "No: hostels, guesthouses, Airbnb with uncertain quality"
+      ]
+    },
+    {
+      "heading": "Physical Profile",
+      "items": [
+        "Both travelers in excellent physical condition",
+        "No mobility or accessibility limitations",
+        "Can handle moderate walking, stairs, uneven terrain"
+      ]
+    },
+    {
+      "heading": "Transit Experience & Preferences",
+      "items": [
+        "Local mass transit (metro/subway): positive past experience — recommended",
+        "Taxis: past negative experience (rip-offs) — avoid unmetered taxis; use apps (DiDi in China, Grab in Vietnam)",
+        "Preference: efficient, app-based, predictable transport"
+      ]
     }
   ],
-  "callouts": [
-    { "status": "warn", "text": "Large crowds \u2014 avoid peak hours, book early-entry tickets" },
-    { "status": "warn", "text": "Heat \u2014 schedule outdoor activity for early morning / late afternoon" },
-    { "status": "pass", "text": "Both travelers in excellent physical condition \u2014 no mobility limits" }
-  ]
+  "callouts": []
 }

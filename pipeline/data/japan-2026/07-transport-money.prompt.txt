@@ -1,0 +1,445 @@
+You convert one travel-plan markdown aspect into STRICT canonical JSON.
+
+Output ONLY a single JSON object. No prose, no markdown fences. It MUST validate
+against this JSON Schema (every field except aspect/type/trip is optional; omit
+what is not present rather than inventing it):
+
+<schema>
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-genie/schema/trip.schema.json",
+  "title": "Canonical Trip Aspect",
+  "description": "One extracted aspect of a trip plan. Generic by design so it generalizes across single- and multi-country trips. Every field beyond `aspect`/`type` is optional; the renderer hides absent sections rather than erroring.",
+  "type": "object",
+  "required": ["aspect", "type", "trip"],
+  "properties": {
+    "aspect": { "type": "string", "description": "Aspect id, e.g. route-optimization." },
+    "type": { "type": "string", "description": "Canonical type used to pick a slide template." },
+    "trip": { "type": "string", "description": "Trip slug, e.g. china-vietnam-2026." },
+    "title": { "type": "string" },
+    "slide_title": { "type": "string" },
+
+    "recommended_route": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "name": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hub": { "type": "string" },
+          "days": { "type": "string" },
+          "region": { "type": "string" },
+          "primary_draw": { "type": "string" }
+        }
+      }
+    },
+    "map_nodes": {
+      "type": "array",
+      "description": "Geographic markers plotted from REAL coordinates.",
+      "items": {
+        "type": "object",
+        "required": ["label", "lng", "lat"],
+        "properties": {
+          "label": { "type": "string" },
+          "marker": { "type": "string", "description": "Short glyph shown in the node circle." },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" },
+          "color": { "type": "string" },
+          "labelDy": { "type": "number", "description": "Vertical label offset in px (negative = above)." }
+        }
+      }
+    },
+    "map_bounds": {
+      "type": "object",
+      "properties": {
+        "west": { "type": "number" },
+        "south": { "type": "number" },
+        "east": { "type": "number" },
+        "north": { "type": "number" }
+      }
+    },
+    "highlight_countries": { "type": "array", "items": { "type": "string" } },
+    "country_labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" }
+        }
+      }
+    },
+    "transit_legs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "mode": { "type": "string" },
+          "duration": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "headline": { "type": "string" },
+        "detail": { "type": "string" }
+      }
+    },
+
+    "country_label": { "type": "string", "description": "Profile dashboard: country pill (e.g. JAPAN)." },
+    "intelligence": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": { "type": "string" },
+          "label": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "seasonality": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } },
+        "chosen_column": { "type": "integer", "description": "0-based index of highlighted season column." },
+        "summary": { "type": "string" }
+      }
+    },
+    "validations": {
+      "type": "array",
+      "description": "Profile dashboard: validation checklist items.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    },
+
+    "intro": { "type": "string", "description": "Generic-layout: lead paragraph." },
+    "tables": {
+      "type": "array",
+      "description": "Generic-layout: zero or more tables.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caption": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+    "bullets": {
+      "type": "array",
+      "description": "Generic-layout: grouped bullet lists.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "callouts": {
+      "type": "array",
+      "description": "Generic-layout: status callouts (validation checks, warnings).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+
+</schema>
+
+Required top-level values for THIS aspect:
+  "aspect": "07-transport-money"
+  "type": "generic"
+  "trip": "japan-2026"
+  "title": "Transport Money"
+
+Target type: "generic" (no bespoke template).
+Use the generic fields: intro (string), tables[] {caption, columns[], rows[][]},
+bullets[] {heading, items[]}, callouts[] {status: pass|warn|info, text}.
+
+CRITICAL for any map_nodes: use REAL geographic latitude/longitude for each city.
+Do not approximate with screen coordinates.
+
+Here is the source markdown to extract from:
+
+<markdown>
+---
+step: 07-transport-money
+title: Transport & Money
+trip: japan-2026
+created: 2026-06-02
+hero-image: https://images.unsplash.com/photo-1544620347-343fd2b0c0ad?w=1200&q=80
+---
+
+# Transport & Money
+
+### JR Pass 7-Day — Cost-Benefit (This Itinerary)
+
+#### Pass options (foreign tourist, 2026 baseline — verify at [japanrailpass.net](https://www.japanrailpass.net/en/) before purchase)
+
+| Pass | Duration | Approx price | Notes |
+|------|----------|--------------|-------|
+| **JR Pass Ordinary** | 7 consecutive days | **¥50,000** (~$335 @ ¥150/$) | Hikari/Kodama shinkansen; most JR local; **not** Nozomi (unless paid add-on where offered) |
+| **JR Pass Ordinary** | 14 consecutive days | **¥80,000** (~$535) | Overkill for 14-day trip with only 3 inter-hub moves |
+| **Regional passes** | Varies | ¥15,000–25,000 | Poor fit—route crosses Tokaido + Hida, not one region |
+
+#### Legs inside a Jul 29 – Aug 4 activation window
+
+| Date | Leg | Mode | Est. cost (individual, reserved) | JR Pass? |
+|------|-----|------|----------------------------------|----------|
+| Jul 29 | Tokyo → Nagoya | Tokaido Shinkansen **Hikari** | ¥10,890 | ✅ |
+| Jul 29 | Nagoya → Takayama | **Hida** Limited Express | ¥6,330 | ✅ (seat reservation required) |
+| Jul 31 | Takayama → Nagoya | Hida Limited Express | ¥6,330 | ✅ |
+| Jul 31 | Nagoya → Kyoto | Shinkansen Hikari | ¥5,170 | ✅ |
+| Aug 4 | Kyoto → Osaka | JR Special Rapid | ¥580 | ✅ |
+| Pass window | Kyoto/Osaka local JR (minor) | IC / pass | ~¥1,500 | ✅ partial |
+| **Subtotal** | | | **~¥30,800 (~$205)** | |
+
+#### Legs **outside** pass value (pay separately)
+
+| When | Leg | Mode | Est. cost |
+|------|-----|------|-----------|
+| Jul 24 | Airport → Tokyo hotel | N'EX / Keisei / Monorail+JR | ¥600–3,250 |
+| Jul 24–28 | Tokyo metro/JR local | Suica | ~¥1,000/day → **~¥5,000** |
+| Jul 27 | Tokyo ↔ Kamakura/Enoshima | JR + Enoden | ~¥1,900 round trip |
+| Jul 30 | Takayama ↔ Shirakawa-go | **Nohi highway bus** | ~¥2,600–3,000 RT |
+| Jul 31–Aug 3 | Kyoto temples | **City bus** (not JR) | ¥230/ride or ¥700 day pass |
+| Aug 6 | Namba → **KIX** | Nankai Rapi:t or JR Haruka | ¥930–2,850 |
+| Optional | Takkyubin luggage | Courier | ¥2,000–2,500/bag |
+
+#### Verdict
+
+| Strategy | Est. total (intercity + pass-eligible JR) | vs 7-day pass |
+|----------|-------------------------------------------|---------------|
+| **Individual tickets** (recommended) | **~¥30,800 (~$205)** + reservations | **Save ~¥19,200 (~$130)** vs ¥50,000 pass |
+| **7-day JR Pass** activated Jul 29 | ¥50,000 (~$335) | Only wins if you add **¥19,000+** extra JR travel in-window (e.g. Nikko day ¥5,500+, Himeji ¥4,000+, multiple Tokyo JR day trips) |
+
+**Recommendation**: **Skip JR Pass**; book **Hikari + Hida** seats on [SmartEX](https://smart-ex.jp/en/) / [Eki-net](https://www.eki-net.com) / JR East Travel Service Center **4 weeks** before travel. Aligns with [[04-master-itinerary]] rail days but avoids overpaying for pass subsidy.
+
+> ⚠️ If JR Pass prices drop or you add a **Nikko** day (Jul 28) *and* keep pass active Jul 29–Aug 4, re-run math before buying voucher in the US.
+
+---
+
+### Airport Transfers
+
+#### Arrival — Jul 24 (NRT or HND)
+
+| Airport | Recommended | Time | Cost | Notes |
+|---------|-------------|------|------|-------|
+| **NRT** | **Narita Express (N'EX)** to Tokyo/Ueno | 45–60 min | ¥3,070–3,250 | Reserve if suitcase; JR Pass **not** worth it for this leg alone |
+| **NRT** | Keisei Access / Skyliner | 40–50 min | ¥1,000–2,580 | Skyliner faster to Nippori, then subway |
+| **HND** | Keikyu to Shinagawa + JR | 25–35 min | ¥330–500 | Best if hotel near Yamanote |
+| **HND** | Tokyo Monorail → Hamamatsuchō + JR | 30 min | ¥500–700 | Simple with Suica |
+
+**Day 1 actions**: Land → immigration/VJW ([[03-immigration-entry]]) → buy/load **Suica** at station machine (¥2,000: ¥500 deposit + ¥1,500 balance) → train to hotel.
+
+#### Departure — Aug 6 (KIX from Osaka)
+
+| From | Mode | Time | Cost | Notes |
+|------|------|------|------|-------|
+| **Namba** | Nankai **Rapi:t** | 38 min | ¥1,430–1,630 | Match itinerary hotel zone |
+| **Shin-Osaka** | **Haruka** (JR) | 50 min | ¥2,850 (reserved) | JR Pass holders: covered with seat fee if using pass |
+| Either | Allow **2.5–3 hr** before intl departure | — | — | Summer queues + security |
+
+---
+
+### Intercity Legs (Booked Tickets)
+
+| Day | Route | Trains | Duration | Booking |
+|-----|-------|--------|----------|---------|
+| **Jul 29** | Tokyo → Takayama | Shinkansen **Hikari** (Tokyo→Nagoya) + **Hida** (Nagoya→Takayama) | ~4–4.5 hr | Reserve both; window seat on Hida if possible |
+| **Jul 31** | Takayama → Kyoto | Hida (→Nagoya) + Hikari (→Kyoto) | ~3.5 hr | Morning departure per [[04-master-itinerary]] |
+| **Aug 4** | Kyoto → Osaka | JR Kyoto Line Special Rapid | ~30 min | Walk-up; Suica |
+
+**Tips**:
+- Buy **ekiben** at Tokyo Station before Jul 29 departure.
+- **Takkyubin**: Forward large bag Tokyo → Kyoto hotel on Jul 28 ([[04-master-itinerary]] Day 5); carry 3-day pack to Takayama.
+- **Shirakawa-go** (Jul 30): **Nohi Bus** — not JR; book RT ~2–4 weeks ahead ([www.nouhibus.jp](https://www.nouhibus.jp/)).
+
+---
+
+### IC Cards (Suica / PASMO / ICOCA)
+
+| Topic | Detail |
+|-------|--------|
+| **What** | Reloadable contactless fare card; works on JR, metro, most buses nationwide |
+| **Buy** | Airport or any major station; **¥2,000** minimum (¥500 refundable deposit) |
+| **Use** | Tap in / tap out; fares auto-deduct |
+| **Reload** | Station machines, ¥1,000 increments; **7-Eleven** ATMs for cash refill |
+| **iPhone** | Add Suica to Apple Wallet (US App Store) before trip—backup physical card |
+| **Return** | Refund balance + deposit at JR East service center (small handling fee) |
+
+**Daily IC spend (estimate)**:
+
+| City | Days | Est./day | Subtotal |
+|------|------|----------|----------|
+| Tokyo | 5 | ¥1,000 | ¥5,000 |
+| Takayama | 2 | ¥300 (minimal) | ¥600 |
+| Kyoto | 4 | ¥700 (bus-heavy; day pass ¥700) | ¥2,800 |
+| Osaka | 2 | ¥900 | ¥1,800 |
+| **Total IC + bus passes** | | | **~¥10,200 (~$68)** |
+
+---
+
+### Within-City Transit
+
+#### Tokyo (Jul 24–28)
+
+| Mode | When | Cost |
+|------|------|------|
+| Metro + Toei + JR Yamanote | All urban days | ¥170–320/trip |
+| JR | Kamakura day (Jul 27) | ~¥1,900 RT from central Tokyo |
+| **Avoid** | Rush 7:30–9:00, 17:30–19:00 | Packed trains |
+
+**Apps**: Google Maps (live platforms); Japan Transit Planner.
+
+#### Takayama (Jul 29–30)
+
+| Mode | When | Cost |
+|------|------|------|
+| Walk | Sanmachi old town | Free |
+| Bus | Shirakawa-go (reserved) | ~¥2,600–3,000 RT |
+| Cash | Some rural buses | Keep ¥5,000 in wallet |
+
+#### Kyoto (Jul 31 – Aug 3)
+
+| Mode | When | Cost |
+|------|------|------|
+| City bus | Fushimi, Arashiyama, Higashiyama | ¥230/ride or **¥700 day pass** (4+ rides) |
+| Subway | Kyoto Station ↔ downtown | ¥220–290 |
+| Walk | Philosopher's Path, Gion | Free |
+
+Enter bus **rear**, exit **front**, pay on exit; press stop button.
+
+#### Osaka (Aug 4–5)
+
+| Mode | When | Cost |
+|------|------|------|
+| Metro (Midosuji, etc.) | Kuromon, Dotonbori, Castle | ¥180–320/trip |
+| Walk | Namba ↔ Dotonbori | 10–15 min |
+
+**Skip** Osaka Amazing Pass for this itinerary—attractions don't match your list.
+
+---
+
+### Money Management
+
+#### Currency
+
+| Item | Value (planning) |
+|------|------------------|
+| Rate | **¥145–150 = $1 USD** (verify at departure) |
+| Quick math | ¥1,000 ≈ $7; ¥10,000 ≈ $69 |
+
+#### Cash vs card
+
+| Use | % | Examples |
+|-----|---|----------|
+| **Cash** | ~60% | Markets, temples, small izakaya, buses, takkyubin |
+| **IC card** | ~25% | Trains/subway (preloaded) |
+| **Credit card** | ~15% | Hotels (prepaid), department stores, some chains |
+
+**Daily cash envelope**: ¥8,000–12,000 ($55–80) covers food + incidentals; adjust down on konbini-heavy days.
+
+#### ATMs (foreign cards)
+
+| ✅ Use | ❌ Avoid |
+|--------|----------|
+| **7-Eleven** ATMs (English, 24h) | Random bank ATMs (often reject foreign cards) |
+| **Japan Post Bank** (inside post offices) | DCC—always withdraw in **JPY**, not USD |
+
+**Fees**: Japan ATM ¥110–220; use a **no-FTF debit** (Charles Schwab, Capital One 360, Fidelity CMA).
+
+**Withdrawal schedule**:
+
+| When | Where | Amount |
+|------|-------|--------|
+| Day 1 | Airport 7-Eleven | ¥40,000 |
+| Day 7 | Takayama or Kyoto Station | ¥30,000 |
+| Day 11 | Kyoto if low | ¥20,000 |
+
+#### Credit cards
+
+- **0% foreign transaction fee**: Chase Sapphire, Capital One Venture, etc.
+- **Acceptance**: Hotels/chains yes; many dinner-only spots **cash only**.
+- Set **PIN** before departure (chip+PIN common).
+- Pay in **JPY** at terminal—decline dynamic currency conversion.
+
+#### Tipping
+
+**No tipping** in Japan (restaurants, taxis, hotels). See [[13-etiquette]] when written.
+
+#### Budget tracking
+
+- App: Trail Wallet or Notes—log daily ¥ spend.
+- **Transport target**: **~$400–450** on-ground (excl. intl flights) ≈ **8–9%** of $5,000 ✅
+
+---
+
+### Transport Budget Summary
+
+| Category | Est. USD | Est. JPY |
+|----------|----------|----------|
+| Airport in + out | $35 | ¥5,000 |
+| Tokyo IC + Kamakura | $55 | ¥8,000 |
+| Intercity rail (individual) | $205 | ¥30,800 |
+| Shirakawa-go bus | $20 | ¥3,000 |
+| Kyoto buses | $25 | ¥3,500 |
+| Osaka IC + KIX | $25 | ¥3,500 |
+| Takkyubin (1×) | $20 | ¥3,000 |
+| ATM fees (buffer) | $10 | — |
+| **On-ground transport total** | **~$395** | **~¥59,000** |
+| Intl flights (separate) | $1,100–1,400 | — |
+| **Remaining for lodging/food/activities** | **~$3,200–3,500** | — |
+
+---
+
+### Booking Priority (Transport)
+
+| # | Item | By when |
+|---|------|---------|
+| 1 | Open-jaw flights NRT/HND → KIX | ASAP |
+| 2 | Hikari + Hida seat reservations (Jul 29, Jul 31) | 4 weeks before |
+| 3 | Shirakawa-go bus (Jul 30) | 4 weeks before |
+| 4 | Suica (physical or Wallet) | Before departure |
+| 5 | **Do not buy JR Pass** unless math changes | N/A |
+| 6 | Confirm KIX Rapi:t/Haruka time (Aug 6) | Day 13 |
+
+---
+
+### Duty-Free & Customs Pointer
+
+Japan arrival/departure customs and US re-entry allowances → **[[08-customs-borders]]**.
+
+</markdown>

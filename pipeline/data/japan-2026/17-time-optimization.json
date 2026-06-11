@@ -1,0 +1,698 @@
+{
+  "aspect": "17-time-optimization",
+  "type": "dashboard",
+  "trip": "japan-2026",
+  "title": "Time Optimization",
+  "slide_title": "TIME",
+  "intro": "---",
+  "tables": [
+    {
+      "caption": "",
+      "columns": [
+        "Strategy",
+        "Application"
+      ],
+      "rows": [
+        [
+          "Depart US Thu/Fri evening",
+          "Land Tokyo Fri/Sat AM; use weekend for jet-lag recovery without burning PTO on travel day"
+        ],
+        [
+          "Return Thu Aug 6",
+          "Midweek return often cheaper; full Osaka food day Aug 5 before departure"
+        ],
+        [
+          "Obon buffer",
+          "Full Obon (mid-Aug) starts after departure—avoid worst domestic crush"
+        ],
+        [
+          "Net PTO (typical US job)",
+          "~8–10 weekdays depending on departure day; depart Jul 23 evening → return Aug 6 = 9 PTO days"
+        ]
+      ]
+    },
+    {
+      "caption": "Transit Time Minimization",
+      "columns": [
+        "Strategy",
+        "Applied?",
+        "Result"
+      ],
+      "rows": [
+        [
+          "Open-jaw NRT/HND → KIX",
+          "✅ Yes",
+          "Saves ~2.5 hrs + ¥14,000 vs Tokyo roundtrip (02-route-optimization)"
+        ],
+        [
+          "Hub order (geographic sweep)",
+          "✅ Tokyo→Alps→Kyoto→Osaka",
+          "No backtracking"
+        ],
+        [
+          "7-day JR Pass window",
+          "✅ Activate Jul 29",
+          "Covers longest rail block only"
+        ],
+        [
+          "Takkyubin luggage forward",
+          "✅ Jul 28 + Aug 3",
+          "Eliminates suitcase on Shinkansen + cobblestone drag"
+        ],
+        [
+          "IC card for Tokyo local days",
+          "✅ Days 1–5",
+          "No ticket queue time"
+        ],
+        [
+          "Kyoto→Osaka JR Special Rapid",
+          "✅ Day 12",
+          "30 min vs highway bus 1 hr"
+        ]
+      ]
+    },
+    {
+      "caption": "The 70% Rule Applied",
+      "columns": [
+        "Day",
+        "Planned anchor (100%)",
+        "Flex buffer (30%)"
+      ],
+      "rows": [
+        [
+          "1 Jul 24 Arrival",
+          "Neighborhood walk + early dinner",
+          "Skip walk; konbini only"
+        ],
+        [
+          "2 Ueno + Asakusa",
+          "Ueno morning + Sensō-ji",
+          "Museum-only; skip Nakamise"
+        ],
+        [
+          "3 Meiji + Harajuku",
+          "Meiji forest walk",
+          "Meiji only; hotel bath"
+        ],
+        [
+          "4 Kamakura",
+          "Daibutsu + Enoshima",
+          "Buddha only; skip Enoshima"
+        ],
+        [
+          "5 Tsukiji + Palace",
+          "Market breakfast",
+          "Market only"
+        ],
+        [
+          "6 Transit + Takayama",
+          "Soft — old town if energy",
+          "Hotel onsen only"
+        ],
+        [
+          "7 Shirakawa-go",
+          "First bus village",
+          "Takayama market only"
+        ],
+        [
+          "8 Transit + Nishiki",
+          "Covered market",
+          "Hotel bath"
+        ],
+        [
+          "9 Fushimi dawn",
+          "Torii loop + sake PM",
+          "Fushimi base only; return 11:00"
+        ],
+        [
+          "10 Arashiyama",
+          "Bamboo + Tenryu-ji",
+          "Garden only; tram home"
+        ],
+        [
+          "11 Higashiyama",
+          "Kiyomizu dawn + Philosopher's",
+          "Flat path only; skip Kiyomizu"
+        ],
+        [
+          "12 Transit + Dotonbori",
+          "Soft — Kuromon + neon",
+          "Kuromon only"
+        ],
+        [
+          "13 Osaka Castle + Namba",
+          "Castle exterior AM",
+          "Namba food only"
+        ],
+        [
+          "14 Departure",
+          "100% scheduled — KIX timing",
+          "No flex"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Site",
+        "Opens",
+        "Target arrival",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Tsukiji Outer Market",
+          "~05:00 vendors",
+          "07:00 Jul 28",
+          "Sushi breakfast before tour groups"
+        ],
+        [
+          "Fushimi Inari",
+          "24 hrs",
+          "05:30–06:00 Aug 1",
+          "Empty torii before 08:00 tour buses"
+        ],
+        [
+          "Arashiyama bamboo",
+          "24 hrs",
+          "07:00 Aug 2",
+          "Grove packed by 09:00"
+        ],
+        [
+          "Kiyomizu-dera",
+          "06:00 (summer)",
+          "06:30 Aug 3",
+          "Stage view before bus groups"
+        ],
+        [
+          "Shirakawa-go",
+          "09:00 village",
+          "First bus ~08:00 Jul 30",
+          "Viewpoint before 10:00 coaches"
+        ],
+        [
+          "Meiji Jingu",
+          "Sunrise",
+          "08:00 Jul 26",
+          "Forest quiet before Sunday crush"
+        ],
+        [
+          "Osaka Castle Park",
+          "24 hrs grounds",
+          "08:00 Aug 5",
+          "Heat + tour groups by 10:00"
+        ],
+        [
+          "Dotonbori",
+          "24 hrs",
+          "Weekday Tue Aug 4",
+          "Avoid Fri/Sat neon crush"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Window",
+        "Default activity"
+      ],
+      "rows": [
+        [
+          "11:00–15:00",
+          "Museum, sake tour, depachika, hotel bath, café with AC"
+        ],
+        [
+          "Outdoor",
+          "Reserve for ≤10:00 or ≥16:00"
+        ]
+      ]
+    },
+    {
+      "caption": "Efficiency Scorecard",
+      "columns": [
+        "Metric",
+        "Value",
+        "Target",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Transit-equivalent days",
+          "~2.5 / 14",
+          "<20% (2.8 days)",
+          "✅ 18%"
+        ],
+        [
+          "Pure experience hours/day",
+          "~7–9 hrs",
+          ">6 hrs",
+          "✅ PASS"
+        ],
+        [
+          "Daily in-city transit",
+          "30–60 min avg",
+          "<2 hrs",
+          "✅ PASS"
+        ],
+        [
+          "Demanding activity after long rail",
+          "0",
+          "0",
+          "✅ PASS (soft Days 6, 8, 12)"
+        ],
+        [
+          "Soft arrival/departure days",
+          "5 (1, 6, 8, 12, 14)",
+          "All hub changes",
+          "✅ PASS"
+        ],
+        [
+          "70% rule days with flex options",
+          "14 / 14",
+          ">70%",
+          "✅ PASS"
+        ],
+        [
+          "Open-jaw routing",
+          "NRT/HND → KIX",
+          "Yes",
+          "✅ PASS"
+        ],
+        [
+          "Jet lag Day 1 recovery",
+          "Scheduled",
+          "Required",
+          "✅ PASS"
+        ],
+        [
+          "Dawn crowd avoidance at tier-1 sites",
+          "6 / 6",
+          "Max possible",
+          "✅ PASS"
+        ],
+        [
+          "Alps cooler block mid-trip",
+          "Days 6–7",
+          "Nature + heat relief",
+          "✅ PASS"
+        ],
+        [
+          "Museum fatigue (max 1 major/day)",
+          "Enforced",
+          "Yes",
+          "✅ PASS"
+        ],
+        [
+          "Budget efficiency (strategic splurges)",
+          "2 planned",
+          "Spread",
+          "✅ PASS"
+        ]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Jet Lag Management",
+      "items": [
+        "In flight: Sleep if arriving morning; stay awake if arriving evening—target 21:00 JST bedtime",
+        "Day 1 (Jul 24): No naps >20 min; sunlight walk 15:00–17:00; bed by 21:00 ✓ per 04-master-itinerary",
+        "Day 2: Near-normal; slight 15:00 slump OK",
+        "Day 3 (Jul 26): Full energy for Meiji + Kamakura prep",
+        "Melatonin: 0.5 mg at local bedtime Days 1–2 only (not high-dose)",
+        "Easier direction; body extends day naturally",
+        "Hydrate on flight; walk airport before boarding",
+        "US recovery: 2–3 days to normal sleep"
+      ]
+    },
+    {
+      "heading": "Activity Clustering",
+      "items": [
+        "East cluster: Ueno → Asakusa → Ameyoko (Day 2)",
+        "West cluster: Meiji → Yoyogi → Omotesando → Shinjuku (Day 3)",
+        "Day trip: Kamakura standalone (Day 4)—correctly isolated",
+        "Central: Tsukiji → Imperial East Gardens → Marunouchi (Day 5)",
+        "Old town + sake breweries walkable cluster (Day 6 PM)",
+        "Shirakawa-go = full-day excursion (Day 7 AM)—not clusterable",
+        "South: Fushimi Inari → Fushimi sake → Gion distance (Day 9)",
+        "West: Arashiyama bamboo → Tenryu-ji → river path (Day 10)",
+        "East: Kiyomizu → Ninenzaka → Philosopher's Path → Ginkaku-ji (Day 11)—same-day Higashiyama sweep ✓",
+        "Central: Nishiki + Pontocho (Day 8 soft)",
+        "Namba cluster: Kuromon → Dotonbori → Namba Yasaka (Days 12–13)",
+        "Castle: Standalone north (Day 13 AM)—one metro ride from Namba"
+      ]
+    },
+    {
+      "heading": "Early Access & Crowd Avoidance",
+      "items": [
+        "Nishiki Market (covered; go 14:00 when lunch crowd clears)",
+        "Kuromon Osaka (morning OK but not pre-dawn critical)",
+        "Takayama Sanmachi (evening dusk light + fewer day-trippers)",
+        "Pontocho alley twilight (not geiko chase—observe only)",
+        "Dotonbori canal reflection after 20:00 on weekday",
+        "Golden Gai: enter one bar before 21:00 to avoid peak crush"
+      ]
+    },
+    {
+      "heading": "Power Play — Best 2–3 Extra Days",
+      "items": [
+        "Day 15: Nara day trip (todai-ji + deer park—history fix without Kyoto re-crowding)",
+        "Day 16: Kobe beef lunch + harbor OR repeat Dotonbori deep cut",
+        "Cost: ~¥20,000 lodging + ~¥3,000 rail; minimal flight change if booked open",
+        "Extra Alps day: Kamikochi bus day trip (moderate hike)—only if heat tolerable",
+        "Trade-off: Adds transit complexity; pushes KIX closer to Obon"
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "status": "pass",
+      "text": "18 validation check(s) passed in source plan."
+    }
+  ],
+  "slide_title_accent": "OPTIMIZATION",
+  "section_label": "Time Optimization",
+  "section_kicker": "PTO · clustering · crowd timing · scorecard",
+  "sidebar": [
+    {
+      "type": "list",
+      "caption": "Jet Lag Management",
+      "items": [
+        "In flight: Sleep if arriving morning; stay awake if arriving evening—target 21:00 JST bedtime",
+        "Day 1 (Jul 24): No naps >20 min; sunlight walk 15:00–17:00; bed by 21:00 ✓ per 04-master-itinerary",
+        "Day 2: Near-normal; slight 15:00 slump OK",
+        "Day 3 (Jul 26): Full energy for Meiji + Kamakura prep",
+        "Melatonin: 0.5 mg at local bedtime Days 1–2 only (not high-dose)",
+        "Easier direction; body extends day naturally",
+        "Hydrate on flight; walk airport before boarding",
+        "US recovery: 2–3 days to normal sleep"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "list",
+      "caption": "Activity Clustering",
+      "items": [
+        "East cluster: Ueno → Asakusa → Ameyoko (Day 2)",
+        "West cluster: Meiji → Yoyogi → Omotesando → Shinjuku (Day 3)",
+        "Day trip: Kamakura standalone (Day 4)—correctly isolated",
+        "Central: Tsukiji → Imperial East Gardens → Marunouchi (Day 5)",
+        "Old town + sake breweries walkable cluster (Day 6 PM)",
+        "Shirakawa-go = full-day excursion (Day 7 AM)—not clusterable",
+        "South: Fushimi Inari → Fushimi sake → Gion distance (Day 9)",
+        "West: Arashiyama bamboo → Tenryu-ji → river path (Day 10)"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "validations",
+      "items": [
+        {
+          "status": "pass",
+          "text": "18 validation check(s) passed in source plan."
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "caption": "Transit Time Minimization",
+      "columns": [
+        "Strategy",
+        "Applied?",
+        "Result"
+      ],
+      "rows": [
+        [
+          "Open-jaw NRT/HND → KIX",
+          "✅ Yes",
+          "Saves ~2.5 hrs + ¥14,000 vs Tokyo roundtrip (02-route-optimization)"
+        ],
+        [
+          "Hub order (geographic sweep)",
+          "✅ Tokyo→Alps→Kyoto→Osaka",
+          "No backtracking"
+        ],
+        [
+          "7-day JR Pass window",
+          "✅ Activate Jul 29",
+          "Covers longest rail block only"
+        ],
+        [
+          "Takkyubin luggage forward",
+          "✅ Jul 28 + Aug 3",
+          "Eliminates suitcase on Shinkansen + cobblestone drag"
+        ],
+        [
+          "IC card for Tokyo local days",
+          "✅ Days 1–5",
+          "No ticket queue time"
+        ],
+        [
+          "Kyoto→Osaka JR Special Rapid",
+          "✅ Day 12",
+          "30 min vs highway bus 1 hr"
+        ]
+      ]
+    },
+    {
+      "caption": "The 70% Rule Applied",
+      "columns": [
+        "Day",
+        "Planned anchor (100%)",
+        "Flex buffer (30%)"
+      ],
+      "rows": [
+        [
+          "1 Jul 24 Arrival",
+          "Neighborhood walk + early dinner",
+          "Skip walk; konbini only"
+        ],
+        [
+          "2 Ueno + Asakusa",
+          "Ueno morning + Sensō-ji",
+          "Museum-only; skip Nakamise"
+        ],
+        [
+          "3 Meiji + Harajuku",
+          "Meiji forest walk",
+          "Meiji only; hotel bath"
+        ],
+        [
+          "4 Kamakura",
+          "Daibutsu + Enoshima",
+          "Buddha only; skip Enoshima"
+        ],
+        [
+          "5 Tsukiji + Palace",
+          "Market breakfast",
+          "Market only"
+        ],
+        [
+          "6 Transit + Takayama",
+          "Soft — old town if energy",
+          "Hotel onsen only"
+        ],
+        [
+          "7 Shirakawa-go",
+          "First bus village",
+          "Takayama market only"
+        ],
+        [
+          "8 Transit + Nishiki",
+          "Covered market",
+          "Hotel bath"
+        ],
+        [
+          "9 Fushimi dawn",
+          "Torii loop + sake PM",
+          "Fushimi base only; return 11:00"
+        ],
+        [
+          "10 Arashiyama",
+          "Bamboo + Tenryu-ji",
+          "Garden only; tram home"
+        ],
+        [
+          "11 Higashiyama",
+          "Kiyomizu dawn + Philosopher's",
+          "Flat path only; skip Kiyomizu"
+        ],
+        [
+          "12 Transit + Dotonbori",
+          "Soft — Kuromon + neon",
+          "Kuromon only"
+        ],
+        [
+          "13 Osaka Castle + Namba",
+          "Castle exterior AM",
+          "Namba food only"
+        ],
+        [
+          "14 Departure",
+          "100% scheduled — KIX timing",
+          "No flex"
+        ]
+      ]
+    },
+    {
+      "caption": "Details",
+      "columns": [
+        "Site",
+        "Opens",
+        "Target arrival",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Tsukiji Outer Market",
+          "~05:00 vendors",
+          "07:00 Jul 28",
+          "Sushi breakfast before tour groups"
+        ],
+        [
+          "Fushimi Inari",
+          "24 hrs",
+          "05:30–06:00 Aug 1",
+          "Empty torii before 08:00 tour buses"
+        ],
+        [
+          "Arashiyama bamboo",
+          "24 hrs",
+          "07:00 Aug 2",
+          "Grove packed by 09:00"
+        ],
+        [
+          "Kiyomizu-dera",
+          "06:00 (summer)",
+          "06:30 Aug 3",
+          "Stage view before bus groups"
+        ],
+        [
+          "Shirakawa-go",
+          "09:00 village",
+          "First bus ~08:00 Jul 30",
+          "Viewpoint before 10:00 coaches"
+        ],
+        [
+          "Meiji Jingu",
+          "Sunrise",
+          "08:00 Jul 26",
+          "Forest quiet before Sunday crush"
+        ],
+        [
+          "Osaka Castle Park",
+          "24 hrs grounds",
+          "08:00 Aug 5",
+          "Heat + tour groups by 10:00"
+        ],
+        [
+          "Dotonbori",
+          "24 hrs",
+          "Weekday Tue Aug 4",
+          "Avoid Fri/Sat neon crush"
+        ]
+      ]
+    },
+    {
+      "caption": "Details",
+      "columns": [
+        "Window",
+        "Default activity"
+      ],
+      "rows": [
+        [
+          "11:00–15:00",
+          "Museum, sake tour, depachika, hotel bath, café with AC"
+        ],
+        [
+          "Outdoor",
+          "Reserve for ≤10:00 or ≥16:00"
+        ]
+      ]
+    },
+    {
+      "caption": "Efficiency Scorecard",
+      "columns": [
+        "Metric",
+        "Value",
+        "Target",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Transit-equivalent days",
+          "~2.5 / 14",
+          "<20% (2.8 days)",
+          "✅ 18%"
+        ],
+        [
+          "Pure experience hours/day",
+          "~7–9 hrs",
+          ">6 hrs",
+          "✅ PASS"
+        ],
+        [
+          "Daily in-city transit",
+          "30–60 min avg",
+          "<2 hrs",
+          "✅ PASS"
+        ],
+        [
+          "Demanding activity after long rail",
+          "0",
+          "0",
+          "✅ PASS (soft Days 6, 8, 12)"
+        ],
+        [
+          "Soft arrival/departure days",
+          "5 (1, 6, 8, 12, 14)",
+          "All hub changes",
+          "✅ PASS"
+        ],
+        [
+          "70% rule days with flex options",
+          "14 / 14",
+          ">70%",
+          "✅ PASS"
+        ],
+        [
+          "Open-jaw routing",
+          "NRT/HND → KIX",
+          "Yes",
+          "✅ PASS"
+        ],
+        [
+          "Jet lag Day 1 recovery",
+          "Scheduled",
+          "Required",
+          "✅ PASS"
+        ],
+        [
+          "Dawn crowd avoidance at tier-1 sites",
+          "6 / 6",
+          "Max possible",
+          "✅ PASS"
+        ],
+        [
+          "Alps cooler block mid-trip",
+          "Days 6–7",
+          "Nature + heat relief",
+          "✅ PASS"
+        ],
+        [
+          "Museum fatigue (max 1 major/day)",
+          "Enforced",
+          "Yes",
+          "✅ PASS"
+        ],
+        [
+          "Budget efficiency (strategic splurges)",
+          "2 planned",
+          "Spread",
+          "✅ PASS"
+        ]
+      ]
+    }
+  ]
+}

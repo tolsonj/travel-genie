@@ -1,0 +1,415 @@
+{
+  "aspect": "12-hidden-gems",
+  "type": "dashboard",
+  "trip": "japan-2026",
+  "title": "Hidden Gems",
+  "slide_title": "HIDDEN",
+  "intro": "- Pick one gem per city max — do not stack off-itinerary detours. - Best inserted when low energy or rainy backup slots open. - Solo-friendly = counter food, public baths, neighborhood walks.",
+  "tables": [
+    {
+      "caption": "TOKYO — Local Favorites",
+      "columns": [
+        "Gem",
+        "Area",
+        "Why",
+        "Swap for trap"
+      ],
+      "rows": [
+        [
+          "Yanaka Ginza",
+          "Yanaka",
+          "Showa-era shopping street, cats, old Tokyo calm",
+          "Nakamise overbuying"
+        ],
+        [
+          "Nezu Shrine azalea paths",
+          "Nezu",
+          "Small shrine, tunnel torii — quieter than Inari preview",
+          "—"
+        ],
+        [
+          "Kagurazaka",
+          "Shinjuku edge",
+          "French-Japanese alley, stone steps, evening solo dining",
+          "Golden Gai peak 22:00"
+        ],
+        [
+          "Todoroki Valley",
+          "Setagaya",
+          "1 km gorge 20 min from Shibuya — nature hidden",
+          "Overhyped Shibuya crossing linger"
+        ],
+        [
+          "Sumida Hokusai Museum",
+          "Ryogoku",
+          "Small focused museum + river walk",
+          "Skytree mall"
+        ],
+        [
+          "Jimbocho book district",
+          "Kanda",
+          "Used books, curry shops",
+          "Akihabara maid cafes"
+        ]
+      ]
+    },
+    {
+      "caption": "TAKAYAMA / ALPS",
+      "columns": [
+        "Gem",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Shiroyama Park viewpoint",
+          "Sunset over old town; 10 min climb; locals jog here"
+        ],
+        [
+          "Miyagawa morning market (local side)",
+          "Buy pickles from farmers, not gift stalls"
+        ],
+        [
+          "Funamachi canal lane",
+          "Evening walk; fireflies rare Jul"
+        ],
+        [
+          "Hida no Sato (if Shirakawa-go sold out)",
+          "Open-air museum closer; fewer tour buses than Ogimachi peak"
+        ]
+      ]
+    },
+    {
+      "caption": "KYOTO — Beyond the Postcard",
+      "columns": [
+        "Gem",
+        "Why",
+        "Best time"
+      ],
+      "rows": [
+        [
+          "Daimonji-yama (Nigatsudo)",
+          "Free city view near Todai-ji equivalent hillside — Kiyomizu area backup",
+          "Day 11 if energy"
+        ],
+        [
+          "Honen-in Temple",
+          "Moss entrance, no crowd; near Philosopher's Path start",
+          "Day 11 add-on"
+        ],
+        [
+          "Sennyu-ji",
+          "Imperial burial temple; forest silence",
+          "Early Aug morning"
+        ],
+        [
+          "Nishijin textile district",
+          "Working weavers, not rental kimono shops",
+          "Day 8–9 spare hour"
+        ],
+        [
+          "Ippodo Tea Kyoto",
+          "Tasting counter; AC",
+          "Heat midday"
+        ],
+        [
+          "Kawai Kanjiro's House",
+          "Craftsman home museum; intimate",
+          "Rainy 1 hr"
+        ]
+      ]
+    },
+    {
+      "caption": "OSAKA — Namba Depth",
+      "columns": [
+        "Gem",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Horie / Orange Street",
+          "Design boutiques, cafes; local creative scene"
+        ],
+        [
+          "Kuromon back lanes",
+          "Eat where staff eat — side streets off main arcade"
+        ],
+        [
+          "Nakazaki-cho",
+          "Retro cafes near Umeda; morning coffee"
+        ],
+        [
+          "Hozenji Yokocho",
+          "Moss-covered Buddha alley; lantern vibe near Dotonbori but calmer"
+        ],
+        [
+          "Tenma",
+          "Izakaya district where salarymen drink — solo counter OK"
+        ]
+      ]
+    },
+    {
+      "caption": "Cross-Trip \"If You Have 90 Minutes\"",
+      "columns": [
+        "Hub",
+        "Quick gem"
+      ],
+      "rows": [
+        [
+          "Tokyo",
+          "Todoroki Valley"
+        ],
+        [
+          "Takayama",
+          "Shiroyama Park"
+        ],
+        [
+          "Kyoto",
+          "Honen-in"
+        ],
+        [
+          "Osaka",
+          "Hozenji Yokocho"
+        ]
+      ]
+    },
+    {
+      "caption": "Anime/Gaming (Optional, Not Trap-Heavy)",
+      "columns": [
+        "Spot",
+        "Note"
+      ],
+      "rows": [
+        [
+          "Nakano Broadway",
+          "Used figures; less manic than Akihabara"
+        ],
+        [
+          "Super Potato Osaka",
+          "Retro games Nipponbashi"
+        ],
+        [
+          "GiGO (formerly SEGA)",
+          "Short visit; skip crane game spend spiral"
+        ]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "How to Use This List",
+      "items": [
+        "Pick one gem per city max — do not stack off-itinerary detours.",
+        "Best inserted when low energy or rainy backup slots open.",
+        "Solo-friendly = counter food, public baths, neighborhood walks."
+      ]
+    }
+  ],
+  "callouts": [],
+  "slide_title_accent": "GEMS",
+  "section_label": "Hidden Gems",
+  "section_kicker": "Local favorites · tourist traps · solo swaps",
+  "banner": {
+    "text": "Pick one gem per city max — do not stack off-itinerary detours. - Best inserted when low energy or rainy backup slots open. - Solo-friendly = counter food, public baths, neighborhood walks."
+  },
+  "sidebar": [
+    {
+      "type": "list",
+      "caption": "How to Use This List",
+      "items": [
+        "Pick one gem per city max — do not stack off-itinerary detours.",
+        "Best inserted when low energy or rainy backup slots open.",
+        "Solo-friendly = counter food, public baths, neighborhood walks."
+      ],
+      "ordered": false
+    }
+  ],
+  "panels": [
+    {
+      "caption": "TOKYO — Local Favorites",
+      "columns": [
+        "Gem",
+        "Area",
+        "Why",
+        "Swap for trap"
+      ],
+      "rows": [
+        [
+          "Yanaka Ginza",
+          "Yanaka",
+          "Showa-era shopping street, cats, old Tokyo calm",
+          "Nakamise overbuying"
+        ],
+        [
+          "Nezu Shrine azalea paths",
+          "Nezu",
+          "Small shrine, tunnel torii — quieter than Inari preview",
+          "—"
+        ],
+        [
+          "Kagurazaka",
+          "Shinjuku edge",
+          "French-Japanese alley, stone steps, evening solo dining",
+          "Golden Gai peak 22:00"
+        ],
+        [
+          "Todoroki Valley",
+          "Setagaya",
+          "1 km gorge 20 min from Shibuya — nature hidden",
+          "Overhyped Shibuya crossing linger"
+        ],
+        [
+          "Sumida Hokusai Museum",
+          "Ryogoku",
+          "Small focused museum + river walk",
+          "Skytree mall"
+        ],
+        [
+          "Jimbocho book district",
+          "Kanda",
+          "Used books, curry shops",
+          "Akihabara maid cafes"
+        ]
+      ]
+    },
+    {
+      "caption": "TAKAYAMA / ALPS",
+      "columns": [
+        "Gem",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Shiroyama Park viewpoint",
+          "Sunset over old town; 10 min climb; locals jog here"
+        ],
+        [
+          "Miyagawa morning market (local side)",
+          "Buy pickles from farmers, not gift stalls"
+        ],
+        [
+          "Funamachi canal lane",
+          "Evening walk; fireflies rare Jul"
+        ],
+        [
+          "Hida no Sato (if Shirakawa-go sold out)",
+          "Open-air museum closer; fewer tour buses than Ogimachi peak"
+        ]
+      ]
+    },
+    {
+      "caption": "KYOTO — Beyond the Postcard",
+      "columns": [
+        "Gem",
+        "Why",
+        "Best time"
+      ],
+      "rows": [
+        [
+          "Daimonji-yama (Nigatsudo)",
+          "Free city view near Todai-ji equivalent hillside — Kiyomizu area backup",
+          "Day 11 if energy"
+        ],
+        [
+          "Honen-in Temple",
+          "Moss entrance, no crowd; near Philosopher's Path start",
+          "Day 11 add-on"
+        ],
+        [
+          "Sennyu-ji",
+          "Imperial burial temple; forest silence",
+          "Early Aug morning"
+        ],
+        [
+          "Nishijin textile district",
+          "Working weavers, not rental kimono shops",
+          "Day 8–9 spare hour"
+        ],
+        [
+          "Ippodo Tea Kyoto",
+          "Tasting counter; AC",
+          "Heat midday"
+        ],
+        [
+          "Kawai Kanjiro's House",
+          "Craftsman home museum; intimate",
+          "Rainy 1 hr"
+        ]
+      ]
+    },
+    {
+      "caption": "OSAKA — Namba Depth",
+      "columns": [
+        "Gem",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Horie / Orange Street",
+          "Design boutiques, cafes; local creative scene"
+        ],
+        [
+          "Kuromon back lanes",
+          "Eat where staff eat — side streets off main arcade"
+        ],
+        [
+          "Nakazaki-cho",
+          "Retro cafes near Umeda; morning coffee"
+        ],
+        [
+          "Hozenji Yokocho",
+          "Moss-covered Buddha alley; lantern vibe near Dotonbori but calmer"
+        ],
+        [
+          "Tenma",
+          "Izakaya district where salarymen drink — solo counter OK"
+        ]
+      ]
+    },
+    {
+      "caption": "Cross-Trip \"If You Have 90 Minutes\"",
+      "columns": [
+        "Hub",
+        "Quick gem"
+      ],
+      "rows": [
+        [
+          "Tokyo",
+          "Todoroki Valley"
+        ],
+        [
+          "Takayama",
+          "Shiroyama Park"
+        ],
+        [
+          "Kyoto",
+          "Honen-in"
+        ],
+        [
+          "Osaka",
+          "Hozenji Yokocho"
+        ]
+      ]
+    },
+    {
+      "caption": "Anime/Gaming (Optional, Not Trap-Heavy)",
+      "columns": [
+        "Spot",
+        "Note"
+      ],
+      "rows": [
+        [
+          "Nakano Broadway",
+          "Used figures; less manic than Akihabara"
+        ],
+        [
+          "Super Potato Osaka",
+          "Retro games Nipponbashi"
+        ],
+        [
+          "GiGO (formerly SEGA)",
+          "Short visit; skip crane game spend spiral"
+        ]
+      ]
+    }
+  ]
+}

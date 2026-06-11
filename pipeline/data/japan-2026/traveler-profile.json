@@ -1,0 +1,224 @@
+{
+  "aspect": "traveler-profile",
+  "type": "profile",
+  "trip": "japan-2026",
+  "title": "Traveler Profile",
+  "slide_title": "TRAVELER PROFILE",
+  "country_label": "JAPAN",
+  "intelligence": {
+    "label": "Travel Intelligence",
+    "text": "Solo · Japan · Late July – early August 2026 (~14 days. Budget $5,000 USD (all-in: flights, lodging, food, activities, local transport, buffer). Constraint: Early starts…."
+  },
+  "metrics": [
+    {
+      "icon": "📍",
+      "label": "Destination",
+      "value": "Japan"
+    },
+    {
+      "icon": "📅",
+      "label": "Dates",
+      "value": "Late July – early August 2026 (~14 days; itinerary anchor Jul 24 – Aug 6)"
+    },
+    {
+      "icon": "👤",
+      "label": "Party",
+      "value": "Solo"
+    },
+    {
+      "icon": "💵",
+      "label": "Budget",
+      "value": "$5,000 USD (all-in: flights, lodging, food, activities, local transport, buffer)"
+    },
+    {
+      "icon": "⭐",
+      "label": "Priorities",
+      "value": "Nature · Food · History"
+    },
+    {
+      "icon": "💪",
+      "label": "Physical",
+      "value": "High fitness"
+    }
+  ],
+  "seasonality": {
+    "caption": "Seasonality scorecard",
+    "columns": [
+      "",
+      "Late Jul–Aug",
+      "October",
+      "April"
+    ],
+    "rows": [
+      [
+        "Heat / comfort",
+        "High humidity",
+        "Mild autumn",
+        "Pleasant spring"
+      ],
+      [
+        "Crowds",
+        "Pre-Obon rise",
+        "Moderate",
+        "Cherry peak risk"
+      ],
+      [
+        "Rain risk",
+        "Afternoon storms",
+        "Lower",
+        "Variable"
+      ],
+      [
+        "Alps / nature",
+        "Prime hiking",
+        "Foliage season",
+        "Snow melt / open"
+      ],
+      [
+        "Food season",
+        "Summer festivals",
+        "Harvest kaiseki",
+        "Spring produce"
+      ],
+      [
+        "Fit score",
+        "26/40 — mitigated",
+        "32/40",
+        "28/40"
+      ]
+    ],
+    "chosen_column": 1,
+    "summary": "Chosen window honors fixed dates; Alps nature priority with dawn/AC protocols offset Kansai heat and crowd risk."
+  },
+  "validations": [
+    {
+      "status": "pass",
+      "text": "Single-country hub sequence: Tokyo → Japanese Alps (Takayama base) → Kyoto → Osaka → depart KIX"
+    },
+    {
+      "status": "pass",
+      "text": "Open-jaw flights: NRT or HND in, KIX out — no backtracking to Tokyo for departure"
+    },
+    {
+      "status": "pass",
+      "text": "Budget requires strategic splurges, not 14 days of luxury lodging"
+    },
+    {
+      "status": "pass",
+      "text": "Nature interest elevates Alps allocation to at least 2 nights"
+    },
+    {
+      "status": "pass",
+      "text": "Crowd aversion elevates timing discipline over attraction count"
+    }
+  ],
+  "intro": "- Style: Adventurous planner — structured days with room to wander; “optimized experience” (efficient moves, not rushed) - Pace: Moderate; one anchor activity per day; avoid intense athletic blocks - Authenticity: Prefer local gems over tourist traps; food tours and cultural experiences welcome - Ideal day: Good weather, great food, beautiful scenery, unhurried exploration",
+  "tables": [
+    {
+      "caption": "Core Identifiers",
+      "columns": [
+        "Field",
+        "Value"
+      ],
+      "rows": [
+        [
+          "Traveler",
+          "Montrez"
+        ],
+        [
+          "Countries",
+          "Japan (single-country)"
+        ],
+        [
+          "Travel window",
+          "Late July – early August 2026 (~14 days; itinerary anchor Jul 24 – Aug 6)"
+        ],
+        [
+          "Travel party",
+          "Solo"
+        ],
+        [
+          "Decision authority",
+          "Solo (full autonomy)"
+        ],
+        [
+          "Citizenship",
+          "US — passport valid through 2028"
+        ]
+      ]
+    },
+    {
+      "caption": "Budget",
+      "columns": [
+        "Category",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Total",
+          "$5,000 USD (all-in: flights, lodging, food, activities, local transport, buffer)"
+        ],
+        [
+          "Allocation intent",
+          "Spread across hubs—not concentrated in one city"
+        ],
+        [
+          "Per-day envelope",
+          "~$357/day average; plan ~$1,000–1,400 for intl flights open-jaw, ~$3,600–4,000 on ground"
+        ],
+        [
+          "Splurge levers",
+          "One kaiseki or omakase slot, one Alps ryokan/onsen night, one paid nature experience (Kamikochi day or guided hike)"
+        ]
+      ]
+    },
+    {
+      "caption": "Deal-Breakers",
+      "columns": [
+        "Deal-breaker",
+        "Planning implication"
+      ],
+      "rows": [
+        [
+          "Massive crowds",
+          "Early starts; weekday temples; skip peak-hour Shibuya photo ops; book timed entries; use Takayama/Kamikochi as relief; avoid scheduling Kyoto’s Gion at sunset on a Saturday in peak season"
+        ]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Style & Pace",
+      "items": [
+        "Style: Adventurous planner — structured days with room to wander; “optimized experience” (efficient moves, not rushed)",
+        "Pace: Moderate; one anchor activity per day; avoid intense athletic blocks",
+        "Authenticity: Prefer local gems over tourist traps; food tours and cultural experiences welcome",
+        "Ideal day: Good weather, great food, beautiful scenery, unhurried exploration"
+      ]
+    },
+    {
+      "heading": "Physical Profile",
+      "items": [
+        "High fitness; comfortable walking several miles daily",
+        "Enjoys hiking but not extreme mountaineering",
+        "No stated mobility limitations"
+      ]
+    },
+    {
+      "heading": "Transit Experience & Preferences",
+      "items": [
+        "Limited multi-country experience — favor clear hub changes, reserved seats, and app-based transit (Google Maps + Japan Transit Planner; Suica/PASMO)",
+        "Long drives acceptable if scenery rewards (Alps approach qualifies)"
+      ]
+    },
+    {
+      "heading": "Seasonal Constraints (late Jul – early Aug)",
+      "items": [
+        "Heat/humidity in Tokyo, Kyoto, Osaka — outdoor blocks before 10:00 or after 16:00; midday indoor/AC",
+        "Rain — afternoon thunderstorms possible; daily rainy backup required (Step 04)",
+        "Pre-Obon travel — domestic volume rises late July; full Obon (typically mid-Aug) is mostly after this window but still plan for busy Shinkansen Sundays"
+      ]
+    }
+  ],
+  "callouts": []
+}

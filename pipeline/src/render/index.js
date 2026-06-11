@@ -7,6 +7,15 @@ import { dirname, join } from "node:path";
 import { THEME_CSS } from "./theme.js";
 import { GEOMAP_CLIENT_SCRIPT } from "./maps/geomap.js";
 import * as routeOptimization from "./templates/route-optimization.js";
+import * as travelerProfile from "./templates/traveler-profile.js";
+import * as foodDining from "./templates/food-dining.js";
+import * as masterItinerary from "./templates/master-itinerary.js";
+import * as accommodation from "./templates/accommodation.js";
+import * as etiquette from "./templates/etiquette.js";
+import * as shopping from "./templates/shopping.js";
+import * as cultureMuseums from "./templates/culture-museums.js";
+import * as packing from "./templates/packing.js";
+import * as dashboard from "./templates/dashboard.js";
 import * as generic from "./templates/generic.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -14,6 +23,15 @@ const VENDOR = join(__dirname, "../../vendor");
 
 const TEMPLATES = {
   "route-optimization": routeOptimization,
+  "traveler-profile": travelerProfile,
+  "food-dining": foodDining,
+  "master-itinerary": masterItinerary,
+  accommodation,
+  etiquette,
+  shopping,
+  "culture-museums": cultureMuseums,
+  packing,
+  dashboard,
   generic
 };
 

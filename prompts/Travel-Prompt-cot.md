@@ -50,7 +50,6 @@ OUTPUT:
 VALIDATION: Check for "country hopping fatigue" — warn me if transit exceeds 20% of total trip time.
 ```
 
-
 ```
 ROLE: Immigration and entry specialist.
 SITUATION: I am a citizen of [your country] traveling to [list countries] from [dates].
@@ -154,45 +153,24 @@ VALIDATION: Confirm each accommodation is within 30 minutes of 60% of planned ac
 ```
 
 ```
-ROLE: Multi-country accommodation strategist.
-PERSONA: [Paste traveler profile]
-ITINERARY: [Paste from Step 4]
-SITUATION: I need accommodation across [number] countries.
-
-TASK:
-1. NEIGHBORHOOD ANALYSIS PER COUNTRY:
-   - Map my daily activities and recommend neighborhoods that minimize transit
-   - Proximity to border crossings or transit hubs for arrival/departure days
-
-2. ACCOMMODATION TYPE MATCH PER COUNTRY:
-   - Hostel, boutique hotel, chain, Airbnb — which fits each country's infrastructure and my needs?
-   - Countries where Airbnb is restricted or regulated differently
-
-3. BOOKING STRATEGY:
-   - Which countries need advance booking (high demand, limited supply)?
-   - Which allow flexible/walk-in booking?
-   - Cancellation policies that work with multi-country uncertainty
-
-4. CROSS-BORDER LOGISTICS:
-   - Early check-in options for morning arrivals
-   - Late checkout for evening departures to next country
-   - Luggage storage between checkout and border crossing
-
-5. SAFETY PER COUNTRY:
-   - Solo traveler considerations by neighborhood
-   - Countries where hotel registration with police is required
-
-VALIDATION: Confirm each accommodation is within 30 minutes of 60% of planned activities AND within reasonable distance of my exit point to the next country.
-```
-
-```
 ROLE: Multi-country shopping strategist.
 PERSONA: [Paste traveler profile]
-ITINERARY: [Paste from Step 4]
+ITINERARY: [Paste from Step 4 — full day-by-day schedule]
+CITIES ON ITINERARY: [Extract from Step 4 — each city with dates/nights and country. Shopping is scoped to these cities unless I explicitly change routing.]
 SITUATION: I want to shop across [number] countries for: clothing, tailored/bespoke clothes, designer watches, designer handbags, designer shoes, and athletic/sneaker brands. Budget per category: [e.g. tailoring $X, watches $X, handbags $X, shoes $X].
 
 TASK:
-1. COUNTRY-BY-COUNTRY SHOPPING STRENGTH:
+0. ITINERARY + SOCIAL MEDIA ANCHOR (do this first):
+   - Parse Step 4 for every city I will stay in (not just countries)
+   - For EACH itinerary city AND each country on the route, synthesize what is trending on **YouTube** (travel vlogs, shopping hauls), **TikTok** (hashtags, short-form hauls), and **Instagram** (location tags, Reels, creator districts)
+   - Desk research only (search summaries, creator roundups, travel press) — not a live API scrape; verify hours, addresses, tax-refund rules, and authenticity before visiting
+   - Per city: 3–5 districts/malls/markets repeatedly featured in creator content — why they trend, content type (luxury haul, bargain, tech, wholesale, night aesthetic)
+   - Per city: sample YouTube search queries, TikTok hashtags, and Instagram location tags I can use to dig deeper
+   - Per country: national shopping narratives/memes (e.g. country-wide TikTok trends)
+   - **Itinerary fit:** tag each viral spot as **on-route + day match** | **on-route, needs schedule slot** | **viral but off-itinerary** (city not in Step 4 — only recommend if worth rerouting)
+   - Note platform access (e.g. YouTube/Instagram may require VPN in some countries)
+
+1. COUNTRY-BY-COUNTRY SHOPPING STRENGTH (prioritize cities on my itinerary):
    - Rank each country on my itinerary for each category (clothing, tailoring, watches, handbags, designer shoes, athletic shoes)
    - Identify which country is the best single stop for each category — where to prioritize spend
    - Flag categories where a country offers exceptional value vs home-country pricing
@@ -246,19 +224,34 @@ TASK:
 
 OUTPUT:
 - Shopping priority matrix: country × category ranked by value, availability, and price advantage
-- Recommended shopping days per city with neighborhood map
+- **Itinerary city shopping map:** city → viral social picks → assigned day or "add slot" or "off-route"
+- **Social vs plan matrix:** already scheduled | add to day X | viral but skip (off-route / poor fit)
+- Recommended shopping days per **itinerary city** with neighborhood map (cluster near that day's anchors)
+- DIY search strings table: YouTube queries + TikTok/Instagram tags per itinerary city
 - VAT refund summary table: rates and process per country
 - Customs/duty cheat sheet for returning home with purchases
 
-VALIDATION: Confirm shopping days are scheduled on non-transit days. Flag any city where primary shopping districts are closed on days I'm present (e.g. Sunday closures, national holidays). Ensure total declared purchase value is modeled against my home-country duty-free allowance.
+VALIDATION: Confirm shopping days are scheduled on non-transit days in **itinerary cities only** (unless I approved a routing change for a viral off-route spot). Flag any city where primary shopping districts are closed on days I'm present (e.g. Sunday closures, national holidays). Ensure total declared purchase value is modeled against my home-country duty-free allowance. Distinguish creator hype from fit for my profile and budget.
 ```
 
 ```
 ROLE: Multi-country food anthropologist.
 PERSONA: [Paste traveler profile]
+ITINERARY: [Paste from Step 4 — full day-by-day schedule]
+CITIES ON ITINERARY: [Extract from Step 4 — each city with dates/nights and country]
 SITUATION: I want to eat like a local across [list countries]. Dietary needs: [none/vegetarian/allergies]. Food budget: [range per country].
 
 TASK:
+0. ITINERARY + SOCIAL MEDIA ANCHOR (do this first):
+   - Scope food research to **cities on my Step 4 itinerary** (and border/transit stops where I have meal time)
+   - For EACH itinerary city AND each country, synthesize trending food from **YouTube** (food vlogs, street-food tours), **TikTok** (viral dishes, night-market clips), and **Instagram** (restaurant Reels, café districts, location tags)
+   - Desk research only — verify hours, reservations, hygiene, and dietary fit before visiting
+   - Per city: 3–5 venues or districts repeatedly featured (night markets, viral cafés, "must film" stalls, chef-driven spots)
+   - Per city: what creators tend to order/film vs what locals actually eat there
+   - Per country: national food trends on social (e.g. regional dish waves, festival food)
+   - **Itinerary fit:** map each viral food spot to a specific day/meal or flag **off-itinerary city** / **needs detour**
+   - Note platform access where Western social apps are restricted
+
 1. SIGNATURE DISHES PER COUNTRY: 5 must-try dishes per country with:
    - Pronunciation guide
    - What to order with it
@@ -267,9 +260,10 @@ TASK:
 
 2. FOOD EXPERIENCES PER COUNTRY:
    - One hands-on experience per country (cooking class, market tour, street food crawl)
+   - Prefer experiences in **itinerary cities**; include 1–2 creator-famous experiences only if they match my pace and budget
    - Cross-reference with my itinerary to avoid scheduling conflicts
 
-3. MEAL MAPPING: Map meals to itinerary days, accounting for:
+3. MEAL MAPPING: Map meals to **specific itinerary days and cities**, accounting for:
    - Border crossing days (pack food or know what's available at the crossing)
    - Early departure days (breakfast options before 6 AM)
    - Late arrival days (24-hour food options)
@@ -284,7 +278,13 @@ TASK:
    - Meal timing (siesta countries, late dinner countries)
    - Table manners that differ from home
 
-OUTPUT: Country-by-country food itinerary with border-crossing meal contingencies.
+OUTPUT:
+- Country-by-country food itinerary with border-crossing meal contingencies
+- **Per itinerary city:** signature dishes + social-media-highlight venues mapped to days/meals
+- **Social vs plan matrix** for food (scheduled | add slot | off-route / skip)
+- DIY search strings: YouTube food vlogs + TikTok/Instagram tags per itinerary city
+
+VALIDATION: No meal requires >30 minutes extra transit from that day's anchor unless flagged. Viral spots must fit dietary needs and food budget. Flag overhyped creator traps vs high-quality local picks.
 ```
 
 ```
@@ -394,10 +394,19 @@ OUTPUT: Tech setup checklist and offline survival kit for the entire multi-count
 ```
 ROLE: Multi-country cultural curator.
 PERSONA: [Paste traveler profile]
+ITINERARY: [Paste from Step 4 — full day-by-day schedule]
+CITIES ON ITINERARY: [Extract from Step 4 — each city with dates/nights and country]
 SITUATION: I'm visiting [list countries] for [number] days each.
 Cultural interests: [art/history/science/music/architecture/local traditions]
 
-TASK PER COUNTRY:
+TASK:
+0. ITINERARY + SOCIAL MEDIA ANCHOR (do this first):
+   - For EACH **itinerary city** and country, research cultural activities trending on **YouTube** (museum vlogs, walking tours), **TikTok**, and **Instagram** (photo spots, exhibitions, neighborhood aesthetics)
+   - Per city: museums, galleries, temples, architecture walks, and timed exhibitions creators repeatedly feature
+   - Tag each as **on-route + day match** | **on-route, needs slot** | **viral but off-itinerary**
+   - Filter creator-famous spots for crowd level, booking lead time, and authenticity vs photo-backdrop traps
+
+TASK PER COUNTRY (prioritize itinerary cities):
 1. MUSEUM STRATEGY:
    - One museum/site per day with hidden corners
    - Best time to visit for crowd avoidance
@@ -419,24 +428,35 @@ TASK PER COUNTRY:
    - Survival phrases in each language
    - Translation app recommendations per language family
 
-VALIDATION: Check for museum fatigue across the entire trip, not just per country.
+OUTPUT: Per-itinerary-city cultural calendar + social-vs-plan matrix + DIY YouTube/TikTok/Instagram search strings per city.
+
+VALIDATION: Check for museum fatigue across the entire trip, not just per country. Activities must land in cities on Step 4 unless I approve a routing change.
 ```
 
 ```
 ROLE: Multi-country adventure specialist.
 PERSONA: [Paste traveler profile — include fitness level]
+ITINERARY: [Paste from Step 4 — full day-by-day schedule]
+CITIES ON ITINERARY: [Extract from Step 4 — each city with dates/nights and country]
 SITUATION: Active experiences across [list countries].
 
 TASK:
-1. WATER SPORTS PER COUNTRY:
+0. ITINERARY + SOCIAL MEDIA ANCHOR (do this first):
+   - For EACH **itinerary city** and country, synthesize trending **activities** on **YouTube** (hike vlogs, dive/snorkel tours, bike routes), **TikTok**, and **Instagram** (viewpoints, adventure parks, seasonal experiences)
+   - Per city: 3–5 activities creators repeatedly film — difficulty, seasonality, operator signals, typical duration
+   - Map each to itinerary days; flag viral activities in **cities not on Step 4**
+   - Separate influencer "hero shots" from experiences worth my fitness level and insurance coverage
+
+1. WATER SPORTS PER COUNTRY (itinerary cities and coastal stops only):
    - Available activities based on geography
    - Seasonal viability (water temperature, conditions)
    - Equipment rental vs bring-your-own
    - Medical clearance and insurance coverage
 
-2. LAND ADVENTURES PER COUNTRY:
-   - Hiking, biking, climbing options
+2. LAND ADVENTURES PER COUNTRY (prioritize itinerary cities):
+   - Hiking, biking, climbing options near cities I am actually staying in
    - Difficulty ratings and time requirements
+   - Include creator-trending trails or districts only when they fit season and recovery days
 
 3. CROSS-BORDER GEAR:
    - What adventure gear can I carry across borders (hiking poles, dive knives, etc.)
@@ -452,16 +472,25 @@ TASK:
    - Safety standards vary — what to check
    - Questions to ask before booking
 
-OUTPUT: Adventure calendar integrated with border crossing and recovery days.
+OUTPUT: Adventure calendar integrated with border crossing and recovery days + per-city social trending activities + social-vs-plan matrix + DIY search strings per itinerary city.
+
+VALIDATION: High-intensity activities only on non-transit days in itinerary cities. No viral off-route day trips unless explicitly worth the detour.
 ```
 
 ```
 ROLE: Multi-country local insider.
 PERSONA: [Paste traveler profile]
-SITUATION: Main sights covered. Now I want the secret layer across [list countries].
+ITINERARY: [Paste from Step 4 — full day-by-day schedule]
+CITIES ON ITINERARY: [Extract from Step 4 — each city with dates/nights and country]
+SITUATION: Main sights covered. Now I want the secret layer across [list countries] — including what creators surface on social, filtered for substance.
 
 TASK:
-1. HIDDEN GEMS PER COUNTRY: 5 places/experiences locals love
+0. SOCIAL DISCOVERY LAYER (itinerary cities first):
+   - Mine **YouTube**, **TikTok**, and **Instagram** for each **itinerary city** for places locals and thoughtful creators love (not only mega-viral landmarks)
+   - Cross-check against Step 4: skip duplicates already scheduled; elevate under-the-radar spots that fit open slots
+   - Flag "Instagram trap" locations (long queues, low payoff) vs genuine hidden gems
+
+1. HIDDEN GEMS PER COUNTRY: 5 places/experiences locals love — **at least 3 per itinerary city**
 2. "ONLY HERE" PER COUNTRY: 2 things I can only do there
 3. NEIGHBORHOOD DEEP-DIVES: 1 non-touristy neighborhood per country
 4. CROSS-BORDER CONNECTIONS:
@@ -620,18 +649,20 @@ Generate a complete multi-country travel brief:
 2. VISA & ENTRY: Per-country requirements, deadlines, red flags
 3. ITINERARY: Day-by-day across all countries with anchors, wow moments, backups
 4. ACCOMMODATION: Neighborhoods and booking strategy per country
-5. FOOD: Signature dishes and experiences per country, border-crossing meal plans
+5. FOOD: Signature dishes and experiences per **itinerary city**, social-media food highlights mapped to days, border-crossing meal plans
+5b. SHOPPING: Category strategy per country scoped to **itinerary cities**, social-media shopping districts, VAT/customs
 6. TRANSPORT: Between and within countries, with booking platforms
 7. CUSTOMS: Duty-free allowances, restricted items, purchasing strategy per country
 8. TECH: Multi-country connectivity, offline kits, power adapters
-9. CULTURE: Museums, hidden gems, etiquette per country + cross-cultural transitions
-10. ADVENTURE: Water sports and activities per country with seasonal viability
-11. HEALTH: Vaccinations, insurance, emergency protocols per country
-12. MONEY: Currency strategy, ATM networks, tipping, VAT refunds
-13. PACKING: Multi-climate, border-crossing day bag, document organization
-14. CONTINGENCY: 10 scenarios with step-by-step recovery per country
-15. EFFICIENCY: PTO hacking, transit minimization, jet lag strategy, activity clustering
-16. BOOKING QUEUE: Everything to reserve now with deadlines
+9. CULTURE: Museums and activities per **itinerary city**, social-media cultural picks, etiquette + cross-cultural transitions
+10. ADVENTURE: Water/land activities per **itinerary city** with seasonal viability and creator-trending options filtered for fitness
+11. HIDDEN GEMS: Locals + creator-surfaced secrets per itinerary city (social-vs-plan matrix)
+12. HEALTH: Vaccinations, insurance, emergency protocols per country
+13. MONEY: Currency strategy, ATM networks, tipping, VAT refunds
+14. PACKING: Multi-climate, border-crossing day bag, document organization
+15. CONTINGENCY: 10 scenarios with step-by-step recovery per country
+16. EFFICIENCY: PTO hacking, transit minimization, jet lag strategy, activity clustering
+17. BOOKING QUEUE: Everything to reserve now with deadlines
 
 VALIDATION:
 - Transit under 20% of total time
@@ -640,3 +671,4 @@ VALIDATION:
 - Museum fatigue check across entire trip
 - "Soft day" after every border crossing
 ```
+

@@ -12,6 +12,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { discoverAspects, dataDir, PIPELINE_ROOT } from "./discover.js";
 import { extractAspect, jsonPath } from "./extract/extract.js";
+import { extractFromMarkdown, readTripFromFrontmatter } from "./extract/md-extract.js";
 import { renderDeck } from "./render/index.js";
 
 function parseArgs(argv) {
@@ -50,7 +51,12 @@ async function main() {
 
     const p = jsonPath(trip, a.id);
     if (existsSync(p)) {
-      const data = JSON.parse(readFileSync(p, "utf8"));
+      let data = JSON.parse(readFileSync(p, "utf8"));
+      if (existsSync(a.sourceFile)) {
+        const md = readFileSync(a.sourceFile, "utf8");
+        const tripSlug = readTripFromFrontmatter(md, data.trip || trip);
+        data = extractFromMarkdown(md, { ...a, trip: tripSlug });
+      }
       slides.push({ templateName: a.templateName, data, aspect: a });
       console.log(`  ✓ ${a.id.padEnd(24)} [${a.templateName}] (${status})`);
     } else {

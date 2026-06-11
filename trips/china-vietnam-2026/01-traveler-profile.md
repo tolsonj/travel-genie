@@ -2,7 +2,7 @@
 step: "01-traveler-profile"
 title: "Traveler Profile"
 trip: "china-vietnam-2026"
-created: 2026-05-25
+created: 2026-06-03
 depends_on:
   - "[[profile]]"
 tags:
@@ -24,7 +24,8 @@ Country count vs timeframe: 2 countries in 14 days (Sept 1–14, 2026) is realis
 
 | Field | Value |
 |-------|-------|
-| **Countries** | China → Vietnam |
+| **Countries** | China (Hong Kong + Guangzhou mainland) → Vietnam |
+| **Entry airport** | **Hong Kong International (HKG)** — per profile |
 | **Travel window** | September 1–14, 2026 (14 days) |
 | **Travel party** | Couple (traveler + wife) |
 | **Decision authority** | Vote (consensus-based) |
@@ -81,7 +82,8 @@ Country count vs timeframe: 2 countries in 14 days (Sept 1–14, 2026) is realis
 1. September in both China and Vietnam means heat + humidity + possible typhoon/rain — itinerary must have strong rainy-day fallbacks
 2. Vietnam resort stay should be clustered for relaxation (not fragmented across cities)
 3. China portion should prioritize efficiency: maximize cultural/shopping value without over-scheduling
-4. Border crossing is an international flight — no overland crossing planned
+4. **HKG entry** → high-speed rail to Guangzhou for mainland China segment; then flight to Vietnam (no overland China–Vietnam border)
+5. Hong Kong and mainland China are **separate immigration regimes** — plan visas and apps for both
 
 ## Validation
 

@@ -56,7 +56,7 @@ export const GEOMAP_CLIENT_SCRIPT = `
       return Object.assign({}, n, { p: projection([n.lng, n.lat]) });
     });
 
-    if (pts.length > 1) {
+    if (pts.length > 1 && !cfg.hide_route) {
       var lineD = pts.map(function (n, i) { return (i === 0 ? "M " : "L ") + n.p[0] + " " + n.p[1]; }).join(" ");
       svg.append("path").attr("d", lineD).attr("fill", "none")
         .attr("stroke", "var(--route-line)").attr("stroke-width", 2.5)

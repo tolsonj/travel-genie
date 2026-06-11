@@ -1,113 +1,531 @@
 {
   "aspect": "15-packing",
-  "type": "generic",
+  "type": "packing",
   "trip": "china-vietnam-2026",
   "title": "Packing",
   "slide_title": "PACKING",
-  "intro": "14 days, China then Vietnam, September (Beijing 20\u201328\u00b0C; Vietnam 28\u201332\u00b0C humid). Plan return luggage expansion for Vietnam shopping; light outbound, packable duffel for haul.",
+  "intro": "1. Valid passports — valid until March 2027 minimum; both travelers 2. China visa (in passport or printed approval letter) 3. Vietnam e-visa printed copies (2 each; one in carry-on, one in checked) 4. Travel insurance policy number + 24/7 emergency line — saved in phone AND on paper 5. VPN activated on both phones (ExpressVPN/NordVPN — must be installed BEFORE China entry) 6. All eSIMs activated (Airalo China + Vietnam eSIMs downloaded and QR codes saved) 7. Multi-currency debit card (Charles Schwab) + backup credit card; both banks notified 8. Prescription medications (14-day supply + 3 days buffer; original prescriptions in carry-on) 9. Universal travel adapter (both China and Vietnam use A and C type plugs; one universal covers both) 20,000 mAh USB-C power bank (checked for airline Wh compliance) 10. DEET 30% insect repellent — mosquito risk in Vietnam 11. SPF 50 sunscreen (2 bottles — expensive at Vietnam resorts) 12. Compression packing cubes — enables expansion for return shopping haul 13. Lightweight packable daypack — for Great Wall hike; beach days; daily city use 14. CBP Form 4457 (US Customs pre-registration of valuable items taken FROM US: watches, jewelry) 15. Copies of all hotel bookings, flight confirmations — in both cloud (via VPN) and printed",
   "tables": [
     {
-      "caption": "Border-Crossing Day Bag (Days 6, 8, 14)",
-      "columns": ["Item", "Why"],
+      "caption": "",
+      "columns": [
+        "Item",
+        "Why"
+      ],
       "rows": [
-        ["Both passports + printed visas", "Primary entry documents"],
-        ["All cards + split cash", "Never in checked bag"],
-        ["Phone, cable, power bank", "Active all day"],
-        ["Prescription meds", "Never checked"],
-        ["1 outfit each + snacks", "Bag-delay backup"],
-        ["Offline entertainment + confirmations", "No internet guaranteed"]
+        [
+          "Both passports",
+          "Primary documents"
+        ],
+        [
+          "Both visa documents (printed)",
+          "Entry to Vietnam + e-visa"
+        ],
+        [
+          "All credit/debit cards",
+          "Never in checked bag"
+        ],
+        [
+          "Cash (divided: some on person, rest in bag)",
+          "Split risk"
+        ],
+        [
+          "Phone + charging cable + power bank",
+          "Active all day"
+        ],
+        [
+          "Prescription medications",
+          "Never in checked luggage"
+        ],
+        [
+          "Change of clothes (1 outfit each)",
+          "If bags delayed"
+        ],
+        [
+          "Snacks (energy bars)",
+          "Long transit days"
+        ],
+        [
+          "Earbuds + neck pillow",
+          "Comfort on flights"
+        ],
+        [
+          "Entertainment downloaded offline",
+          "No internet guaranteed"
+        ],
+        [
+          "Important photos/confirmations downloaded",
+          "In case no signal"
+        ]
       ]
     },
     {
-      "caption": "Tech for Long Transit",
-      "columns": ["Item", "Use"],
+      "caption": "Tech / Battery Survival for Long Transit Days",
+      "columns": [
+        "Item",
+        "Use"
+      ],
       "rows": [
-        ["20,000 mAh power bank", "4\u20135 phone charges; 2 iPad charges"],
-        ["USB-C 65W laptop charger + adapter", "Gate/lounge charging"],
-        ["Dual-port USB-C cube", "Two devices at hotel"],
-        ["Noise-canceling earbuds", "13-hr flight focus"],
-        ["Downloaded maps/movies", "No inflight WiFi assumed"]
+        [
+          "20,000 mAh power bank",
+          "4–5 full phone charges; 2 iPad charges"
+        ],
+        [
+          "USB-C 65W laptop charger + adapter",
+          "Laptop charging at gate"
+        ],
+        [
+          "Universal adapter (in carry-on on transit days)",
+          "Charge at airport lounges"
+        ],
+        [
+          "Dual-port USB-C charging cube",
+          "Charge 2 devices simultaneously at hotel"
+        ],
+        [
+          "Noise-canceling earbuds (AirPods Pro/Sony WH-1000XM5)",
+          "13-hr flight; focus"
+        ],
+        [
+          "Downloaded movies/shows",
+          "No inflight WiFi assumed"
+        ],
+        [
+          "Downloaded offline maps",
+          "Already in carry-on"
+        ]
       ]
     },
     {
-      "caption": "Document Folder Sections",
-      "columns": ["Section", "Contents"],
+      "caption": "",
+      "columns": [
+        "Category",
+        "Location"
+      ],
       "rows": [
-        ["US", "Passports; CBP Form 4457"],
-        ["China", "Visa; hotel; Great Wall + Forbidden City confirmations"],
-        ["Vietnam", "E-visa (2 copies); Hanoi hotel; resort; domestic flight; tailor appointment"],
-        ["Universal", "Insurance; card list; emergency contacts card"]
+        [
+          "Prescription medications",
+          "Carry-on (NEVER checked)"
+        ],
+        [
+          "OTC medications (Imodium, antihistamine, ibuprofen)",
+          "Carry-on small pouch"
+        ],
+        [
+          "Sunscreen (1 bottle)",
+          "Carry-on (under 100ml per bottle) or checked"
+        ],
+        [
+          "Insect repellent (DEET)",
+          "Checked bag"
+        ],
+        [
+          "First aid pack (bandages, wipes)",
+          "Checked bag"
+        ],
+        [
+          "Oral rehydration sachets",
+          "Carry-on"
+        ]
       ]
     },
     {
-      "caption": "Luggage Setup",
-      "columns": ["Item", "Type", "Notes"],
+      "caption": "",
+      "columns": [
+        "Section",
+        "Contents"
+      ],
       "rows": [
-        ["Primary checked", "27\" hardshell spinner", "Per person; Asia overhead protection"],
-        ["Carry-on", "Cabin-size", "Under seat or overhead per airline"],
-        ["Day bag", "20L packable", "Great Wall hike; beach; city"],
-        ["Return duffel", "Osprey Ultralight or similar", "Fist-size packed; second checked bag for purchases"]
+        [
+          "US",
+          "Passports (front accessible); CBP Form 4457"
+        ],
+        [
+          "China",
+          "Visa approval; hotel confirmation; Great Wall booking; Forbidden City ticket confirmation"
+        ],
+        [
+          "Vietnam",
+          "E-visa printouts (2 copies); Hanoi hotel; Đà Nẵng resort; domestic flight; Hội An tailor appointment"
+        ],
+        [
+          "Universal",
+          "Travel insurance; credit card list (last 4 digits); emergency contacts card (per 14-health-safety)"
+        ]
       ]
     },
     {
-      "caption": "Border-Crossing Outfit",
-      "columns": ["Item", "Why"],
+      "caption": "",
+      "columns": [
+        "Item",
+        "Why"
+      ],
       "rows": [
-        ["Slip-on shoes, no belt", "Fast security"],
-        ["Linen trousers or joggers + polo/button-down", "Comfortable + lounge-presentable"],
-        ["Light jacket + compression socks", "Plane AC; 4+ hr circulation"]
+        [
+          "Slip-on shoes (no laces)",
+          "Fast security clearance"
+        ],
+        [
+          "No belt",
+          "No metal = faster screening"
+        ],
+        [
+          "Light linen trousers or tailored joggers",
+          "Comfortable + presentable for lounge access"
+        ],
+        [
+          "Polo or button-down (not T-shirt)",
+          "Presentable for business class check-in"
+        ],
+        [
+          "Cardigan or light jacket",
+          "AC on planes; temperature fluctuations"
+        ],
+        [
+          "Compression socks",
+          "4+ hour flights → circulation"
+        ]
+      ]
+    },
+    {
+      "caption": "Luggage Recommendation",
+      "columns": [
+        "Item",
+        "Type",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Primary checked bag",
+          "Rimowa Original Check-In / Samsonite Spinner 27\"",
+          "27\" per person; hardshell for Asia (overhead bin protection)"
+        ],
+        [
+          "Carry-on",
+          "Rimowa Cabin / Away Carry-On",
+          "Must fit under seat or overhead per airline rules"
+        ],
+        [
+          "Day bag",
+          "Lululemon/Cotopaxi 20L packable",
+          "Compresses to nothing; Great Wall hike bag; beach bag"
+        ],
+        [
+          "Document organizer",
+          "Rick Steves or Eagle Creek",
+          "Waterproof; dedicated travel document storage"
+        ],
+        [
+          "Foldable duffel (return)",
+          "Osprey Ultralight Stuff Pack",
+          "Packs down to fist-size; becomes checked bag for purchases"
+        ]
       ]
     }
   ],
   "bullets": [
     {
-      "heading": "Core Do Not Forget (15)",
+      "heading": "Country-Specific Gear",
       "items": [
-        "Passports valid through March 2027; China visa; Vietnam e-visa (2 printed each)",
-        "Insurance policy + 24/7 line (phone + paper)",
-        "VPN on both phones BEFORE China entry; Airalo eSIMs downloaded",
-        "Schwab debit + backup credit card; banks notified",
-        "Prescriptions 14+3 days; universal adapter (A/C plugs both countries)",
-        "20,000 mAh power bank; DEET 30%; SPF 50 (2 bottles); packing cubes",
-        "Packable daypack; CBP Form 4457; hotel/flight confirmations (cloud + print)"
+        "Comfortable walking shoes with grip (required for Great Wall uneven steps)",
+        "Light layer / cardigan (Beijing AC is aggressive indoors; temples can be cool even in September)",
+        "Small umbrella (foldable) — afternoon rain showers possible",
+        "Temple-appropriate clothing (shoulders + knees covered): one pair trousers + short-sleeve shirt",
+        "Camera (real camera, not just phone) for Great Wall + Forbidden City + Jingshan sunset",
+        "Swimwear (2 sets minimum — daily beach use)",
+        "Light linen/cotton shirts (humidity is intense; synthetic fabrics are miserable)",
+        "Sandals (Birkenstocks or equivalent) + flip-flops (resort pool)",
+        "Rain poncho/jacket (typhoon season; more useful than umbrella in heavy rain)",
+        "Long sleeve light layer for mosquito protection at evening outdoor dining",
+        "Modest temple wear (same as China or buy a ₫100,000 linen shirt in Hội An — perfect solution)",
+        "Underwater camera / GoPro for Cham Islands potential snorkeling and beach"
       ]
     },
     {
-      "heading": "China Gear (Beijing)",
+      "heading": "Duty-Free / Shopping Bag Strategy",
       "items": [
-        "Walking shoes with grip (Great Wall); light layer for AC/temples",
-        "Foldable umbrella; temple wear (shoulders + knees)",
-        "Real camera for Wall, Forbidden City, Jingshan sunset"
+        "Outbound: Pack one lightweight foldable duffel bag (Osprey Ultralight or similar) compressed in main luggage; will become second checked bag on return",
+        "In Hội An: Tailor will pack garments in garment bags; ask for compression option for suits",
+        "Heavy/bulky marble: Non Nước Stone Village ships internationally; get shipping quote; not worth carrying",
+        "Valuables in carry-on: All watches, jewelry, and items on CBP Form 4457 go in carry-on for return",
+        "One rule: If it doesn't fit without straining the zipper, ship it (DHL Vietnam: reliable, door-to-door, 7–10 days to US)"
       ]
     },
     {
-      "heading": "Vietnam Gear",
+      "heading": "Printable Packing Checklist",
       "items": [
-        "2 swimsuits; linen/cotton shirts; sandals + flip-flops",
-        "Rain poncho (typhoon season); long sleeve for evening mosquitoes",
-        "Modest temple wear or buy linen shirt in Hội An; GoPro for Cham Islands"
-      ]
-    },
-    {
-      "heading": "Health Kit Placement",
-      "items": [
-        "Prescriptions + OTC (Imodium, antihistamine, ibuprofen) in carry-on",
-        "DEET + first aid in checked; 1 sunscreen carry-on (<100ml) or buy second in Vietnam",
-        "Oral rehydration sachets in carry-on"
-      ]
-    },
-    {
-      "heading": "Shopping Return Strategy",
-      "items": [
-        "Foldable duffel becomes second checked bag; tailor compression for suits",
-        "Non Nước marble ships internationally\u2014don't carry",
-        "CBP 4457 valuables in carry-on; if zipper strains, ship via DHL Vietnam (7\u201310 days US)"
+        "[ ] Both passports (valid through March 2027)",
+        "[ ] China visa approved and in passport",
+        "[ ] Vietnam e-visa (2 printed copies each)",
+        "[ ] CBP Form 4457 for high-value US items",
+        "[ ] Travel insurance policy + emergency number",
+        "[ ] All hotel + flight confirmations printed",
+        "[ ] Phones (fully charged) + chargers",
+        "[ ] Power bank (20,000 mAh)",
+        "[ ] Universal travel adapter",
+        "[ ] Laptop + charger",
+        "[ ] Noise-canceling earbuds",
+        "[ ] GoPro / waterproof camera + charger",
+        "[ ] VPN installed and tested",
+        "[ ] Offline maps downloaded (Baidu Maps, Google Maps, Maps.me)",
+        "[ ] All apps installed (DiDi, Grab, WeChat, Airalo eSIM)",
+        "[ ] 5–6 lightweight shirts",
+        "[ ] 3 pairs trousers/shorts",
+        "[ ] 1 pair walking shoes (grip)",
+        "[ ] 1 pair sandals",
+        "[ ] 1 pair flip-flops",
+        "[ ] 2 swimsuits",
+        "[ ] 2–3 evening outfits",
+        "[ ] 1 light jacket/cardigan",
+        "[ ] Rain poncho",
+        "[ ] Temple-appropriate clothing (covered shoulders + knees)",
+        "[ ] Border-crossing outfit (see above)",
+        "[ ] Compression socks (2 pairs)",
+        "[ ] Underwear (7 pairs minimum; quick-dry recommended)",
+        "[ ] Prescription medications (17-day supply)",
+        "[ ] Imodium",
+        "[ ] Antihistamine",
+        "[ ] Ibuprofen / paracetamol",
+        "[ ] Oral rehydration sachets",
+        "[ ] DEET insect repellent",
+        "[ ] SPF 50 sunscreen (2 bottles)",
+        "[ ] Blister bandages (Compeed)",
+        "[ ] Hand sanitizer",
+        "[ ] Electrolyte tablets",
+        "[ ] Small umbrella (foldable)",
+        "[ ] Reusable water bottle (collapsible)",
+        "[ ] Snacks for transit days",
+        "[ ] Luggage locks (TSA-approved)",
+        "[ ] Foldable duffel bag (for shopping return)",
+        "[ ] Small bills (USD $20s for tips/emergencies)"
       ]
     }
   ],
-  "callouts": [
-    { "status": "warn", "text": "Install VPN and eSIMs before China entry\u2014not after arrival" },
-    { "status": "info", "text": "TSA: consolidate carry-on liquids in one quart bag; buy extra sunscreen in Vietnam if needed" },
-    { "status": "pass", "text": "One universal adapter covers China and Vietnam plug types A and C" }
-  ]
+  "callouts": [],
+  "slide_title_accent": "STRATEGY",
+  "section_label": "Do Not Forget",
+  "section_kicker": "Climate · Gear · Border-day carry-on",
+  "climate": {
+    "caption": "September Climate",
+    "text": "Beijing shoulder (20–26°C); Vietnam warm-humid with typhoon tail risk in central coast.",
+    "note": "Schedule outdoor Vietnam time early AM / evening."
+  },
+  "essentials": {
+    "caption": "Core Do Not Forget",
+    "items": [
+      {
+        "n": 1,
+        "label": "Valid passports",
+        "detail": "valid until March 2027 minimum; both travelers",
+        "icon": "📄"
+      },
+      {
+        "n": 2,
+        "label": "China visa",
+        "detail": "(in passport or printed approval letter)",
+        "icon": "📄"
+      },
+      {
+        "n": 3,
+        "label": "Vietnam e-visa",
+        "detail": "printed copies (2 each; one in carry-on, one in checked)",
+        "icon": "📄"
+      },
+      {
+        "n": 4,
+        "label": "Travel insurance policy number + 24/7 emergency line",
+        "detail": "saved in phone AND on paper",
+        "icon": "✓"
+      },
+      {
+        "n": 5,
+        "label": "VPN activated on both phones",
+        "detail": "(ExpressVPN/NordVPN — must be installed BEFORE China entry)",
+        "icon": "📱"
+      },
+      {
+        "n": 6,
+        "label": "All eSIMs activated",
+        "detail": "(Airalo China + Vietnam eSIMs downloaded and QR codes saved)",
+        "icon": "📱"
+      },
+      {
+        "n": 7,
+        "label": "Multi-currency debit card",
+        "detail": "(Charles Schwab) + backup credit card; both banks notified",
+        "icon": "✓"
+      },
+      {
+        "n": 8,
+        "label": "Prescription medications",
+        "detail": "(14-day supply + 3 days buffer; original prescriptions in carry-on)",
+        "icon": "✓"
+      },
+      {
+        "n": 9,
+        "label": "Universal travel adapter",
+        "detail": "(both China and Vietnam use A and C type plugs; one universal covers both)",
+        "icon": "✓"
+      },
+      {
+        "n": 10,
+        "label": "DEET 30% insect repellent",
+        "detail": "mosquito risk in Vietnam",
+        "icon": "✓"
+      },
+      {
+        "n": 11,
+        "label": "SPF 50 sunscreen",
+        "detail": "(2 bottles — expensive at Vietnam resorts)",
+        "icon": "✓"
+      },
+      {
+        "n": 12,
+        "label": "Compression packing cubes",
+        "detail": "enables expansion for return shopping haul",
+        "icon": "✓"
+      }
+    ]
+  },
+  "wardrobe": {
+    "caption": "China & Vietnam Wardrobe",
+    "columns": [
+      "Item",
+      "Why"
+    ],
+    "rows": []
+  },
+  "tech": {
+    "caption": "Tech / Battery Survival for Long Transit Days",
+    "columns": [
+      "Item",
+      "Use"
+    ],
+    "rows": [
+      [
+        "20,000 mAh power bank",
+        "4–5 full phone charges; 2 iPad charges"
+      ],
+      [
+        "USB-C 65W laptop charger + adapter",
+        "Laptop charging at gate"
+      ],
+      [
+        "Universal adapter (in carry-on on transit days)",
+        "Charge at airport lounges"
+      ],
+      [
+        "Dual-port USB-C charging cube",
+        "Charge 2 devices simultaneously at hotel"
+      ],
+      [
+        "Noise-canceling earbuds (AirPods Pro/Sony WH-1000XM5)",
+        "13-hr flight; focus"
+      ],
+      [
+        "Downloaded movies/shows",
+        "No inflight WiFi assumed"
+      ],
+      [
+        "Downloaded offline maps",
+        "Already in carry-on"
+      ]
+    ]
+  },
+  "luggage": {
+    "caption": "Luggage Strategy",
+    "bags": [
+      {
+        "icon": "🧳",
+        "name": "Primary checked bag",
+        "role": "Rimowa Original Check-In / Samsonite Spinner 27\" — 27\" per person; hardshell for Asia (overhead bin protection)"
+      },
+      {
+        "icon": "🧳",
+        "name": "Carry-on",
+        "role": "Rimowa Cabin / Away Carry-On — Must fit under seat or overhead per airline rules"
+      },
+      {
+        "icon": "🧳",
+        "name": "Day bag",
+        "role": "Lululemon/Cotopaxi 20L packable — Compresses to nothing; Great Wall hike bag; beach bag"
+      }
+    ],
+    "note": "Pack foldable duffel for Hội An tailoring return."
+  },
+  "checklist": {
+    "caption": "Printable Checklist Highlights",
+    "categories": [
+      {
+        "heading": "Documents",
+        "items": [
+          "Both passports (valid through March 2027)",
+          "China visa approved and in passport",
+          "Vietnam e-visa (2 printed copies each)",
+          "CBP Form 4457 for high-value US items",
+          "Travel insurance policy + emergency number",
+          "All hotel + flight confirmations printed"
+        ]
+      },
+      {
+        "heading": "Electronics",
+        "items": [
+          "Phones (fully charged) + chargers",
+          "Power bank (20,000 mAh)",
+          "Universal travel adapter",
+          "Laptop + charger",
+          "Noise-canceling earbuds",
+          "GoPro / waterproof camera + charger",
+          "VPN installed and tested",
+          "Offline maps downloaded (Baidu Maps, Google Maps, Maps.me)",
+          "All apps installed (DiDi, Grab, WeChat, Airalo eSIM)"
+        ]
+      },
+      {
+        "heading": "Clothing (per person)",
+        "items": [
+          "5–6 lightweight shirts",
+          "3 pairs trousers/shorts",
+          "1 pair walking shoes (grip)",
+          "1 pair sandals",
+          "1 pair flip-flops",
+          "2 swimsuits",
+          "2–3 evening outfits",
+          "1 light jacket/cardigan",
+          "Rain poncho",
+          "Temple-appropriate clothing (covered shoulders + knees)",
+          "Border-crossing outfit (see above)",
+          "Compression socks (2 pairs)",
+          "Underwear (7 pairs minimum; quick-dry recommended)"
+        ]
+      },
+      {
+        "heading": "Health",
+        "items": [
+          "Prescription medications (17-day supply)",
+          "Imodium",
+          "Antihistamine",
+          "Ibuprofen / paracetamol",
+          "Oral rehydration sachets",
+          "DEET insect repellent",
+          "SPF 50 sunscreen (2 bottles)",
+          "Blister bandages (Compeed)",
+          "Hand sanitizer",
+          "Electrolyte tablets"
+        ]
+      },
+      {
+        "heading": "Misc",
+        "items": [
+          "Small umbrella (foldable)",
+          "Reusable water bottle (collapsible)",
+          "Snacks for transit days",
+          "Luggage locks (TSA-approved)",
+          "Foldable duffel bag (for shopping return)",
+          "Small bills (USD $20s for tips/emergencies)"
+        ]
+      }
+    ]
+  },
+  "footer": "VPN must be installed before China entry; never check prescriptions."
 }

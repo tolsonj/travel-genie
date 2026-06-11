@@ -1,0 +1,405 @@
+You convert one travel-plan markdown aspect into STRICT canonical JSON.
+
+Output ONLY a single JSON object. No prose, no markdown fences. It MUST validate
+against this JSON Schema (every field except aspect/type/trip is optional; omit
+what is not present rather than inventing it):
+
+<schema>
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-genie/schema/trip.schema.json",
+  "title": "Canonical Trip Aspect",
+  "description": "One extracted aspect of a trip plan. Generic by design so it generalizes across single- and multi-country trips. Every field beyond `aspect`/`type` is optional; the renderer hides absent sections rather than erroring.",
+  "type": "object",
+  "required": ["aspect", "type", "trip"],
+  "properties": {
+    "aspect": { "type": "string", "description": "Aspect id, e.g. route-optimization." },
+    "type": { "type": "string", "description": "Canonical type used to pick a slide template." },
+    "trip": { "type": "string", "description": "Trip slug, e.g. china-vietnam-2026." },
+    "title": { "type": "string" },
+    "slide_title": { "type": "string" },
+
+    "recommended_route": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "name": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hub": { "type": "string" },
+          "days": { "type": "string" },
+          "region": { "type": "string" },
+          "primary_draw": { "type": "string" }
+        }
+      }
+    },
+    "map_nodes": {
+      "type": "array",
+      "description": "Geographic markers plotted from REAL coordinates.",
+      "items": {
+        "type": "object",
+        "required": ["label", "lng", "lat"],
+        "properties": {
+          "label": { "type": "string" },
+          "marker": { "type": "string", "description": "Short glyph shown in the node circle." },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" },
+          "color": { "type": "string" },
+          "labelDy": { "type": "number", "description": "Vertical label offset in px (negative = above)." }
+        }
+      }
+    },
+    "map_bounds": {
+      "type": "object",
+      "properties": {
+        "west": { "type": "number" },
+        "south": { "type": "number" },
+        "east": { "type": "number" },
+        "north": { "type": "number" }
+      }
+    },
+    "highlight_countries": { "type": "array", "items": { "type": "string" } },
+    "country_labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" }
+        }
+      }
+    },
+    "transit_legs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "mode": { "type": "string" },
+          "duration": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "headline": { "type": "string" },
+        "detail": { "type": "string" }
+      }
+    },
+
+    "country_label": { "type": "string", "description": "Profile dashboard: country pill (e.g. JAPAN)." },
+    "intelligence": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": { "type": "string" },
+          "label": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "seasonality": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } },
+        "chosen_column": { "type": "integer", "description": "0-based index of highlighted season column." },
+        "summary": { "type": "string" }
+      }
+    },
+    "validations": {
+      "type": "array",
+      "description": "Profile dashboard: validation checklist items.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    },
+
+    "intro": { "type": "string", "description": "Generic-layout: lead paragraph." },
+    "tables": {
+      "type": "array",
+      "description": "Generic-layout: zero or more tables.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caption": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+    "bullets": {
+      "type": "array",
+      "description": "Generic-layout: grouped bullet lists.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "callouts": {
+      "type": "array",
+      "description": "Generic-layout: status callouts (validation checks, warnings).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+
+</schema>
+
+Required top-level values for THIS aspect:
+  "aspect": "04-master-itinerary"
+  "type": "generic"
+  "trip": "japan-2026"
+  "title": "Master Itinerary"
+
+Target type: "generic" (no bespoke template).
+Use the generic fields: intro (string), tables[] {caption, columns[], rows[][]},
+bullets[] {heading, items[]}, callouts[] {status: pass|warn|info, text}.
+
+CRITICAL for any map_nodes: use REAL geographic latitude/longitude for each city.
+Do not approximate with screen coordinates.
+
+Here is the source markdown to extract from:
+
+<markdown>
+---
+step: 04-master-itinerary
+title: Master Itinerary
+trip: japan-2026
+created: 2026-06-02
+hero-image: https://images.unsplash.com/photo-1492571350029-599f5d2ec83c?w=1200&q=80
+---
+
+# Master Itinerary
+
+**Approximate dates: Friday July 24 – Thursday August 6, 2026**
+
+---
+
+### TOKYO — Jul 24–28 (5 nights)
+
+#### Day 1 — Friday, Jul 24: ARRIVAL (Soft)
+- **Morning**: Land **NRT or HND**; VJW QR immigration/customs ([[03-immigration-entry]]); Narita Express / Keisei / Haneda monorail to hotel
+- **Afternoon**: Check-in; buy/load **Suica**; convenience-store lunch; short walk in neighborhood (Ueno Park edge or Sumida river if near Asakusa)
+- **Evening**: Early ramen or gyudon near hotel; bed by 21:00 (jet lag)
+- **Wow moment**: First night skyline—Sumida River or Tokyo Station Marunouchi lit facades
+- **Low energy option**: Hotel convenience store dinner only; no walking tour
+- **Rainy backup**: Underground passage walk Tokyo Station → Marunouchi + depachika food hall browsing
+- **Book NOW**: First 5 Tokyo nights; airport transfer route pinned in Maps
+
+---
+
+#### Day 2 — Saturday, Jul 25: Ueno Nature + Asakusa History
+- **Morning anchor (07:30)**: **Ueno Park** — Shinobazu Pond lotus, wooded paths, fewer crowds than Shibuya; optional **Tokyo National Museum** (AC, history without heat)
+- **Afternoon**: **Asakusa** — Sensō-ji outer grounds and Nakamise early; shift to indoor **Kappabashi** kitchen street (food culture)
+- **Evening**: Dinner **Ueno / Okachimachi** izakaya alley (Hoppy Street) or **Ameyoko** market grazing
+- **Wow moment**: Lotus pond reflection at Shinobazu before crowds arrive
+- **Low energy option**: Museum-only morning; skip Nakamise shopping
+- **Rainy backup**: Full museum day + covered Nakamise arcade
+- **Book NOW**: Museum timed ticket if weekend busy
+
+---
+
+#### Day 3 — Sunday, Jul 26: Meiji Forest + Harajuku Light Touch
+- **Morning anchor (08:00)**: **Meiji Jingu** forest approach — shaded, nature-first; quiet before tour buses
+- **Afternoon**: **Yoyogi Park** edges; coffee in **Omotesando** backstreets (skip Takeshita crush unless brief)
+- **Evening**: **Shinjuku** Omoide Yokocho or **Golden Gai** (one small bar, early); avoid peak 22:00 crush
+- **Wow moment**: Torii tunnel at Meiji in morning mist after rain
+- **Low energy option**: Meiji only; afternoon café and hotel pool/onsen if hotel has bath
+- **Rainy backup**: Meiji shrine covered areas + **Tokyo Metropolitan Teien Art Museum** or teamLab Planets (book ahead)
+
+---
+
+#### Day 4 — Monday, Jul 27: Day Trip — Kamakura Coast (Nature > History)
+- **Morning anchor (07:30 train)**: JR to **Kamakura** — **Daibutsu (Great Buddha)** walk through wooded approach
+- **Afternoon**: **Enoshima** or **Hase** coastal walk (Enoden line scenery); seafood lunch
+- **Evening**: Return Tokyo; simple dinner near hotel
+- **Wow moment**: Enoden coastal tram view with Fuji on clear days
+- **Low energy option**: Kamakura town + Buddha only; skip Enoshima climb
+- **Rainy backup**: Swap to **Nikko** Toshogu (more history, forest canopy) OR indoor **Edo-Tokyo Museum**
+- **Book NOW**: None mandatory; check Enoden weekend crowds
+
+---
+
+#### Day 5 — Tuesday, Jul 28: Tsukiji Outer + Imperial East Gardens
+- **Morning anchor (07:00)**: **Tsukiji Outer Market** — sushi breakfast, tamagoyaki, grilled seafood
+- **Afternoon**: **Imperial Palace East Gardens** (free, shaded history walk); **Marunouchi** architecture stroll
+- **Evening**: Pack light bag for Takayama; prep **takkyubin** if sending large luggage to Kyoto hotel (ask hotel front desk)
+- **Wow moment**: First tuna/sashimi breakfast standing at Tsukiji counter
+- **Low energy option**: Market only; skip palace gardens
+- **Rainy backup**: **Depachika** food floors Tokyo Station + **Japan Food Town** indoor
+
+---
+
+### TAKAYAMA / JAPANESE ALPS — Jul 29–30 (2 nights)
+
+#### Day 6 — Wednesday, Jul 29: TRANSIT + Takayama Old Town (Soft)
+- **Morning**: Shinkansen Tokyo → Nagoya + **Hida Limited Express** to Takayama; **activate JR Pass** if using
+- **Afternoon**: Check-in; **Sanmachi Suji** preserved merchant streets (Hida architecture, sake breweries)
+- **Evening**: **Hida beef** dinner (reserve)—budget splurge night
+- **Wow moment**: First glimpse of cedar-scented old town at dusk
+- **Low energy option**: Hotel onsen/rest only after rail day
+- **Rainy backup**: Sake brewery tastings + Hida Folk Village (open-air but partial cover)
+- **Book NOW**: Takayama lodging with dinner; reserved Hida Express seats
+
+---
+
+#### Day 7 — Thursday, Jul 30: Shirakawa-go + Morning Market
+- **Morning anchor (08:00 bus)**: **Shirakawa-go** gassho-zukuri village—first bus = fewest tour groups
+- **Afternoon**: Return Takayama; **Miyagawa Morning Market** (if Fri/Sat/Sun overlap—else riverside walk); pack for Kyoto
+- **Evening**: Light **soba** or hotel kaiseki-lite; early sleep
+- **Wow moment**: Ogimachi viewpoint over thatched roofs before 10:00 crowds
+- **Low energy option**: Takayama market + onsen only; skip Shirakawa-go
+- **Rainy backup**: **Hida Takayama Museum of History and Art** + covered arcade shopping
+- **Book NOW**: Shirakawa-go highway bus round-trip (essential summer)
+
+---
+
+### KYOTO — Jul 31 – Aug 3 (4 nights)
+
+#### Day 8 — Friday, Jul 31: TRANSIT + Nishiki (Soft)
+- **Morning**: Hida Express → Nagoya → Shinkansen **Kyoto**; drop bags or receive forwarded luggage
+- **Afternoon**: **Nishiki Market** covered food arcade; **Pontocho** alley stroll (reserve no dinner yet)
+- **Evening**: Casual **izakaya** near Kawaramachi; early night
+- **Wow moment**: First Kyoto canal glimpse at twilight near Pontocho
+- **Low energy option**: Market grazing only; hotel bath
+- **Rainy backup**: Nishiki fully covered; **Kyoto Railway Museum** indoor
+
+---
+
+#### Day 9 — Saturday, Aug 1: Fushimi Inari + Sake (Early Beat Crowds)
+- **Morning anchor (05:30–06:00)**: **Fushimi Inari** — torii tunnel to first overlook before tour buses
+- **Afternoon**: **Fushimi sake district** — Gekkeikan Okura Sake Museum or brewery tour (indoor/cool)
+- **Evening**: **Gion backstreets** at distance—observe, do not chase geiko; dinner **Pontocho** or **Nishijin** soba
+- **Wow moment**: Empty torii corridor in early light
+- **Low energy option**: Fushimi base only; return hotel by 11:00
+- **Rainy backup**: Inari is walkable in light rain (umbrella); afternoon 100% indoor sake museum
+- **Book NOW**: Optional sake tour slot
+
+---
+
+#### Day 10 — Sunday, Aug 2: Arashiyama Bamboo + River (Nature Day)
+- **Morning anchor (07:00)**: **Arashiyama** bamboo grove then **Tenryu-ji** garden (enter temple for shade)
+- **Afternoon**: **Hozu River** scenery walk or rental cycle on Katsura paths; **monkeys park** optional (steep climb—skip if low energy)
+- **Evening**: **Obanzai** home-style Kyoto dinner (Warajiya or similar—reserve)
+- **Wow moment**: Bamboo grove when still quiet; river mountain backdrop
+- **Low energy option**: Tenryu-ji garden only; tram back to central Kyoto
+- **Rainy backup**: **Sagano Romantic Train** (book ahead) or **Kyoto International Manga Museum** + café
+
+---
+
+#### Day 11 — Monday, Aug 3: Higashiyama Dawn + Philosopher’s Path
+- **Morning anchor (06:30)**: **Kiyomizu-dera** early entry; descend **Ninenzaka/Sannenzaka** before shops fully open
+- **Afternoon**: **Philosopher’s Path** shaded canal walk → **Ginkaku-ji** (Silver Pavilion gardens)
+- **Evening**: Pack for Osaka; **Namba-bound** snack prep; try **yudofu** or tofu kaiseki (budget pick one)
+- **Wow moment**: Kiyomizu stage view over Kyoto basin in morning air
+- **Low energy option**: Philosopher’s Path flat walk only; skip Kiyomizu climb
+- **Rainy backup**: **Nanzen-ji** sub-temples with covered corridors + **Kyoto National Museum**
+
+---
+
+### OSAKA — Aug 4–5 (2 nights)
+
+#### Day 12 — Tuesday, Aug 4: TRANSIT + Dotonbori Food (Soft)
+- **Morning**: JR **Kyoto → Osaka** (~30 min); hotel drop bags
+- **Afternoon**: **Kuromon Ichiba Market** — takoyaki, kushikatsu samples, fruit
+- **Evening**: **Dotonbori** neon food crawl—okonomiyaki (**Mizuno** or **Chibo**), gyoza alley; stay weekday to reduce crush vs weekend
+- **Wow moment**: Glico sign reflection on canal after dark
+- **Low energy option**: Kuromon only; convenience-store dinner
+- **Rainy backup**: **Osaka Aquarium Kaiyukan** (indoor, world-class) or **Umeda Sky Building** if rain clears at sunset
+
+---
+
+#### Day 13 — Wednesday, Aug 5: Castle Exterior + Namba Gems
+- **Morning anchor (08:00)**: **Osaka Castle Park** grounds and moat walk—skip interior museum if crowds/heat; free exterior history fix
+- **Afternoon**: **Namba Yasaka Shrine** (lion head stage) + **Amerikamura** café break; optional **Shinsekai** kushikatsu (late lunch)
+- **Evening**: Final splurge **kushikatsu** or **yakiniku**; confirm **Haruka** or Nankai KIX timing
+- **Wow moment**: Castle ramparts view from Nishinomaru Garden
+- **Low energy option**: Namba neighborhood food only; skip castle
+- **Rainy backup**: **TeamLab Osaka** (if open) or **Kaiyukan** full afternoon
+
+---
+
+#### Day 14 — Thursday, Aug 6: DEPARTURE
+- **Morning**: Checkout; **takkyubin** should have preceded you or carry-on only
+- **Midday**: **Nankai Rapi:t** or **Haruka** to **KIX** — allow **2.5–3 hrs** before international departure
+- **Afternoon/Evening**: Flight **KIX → US** (open-jaw completion)
+- **Wow moment**: Last convenience-store onigiri at gate—trip bookend
+- **Low energy option**: Airport lounge if access; minimal morning activity
+- **Rainy backup**: N/A—indoor airport path
+- **Book NOW**: Confirm KIX transfer; online check-in 24 hrs prior
+
+---
+
+### Booking Priority Queue (Itinerary-Level)
+
+| Priority | Item | By when |
+|----------|------|---------|
+| 1 | Open-jaw flights **NRT/HND → KIX** | ASAP |
+| 2 | Tokyo + Takayama + Kyoto + Osaka hotels | 8–12 weeks out |
+| 3 | Shirakawa-go bus (Jul 30) | 4 weeks out |
+| 4 | JR Pass 7-day voucher + seat reservations Jul 29–Aug 4 | Before US departure |
+| 5 | Hida beef dinner Takayama (Jul 29 eve) | 2–4 weeks out |
+| 6 | teamLab / Kaiyukan / sake tour (if used) | 2–6 weeks out |
+| 7 | Visit Japan Web | 72 hrs before Jul 24 departure |
+
+---
+
+### Transit Audit Summary
+
+| Leg | Transit load | Notes |
+|-----|--------------|-------|
+| Day 1 | ~1.5 hrs airport → hotel | Arrival soft day |
+| Day 6 | ~4.5 hrs Tokyo → Takayama | Full soft transit |
+| Day 8 | ~3.5 hrs Takayama → Kyoto | Soft afternoon |
+| Day 12 | ~0.5 hr Kyoto → Osaka | Light transit |
+| Day 14 | ~1 hr Osaka → KIX + flight | Departure |
+| **Transit-equivalent days** | **~2.5 of 14** | **~18%** ✓ |
+
+---
+
+### Interest Alignment Quick Check
+
+| Day | Nature | Food | History |
+|-----|--------|------|---------|
+| 2 | Ueno Park | Tsukiji/Ameyoko | Asakusa |
+| 3 | Meiji forest | Izakaya | Meiji shrine |
+| 4 | Kamakura coast | Seafood | Daibutsu |
+| 7 | Shirakawa-go | Hida beef | Gassho village |
+| 10 | Arashiyama | Obanzai | Tenryu-ji |
+| 11 | Philosopher’s Path | Tofu/yudofu | Kiyomizu |
+| 12–13 | Castle park | Dotonbori/Kuromon | Osaka Castle grounds |
+
+</markdown>

@@ -2,7 +2,7 @@
 step: "07-transport-money"
 title: "Transport & Money"
 trip: "china-vietnam-2026"
-created: 2026-05-25
+created: 2026-06-03
 depends_on:
   - "[[profile]]"
   - "[[01-traveler-profile]]"
@@ -18,50 +18,63 @@ tags:
 
 ## Reasoning
 
-Profile: past positive experience with local mass transit; past negative with taxis (rip-offs). Strategy is app-based transport (DiDi in China, Grab in Vietnam) everywhere possible. Chinese metro is excellent in Beijing and highly recommended. Money: China is increasingly cashless (WeChat Pay) but foreign tourists have limited access — hybrid strategy of WeChat Pay + US credit cards + some cash. Vietnam is more cash-reliant at street level. Budget of $20K is well-managed with a multi-currency card for ATM access.
+Profile: past positive experience with local mass transit; past negative with taxis (rip-offs). Strategy is app-based transport (DiDi in China, Grab in Vietnam) everywhere possible. Hong Kong MTR and Guangzhou metro are excellent; high-speed rail links HK to mainland. Money: China is increasingly cashless (WeChat Pay) but foreign tourists have limited access — hybrid strategy of WeChat Pay + US credit cards + some cash. Vietnam is more cash-reliant at street level. Budget of $20K is well-managed with a multi-currency card for ATM access.
 
 ## Output
 
 ---
 
-### LEG 1: Home → Beijing
+### LEG 1: Home → Hong Kong
 
-- **Mode**: International flight (United, American, Air China, Cathay Pacific)
-- **Best airports**: PEK (Capital International, Terminal 3) or PKX (Daxing, newer, larger gate area)
-- **Time**: ~13 hrs from LAX/SFO; ~14 hrs from JFK/EWR; ~16 hrs from ORD
-- **Booking platform**: Google Flights for comparison; book direct on airline for flexibility; or American Express Travel for points/credits
-- **Scams**: None specific to booking; avoid third-party booking sites with non-refundable fares
-- **Cost estimate**: $1,200–2,000/person roundtrip in business class (recommended for comfort on 13+ hr flight)
+- **Mode**: International flight (Cathay Pacific, United, Singapore Airlines)
+- **Airport**: **HKG** (Hong Kong International)
+- **Time**: ~15–18 hrs from US West; ~16–20 hrs from US East (1 stop typical)
+- **Cost estimate**: $900–1,800/person economy; $3,000+ business
+- **Open-jaw**: Return from **DAD** (Đà Nẵng) — book as single itinerary
 
-**Airport → Hotel (Beijing)**
-- **Option A (Recommended)**: Airport Express Train (机场快轨) from Terminal 3 → Dongzhimen → taxi/DiDi last mile; ¥35/person; 30 min; no language barriers; runs 6 AM–11 PM
-- **Option B**: Hotel car pre-arranged through The Peninsula; ~¥400; comfortable; English-speaking driver
-- **Option C**: DiDi from airport (can book from arrivals after clearing customs; use DiDi Hitch for English interface)
-- **Avoid**: Unmarked taxis at arrivals — notorious overcharging; any driver approaching you inside the terminal
+**Airport → Hotel**
+- **Airport Express** to Central/Kowloon (~24 min); Octopus card at station
+- **Uber HK / hotel car** — reliable; avoid unmarked curbside taxis per profile
+- **Avoid**: Unlicensed “taxi” touts in arrivals hall
 
 ---
 
-### WITHIN BEIJING
+### WITHIN HONG KONG
 
 | Mode | When to Use | Cost | Notes |
 |------|-------------|------|-------|
-| **Beijing Subway** | Tiananmen, Temple of Heaven, Summer Palace, Sanlitun | ¥3–6/trip | Best urban transit in Asia; bilingual signage; AC; buy transit card at Airport Express station |
-| **DiDi** | Great Wall day, late nights, luggage-heavy trips, outer areas | ¥20–80/trip | Set to English mode; pay by Visa/MC or WeChat; never negotiate |
-| **Walk** | Forbidden City → Tiananmen → Wangfujing corridor | Free | 15 min between most Dongcheng sites |
-| **Avoid** | Street taxis without meter | Variable | Will overcharge without meter running |
-
-**DiDi setup**: Download before China entry; link US Visa/Mastercard; set to English in Settings > Language. DiDi Express or Comfort class is fine.
-
-**Transit Card (IC Card)**: Get at PEK arrivals; ¥20 deposit + top up with ¥100; covers all subway and some buses; faster than individual tickets at peak hours.
+| **MTR** | Peak Tram area, Central, TST, Causeway Bay | HK$5–15 | Octopus card; English signage |
+| **Star Ferry** | Central ↔ TST sunset | HK$3–5 | Iconic, fast |
+| **Bus 6/6X/260** | Stanley | HK$10–25 | Scenic |
+| **Uber HK** | Peak late night, Stanley return with bags | HK$80–200 | App-only |
 
 ---
 
-### LEG 2: Beijing → Hanoi
+### LEG 1b: Hong Kong → Guangzhou
+
+- **Mode**: High-speed rail — **West Kowloon → Guangzhou South**
+- **Time**: ~47 min
+- **Book**: Trip.com, MTR, or station kiosk — passport required at joint immigration
+- **Cost**: ~¥200–350/person
+
+---
+
+### WITHIN GUANGZHOU
+
+| Mode | When to Use | Cost | Notes |
+|------|-------------|------|-------|
+| **Metro** | Taikoo Hui, Beijing Road, Chen Clan Hall | ¥2–8 | DiDi + metro; VPN/maps before mainland |
+| **DiDi** | Rain, late night, Shamian with luggage | ¥15–50 | English mode; card linked |
+| **Walk** | Shamian Island | Free | Flat, shaded |
+
+---
+
+### LEG 2: Guangzhou → Hanoi
 
 - **Mode**: Flight
-- **Recommended carriers**: Vietnam Airlines (direct); Air China (direct); China Southern (via Guangzhou)
-- **Flight time**: ~4 hrs direct
-- **Airports**: PEK → HAN (Noi Bai International)
+- **Carriers**: China Southern, Vietnam Airlines
+- **Flight time**: ~2.5 hrs
+- **Airports**: **CAN** → **HAN**
 - **Booking platform**: Google Flights, Vietnam Airlines app, or book through your international ticket consolidator
 - **Cost estimate**: $150–350/person
 - **Scams**: None; airport boarding is standard

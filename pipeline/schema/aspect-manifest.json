@@ -33,15 +33,357 @@
       "id": "traveler-profile",
       "match": "^01-traveler-profile$",
       "type": "profile",
-      "template": "generic",
+      "template": "traveler-profile",
       "title": "Traveler Profile",
       "hints": {
-        "summary": "Core identifiers, style/pace, budget, ranked interests, deal-breakers.",
+        "summary": "Dashboard: intelligence bar, metric cards, seasonality scorecard, validation columns.",
         "fields": [
+          "country_label",
+          "intelligence { label, text }",
+          "metrics[] { icon, label, value }",
+          "seasonality { caption, columns[], rows[][], chosen_column, summary }",
+          "validations[] { status, text }",
           "intro",
           "tables[] { caption, columns[], rows[][] }",
-          "bullets[] { heading, items[] }",
-          "callouts[] { status, text }"
+          "bullets[] { heading, items[] }"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "06-food-dining",
+      "match": "^06-food-dining$",
+      "type": "food-dining",
+      "template": "food-dining",
+      "title": "Food & Dining",
+      "hints": {
+        "summary": "Strategy slide: profile intel sidebar, regional dish map, day-by-day meal grid, footer recommendations.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "profile_intelligence { label, text }",
+          "dining_intelligence { label, items[] { label, value } }",
+          "regional { subtitle, caption, regions[] { hub, key_dish, detail, neighborhoods }, map_nodes[], map_bounds, highlight_countries[] }",
+          "meal_mapping { caption, days[] { day, context, strategy, icon } }",
+          "footer"
+        ],
+        "image_categories": ["ramen", "takoyaki", "map"]
+      }
+    },
+    {
+      "id": "04-master-itinerary",
+      "match": "^04-master-itinerary$",
+      "type": "master-itinerary",
+      "template": "master-itinerary",
+      "title": "Master Itinerary",
+      "hints": {
+        "summary": "Paginated day-card slides: featured day + stacked days + next-segment teaser per part.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "intro",
+          "parts[] { subtitle, footer, featured_index, next_segment, days[] { day, title, location, schedule[] { time, activity }, wow_moment, low_energy, rainy_day, transit } }"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "05-accommodation",
+      "match": "^05-accommodation$",
+      "type": "accommodation",
+      "template": "accommodation",
+      "title": "Accommodation",
+      "hints": {
+        "summary": "Strategy slide: booking tactics sidebar, budget + district comparison tables, top picks grid.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "strategy { title, intro, label, tactics[] { tactic, why }, notes[] }",
+          "budget { caption, footnote, columns[], rows[][] }",
+          "districts[] { caption, columns[], rows[][] }",
+          "top_picks { caption, columns[] { heading, subheading, items[] { property, area, type, price, why } } }",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "06-shopping",
+      "match": "^06-shopping$",
+      "type": "shopping",
+      "template": "shopping",
+      "title": "Shopping",
+      "hints": {
+        "summary": "Three slides with per-hub geo maps (day pins per city), day-plan city maps, Hội An tailoring map.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_kicker",
+          "regional { kicker, left[] { name, days, icon, columns[], rows[][], map { bounds, nodes[], hide_route } }, right { ... } }",
+          "day_plan { kicker, cities[] { name, map, rows[][] }, columns[], rows[][] }",
+          "strength_matrix { caption, columns[], rows[][] }",
+          "tailoring { map, timeline, protocol, tailors, turnaround, red_flags }",
+          "footer"
+        ],
+        "image_categories": ["temple", "takoyaki", "profile-icon"],
+        "notes": "Each hub.map.nodes uses real lat/lng per shopping day; match spots from plan text when possible."
+      }
+    },
+    {
+      "id": "10-culture-museums",
+      "match": "^10-culture-museums$",
+      "type": "culture-museums",
+      "template": "culture-museums",
+      "title": "Culture & Museums",
+      "hints": {
+        "summary": "Culture dashboard: philosophy sidebar, cross-hub themes, fatigue audit, 4 regional hub grids, site spotlight strip.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "philosophy { caption, items[] { rule, why, icon } }",
+          "themes { caption, items[] }",
+          "fatigue_audit { caption, columns[], rows[][], verdict, verdict_status }",
+          "hubs[] { name, days, icon, columns[], rows[][], highlights[], note }",
+          "spotlight { caption, columns[] { heading, items[] { label, detail } } }",
+          "footer"
+        ],
+        "image_categories": ["temple", "profile-icon"]
+      }
+    },
+    {
+      "id": "15-packing",
+      "match": "^15-packing$",
+      "type": "packing",
+      "template": "packing",
+      "title": "Packing",
+      "hints": {
+        "summary": "Packing dashboard: essentials sidebar, wardrobe/gear/tech/health grids, luggage flow, checklist strip.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "climate { caption, text, note }",
+          "essentials { caption, items[] { n, label, detail, icon } }",
+          "documents { caption, sections[] { heading, items[] } }",
+          "wardrobe { caption, columns[], rows[][] }",
+          "adventure { caption, columns[], rows[][] }",
+          "tech { caption, columns[], rows[][] }",
+          "health { caption, columns[], rows[][] }",
+          "luggage { caption, bags[] { icon, name, role }, note }",
+          "transit_bag { caption, columns[], rows[][] }",
+          "flight_outfit { caption, columns[], rows[][] }",
+          "checklist { caption, categories[] { heading, items[] } }",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "13-etiquette",
+      "match": "^13-etiquette$",
+      "type": "etiquette",
+      "template": "etiquette",
+      "title": "Etiquette",
+      "hints": {
+        "summary": "Five-panel etiquette grid: daily norms, phrases, train, temple/shrine, dining/onsen lists.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "daily_norms { caption, footer, columns[], rows[][] }",
+          "phrases { caption, footer, columns[], rows[][] }",
+          "train { caption, footer, columns[], rows[][] }",
+          "temple { caption, footer, columns[], rows[][] }",
+          "dining { caption, footer, columns[] { heading, items[] { label, detail, icon } } }",
+          "footer"
+        ],
+        "image_categories": ["temple", "onsen", "profile-icon"]
+      }
+    },
+    {
+      "id": "03-immigration-entry",
+      "match": "^03-immigration-entry$",
+      "type": "immigration-entry",
+      "template": "dashboard",
+      "title": "Immigration Entry",
+      "hints": {
+        "summary": "Dashboard: VJW banner, customs checklist sidebar, entry/passport/timeline panels.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "banner { text }",
+          "sidebar[] { type, caption, items[], rows[][] }",
+          "panels[] { caption, columns[], rows[][] }",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "07-transport-money",
+      "match": "^07-transport-money$",
+      "type": "transport-money",
+      "template": "dashboard",
+      "title": "Transport Money",
+      "hints": {
+        "summary": "Dashboard: skip-JR-pass banner, money sidebar, pass/legs/verdict/airport panels.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "banner { text }",
+          "sidebar[]",
+          "panels[]",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "08-customs-borders",
+      "match": "^08-customs-borders$",
+      "type": "customs-borders",
+      "template": "dashboard",
+      "title": "Customs Borders",
+      "hints": {
+        "summary": "Dashboard: US re-entry sidebar, trip overview/immigration/duty-free/tax-free panels.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "sidebar[]",
+          "panels[]",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "09-tech-connectivity",
+      "match": "^09-tech-connectivity$",
+      "type": "tech-connectivity",
+      "template": "dashboard",
+      "title": "Tech Connectivity",
+      "hints": {
+        "summary": "Dashboard: pre-departure checklist sidebar, eSIM/apps/Suica/power/security panels.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "sidebar[]",
+          "panels[]",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "11-adventure",
+      "match": "^11-adventure$",
+      "type": "adventure",
+      "template": "dashboard",
+      "title": "Adventure",
+      "hints": {
+        "summary": "Dashboard: safety sidebar, fitness match + day activity panels.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "sidebar[]",
+          "panels[]",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "12-hidden-gems",
+      "match": "^12-hidden-gems$",
+      "type": "hidden-gems",
+      "template": "dashboard",
+      "title": "Hidden Gems",
+      "hints": {
+        "summary": "Dashboard: usage tips banner, city gem tables in panel grid.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "banner { text }",
+          "sidebar[]",
+          "panels[]",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "14-health-safety",
+      "match": "^14-health-safety$",
+      "type": "health-safety",
+      "template": "dashboard",
+      "title": "Health Safety",
+      "hints": {
+        "summary": "Dashboard: pre-trip health sidebar, vaccines/kit/heat/clinic panels.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "sidebar[]",
+          "panels[]",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "16-contingency",
+      "match": "^16-contingency$",
+      "type": "contingency",
+      "template": "dashboard",
+      "title": "Contingency",
+      "hints": {
+        "summary": "Dashboard: emergency numbers sidebar, scenario playbook panels.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "sidebar[]",
+          "panels[]",
+          "footer"
+        ],
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "17-time-optimization",
+      "match": "^17-time-optimization$",
+      "type": "time-optimization",
+      "template": "dashboard",
+      "title": "Time Optimization",
+      "hints": {
+        "summary": "Dashboard: PTO sidebar, transit minimization/70% rule/scorecard panels.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_label",
+          "section_kicker",
+          "sidebar[]",
+          "panels[]",
+          "scorecard { caption, columns[], rows[][] }",
+          "footer"
         ],
         "image_categories": ["profile-icon"]
       }

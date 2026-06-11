@@ -1,0 +1,370 @@
+{
+  "aspect": "08-customs-borders",
+  "type": "dashboard",
+  "trip": "japan-2026",
+  "title": "Customs Borders",
+  "slide_title": "CUSTOMS",
+  "intro": "---",
+  "tables": [
+    {
+      "caption": "Trip Customs Overview",
+      "columns": [
+        "Event",
+        "Date",
+        "Airport",
+        "Type"
+      ],
+      "rows": [
+        [
+          "Arrival",
+          "Jul 24, 2026",
+          "NRT or HND",
+          "US → Japan immigration + customs"
+        ],
+        [
+          "Domestic travel",
+          "Jul 25 – Aug 5",
+          "—",
+          "No customs (Tokyo → Takayama → Kyoto → Osaka)"
+        ],
+        [
+          "Departure",
+          "Aug 6, 2026",
+          "KIX",
+          "Japan exit + airline security; US customs on US arrival"
+        ]
+      ]
+    },
+    {
+      "caption": "Immigration",
+      "columns": [
+        "Item",
+        "Rule"
+      ],
+      "rows": [
+        [
+          "Visa",
+          "Not required — US passport, tourism ≤90 days (03-immigration-entry)"
+        ],
+        [
+          "Documents",
+          "Passport, return/onward ticket, first-night hotel address"
+        ],
+        [
+          "Digital",
+          "Visit Japan Web QR for immigration + customs (complete within 72 hr of departure)"
+        ],
+        [
+          "Queue time",
+          "30–60 min typical at NRT; often faster at HND"
+        ]
+      ]
+    },
+    {
+      "caption": "Duty-free allowances (bringing goods into Japan)",
+      "columns": [
+        "Category",
+        "Allowance (visitor, typical)"
+      ],
+      "rows": [
+        [
+          "Alcohol",
+          "Up to 3 bottles (760 ml each) if ≥20 years old"
+        ],
+        [
+          "Tobacco",
+          "400 cigarettes, or 100 cigars, or 500 g tobacco"
+        ],
+        [
+          "Perfume",
+          "2 oz (56 g)"
+        ],
+        [
+          "Other goods",
+          "Total value generally ≤ ¥200,000 for personal use without duty (verify current Japan Customs notice)"
+        ],
+        [
+          "Cash",
+          "Declare if carrying > ¥1,000,000 (~$6,700 USD equivalent)"
+        ]
+      ]
+    },
+    {
+      "caption": "Prohibited / restricted (high-signal)",
+      "columns": [
+        "Item",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Illegal drugs",
+          "Zero tolerance; includes some US OTC (e.g. pseudoephedrine in cold meds)"
+        ],
+        [
+          "Firearms, ammunition",
+          "Prohibited"
+        ],
+        [
+          "Fresh fruit, meat, plants",
+          "Restricted—do not bring from US; declare or discard"
+        ],
+        [
+          "Counterfeit goods",
+          "Prohibited"
+        ],
+        [
+          "E-cigarettes / heated tobacco",
+          "Quantity limits—check current notice"
+        ]
+      ]
+    },
+    {
+      "caption": "Within Japan (Domestic)",
+      "columns": [
+        "Topic",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "Border checks",
+          "None between Tokyo, Takayama, Kyoto, Osaka"
+        ],
+        [
+          "ID",
+          "Carry passport or photocopy—some hotels require passport at check-in"
+        ],
+        [
+          "Tax-free shopping",
+          "See below; not a border crossing but affects departure"
+        ],
+        [
+          "Regional souvenirs",
+          "Open food items consumed in Japan OK; do not pack fresh food for US return"
+        ]
+      ]
+    },
+    {
+      "caption": "Tax-Free Shopping (Japan)",
+      "columns": [
+        "Item",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "Who",
+          "Tourists on short stay; passport required at purchase"
+        ],
+        [
+          "Rate",
+          "Consumption tax 10% waived on eligible goods"
+        ],
+        [
+          "Where",
+          "Stores displaying Tax-Free sign (department stores, electronics, some drugstores)"
+        ],
+        [
+          "Process",
+          "Show passport; goods sealed in bag until departure from Japan"
+        ],
+        [
+          "At KIX",
+          "If asked, present purchases + receipts at customs inspection before check-in (usually quick for compliant sealed bags)"
+        ]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "US Re-Entry Customs (Final Leg Home)",
+      "items": [
+        "All merchandise acquired abroad (gifts, souvenirs).",
+        "Food: Generally no fresh fruit, meat, rice, or agricultural products—packaged commercial tea/candy often allowed; when unsure, declare.",
+        "Gifts for others — count toward your $800."
+      ]
+    }
+  ],
+  "callouts": [],
+  "slide_title_accent": "BORDERS",
+  "section_label": "Customs Borders",
+  "section_kicker": "Arrival · duty-free · tax-free · US re-entry",
+  "sidebar": [
+    {
+      "type": "list",
+      "caption": "US Re-Entry Customs (Final Leg Home)",
+      "items": [
+        "All merchandise acquired abroad (gifts, souvenirs).",
+        "Food: Generally no fresh fruit, meat, rice, or agricultural products—packaged commercial tea/candy often allowed; when unsure, declare.",
+        "Gifts for others — count toward your $800."
+      ],
+      "ordered": false
+    }
+  ],
+  "panels": [
+    {
+      "caption": "Trip Customs Overview",
+      "columns": [
+        "Event",
+        "Date",
+        "Airport",
+        "Type"
+      ],
+      "rows": [
+        [
+          "Arrival",
+          "Jul 24, 2026",
+          "NRT or HND",
+          "US → Japan immigration + customs"
+        ],
+        [
+          "Domestic travel",
+          "Jul 25 – Aug 5",
+          "—",
+          "No customs (Tokyo → Takayama → Kyoto → Osaka)"
+        ],
+        [
+          "Departure",
+          "Aug 6, 2026",
+          "KIX",
+          "Japan exit + airline security; US customs on US arrival"
+        ]
+      ]
+    },
+    {
+      "caption": "Immigration",
+      "columns": [
+        "Item",
+        "Rule"
+      ],
+      "rows": [
+        [
+          "Visa",
+          "Not required — US passport, tourism ≤90 days (03-immigration-entry)"
+        ],
+        [
+          "Documents",
+          "Passport, return/onward ticket, first-night hotel address"
+        ],
+        [
+          "Digital",
+          "Visit Japan Web QR for immigration + customs (complete within 72 hr of departure)"
+        ],
+        [
+          "Queue time",
+          "30–60 min typical at NRT; often faster at HND"
+        ]
+      ]
+    },
+    {
+      "caption": "Duty-free allowances (bringing goods into Japan)",
+      "columns": [
+        "Category",
+        "Allowance (visitor, typical)"
+      ],
+      "rows": [
+        [
+          "Alcohol",
+          "Up to 3 bottles (760 ml each) if ≥20 years old"
+        ],
+        [
+          "Tobacco",
+          "400 cigarettes, or 100 cigars, or 500 g tobacco"
+        ],
+        [
+          "Perfume",
+          "2 oz (56 g)"
+        ],
+        [
+          "Other goods",
+          "Total value generally ≤ ¥200,000 for personal use without duty (verify current Japan Customs notice)"
+        ],
+        [
+          "Cash",
+          "Declare if carrying > ¥1,000,000 (~$6,700 USD equivalent)"
+        ]
+      ]
+    },
+    {
+      "caption": "Prohibited / restricted (high-signal)",
+      "columns": [
+        "Item",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Illegal drugs",
+          "Zero tolerance; includes some US OTC (e.g. pseudoephedrine in cold meds)"
+        ],
+        [
+          "Firearms, ammunition",
+          "Prohibited"
+        ],
+        [
+          "Fresh fruit, meat, plants",
+          "Restricted—do not bring from US; declare or discard"
+        ],
+        [
+          "Counterfeit goods",
+          "Prohibited"
+        ],
+        [
+          "E-cigarettes / heated tobacco",
+          "Quantity limits—check current notice"
+        ]
+      ]
+    },
+    {
+      "caption": "Within Japan (Domestic)",
+      "columns": [
+        "Topic",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "Border checks",
+          "None between Tokyo, Takayama, Kyoto, Osaka"
+        ],
+        [
+          "ID",
+          "Carry passport or photocopy—some hotels require passport at check-in"
+        ],
+        [
+          "Tax-free shopping",
+          "See below; not a border crossing but affects departure"
+        ],
+        [
+          "Regional souvenirs",
+          "Open food items consumed in Japan OK; do not pack fresh food for US return"
+        ]
+      ]
+    },
+    {
+      "caption": "Tax-Free Shopping (Japan)",
+      "columns": [
+        "Item",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "Who",
+          "Tourists on short stay; passport required at purchase"
+        ],
+        [
+          "Rate",
+          "Consumption tax 10% waived on eligible goods"
+        ],
+        [
+          "Where",
+          "Stores displaying Tax-Free sign (department stores, electronics, some drugstores)"
+        ],
+        [
+          "Process",
+          "Show passport; goods sealed in bag until departure from Japan"
+        ],
+        [
+          "At KIX",
+          "If asked, present purchases + receipts at customs inspection before check-in (usually quick for compliant sealed bags)"
+        ]
+      ]
+    }
+  ]
+}

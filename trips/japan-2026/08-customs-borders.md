@@ -1,43 +1,226 @@
 ---
 step: "08-customs-borders"
-title: "Customs & Entry Procedures"
+title: "Customs & Borders"
 trip: "japan-2026"
-created: 2026-05-26
+created: 2026-06-02
 depends_on:
   - "[[02-route-optimization]]"
   - "[[07-transport-money]]"
 tags:
   - travel-planning
   - customs
-  - duty-free
 ---
 
-# Customs & Entry Procedures (Japan Single-Country)
+# Customs & Borders
 
-## Summary
+## Reasoning
 
-**Single-country trip = minimal customs complexity.** Only 2 customs interactions: (1) arrival at Tokyo, (2) departure from Osaka.
+**Single-country Japan** trip per [[02-route-optimization]]: only **two customs interactions**—arrival at **NRT/HND** (Jul 24) and departure from **KIX** (Aug 6). No overland borders; domestic trains do not trigger immigration.
 
-### Arrival (Tokyo Haneda/Narita)
+US citizen ([[profile-japan]]): Japan **visa-free** tourism; digital declarations via **Visit Japan Web** ([[03-immigration-entry]]). Most complexity is **prohibited/restricted imports** (medications, fresh food) and **US CBP re-entry** if shopping exceeds duty-free limits on return.
 
-**Duty-free allowances (bringing INTO Japan):**
-- Alcohol: 3 bottles (760ml each)
-- Tobacco: 400 cigarettes or 100 cigars
-- Perfume: 2 ounces
-- Goods: ¥200,000 (~$1,400) value
+Budget **$5,000** solo implies moderate souvenir spend—likely **under** US $800 duty-free unless electronics or multiple high-ticket items; still **declare** honestly and keep receipts.
 
-**Prohibited:** Firearms, drugs, counterfeit goods, fresh produce
+## Output
 
-**Process:** Complete Visit Japan Web customs declaration (see [[03-immigration-entry]]) → show QR code → green "nothing to declare" line
+### Trip Customs Overview
 
-### Departure (Osaka Kansai Airport)
+| Event | Date | Airport | Type |
+|-------|------|---------|------|
+| **Arrival** | Jul 24, 2026 | NRT or HND | US → Japan immigration + customs |
+| **Domestic travel** | Jul 25 – Aug 5 | — | No customs (Tokyo → Takayama → Kyoto → Osaka) |
+| **Departure** | Aug 6, 2026 | KIX | Japan exit + airline security; US customs on **US arrival** |
 
-**Tax refund:** Show tax-free shopping receipts at customs desk before check-in (items in sealed bags)
+---
 
-**Duty-free purchases at airport:** Alcohol, cosmetics, snacks (after security, bring to gate)
+### Arrival — US → Japan (NRT or HND)
 
-**US Customs (upon return):**
-- Duty-free allowance: $800 per person
-- Estimated purchases: $270-480 (see [[06-shopping]]) = under limit ✅
+#### Immigration
 
-**Validation:** No customs issues for this itinerary. Standard tourist entry/exit procedures apply.
+| Item | Rule |
+|------|------|
+| **Visa** | Not required — US passport, tourism ≤90 days ([[03-immigration-entry]]) |
+| **Documents** | Passport, return/onward ticket, first-night hotel address |
+| **Digital** | **Visit Japan Web** QR for immigration + customs (complete within 72 hr of departure) |
+| **Queue time** | 30–60 min typical at NRT; often faster at HND |
+
+#### Duty-free allowances (bringing goods **into** Japan)
+
+| Category | Allowance (visitor, typical) |
+|----------|------------------------------|
+| **Alcohol** | Up to **3 bottles** (760 ml each) if ≥20 years old |
+| **Tobacco** | 400 cigarettes, or 100 cigars, or 500 g tobacco |
+| **Perfume** | 2 oz (56 g) |
+| **Other goods** | Total value generally **≤ ¥200,000** for personal use without duty (verify current Japan Customs notice) |
+| **Cash** | Declare if carrying **> ¥1,000,000** (~$6,700 USD equivalent) |
+
+#### Prohibited / restricted (high-signal)
+
+| Item | Status |
+|------|--------|
+| **Illegal drugs** | Zero tolerance; includes some US OTC (e.g. **pseudoephedrine** in cold meds) |
+| **Firearms, ammunition** | Prohibited |
+| **Fresh fruit, meat, plants** | Restricted—do not bring from US; declare or discard |
+| **Counterfeit goods** | Prohibited |
+| **E-cigarettes / heated tobacco** | Quantity limits—check current notice |
+
+#### Arrival protocol
+
+1. Complete **VJW** before flight; save immigration + customs QR screenshots offline.
+2. Immigration: passport + QR; fingerprint/photo on first visit (may repeat).
+3. **Customs**: Choose channel per declaration:
+   - **Green** — nothing to declare (within allowances, no restricted goods).
+   - **Red** — goods to declare or unsure.
+4. Do not accept “helpers” outside official queues.
+
+---
+
+### Within Japan (Domestic)
+
+| Topic | Detail |
+|-------|--------|
+| **Border checks** | None between Tokyo, Takayama, Kyoto, Osaka |
+| **ID** | Carry passport or photocopy—some hotels require passport at check-in |
+| **Tax-free shopping** | See below; not a border crossing but affects departure |
+| **Regional souvenirs** | Open food items consumed in Japan OK; **do not pack fresh food** for US return |
+
+---
+
+### Tax-Free Shopping (Japan)
+
+| Item | Detail |
+|------|--------|
+| **Who** | Tourists on short stay; passport required at purchase |
+| **Rate** | Consumption tax **10%** waived on eligible goods |
+| **Where** | Stores displaying **Tax-Free** sign (department stores, electronics, some drugstores) |
+| **Process** | Show passport; goods sealed in bag until **departure from Japan** |
+| **At KIX** | If asked, present purchases + receipts at customs inspection before check-in (usually quick for compliant sealed bags) |
+
+**Planning note**: Tax-free helps budget on electronics/skincare; keep items **sealed** until after you leave Japan.
+
+---
+
+### Departure — Japan → US (KIX, Aug 6)
+
+#### Japan exit
+
+| Step | Action |
+|------|--------|
+| 1 | Confirm tax-free bags **sealed**; have receipts |
+| 2 | Airline check-in → security → immigration **departure stamp** |
+| 3 | Optional customs desk if carrying restricted export items (rare for tourists) |
+| 4 | Duty-free **airside** at KIX (alcohol, snacks)—limits apply to **US import** on arrival home |
+
+#### Alcohol/tobacco bought airside at KIX
+
+Count toward **US** limits on landing (see below)—do not exceed US allowance in carry-on + checked combined.
+
+---
+
+### US Re-Entry Customs (Final Leg Home)
+
+**Most important border for shopping strategy** — cleared at first US airport after KIX connection.
+
+#### Duty-free allowance (US resident returning from abroad)
+
+| Category | Allowance |
+|----------|-----------|
+| **Merchandise** | **$800** fair retail value per person |
+| **Alcohol** | 1 liter (33.8 oz) duty-free if 21+ |
+| **Tobacco** | 200 cigarettes (1 carton) |
+| **Above $800** | Flat ~**3%** on next $1,000 (simplified; CBP may classify some items higher) |
+
+**Solo traveler**: $800 threshold—anime figures, knives, tea, clothing, one mid-tier electronics item can stay under limit; **laptop/camera you brought from US** are not “acquired abroad.”
+
+#### Declare on CBP Form 6059B (or Mobile Passport Control)
+
+- All **merchandise acquired abroad** (gifts, souvenirs).
+- **Food**: Generally **no** fresh fruit, meat, rice, or agricultural products—packaged **commercial** tea/candy often allowed; when unsure, declare.
+- **Gifts for others** — count toward your $800.
+
+#### High-value items you **take from the US**
+
+| Action | Why |
+|--------|-----|
+| Register watch/camera/jewelry on **CBP Form 4457** before departure (optional) | Proves pre-existing ownership—avoids duty dispute on return |
+| Keep serial photos / purchase records | Backup proof |
+
+#### Prohibited into US (common Japan purchases)
+
+| Item | US rule |
+|------|---------|
+| Fresh fruit, meat, homemade food | **Prohibited** |
+| Certain **meat jerky / instant ramen with meat** | Often prohibited—check USDA |
+| **Ivory, coral, certain traditional crafts** | Prohibited or permit required |
+| **Counterfeit** goods | Seizure + penalties |
+| **Switchblades, butterfly knives** | Prohibited |
+| Kitchen knives | Checked baggage only |
+
+#### Estimated duty exposure (this trip)
+
+| Scenario | Est. duty |
+|----------|-----------|
+| Souvenirs **< $800** | **$0** |
+| **$1,200** total goods | ~$12–40 on amount over $800 (mostly 3% tier) |
+| Luxury watch bought in Japan | Declare; may exceed $800—plan for 3%+ |
+
+---
+
+### What to Declare — Quick Reference
+
+| Situation | Japan arrival | US return |
+|-----------|---------------|-----------|
+| Cash > thresholds | Yes (¥1M+ into Japan) | Yes if > $10,000 equivalent aggregate |
+| Prescription meds | Personal quantity + Rx letter ([[14-health-safety]] when written) | Allowed with Rx |
+| Gifts for friends | Within allowance | Count toward $800 |
+| Tax-free sealed bag | N/A until exit | Open after US entry; keep receipts until cleared |
+| Food souvenirs | Don't import fresh into Japan | Declare packaged; avoid fresh/agricultural |
+
+---
+
+### Restricted Items Matrix
+
+| Item | Into Japan | Within Japan | Into US |
+|------|------------|--------------|---------|
+| Rx medications | Allowed with Rx; watch banned ingredients | — | Allowed with Rx |
+| OTC cold meds (pseudoephedrine) | **Risk** — check ingredients | — | Allowed |
+| Pocket knives (<3") | Personal use, declare if asked | — | Checked only |
+| Chef knives | Checked luggage | Buy tax-free possible | Checked only |
+| Anime figures, games | OK | OK | OK; declare value |
+| Tea (sealed commercial) | OK | OK | Usually OK |
+| Fresh sushi omiyage | **No** | Eat in Japan | **No** |
+| Alcohol (bought in Japan) | Within import limit | Tax-free shop | 1 L duty-free to US |
+
+---
+
+### Customs Declaration Strategy (Solo, $5K Trip)
+
+1. **VJW green channel** on arrival if within allowances and no restricted goods.
+2. **Do not bring** US fresh food/snacks into Japan—buy locally after landing.
+3. **Tax-free**: Only buy what you can seal until KIX; one bag for inspection.
+4. **US return**: Keep receipts; declare total if near or over **$800**; honesty beats omission.
+5. **No CBP issues expected** for typical souvenir load (figures, tea, textiles, small electronics).
+
+---
+
+### Purchasing vs Customs (Cross-Reference)
+
+| Category | Customs note |
+|----------|----------------|
+| Electronics | Tax-free in Japan helps; declare value on US entry |
+| Knives (kitchen) | Checked bag only; declare if asked |
+| Anime/retro games | OK; keep reasonable quantities |
+| Clothing | Under $800 aggregate easily |
+| Alcohol from KIX duty-free | Max **1 L** into US duty-free |
+
+Full shopping strategy → [[06-shopping]] when completed.
+
+## Validation
+
+- [x] Single-country Japan: arrival + departure only (no phantom multi-country borders) — **PASS**
+- [x] Duty-free allowances Japan arrival and US return documented — **PASS**
+- [x] VJW / green-red channel aligned with [[03-immigration-entry]] — **PASS**
+- [x] Restricted items (food, meds, counterfeit, agricultural) — **PASS**
+- [x] Tax-free exit procedure at KIX — **PASS**
+- [x] US $800 solo allowance and CBP 4457 tip — **PASS**
+- [x] Declare-when-unsure guidance; fits $5K moderate shopping — **PASS**

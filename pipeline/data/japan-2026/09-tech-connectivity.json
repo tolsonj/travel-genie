@@ -1,0 +1,441 @@
+{
+  "aspect": "09-tech-connectivity",
+  "type": "dashboard",
+  "trip": "japan-2026",
+  "title": "Tech Connectivity",
+  "slide_title": "TECH",
+  "intro": "Setup",
+  "tables": [
+    {
+      "caption": "Recommended: Japan eSIM (install before departure)",
+      "columns": [
+        "Provider",
+        "Plan",
+        "Est. cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Airalo",
+          "Japan 10–20 GB / 15–30 days",
+          "$18–28",
+          "Easy QR; top up in app"
+        ],
+        [
+          "Ubigi",
+          "Japan unlimited fair-use 15 days",
+          "$25–35",
+          "Good for maps + photos"
+        ],
+        [
+          "Holafly",
+          "Unlimited Japan 15 days",
+          "$35–45",
+          "Higher cost; simple"
+        ]
+      ]
+    },
+    {
+      "caption": "Essential Apps",
+      "columns": [
+        "App",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "Google Maps",
+          "Primary navigation; transit times; walking"
+        ],
+        [
+          "Japan Transit Planner (Jorudan) or Navitime",
+          "Train exactness; platform numbers"
+        ],
+        [
+          "Google Translate",
+          "Camera menu mode; download Japanese offline"
+        ],
+        [
+          "Visit Japan Web",
+          "Immigration QR (03-immigration-entry)"
+        ],
+        [
+          "Suica / PASMO app (iPhone Wallet)",
+          "IC card on phone — see below"
+        ],
+        [
+          "Tabelog",
+          "Restaurant ratings (Japanese-heavy; use stars + photos)"
+        ],
+        [
+          "PayPay",
+          "Optional; many shops — often need Japanese phone; skip unless local friend"
+        ],
+        [
+          "Booking.com / Rakuten",
+          "Hotel confirmations offline"
+        ],
+        [
+          "Wise or bank app",
+          "FX check; low-fee ATM if needed"
+        ]
+      ]
+    },
+    {
+      "caption": "Suica / PASMO / IC Card",
+      "columns": [
+        "Step",
+        "Action"
+      ],
+      "rows": [
+        [
+          "Day 1",
+          "Add Suica to Apple Wallet (or buy physical at station machine)"
+        ],
+        [
+          "Load",
+          "¥3,000–5,000 initial; recharge at konbini/seven"
+        ],
+        [
+          "Use",
+          "Tokyo Metro, JR locals, buses, konbini, some vending"
+        ],
+        [
+          "JR Pass days",
+          "Jul 29–Aug 5 — pass for Shinkansen/Hida; IC for local buses/subways"
+        ],
+        [
+          "Return",
+          "Balance refund at JR East service center before departure (small fee)"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Region",
+        "Google Maps offline",
+        "Maps.me backup"
+      ],
+      "rows": [
+        [
+          "Tokyo",
+          "Yes — 25 km radius Ueno + Kamakura",
+          "Optional"
+        ],
+        [
+          "Takayama + Shirakawa-go",
+          "Yes — Takayama + Ogimachi",
+          "Recommended Alps trails"
+        ],
+        [
+          "Kyoto",
+          "Central + Arashiyama",
+          "Optional"
+        ],
+        [
+          "Osaka",
+          "Namba + KIX corridor",
+          "Optional"
+        ]
+      ]
+    },
+    {
+      "caption": "Power & Plugs",
+      "columns": [
+        "Item",
+        "Japan spec"
+      ],
+      "rows": [
+        [
+          "Plug",
+          "Type A — same as US flat pins"
+        ],
+        [
+          "Voltage",
+          "100V — US chargers labeled 100–240V OK"
+        ],
+        [
+          "Adapter",
+          "Not needed for US plugs"
+        ],
+        [
+          "Power bank",
+          "20,000 mAh carry-on for long train/hike days"
+        ]
+      ]
+    },
+    {
+      "caption": "Digital Security (Solo)",
+      "columns": [
+        "Risk",
+        "Mitigation"
+      ],
+      "rows": [
+        [
+          "Public WiFi",
+          "Prefer eSIM LTE; hotel WiFi OK for backups"
+        ],
+        [
+          "2FA lockout",
+          "Keep US number active for SMS codes"
+        ],
+        [
+          "Document loss",
+          "iCloud/Google Drive copies of passport, JR Pass voucher, insurance"
+        ],
+        [
+          "Banking",
+          "Notify bank of Japan dates; use Wise/Charles Schwab-style ATM if withdrawing"
+        ],
+        [
+          "Theft",
+          "Phone leash in crowds (Fushimi, Dotonbori)"
+        ]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Connectivity Strategy",
+      "items": [
+        "Sakura Mobile / Japan Wireless pocket WiFi — overkill solo; skip unless no eSIM phone.",
+        "Airport SIM (NRT/HND): Bic Camera or vending — ¥3,000–5,000 for 10 GB if eSIM fails."
+      ]
+    },
+    {
+      "heading": "Pre-Departure Checklist",
+      "items": [
+        "[ ] eSIM purchased + tested at home (airplane mode off, data on eSIM)",
+        "[ ] Suica added to Wallet OR plan to buy at airport station",
+        "[ ] Google Translate Japanese offline pack",
+        "[ ] Offline map packs: Tokyo, Takayama, Kyoto, Osaka",
+        "[ ] Visit Japan Web registration complete",
+        "[ ] JR Pass voucher / digital exchange instructions saved offline",
+        "[ ] Hotel addresses in Japanese in Notes app (one per hub)",
+        "[ ] Airline app + KIX departure saved"
+      ]
+    }
+  ],
+  "callouts": [],
+  "slide_title_accent": "CONNECTIVITY",
+  "section_label": "Tech Connectivity",
+  "section_kicker": "eSIM · apps · Suica · offline maps · power",
+  "banner": {
+    "text": "Setup"
+  },
+  "sidebar": [
+    {
+      "type": "list",
+      "caption": "Connectivity Strategy",
+      "items": [
+        "Sakura Mobile / Japan Wireless pocket WiFi — overkill solo; skip unless no eSIM phone.",
+        "Airport SIM (NRT/HND): Bic Camera or vending — ¥3,000–5,000 for 10 GB if eSIM fails."
+      ],
+      "ordered": false
+    },
+    {
+      "type": "list",
+      "caption": "Pre-Departure Checklist",
+      "items": [
+        "[ ] eSIM purchased + tested at home (airplane mode off, data on eSIM)",
+        "[ ] Suica added to Wallet OR plan to buy at airport station",
+        "[ ] Google Translate Japanese offline pack",
+        "[ ] Offline map packs: Tokyo, Takayama, Kyoto, Osaka",
+        "[ ] Visit Japan Web registration complete",
+        "[ ] JR Pass voucher / digital exchange instructions saved offline",
+        "[ ] Hotel addresses in Japanese in Notes app (one per hub)",
+        "[ ] Airline app + KIX departure saved"
+      ],
+      "ordered": true
+    }
+  ],
+  "panels": [
+    {
+      "caption": "Recommended: Japan eSIM (install before departure)",
+      "columns": [
+        "Provider",
+        "Plan",
+        "Est. cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Airalo",
+          "Japan 10–20 GB / 15–30 days",
+          "$18–28",
+          "Easy QR; top up in app"
+        ],
+        [
+          "Ubigi",
+          "Japan unlimited fair-use 15 days",
+          "$25–35",
+          "Good for maps + photos"
+        ],
+        [
+          "Holafly",
+          "Unlimited Japan 15 days",
+          "$35–45",
+          "Higher cost; simple"
+        ]
+      ]
+    },
+    {
+      "caption": "Essential Apps",
+      "columns": [
+        "App",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "Google Maps",
+          "Primary navigation; transit times; walking"
+        ],
+        [
+          "Japan Transit Planner (Jorudan) or Navitime",
+          "Train exactness; platform numbers"
+        ],
+        [
+          "Google Translate",
+          "Camera menu mode; download Japanese offline"
+        ],
+        [
+          "Visit Japan Web",
+          "Immigration QR (03-immigration-entry)"
+        ],
+        [
+          "Suica / PASMO app (iPhone Wallet)",
+          "IC card on phone — see below"
+        ],
+        [
+          "Tabelog",
+          "Restaurant ratings (Japanese-heavy; use stars + photos)"
+        ],
+        [
+          "PayPay",
+          "Optional; many shops — often need Japanese phone; skip unless local friend"
+        ],
+        [
+          "Booking.com / Rakuten",
+          "Hotel confirmations offline"
+        ],
+        [
+          "Wise or bank app",
+          "FX check; low-fee ATM if needed"
+        ]
+      ]
+    },
+    {
+      "caption": "Suica / PASMO / IC Card",
+      "columns": [
+        "Step",
+        "Action"
+      ],
+      "rows": [
+        [
+          "Day 1",
+          "Add Suica to Apple Wallet (or buy physical at station machine)"
+        ],
+        [
+          "Load",
+          "¥3,000–5,000 initial; recharge at konbini/seven"
+        ],
+        [
+          "Use",
+          "Tokyo Metro, JR locals, buses, konbini, some vending"
+        ],
+        [
+          "JR Pass days",
+          "Jul 29–Aug 5 — pass for Shinkansen/Hida; IC for local buses/subways"
+        ],
+        [
+          "Return",
+          "Balance refund at JR East service center before departure (small fee)"
+        ]
+      ]
+    },
+    {
+      "caption": "Details",
+      "columns": [
+        "Region",
+        "Google Maps offline",
+        "Maps.me backup"
+      ],
+      "rows": [
+        [
+          "Tokyo",
+          "Yes — 25 km radius Ueno + Kamakura",
+          "Optional"
+        ],
+        [
+          "Takayama + Shirakawa-go",
+          "Yes — Takayama + Ogimachi",
+          "Recommended Alps trails"
+        ],
+        [
+          "Kyoto",
+          "Central + Arashiyama",
+          "Optional"
+        ],
+        [
+          "Osaka",
+          "Namba + KIX corridor",
+          "Optional"
+        ]
+      ]
+    },
+    {
+      "caption": "Power & Plugs",
+      "columns": [
+        "Item",
+        "Japan spec"
+      ],
+      "rows": [
+        [
+          "Plug",
+          "Type A — same as US flat pins"
+        ],
+        [
+          "Voltage",
+          "100V — US chargers labeled 100–240V OK"
+        ],
+        [
+          "Adapter",
+          "Not needed for US plugs"
+        ],
+        [
+          "Power bank",
+          "20,000 mAh carry-on for long train/hike days"
+        ]
+      ]
+    },
+    {
+      "caption": "Digital Security (Solo)",
+      "columns": [
+        "Risk",
+        "Mitigation"
+      ],
+      "rows": [
+        [
+          "Public WiFi",
+          "Prefer eSIM LTE; hotel WiFi OK for backups"
+        ],
+        [
+          "2FA lockout",
+          "Keep US number active for SMS codes"
+        ],
+        [
+          "Document loss",
+          "iCloud/Google Drive copies of passport, JR Pass voucher, insurance"
+        ],
+        [
+          "Banking",
+          "Notify bank of Japan dates; use Wise/Charles Schwab-style ATM if withdrawing"
+        ],
+        [
+          "Theft",
+          "Phone leash in crowds (Fushimi, Dotonbori)"
+        ]
+      ]
+    }
+  ]
+}

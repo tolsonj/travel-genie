@@ -28,22 +28,28 @@ export function discoverAspects(trip) {
     throw new Error(`Trip source dir not found: ${dir}`);
   }
 
-  const files = readdirSync(dir)
+  let files = readdirSync(dir)
     .filter(f => f.endsWith(".md"))
     .filter(f => !/^00-workflow-state$|^TRAVEL_MASTER$/.test(basename(f, ".md")));
+
+  // When opt-* print sources exist, use them instead of numbered planning files.
+  const optFiles = files.filter(f => f.startsWith("opt-"));
+  if (optFiles.length > 0) files = optFiles;
 
   const order = new Map(manifest.aspects.map((a, i) => [a.id, i]));
 
   const aspects = files.map(file => {
     const base = basename(file, ".md");
-    const entry = manifest.aspects.find(a => new RegExp(a.match).test(base));
+    const matchBase = base.startsWith("opt-") ? base.slice(4) : base;
+    const entry = manifest.aspects.find(a => new RegExp(a.match).test(matchBase));
     return {
       basename: base,
+      matchBase,
       sourceFile: join(dir, file),
-      id: entry ? entry.id : base,
+      id: entry ? entry.id : matchBase,
       type: entry ? entry.type : "generic",
       templateName: entry ? entry.template : manifest.fallback.template,
-      title: entry ? entry.title : titleize(base),
+      title: entry ? entry.title : titleize(matchBase),
       manifest: entry || null
     };
   });
@@ -53,7 +59,7 @@ export function discoverAspects(trip) {
     const oa = order.has(a.id) ? order.get(a.id) : 999;
     const ob = order.has(b.id) ? order.get(b.id) : 999;
     if (oa !== ob) return oa - ob;
-    return a.basename.localeCompare(b.basename, undefined, { numeric: true });
+    return a.matchBase.localeCompare(b.matchBase, undefined, { numeric: true });
   });
 
   return aspects;

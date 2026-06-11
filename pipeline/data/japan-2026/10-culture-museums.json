@@ -1,0 +1,127 @@
+{
+  "aspect": "10-culture-museums",
+  "type": "culture-museums",
+  "trip": "japan-2026",
+  "title": "Culture & Museums",
+  "slide_title": "CULTURE &",
+  "slide_title_accent": "MUSEUMS",
+  "section_label": "Culture Philosophy",
+  "section_kicker": "Regional Anchors · Museum Picks · Fatigue Audit",
+  "philosophy": {
+    "caption": "Culture Philosophy",
+    "items": [
+      { "rule": "Outdoor history before 10:00", "why": "Fushimi, Kiyomizu, Shirakawa-go", "icon": "⛩" },
+      { "rule": "Indoor AC midday", "why": "Museums, sake museums, depachika culture", "icon": "🏛" },
+      { "rule": "Observe, don't perform", "why": "Gion geiko district — no blocking alleys for photos", "icon": "👘" },
+      { "rule": "One wow shrine/temple per day", "why": "Depth over checklist", "icon": "🏯" }
+    ]
+  },
+  "themes": {
+    "caption": "Cross-Hub History Thread",
+    "items": [
+      "Shinto vs Buddhist — Meiji, Sensō-ji, Fushimi, Tenryu-ji",
+      "Merchant class — Takayama Sanmachi → Nishiki → Osaka trade city",
+      "Feudal to modern — Edo-Tokyo Museum → Osaka Castle → Imperial East Gardens"
+    ]
+  },
+  "fatigue_audit": {
+    "caption": "Museum Fatigue Audit",
+    "columns": ["Day", "Museums", "Temples", "Verdict"],
+    "rows": [
+      ["2", "0–1", "1", "OK"],
+      ["3", "0–1", "1", "OK"],
+      ["9", "1 sake", "1 major", "OK"],
+      ["10", "0", "1 + garden", "OK"],
+      ["11", "0–1 backup", "2", "OK — early Kiyomizu"]
+    ],
+    "verdict": "No triple-temple days — PASS",
+    "verdict_status": "pass"
+  },
+  "hubs": [
+    {
+      "name": "Tokyo",
+      "days": "Days 1–5",
+      "icon": "🗼",
+      "columns": ["Day", "Primary", "Rainy backup"],
+      "rows": [
+        ["1", "Neighborhood walk only", "Soft arrival"],
+        ["2", "Sensō-ji outer grounds", "Tokyo National Museum (Ueno)"],
+        ["3", "Meiji Jingu forest shrine", "Teien Art Museum / teamLab"],
+        ["4", "Kamakura Daibutsu + Hase-dera", "Edo-Tokyo Museum"],
+        ["5", "Imperial Palace East Gardens", "Marunouchi architecture stroll"]
+      ],
+      "note": "Skip TeamLab unless pre-booked — heat exhaustion risk on Day 3 eve only."
+    },
+    {
+      "name": "Takayama / Alps",
+      "days": "Days 6–7",
+      "icon": "🏔",
+      "columns": ["Day", "Primary", "Secondary"],
+      "rows": [
+        ["6", "Sanmachi Suji merchant town", "Sake brewery tasting"],
+        ["7", "Shirakawa-go gassho village", "Hida Folk Village or History Museum"]
+      ],
+      "highlights": [
+        "Wada House thatched interior (¥300)",
+        "Myōzen-ji temple gate near Sanmachi",
+        "UNESCO gassho roofs — green rice fields in summer"
+      ]
+    },
+    {
+      "name": "Kyoto",
+      "days": "Days 8–11",
+      "icon": "⛩",
+      "columns": ["Day", "Primary", "Crowd protocol"],
+      "rows": [
+        ["8", "Nishiki food culture", "Pontocho observe-only, no flash"],
+        ["9", "Fushimi Inari torii (05:30)", "Gekkeikan Sake Museum PM"],
+        ["10", "Tenryu-ji Zen garden", "Arashiyama bamboo 07:00"],
+        ["11", "Kiyomizu-dera (06:30)", "Ginkaku-ji + Philosopher's Path"]
+      ],
+      "note": "Gion: do not enter private maiko paths; no geiko photos without permission."
+    },
+    {
+      "name": "Osaka",
+      "days": "Days 12–13",
+      "icon": "🏯",
+      "columns": ["Day", "Primary", "Secondary"],
+      "rows": [
+        ["12", "Dotonbori neon + food culture", "Kuromon market history"],
+        ["13", "Osaka Castle Park exterior/moat", "Namba Yasaka lion stage"]
+      ],
+      "note": "Skip castle interior in August heat — moat walk sufficient history fix."
+    }
+  ],
+  "spotlight": {
+    "caption": "Site Notes & Rainy Backups",
+    "columns": [
+      {
+        "heading": "Tokyo Museum Picks",
+        "items": [
+          { "label": "Tokyo National Museum", "detail": "Day 2 rainy · ¥1,000 · Japan gallery focus" },
+          { "label": "Edo-Tokyo Museum", "detail": "Day 4 rainy · ¥600 · city history narrative" },
+          { "label": "Nezu Museum", "detail": "Day 3 swap · ¥1,300 · garden + small collection" }
+        ]
+      },
+      {
+        "heading": "Kyoto Temple Fees",
+        "items": [
+          { "label": "Fushimi Inari", "detail": "Free — turn back at first overlook if tired" },
+          { "label": "Kiyomizu-dera", "detail": "¥400 — check 2026 stage renovation status" },
+          { "label": "Tenryu-ji / Ginkaku-ji", "detail": "¥500 each — garden alone sufficient in heat" }
+        ]
+      },
+      {
+        "heading": "Osaka Indoor (Heat/Rain)",
+        "items": [
+          { "label": "Kaiyukan", "detail": "Days 12–13 · world-class · book timed entry" },
+          { "label": "Osaka Museum of History", "detail": "Day 13 rainy · near castle · AC" },
+          { "label": "Kyoto Railway Museum", "detail": "Day 8 backup if Nishiki overload · ¥1,200" }
+        ]
+      }
+    ]
+  },
+  "footer": "One wow moment per day · outdoor before 10:00 · observe Gion respectfully · no triple-temple stacking.",
+  "intro": "---",
+  "callouts": []
+}

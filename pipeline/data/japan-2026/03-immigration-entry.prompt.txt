@@ -1,0 +1,307 @@
+You convert one travel-plan markdown aspect into STRICT canonical JSON.
+
+Output ONLY a single JSON object. No prose, no markdown fences. It MUST validate
+against this JSON Schema (every field except aspect/type/trip is optional; omit
+what is not present rather than inventing it):
+
+<schema>
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-genie/schema/trip.schema.json",
+  "title": "Canonical Trip Aspect",
+  "description": "One extracted aspect of a trip plan. Generic by design so it generalizes across single- and multi-country trips. Every field beyond `aspect`/`type` is optional; the renderer hides absent sections rather than erroring.",
+  "type": "object",
+  "required": ["aspect", "type", "trip"],
+  "properties": {
+    "aspect": { "type": "string", "description": "Aspect id, e.g. route-optimization." },
+    "type": { "type": "string", "description": "Canonical type used to pick a slide template." },
+    "trip": { "type": "string", "description": "Trip slug, e.g. china-vietnam-2026." },
+    "title": { "type": "string" },
+    "slide_title": { "type": "string" },
+
+    "recommended_route": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "name": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hub": { "type": "string" },
+          "days": { "type": "string" },
+          "region": { "type": "string" },
+          "primary_draw": { "type": "string" }
+        }
+      }
+    },
+    "map_nodes": {
+      "type": "array",
+      "description": "Geographic markers plotted from REAL coordinates.",
+      "items": {
+        "type": "object",
+        "required": ["label", "lng", "lat"],
+        "properties": {
+          "label": { "type": "string" },
+          "marker": { "type": "string", "description": "Short glyph shown in the node circle." },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" },
+          "color": { "type": "string" },
+          "labelDy": { "type": "number", "description": "Vertical label offset in px (negative = above)." }
+        }
+      }
+    },
+    "map_bounds": {
+      "type": "object",
+      "properties": {
+        "west": { "type": "number" },
+        "south": { "type": "number" },
+        "east": { "type": "number" },
+        "north": { "type": "number" }
+      }
+    },
+    "highlight_countries": { "type": "array", "items": { "type": "string" } },
+    "country_labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" }
+        }
+      }
+    },
+    "transit_legs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "mode": { "type": "string" },
+          "duration": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "headline": { "type": "string" },
+        "detail": { "type": "string" }
+      }
+    },
+
+    "country_label": { "type": "string", "description": "Profile dashboard: country pill (e.g. JAPAN)." },
+    "intelligence": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": { "type": "string" },
+          "label": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "seasonality": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } },
+        "chosen_column": { "type": "integer", "description": "0-based index of highlighted season column." },
+        "summary": { "type": "string" }
+      }
+    },
+    "validations": {
+      "type": "array",
+      "description": "Profile dashboard: validation checklist items.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    },
+
+    "intro": { "type": "string", "description": "Generic-layout: lead paragraph." },
+    "tables": {
+      "type": "array",
+      "description": "Generic-layout: zero or more tables.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caption": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+    "bullets": {
+      "type": "array",
+      "description": "Generic-layout: grouped bullet lists.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "callouts": {
+      "type": "array",
+      "description": "Generic-layout: status callouts (validation checks, warnings).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+
+</schema>
+
+Required top-level values for THIS aspect:
+  "aspect": "03-immigration-entry"
+  "type": "generic"
+  "trip": "japan-2026"
+  "title": "Immigration Entry"
+
+Target type: "generic" (no bespoke template).
+Use the generic fields: intro (string), tables[] {caption, columns[], rows[][]},
+bullets[] {heading, items[]}, callouts[] {status: pass|warn|info, text}.
+
+CRITICAL for any map_nodes: use REAL geographic latitude/longitude for each city.
+Do not approximate with screen coordinates.
+
+Here is the source markdown to extract from:
+
+<markdown>
+---
+step: 03-immigration-entry
+title: Immigration & Entry
+trip: japan-2026
+created: 2026-06-02
+hero-image: https://images.unsplash.com/photo-1436491865339-9a109c0a7c1e?w=1200&q=80
+---
+
+# Immigration & Entry
+
+### Japan Entry — US Citizen
+
+| Item | Detail |
+|------|--------|
+| **Visa required?** | **No** — visa-free short-term stay (tourism) |
+| **Max stay** | **90 days** per entry (14-day trip well within limit) |
+| **Purpose** | Tourism |
+| **Work / paid activity** | **Not permitted** on visa-free entry |
+| **Port of entry** | **NRT** (Narita) or **HND** (Haneda) — match flight booking |
+| **Port of exit** | **KIX** (Kansai International) — open-jaw; no extra exit formalities beyond standard departure immigration |
+
+### Visit Japan Web (VJW)
+
+| Item | Detail |
+|------|--------|
+| **Portal** | [vjw-lp.digital.go.jp](https://vjw-lp.digital.go.jp/en/) (official) |
+| **When to complete** | **Within 72 hours of departure** (or as soon as flight/hotel known) |
+| **What it covers** | Immigration pre-clearance QR, customs declaration |
+| **Documents needed** | Passport details, flight info, accommodation address (first hotel in Tokyo) |
+| **At airport** | Show **QR codes** (immigration + customs) at e-Gates or staffed lanes if prompted |
+
+> ✅ Complete VJW before boarding—saves 15–30 min at Narita/Haneda and reduces form errors.
+
+### Passport Validity
+
+| Requirement | Montrez status |
+|-------------|----------------|
+| Valid for duration of stay | ✅ Valid through 2028 |
+| Airline **6-month rule** (common) | ✅ Valid well beyond Feb 6, 2027 buffer |
+| Blank pages | **1+ blank page** recommended for entry stamp |
+| **Action** | No renewal needed; confirm physical passport in hand before booking non-refundable fares |
+
+### Vaccinations & Health
+
+| Category | Detail |
+|----------|--------|
+| **Mandatory for entry** | **None** for US → Japan tourist travel (as of 2026 baseline) |
+| **COVID declarations** | **Not required** for entry (verify if policies change) |
+| **Recommended (optional)** | Routine vaccines current (Tdap, MMR); **Hepatitis A** (food exposure); annual **flu** shot if traveling early flu season overlap |
+| **Japanese encephalitis** | Generally **not** recommended for standard urban/tourist routes |
+| **Travel clinic** | Optional consult **4–6 weeks** before departure if you want personalized advice |
+
+### Customs & Prohibited Items (High-Signal)
+
+- **Drugs**: Strict zero tolerance—including some US OTC medications (e.g., pseudoephedrine-containing products). Bring only personal quantities; keep prescriptions in original packaging.
+- **Food/agriculture**: Fresh fruit, meat, and some plant products restricted—declare or discard.
+- **Cash**: Declare if carrying **> ¥1,000,000** (~$6,700 USD equivalent).
+- **Alcohol/tobacco**: Personal allowance limits apply—declare excess.
+
+### Application / Preparation Timeline
+
+| When | Action |
+|------|--------|
+| **Now** | Confirm passport expiration (2028) and at least 1 blank page |
+| **Flight booking** | Open-jaw **NRT/HND in, KIX out**; save confirmation PDF |
+| **2–4 weeks before** | Book first-night Tokyo hotel (address needed for VJW) |
+| **72 hrs before departure** | Complete **Visit Japan Web**; screenshot QR codes offline |
+| **Before packing** | Download Japan apps: **Google Maps** (offline Tokyo/Kyoto), **Japan Transit Planner**, hotel confirmations |
+| **At departure US airport** | No Japan visa to show; have return/onward ticket (KIX→US) ready for airline check-in |
+| **Verify before travel** | [travel.state.gov Japan page](https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Japan.html) |
+
+### Practical Entry Checklist — Japan
+
+#### Before departure
+- [ ] Valid US passport (exp. 2028)
+- [ ] 1+ blank passport page
+- [ ] Open-jaw ticket: into **NRT/HND**, out **KIX**
+- [ ] First hotel address in Tokyo (English + Japanese if hotel provides)
+- [ ] **Visit Japan Web** completed; immigration + customs QR saved offline
+- [ ] Travel insurance purchased (medical + trip delay—summer weather/disruptions)
+- [ ] Credit card with no foreign transaction fee; notify bank of Japan dates
+- [ ] IC card plan: **Suica/PASMO** (mobile wallet or physical) for Tokyo/Kansai local transit
+- [ ] JR Pass voucher (if using) — exchange at airport or major JR office Day 1 or Day 6
+
+#### At arrival (NRT or HND)
+- [ ] Immigration: passport + VJW QR (or paper form if not using VJW)
+- [ ] Finger photo/biometrics if requested (standard for foreign nationals)
+- [ ] Customs: VJW customs QR or declaration form
+- [ ] Activate/connect phone (eSIM or pocket WiFi pickup if pre-ordered)
+- [ ] Load Suica/PASMO; confirm train route to hotel
+- [ ] Keep **landing card stub** if issued (rare with VJW—follow airport staff direction)
+
+#### Domestic travel (no re-immigration)
+- [ ] Carry passport or secure photocopy + photo ID for hotel check-in
+- [ ] Shinkansen: match JR Pass activation date to inter-hub travel ([[02-route-optimization]])
+
+#### At departure (KIX)
+- [ ] Allow **2.5–3 hrs** before international flight
+- [ ] Departure immigration + customs (no exit tax separate fee beyond ticket taxes)
+- [ ] Tax-free shopping receipts may need stamp at customs if applicable
+
+### Backup Plans
+
+| Scenario | Action |
+|----------|--------|
+| VJW site down | Paper forms on arrival—add 20–30 min buffer |
+| Airline denies boarding (passport validity) | Rare with 2028 expiry; carry State Dept travel info printout |
+| Missed connection / delayed entry | Hotels and JR reservations: contact via email; Japan hotels often hold until midnight with notice |
+| Medical issue pre-trip | Travel insurance claim path; reschedule flights if needed—no visa re-application required for US citizens |
+
+</markdown>

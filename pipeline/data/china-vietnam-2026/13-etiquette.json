@@ -1,92 +1,423 @@
 {
   "aspect": "13-etiquette",
-  "type": "generic",
+  "type": "etiquette",
   "trip": "china-vietnam-2026",
   "title": "Etiquette",
   "slide_title": "ETIQUETTE",
-  "intro": "US baseline is fine; tipping norms are nearly opposite (no tip in China, soft tip in Vietnam). Photo rules at temples, dress codes, and polite food refusal matter. China\u2192Vietnam shift is noticeable but navigable.",
+  "intro": "1. Don't tip — Tipping is not customary and can embarrass service staff; exception: tour guides and porters (¥20–50/day acceptable and appreciated for guides); 5-star hotel staff follow international norms and won't refuse tips 2. Greet with a nod or slight bow — Handshakes are acceptable at business settings; a respectful nod is sufficient for everyday interactions; no hugging strangers 3. Two hands for business cards/gifts — Present and receive with both hands; this is a mark of respect; inspect what you receive before putting it away 4. Be direct about food/drink preferences — Chinese hosts take pride in hospitality through food; politely declining requires firmness: \"我吃饱了\" (Wǒ chī bǎo le = I'm full); declining multiple times is expected before acceptance 5. No photos inside government buildings and many temples — Look for 禁止拍照 (no photography) signs; always ask at temples; the Forbidden City outer areas are fine, inner galleries sometimes not 6. Dress modestly at temples — Shoulders and knees covered at Buddhist/Taoist temples; the White Cloud Temple (Taoist) is stricter than tourist-oriented Buddhist temples 7. Avoid public displays of affection in conservative areas — Fine in Sanlitun or near 5-star hotels; less appropriate near temples or older neighborhoods 8. Don't point with your finger — Use an open hand to gesture; pointing at people with index finger is rude 9. Bargaining is expected in markets but not in shops/malls — Silk Street and Wangfujing markets: bargain (start at 20–30% of asking price); any mall or restaurant: fixed price 10. Loudness in restaurants is normal — Noise is not rudeness in Chinese restaurant culture; don't be surprised or alarmed; it's a sign of a lively meal",
   "tables": [
     {
-      "caption": "China Survival Phrases (Mandarin)",
-      "columns": ["Phrase", "Pronunciation", "Use"],
+      "caption": "10 Survival Phrases (Mandarin)",
+      "columns": [
+        "Phrase",
+        "Pronunciation",
+        "Use"
+      ],
       "rows": [
-        ["你好", "Nǐ hǎo", "Hello"],
-        ["谢谢", "Xièxiè", "Thank you"],
-        ["多少钱？", "Duōshǎo qián?", "How much?"],
-        ["太贵了", "Tài guì le", "Too expensive"],
-        ["我不要", "Wǒ bùyào", "I don't want it"],
-        ["厕所在哪里？", "Cèsuǒ zài nǎlǐ?", "Where is the toilet?"],
-        ["能帮我叫滴滴吗？", "Néng bāng wǒ jiào Dīdī ma?", "Can you call me a DiDi?"]
+        [
+          "你好",
+          "Nǐ hǎo",
+          "Hello"
+        ],
+        [
+          "谢谢",
+          "Xièxiè",
+          "Thank you"
+        ],
+        [
+          "不客气",
+          "Bù kèqì",
+          "You're welcome"
+        ],
+        [
+          "对不起",
+          "Duìbuqǐ",
+          "Excuse me / Sorry"
+        ],
+        [
+          "多少钱？",
+          "Duōshǎo qián?",
+          "How much?"
+        ],
+        [
+          "太贵了",
+          "Tài guì le",
+          "Too expensive"
+        ],
+        [
+          "我不要",
+          "Wǒ bùyào",
+          "I don't want it"
+        ],
+        [
+          "厕所在哪里？",
+          "Cèsuǒ zài nǎlǐ?",
+          "Where is the toilet?"
+        ],
+        [
+          "能帮我叫滴滴吗？",
+          "Néng bāng wǒ jiào Dīdī ma?",
+          "Can you call me a DiDi?"
+        ],
+        [
+          "好的",
+          "Hǎo de",
+          "Okay / Got it"
+        ]
       ]
     },
     {
-      "caption": "Vietnam Survival Phrases",
-      "columns": ["Phrase", "Pronunciation", "Use"],
+      "caption": "10 Survival Phrases (Vietnamese)",
+      "columns": [
+        "Phrase",
+        "Pronunciation",
+        "Use"
+      ],
       "rows": [
-        ["Xin chào", "Sin Chow", "Hello"],
-        ["Cảm ơn", "Kahm Uhn", "Thank you"],
-        ["Bao nhiêu tiền?", "Bow Nyew Tyen?", "How much?"],
-        ["Đắt quá", "Dat Kwah", "Too expensive"],
-        ["Không, cảm ơn", "Khong, Kahm Uhn", "No, thank you"],
-        ["Ngon quá!", "Ngon Kwah!", "Very delicious!"],
-        ["Gọi Grab cho tôi", "Goy Grab Cho Toy", "Please call me a Grab"]
+        [
+          "Xin chào",
+          "Sin Chow",
+          "Hello"
+        ],
+        [
+          "Cảm ơn",
+          "Kahm Uhn",
+          "Thank you"
+        ],
+        [
+          "Không có gì",
+          "Khong Koh Zee",
+          "You're welcome"
+        ],
+        [
+          "Xin lỗi",
+          "Sin Loy",
+          "Excuse me / Sorry"
+        ],
+        [
+          "Bao nhiêu tiền?",
+          "Bow Nyew Tyen?",
+          "How much?"
+        ],
+        [
+          "Đắt quá",
+          "Dat Kwah",
+          "Too expensive"
+        ],
+        [
+          "Không, cảm ơn",
+          "Khong, Kahm Uhn",
+          "No, thank you"
+        ],
+        [
+          "Nhà vệ sinh ở đâu?",
+          "Nya Veh Sin Uh Dow?",
+          "Where is the toilet?"
+        ],
+        [
+          "Ngon quá!",
+          "Ngon Kwah!",
+          "Very delicious!"
+        ],
+        [
+          "Gọi Grab cho tôi",
+          "Goy Grab Cho Toy",
+          "Please call me a Grab"
+        ]
       ]
     },
     {
-      "caption": "Cross-Cultural Transition: China \u2192 Vietnam",
-      "columns": ["Aspect", "China (Beijing)", "Vietnam (Hanoi/Hội An)"],
+      "caption": "Cross-Cultural Transition Guide: China → Vietnam",
+      "columns": [
+        "Aspect",
+        "China (Beijing)",
+        "Vietnam (Hanoi/Hội An)"
+      ],
       "rows": [
-        ["Greeting", "Nod, no touch", "Friendly, may attempt handshake"],
-        ["Tipping", "Mostly no", "Yes, appreciated"],
-        ["Pace", "Efficient, direct", "Relaxed, meandering"],
-        ["English", "Very limited", "Moderate in tourist areas"],
-        ["Bargaining", "Aggressive (markets)", "Gentler, playful"],
-        ["Food pace", "Fast", "Slow and social"]
+        [
+          "Greeting",
+          "Nod, no touch",
+          "Friendly, may attempt handshake"
+        ],
+        [
+          "Tipping",
+          "Mostly no",
+          "Yes, appreciated"
+        ],
+        [
+          "Pace",
+          "Efficient, direct",
+          "Relaxed, meandering"
+        ],
+        [
+          "Eye contact",
+          "Moderate",
+          "Friendly, more direct"
+        ],
+        [
+          "English",
+          "Very limited",
+          "Moderate in tourist areas"
+        ],
+        [
+          "Noise level",
+          "Louder (normal)",
+          "Moderate"
+        ],
+        [
+          "Bargaining",
+          "Aggressive (markets)",
+          "Gentler, playful"
+        ],
+        [
+          "Food pace",
+          "Fast",
+          "Slow and social"
+        ]
       ]
     }
   ],
   "bullets": [
     {
-      "heading": "China \u2014 Key Norms (Beijing)",
+      "heading": "CHINA — BEIJING",
       "items": [
-        "Don't tip (exception: tour guides/porters \u00a520\u201350/day; 5-star hotel staff follow international norms)",
-        "Two hands for business cards/gifts; inspect before putting away",
-        "Decline food firmly if needed: \"我吃饱了\" (I'm full); multiple declines expected",
-        "No photos where 禁止拍照 signs; ask at temples; dress modestly (shoulders/knees)",
-        "Bargain in markets (start 20\u201330% of ask); fixed price in malls/restaurants",
-        "Open hand to gesture; don't point; restaurant loudness is normal, not rude"
+        "Avoid: Clock as a gift (钟 zhōng sounds like 终 zhōng = \"end/death\"); green hats (associated with infidelity)",
+        "Avoid: Sticking chopsticks upright in rice (resembles incense sticks at funeral offerings)",
+        "Avoid: Talking about Taiwan as a country, Tibet independence — never raise in conversation",
+        "Thumbs up: Acceptable; means good/great",
+        "OK sign (circle with thumb and index): Acceptable",
+        "Waving \"no\": Shake hand side to side (not index finger wagging like in West)",
+        "Shop at independent hutong artisan shops over tourist market stalls (better quality, more of the money stays local)",
+        "Eat at locally-recommended spots rather than tourist restaurants near Tiananmen",
+        "Use DiDi over ride-hailing services that exploit drivers; tip your local guide"
       ]
     },
     {
-      "heading": "Vietnam \u2014 Key Norms",
+      "heading": "VIETNAM — ALL CITIES",
       "items": [
-        "Tip softly: 10\u201315% table service; round up at stalls; $1\u20132/person/day for guides/drivers",
-        "Remove shoes at temples; dress modestly (sarongs often available)",
-        "Don't touch heads; eldest served/seated first at family tables",
-        "Cross streets at steady pace\u2014motorbikes flow around you; don't freeze or rush",
-        "Don't raise voice publicly; resolve disputes quietly (face/thể diện matters)",
-        "Haggle at markets with a smile; V-sign in photos is friendly, not political"
-      ]
-    },
-    {
-      "heading": "Gestures & Taboos",
-      "items": [
-        "China avoid: clock gifts, green hats, chopsticks upright in rice, Taiwan/Tibet politics",
-        "Vietnam avoid: index-finger pointing, crossed fingers in photos, feet toward people, finger-snapping servers",
-        "Both: thumbs up and OK sign acceptable in both countries"
-      ]
-    },
-    {
-      "heading": "Supporting Locals",
-      "items": [
-        "China: hutong artisan shops over tourist stalls; local restaurants vs Tiananmen tourist spots; DiDi over exploitative ride-hail",
-        "Vietnam: boutique Hội An hotels; buy from Kim Bong/Thanh Ha artisans; local coffee shops vs Highlands chain; tip Grab drivers"
+        "Avoid: Pointing with index finger (use open hand); crossing fingers in photos (symbolizes the female genitalia in Vietnam — locals will react); showing the bottom of your feet to someone (insulting)",
+        "Avoid: Snapping fingers to get a server's attention (rude); instead, make eye contact and give a slight nod",
+        "OK sign: Acceptable",
+        "Thumbs up: Acceptable and common",
+        "Wai (hands clasped in prayer): Acceptable greeting at temples; not necessary in everyday settings",
+        "Stay at locally-owned boutique hotels in Hội An (not just the Đà Nẵng mega-resorts) for one night if possible",
+        "Buy directly from artisans at Kim Bong and Thanh Ha villages (see 12-hidden-gems)",
+        "Order Vietnamese coffee at local shops, not Highlands Coffee (chain)",
+        "Tip your Grab drivers — they're gig workers earning very little per ride"
       ]
     }
   ],
-  "callouts": [
-    { "status": "warn", "text": "Tipping flip: no tip in China (except guides/porters); 10\u201315% appreciated in Vietnam" },
-    { "status": "info", "text": "Cultural whiplash buffer: Vietnam feels warmer and more English-friendly\u2014slow down, smile, linger (tà tà)" },
-    { "status": "pass", "text": "Mindset shift at border: Beijing = efficiency; Vietnam = relationships" }
-  ]
+  "callouts": [],
+  "slide_title_accent": "GUIDE",
+  "daily_norms": {
+    "caption": "Daily Norms — China & Vietnam",
+    "footer": "Part 6: Culture & Etiquette",
+    "columns": [
+      "Situation",
+      "Do",
+      "Don't"
+    ],
+    "rows": [
+      [
+        "Don't tip",
+        "Tipping is not customary and can embarrass service staff; exception: tour guides and porters (¥20–50/day acceptable and appreciated for guides); 5-star hotel staff follow international norms and won't refuse tips",
+        ""
+      ],
+      [
+        "Greet with a nod or slight bow",
+        "Handshakes are acceptable at business settings; a respectful nod is sufficient for everyday interactions; no hugging strangers",
+        ""
+      ],
+      [
+        "Two hands for business cards/gifts",
+        "Present and receive with both hands; this is a mark of respect; inspect what you receive before putting it away",
+        ""
+      ],
+      [
+        "Be direct about food/drink preferences",
+        "Chinese hosts take pride in hospitality through food; politely declining requires firmness: \"我吃饱了\" (Wǒ chī bǎo le = I'm full); declining multiple times is expected before acceptance",
+        ""
+      ],
+      [
+        "No photos inside government buildings and many temples",
+        "Look for 禁止拍照 (no photography) signs; always ask at temples; the Forbidden City outer areas are fine, inner galleries sometimes not",
+        ""
+      ],
+      [
+        "Dress modestly at temples",
+        "Shoulders and knees covered at Buddhist/Taoist temples; the White Cloud Temple (Taoist) is stricter than tourist-oriented Buddhist temples",
+        ""
+      ],
+      [
+        "Tip, but softly",
+        "10–15% at restaurants with table service; round up at street stalls; tip tour guides and drivers ($1–2/person/day); nothing is expected but everything is appreciated",
+        ""
+      ],
+      [
+        "Remove shoes at temple entrances",
+        "Always look for a pile of shoes; follow the lead of locals entering",
+        ""
+      ],
+      [
+        "Dress modestly at temples and pagodas",
+        "Sarongs often available to borrow at temple entrances if you forget; tank tops alone are not sufficient",
+        ""
+      ],
+      [
+        "Don't touch the heads of adults or children",
+        "In Vietnamese (and broadly Buddhist) culture, the head is sacred",
+        ""
+      ]
+    ]
+  },
+  "phrases": {
+    "caption": "Survival Phrases (Mandarin & Vietnamese)",
+    "footer": "Part 6: Culture & Etiquette",
+    "columns": [
+      "Phrase",
+      "Pronunciation",
+      "When to Use",
+      "Meaning"
+    ],
+    "rows": [
+      [
+        "你好",
+        "Nǐ hǎo",
+        "Hello",
+        "Hello"
+      ],
+      [
+        "谢谢",
+        "Xièxiè",
+        "Thank you",
+        "Thank you"
+      ],
+      [
+        "不客气",
+        "Bù kèqì",
+        "You're welcome",
+        "You're welcome"
+      ],
+      [
+        "对不起",
+        "Duìbuqǐ",
+        "Excuse me / Sorry",
+        "Excuse me / Sorry"
+      ],
+      [
+        "多少钱？",
+        "Duōshǎo qián?",
+        "How much?",
+        "How much?"
+      ],
+      [
+        "太贵了",
+        "Tài guì le",
+        "Too expensive",
+        "Too expensive"
+      ],
+      [
+        "我不要",
+        "Wǒ bùyào",
+        "I don't want it",
+        "I don't want it"
+      ],
+      [
+        "厕所在哪里？",
+        "Cèsuǒ zài nǎlǐ?",
+        "Where is the toilet?",
+        "Where is the toilet?"
+      ],
+      [
+        "能帮我叫滴滴吗？",
+        "Néng bāng wǒ jiào Dīdī ma?",
+        "Can you call me a DiDi?",
+        "Can you call me a DiDi?"
+      ],
+      [
+        "好的",
+        "Hǎo de",
+        "Okay / Got it",
+        "Okay / Got it"
+      ]
+    ]
+  },
+  "train": {
+    "caption": "China → Vietnam Transition",
+    "footer": "Part 6: Culture & Etiquette",
+    "columns": [
+      "Aspect",
+      "China (Beijing)",
+      "Vietnam (Hanoi/Hội An)"
+    ],
+    "rows": [
+      [
+        "Greeting",
+        "Nod, no touch",
+        "Friendly, may attempt handshake"
+      ],
+      [
+        "Tipping",
+        "Mostly no",
+        "Yes, appreciated"
+      ],
+      [
+        "Pace",
+        "Efficient, direct",
+        "Relaxed, meandering"
+      ],
+      [
+        "Eye contact",
+        "Moderate",
+        "Friendly, more direct"
+      ],
+      [
+        "English",
+        "Very limited",
+        "Moderate in tourist areas"
+      ],
+      [
+        "Noise level",
+        "Louder (normal)",
+        "Moderate"
+      ],
+      [
+        "Bargaining",
+        "Aggressive (markets)",
+        "Gentler, playful"
+      ],
+      [
+        "Food pace",
+        "Fast",
+        "Slow and social"
+      ]
+    ]
+  },
+  "temple": {
+    "caption": "Temple & Shrine Etiquette",
+    "footer": "Part 6: Culture & Etiquette",
+    "columns": [
+      "Setting",
+      "Do",
+      "Avoid"
+    ],
+    "rows": [
+      [
+        "China temples",
+        "Shoulders/knees covered; no flash where signed",
+        "Chopsticks upright in rice"
+      ],
+      [
+        "Vietnam pagodas",
+        "Remove shoes; borrow sarong if offered",
+        "Touching adults' heads"
+      ],
+      [
+        "Photos",
+        "Ask when unsure; respect 禁止拍照 signs",
+        "Drone without permit"
+      ]
+    ]
+  },
+  "footer": "China: no tipping · Vietnam: soft tip 10–15% at sit-down restaurants."
 }

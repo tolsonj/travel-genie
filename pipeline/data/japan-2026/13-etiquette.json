@@ -1,0 +1,111 @@
+{
+  "aspect": "13-etiquette",
+  "type": "etiquette",
+  "trip": "japan-2026",
+  "title": "Etiquette",
+  "slide_title": "ETIQUETTE",
+  "slide_title_accent": "GUIDE",
+  "footer": "Part 6: Culture & Etiquette",
+  "daily_norms": {
+    "caption": "Daily Norms & Social Etiquette",
+    "footer": "Part 6: Culture & Etiquette",
+    "columns": ["Situation", "Do", "Don't"],
+    "rows": [
+      ["Greeting", "Small bow or nod; arigatou gozaimasu", "Loud handshake default"],
+      ["Shoes", "Remove when tatami / some ryokan/inns", "Walk on tatami with outdoor shoes"],
+      ["Trash", "Pocket trash; konbini bins", "Eat walking + litter"],
+      ["Volume", "Quiet on trains, temples", "Phone calls on Shinkansen/local train"],
+      ["Tipping", "Never", "Leave coins — staff may chase you"],
+      ["Queues", "Single file; wait marked lines", "Cut"],
+      ["Photos", "Ask at shrines/shops if unsure", "Flash in dark halls; drone without permit"],
+      ["Smoking", "Use designated zones", "Walk-smoke (illegal many wards)"],
+      ["Cash", "Carry ¥5,000–10,000", "Assume every stall takes card"],
+      ["Hot weather", "Sleeve in temples (light scarf)", "Shirtless in public"]
+    ]
+  },
+  "phrases": {
+    "caption": "Essential Japanese Phrases",
+    "footer": "Part 6: Culture & Etiquette",
+    "columns": ["Japanese", "Romaji", "When to Use", "Meaning"],
+    "rows": [
+      ["すみません", "Sumimasen", "Get attention / apologize", "Excuse me / sorry"],
+      ["ありがとうございます", "Arigatou gozaimasu", "After service or help", "Thank you (standard)"],
+      ["お願いします", "Onegaishimasu", "Ordering, asking", "Please"],
+      ["ひとりです", "Hitori desu", "Entering restaurant", "Table for one"],
+      ["おすすめは？", "Osusume wa?", "At counter / menu", "What do you recommend?"],
+      ["英語メニューありますか？", "Eigo menu arimasu ka?", "Sit-down restaurants", "English menu?"],
+      ["ごちそうさまでした", "Gochisousama deshita", "Leaving restaurant", "Thank you for the meal"],
+      ["トイレはどこですか？", "Toire wa doko desu ka?", "Anywhere", "Where is the bathroom?"],
+      ["これください", "Kore kudasai", "Markets / konbini", "This one please"],
+      ["いくらですか？", "Ikura desu ka?", "Shops / stalls", "How much?"]
+    ]
+  },
+  "train": {
+    "caption": "Train & Shinkansen Etiquette",
+    "footer": "Part 6: Culture & Etiquette",
+    "columns": ["Rule", "Detail"],
+    "rows": [
+      ["Priority seats", "Avoid unless marked open; yield to elderly"],
+      ["Backpack", "Front pack or between feet in rush hour"],
+      ["Talking", "Low voice; no speakerphone"],
+      ["Food", "OK on Shinkansen; avoid strong smells on commuter metro"],
+      ["Queue marks", "Stand on platform floor arrows"],
+      ["JR Pass seats", "Sit in unreserved or reserved seat on ticket — not Green unless paid"],
+      ["Late night", "Last trains ~midnight Tokyo; plan taxi or stay near Dotonbori"]
+    ]
+  },
+  "temple": {
+    "caption": "Temple & Shrine Etiquette",
+    "footer": "Part 6: Culture & Etiquette",
+    "columns": ["Shinto Shrine", "Step", "Buddhist Temple"],
+    "rows": [
+      ["Torii = bow once entering/leaving", "Entry", "Gate bow optional"],
+      ["Rinse left hand, right hand, mouth at chozuya", "Purify", "Same if present"],
+      ["2 bows, 2 claps, 1 bow at main hall", "Pray", "Incense, single bow; no clap at some"],
+      ["Coin in box; no required amount", "Donation", "Same"],
+      ["Check signs; no drones", "Photography", "Interior often no photo"],
+      ["Quiet paths; step aside for ceremonies", "Attire", "Cover shoulders in halls"]
+    ]
+  },
+  "dining": {
+    "caption": "Dining, Ryokan & Onsen Etiquette",
+    "footer": "Part 6: Culture & Etiquette",
+    "columns": [
+      {
+        "heading": "Dining Etiquette (Solo)",
+        "items": [
+          { "label": "Chopsticks", "detail": "Don't stick upright in rice; don't pass food chopstick-to-chopstick", "icon": "🥢" },
+          { "label": "Slurping", "detail": "Noodles — OK and appreciated", "icon": "🍜" },
+          { "label": "Soy sauce", "detail": "Don't pour over rice bowl at kaiseki", "icon": "🍶" },
+          { "label": "Izakaya", "detail": "Order drink first; shared plates normal even solo", "icon": "🍺" },
+          { "label": "Sushi counter", "detail": "Ask chef omakase or point; eat piece within moment", "icon": "🍣" },
+          { "label": "Kushikatsu", "detail": "No double-dipping sauce (one bite per dip rule)", "icon": "🍢" },
+          { "label": "Konbini", "detail": "Eat at store counter or park bench — not walking", "icon": "🏪" }
+        ]
+      },
+      {
+        "heading": "Ryokan & Onsen (Takayama Night)",
+        "items": [
+          { "label": "Onsen order", "detail": "Wash body completely before entering tub", "icon": "♨" },
+          { "label": "Tattoos", "detail": "Some public baths restrict — ryokan private bath often OK", "icon": "🎨" },
+          { "label": "Towel", "detail": "Never in tub water; fold on head or edge", "icon": "🧖" },
+          { "label": "Solo", "detail": "Normal; quiet soak", "icon": "👤" },
+          { "label": "Yukata", "detail": "Left over right (right = deceased)", "icon": "👘" },
+          { "label": "Dinner", "detail": "Arrive on time for kaiseki seatings", "icon": "🍽" }
+        ]
+      }
+    ]
+  },
+  "intro": "---",
+  "bullets": [
+    {
+      "heading": "Regional Notes",
+      "items": [
+        "Tokyo: Stand left on escalators; few trash bins — carry out.",
+        "Kyoto: Softer voice in Gion; no blocking geiko for photos.",
+        "Osaka: Casual food culture — still no litter."
+      ]
+    }
+  ],
+  "callouts": []
+}

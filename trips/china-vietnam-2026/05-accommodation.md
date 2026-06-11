@@ -2,7 +2,7 @@
 step: "05-accommodation"
 title: "Accommodation"
 trip: "china-vietnam-2026"
-created: 2026-05-25
+created: 2026-06-03
 depends_on:
   - "[[profile]]"
   - "[[01-traveler-profile]]"
@@ -16,29 +16,39 @@ tags:
 
 ## Reasoning
 
-4–5 star requirement; US booking platforms (Marriott, Hilton, IHG, Hyatt, Expedia); splurge in Vietnam. September is slightly off-peak in Beijing (post-summer, pre-Golden Week Oct 1–7 holiday surge). Vietnam September is shoulder season — good availability but book ahead for beachfront resorts. All hotels selected to minimize transit to planned activities. Vietnam base must be a beachfront resort for the beach walk/nature view "perfect day" template.
+4–5 star requirement; US booking platforms (Marriott, Hilton, IHG, Hyatt, Expedia); splurge in Vietnam. September is shoulder season in Hong Kong and Guangzhou (pre–Golden Week). Vietnam September: book beachfront resorts early. Hotels minimize transit to Peak, harbour, Shamian, and Pearl River activities. Vietnam base = Mỹ Khê beachfront for the profile “perfect day.”
 
 ## Output
 
-### Beijing — 5 Nights (Sept 1–6)
+### Hong Kong — 3 Nights (Sept 1–3)
 
-**Recommended neighborhood**: Dongcheng District / Wangfujing area  
-Rationale: Walking distance to Forbidden City, Wangfujing shopping, easy subway access to Temple of Heaven and hutongs; all planned Beijing activities within 30 min.
-
-#### Top Hotel Options (US Bookable)
+**Neighborhood**: Tsim Sha Tsui or Central  
+Rationale: Victoria Peak, Star Ferry, IFC/Landmark shopping, Airport Express access.
 
 | Hotel | Stars | Rate Est. | Why |
 |-------|-------|-----------|-----|
-| **Rosewood Beijing** | 5★ | $400–550/night | Best luxury in Dongcheng; spa, contemporary Chinese art collection; Wangfujing walking distance |
-| **The Peninsula Beijing** | 5★ | $350–500/night | Legend property; impeccable service; Peninsula shopping arcade; closest to Forbidden City |
-| **Waldorf Astoria Beijing** | 5★ | $300–450/night | Near Financial District; slightly further but excellent pool and service; Hilton Honors bookable |
-| **The Opposite House** | 5★ boutique | $280–400/night | Sanlitun area — best for nightlife/bar access; Design hotel; slightly outside main sightseeing zone |
+| **The Peninsula Hong Kong** | 5★ | $500–750/night | Iconic harbour; Star Ferry steps away |
+| **Mandarin Oriental Hong Kong** | 5★ | $450–650/night | Central; Peak Tram nearby |
+| **Hyatt Centric Victoria Harbour** | 4★ | $250–380/night | TST; Marriott/Hyatt bookable on US OTAs |
 
-**Recommended**: **The Peninsula Beijing** — service level matches luxury traveler profile; location is unmatched for Forbidden City and Wangfujing access.
+**Recommended**: **Peninsula HK** or **Mandarin Oriental** — matches 4–5★ profile; harbour walks on itinerary.
 
-**Book via**: peninsula.com or Virtuoso travel agent (Peninsula doesn't offer full rates on OTA; direct booking gets hotel benefits); alternatively Hotels.com or Booking.com for comparable prices.
+**Budget (3 nights)**: ~$1,200–1,800 total.
 
-**Budget for Beijing (5 nights)**: ~$2,000–2,500 (at mid-range of luxury scale); leaves majority of $20K for Vietnam splurge.
+---
+
+### Guangzhou — 2 Nights (Sept 4–5)
+
+**Neighborhood**: Tianhe (Taikoo Hui) or Shamian Island  
+Rationale: Near Chen Clan Hall, Pearl River, rail to West Kowloon return path.
+
+| Hotel | Stars | Rate Est. | Why |
+|-------|-------|-----------|-----|
+| **Four Seasons Guangzhou** | 5★ | $280–420/night | Tianhe; river views |
+| **Ritz-Carlton Guangzhou** | 5★ | $250–380/night | Marriott bookable |
+| **White Swan Hotel** | 5★ | $200–320/night | Shamian; classic luxury |
+
+**Budget (2 nights)**: ~$500–800.
 
 ---
 

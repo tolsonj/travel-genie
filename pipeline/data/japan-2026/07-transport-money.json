@@ -1,0 +1,551 @@
+{
+  "aspect": "07-transport-money",
+  "type": "dashboard",
+  "trip": "japan-2026",
+  "title": "Transport Money",
+  "slide_title": "TRANSPORT",
+  "intro": "Recommendation: Skip JR Pass; book Hikari + Hida seats on [SmartEX](https://smart-ex.jp/en/) / [Eki-net](https://www.eki-net.com) / JR East Travel Service Center 4 weeks before travel. Aligns with 04-master-itinerary rail days but avoids overpaying for pass subsidy.",
+  "tables": [
+    {
+      "caption": "Pass options (foreign tourist, 2026 baseline — verify at [japanrailpass.net](https://www.japanrailpass.net/en/) before purchase)",
+      "columns": [
+        "Pass",
+        "Duration",
+        "Approx price",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "JR Pass Ordinary",
+          "7 consecutive days",
+          "¥50,000 (~$335 @ ¥150/$)",
+          "Hikari/Kodama shinkansen; most JR local; not Nozomi (unless paid add-on where offered)"
+        ],
+        [
+          "JR Pass Ordinary",
+          "14 consecutive days",
+          "¥80,000 (~$535)",
+          "Overkill for 14-day trip with only 3 inter-hub moves"
+        ],
+        [
+          "Regional passes",
+          "Varies",
+          "¥15,000–25,000",
+          "Poor fit—route crosses Tokaido + Hida, not one region"
+        ]
+      ]
+    },
+    {
+      "caption": "Legs inside a Jul 29 – Aug 4 activation window",
+      "columns": [
+        "Date",
+        "Leg",
+        "Mode",
+        "Est. cost (individual, reserved)",
+        "JR Pass?"
+      ],
+      "rows": [
+        [
+          "Jul 29",
+          "Tokyo → Nagoya",
+          "Tokaido Shinkansen Hikari",
+          "¥10,890",
+          "✅"
+        ],
+        [
+          "Jul 29",
+          "Nagoya → Takayama",
+          "Hida Limited Express",
+          "¥6,330",
+          "✅ (seat reservation required)"
+        ],
+        [
+          "Jul 31",
+          "Takayama → Nagoya",
+          "Hida Limited Express",
+          "¥6,330",
+          "✅"
+        ],
+        [
+          "Jul 31",
+          "Nagoya → Kyoto",
+          "Shinkansen Hikari",
+          "¥5,170",
+          "✅"
+        ],
+        [
+          "Aug 4",
+          "Kyoto → Osaka",
+          "JR Special Rapid",
+          "¥580",
+          "✅"
+        ],
+        [
+          "Pass window",
+          "Kyoto/Osaka local JR (minor)",
+          "IC / pass",
+          "~¥1,500",
+          "✅ partial"
+        ],
+        [
+          "Subtotal",
+          "",
+          "",
+          "~¥30,800 (~$205)",
+          ""
+        ]
+      ]
+    },
+    {
+      "caption": "Legs outside pass value (pay separately)",
+      "columns": [
+        "When",
+        "Leg",
+        "Mode",
+        "Est. cost"
+      ],
+      "rows": [
+        [
+          "Jul 24",
+          "Airport → Tokyo hotel",
+          "N'EX / Keisei / Monorail+JR",
+          "¥600–3,250"
+        ],
+        [
+          "Jul 24–28",
+          "Tokyo metro/JR local",
+          "Suica",
+          "~¥1,000/day → ~¥5,000"
+        ],
+        [
+          "Jul 27",
+          "Tokyo ↔ Kamakura/Enoshima",
+          "JR + Enoden",
+          "~¥1,900 round trip"
+        ],
+        [
+          "Jul 30",
+          "Takayama ↔ Shirakawa-go",
+          "Nohi highway bus",
+          "~¥2,600–3,000 RT"
+        ],
+        [
+          "Jul 31–Aug 3",
+          "Kyoto temples",
+          "City bus (not JR)",
+          "¥230/ride or ¥700 day pass"
+        ],
+        [
+          "Aug 6",
+          "Namba → KIX",
+          "Nankai Rapi:t or JR Haruka",
+          "¥930–2,850"
+        ],
+        [
+          "Optional",
+          "Takkyubin luggage",
+          "Courier",
+          "¥2,000–2,500/bag"
+        ]
+      ]
+    },
+    {
+      "caption": "Verdict",
+      "columns": [
+        "Strategy",
+        "Est. total (intercity + pass-eligible JR)",
+        "vs 7-day pass"
+      ],
+      "rows": [
+        [
+          "Individual tickets (recommended)",
+          "~¥30,800 (~$205) + reservations",
+          "Save ~¥19,200 (~$130) vs ¥50,000 pass"
+        ],
+        [
+          "7-day JR Pass activated Jul 29",
+          "¥50,000 (~$335)",
+          "Only wins if you add ¥19,000+ extra JR travel in-window (e.g. Nikko day ¥5,500+, Himeji ¥4,000+, multiple Tokyo JR day trips)"
+        ]
+      ]
+    },
+    {
+      "caption": "Arrival — Jul 24 (NRT or HND)",
+      "columns": [
+        "Airport",
+        "Recommended",
+        "Time",
+        "Cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "NRT",
+          "Narita Express (N'EX) to Tokyo/Ueno",
+          "45–60 min",
+          "¥3,070–3,250",
+          "Reserve if suitcase; JR Pass not worth it for this leg alone"
+        ],
+        [
+          "NRT",
+          "Keisei Access / Skyliner",
+          "40–50 min",
+          "¥1,000–2,580",
+          "Skyliner faster to Nippori, then subway"
+        ],
+        [
+          "HND",
+          "Keikyu to Shinagawa + JR",
+          "25–35 min",
+          "¥330–500",
+          "Best if hotel near Yamanote"
+        ],
+        [
+          "HND",
+          "Tokyo Monorail → Hamamatsuchō + JR",
+          "30 min",
+          "¥500–700",
+          "Simple with Suica"
+        ]
+      ]
+    },
+    {
+      "caption": "Departure — Aug 6 (KIX from Osaka)",
+      "columns": [
+        "From",
+        "Mode",
+        "Time",
+        "Cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Namba",
+          "Nankai Rapi:t",
+          "38 min",
+          "¥1,430–1,630",
+          "Match itinerary hotel zone"
+        ],
+        [
+          "Shin-Osaka",
+          "Haruka (JR)",
+          "50 min",
+          "¥2,850 (reserved)",
+          "JR Pass holders: covered with seat fee if using pass"
+        ],
+        [
+          "Either",
+          "Allow 2.5–3 hr before intl departure",
+          "—",
+          "—",
+          "Summer queues + security"
+        ]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Intercity Legs (Booked Tickets)",
+      "items": [
+        "Buy ekiben at Tokyo Station before Jul 29 departure.",
+        "Takkyubin: Forward large bag Tokyo → Kyoto hotel on Jul 28 (04-master-itinerary Day 5); carry 3-day pack to Takayama.",
+        "Shirakawa-go (Jul 30): Nohi Bus — not JR; book RT ~2–4 weeks ahead ([www.nouhibus.jp](https://www.nouhibus.jp/))."
+      ]
+    },
+    {
+      "heading": "Money Management",
+      "items": [
+        "0% foreign transaction fee: Chase Sapphire, Capital One Venture, etc.",
+        "Acceptance: Hotels/chains yes; many dinner-only spots cash only.",
+        "Set PIN before departure (chip+PIN common).",
+        "Pay in JPY at terminal—decline dynamic currency conversion.",
+        "App: Trail Wallet or Notes—log daily ¥ spend.",
+        "Transport target: ~$400–450 on-ground (excl. intl flights) ≈ 8–9% of $5,000 ✅"
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "status": "pass",
+      "text": "8 validation check(s) passed in source plan."
+    }
+  ],
+  "slide_title_accent": "MONEY",
+  "section_label": "Transport Money",
+  "section_kicker": "JR Pass verdict · legs · airport transfers · yen",
+  "banner": {
+    "text": "Recommendation: Skip JR Pass; book Hikari + Hida seats on [SmartEX](https://smart-ex.jp/en/) / [Eki-net](https://www.eki-net.com) / JR East Travel Service Center 4 weeks before travel. Aligns with 04-master-itinerary rail days but avoids overpaying for pass subsidy."
+  },
+  "sidebar": [
+    {
+      "type": "list",
+      "caption": "Intercity Legs (Booked Tickets)",
+      "items": [
+        "Buy ekiben at Tokyo Station before Jul 29 departure.",
+        "Takkyubin: Forward large bag Tokyo → Kyoto hotel on Jul 28 (04-master-itinerary Day 5); carry 3-day pack to Takayama.",
+        "Shirakawa-go (Jul 30): Nohi Bus — not JR; book RT ~2–4 weeks ahead ([www.nouhibus.jp](https://www.nouhibus.jp/))."
+      ],
+      "ordered": false
+    },
+    {
+      "type": "list",
+      "caption": "Money Management",
+      "items": [
+        "0% foreign transaction fee: Chase Sapphire, Capital One Venture, etc.",
+        "Acceptance: Hotels/chains yes; many dinner-only spots cash only.",
+        "Set PIN before departure (chip+PIN common).",
+        "Pay in JPY at terminal—decline dynamic currency conversion.",
+        "App: Trail Wallet or Notes—log daily ¥ spend.",
+        "Transport target: ~$400–450 on-ground (excl. intl flights) ≈ 8–9% of $5,000 ✅"
+      ],
+      "ordered": false
+    },
+    {
+      "type": "validations",
+      "items": [
+        {
+          "status": "pass",
+          "text": "8 validation check(s) passed in source plan."
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "caption": "Pass options (foreign tourist, 2026 baseline — verify at [japanrailpass.net](https://www.japanrailpass.net/en/) before purchase)",
+      "columns": [
+        "Pass",
+        "Duration",
+        "Approx price",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "JR Pass Ordinary",
+          "7 consecutive days",
+          "¥50,000 (~$335 @ ¥150/$)",
+          "Hikari/Kodama shinkansen; most JR local; not Nozomi (unless paid add-on where offered)"
+        ],
+        [
+          "JR Pass Ordinary",
+          "14 consecutive days",
+          "¥80,000 (~$535)",
+          "Overkill for 14-day trip with only 3 inter-hub moves"
+        ],
+        [
+          "Regional passes",
+          "Varies",
+          "¥15,000–25,000",
+          "Poor fit—route crosses Tokaido + Hida, not one region"
+        ]
+      ]
+    },
+    {
+      "caption": "Legs inside a Jul 29 – Aug 4 activation window",
+      "columns": [
+        "Date",
+        "Leg",
+        "Mode",
+        "Est. cost (individual, reserved)",
+        "JR Pass?"
+      ],
+      "rows": [
+        [
+          "Jul 29",
+          "Tokyo → Nagoya",
+          "Tokaido Shinkansen Hikari",
+          "¥10,890",
+          "✅"
+        ],
+        [
+          "Jul 29",
+          "Nagoya → Takayama",
+          "Hida Limited Express",
+          "¥6,330",
+          "✅ (seat reservation required)"
+        ],
+        [
+          "Jul 31",
+          "Takayama → Nagoya",
+          "Hida Limited Express",
+          "¥6,330",
+          "✅"
+        ],
+        [
+          "Jul 31",
+          "Nagoya → Kyoto",
+          "Shinkansen Hikari",
+          "¥5,170",
+          "✅"
+        ],
+        [
+          "Aug 4",
+          "Kyoto → Osaka",
+          "JR Special Rapid",
+          "¥580",
+          "✅"
+        ],
+        [
+          "Pass window",
+          "Kyoto/Osaka local JR (minor)",
+          "IC / pass",
+          "~¥1,500",
+          "✅ partial"
+        ],
+        [
+          "Subtotal",
+          "",
+          "",
+          "~¥30,800 (~$205)",
+          ""
+        ]
+      ]
+    },
+    {
+      "caption": "Legs outside pass value (pay separately)",
+      "columns": [
+        "When",
+        "Leg",
+        "Mode",
+        "Est. cost"
+      ],
+      "rows": [
+        [
+          "Jul 24",
+          "Airport → Tokyo hotel",
+          "N'EX / Keisei / Monorail+JR",
+          "¥600–3,250"
+        ],
+        [
+          "Jul 24–28",
+          "Tokyo metro/JR local",
+          "Suica",
+          "~¥1,000/day → ~¥5,000"
+        ],
+        [
+          "Jul 27",
+          "Tokyo ↔ Kamakura/Enoshima",
+          "JR + Enoden",
+          "~¥1,900 round trip"
+        ],
+        [
+          "Jul 30",
+          "Takayama ↔ Shirakawa-go",
+          "Nohi highway bus",
+          "~¥2,600–3,000 RT"
+        ],
+        [
+          "Jul 31–Aug 3",
+          "Kyoto temples",
+          "City bus (not JR)",
+          "¥230/ride or ¥700 day pass"
+        ],
+        [
+          "Aug 6",
+          "Namba → KIX",
+          "Nankai Rapi:t or JR Haruka",
+          "¥930–2,850"
+        ],
+        [
+          "Optional",
+          "Takkyubin luggage",
+          "Courier",
+          "¥2,000–2,500/bag"
+        ]
+      ]
+    },
+    {
+      "caption": "Verdict",
+      "columns": [
+        "Strategy",
+        "Est. total (intercity + pass-eligible JR)",
+        "vs 7-day pass"
+      ],
+      "rows": [
+        [
+          "Individual tickets (recommended)",
+          "~¥30,800 (~$205) + reservations",
+          "Save ~¥19,200 (~$130) vs ¥50,000 pass"
+        ],
+        [
+          "7-day JR Pass activated Jul 29",
+          "¥50,000 (~$335)",
+          "Only wins if you add ¥19,000+ extra JR travel in-window (e.g. Nikko day ¥5,500+, Himeji ¥4,000+, multiple Tokyo JR day trips)"
+        ]
+      ]
+    },
+    {
+      "caption": "Arrival — Jul 24 (NRT or HND)",
+      "columns": [
+        "Airport",
+        "Recommended",
+        "Time",
+        "Cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "NRT",
+          "Narita Express (N'EX) to Tokyo/Ueno",
+          "45–60 min",
+          "¥3,070–3,250",
+          "Reserve if suitcase; JR Pass not worth it for this leg alone"
+        ],
+        [
+          "NRT",
+          "Keisei Access / Skyliner",
+          "40–50 min",
+          "¥1,000–2,580",
+          "Skyliner faster to Nippori, then subway"
+        ],
+        [
+          "HND",
+          "Keikyu to Shinagawa + JR",
+          "25–35 min",
+          "¥330–500",
+          "Best if hotel near Yamanote"
+        ],
+        [
+          "HND",
+          "Tokyo Monorail → Hamamatsuchō + JR",
+          "30 min",
+          "¥500–700",
+          "Simple with Suica"
+        ]
+      ]
+    },
+    {
+      "caption": "Departure — Aug 6 (KIX from Osaka)",
+      "columns": [
+        "From",
+        "Mode",
+        "Time",
+        "Cost",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Namba",
+          "Nankai Rapi:t",
+          "38 min",
+          "¥1,430–1,630",
+          "Match itinerary hotel zone"
+        ],
+        [
+          "Shin-Osaka",
+          "Haruka (JR)",
+          "50 min",
+          "¥2,850 (reserved)",
+          "JR Pass holders: covered with seat fee if using pass"
+        ],
+        [
+          "Either",
+          "Allow 2.5–3 hr before intl departure",
+          "—",
+          "—",
+          "Summer queues + security"
+        ]
+      ]
+    }
+  ]
+}

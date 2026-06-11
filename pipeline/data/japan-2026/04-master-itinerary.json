@@ -1,0 +1,254 @@
+{
+  "aspect": "04-master-itinerary",
+  "type": "master-itinerary",
+  "trip": "japan-2026",
+  "title": "Master Itinerary",
+  "slide_title": "MASTER",
+  "slide_title_accent": "ITINERARY",
+  "intro": "Approximate dates: Friday July 24 – Thursday August 6, 2026",
+  "parts": [
+    {
+      "subtitle": "Day-by-Day Schedule (Part 1)",
+      "footer": "PART 1: TOKYO ARRIVAL & NEIGHBORHOODS",
+      "featured_index": 0,
+      "next_segment": "Next Segments: Kamakura, Tsukiji & Japanese Alps (Part 2)",
+      "days": [
+        {
+          "day": 1,
+          "title": "Day 1 — Arrival (Soft)",
+          "location": "NRT/HND → Tokyo hotel",
+          "schedule": [
+            { "time": "Morning", "activity": "Land NRT or HND; VJW QR immigration/customs; train to hotel" },
+            { "time": "Afternoon", "activity": "Check-in; buy/load Suica; konbini lunch; short neighborhood walk" },
+            { "time": "Evening", "activity": "Early ramen or gyudon; bed by 21:00 (jet lag)" }
+          ],
+          "wow_moment": "First night skyline — Sumida River or Tokyo Station Marunouchi facades",
+          "low_energy": "Hotel convenience store dinner only",
+          "rainy_day": "Underground Tokyo Station → Marunouchi + depachika",
+          "transit": "~1.5 hrs airport → hotel"
+        },
+        {
+          "day": 2,
+          "title": "Day 2 — Ueno Nature + Asakusa",
+          "location": "Ueno / Asakusa",
+          "schedule": [
+            { "time": "07:30", "activity": "Ueno Park — Shinobazu Pond lotus; optional Tokyo National Museum" },
+            { "time": "Afternoon", "activity": "Sensō-ji outer grounds; Kappabashi kitchen street" },
+            { "time": "Evening", "activity": "Hoppy Street izakaya or Ameyoko market grazing" }
+          ],
+          "wow_moment": "Lotus pond reflection at Shinobazu before crowds",
+          "low_energy": "Museum-only morning; skip Nakamise",
+          "rainy_day": "Full museum day + covered Nakamise arcade"
+        },
+        {
+          "day": 3,
+          "title": "Day 3 — Meiji Forest + Shinjuku",
+          "location": "Meiji / Harajuku / Shinjuku",
+          "schedule": [
+            { "time": "08:00", "activity": "Meiji Jingu forest approach — shaded, quiet" },
+            { "time": "Afternoon", "activity": "Yoyogi Park edges; Omotesando backstreets" },
+            { "time": "Evening", "activity": "Omoide Yokocho or Golden Gai (early)" }
+          ],
+          "wow_moment": "Torii tunnel at Meiji in morning mist after rain",
+          "low_energy": "Meiji only; afternoon café and hotel bath",
+          "rainy_day": "Teien Art Museum or teamLab Planets (book ahead)"
+        }
+      ]
+    },
+    {
+      "subtitle": "Day-by-Day Schedule (Part 2)",
+      "footer": "PART 2: TOKYO & JAPAN ALPS PLANNING",
+      "featured_index": 1,
+      "next_segment": "Next Segments: Kyoto, Osaka, & Departure (Part 3)",
+      "days": [
+        {
+          "day": 4,
+          "title": "Day 4 — Kamakura Coast",
+          "location": "Kamakura / Enoshima",
+          "schedule": [
+            { "time": "07:30", "activity": "JR to Kamakura — Daibutsu (Great Buddha) wooded approach" },
+            { "time": "Afternoon", "activity": "Enoshima or Hase coastal walk; Enoden line scenery" },
+            { "time": "Evening", "activity": "Return Tokyo; simple dinner near hotel" }
+          ],
+          "wow_moment": "Enoden coastal tram view with Fuji on clear days",
+          "low_energy": "Kamakura town + Buddha only; skip Enoshima climb",
+          "rainy_day": "Nikko Toshogu OR Edo-Tokyo Museum"
+        },
+        {
+          "day": 5,
+          "title": "Day 5 — Tokyo: Market & Imperial",
+          "location": "Tsukiji / Imperial Palace",
+          "schedule": [
+            { "time": "07:00", "activity": "Tsukiji Outer Market — sushi breakfast, tamagoyaki" },
+            { "time": "Afternoon", "activity": "Imperial Palace East Gardens (shaded history)" },
+            { "time": "Evening", "activity": "Pack/prep — takkyubin to Kyoto if sending luggage" }
+          ],
+          "wow_moment": "Sashimi breakfast standing at Tsukiji counter",
+          "low_energy": "Market only; skip palace gardens",
+          "rainy_day": "Depachika Tokyo Station + Japan Food Town indoor"
+        },
+        {
+          "day": 6,
+          "title": "Day 6 — Transit + Takayama",
+          "location": "Tokyo → Takayama",
+          "schedule": [
+            { "time": "Morning", "activity": "Shinkansen Tokyo → Nagoya + Hida Limited Express; activate JR Pass" },
+            { "time": "Afternoon", "activity": "Sanmachi Suji preserved merchant streets" },
+            { "time": "Evening", "activity": "Hida beef dinner (reserve) — splurge night" }
+          ],
+          "wow_moment": "Cedar-scented old town at dusk",
+          "low_energy": "Hotel onsen/rest only after rail day",
+          "rainy_day": "Sake brewery tastings + Hida Folk Village",
+          "transit": "~4.5 hrs Tokyo → Takayama"
+        }
+      ]
+    },
+    {
+      "subtitle": "Day-by-Day Schedule (Part 3)",
+      "footer": "PART 3: ALPS FINISH & KYOTO",
+      "featured_index": 0,
+      "next_segment": "Next Segments: Arashiyama, Higashiyama & Osaka (Part 4)",
+      "days": [
+        {
+          "day": 7,
+          "title": "Day 7 — Shirakawa-go",
+          "location": "Shirakawa-go / Takayama",
+          "schedule": [
+            { "time": "08:00", "activity": "Highway bus to Shirakawa-go gassho-zukuri village" },
+            { "time": "Afternoon", "activity": "Return Takayama; Miyagawa Morning Market or riverside walk" },
+            { "time": "Evening", "activity": "Light soba or hotel kaiseki-lite; early sleep" }
+          ],
+          "wow_moment": "Ogimachi viewpoint over thatched roofs before 10:00 crowds",
+          "low_energy": "Takayama market + onsen only; skip Shirakawa-go",
+          "rainy_day": "Hida Takayama Museum + covered arcade",
+          "transit": "Highway bus day trip (book RT)"
+        },
+        {
+          "day": 8,
+          "title": "Day 8 — Transit + Nishiki",
+          "location": "Takayama → Kyoto",
+          "schedule": [
+            { "time": "Morning", "activity": "Hida Express → Nagoya → Shinkansen Kyoto; receive forwarded luggage" },
+            { "time": "Afternoon", "activity": "Nishiki Market covered food arcade; Pontocho stroll" },
+            { "time": "Evening", "activity": "Casual izakaya near Kawaramachi; early night" }
+          ],
+          "wow_moment": "First Kyoto canal glimpse at twilight near Pontocho",
+          "low_energy": "Market grazing only; hotel bath",
+          "rainy_day": "Nishiki fully covered; Kyoto Railway Museum",
+          "transit": "~3.5 hrs Takayama → Kyoto"
+        },
+        {
+          "day": 9,
+          "title": "Day 9 — Fushimi Inari + Sake",
+          "location": "Fushimi / Gion",
+          "schedule": [
+            { "time": "05:30", "activity": "Fushimi Inari — torii tunnel to first overlook" },
+            { "time": "Afternoon", "activity": "Fushimi sake district — Gekkeikan Okura Museum" },
+            { "time": "Evening", "activity": "Gion backstreets at distance; Pontocho or Nishijin soba" }
+          ],
+          "wow_moment": "Empty torii corridor in early light",
+          "low_energy": "Fushimi base only; return hotel by 11:00",
+          "rainy_day": "Inari with umbrella; afternoon indoor sake museum"
+        }
+      ]
+    },
+    {
+      "subtitle": "Day-by-Day Schedule (Part 4)",
+      "footer": "PART 4: KYOTO DEEP DIVE & OSAKA",
+      "featured_index": 0,
+      "next_segment": "Next Segments: Castle, Departure & Wrap-Up (Part 5)",
+      "days": [
+        {
+          "day": 10,
+          "title": "Day 10 — Arashiyama Bamboo",
+          "location": "Arashiyama / Western Kyoto",
+          "schedule": [
+            { "time": "07:00", "activity": "Bamboo grove then Tenryu-ji garden (shade)" },
+            { "time": "Afternoon", "activity": "Hozu River walk or Katsura cycle paths" },
+            { "time": "Evening", "activity": "Obanzai dinner at Warajiya (reserve)" }
+          ],
+          "wow_moment": "Bamboo grove when still quiet; river mountain backdrop",
+          "low_energy": "Tenryu-ji garden only; tram back to central Kyoto",
+          "rainy_day": "Sagano Romantic Train or Manga Museum + café"
+        },
+        {
+          "day": 11,
+          "title": "Day 11 — Higashiyama Dawn",
+          "location": "Kiyomizu / Philosopher's Path",
+          "schedule": [
+            { "time": "06:30", "activity": "Kiyomizu-dera early entry; Ninenzaka/Sannenzaka descent" },
+            { "time": "Afternoon", "activity": "Philosopher's Path → Ginkaku-ji (Silver Pavilion)" },
+            { "time": "Evening", "activity": "Pack for Osaka; yudofu or tofu kaiseki" }
+          ],
+          "wow_moment": "Kiyomizu stage view over Kyoto basin in morning air",
+          "low_energy": "Philosopher's Path flat walk only; skip Kiyomizu climb",
+          "rainy_day": "Nanzen-ji covered corridors + Kyoto National Museum"
+        },
+        {
+          "day": 12,
+          "title": "Day 12 — Transit + Dotonbori",
+          "location": "Kyoto → Osaka",
+          "schedule": [
+            { "time": "Morning", "activity": "JR Kyoto → Osaka (~30 min); hotel drop bags" },
+            { "time": "Afternoon", "activity": "Kuromon Ichiba Market — takoyaki, kushikatsu samples" },
+            { "time": "Evening", "activity": "Dotonbori neon food crawl — okonomiyaki, gyoza alley" }
+          ],
+          "wow_moment": "Glico sign reflection on canal after dark",
+          "low_energy": "Kuromon only; convenience-store dinner",
+          "rainy_day": "Osaka Aquarium Kaiyukan or Umeda Sky Building",
+          "transit": "~0.5 hr Kyoto → Osaka"
+        }
+      ]
+    },
+    {
+      "subtitle": "Day-by-Day Schedule (Part 5)",
+      "footer": "PART 5: OSAKA FINISH & DEPARTURE",
+      "featured_index": 0,
+      "next_segment": "End of itinerary — Jul 24 – Aug 6, 2026",
+      "days": [
+        {
+          "day": 13,
+          "title": "Day 13 — Castle + Namba",
+          "location": "Osaka Castle / Namba",
+          "schedule": [
+            { "time": "08:00", "activity": "Osaka Castle Park grounds and moat walk (exterior)" },
+            { "time": "Afternoon", "activity": "Namba Yasaka Shrine; Amerikamura café; Shinsekai kushikatsu" },
+            { "time": "Evening", "activity": "Final splurge kushikatsu or yakiniku; confirm KIX transfer" }
+          ],
+          "wow_moment": "Castle ramparts view from Nishinomaru Garden",
+          "low_energy": "Namba neighborhood food only; skip castle",
+          "rainy_day": "TeamLab Osaka or Kaiyukan full afternoon"
+        },
+        {
+          "day": 14,
+          "title": "Day 14 — Departure",
+          "location": "Osaka → KIX → US",
+          "schedule": [
+            { "time": "Morning", "activity": "Checkout; carry-on only or luggage already forwarded" },
+            { "time": "Midday", "activity": "Nankai Rapi:t or Haruka to KIX — allow 2.5–3 hrs pre-flight" },
+            { "time": "Afternoon", "activity": "Flight KIX → US (open-jaw completion)" }
+          ],
+          "wow_moment": "Last convenience-store onigiri at gate — trip bookend",
+          "low_energy": "Airport lounge if access; minimal morning activity",
+          "transit": "~1 hr Osaka → KIX + flight"
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "caption": "Booking Priority Queue (Itinerary-Level)",
+      "columns": ["Priority", "Item", "By when"],
+      "rows": [
+        ["1", "Open-jaw flights NRT/HND → KIX", "ASAP"],
+        ["2", "Tokyo + Takayama + Kyoto + Osaka hotels", "8–12 weeks out"],
+        ["3", "Shirakawa-go bus (Jul 30)", "4 weeks out"],
+        ["4", "JR Pass 7-day voucher + seat reservations Jul 29–Aug 4", "Before US departure"],
+        ["5", "Hida beef dinner Takayama (Jul 29 eve)", "2–4 weeks out"],
+        ["6", "teamLab / Kaiyukan / sake tour (if used)", "2–6 weeks out"],
+        ["7", "Visit Japan Web", "72 hrs before Jul 24 departure"]
+      ]
+    }
+  ],
+  "callouts": []
+}

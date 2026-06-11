@@ -2,7 +2,7 @@
 step: "06-shopping"
 title: "Shopping Strategy"
 trip: "china-vietnam-2026"
-created: 2026-05-25
+created: 2026-06-03
 depends_on:
   - "[[profile]]"
   - "[[01-traveler-profile]]"
@@ -28,18 +28,18 @@ Budget allocation proposed: tailoring ~$2,000–3,000; silk/fabric goods ~$500�
 
 ### 1. Country-by-Country Shopping Strength Matrix
 
-| Category | Beijing 🇨🇳 | Hanoi 🇻🇳 | Hội An / Đà Nẵng 🇻🇳 | Winner |
-|----------|------------|----------|----------------------|--------|
-| **Tailored / Bespoke Clothing** | ⭐⭐ (available; less specialized) | ⭐⭐ (decent; fewer English-speaking shops) | ⭐⭐⭐⭐⭐ (world-class; 400+ tailors) | **Hội An** |
-| **Silk & Fabric Goods** | ⭐⭐⭐⭐ (Suzhou silk; quality raw silk available) | ⭐⭐⭐ (good variety; slightly less selection) | ⭐⭐⭐⭐⭐ (Vietnamese silk; ao dai fabric; lanterns) | **Hội An / Beijing tie** |
-| **Designer Watches (Authorized)** | ⭐⭐ (authorized dealers in luxury malls; no price advantage vs US) | ⭐ (limited authorized dealers) | ⭐ (not a watch destination) | None — buy at home or Hong Kong |
-| **Designer Handbags (Authorized)** | ⭐⭐ (LV, Gucci, Chanel present; no price advantage vs US) | ⭐ (limited; authenticity risk high) | ⭐ (not a handbag destination) | None — no price advantage |
-| **Designer Shoes** | ⭐⭐ (international brands present; no savings) | ⭐ | ⭐ | Skip — no advantage |
-| **Athletic / Sneakers** | ⭐⭐⭐ (Nike, Adidas flagships; China-exclusive colorways available) | ⭐⭐ (standard stock) | ⭐ | **Beijing** |
-| **Artisan Crafts / Souvenirs** | ⭐⭐⭐⭐ (lacquerware, tea sets, silk scarves, jade) | ⭐⭐⭐ (lacquerware, propaganda art prints, handmade items) | ⭐⭐⭐⭐⭐ (lanterns, pottery, wood carvings, marble) | **Hội An** |
-| **Coffee / Food Souvenirs** | ⭐⭐ (tea; Chinese spices) | ⭐⭐⭐⭐ (Vietnamese coffee beans; best selection) | ⭐⭐⭐ (resort shops; Hội An market) | **Hanoi** |
+| Category | Hong Kong 🇭🇰 | Guangzhou 🇨🇳 | Hanoi 🇻🇳 | Hội An 🇻🇳 | Winner |
+|----------|-------------|----------------|----------|-----------|--------|
+| **Tailored / Bespoke** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ | **Hội An** (+ HK suits) |
+| **Silk & Fabric** | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | **Hội An** |
+| **Designer Watches** | ⭐⭐⭐⭐⭐ (authorized, duty-free) | ⭐⭐ | ⭐ | ⭐ | **Hong Kong** |
+| **Designer Handbags** | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐ | **Hong Kong** |
+| **Designer Shoes** | ⭐⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐ | **Hong Kong** |
+| **Athletic / Sneakers** | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐ | **HK / Guangzhou** |
+| **Artisan Crafts** | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | **Hội An** |
+| **Coffee / Food gifts** | ⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | **Hanoi** |
 
-**Spend priority**: Put the majority of shopping energy and budget in **Hội An** (Days 10–12). Beijing is excellent for crafts and sneakers. Hanoi's 2-day window is best used for coffee, lacquerware, and a quick Old Quarter browse.
+**Spend priority**: **Hội An** tailoring (Days 10–12); **Hong Kong** for luxury watches/handbags (IFC, Harbour City); **Guangzhou** for fabric/value; Hanoi for coffee.
 
 ---
 
