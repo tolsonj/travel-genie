@@ -4,7 +4,7 @@
   "trip": "japan-2026",
   "title": "Time Optimization",
   "slide_title": "TIME",
-  "intro": "---",
+  "intro": "Anchor window: Jul 24 (Fri) – Aug 6 (Thu), 2026 — 14 calendar days.",
   "tables": [
     {
       "caption": "",
@@ -372,7 +372,10 @@
   ],
   "slide_title_accent": "OPTIMIZATION",
   "section_label": "Time Optimization",
-  "section_kicker": "PTO · clustering · crowd timing · scorecard",
+  "section_kicker": "PTO · date-flex flights · crowd timing · scorecard",
+  "banner": {
+    "text": "Anchor window: Jul 24 (Fri) – Aug 6 (Thu), 2026 — 14 calendar days."
+  },
   "sidebar": [
     {
       "type": "list",

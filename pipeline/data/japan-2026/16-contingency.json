@@ -4,7 +4,7 @@
   "trip": "japan-2026",
   "title": "Contingency",
   "slide_title": "CONTINGENCY",
-  "intro": "---",
+  "intro": "Heat advisory (>35°C real-feel) - Action: Execute rainy/heat backups already in 04-master-itinerary—shift outdoor block to 06:00 start OR swap to indoor pivot - Tokyo: teamLab Planets, Teien Art Museum, depachika food floors - Takayama: Sake breweries, Hida Folk Village partial cover, hotel onsen - Kyoto: Railway Museum, Manga Museum, covered Nishiki Market - Osaka: Kaiyukan aquarium, TeamLab Osaka, Umeda Sky if evening clears - No phone needed for most pivots—self-directed",
   "tables": [
     {
       "caption": "Scenario 2: Typhoon Threatens KIX Departure (Aug 4–6)",
@@ -208,6 +208,9 @@
   "slide_title_accent": "",
   "section_label": "Contingency",
   "section_kicker": "Scenario playbooks · emergency numbers",
+  "banner": {
+    "text": "Heat advisory (>35°C real-feel) - Action: Execute rainy/heat backups already in 04-master-itinerary—shift outdoor block to 06:00 start OR swap to indoor pivot - Tokyo: teamLab Planets, Teien Art Museum, depachika food floors - Takayama: Sake breweries, Hida Folk Village partial cover, hotel onsen - Kyoto: Railway Museum, Manga Museum, covered Nishiki Market - Osaka: Kaiyukan aquarium, TeamLab Osaka, Umeda Sky if evening clears - No phone needed for most pivots—self-directed"
+  },
   "sidebar": [
     {
       "type": "table",

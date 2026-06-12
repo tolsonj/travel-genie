@@ -26,6 +26,11 @@
       "value": "Solo"
     },
     {
+      "icon": "✈️",
+      "label": "Home airport",
+      "value": "—"
+    },
+    {
       "icon": "💵",
       "label": "Budget",
       "value": "$5,000 USD (all-in: flights, lodging, food, activities, local transport, buffer)"

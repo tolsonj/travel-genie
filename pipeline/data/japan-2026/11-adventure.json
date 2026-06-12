@@ -4,7 +4,7 @@
   "trip": "japan-2026",
   "title": "Adventure",
   "slide_title": "ADVENTURE",
-  "intro": "---",
+  "intro": "Recommendation: If Shirakawa-go feels too touristy, swap to Kamikochi — stronger nature payoff for your interest stack.",
   "tables": [
     {
       "caption": "Fitness Profile Match",
@@ -191,6 +191,185 @@
           "Alpico bus seats summer peak"
         ]
       ]
+    },
+    {
+      "caption": "Mt Takao — Swap for Day 4 (Tokyo) instead of Kamakura",
+      "columns": [
+        "Item",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "Why",
+          "Forested mountain 45 min from Shinjuku; cooler elevation"
+        ],
+        [
+          "Access",
+          "Keio line to Takaosanguchi; cablecar or trail 1"
+        ],
+        [
+          "Trails",
+          "Trail 1 (paved, 90 min up); Trail 6 watercourse — more nature"
+        ],
+        [
+          "Elevation",
+          "599 m summit"
+        ],
+        [
+          "Duration",
+          "Half to full day"
+        ],
+        [
+          "Difficulty",
+          "Moderate — your fitness handles easily"
+        ],
+        [
+          "Crowds",
+          "Weekday better; Jul 27 Mon fits itinerary if Kamakura done elsewhere"
+        ],
+        [
+          "Gear",
+          "Trail shoes; insect repellent"
+        ]
+      ]
+    },
+    {
+      "caption": "Tokyo Urban Nature (Low-Intensity)",
+      "columns": [
+        "Site",
+        "Day",
+        "Activity"
+      ],
+      "rows": [
+        [
+          "Ueno Park / Shinobazu Pond",
+          "2",
+          "Flat 2 km loop; lotus viewing"
+        ],
+        [
+          "Meiji Jingu forest approach",
+          "3",
+          "1 km shaded walk"
+        ],
+        [
+          "Imperial East Gardens",
+          "5",
+          "Historical garden walk 1.5 km"
+        ]
+      ]
+    },
+    {
+      "caption": "Alps / Takayama Add-Ons",
+      "columns": [
+        "Activity",
+        "Duration",
+        "Difficulty"
+      ],
+      "rows": [
+        [
+          "Miyagawa riverside walk",
+          "30 min",
+          "Easy"
+        ],
+        [
+          "Hida Folk Village open-air",
+          "1.5 hr",
+          "Easy"
+        ],
+        [
+          "Bike rental Takayama",
+          "2 hr flat",
+          "Easy"
+        ]
+      ]
+    },
+    {
+      "caption": "Osaka Nature",
+      "columns": [
+        "Site",
+        "Day",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Osaka Castle Park moat loop",
+          "13",
+          "~3 km; morning before heat"
+        ],
+        [
+          "Namba parks",
+          "13",
+          "Low-key; not adventure anchor"
+        ]
+      ]
+    },
+    {
+      "caption": "Gear Checklist (Adventure Days)",
+      "columns": [
+        "Item",
+        "When"
+      ],
+      "rows": [
+        [
+          "Broken-in walking shoes",
+          "All hike days"
+        ],
+        [
+          "Lightweight rain shell",
+          "Alps + Kamakura"
+        ],
+        [
+          "2L water capacity",
+          "Kamikochi, Takao, Kamakura"
+        ],
+        [
+          "Sun hat + SPF 50",
+          "Every outdoor block"
+        ],
+        [
+          "Small towel",
+          "Takayama onsen days"
+        ],
+        [
+          "Trek poles",
+          "Optional; not required"
+        ]
+      ]
+    },
+    {
+      "caption": "Adventure Day vs Transit Day Matrix",
+      "columns": [
+        "Day",
+        "Adventure load",
+        "Transit?"
+      ],
+      "rows": [
+        [
+          "4",
+          "Kamakura OR Takao",
+          "No"
+        ],
+        [
+          "7",
+          "Shirakawa-go OR Kamikochi",
+          "No"
+        ],
+        [
+          "10",
+          "Arashiyama",
+          "No"
+        ],
+        [
+          "11",
+          "Kiyomizu + Philosopher's Path",
+          "No"
+        ],
+        [
+          "6, 8, 12",
+          "Soft — no major hike",
+          "Yes ✓"
+        ]
+      ]
     }
   ],
   "bullets": [
@@ -208,6 +387,9 @@
   "slide_title_accent": "",
   "section_label": "Adventure",
   "section_kicker": "Day hikes · Kamikochi option · gear · safety",
+  "banner": {
+    "text": "Recommendation: If Shirakawa-go feels too touristy, swap to Kamikochi — stronger nature payoff for your interest stack."
+  },
   "sidebar": [
     {
       "type": "list",
@@ -405,6 +587,185 @@
         [
           "Book",
           "Alpico bus seats summer peak"
+        ]
+      ]
+    },
+    {
+      "caption": "Mt Takao — Swap for Day 4 (Tokyo) instead of Kamakura",
+      "columns": [
+        "Item",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "Why",
+          "Forested mountain 45 min from Shinjuku; cooler elevation"
+        ],
+        [
+          "Access",
+          "Keio line to Takaosanguchi; cablecar or trail 1"
+        ],
+        [
+          "Trails",
+          "Trail 1 (paved, 90 min up); Trail 6 watercourse — more nature"
+        ],
+        [
+          "Elevation",
+          "599 m summit"
+        ],
+        [
+          "Duration",
+          "Half to full day"
+        ],
+        [
+          "Difficulty",
+          "Moderate — your fitness handles easily"
+        ],
+        [
+          "Crowds",
+          "Weekday better; Jul 27 Mon fits itinerary if Kamakura done elsewhere"
+        ],
+        [
+          "Gear",
+          "Trail shoes; insect repellent"
+        ]
+      ]
+    },
+    {
+      "caption": "Tokyo Urban Nature (Low-Intensity)",
+      "columns": [
+        "Site",
+        "Day",
+        "Activity"
+      ],
+      "rows": [
+        [
+          "Ueno Park / Shinobazu Pond",
+          "2",
+          "Flat 2 km loop; lotus viewing"
+        ],
+        [
+          "Meiji Jingu forest approach",
+          "3",
+          "1 km shaded walk"
+        ],
+        [
+          "Imperial East Gardens",
+          "5",
+          "Historical garden walk 1.5 km"
+        ]
+      ]
+    },
+    {
+      "caption": "Alps / Takayama Add-Ons",
+      "columns": [
+        "Activity",
+        "Duration",
+        "Difficulty"
+      ],
+      "rows": [
+        [
+          "Miyagawa riverside walk",
+          "30 min",
+          "Easy"
+        ],
+        [
+          "Hida Folk Village open-air",
+          "1.5 hr",
+          "Easy"
+        ],
+        [
+          "Bike rental Takayama",
+          "2 hr flat",
+          "Easy"
+        ]
+      ]
+    },
+    {
+      "caption": "Osaka Nature",
+      "columns": [
+        "Site",
+        "Day",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Osaka Castle Park moat loop",
+          "13",
+          "~3 km; morning before heat"
+        ],
+        [
+          "Namba parks",
+          "13",
+          "Low-key; not adventure anchor"
+        ]
+      ]
+    },
+    {
+      "caption": "Gear Checklist (Adventure Days)",
+      "columns": [
+        "Item",
+        "When"
+      ],
+      "rows": [
+        [
+          "Broken-in walking shoes",
+          "All hike days"
+        ],
+        [
+          "Lightweight rain shell",
+          "Alps + Kamakura"
+        ],
+        [
+          "2L water capacity",
+          "Kamikochi, Takao, Kamakura"
+        ],
+        [
+          "Sun hat + SPF 50",
+          "Every outdoor block"
+        ],
+        [
+          "Small towel",
+          "Takayama onsen days"
+        ],
+        [
+          "Trek poles",
+          "Optional; not required"
+        ]
+      ]
+    },
+    {
+      "caption": "Adventure Day vs Transit Day Matrix",
+      "columns": [
+        "Day",
+        "Adventure load",
+        "Transit?"
+      ],
+      "rows": [
+        [
+          "4",
+          "Kamakura OR Takao",
+          "No"
+        ],
+        [
+          "7",
+          "Shirakawa-go OR Kamikochi",
+          "No"
+        ],
+        [
+          "10",
+          "Arashiyama",
+          "No"
+        ],
+        [
+          "11",
+          "Kiyomizu + Philosopher's Path",
+          "No"
+        ],
+        [
+          "6, 8, 12",
+          "Soft — no major hike",
+          "Yes ✓"
         ]
       ]
     }

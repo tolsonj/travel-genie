@@ -52,6 +52,18 @@ export function render(d) {
        </div>`
     : "";
 
+  const fs = d.flight_snapshot;
+  const flightNote = fs?.picks?.length
+    ? `<div class="flight-snapshot">
+         <strong>Flights</strong>${fs.search_date ? ` <span class="muted">(${esc(fs.search_date)})</span>` : ""}:
+         ${fs.picks.map(p => {
+           const leg = esc(p.leg.replace(/^leg:\s*/i, ""));
+           return `<span class="flight-pick">${leg}: ${esc(p.price)} · ${esc(p.stops)} · ${esc(p.duration)}</span>`;
+         }).join(" · ")}
+         ${fs.budget_note ? ` — ${esc(fs.budget_note)}` : ""}
+       </div>`
+    : "";
+
   return `
     <section class="slide">
       <h1 class="slide-title">${esc(d.slide_title || d.title || "Route Optimization")}</h1>
@@ -64,6 +76,7 @@ export function render(d) {
       </div>
       <div class="footer">
         <div class="transit-path">${transitPath(d.transit_legs)}</div>
+        ${flightNote}
         ${summary}
       </div>
       <div class="watermark">travel-genie · ${esc(d.trip)}</div>

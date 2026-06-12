@@ -99,9 +99,7 @@ function regionalPanel(d) {
     </div>`;
 }
 
-function mealMappingTable(mapping) {
-  if (!mapping?.days?.length) return "";
-  const days = mapping.days;
+function mealTableBlock(days) {
   const dayHeaders = days.map(d => `<th>${esc(String(d.day))}</th>`).join("");
   const contextRow = days.map(d => `<td>${esc(d.context || "")}</td>`).join("");
   const strategyRow = days.map(d => {
@@ -111,17 +109,32 @@ function mealMappingTable(mapping) {
   }).join("");
 
   return `
+    <table class="food-meal-table">
+      <thead>
+        <tr><th class="food-meal-corner"></th>${dayHeaders}</tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Context</th>${contextRow}</tr>
+        <tr><th scope="row">Meal Strategy</th>${strategyRow}</tr>
+      </tbody>
+    </table>`;
+}
+
+function mealMappingTable(mapping) {
+  if (!mapping?.days?.length) return "";
+  const days = mapping.days;
+  const splitAt = days.length > 10 ? 7 : days.length;
+  const blocks = [];
+  for (let i = 0; i < days.length; i += splitAt) {
+    blocks.push(days.slice(i, i + splitAt));
+  }
+
+  return `
     <div class="food-meal-panel">
       <div class="food-meal-title">${esc(mapping.caption || "Day-by-Day Meal Mapping")}</div>
-      <table class="food-meal-table">
-        <thead>
-          <tr><th class="food-meal-corner"></th>${dayHeaders}</tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Context</th>${contextRow}</tr>
-          <tr><th scope="row">Meal Strategy</th>${strategyRow}</tr>
-        </tbody>
-      </table>
+      <div class="food-meal-tables${blocks.length > 1 ? " food-meal-tables-split" : ""}">
+        ${blocks.map(mealTableBlock).join("")}
+      </div>
     </div>`;
 }
 
@@ -144,9 +157,9 @@ export function render(d) {
         </aside>
         <div class="food-content">
           ${regionalPanel(d)}
-          ${mealMappingTable(d.meal_mapping)}
         </div>
       </div>
+      ${mealMappingTable(d.meal_mapping)}
       ${footer ? `<div class="food-footer">${esc(footer)}</div>` : ""}
       <div class="watermark">travel-genie · ${esc(d.trip)}</div>
     </section>`;

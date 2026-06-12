@@ -119,6 +119,73 @@
       "duration": "15–20 hrs"
     }
   ],
+  "flight_snapshot": {
+    "search_date": "2026-06-12 · ATL · 3 pax · economy",
+    "picks": [
+      {
+        "leg": "Leg: ATL → HKG (2026-09-01)",
+        "price": "$1,995",
+        "stops": "1",
+        "duration": "20 hr 55 min",
+        "airlines": "American + Cathay Pacific",
+        "notes": "Recommended — fewest hours, 1 stop"
+      },
+      {
+        "leg": "Leg: CAN → HAN (2026-09-06)",
+        "price": "$405",
+        "stops": "0",
+        "duration": "2 hr 10 min",
+        "airlines": "Vietnam Airlines",
+        "notes": "Recommended — afternoon, full-service"
+      },
+      {
+        "leg": "Leg: HAN → DAD (2026-09-08)",
+        "price": "$85",
+        "stops": "0",
+        "duration": "1 hr 20 min",
+        "airlines": "VietJet",
+        "notes": "Recommended — afternoon slot"
+      },
+      {
+        "leg": "Leg: DAD → ATL (2026-09-14)",
+        "price": "$1,123",
+        "stops": "1",
+        "duration": "23 hr 10 min",
+        "airlines": "Korean Air",
+        "notes": "Recommended — best duration"
+      }
+    ],
+    "trip_total": {
+      "caption": "Trip Total Summary",
+      "columns": [
+        "Scenario",
+        "Per person",
+        "Total (3 pax)",
+        "% of $30K budget"
+      ],
+      "rows": [
+        [
+          "Cheapest mix",
+          "$1,477",
+          "$2,954",
+          "15%"
+        ],
+        [
+          "Recommended balanced",
+          "$5,410",
+          "$16,230",
+          "36%"
+        ],
+        [
+          "Business long-hauls (est.)",
+          "~$8,500",
+          "~$17,000",
+          "85%"
+        ]
+      ]
+    },
+    "budget_note": null
+  },
   "summary": {
     "message": ": ~2.5 transit-equivalent days / 14 = 18% — under 20% ✓"
   }

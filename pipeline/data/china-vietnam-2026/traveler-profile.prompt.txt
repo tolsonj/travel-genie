@@ -88,6 +88,83 @@ what is not present rather than inventing it):
         }
       }
     },
+    "flight_snapshot": {
+      "type": "object",
+      "description": "Route slide: distilled MCP flight picks from opt-02.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "picks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "leg": { "type": "string" },
+              "price": { "type": "string" },
+              "stops": { "type": "string" },
+              "duration": { "type": "string" },
+              "airlines": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        }
+      }
+    },
+    "flights": {
+      "type": "object",
+      "description": "Transport-money slide: structured MCP flight comparison from opt-07.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        },
+        "legs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "recommended": {
+                "type": "object",
+                "properties": {
+                  "price": { "type": "string" },
+                  "stops": { "type": "string" },
+                  "duration": { "type": "string" },
+                  "airlines": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "options": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        },
+        "leg_tables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "caption": { "type": "string" },
+              "columns": { "type": "array", "items": { "type": "string" } },
+              "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        }
+      }
+    },
     "summary": {
       "type": "object",
       "properties": {
@@ -711,9 +788,12 @@ hero-image: https://images.unsplash.com/photo-1528164344705-47542687000d?w=1200&
 | **Countries** | China (Hong Kong + Guangzhou mainland) → Vietnam |
 | **Entry airport** | **Hong Kong International (HKG)** — per profile |
 | **Travel window** | September 1–14, 2026 (14 days) |
-| **Travel party** | Couple (traveler + wife) |
+| **Travel party** | Party of 3 (couple + 1) |
 | **Decision authority** | Vote (consensus-based) |
 | **Citizenship** | Assumed US *(unconfirmed — verify before Step 03)* |
+| **Home airport** | ATL (Hartsfield-Jackson) |
+| **Passengers** | 3 adults |
+| **Cabin preference** | Economy; compare business on long-hauls |
 
 ### Style & Pace
 
@@ -731,9 +811,9 @@ hero-image: https://images.unsplash.com/photo-1528164344705-47542687000d?w=1200&
 
 | Category | Notes |
 |----------|-------|
-| **Total** | $20,000 USD for both travelers |
+| **Total** | $30,000 USD for all travelers |
 | **Allocation intent** | Splurge in Vietnam; be value-conscious in China |
-| **Per-day estimate** | ~$1,428/day total (both) across 14 days |
+| **Per-day estimate** | ~$2,143/day total (party of 3) across 14 days |
 
 ### Interests (ranked by profile signals)
 

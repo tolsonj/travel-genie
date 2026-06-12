@@ -52,7 +52,8 @@ async function main() {
     const p = jsonPath(trip, a.id);
     if (existsSync(p)) {
       let data = JSON.parse(readFileSync(p, "utf8"));
-      if (existsSync(a.sourceFile)) {
+      // --skip-extract: keep fill-dashboard sidebar/panels; do not re-parse opt markdown.
+      if (!flags.skipExtract && existsSync(a.sourceFile)) {
         const md = readFileSync(a.sourceFile, "utf8");
         const tripSlug = readTripFromFrontmatter(md, data.trip || trip);
         data = extractFromMarkdown(md, { ...a, trip: tripSlug });

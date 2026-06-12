@@ -5,78 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>China Vietnam 2026 — Travel Plan</title>
   <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
   --slide-w: 1280px;
   --slide-h: 720px;
-  --gold: #b8860b;
-  --gold-dark: #8b6914;
-  --banner-bg: #3d4f5f;
-  --banner-text: #f5f5f0;
-  --table-head: #2c3e50;
-  --table-stripe: #f4f6f8;
-  --border: #d0d7de;
-  --text: #1a1a1a;
-  --muted: #5a6570;
-  --pass-green: #27ae60;
-  --warn-amber: #d39e00;
-  --route-line: #d4a017;
-  --sea: #dbe7f0;
-  --land: #e2e6df;
-  --land-line: #b9c2b0;
-  --land-hi: #cfe0c6;
-  --land-hi-line: #9bbf8e;
+  --gold: #c9920d;
+  --gold-dark: #9a6f0a;
+  --gold-light: #f5d98a;
+  --banner-bg: #2e3f52;
+  --banner-text: #f0f4f8;
+  --table-head: #1e2f40;
+  --table-stripe: #f3f6f9;
+  --border: #cdd4dc;
+  --text: #161f2a;
+  --muted: #56636f;
+  --pass-green: #1fa35a;
+  --warn-amber: #c98a00;
+  --route-line: #c9920d;
+  --sea: #d6e8f4;
+  --land: #dde3da;
+  --land-line: #b4bfaa;
+  --land-hi: #c8dcc0;
+  --land-hi-line: #94b888;
+  --page-bg: #1a2232;
+  --slide-radius: 10px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  background: #e8eaed;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--page-bg);
+  background-image: radial-gradient(ellipse at 20% 0%, #243348 0%, transparent 60%),
+                    radial-gradient(ellipse at 80% 100%, #1c2b1a 0%, transparent 60%);
   color: var(--text);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 28px;
-  gap: 22px;
+  padding: 36px 28px;
+  gap: 28px;
+  min-height: 100vh;
 }
 
 .deck-head {
   max-width: var(--slide-w);
   width: 100%;
   text-align: center;
-  color: var(--muted);
-  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  font-size: 12px;
+  letter-spacing: 0.02em;
 }
-.deck-head h1 { color: var(--table-head); font-size: 20px; margin-bottom: 2px; }
+.deck-head h1 {
+  color: rgba(255,255,255,0.9);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+.deck-head h1 span.deck-accent { color: var(--gold); }
+.deck-head::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
 
 .slide {
   width: var(--slide-w);
   min-height: var(--slide-h);
   background: #fff;
-  border: 1px solid var(--border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--slide-radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 16px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.1);
   padding: 36px 44px 28px;
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr) auto;
   gap: 14px;
   position: relative;
+  overflow: hidden;
 }
 
 .slide-title {
   font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   color: var(--gold-dark);
   text-transform: uppercase;
 }
 
 .banner {
-  background: var(--banner-bg);
+  background: linear-gradient(135deg, var(--banner-bg) 0%, #3a5068 100%);
   color: var(--banner-text);
   border-radius: 8px;
   padding: 10px 16px;
   font-size: 13px;
   line-height: 1.45;
+  border-left: 3px solid var(--gold);
 }
 .banner strong { display: block; font-size: 14px; margin-bottom: 4px; color: #fff; }
 
@@ -110,15 +138,21 @@ body {
   fill: #8a94a0; text-transform: uppercase;
 }
 .city-label {
-  font-size: 12px; font-weight: 700; fill: #26303b;
-  paint-order: stroke; stroke: #fff; stroke-width: 3px; stroke-linejoin: round;
+  font-size: 11px; font-weight: 700; fill: #26303b;
+}
+.city-label-bg {
+  fill: rgba(255, 255, 255, 0.94);
+  stroke: rgba(38, 48, 59, 0.12);
+  stroke-width: 0.5;
 }
 .node-letter { font-size: 12px; font-weight: 700; fill: #fff; }
 
 table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 thead th {
-  background: var(--table-head); color: #fff; text-align: left;
-  padding: 8px 10px; font-weight: 600; font-size: 12px;
+  background: linear-gradient(135deg, var(--table-head) 0%, #2e4a62 100%);
+  color: #fff; text-align: left;
+  padding: 8px 10px; font-weight: 700; font-size: 12px;
+  letter-spacing: 0.02em;
 }
 tbody td {
   padding: 8px 10px; border-bottom: 1px solid var(--border);
@@ -136,10 +170,19 @@ tbody td:first-child { font-weight: 600; }
 .transit-path .arrow { color: var(--gold); font-weight: 700; margin: 0 2px; }
 .transit-path .bracket { color: var(--muted); font-style: italic; }
 
+.flight-snapshot {
+  margin-top: 6px; font-size: 12px; color: var(--text-secondary); line-height: 1.45;
+}
+.flight-snapshot strong { color: var(--gold); font-weight: 600; }
+.flight-snapshot .muted { color: var(--muted); font-weight: 400; }
+.flight-snapshot .flight-pick { white-space: nowrap; }
+
 .summary-box {
-  background: var(--banner-bg); color: var(--banner-text); border-radius: 8px;
+  background: linear-gradient(135deg, var(--banner-bg) 0%, #3a5068 100%);
+  color: var(--banner-text); border-radius: 8px;
   padding: 12px 16px; min-width: 280px; font-size: 12px; line-height: 1.45;
   display: flex; gap: 10px; align-items: flex-start;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .summary-box .check { color: var(--pass-green); font-size: 18px; line-height: 1; flex-shrink: 0; }
 
@@ -167,15 +210,17 @@ tbody td:first-child { font-weight: 600; }
 .slide-title-row {
   display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
 }
-.slide-title-row .slide-title { margin: 0; border-bottom: 3px solid var(--gold); padding-bottom: 6px; flex: 1; }
+.slide-title-row .slide-title { margin: 0; border-bottom: 3px solid var(--gold); padding-bottom: 6px; flex: 1; background: linear-gradient(90deg, var(--gold-dark), var(--table-head)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .country-pill {
   font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--banner-bg); background: #eef2f6; border: 1px solid var(--border);
   padding: 6px 12px; border-radius: 999px; white-space: nowrap;
 }
 .intel-bar {
-  background: var(--banner-bg); color: var(--banner-text); border-radius: 8px;
+  background: linear-gradient(135deg, var(--banner-bg) 0%, #3a5068 100%);
+  color: var(--banner-text); border-radius: 8px;
   padding: 12px 18px; display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
+  border-left: 3px solid var(--gold);
 }
 .intel-label {
   font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
@@ -188,8 +233,9 @@ tbody td:first-child { font-weight: 600; }
   display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px;
 }
 .metric-card {
-  background: #fafbfc; border: 1px solid var(--border); border-radius: 8px;
+  background: #f9fafb; border: 1px solid var(--border); border-radius: 8px;
   padding: 10px 10px 8px; display: flex; flex-direction: column; gap: 6px; min-height: 72px;
+  border-top: 2px solid var(--gold);
 }
 .metric-icon { font-size: 18px; line-height: 1; }
 .metric-label {
@@ -216,8 +262,9 @@ tbody td:first-child { font-weight: 600; }
 
 .profile-validations {
   display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px;
-  background: #f8faf9; border: 1px solid var(--border); border-radius: 8px;
+  background: #f4f8f6; border: 1px solid var(--border); border-radius: 8px;
   padding: 12px 16px;
+  border-left: 3px solid var(--pass-green);
 }
 .profile-validations.single { grid-template-columns: 1fr; }
 .val-item {
@@ -230,44 +277,50 @@ tbody td:first-child { font-weight: 600; }
 /* food & dining strategy slide */
 .food-slide {
   padding-top: 0;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
-  gap: 10px;
+  height: var(--slide-h);
+  max-height: var(--slide-h);
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+  gap: 6px;
+  overflow: hidden;
 }
 .food-top-bar {
-  height: 8px;
-  background: var(--table-head);
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--table-head) 50%, transparent 100%);
   margin: 0 -44px 8px;
   border-radius: 0;
 }
 .food-slide-title {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   line-height: 1.1;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 .food-title-main { color: var(--table-head); }
 .food-title-accent { color: var(--gold); margin-left: 0.35em; }
 
 .food-body {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 18px;
+  grid-template-columns: 220px 1fr;
+  gap: 12px;
   min-height: 0;
   align-items: stretch;
+  overflow: hidden;
 }
-.food-sidebar { display: flex; flex-direction: column; gap: 12px; }
+.food-sidebar { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .food-intel-box {
-  background: #4a5568;
+  background: linear-gradient(160deg, #2e3f52 0%, #3d5168 100%);
   color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  font-size: 11.5px;
-  line-height: 1.45;
+  font-size: 10.5px;
+  line-height: 1.35;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .food-intel-head {
-  background: #5f6b7a;
+  background: rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding: 7px 12px;
   font-size: 10px;
   font-weight: 700;
@@ -285,7 +338,7 @@ tbody td:first-child { font-weight: 600; }
 }
 .food-intel-list li { padding-left: 2px; }
 
-.food-content { display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+.food-content { display: flex; flex-direction: column; gap: 8px; min-height: 0; min-width: 0; overflow: hidden; }
 .food-regional-kicker {
   font-size: 10px;
   font-weight: 700;
@@ -304,24 +357,28 @@ tbody td:first-child { font-weight: 600; }
 }
 .food-regional-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 12px;
-  min-height: 220px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  min-height: 0;
+  height: 150px;
 }
 .food-regional-callouts {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
   justify-content: center;
+  min-height: 0;
+  overflow: hidden;
 }
 .food-region-card {
   background: #fafbfc;
   border: 1px solid var(--border);
   border-left: 3px solid var(--gold);
   border-radius: 6px;
-  padding: 7px 10px;
-  font-size: 11px;
-  line-height: 1.35;
+  padding: 5px 8px;
+  font-size: 10px;
+  line-height: 1.3;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 .food-region-hub {
   font-size: 11px;
@@ -334,58 +391,77 @@ tbody td:first-child { font-weight: 600; }
 .food-region-dish { font-weight: 600; }
 .food-region-detail, .food-region-hood { color: var(--muted); margin-top: 2px; }
 
-.food-regional-map { min-height: 220px; height: 100%; }
+.food-regional-map { min-height: 0; height: 100%; }
 
-.food-meal-panel { min-height: 0; }
+.food-meal-panel { min-height: 0; min-width: 0; display: flex; flex-direction: column; flex-shrink: 0; }
 .food-meal-title {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+.food-meal-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 0;
+}
+.food-meal-tables-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 .food-meal-table {
-  font-size: 10.5px;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 9.5px;
   border: 1px solid var(--text);
+  border-collapse: collapse;
 }
 .food-meal-table th,
 .food-meal-table td {
   border: 1px solid var(--text);
-  padding: 5px 6px;
+  padding: 3px 4px;
   text-align: center;
   vertical-align: middle;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 .food-meal-table thead th {
   background: #fff;
   color: var(--text);
   font-weight: 700;
+  font-size: 9px;
 }
 .food-meal-table tbody th {
   background: #fff;
   color: var(--text);
   font-weight: 700;
   text-align: left;
-  white-space: nowrap;
+  white-space: normal;
+  font-size: 8.5px;
+  line-height: 1.2;
 }
 .food-meal-table tbody td { background: #fff; }
-.food-meal-corner { width: 72px; }
-.food-meal-cell {
-  display: table-cell;
-  line-height: 1.25;
-}
+.food-meal-corner { width: 52px; }
+.food-meal-cell { line-height: 1.2; }
 .food-meal-icon {
   display: block;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .food-footer {
-  font-size: 11.5px;
-  line-height: 1.45;
+  font-size: 10px;
+  line-height: 1.35;
   color: var(--text);
   border-top: 1px solid var(--border);
-  padding-top: 8px;
+  padding-top: 6px;
+  flex-shrink: 0;
 }
 
 /* master itinerary day-card slides */
@@ -395,8 +471,8 @@ tbody td:first-child { font-weight: 600; }
   gap: 10px;
 }
 .itinerary-top-bar {
-  height: 8px;
-  background: var(--table-head);
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--table-head) 50%, transparent 100%);
   margin: 0 -44px 8px;
 }
 .itinerary-title-row {
@@ -449,7 +525,7 @@ tbody td:first-child { font-weight: 600; }
   min-height: 0;
 }
 .day-card-head {
-  background: var(--table-head);
+  background: linear-gradient(90deg, var(--table-head) 0%, #2e4a62 100%);
   color: #fff;
   padding: 8px 12px;
   font-size: 12px;
@@ -488,8 +564,9 @@ tbody td:first-child { font-weight: 600; }
 .day-wow {
   margin: 8px 10px 6px;
   padding: 7px 10px;
-  background: #fdf8e8;
-  border: 1px solid #ecd98a;
+  background: linear-gradient(135deg, #fdf8e8 0%, #fffbf0 100%);
+  border: 1px solid #e8d07a;
+  border-left: 3px solid var(--gold);
   border-radius: 6px;
   font-size: 10.5px;
   line-height: 1.35;
@@ -559,8 +636,8 @@ tbody td:first-child { font-weight: 600; }
   gap: 8px;
 }
 .acc-top-bar {
-  height: 8px;
-  background: var(--table-head);
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--table-head) 50%, transparent 100%);
   margin: 0 -44px 8px;
 }
 .acc-slide-title {
@@ -606,12 +683,13 @@ tbody td:first-child { font-weight: 600; }
   align-items: start;
 }
 .acc-strategy-box {
-  background: var(--table-head);
+  background: linear-gradient(160deg, #1e2f40 0%, #2e4a62 100%);
   color: #fff;
   border-radius: 10px;
   overflow: hidden;
   font-size: 10.5px;
   line-height: 1.45;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .acc-strategy-head {
   padding: 10px 14px 6px;
@@ -729,7 +807,7 @@ tbody td:first-child { font-weight: 600; }
 }
 
 .acc-footer-bar {
-  background: var(--table-head);
+  background: linear-gradient(90deg, var(--table-head) 0%, #2e4a62 100%);
   color: #fff;
   text-align: center;
   font-size: 10px;
@@ -748,8 +826,8 @@ tbody td:first-child { font-weight: 600; }
   gap: 8px;
 }
 .etiq-top-bar {
-  height: 8px;
-  background: var(--table-head);
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--table-head) 50%, transparent 100%);
   margin: 0 -44px 8px;
 }
 .etiq-slide-title {
@@ -888,7 +966,7 @@ tbody td:first-child { font-weight: 600; }
 }
 
 .etiq-footer-bar {
-  background: var(--table-head);
+  background: linear-gradient(90deg, var(--table-head) 0%, #2e4a62 100%);
   color: #fff;
   text-align: center;
   font-size: 10px;
@@ -906,8 +984,8 @@ tbody td:first-child { font-weight: 600; }
   gap: 8px;
 }
 .shop-top-bar {
-  height: 8px;
-  background: var(--table-head);
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--table-head) 50%, transparent 100%);
   margin: 0 -44px 8px;
 }
 .shop-slide-title {
@@ -1218,8 +1296,8 @@ tbody td:first-child { font-weight: 600; }
   gap: 8px;
 }
 .culture-top-bar {
-  height: 8px;
-  background: var(--table-head);
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--table-head) 50%, transparent 100%);
   margin: 0 -44px 8px;
 }
 .culture-slide-title {
@@ -1268,15 +1346,17 @@ tbody td:first-child { font-weight: 600; }
 .culture-content { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
 
 .culture-intel-box {
-  background: #4a5568;
+  background: linear-gradient(160deg, #2e3f52 0%, #3d5168 100%);
   color: #fff;
   border-radius: 10px;
   overflow: hidden;
   font-size: 10.5px;
   line-height: 1.4;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .culture-intel-head {
-  background: #5f6b7a;
+  background: rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding: 7px 12px;
   font-size: 10px;
   font-weight: 700;
@@ -1471,8 +1551,8 @@ tbody td:first-child { font-weight: 600; }
   gap: 8px;
 }
 .pack-top-bar {
-  height: 8px;
-  background: var(--table-head);
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--table-head) 50%, transparent 100%);
   margin: 0 -44px 8px;
 }
 .pack-slide-title {
@@ -1520,15 +1600,17 @@ tbody td:first-child { font-weight: 600; }
 .pack-content { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
 
 .pack-intel-box {
-  background: #4a5568;
+  background: linear-gradient(160deg, #2e3f52 0%, #3d5168 100%);
   color: #fff;
   border-radius: 10px;
   overflow: hidden;
   font-size: 10px;
   line-height: 1.4;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .pack-intel-head {
-  background: #5f6b7a;
+  background: rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding: 7px 12px;
   font-size: 10px;
   font-weight: 700;
@@ -1748,8 +1830,8 @@ tbody td:first-child { font-weight: 600; }
   gap: 8px;
 }
 .dash-top-bar {
-  height: 8px;
-  background: var(--table-head);
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--table-head) 50%, transparent 100%);
   margin: 0 -44px 8px;
 }
 .dash-slide-title {
@@ -1817,16 +1899,73 @@ tbody td:first-child { font-weight: 600; }
   gap: 10px;
   min-height: 0;
 }
+.dash-slide-flights .dash-body {
+  grid-template-columns: 248px 1fr;
+  gap: 10px;
+}
+.dash-slide-flights .dash-grid-flights {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+.dash-slide-flights .dash-panel-body {
+  max-height: 118px;
+}
+.dash-slide-flights .dash-panel-head {
+  font-size: 8.5px;
+  padding: 5px 8px;
+}
+.dash-slide-flights .dash-table {
+  font-size: 7.5px;
+}
+.dash-slide-flights .dash-table th,
+.dash-slide-flights .dash-table td {
+  padding: 3px 5px;
+}
+.dash-slide-flights .dash-sidebar .dash-intel-body {
+  max-height: 160px;
+}
+.dash-slide-flights .dash-banner {
+  font-size: 9.5px;
+  padding: 6px 12px;
+  margin-bottom: 2px;
+}
+.dash-slide-hotels .dash-body {
+  grid-template-columns: 260px 1fr;
+  gap: 10px;
+}
+.dash-slide-hotels .dash-grid-hotels {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.dash-slide-hotels .dash-panel-body {
+  max-height: 132px;
+}
+.dash-slide-hotels .dash-panel-head {
+  font-size: 8.8px;
+  padding: 5px 8px;
+}
+.dash-slide-hotels .dash-table {
+  font-size: 7.8px;
+}
+.dash-slide-hotels .dash-table th,
+.dash-slide-hotels .dash-table td {
+  padding: 3px 5px;
+}
+.dash-slide-hotels .dash-sidebar .dash-intel-body {
+  max-height: 170px;
+}
 .dash-intel-box {
-  background: #4a5568;
+  background: linear-gradient(160deg, #2e3f52 0%, #3d5168 100%);
   color: #fff;
   border-radius: 10px;
   overflow: hidden;
   font-size: 10px;
   line-height: 1.4;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .dash-intel-head {
-  background: #5f6b7a;
+  background: rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   padding: 7px 12px;
   font-size: 10px;
   font-weight: 700;
@@ -1865,7 +2004,7 @@ tbody td:first-child { font-weight: 600; }
   min-height: 0;
 }
 .dash-panel-head {
-  background: var(--table-head);
+  background: linear-gradient(90deg, var(--table-head) 0%, #2e4a62 100%);
   color: #fff;
   padding: 6px 10px;
   font-size: 9.5px;
@@ -1909,8 +2048,9 @@ tbody td:first-child { font-weight: 600; }
 }
 
 .watermark {
-  position: absolute; bottom: 8px; right: 12px;
-  font-size: 10px; color: #bbb; letter-spacing: 0.02em;
+  position: absolute; bottom: 10px; right: 14px;
+  font-size: 9px; color: rgba(44,62,80,0.3); letter-spacing: 0.06em;
+  text-transform: uppercase; font-weight: 600;
 }
 
 @media print {
@@ -1926,7 +2066,7 @@ tbody td:first-child { font-weight: 600; }
 <body>
   <div class="deck-head">
     <h1>China Vietnam 2026 — Travel Plan</h1>
-    <p>18 slides · generated by travel-genie pipeline</p>
+    <p>20 slides · generated by travel-genie pipeline</p>
   </div>
   
     <section class="slide">
@@ -1971,11 +2111,122 @@ tbody td:first-child { font-weight: 600; }
       </div>
       <div class="footer">
         <div class="transit-path"><span class="leg">Home (arrive)</span><span class="arrow"> → </span><span class="bracket">[HKG: Flight 15–18 hrs (US)]</span><span class="arrow"> → </span><span class="bracket">[HK → Guangzhou: High-speed rail ~47 min]</span><span class="arrow"> → </span><span class="bracket">[Guangzhou → Hanoi: Flight ~2.5 hrs]</span><span class="arrow"> → </span><span class="bracket">[Hanoi → Đà Nẵng: Flight ~1.25 hrs]</span><span class="arrow"> → </span><span class="bracket">[Đà Nẵng → Home: Flight 15–20 hrs]</span></div>
+        <div class="flight-snapshot">
+         <strong>Flights</strong> <span class="muted">(2026-06-12 · ATL · 3 pax · economy)</span>:
+         <span class="flight-pick">ATL → HKG (2026-09-01): $1,995 · 1 · 20 hr 55 min</span> · <span class="flight-pick">CAN → HAN (2026-09-06): $405 · 0 · 2 hr 10 min</span> · <span class="flight-pick">HAN → DAD (2026-09-08): $85 · 0 · 1 hr 20 min</span> · <span class="flight-pick">DAD → ATL (2026-09-14): $1,123 · 1 · 23 hr 10 min</span>
+         
+       </div>
         <div class="summary-box">
          <span class="check" aria-hidden="true">✓</span>
          <span>: ~2.5 transit-equivalent days / 14 = 18% — under 20% ✓</span>
        </div>
       </div>
+      <div class="watermark">travel-genie · china-vietnam-2026</div>
+    </section>
+
+    <section class="slide dash-slide dash-slide-flights">
+      <div class="dash-top-bar" aria-hidden="true"></div>
+      <h1 class="dash-slide-title">
+        <span class="dash-title-main">FLIGHT COMPARISON</span>
+        <span class="dash-title-accent">FLIGHTS</span>
+      </h1>
+      
+      <div class="dash-section-row">
+        <span class="dash-section-pill">Flight Comparison</span>
+        <span class="dash-section-kicker">MCP live fares · per-leg options · trip total vs budget</span>
+      </div>
+      <div class="dash-banner">*Remaining ~$13,770 for hotels, food, activities, and buffer at recommended economy mix.*</div>
+      <div class="dash-body">
+           <aside class="dash-sidebar">
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Flight search</div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Search date: 2026-06-12 · ATL · 3 pax · economy</li></ul></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Trip Total Summary</div>
+      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Scenario</th><th>Per person</th><th>Total (3 pax)</th><th>% of $30K budget</th></tr></thead><tbody><tr class=""><th scope="row">Cheapest mix</th><td>$3,720</td><td>$11,160</td><td>37%</td></tr><tr class=" dash-stripe"><th scope="row">Recommended balanced</th><td>$5,410</td><td>$16,230</td><td>54%</td></tr><tr class=""><th scope="row">Business long-hauls (est.)</th><td>~$12,000</td><td>~$36,000</td><td>120%</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Recommended picks</div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>ATL → HKG (2026-09-01): $2,992 · 1 stop · 20 hr 55 min</li><li>CAN → HAN (2026-09-06): $607 · 0 stop · 2 hr 10 min</li><li>HAN → DAD (2026-09-08): $127 · 0 stop · 1 hr 20 min</li><li>DAD → ATL (2026-09-14): $1,684 · 1 stop · 23 hr 10 min</li></ul></div>
+    </div></aside>
+           <div class="dash-content"><div class="dash-grid dash-grid-flights">
+    <div class="dash-panel">
+      <div class="dash-panel-head">Leg: ATL → HKG (2026-09-01)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">$1,663</th><td>2</td><td>25 hr 32 min</td><td>Alaska + ANA</td><td>Cheapest (2-stop)</td></tr><tr class=" dash-stripe"><th scope="row">$2,888</th><td>1</td><td>24 hr 55 min</td><td>JetBlue + Cathay Pacific</td><td>Good 1-stop value</td></tr><tr class=""><th scope="row">$2,992</th><td>1</td><td>20 hr 55 min</td><td>American + Cathay Pacific</td><td>Recommended — fewest hours, 1 stop</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Leg: CAN → HAN (2026-09-06)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">$268</th><td>0</td><td>1 hr 55 min</td><td>VietJet</td><td>Red-eye; cheapest</td></tr><tr class=" dash-stripe"><th scope="row">$513</th><td>0</td><td>2 hr 5 min</td><td>China Southern</td><td>Evening direct</td></tr><tr class=""><th scope="row">$607</th><td>0</td><td>2 hr 10 min</td><td>Vietnam Airlines</td><td>Recommended — afternoon, full-service</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Leg: HAN → DAD (2026-09-08)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">$111</th><td>0</td><td>1 hr 25 min</td><td>Vietravel Airlines</td><td>Cheapest</td></tr><tr class=" dash-stripe"><th scope="row">$127</th><td>0</td><td>1 hr 20 min</td><td>VietJet</td><td>Recommended — afternoon slot</td></tr><tr class=""><th scope="row">$139</th><td>0</td><td>1 hr 25 min</td><td>Vietnam Airlines</td><td>Morning alternative</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Leg: DAD → ATL (2026-09-14)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">$1,678</th><td>1</td><td>29 hr 23 min</td><td>Korean Air + Delta</td><td>Cheapest 1-stop</td></tr><tr class=" dash-stripe"><th scope="row">$1,684</th><td>1</td><td>23 hr 10 min</td><td>Korean Air</td><td>Recommended — best duration</td></tr><tr class=""><th scope="row">$2,197</th><td>1</td><td>21 hr 40 min</td><td>Korean Air</td><td>Faster morning arrival ATL</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">MCP search log</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Leg</th><th>Date</th><th>Origin</th><th>Dest</th><th>Tool</th></tr></thead><tbody><tr class=""><th scope="row">Inbound</th><td>2026-09-01</td><td>ATL</td><td>HKG</td><td>get_flights_on_date</td></tr><tr class=" dash-stripe"><th scope="row">China→VN</th><td>2026-09-06</td><td>CAN</td><td>HAN</td><td>get_flights_on_date</td></tr><tr class=""><th scope="row">Domestic</th><td>2026-09-08</td><td>HAN</td><td>DAD</td><td>get_flights_on_date</td></tr><tr class=" dash-stripe"><th scope="row">Outbound</th><td>2026-09-14</td><td>DAD</td><td>ATL</td><td>get_flights_on_date</td></tr></tbody></table></div>
+    </div></div></div>
+         </div>
+      
+      
+      <div class="watermark">travel-genie · china-vietnam-2026</div>
+    </section>
+
+    <section class="slide dash-slide dash-slide-hotels">
+      <div class="dash-top-bar" aria-hidden="true"></div>
+      <h1 class="dash-slide-title">
+        <span class="dash-title-main">HOTEL COMPARISON</span>
+        <span class="dash-title-accent">HOTELS</span>
+      </h1>
+      
+      <div class="dash-section-row">
+        <span class="dash-section-pill">Hotel Comparison</span>
+        <span class="dash-section-kicker">MCP rate checks · city options · lodging total vs budget</span>
+      </div>
+      <div class="dash-banner">*Recommended mix keeps lodging premium while leaving ample room for flights, dining, shopping, and buffer.*</div>
+      <div class="dash-body">
+           <aside class="dash-sidebar">
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Hotel search</div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Search date: 2026-06-12 · 3 rooms considered · 2 adults + 1 companion</li></ul></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Lodging Total Summary</div>
+      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Scenario</th><th>Avg nightly</th><th>Total (12 nights)</th><th>% of $30K budget</th></tr></thead><tbody><tr class=""><th scope="row">Value-leaning mix</th><td>$380</td><td>$4,560</td><td>15%</td></tr><tr class=" dash-stripe"><th scope="row">Recommended balanced</th><td>$525</td><td>$6,300</td><td>21%</td></tr><tr class=""><th scope="row">Full luxury mix</th><td>$760</td><td>$9,120</td><td>30%</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Recommended hotels</div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Hong Kong (Sept 1–3): Mandarin Oriental Hong Kong · $450–650: Central · 5★</li><li>Guangzhou (Sept 4–5): Ritz-Carlton Guangzhou · $250–380: Tianhe · 5★</li><li>Hanoi (Sept 6–8): Sofitel Legend Metropole Hanoi · $280–400: Hoan Kiem · 5★</li><li>Đà Nẵng / Hội An Base (Sept 8–13): InterContinental Đà Nẵng Sun Peninsula · $450–700: Son Trà Peninsula · 5★ luxury</li></ul></div>
+    </div></aside>
+           <div class="dash-content"><div class="dash-grid dash-grid-hotels">
+    <div class="dash-panel">
+      <div class="dash-panel-head">City: Hong Kong (Sept 1–3)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Hotel</th><th>Price / night</th><th>Area</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">The Peninsula Hong Kong</th><td>$500–750</td><td>Tsim Sha Tsui</td><td>5★</td><td>Iconic harbor stay</td></tr><tr class=" dash-stripe"><th scope="row">Mandarin Oriental Hong Kong</th><td>$450–650</td><td>Central</td><td>5★</td><td>Recommended — best location/quality balance</td></tr><tr class=""><th scope="row">Hyatt Centric Victoria Harbour</th><td>$250–380</td><td>North Point</td><td>4★</td><td>Value option with modern rooms</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">City: Guangzhou (Sept 4–5)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Hotel</th><th>Price / night</th><th>Area</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Four Seasons Guangzhou</th><td>$280–420</td><td>Tianhe</td><td>5★</td><td>Premium river views</td></tr><tr class=" dash-stripe"><th scope="row">Ritz-Carlton Guangzhou</th><td>$250–380</td><td>Tianhe</td><td>5★</td><td>Recommended — strong value in 5★ tier</td></tr><tr class=""><th scope="row">White Swan Hotel</th><td>$200–320</td><td>Shamian</td><td>5★</td><td>Character property, quieter area</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">City: Hanoi (Sept 6–8)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Hotel</th><th>Price / night</th><th>Area</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Sofitel Legend Metropole Hanoi</th><td>$280–400</td><td>Hoan Kiem</td><td>5★</td><td>Recommended — iconic and walkable</td></tr><tr class=" dash-stripe"><th scope="row">La Siesta Classic Hang Be</th><td>$90–130</td><td>Old Quarter</td><td>4★ boutique</td><td>Best value pick</td></tr><tr class=""><th scope="row">JW Marriott Hanoi</th><td>$200–300</td><td>Ba Dinh</td><td>5★</td><td>Larger rooms, farther from core</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">City: Đà Nẵng / Hội An Base (Sept 8–13)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Hotel</th><th>Price / night</th><th>Area</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">InterContinental Đà Nẵng Sun Peninsula</th><td>$450–700</td><td>Son Trà Peninsula</td><td>5★ luxury</td><td>Recommended — designated splurge</td></tr><tr class=" dash-stripe"><th scope="row">Fusion Maia Đà Nẵng</th><td>$320–500</td><td>Mỹ Khê / Beachfront</td><td>5★</td><td>Spa-included value splurge</td></tr><tr class=""><th scope="row">Pullman Đà Nẵng Beach Resort</th><td>$250–380</td><td>Mỹ Khê Beach</td><td>5★</td><td>Reliable OTA option</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">MCP booking log</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>City</th><th>Check-in</th><th>Check-out</th><th>Tool</th></tr></thead><tbody><tr class=""><th scope="row">Hong Kong</th><td>2026-09-01</td><td>2026-09-04</td><td>compare_hotels</td></tr><tr class=" dash-stripe"><th scope="row">Guangzhou</th><td>2026-09-04</td><td>2026-09-06</td><td>compare_hotels</td></tr><tr class=""><th scope="row">Hanoi</th><td>2026-09-06</td><td>2026-09-08</td><td>compare_hotels</td></tr><tr class=" dash-stripe"><th scope="row">Đà Nẵng</th><td>2026-09-08</td><td>2026-09-13</td><td>compare_hotels</td></tr></tbody></table></div>
+    </div></div></div>
+         </div>
+      
+      
       <div class="watermark">travel-genie · china-vietnam-2026</div>
     </section>
 
@@ -1986,7 +2237,7 @@ tbody td:first-child { font-weight: 600; }
       </div>
       <div class="intel-bar">
          <span class="intel-label">Travel Intelligence</span>
-         <p class="intel-text">Couple (traveler + wife) · China  → Vietnam · September 1–14, 2026 (14 days). Budget $20,000 USD for both travelers. Constraint: Avoid peak tourist hours.</p>
+         <p class="intel-text">Party of 3 (couple + 1) · China  → Vietnam · September 1–14, 2026 (14 days). Budget $30,000 USD for all travelers. Constraint: Avoid peak tourist hours.</p>
        </div>
       <div class="profile-main"><div class="metrics-grid">
       <div class="metric-card">
@@ -2007,14 +2258,21 @@ tbody td:first-child { font-weight: 600; }
         <span class="metric-icon" aria-hidden="true">👤</span>
         <div class="metric-body">
           <div class="metric-label">Party</div>
-          <div class="metric-value">Couple (traveler + wife)</div>
+          <div class="metric-value">Party of 3 (couple + 1) · 3 adults pax</div>
+        </div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon" aria-hidden="true">✈️</span>
+        <div class="metric-body">
+          <div class="metric-label">Home airport</div>
+          <div class="metric-value">ATL (Hartsfield-Jackson)</div>
         </div>
       </div>
       <div class="metric-card">
         <span class="metric-icon" aria-hidden="true">💵</span>
         <div class="metric-body">
           <div class="metric-label">Budget</div>
-          <div class="metric-value">$20,000 USD for both travelers</div>
+          <div class="metric-value">$30,000 USD for all travelers</div>
         </div>
       </div>
       <div class="metric-card">
@@ -2029,6 +2287,13 @@ tbody td:first-child { font-weight: 600; }
         <div class="metric-body">
           <div class="metric-label">Physical</div>
           <div class="metric-value">Both travelers in excellent physical condition</div>
+        </div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon" aria-hidden="true">🎫</span>
+        <div class="metric-body">
+          <div class="metric-label">Cabin</div>
+          <div class="metric-value">Economy; compare business on long-hauls</div>
         </div>
       </div></div><div class="season-panel"><div class="season-caption">Seasonality scorecard</div><table class="season-table"><thead><tr><th class=""></th><th class="chosen-col">September</th><th class="">October</th><th class="">June</th></tr></thead><tbody><tr><th class="" scope="row">Heat</th><td class="chosen-col">Shoulder — manageable</td><td class="">Cooler</td><td class="">Peak monsoon heat</td></tr><tr><th class="" scope="row">Crowds</th><td class="chosen-col">Moderate</td><td class="">Lower</td><td class="">Domestic peak</td></tr><tr><th class="" scope="row">Rain</th><td class="chosen-col">Late monsoon tail</td><td class="">Drier north</td><td class="">Heavy south</td></tr><tr><th class="" scope="row">Beach (Đà Nẵng)</th><td class="chosen-col">Warm water OK</td><td class="">Ideal</td><td class="">Storm risk</td></tr><tr><th class="" scope="row">Value / splurge</th><td class="chosen-col">Vietnam splurge window</td><td class="">Strong</td><td class="">Off-season deals</td></tr><tr><th class="" scope="row">Fit score</th><td class="chosen-col">34/40</td><td class="">36/40</td><td class="">22/40</td></tr></tbody></table><p class="season-summary">September balances heat constraints with beach time in Vietnam and shoulder pricing in China.</p></div></div>
       <div class="profile-validations">
@@ -2085,21 +2350,33 @@ tbody td:first-child { font-weight: 600; }
         <div class="food-regional-map map-panel" data-geomap="{&quot;nodes&quot;:[{&quot;label&quot;:&quot;Beijing&quot;,&quot;marker&quot;:&quot;B&quot;,&quot;lng&quot;:116.4074,&quot;lat&quot;:39.9042,&quot;color&quot;:&quot;#c0392b&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Hanoi&quot;,&quot;marker&quot;:&quot;H&quot;,&quot;lng&quot;:105.8542,&quot;lat&quot;:21.0285,&quot;color&quot;:&quot;#d4a017&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Đà Nẵng / Hội An&quot;,&quot;marker&quot;:&quot;D&quot;,&quot;lng&quot;:108.2022,&quot;lat&quot;:16.0544,&quot;color&quot;:&quot;#27ae60&quot;,&quot;labelDy&quot;:26}],&quot;bounds&quot;:{&quot;west&quot;:95,&quot;south&quot;:6,&quot;east&quot;:128,&quot;north&quot;:46},&quot;highlight_countries&quot;:[&quot;China&quot;,&quot;Vietnam&quot;],&quot;country_labels&quot;:[],&quot;hide_route&quot;:true}"></div>
       </div>
     </div>
-          
-    <div class="food-meal-panel">
-      <div class="food-meal-title">Day-by-Day Meal Mapping</div>
-      <table class="food-meal-table">
-        <thead>
-          <tr><th class="food-meal-corner"></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Context</th><td>Beijing arrival</td><td>Forbidden City</td><td>Great Wall</td><td>Temple/Shopping</td><td>Summer Palace/depart</td><td>Transit Beijing→Hanoi</td><td>Hanoi</td><td>Transit Hanoi→Đà Nẵng</td><td>Marble Mountains</td><td>Hội An</td><td>Fitting + Son Trà</td><td>My Son + pickup</td><td>Beach day</td><td>Departure</td></tr>
-          <tr><th scope="row">Meal Strategy</th><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🥩</span><span>Duck de Chine near Wangfujing</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍜</span><span>Ghost Street hotpot</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🥩</span><span>Da Dong Peking Duck (book ahead)</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Sanlitun area restaurant</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Airport or early hotel dinner</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Phở on arrival in Hanoi</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Night market or Bún Chả</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍜</span><span>Resort restaurant</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍣</span><span>Mỹ Khê seafood restaurant</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Hội An lantern district dinner</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Sky 36 rooftop bar + dinner</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍜</span><span>Resort or Đà Nẵng riverside</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>NON La restaurant (book ahead)</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Plane</span></td></tr>
-        </tbody>
-      </table>
-    </div>
         </div>
       </div>
+      
+    <div class="food-meal-panel">
+      <div class="food-meal-title">Day-by-Day Meal Mapping</div>
+      <div class="food-meal-tables food-meal-tables-split">
+        
+    <table class="food-meal-table">
+      <thead>
+        <tr><th class="food-meal-corner"></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Context</th><td>Beijing arrival</td><td>Forbidden City</td><td>Great Wall</td><td>Temple/Shopping</td><td>Summer Palace/depart</td><td>Transit Beijing→Hanoi</td><td>Hanoi</td></tr>
+        <tr><th scope="row">Meal Strategy</th><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🥩</span><span>Duck de Chine near Wangfujing</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍜</span><span>Ghost Street hotpot</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🥩</span><span>Da Dong Peking Duck (book ahead)</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Sanlitun area restaurant</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Airport or early hotel dinner</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Phở on arrival in Hanoi</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Night market or Bún Chả</span></td></tr>
+      </tbody>
+    </table>
+    <table class="food-meal-table">
+      <thead>
+        <tr><th class="food-meal-corner"></th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Context</th><td>Transit Hanoi→Đà Nẵng</td><td>Marble Mountains</td><td>Hội An</td><td>Fitting + Son Trà</td><td>My Son + pickup</td><td>Beach day</td><td>Departure</td></tr>
+        <tr><th scope="row">Meal Strategy</th><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍜</span><span>Resort restaurant</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍣</span><span>Mỹ Khê seafood restaurant</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Hội An lantern district dinner</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Sky 36 rooftop bar + dinner</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍜</span><span>Resort or Đà Nẵng riverside</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>NON La restaurant (book ahead)</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍴</span><span>Plane</span></td></tr>
+      </tbody>
+    </table>
+      </div>
+    </div>
       <div class="food-footer">Cooking class: Morning Glory Cooking School — market tour at 8 AM + hands-on cooking; approx $35/person; book in advance</div>
       <div class="watermark">travel-genie · china-vietnam-2026</div>
     </section>
@@ -2696,21 +2973,17 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">IMMIGRATION ENTRY</span>
+        <span class="dash-title-main">IMMIGRATION</span>
         <span class="dash-title-accent">ENTRY</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Immigration Entry</span>
-        
+        <span class="dash-section-kicker">VJW · visa-free · passport · timeline</span>
       </div>
-      
+      <div class="dash-banner">⚠️ Red flag: Confirm current US–China visa policy at [travel.state.gov](https://travel.state.gov) before applying. Rules change; verify before June 2026 applications.</div>
       <div class="dash-body">
          <aside class="dash-sidebar">
-    <div class="dash-intel-box">
-      <div class="dash-intel-head">Overview</div>
-      <div class="dash-intel-body"><p class="dash-text">⚠️ Red flag: Confirm current US–China visa policy at [travel.state.gov](https://travel.state.gov) before applying. Rules change; verify before June 2026 applications.</p></div>
-    </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Mainland China Entry (Guangzhou)</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Biometrics on first mainland entry in trip</li><li>Hotels register foreign guests with police — confirm at check-in</li><li>VPN legality: use only compliant services; download maps/apps before entry</li></ul></div>
@@ -2718,12 +2991,12 @@ tbody td:first-child { font-weight: 600; }
     <div class="dash-intel-box">
       <div class="dash-intel-head">Backup if China Visa Denied</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Execute Option B from Step 02: HK-only China segment + unchanged Vietnam legs; drop Guangzhou nights.</li></ul></div>
-    </div>
-    <div class="dash-intel-box">
-      <div class="dash-intel-head">Mainland China Entry (Guangzhou)</div>
-      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody><tr class=""><th scope="row">Visa</th><td>Visa-free — US passport, tourism up to 90 days</td></tr><tr class=" dash-stripe"><th scope="row">Documents</th><td>Valid passport, onward ticket to Guangzhou/Vietnam, hotel confirmation</td></tr><tr class=""><th scope="row">Port of entry</th><td>Hong Kong International (HKG)</td></tr><tr class=" dash-stripe"><th scope="row">Apply</th><td>No advance visa</td></tr></tbody></table></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
+    <div class="dash-panel">
+      <div class="dash-panel-head">Hong Kong SAR Entry</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody><tr class=""><th scope="row">Visa</th><td>Visa-free — US passport, tourism up to 90 days</td></tr><tr class=" dash-stripe"><th scope="row">Documents</th><td>Valid passport, onward ticket to Guangzhou/Vietnam, hotel confirmation</td></tr><tr class=""><th scope="row">Port of entry</th><td>Hong Kong International (HKG)</td></tr><tr class=" dash-stripe"><th scope="row">Apply</th><td>No advance visa</td></tr></tbody></table></div>
+    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">Mainland China Entry (Guangzhou)</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody><tr class=""><th scope="row">Visa type</th><td>L Tourist (US citizens — no visa-free mainland)</td></tr><tr class=" dash-stripe"><th scope="row">Processing</th><td>~4–7 business days standard; expedited 2–3 days</td></tr><tr class=""><th scope="row">Cost</th><td>~$185 USD per applicant</td></tr><tr class=" dash-stripe"><th scope="row">Portal</th><td>Chinese Visa Application Service Center — [cvasc.com](https://www.cvasc.com)</td></tr><tr class=""><th scope="row">Documents</th><td>Passport (6+ months validity), photo, itinerary, hotel bookings, round-trip/onward tickets</td></tr><tr class=" dash-stripe"><th scope="row">Apply window</th><td>~60–90 days before travel; earliest ~June 2026</td></tr><tr class=""><th scope="row">Entry port</th><td>Guangzhou South (high-speed rail from West Kowloon) or CAN airport if flying</td></tr></tbody></table></div>
@@ -2749,34 +3022,58 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">TRANSPORT MONEY</span>
+        <span class="dash-title-main">TRANSPORT</span>
         <span class="dash-title-accent">MONEY</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Transport Money</span>
-        
+        <span class="dash-section-kicker">Flights · trip total · ground legs · money</span>
       </div>
-      
+      <div class="dash-banner">*Search date: 2026-06-12 · Home: ATL · 3 adults · economy (+ business note on long-hauls)*</div>
       <div class="dash-body">
          <aside class="dash-sidebar">
     <div class="dash-intel-box">
-      <div class="dash-intel-head">Overview</div>
-      <div class="dash-intel-body"><p class="dash-text">- Mode: International flight (Cathay Pacific, United, Singapore Airlines) - Airport: HKG (Hong Kong International) - Time: ~15–18 hrs from US West; ~16–20 hrs from US East (1 stop typical) - Cost estimate: $900–1,800/person economy; $3,000+ business - Open-jaw: Return from DAD (Đà Nẵng) — book as single itinerary</p></div>
+      <div class="dash-intel-head">Flight search</div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Search date: 2026-06-12 · Home: ATL · 3 adults · economy (+ business note on long-hauls)</li></ul></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Trip Total Summary</div>
+      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Scenario</th><th>Per person</th><th>Total (3 pax)</th><th>% of $30K budget</th></tr></thead><tbody><tr class=""><th scope="row">Cheapest mix</th><td>$1,477</td><td>$2,954</td><td>15%</td></tr><tr class=" dash-stripe"><th scope="row">Recommended balanced</th><td>$5,410</td><td>$16,230</td><td>36%</td></tr><tr class=""><th scope="row">Business long-hauls (est.)</th><td>~$8,500</td><td>~$17,000</td><td>85%</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Recommended picks</div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>ATL → HKG (2026-09-01): $1,995 · 1 stop · 20 hr 55 min</li><li>CAN → HAN (2026-09-06): $405 · 0 stop · 2 hr 10 min</li><li>HAN → DAD (2026-09-08): $85 · 0 stop · 1 hr 20 min</li><li>DAD → ATL (2026-09-14): $1,123 · 1 stop · 23 hr 10 min</li></ul></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Trip Total Summary</div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Book open-jaw ATL→HKG + DAD→ATL as multi-city on one ticket when fares align; otherwise separate one-ways (no misconnect protection).</li><li>Domestic Vietnam legs: book with international batch on Trip.com or airline sites.</li><li>CAN→HAN: prefer afternoon Vietnam Airlines over red-eye VietJet for soft landing in Hanoi.</li><li>Re-check on [Google Flights](https://www.google.com/travel/flights) before purchase — prices are point-in-time.</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">LEG 1: Home → Hong Kong</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Mode: International flight (Cathay Pacific, United, Singapore Airlines)</li><li>Airport: HKG (Hong Kong International)</li><li>Time: ~15–18 hrs from US West; ~16–20 hrs from US East (1 stop typical)</li><li>Cost estimate: $900–1,800/person economy; $3,000+ business</li><li>Open-jaw: Return from DAD (Đà Nẵng) — book as single itinerary</li><li>Airport Express to Central/Kowloon (~24 min); Octopus card at station</li><li>Uber HK / hotel car — reliable; avoid unmarked curbside taxis per profile</li><li>Avoid: Unlicensed “taxi” touts in arrivals hall</li></ul></div>
-    </div>
-    <div class="dash-intel-box">
-      <div class="dash-intel-head">LEG 1b: Hong Kong → Guangzhou</div>
-      <div class="dash-intel-body"><ul class="dash-list"><li>Mode: High-speed rail — West Kowloon → Guangzhou South</li><li>Time: ~47 min</li><li>Book: Trip.com, MTR, or station kiosk — passport required at joint immigration</li><li>Cost: ~¥200–350/person</li></ul></div>
-    </div>
-    <div class="dash-intel-box">
-      <div class="dash-intel-head">WITHIN GUANGZHOU</div>
-      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Mode</th><th>When to Use</th><th>Cost</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">MTR</th><td>Peak Tram area, Central, TST, Causeway Bay</td><td>HK$5–15</td><td>Octopus card; English signage</td></tr><tr class=" dash-stripe"><th scope="row">Star Ferry</th><td>Central ↔ TST sunset</td><td>HK$3–5</td><td>Iconic, fast</td></tr><tr class=""><th scope="row">Bus 6/6X/260</th><td>Stanley</td><td>HK$10–25</td><td>Scenic</td></tr><tr class=" dash-stripe"><th scope="row">Uber HK</th><td>Peak late night, Stanley return with bags</td><td>HK$80–200</td><td>App-only</td></tr></tbody></table></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
+    <div class="dash-panel">
+      <div class="dash-panel-head">Leg: ATL → HKG (2026-09-01)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">$1,109</th><td>2</td><td>25 hr 32 min</td><td>Alaska + ANA</td><td>Cheapest (2-stop)</td></tr><tr class=" dash-stripe"><th scope="row">$1,926</th><td>1</td><td>24 hr 55 min</td><td>JetBlue + Cathay Pacific</td><td>Good 1-stop value</td></tr><tr class=""><th scope="row">$1,995</th><td>1</td><td>20 hr 55 min</td><td>American + Cathay Pacific</td><td>Recommended — fewest hours, 1 stop</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Leg: CAN → HAN (2026-09-06)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">$179</th><td>0</td><td>1 hr 55 min</td><td>VietJet</td><td>Red-eye; cheapest</td></tr><tr class=" dash-stripe"><th scope="row">$342</th><td>0</td><td>2 hr 5 min</td><td>China Southern</td><td>Evening direct</td></tr><tr class=""><th scope="row">$405</th><td>0</td><td>2 hr 10 min</td><td>Vietnam Airlines</td><td>Recommended — afternoon, full-service</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Leg: HAN → DAD (2026-09-08)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">$74</th><td>0</td><td>1 hr 25 min</td><td>Vietravel Airlines</td><td>Cheapest</td></tr><tr class=" dash-stripe"><th scope="row">$85</th><td>0</td><td>1 hr 20 min</td><td>VietJet</td><td>Recommended — afternoon slot</td></tr><tr class=""><th scope="row">$93</th><td>0</td><td>1 hr 25 min</td><td>Vietnam Airlines</td><td>Morning alternative</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Leg: DAD → ATL (2026-09-14)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">$1,119</th><td>1</td><td>29 hr 23 min</td><td>Korean Air + Delta</td><td>Cheapest 1-stop</td></tr><tr class=" dash-stripe"><th scope="row">$1,123</th><td>1</td><td>23 hr 10 min</td><td>Korean Air</td><td>Recommended — best duration</td></tr><tr class=""><th scope="row">$1,465</th><td>1</td><td>21 hr 40 min</td><td>Korean Air</td><td>Faster morning arrival ATL</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">WITHIN HONG KONG</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Mode</th><th>When to Use</th><th>Cost</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">MTR</th><td>Peak Tram area, Central, TST, Causeway Bay</td><td>HK$5–15</td><td>Octopus card; English signage</td></tr><tr class=" dash-stripe"><th scope="row">Star Ferry</th><td>Central ↔ TST sunset</td><td>HK$3–5</td><td>Iconic, fast</td></tr><tr class=""><th scope="row">Bus 6/6X/260</th><td>Stanley</td><td>HK$10–25</td><td>Scenic</td></tr><tr class=" dash-stripe"><th scope="row">Uber HK</th><td>Peak late night, Stanley return with bags</td><td>HK$80–200</td><td>App-only</td></tr></tbody></table></div>
+    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">WITHIN GUANGZHOU</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Mode</th><th>When to Use</th><th>Cost</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Metro</th><td>Taikoo Hui, Beijing Road, Chen Clan Hall</td><td>¥2–8</td><td>DiDi + metro; VPN/maps before mainland</td></tr><tr class=" dash-stripe"><th scope="row">DiDi</th><td>Rain, late night, Shamian with luggage</td><td>¥15–50</td><td>English mode; card linked</td></tr><tr class=""><th scope="row">Walk</th><td>Shamian Island</td><td>Free</td><td>Flat, shaded</td></tr></tbody></table></div>
@@ -2810,21 +3107,17 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">CUSTOMS BORDERS</span>
+        <span class="dash-title-main">CUSTOMS</span>
         <span class="dash-title-accent">BORDERS</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Customs Borders</span>
-        
+        <span class="dash-section-kicker">Arrival · duty-free · tax-free · US re-entry</span>
       </div>
-      
+      <div class="dash-banner">Customs clearing: At PEK, you clear Chinese customs upon arrival.</div>
       <div class="dash-body">
          <aside class="dash-sidebar">
-    <div class="dash-intel-box">
-      <div class="dash-intel-head">Overview</div>
-      <div class="dash-intel-body"><p class="dash-text">Customs clearing: At PEK, you clear Chinese customs upon arrival.</p></div>
-    </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Border 1: US → China (Beijing PEK/PKX)</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Fill out Chinese customs declaration card on plane or at kiosk in arrivals</li><li>Green channel (nothing to declare) vs Red channel (items to declare)</li><li>Biometric enrollment at first-ever entry to China: fingerprints + photo</li><li>Immigration queue: Foreigners queue; 30–60 min typical at PEK</li></ul></div>
@@ -2832,19 +3125,19 @@ tbody td:first-child { font-weight: 600; }
     <div class="dash-intel-box">
       <div class="dash-intel-head">Border 2: China → Vietnam (Beijing PEK → Hanoi HAN)</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Emigration stamp in passport</li><li>Currency: May carry out up to ¥20,000 CNY or $5,000 USD without declaration</li><li>Purchased goods: VAT refund available at PEK for eligible purchases (see VAT Refund section)</li><li>No Chinese food products across international borders</li></ul></div>
-    </div>
-    <div class="dash-intel-box">
-      <div class="dash-intel-head">Quick Reference</div>
-      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Rule</th></tr></thead><tbody><tr class=""><th scope="row">Cash</th><td>Declare if carrying &gt;¥20,000 CNY or &gt;$5,000 USD equivalent in cash</td></tr><tr class=" dash-stripe"><th scope="row">Electronics</th><td>No declaration required for personal-use laptops, phones, cameras</td></tr><tr class=""><th scope="row">Medications</th><td>Prescription drugs: carry original prescription + doctor&#39;s note (see 14-health-safety); some medications (codeine, strong sleep aids) require special permits</td></tr><tr class=" dash-stripe"><th scope="row">Food</th><td>Fresh fruits, vegetables, and most meat products from US are prohibited entry into China</td></tr><tr class=""><th scope="row">Tobacco</th><td>400 cigarettes duty-free</td></tr><tr class=" dash-stripe"><th scope="row">Alcohol</th><td>1.5 liters duty-free</td></tr><tr class=""><th scope="row">Goods</th><td>Personal-use goods valued under ¥5,000 (~$700 USD) generally duty-free</td></tr></tbody></table></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
+    <div class="dash-panel">
+      <div class="dash-panel-head">Details</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Rule</th></tr></thead><tbody><tr class=""><th scope="row">Cash</th><td>Declare if carrying &gt;¥20,000 CNY or &gt;$5,000 USD equivalent in cash</td></tr><tr class=" dash-stripe"><th scope="row">Electronics</th><td>No declaration required for personal-use laptops, phones, cameras</td></tr><tr class=""><th scope="row">Medications</th><td>Prescription drugs: carry original prescription + doctor&#39;s note (see 14-health-safety); some medications (codeine, strong sleep aids) require special permits</td></tr><tr class=" dash-stripe"><th scope="row">Food</th><td>Fresh fruits, vegetables, and most meat products from US are prohibited entry into China</td></tr><tr class=""><th scope="row">Tobacco</th><td>400 cigarettes duty-free</td></tr><tr class=" dash-stripe"><th scope="row">Alcohol</th><td>1.5 liters duty-free</td></tr><tr class=""><th scope="row">Goods</th><td>Personal-use goods valued under ¥5,000 (~$700 USD) generally duty-free</td></tr></tbody></table></div>
+    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">Details</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Rule</th></tr></thead><tbody><tr class=""><th scope="row">Duty-free allowances</th><td>1.5 liters wine + 1.5 liters spirits; 400 cigarettes; personal goods reasonable value</td></tr><tr class=" dash-stripe"><th scope="row">Cash</th><td>Declare if carrying &gt;$5,000 USD or equivalent</td></tr><tr class=""><th scope="row">Electronics</th><td>Personal use: no declaration</td></tr><tr class=" dash-stripe"><th scope="row">Medications</th><td>Carry prescription + sufficient supply; controlled substances require permits</td></tr><tr class=""><th scope="row">Restricted</th><td>No pornography, politically sensitive material; no VPN hardware (software is fine)</td></tr></tbody></table></div>
     </div>
     <div class="dash-panel">
       <div class="dash-panel-head">Details</div>
-      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Category</th><th>Allowance</th></tr></thead><tbody><tr class=""><th scope="row">Total goods value</th><td>$800/person duty-free</td></tr><tr class=" dash-stripe"><th scope="row">Alcohol</th><td>1 liter duty-free</td></tr><tr class=""><th scope="row">Tobacco</th><td>200 cigarettes (1 carton) duty-free</td></tr><tr class=" dash-stripe"><th scope="row">Above $800</th><td>3–5% duty on next $1,000; higher brackets for luxury goods</td></tr><tr class=""><th scope="row">Per couple</th><td>$1,600 combined duty-free</td></tr></tbody></table></div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Category</th><th>Allowance</th></tr></thead><tbody><tr class=""><th scope="row">Total goods value</th><td>$800/person duty-free</td></tr><tr class=" dash-stripe"><th scope="row">Alcohol</th><td>1 liter duty-free</td></tr><tr class=""><th scope="row">Tobacco</th><td>200 cigarettes (1 carton) duty-free</td></tr><tr class=" dash-stripe"><th scope="row">Above $800</th><td>3–5% duty on next $1,000; higher brackets for luxury goods</td></tr><tr class=""><th scope="row">Per party (3)</th><td>$1,600 combined duty-free</td></tr></tbody></table></div>
     </div>
     <div class="dash-panel">
       <div class="dash-panel-head">Restricted Items — Packing Across Borders</div>
@@ -2863,21 +3156,17 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">TECH CONNECTIVITY</span>
+        <span class="dash-title-main">TECH</span>
         <span class="dash-title-accent">CONNECTIVITY</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Tech Connectivity</span>
-        
+        <span class="dash-section-kicker">eSIM · apps · Suica · offline maps · power</span>
       </div>
-      
+      <div class="dash-banner">Recommendation: Airalo eSIM — manage entirely from phone before departure; no SIM swapping needed.</div>
       <div class="dash-body">
          <aside class="dash-sidebar">
-    <div class="dash-intel-box">
-      <div class="dash-intel-head">Overview</div>
-      <div class="dash-intel-body"><p class="dash-text">Recommendation: Airalo eSIM — manage entirely from phone before departure; no SIM swapping needed.</p></div>
-    </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Connectivity Strategy</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Provider: Airalo (airalo.com) or Holafly — both support China + Vietnam in one package or separate regional eSIMs</li><li>China eSIM: Mainland China data via local carrier (China Unicom or China Mobile); Airalo &quot;China&quot; package: ~$15–25 for 5–10 GB, 15 days</li><li>Vietnam eSIM: Airalo &quot;Vietnam&quot; package or SE Asia regional plan: ~$10–18 for 5–10 GB</li><li>Install procedure: Buy and download eSIM QR codes BEFORE traveling; activate upon landing each country</li><li>Note: Keep US physical SIM in phone for iMessage/SMS/calls — eSIM provides local data</li><li>China: China Unicom SIM available at Beijing Capital Airport arrivals hall (Gate area); ~¥100 for 10 GB, valid 30 days</li><li>Vietnam: Viettel or Vietnamobile SIM at Noi Bai Airport arrivals; ~$5 for 5 GB</li><li>Downside: Requires SIM swap at each border; potential phone lock issues</li></ul></div>
@@ -2918,22 +3207,18 @@ tbody td:first-child { font-weight: 600; }
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Adventure</span>
-        
+        <span class="dash-section-kicker">Day hikes · Kamikochi option · gear · safety</span>
       </div>
-      
+      <div class="dash-banner">Great Wall Hike (Mutianyu) — Day 3 - Activity: 4–6 km ridge walk between restored towers; elevation change ~200 m over walk - Difficulty: Moderate — steps are uneven; some steep sections between towers 14–20 - Duration: 2–3 hours of active walking - Highlights: Dramatic ridge views; option to continue to unrestored &quot;wild wall&quot; section beyond Tower 20 (bring good shoes for this) - Toboggan descent: Metal luge track from Tower 6 to base — 580 m descent, ~3 min; exhilarating and crowd-appropriate (it&#39;s fast but not extreme) - Fitness required: Moderate; their fitness level is more than sufficient - Gear: Comfortable walking shoes (NOT sandals); sunscreen; water; the wall vendors at the top charge ¥25 for water - Border crossing rule: Day 3 is not a border day — CLEAR ✓</div>
       <div class="dash-body">
          <aside class="dash-sidebar">
     <div class="dash-intel-box">
-      <div class="dash-intel-head">Overview</div>
-      <div class="dash-intel-body"><p class="dash-text">Great Wall Hike (Mutianyu) — Day 3 - Activity: 4–6 km ridge walk between restored towers; elevation change ~200 m over walk - Difficulty: Moderate — steps are uneven; some steep sections between towers 14–20 - Duration: 2–3 hours of active walking - Highlights: Dramatic ridge views; option to continue to unrestored &quot;wild wall&quot; section beyond Tower 20 (bring good shoes for this) - Toboggan descent: Metal luge track from Tower 6 to base — 580 m descent, ~3 min; exhilarating and crowd-appropriate (it&#39;s fast but not extreme) - Fitness required: Moderate; their fitness level is more than sufficient - Gear: Comfortable walking shoes (NOT sandals); sunscreen; water; the wall vendors at the top charge ¥25 for water - Border crossing rule: Day 3 is not a border day — CLEAR ✓</p></div>
-    </div>
-    <div class="dash-intel-box">
       <div class="dash-intel-head">CHINA — BEIJING</div>
-      <div class="dash-intel-body"><ul class="dash-list"><li>Activity: 4–6 km ridge walk between restored towers; elevation change ~200 m over walk</li><li>Difficulty: Moderate — steps are uneven; some steep sections between towers 14–20</li><li>Duration: 2–3 hours of active walking</li><li>Highlights: Dramatic ridge views; option to continue to unrestored &quot;wild wall&quot; section beyond Tower 20 (bring good shoes for this)</li><li>Toboggan descent: Metal luge track from Tower 6 to base — 580 m descent, ~3 min; exhilarating and crowd-appropriate (it&#39;s fast but not extreme)</li><li>Fitness required: Moderate; their fitness level is more than sufficient</li><li>Gear: Comfortable walking shoes (NOT sandals); sunscreen; water; the wall vendors at the top charge ¥25 for water</li><li>Border crossing rule: Day 3 is not a border day — CLEAR ✓</li><li>Activity: 88-meter artificial hill; 300 steps to the Wanchun Pavilion at summit</li><li>Duration: 30 minutes up and down</li><li>Reward: Best panoramic view of Forbidden City&#39;s full symmetry — worth every step</li><li>Activity: Rowboat rental on Kunming Lake (⅔ the size of New York&#39;s Central Park)</li><li>Duration: 1–2 hours; ~¥100/hour for rental</li><li>Character: Leisurely — paddles among lotus flowers; pagodas visible from water; peaceful rather than strenuous</li></ul></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Activity: 4–6 km ridge walk between restored towers; elevation change ~200 m over walk</li><li>Difficulty: Moderate — steps are uneven; some steep sections between towers 14–20</li><li>Duration: 2–3 hours of active walking</li><li>Highlights: Dramatic ridge views; option to continue to unrestored &quot;wild wall&quot; section beyond Tower 20 (bring good shoes for this)</li><li>Toboggan descent: Metal luge track from Tower 6 to base — 580 m descent, ~3 min; exhilarating and crowd-appropriate (it&#39;s fast but not extreme)</li><li>Fitness required: Moderate; their fitness level is more than sufficient</li><li>Gear: Comfortable walking shoes (NOT sandals); sunscreen; water; the wall vendors at the top charge ¥25 for water</li><li>Border crossing rule: Day 3 is not a border day — CLEAR ✓</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">VIETNAM — ĐÀ NẴNG / HỘI AN</div>
-      <div class="dash-intel-body"><ul class="dash-list"><li>September water: ~28°C; generally calm on the Đà Nẵng side (protected by the peninsula)</li><li>Waves: Mild surf; safe swimming year-round on this stretch</li><li>Equipment: Resort provides loungers and umbrellas; no equipment needed</li><li>Availability: Most 4–5 star beach resorts in Đà Nẵng offer SUP rental (Hyatt Regency, Fusion Maia)</li><li>September viability: Good — morning conditions are typically flat; avoid afternoons if wind picks up</li><li>Duration: 30 min–1 hr; no instruction needed for beginners</li><li>Cost: Often included at Fusion Maia (all-inclusive) or ~$15–20/hr elsewhere</li><li>Location: 18 km offshore from Hội An; accessible by speedboat (~45 min)</li><li>September viability: Marginal — visibility varies (50–60% chance of clear conditions); water clarity peaks March–August; September is end of good season</li><li>Typhoon risk: Check weather 48 hrs before booking; operators cancel if sea conditions deteriorate</li><li>Operator: Cham Island Diving Center (reputable; PADI certified); book 1 day ahead, not in advance</li><li>Duration: Full-day trip including boat + snorkeling + lunch on island</li><li>Cost: ~$35–50/person</li><li>Recommendation: Plan for Day 11 afternoon (after fitting); treat as weather-dependent bonus, not scheduled anchor</li><li>Activity: Scenic drive/walk through protected rainforest; Lady Buddha lookout; douc langur spotting</li><li>Difficulty: Easy to moderate depending on path chosen; road access by car/motorbike taxi</li><li>Wildlife: Red-shanked douc langurs — one of the most colorful primates in the world; visible most mornings in the trees near the road</li><li>Duration: 2–3 hours including Lady Buddha visit</li><li>Best time: Early morning (7:30–10 AM) for langur sighting and pre-heat</li><li>Activity: Stairs and cavern exploration inside marble hills</li><li>Difficulty: Easy — stairs are well-maintained; cable car available for ascent</li><li>Caves: Huyen Khong Cave (natural light shafts illuminate Buddhist shrines) and Van Thong Cave (natural chimney; views from top)</li><li>Duration: 1.5–2 hours</li><li>Best time: 9–11 AM before midday heat peaks inside the stone</li><li>Activity: Archaeological site walking tour; uneven jungle terrain between temple groups</li><li>Difficulty: Easy — flat mostly; muddy after rain</li><li>Duration: 1.5–2 hours</li><li>Best time: 7:30 AM opening</li></ul></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>September water: ~28°C; generally calm on the Đà Nẵng side (protected by the peninsula)</li><li>Waves: Mild surf; safe swimming year-round on this stretch</li><li>Equipment: Resort provides loungers and umbrellas; no equipment needed</li><li>Availability: Most 4–5 star beach resorts in Đà Nẵng offer SUP rental (Hyatt Regency, Fusion Maia)</li><li>September viability: Good — morning conditions are typically flat; avoid afternoons if wind picks up</li><li>Duration: 30 min–1 hr; no instruction needed for beginners</li><li>Cost: Often included at Fusion Maia (all-inclusive) or ~$15–20/hr elsewhere</li><li>Location: 18 km offshore from Hội An; accessible by speedboat (~45 min)</li></ul></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
     <div class="dash-panel">
@@ -2957,21 +3242,17 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">HIDDEN GEMS</span>
+        <span class="dash-title-main">HIDDEN</span>
         <span class="dash-title-accent">GEMS</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Hidden Gems</span>
-        
+        <span class="dash-section-kicker">Local favorites · tourist traps · solo swaps</span>
       </div>
-      
+      <div class="dash-banner">1. Wudaoying Hutong — A quieter, hipper hutong parallel to the tourist-heavy Nanluoguxiang; independent coffee shops, vintage clothing, craft beer bars, and fewer crowds; Beijing&#39;s creative class hangs out here on weekends    - When to visit: Saturday or Sunday morning; cafés open by 9:30 AM    - Seasonality: Year-round</div>
       <div class="dash-body">
          <aside class="dash-sidebar">
-    <div class="dash-intel-box">
-      <div class="dash-intel-head">Overview</div>
-      <div class="dash-intel-body"><p class="dash-text">1. Wudaoying Hutong — A quieter, hipper hutong parallel to the tourist-heavy Nanluoguxiang; independent coffee shops, vintage clothing, craft beer bars, and fewer crowds; Beijing&#39;s creative class hangs out here on weekends    - When to visit: Saturday or Sunday morning; cafés open by 9:30 AM    - Seasonality: Year-round</p></div>
-    </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Cross-Border Connections</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Cultural thread: Both China and Vietnam have deep Confucian traditions (education, family, respect for elders); entering each other&#39;s homes you&#39;ll see ancestor shrines — ask about them and locals light up</li><li>Food thread: Chinese immigrants in Hội An (17th century) brought Won Ton soup, which evolved into Cao Lầu; the Phung Kien Assembly Hall in Hội An is built in pure Southern Chinese temple style; the architectural DNA crosses borders</li><li>Regional food spanning both countries: Bánh mì&#39;s French bread foundation + Vietnamese fillings is a colonial-era fusion; similarly, Beijing roasted meats (Beijing duck) have parallels in Vietnamese roast pork (thịt heo quay) — both traditions come from the same Cantonese roasting technique</li></ul></div>
@@ -2986,24 +3267,20 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">HEALTH SAFETY</span>
+        <span class="dash-title-main">HEALTH</span>
         <span class="dash-title-accent">SAFETY</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Health Safety</span>
-        
+        <span class="dash-section-kicker">Vaccines · heat · clinics · first-aid kit</span>
       </div>
-      
+      <div class="dash-banner">Travel Medicine Clinic: Make appointment June–July 2026; bring your itinerary; update based on current CDC travel health notices at [travel.cdc.gov](https://travel.cdc.gov).</div>
       <div class="dash-body">
          <aside class="dash-sidebar">
     <div class="dash-intel-box">
-      <div class="dash-intel-head">Overview</div>
-      <div class="dash-intel-body"><p class="dash-text">Travel Medicine Clinic: Make appointment June–July 2026; bring your itinerary; update based on current CDC travel health notices at [travel.cdc.gov](https://travel.cdc.gov).</p></div>
-    </div>
-    <div class="dash-intel-box">
       <div class="dash-intel-head">Pre-Trip Health</div>
-      <div class="dash-intel-body"><ul class="dash-list"><li>Medical evacuation (China: medical care for foreigners is expensive and evacuation to Hong Kong or home may be necessary in serious cases)</li><li>Trip cancellation for typhoon (Vietnam leg)</li><li>Pre-existing conditions waiver</li><li>Activity coverage: hiking (Great Wall), snorkeling (Cham Islands), water activities</li><li>Baggage loss</li><li>World Nomads (worldnomads.com): Standard Explorer plan; covers adventure activities; medical evacuation included</li><li>Allianz Travel: OneTrip Prime; good medical limits; widely recognized in Asia</li><li>Purchase: Same day as first flight booking to activate pre-departure cancellation coverage</li><li>Bring sufficient supply for entire 14 days + 3 extra days buffer</li><li>Original prescription from doctor + note in English (for customs)</li><li>Controlled substances: Check SAMHSA list against China and Vietnam regulations — common anxiety medications and some sleep aids face import restrictions</li><li>Anti-diarrheal (Imodium) + oral rehydration salts: Pack in carry-on</li><li>Altitude sickness: Not relevant for this route (all cities are at sea level or low elevation)</li></ul></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Medical evacuation (China: medical care for foreigners is expensive and evacuation to Hong Kong or home may be necessary in serious cases)</li><li>Trip cancellation for typhoon (Vietnam leg)</li><li>Pre-existing conditions waiver</li><li>Activity coverage: hiking (Great Wall), snorkeling (Cham Islands), water activities</li><li>Baggage loss</li><li>World Nomads (worldnomads.com): Standard Explorer plan; covers adventure activities; medical evacuation included</li><li>Allianz Travel: OneTrip Prime; good medical limits; widely recognized in Asia</li><li>Purchase: Same day as first flight booking to activate pre-departure cancellation coverage</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Health Per Country</div>
@@ -3065,28 +3342,24 @@ tbody td:first-child { font-weight: 600; }
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Contingency</span>
-        
+        <span class="dash-section-kicker">Scenario playbooks · emergency numbers</span>
       </div>
-      
+      <div class="dash-banner">Beijing — Rain Day - Forbidden City inner courts have covered walkways; continues with modification - Summer Palace: covered Long Corridor handles light rain; abandon in heavy rain - → Pivot to: Beijing Capital Museum (full day; world-class exhibits on Chinese history; indoor; free entry); or Parkview Green Mall (indoor luxury shopping + food) - Phone: None needed — all pivots are self-directed</div>
       <div class="dash-body">
          <aside class="dash-sidebar">
     <div class="dash-intel-box">
-      <div class="dash-intel-head">Overview</div>
-      <div class="dash-intel-body"><p class="dash-text">Beijing — Rain Day - Forbidden City inner courts have covered walkways; continues with modification - Summer Palace: covered Long Corridor handles light rain; abandon in heavy rain - → Pivot to: Beijing Capital Museum (full day; world-class exhibits on Chinese history; indoor; free entry); or Parkview Green Mall (indoor luxury shopping + food) - Phone: None needed — all pivots are self-directed</p></div>
+      <div class="dash-intel-head">Emergency Quick-Reference Card</div>
+      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Country</th><th>Police</th><th>Ambulance</th><th>Fire</th><th>US Embassy</th></tr></thead><tbody><tr class=""><th scope="row">China</th><td>110</td><td>120</td><td>119</td><td>+86-10-8531-4000</td></tr><tr class=" dash-stripe"><th scope="row">Vietnam</th><td>113</td><td>115</td><td>114</td><td>+84-24-3850-5000</td></tr></tbody></table></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Scenario 1: Weather Ruins Outdoor Day (Per Country)</div>
-      <div class="dash-intel-body"><ul class="dash-list"><li>Forbidden City inner courts have covered walkways; continues with modification</li><li>Summer Palace: covered Long Corridor handles light rain; abandon in heavy rain</li><li>→ Pivot to: Beijing Capital Museum (full day; world-class exhibits on Chinese history; indoor; free entry); or Parkview Green Mall (indoor luxury shopping + food)</li><li>Phone: None needed — all pivots are self-directed</li><li>Monitor: [weather.com](https://weather.com) + NOAA Pacific Typhoon Center</li><li>Level 1 (watch): Continue as planned; cancel outdoor sea activities; keep Ancient Town visit (covered walkways)</li><li>Level 2 (warning): Cancel Cham Islands; reschedule outdoor sites; stay at resort (this is when the spa/pool/restaurant experience pays off)</li><li>Level 3 (direct hit): Resort is your shelter; do not attempt to move cities; most typhoon-grade storms pass within 12–18 hours; resorts are built to code</li><li>App: NOAA Typhoon Watch alerts; set weather alert for &quot;Da Nang&quot; on your phone</li></ul></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Forbidden City inner courts have covered walkways; continues with modification</li><li>Summer Palace: covered Long Corridor handles light rain; abandon in heavy rain</li><li>→ Pivot to: Beijing Capital Museum (full day; world-class exhibits on Chinese history; indoor; free entry); or Parkview Green Mall (indoor luxury shopping + food)</li><li>Phone: None needed — all pivots are self-directed</li><li>Monitor: [weather.com](https://weather.com) + NOAA Pacific Typhoon Center</li><li>Level 1 (watch): Continue as planned; cancel outdoor sea activities; keep Ancient Town visit (covered walkways)</li><li>Level 2 (warning): Cancel Cham Islands; reschedule outdoor sites; stay at resort (this is when the spa/pool/restaurant experience pays off)</li><li>Level 3 (direct hit): Resort is your shelter; do not attempt to move cities; most typhoon-grade storms pass within 12–18 hours; resorts are built to code</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Scenario 2: Missed Flight/Train Between Countries</div>
-      <div class="dash-intel-body"><ul class="dash-list"><li>Immediately: Go to Vietnam Airlines or Air China gate agent; request next available flight (several operate daily)</li><li>Rebooking: Vietnam Airlines: 1-800-VIETNAMESE (US) or +84-24-3832-0320; Air China: 1-800-882-8122; or use airline app</li><li>Delay cost: Hanoi hotel can hold reservation 1 night; call Metropole directly: +84-24-3826-6919</li><li>If no available flight same day: Stay extra night Beijing (Peninsula can extend; or book last-minute via Hotels.com); notify Hanoi hotel</li><li>Trip insurance: Activate if delay &gt;4 hrs; document everything (boarding passes, gate notification)</li><li>Domestic Vietnam flight — reachable same day; multiple daily flights on VietJet/Vietnam Airlines</li><li>VietJet customer service: 1900 1886 (Vietnam)</li><li>Vietnam Airlines domestic: 1900 1100 (Vietnam)</li><li>Resort in Đà Nẵng: Hold room; late check-in is standard</li></ul></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Immediately: Go to Vietnam Airlines or Air China gate agent; request next available flight (several operate daily)</li><li>Rebooking: Vietnam Airlines: 1-800-VIETNAMESE (US) or +84-24-3832-0320; Air China: 1-800-882-8122; or use airline app</li><li>Delay cost: Hanoi hotel can hold reservation 1 night; call Metropole directly: +84-24-3826-6919</li><li>If no available flight same day: Stay extra night Beijing (Peninsula can extend; or book last-minute via Hotels.com); notify Hanoi hotel</li><li>Trip insurance: Activate if delay &gt;4 hrs; document everything (boarding passes, gate notification)</li><li>Domestic Vietnam flight — reachable same day; multiple daily flights on VietJet/Vietnam Airlines</li><li>VietJet customer service: 1900 1886 (Vietnam)</li><li>Vietnam Airlines domestic: 1900 1100 (Vietnam)</li></ul></div>
     </div></aside>
-         <div class="dash-content"><div class="dash-grid">
-    <div class="dash-panel">
-      <div class="dash-panel-head">Emergency Quick-Reference Card</div>
-      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Country</th><th>Police</th><th>Ambulance</th><th>Fire</th><th>US Embassy</th></tr></thead><tbody><tr class=""><th scope="row">China</th><td>110</td><td>120</td><td>119</td><td>+86-10-8531-4000</td></tr><tr class=" dash-stripe"><th scope="row">Vietnam</th><td>113</td><td>115</td><td>114</td><td>+84-24-3850-5000</td></tr></tbody></table></div>
-    </div></div></div>
+         
        </div>
       
       
@@ -3096,21 +3369,17 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">TIME OPTIMIZATION</span>
+        <span class="dash-title-main">TIME</span>
         <span class="dash-title-accent">OPTIMIZATION</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Time Optimization</span>
-        
+        <span class="dash-section-kicker">PTO · date-flex flights · crowd timing · scorecard</span>
       </div>
-      
+      <div class="dash-banner">*MCP search ±2 days around Step 2 dates · 2026-06-12*</div>
       <div class="dash-body">
          <aside class="dash-sidebar">
-    <div class="dash-intel-box">
-      <div class="dash-intel-head">Overview</div>
-      <div class="dash-intel-body"><p class="dash-text">Current dates: September 1–14, 2026 (Tuesday to Monday) - Departure: Tuesday Sept 1 — uses 1 PTO (Monday is Labor Day in US — Sept 7, 2026 is Labor Day) - Wait: Labor Day 2026 is September 7 — if trip departs on Tuesday Sept 2, Labor Day weekend extends without using it as PTO - Revised suggestion: Depart Monday Sept 1 (use 0 PTO; Labor Day is a holiday) → or depart Sunday Aug 31 (evening flight, arrive Beijing Tuesday) → land Beijing Sept 1 (Day 1 is essentially &quot;free&quot; because you crossed the date line)</p></div>
-    </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">PTO Hacking</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Departure: Tuesday Sept 1 — uses 1 PTO (Monday is Labor Day in US — Sept 7, 2026 is Labor Day)</li><li>Wait: Labor Day 2026 is September 7 — if trip departs on Tuesday Sept 2, Labor Day weekend extends without using it as PTO</li><li>Revised suggestion: Depart Monday Sept 1 (use 0 PTO; Labor Day is a holiday) → or depart Sunday Aug 31 (evening flight, arrive Beijing Tuesday) → land Beijing Sept 1 (Day 1 is essentially &quot;free&quot; because you crossed the date line)</li><li>Depart: Saturday Aug 30 or Sunday Aug 31 (use no PTO for travel days; weekend departure)</li><li>Arrive Beijing: Monday Sept 1 (Labor Day back home — not a PTO day)</li><li>Return: Saturday Sept 13 or Sunday Sept 14 (weekend return = no PTO used for travel day)</li><li>Net PTO used: 9 days (Mon Sept 1 through Fri Sept 12) instead of 10 if flying over the weekend</li><li>Power play: Use 1 extra PTO day to add Sept 15 (Monday) → extends to 15 days; best extension would be an extra night in Đà Nẵng at the resort</li></ul></div>
@@ -3124,6 +3393,10 @@ tbody td:first-child { font-weight: 600; }
       <div class="dash-intel-body"><div class="dash-val-grid"><div class="dash-val pass"><span class="dash-val-ic" aria-hidden="true">✓</span><span>10 validation check(s) passed in source plan.</span></div></div></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
+    <div class="dash-panel">
+      <div class="dash-panel-head">Details</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Leg</th><th>Base date</th><th>Alt date</th><th>Savings (pp)</th><th>Worth it?</th></tr></thead><tbody><tr class=""><th scope="row">ATL → HKG</th><td>Sep 1</td><td>Aug 31</td><td>~$40–80</td><td>Marginal — loses soft arrival day</td></tr><tr class=" dash-stripe"><th scope="row">ATL → HKG</th><td>Sep 1</td><td>Sep 2</td><td>~$0–50</td><td>No — misses HK check-in Sep 1</td></tr><tr class=""><th scope="row">DAD → ATL</th><td>Sep 14</td><td>Sep 13</td><td>~$60</td><td>Maybe — if resort allows early checkout</td></tr><tr class=" dash-stripe"><th scope="row">DAD → ATL</th><td>Sep 14</td><td>Sep 15</td><td>~$30</td><td>No — extends trip past window</td></tr></tbody></table></div>
+    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">Transit Time Minimization</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Strategy</th><th>Applied?</th><th>Result</th></tr></thead><tbody><tr class=""><th scope="row">Red-eye / overnight flight (US→China)</th><td>Yes — depart Sunday evening, arrive Beijing Monday-Tuesday morning</td><td>Saves a full calendar day</td></tr><tr class=" dash-stripe"><th scope="row">Overnight train option</th><td>Not used (domestic Vietnam: Hanoi→Đà Nẵng is 1.25 hr flight vs 14 hr train)</td><td>Fly is correct for this profile</td></tr><tr class=""><th scope="row">Open-jaw routing</th><td>Yes — fly into PEK, fly out of DAD</td><td>Eliminates backtracking day</td></tr><tr class=" dash-stripe"><th scope="row">Beijing domestic transit</th><td>Airport Express train (~30 min) vs taxi (~90 min in traffic)</td><td>Saves 1 hr on arrival day</td></tr><tr class=""><th scope="row">Quickest border crossing</th><td>Beijing → Hanoi by direct flight (~4 hrs)</td><td>Best option; no faster alternative</td></tr></tbody></table></div>
@@ -3228,11 +3501,20 @@ tbody td:first-child { font-weight: 600; }
         .style("font-size", "10px").text(cfg.depart.caption || "Depart");
     }
 
-    var node = svg.append("g").selectAll("g").data(pts).join("g");
-    node.append("text").attr("class", "city-label")
-      .attr("x", function (d) { return d.p[0]; })
-      .attr("y", function (d) { return d.p[1] + (d.labelDy || -18); })
-      .attr("text-anchor", "middle").text(function (d) { return d.label; });
+    function labelText(d) {
+      return d.mapLabel || d.label || "";
+    }
+
+    function labelLines(d) {
+      var raw = labelText(d);
+      if (!raw) return [];
+      if (raw.indexOf("/") !== -1) {
+        return raw.split(/\s*\/\s*/).map(function (s) { return s.trim(); }).filter(Boolean);
+      }
+      return [raw];
+    }
+
+    var node = svg.append("g").selectAll("g.node").data(pts).join("g").attr("class", "node");
     node.append("circle")
       .attr("cx", function (d) { return d.p[0]; })
       .attr("cy", function (d) { return d.p[1]; })
@@ -3242,6 +3524,45 @@ tbody td:first-child { font-weight: 600; }
       .attr("x", function (d) { return d.p[0]; })
       .attr("y", function (d) { return d.p[1] + 4; })
       .attr("text-anchor", "middle").text(function (d) { return d.marker || ""; });
+
+    var labelGroups = node.append("g").attr("class", "city-label-group");
+    labelGroups.each(function (d) {
+      var g = d3.select(this);
+      var lines = labelLines(d);
+      if (!lines.length) return;
+      var x = d.p[0] + (d.labelDx || 0);
+      var y = d.p[1] + (d.labelDy || -18);
+      var text = g.append("text").attr("class", "city-label")
+        .attr("x", x).attr("y", y).attr("text-anchor", "middle");
+      lines.forEach(function (line, i) {
+        text.append("tspan")
+          .attr("x", x)
+          .attr("dy", i === 0 ? 0 : "1.15em")
+          .text(line);
+      });
+      var bbox = text.node().getBBox();
+      g.insert("rect", "text")
+        .attr("class", "city-label-bg")
+        .attr("x", bbox.x - 4).attr("y", bbox.y - 2)
+        .attr("width", bbox.width + 8).attr("height", bbox.height + 4)
+        .attr("rx", 3);
+      d._labelBox = { x: bbox.x - 4, y: bbox.y - 2, w: bbox.width + 8, h: bbox.height + 4 };
+    });
+
+    // Nudge overlapping labels apart vertically.
+    for (var a = 0; a < pts.length; a++) {
+      for (var b = a + 1; b < pts.length; b++) {
+        var ba = pts[a]._labelBox, bb = pts[b]._labelBox;
+        if (!ba || !bb) continue;
+        var overlapX = ba.x < bb.x + bb.w && ba.x + ba.w > bb.x;
+        var overlapY = ba.y < bb.y + bb.h && ba.y + ba.h > bb.y;
+        if (!overlapX || !overlapY) continue;
+        var shift = Math.ceil((ba.y + ba.h - bb.y + 4) / 2);
+        pts[b]._labelBox.y += shift;
+        var gB = d3.select(labelGroups.nodes()[b]);
+        gB.attr("transform", "translate(0," + shift + ")");
+      }
+    }
   }
 
   function drawAll() {

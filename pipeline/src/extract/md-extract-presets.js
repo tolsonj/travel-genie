@@ -3,11 +3,20 @@ export const ROUTE_PRESETS = {
     name: "China-then-Vietnam Open-Jaw Circuit",
     rationale: "Beijing → Hanoi → Đà Nẵng/Hội An — open-jaw (PEK in / DAD out) eliminates backtracking.",
     hubCoords: {
-      Beijing: { lng: 116.4074, lat: 39.9042, marker: "B", color: "#c0392b" },
-      Hanoi: { lng: 105.8542, lat: 21.0285, marker: "H", color: "#d4a017" },
-      "Đà Nẵng": { lng: 108.2022, lat: 16.0544, marker: "D", color: "#27ae60", labelDy: 26 },
-      "Da Nang": { lng: 108.2022, lat: 16.0544, marker: "D", color: "#27ae60", labelDy: 26 },
-      "Hội An": { lng: 108.2022, lat: 16.0544, marker: "D", color: "#27ae60", labelDy: 26 }
+      Beijing: { lng: 116.4074, lat: 39.9042, marker: "B", color: "#c0392b", labelDy: -20 },
+      Hanoi: { lng: 105.8542, lat: 21.0285, marker: "H", color: "#d4a017", labelDy: -22, labelDx: -34 },
+      "Đà Nẵng": {
+        lng: 108.2022, lat: 16.0544, marker: "D", color: "#27ae60",
+        labelDy: 30, labelDx: 34, mapLabel: "Da Nang / Hoi An"
+      },
+      "Da Nang": {
+        lng: 108.2022, lat: 16.0544, marker: "D", color: "#27ae60",
+        labelDy: 30, labelDx: 34, mapLabel: "Da Nang / Hoi An"
+      },
+      "Hội An": {
+        lng: 108.2022, lat: 16.0544, marker: "D", color: "#27ae60",
+        labelDy: 30, labelDx: 34, mapLabel: "Da Nang / Hoi An"
+      }
     },
     defaultHubs: [
       { hub: "Beijing", days: "1–5", region: "North China", primary_draw: "Forbidden City, Great Wall, hutongs" },

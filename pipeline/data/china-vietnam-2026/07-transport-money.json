@@ -4,8 +4,169 @@
   "trip": "china-vietnam-2026",
   "title": "Transport Money",
   "slide_title": "TRANSPORT",
-  "intro": "- Mode: International flight (Cathay Pacific, United, Singapore Airlines) - Airport: HKG (Hong Kong International) - Time: ~15–18 hrs from US West; ~16–20 hrs from US East (1 stop typical) - Cost estimate: $900–1,800/person economy; $3,000+ business - Open-jaw: Return from DAD (Đà Nẵng) — book as single itinerary",
+  "intro": "*Search date: 2026-06-12 · Home: ATL · 3 adults · economy (+ business note on long-hauls)*",
   "tables": [
+    {
+      "caption": "Leg: ATL → HKG (2026-09-01)",
+      "columns": [
+        "Price",
+        "Stops",
+        "Duration",
+        "Airlines",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "$1,109",
+          "2",
+          "25 hr 32 min",
+          "Alaska + ANA",
+          "Cheapest (2-stop)"
+        ],
+        [
+          "$1,926",
+          "1",
+          "24 hr 55 min",
+          "JetBlue + Cathay Pacific",
+          "Good 1-stop value"
+        ],
+        [
+          "$1,995",
+          "1",
+          "20 hr 55 min",
+          "American + Cathay Pacific",
+          "Recommended — fewest hours, 1 stop"
+        ]
+      ]
+    },
+    {
+      "caption": "Leg: CAN → HAN (2026-09-06)",
+      "columns": [
+        "Price",
+        "Stops",
+        "Duration",
+        "Airlines",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "$179",
+          "0",
+          "1 hr 55 min",
+          "VietJet",
+          "Red-eye; cheapest"
+        ],
+        [
+          "$342",
+          "0",
+          "2 hr 5 min",
+          "China Southern",
+          "Evening direct"
+        ],
+        [
+          "$405",
+          "0",
+          "2 hr 10 min",
+          "Vietnam Airlines",
+          "Recommended — afternoon, full-service"
+        ]
+      ]
+    },
+    {
+      "caption": "Leg: HAN → DAD (2026-09-08)",
+      "columns": [
+        "Price",
+        "Stops",
+        "Duration",
+        "Airlines",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "$74",
+          "0",
+          "1 hr 25 min",
+          "Vietravel Airlines",
+          "Cheapest"
+        ],
+        [
+          "$85",
+          "0",
+          "1 hr 20 min",
+          "VietJet",
+          "Recommended — afternoon slot"
+        ],
+        [
+          "$93",
+          "0",
+          "1 hr 25 min",
+          "Vietnam Airlines",
+          "Morning alternative"
+        ]
+      ]
+    },
+    {
+      "caption": "Leg: DAD → ATL (2026-09-14)",
+      "columns": [
+        "Price",
+        "Stops",
+        "Duration",
+        "Airlines",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "$1,119",
+          "1",
+          "29 hr 23 min",
+          "Korean Air + Delta",
+          "Cheapest 1-stop"
+        ],
+        [
+          "$1,123",
+          "1",
+          "23 hr 10 min",
+          "Korean Air",
+          "Recommended — best duration"
+        ],
+        [
+          "$1,465",
+          "1",
+          "21 hr 40 min",
+          "Korean Air",
+          "Faster morning arrival ATL"
+        ]
+      ]
+    },
+    {
+      "caption": "Trip Total Summary",
+      "columns": [
+        "Scenario",
+        "Per person",
+        "Total (3 pax)",
+        "% of $30K budget"
+      ],
+      "rows": [
+        [
+          "Cheapest mix",
+          "$1,477",
+          "$2,954",
+          "15%"
+        ],
+        [
+          "Recommended balanced",
+          "$5,410",
+          "$16,230",
+          "36%"
+        ],
+        [
+          "Business long-hauls (est.)",
+          "~$8,500",
+          "~$17,000",
+          "85%"
+        ]
+      ]
+    },
     {
       "caption": "WITHIN HONG KONG",
       "columns": [
@@ -242,6 +403,15 @@
   ],
   "bullets": [
     {
+      "heading": "Trip Total Summary",
+      "items": [
+        "Book open-jaw ATL→HKG + DAD→ATL as multi-city on one ticket when fares align; otherwise separate one-ways (no misconnect protection).",
+        "Domestic Vietnam legs: book with international batch on Trip.com or airline sites.",
+        "CAN→HAN: prefer afternoon Vietnam Airlines over red-eye VietJet for soft landing in Hanoi.",
+        "Re-check on [Google Flights](https://www.google.com/travel/flights) before purchase — prices are point-in-time."
+      ]
+    },
+    {
       "heading": "LEG 1: Home → Hong Kong",
       "items": [
         "Mode: International flight (Cathay Pacific, United, Singapore Airlines)",
@@ -329,13 +499,372 @@
     }
   ],
   "callouts": [],
+  "flights": {
+    "search_date": "2026-06-12 · Home: ATL · 3 adults · economy (+ business note on long-hauls)",
+    "legs": [
+      {
+        "label": "Leg: ATL → HKG (2026-09-01)",
+        "recommended": {
+          "price": "$1,995",
+          "stops": "1",
+          "duration": "20 hr 55 min",
+          "airlines": "American + Cathay Pacific",
+          "notes": "Recommended — fewest hours, 1 stop"
+        },
+        "options": [
+          [
+            "$1,109",
+            "2",
+            "25 hr 32 min",
+            "Alaska + ANA",
+            "Cheapest (2-stop)"
+          ],
+          [
+            "$1,926",
+            "1",
+            "24 hr 55 min",
+            "JetBlue + Cathay Pacific",
+            "Good 1-stop value"
+          ],
+          [
+            "$1,995",
+            "1",
+            "20 hr 55 min",
+            "American + Cathay Pacific",
+            "Recommended — fewest hours, 1 stop"
+          ]
+        ]
+      },
+      {
+        "label": "Leg: CAN → HAN (2026-09-06)",
+        "recommended": {
+          "price": "$405",
+          "stops": "0",
+          "duration": "2 hr 10 min",
+          "airlines": "Vietnam Airlines",
+          "notes": "Recommended — afternoon, full-service"
+        },
+        "options": [
+          [
+            "$179",
+            "0",
+            "1 hr 55 min",
+            "VietJet",
+            "Red-eye; cheapest"
+          ],
+          [
+            "$342",
+            "0",
+            "2 hr 5 min",
+            "China Southern",
+            "Evening direct"
+          ],
+          [
+            "$405",
+            "0",
+            "2 hr 10 min",
+            "Vietnam Airlines",
+            "Recommended — afternoon, full-service"
+          ]
+        ]
+      },
+      {
+        "label": "Leg: HAN → DAD (2026-09-08)",
+        "recommended": {
+          "price": "$85",
+          "stops": "0",
+          "duration": "1 hr 20 min",
+          "airlines": "VietJet",
+          "notes": "Recommended — afternoon slot"
+        },
+        "options": [
+          [
+            "$74",
+            "0",
+            "1 hr 25 min",
+            "Vietravel Airlines",
+            "Cheapest"
+          ],
+          [
+            "$85",
+            "0",
+            "1 hr 20 min",
+            "VietJet",
+            "Recommended — afternoon slot"
+          ],
+          [
+            "$93",
+            "0",
+            "1 hr 25 min",
+            "Vietnam Airlines",
+            "Morning alternative"
+          ]
+        ]
+      },
+      {
+        "label": "Leg: DAD → ATL (2026-09-14)",
+        "recommended": {
+          "price": "$1,123",
+          "stops": "1",
+          "duration": "23 hr 10 min",
+          "airlines": "Korean Air",
+          "notes": "Recommended — best duration"
+        },
+        "options": [
+          [
+            "$1,119",
+            "1",
+            "29 hr 23 min",
+            "Korean Air + Delta",
+            "Cheapest 1-stop"
+          ],
+          [
+            "$1,123",
+            "1",
+            "23 hr 10 min",
+            "Korean Air",
+            "Recommended — best duration"
+          ],
+          [
+            "$1,465",
+            "1",
+            "21 hr 40 min",
+            "Korean Air",
+            "Faster morning arrival ATL"
+          ]
+        ]
+      }
+    ],
+    "trip_total": {
+      "caption": "Trip Total Summary",
+      "columns": [
+        "Scenario",
+        "Per person",
+        "Total (3 pax)",
+        "% of $30K budget"
+      ],
+      "rows": [
+        [
+          "Cheapest mix",
+          "$1,477",
+          "$2,954",
+          "15%"
+        ],
+        [
+          "Recommended balanced",
+          "$5,410",
+          "$16,230",
+          "36%"
+        ],
+        [
+          "Business long-hauls (est.)",
+          "~$8,500",
+          "~$17,000",
+          "85%"
+        ]
+      ]
+    },
+    "leg_tables": [
+      {
+        "caption": "Leg: ATL → HKG (2026-09-01)",
+        "columns": [
+          "Price",
+          "Stops",
+          "Duration",
+          "Airlines",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "$1,109",
+            "2",
+            "25 hr 32 min",
+            "Alaska + ANA",
+            "Cheapest (2-stop)"
+          ],
+          [
+            "$1,926",
+            "1",
+            "24 hr 55 min",
+            "JetBlue + Cathay Pacific",
+            "Good 1-stop value"
+          ],
+          [
+            "$1,995",
+            "1",
+            "20 hr 55 min",
+            "American + Cathay Pacific",
+            "Recommended — fewest hours, 1 stop"
+          ]
+        ]
+      },
+      {
+        "caption": "Leg: CAN → HAN (2026-09-06)",
+        "columns": [
+          "Price",
+          "Stops",
+          "Duration",
+          "Airlines",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "$179",
+            "0",
+            "1 hr 55 min",
+            "VietJet",
+            "Red-eye; cheapest"
+          ],
+          [
+            "$342",
+            "0",
+            "2 hr 5 min",
+            "China Southern",
+            "Evening direct"
+          ],
+          [
+            "$405",
+            "0",
+            "2 hr 10 min",
+            "Vietnam Airlines",
+            "Recommended — afternoon, full-service"
+          ]
+        ]
+      },
+      {
+        "caption": "Leg: HAN → DAD (2026-09-08)",
+        "columns": [
+          "Price",
+          "Stops",
+          "Duration",
+          "Airlines",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "$74",
+            "0",
+            "1 hr 25 min",
+            "Vietravel Airlines",
+            "Cheapest"
+          ],
+          [
+            "$85",
+            "0",
+            "1 hr 20 min",
+            "VietJet",
+            "Recommended — afternoon slot"
+          ],
+          [
+            "$93",
+            "0",
+            "1 hr 25 min",
+            "Vietnam Airlines",
+            "Morning alternative"
+          ]
+        ]
+      },
+      {
+        "caption": "Leg: DAD → ATL (2026-09-14)",
+        "columns": [
+          "Price",
+          "Stops",
+          "Duration",
+          "Airlines",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "$1,119",
+            "1",
+            "29 hr 23 min",
+            "Korean Air + Delta",
+            "Cheapest 1-stop"
+          ],
+          [
+            "$1,123",
+            "1",
+            "23 hr 10 min",
+            "Korean Air",
+            "Recommended — best duration"
+          ],
+          [
+            "$1,465",
+            "1",
+            "21 hr 40 min",
+            "Korean Air",
+            "Faster morning arrival ATL"
+          ]
+        ]
+      }
+    ],
+    "budget_note": null
+  },
   "slide_title_accent": "MONEY",
   "section_label": "Transport Money",
-  "section_kicker": "JR Pass verdict · legs · airport transfers · yen",
+  "section_kicker": "Flights · trip total · ground legs · money",
   "banner": {
-    "text": "Mode: International flight (Cathay Pacific, United, Singapore Airlines) - Airport: HKG (Hong Kong International) - Time: ~15–18 hrs from US West; ~16–20 hrs from US East (1 stop typical) - Cost estimate: $900–1,800/person economy; $3,000+ business - Open-jaw: Return from DAD (Đà Nẵng) — book as single itinerary"
+    "text": "*Search date: 2026-06-12 · Home: ATL · 3 adults · economy (+ business note on long-hauls)*"
   },
   "sidebar": [
+    {
+      "type": "list",
+      "caption": "Flight search",
+      "items": [
+        "Search date: 2026-06-12 · Home: ATL · 3 adults · economy (+ business note on long-hauls)"
+      ]
+    },
+    {
+      "type": "table",
+      "caption": "Trip Total Summary",
+      "columns": [
+        "Scenario",
+        "Per person",
+        "Total (3 pax)",
+        "% of $30K budget"
+      ],
+      "rows": [
+        [
+          "Cheapest mix",
+          "$1,477",
+          "$2,954",
+          "15%"
+        ],
+        [
+          "Recommended balanced",
+          "$5,410",
+          "$16,230",
+          "36%"
+        ],
+        [
+          "Business long-hauls (est.)",
+          "~$8,500",
+          "~$17,000",
+          "85%"
+        ]
+      ]
+    },
+    {
+      "type": "list",
+      "caption": "Recommended picks",
+      "items": [
+        "ATL → HKG (2026-09-01): $1,995 · 1 stop · 20 hr 55 min",
+        "CAN → HAN (2026-09-06): $405 · 0 stop · 2 hr 10 min",
+        "HAN → DAD (2026-09-08): $85 · 0 stop · 1 hr 20 min",
+        "DAD → ATL (2026-09-14): $1,123 · 1 stop · 23 hr 10 min"
+      ]
+    },
+    {
+      "type": "list",
+      "caption": "Trip Total Summary",
+      "items": [
+        "Book open-jaw ATL→HKG + DAD→ATL as multi-city on one ticket when fares align; otherwise separate one-ways (no misconnect protection).",
+        "Domestic Vietnam legs: book with international batch on Trip.com or airline sites.",
+        "CAN→HAN: prefer afternoon Vietnam Airlines over red-eye VietJet for soft landing in Hanoi.",
+        "Re-check on [Google Flights](https://www.google.com/travel/flights) before purchase — prices are point-in-time."
+      ],
+      "ordered": false
+    },
     {
       "type": "list",
       "caption": "LEG 1: Home → Hong Kong",
@@ -350,20 +879,141 @@
         "Avoid: Unlicensed “taxi” touts in arrivals hall"
       ],
       "ordered": false
-    },
-    {
-      "type": "list",
-      "caption": "LEG 1b: Hong Kong → Guangzhou",
-      "items": [
-        "Mode: High-speed rail — West Kowloon → Guangzhou South",
-        "Time: ~47 min",
-        "Book: Trip.com, MTR, or station kiosk — passport required at joint immigration",
-        "Cost: ~¥200–350/person"
-      ],
-      "ordered": false
     }
   ],
   "panels": [
+    {
+      "caption": "Leg: ATL → HKG (2026-09-01)",
+      "columns": [
+        "Price",
+        "Stops",
+        "Duration",
+        "Airlines",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "$1,109",
+          "2",
+          "25 hr 32 min",
+          "Alaska + ANA",
+          "Cheapest (2-stop)"
+        ],
+        [
+          "$1,926",
+          "1",
+          "24 hr 55 min",
+          "JetBlue + Cathay Pacific",
+          "Good 1-stop value"
+        ],
+        [
+          "$1,995",
+          "1",
+          "20 hr 55 min",
+          "American + Cathay Pacific",
+          "Recommended — fewest hours, 1 stop"
+        ]
+      ]
+    },
+    {
+      "caption": "Leg: CAN → HAN (2026-09-06)",
+      "columns": [
+        "Price",
+        "Stops",
+        "Duration",
+        "Airlines",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "$179",
+          "0",
+          "1 hr 55 min",
+          "VietJet",
+          "Red-eye; cheapest"
+        ],
+        [
+          "$342",
+          "0",
+          "2 hr 5 min",
+          "China Southern",
+          "Evening direct"
+        ],
+        [
+          "$405",
+          "0",
+          "2 hr 10 min",
+          "Vietnam Airlines",
+          "Recommended — afternoon, full-service"
+        ]
+      ]
+    },
+    {
+      "caption": "Leg: HAN → DAD (2026-09-08)",
+      "columns": [
+        "Price",
+        "Stops",
+        "Duration",
+        "Airlines",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "$74",
+          "0",
+          "1 hr 25 min",
+          "Vietravel Airlines",
+          "Cheapest"
+        ],
+        [
+          "$85",
+          "0",
+          "1 hr 20 min",
+          "VietJet",
+          "Recommended — afternoon slot"
+        ],
+        [
+          "$93",
+          "0",
+          "1 hr 25 min",
+          "Vietnam Airlines",
+          "Morning alternative"
+        ]
+      ]
+    },
+    {
+      "caption": "Leg: DAD → ATL (2026-09-14)",
+      "columns": [
+        "Price",
+        "Stops",
+        "Duration",
+        "Airlines",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "$1,119",
+          "1",
+          "29 hr 23 min",
+          "Korean Air + Delta",
+          "Cheapest 1-stop"
+        ],
+        [
+          "$1,123",
+          "1",
+          "23 hr 10 min",
+          "Korean Air",
+          "Recommended — best duration"
+        ],
+        [
+          "$1,465",
+          "1",
+          "21 hr 40 min",
+          "Korean Air",
+          "Faster morning arrival ATL"
+        ]
+      ]
+    },
     {
       "caption": "WITHIN HONG KONG",
       "columns": [

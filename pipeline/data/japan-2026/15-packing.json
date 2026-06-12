@@ -4,32 +4,452 @@
   "trip": "japan-2026",
   "title": "Packing",
   "slide_title": "PACKING",
+  "intro": "1. Valid US passport — expires 2028 ✓; one blank page minimum 2. Visit Japan Web QR codes — immigration + customs saved offline + printed (03-immigration-entry) 3. Travel insurance policy # + 24/7 emergency line — phone contact + printed wallet card (14-health-safety) 4. JR Pass 7-day exchange voucher — print + PDF; activate Jul 29 (07-transport-money) 5. Japan eSIM activated before departure — Airalo/Ubigi 15-day; QR saved in email (09-tech-connectivity) 6. Credit/debit cards + bank travel notification — 7-Eleven ATM compatible (no foreign fee card ideal) 7. Virtual or physical Suica/PASMO — loaded ¥3,000–5,000 before leaving airport 8. Prescription medications — 17-day supply in carry-on + doctor note in English 9. 20,000 mAh USB-C power bank — airline-compliant; essential for Fushimi dawn + Shirakawa-go bus day 10. Trail runners or broken-in walking shoes — Fushimi stairs + Kamakura cobblestones; not new shoes 11. Ultralight rain jacket — afternoon thunderstorms; Alps weather shifts fast 12. SPF 50 sunscreen + hat — non-negotiable for Jul/Aug; reapply every 2 hrs 13. Electrolyte tablets / ORS packets — heat days in Kyoto/Osaka 14. Compression packing cubes — enables takkyubin bag vs carry-on split Jul 28 15. Hotel confirmation printout — all addresses in Japanese + English for taxi/takkyubin labels",
+  "tables": [
+    {
+      "caption": "",
+      "columns": [
+        "Category",
+        "Pack",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Tops",
+          "5–6 lightweight breathable shirts (linen, merino, Uniqlo Airism)",
+          "Quick-dry; one modest shirt for temples"
+        ],
+        [
+          "Bottoms",
+          "2 lightweight trousers + 1 shorts",
+          "Temples: knees covered; shorts OK most casual dining"
+        ],
+        [
+          "Layer",
+          "1 packable cardigan or ultralight fleece",
+          "Takayama evenings + brutal train AC"
+        ],
+        [
+          "Footwear",
+          "Trail runners (primary) + compact sandals",
+          "Slip-on sandals for ryokan/onsen"
+        ],
+        [
+          "Underwear/socks",
+          "7 underwear + 3 merino hiking socks",
+          "Laundry at hotel Day 5 or Kyoto Day 9"
+        ],
+        [
+          "Sleep",
+          "1 set sleepwear",
+          "Ryokan may provide yukata"
+        ],
+        [
+          "Rain",
+          "Packable rain jacket + small folding umbrella",
+          "Umbrella also sold at every konbini ¥500"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Item",
+        "Bring / Rent / Skip"
+      ],
+      "rows": [
+        [
+          "Trail runners (broken in)",
+          "✅ Bring"
+        ],
+        [
+          "Daypack 20–25 L",
+          "✅ Bring — water, rain layer, wallet, power bank"
+        ],
+        [
+          "Collapsible water bottle (500 mL–1 L)",
+          "✅ Bring — refill at konbini"
+        ],
+        [
+          "Trekking poles",
+          "Optional — Fushimi stairs help knees; collapsible fits overhead"
+        ],
+        [
+          "Rain jacket (ultralight)",
+          "✅ Bring"
+        ],
+        [
+          "Wide-brim hat + sunglasses",
+          "✅ Bring"
+        ],
+        [
+          "Bear bell",
+          "Optional — Shirakawa-go/Takayama trails; buy locally ¥500"
+        ],
+        [
+          "Hiking boots",
+          "❌ Skip — overkill for itinerary; trail runners sufficient"
+        ],
+        [
+          "Full hiking pack 40 L+",
+          "❌ Skip"
+        ],
+        [
+          "Swimsuit",
+          "❌ Skip — no recreational swimming in itinerary"
+        ]
+      ]
+    },
+    {
+      "caption": "Tech & Power (from 09-tech-connectivity)",
+      "columns": [
+        "Item",
+        "Use"
+      ],
+      "rows": [
+        [
+          "eSIM (Airalo/Ubigi 15-day unlimited)",
+          "Data-only; US number stays active for 2FA"
+        ],
+        [
+          "20,000 mAh power bank",
+          "Shinkansen days; Fushimi 05:30 start; no outlets at shrines"
+        ],
+        [
+          "USB-C cable + dual-port cube",
+          "Phone + power bank overnight"
+        ],
+        [
+          "Phone with Suica in Apple/Google Wallet",
+          "Tap transit + konbini"
+        ],
+        [
+          "Noise-canceling earbuds",
+          "11–14 hr flights; Shinkansen focus"
+        ],
+        [
+          "Offline Google Maps (Japan downloaded)",
+          "~400 MB; hiking + offline transit"
+        ],
+        [
+          "Google Translate (Japanese offline pack)",
+          "Camera mode for menus/signs"
+        ],
+        [
+          "Japan Official Travel App (JNTO)",
+          "Disaster alerts + WiFi map"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Category",
+        "Location"
+      ],
+      "rows": [
+        [
+          "Prescription meds + doctor note",
+          "Carry-on only"
+        ],
+        [
+          "Imodium, ibuprofen, antihistamine",
+          "Carry-on pouch"
+        ],
+        [
+          "ORS / electrolyte tablets",
+          "Carry-on"
+        ],
+        [
+          "Sunscreen (100 mL bottle)",
+          "Carry-on TSA quart bag"
+        ],
+        [
+          "Blister Compeed + moleskin",
+          "Carry-on"
+        ],
+        [
+          "Insect repellent",
+          "Checked (if aerosol) or buy locally"
+        ],
+        [
+          "Hand sanitizer",
+          "Carry-on"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Bag",
+        "Role"
+      ],
+      "rows": [
+        [
+          "Checked spinner 24–26\"",
+          "Main wardrobe; forward between hubs"
+        ],
+        [
+          "Carry-on backpack 40 L",
+          "3-day clothes, all valuables, meds, docs"
+        ],
+        [
+          "Packable daypack 18–20 L",
+          "Folds flat in carry-on; deploy for hike/transit days"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Item",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Passport + wallet",
+          "ID; cash for rural buses"
+        ],
+        [
+          "Phone + power bank + cable",
+          "Navigation; seat reservations"
+        ],
+        [
+          "JR Pass + seat reservation printouts",
+          "Takayama/Kyoto legs"
+        ],
+        [
+          "Snacks (onigiri, energy bar)",
+          "4.5 hr Tokyo→Takayama"
+        ],
+        [
+          "Water bottle",
+          "Hydration"
+        ],
+        [
+          "Rain jacket",
+          "Alps weather"
+        ],
+        [
+          "One spare shirt",
+          "AC + sweat"
+        ],
+        [
+          "Earbuds",
+          "Long Shinkansen"
+        ],
+        [
+          "Small towel (tenugui)",
+          "Onsen/hands"
+        ]
+      ]
+    },
+    {
+      "caption": "Document Folder",
+      "columns": [
+        "Section",
+        "Contents"
+      ],
+      "rows": [
+        [
+          "Identity",
+          "Passport copy; Visit Japan Web QR print"
+        ],
+        [
+          "Transport",
+          "JR Pass voucher; Shirakawa-go bus confirmation; KIX transfer timing"
+        ],
+        [
+          "Lodging",
+          "All hotel confirmations (JP + EN addresses)"
+        ],
+        [
+          "Universal",
+          "Insurance; emergency card; credit card lost/stolen hotlines"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Item",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Slip-on shoes",
+          "Fast security"
+        ],
+        [
+          "Comfortable trousers/joggers",
+          "14 hr seated"
+        ],
+        [
+          "Breathable shirt + light layer",
+          "Plane AC"
+        ],
+        [
+          "Compression socks",
+          "Circulation on long haul"
+        ],
+        [
+          "Empty water bottle",
+          "Fill post-security"
+        ]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Hike & Adventure Gear",
+      "items": [
+        "1–2 L water",
+        "Electrolyte sachet",
+        "Sunscreen stick",
+        "Rain jacket",
+        "Cash ¥2,000–5,000 (shrines, bus snacks)",
+        "Portable fan (optional; buy at Don Quijote ¥300)",
+        "Phone + power bank"
+      ]
+    },
+    {
+      "heading": "Tech & Power (from 09-tech-connectivity)",
+      "items": [
+        "All hotel addresses (Japanese)",
+        "JR Pass voucher PDF",
+        "Visit Japan Web QR",
+        "Insurance policy",
+        "Emergency phrase screenshots (09-tech-connectivity)"
+      ]
+    },
+    {
+      "heading": "Printable Packing Checklist",
+      "items": [
+        "[ ] Passport (valid through 2028)",
+        "[ ] Visit Japan Web QR (print + offline)",
+        "[ ] JR Pass voucher",
+        "[ ] Travel insurance + emergency card",
+        "[ ] Shirakawa-go bus ticket",
+        "[ ] All hotel confirmations (Japanese addresses)",
+        "[ ] KIX departure flight confirmation",
+        "[ ] Phone + eSIM activated",
+        "[ ] Power bank 20,000 mAh",
+        "[ ] USB-C cables + cube",
+        "[ ] Earbuds",
+        "[ ] Offline maps + Translate downloaded",
+        "[ ] Suica loaded in wallet app",
+        "[ ] 5–6 breathable shirts",
+        "[ ] 2 trousers + 1 shorts",
+        "[ ] Trail runners (broken in)",
+        "[ ] Sandals",
+        "[ ] Rain jacket + umbrella",
+        "[ ] Hat + sunglasses",
+        "[ ] Modest temple outfit",
+        "[ ] 7 underwear + 3 hiking socks",
+        "[ ] Daypack 20–25 L",
+        "[ ] Collapsible water bottle",
+        "[ ] Blister kit",
+        "[ ] Electrolytes",
+        "[ ] Prescriptions + doctor note",
+        "[ ] ORS, ibuprofen, Imodium",
+        "[ ] SPF 50 sunscreen",
+        "[ ] Hand sanitizer",
+        "[ ] Packing cubes",
+        "[ ] Small cash USD backup",
+        "[ ] TSA locks on checked bag",
+        "[ ] Laundry soap sheets (optional)"
+      ]
+    }
+  ],
+  "callouts": [
+    {
+      "status": "pass",
+      "text": "5 validation check(s) passed in source plan."
+    }
+  ],
   "slide_title_accent": "STRATEGY",
   "section_label": "Do Not Forget",
-  "section_kicker": "Summer Wardrobe · Adventure Gear · Luggage Flow",
+  "section_kicker": "Climate · Gear · Border-day carry-on",
   "climate": {
-    "caption": "Summer Japan Climate",
-    "text": "30–35°C humid (Tokyo/Kyoto/Osaka); 25–30°C Takayama; AC aggressive indoors.",
-    "note": "Temple kit: shoulders covered; slip-on sandals for ryokan/onsen. Japan 100V Type A — US chargers OK."
+    "caption": "September Climate",
+    "text": "Beijing shoulder (20–26°C); Vietnam warm-humid with typhoon tail risk in central coast.",
+    "note": "Schedule outdoor Vietnam time early AM / evening."
   },
   "essentials": {
-    "caption": "Core Do Not Forget (15)",
+    "caption": "Core Do Not Forget",
     "items": [
-      { "n": 1, "label": "Valid US passport", "detail": "expires 2028; one blank page", "icon": "🛂" },
-      { "n": 2, "label": "Visit Japan Web QR codes", "detail": "offline + printed", "icon": "📱" },
-      { "n": 3, "label": "Travel insurance + emergency line", "detail": "wallet card printed", "icon": "🏥" },
-      { "n": 4, "label": "JR Pass 7-day voucher", "detail": "activate Jul 29", "icon": "🚃" },
-      { "n": 5, "label": "Japan eSIM activated", "detail": "Airalo/Ubigi 15-day", "icon": "📶" },
-      { "n": 6, "label": "Cards + bank travel notification", "detail": "7-Eleven ATM compatible", "icon": "💳" },
-      { "n": 7, "label": "Suica/PASMO loaded", "detail": "¥3,000–5,000 before leaving airport", "icon": "🎫" },
-      { "n": 8, "label": "Prescription medications", "detail": "17-day supply + doctor note", "icon": "💊" },
-      { "n": 9, "label": "20,000 mAh USB-C power bank", "detail": "Fushimi dawn + bus days", "icon": "🔋" },
-      { "n": 10, "label": "Broken-in trail runners", "detail": "Fushimi stairs + Kamakura cobble", "icon": "👟" },
-      { "n": 11, "label": "Ultralight rain jacket", "detail": "afternoon storms + Alps", "icon": "🌧" },
-      { "n": 12, "label": "SPF 50 + hat", "detail": "reapply every 2 hrs", "icon": "☀" },
-      { "n": 13, "label": "Electrolyte tablets / ORS", "detail": "Kyoto/Osaka heat days", "icon": "💧" },
-      { "n": 14, "label": "Compression packing cubes", "detail": "takkyubin split Jul 28", "icon": "🎒" },
-      { "n": 15, "label": "Hotel confirmations", "detail": "Japanese + English addresses", "icon": "🏨" }
+      {
+        "n": 1,
+        "label": "Valid US passport",
+        "detail": "expires 2028 ✓; one blank page minimum",
+        "icon": "📄"
+      },
+      {
+        "n": 2,
+        "label": "Visit Japan Web QR codes",
+        "detail": "immigration + customs saved offline + printed (03-immigration-entry)",
+        "icon": "✓"
+      },
+      {
+        "n": 3,
+        "label": "Travel insurance policy # + 24/7 emergency line",
+        "detail": "phone contact + printed wallet card (14-health-safety)",
+        "icon": "✓"
+      },
+      {
+        "n": 4,
+        "label": "JR Pass 7-day exchange voucher",
+        "detail": "print + PDF; activate Jul 29 (07-transport-money)",
+        "icon": "✓"
+      },
+      {
+        "n": 5,
+        "label": "Japan eSIM activated before departure",
+        "detail": "Airalo/Ubigi 15-day; QR saved in email (09-tech-connectivity)",
+        "icon": "📱"
+      },
+      {
+        "n": 6,
+        "label": "Credit/debit cards + bank travel notification",
+        "detail": "7-Eleven ATM compatible (no foreign fee card ideal)",
+        "icon": "✓"
+      },
+      {
+        "n": 7,
+        "label": "Virtual or physical Suica/PASMO",
+        "detail": "loaded ¥3,000–5,000 before leaving airport",
+        "icon": "✓"
+      },
+      {
+        "n": 8,
+        "label": "Prescription medications",
+        "detail": "17-day supply in carry-on + doctor note in English",
+        "icon": "✓"
+      },
+      {
+        "n": 9,
+        "label": "20,000 mAh USB-C power bank",
+        "detail": "airline-compliant; essential for Fushimi dawn + Shirakawa-go bus day",
+        "icon": "✓"
+      },
+      {
+        "n": 10,
+        "label": "Trail runners or broken-in walking shoes",
+        "detail": "Fushimi stairs + Kamakura cobblestones; not new shoes",
+        "icon": "✓"
+      },
+      {
+        "n": 11,
+        "label": "Ultralight rain jacket",
+        "detail": "afternoon thunderstorms; Alps weather shifts fast",
+        "icon": "✓"
+      },
+      {
+        "n": 12,
+        "label": "SPF 50 sunscreen + hat",
+        "detail": "non-negotiable for Jul/Aug; reapply every 2 hrs",
+        "icon": "✓"
+      }
     ]
   },
   "documents": {
@@ -37,127 +457,137 @@
     "sections": [
       {
         "heading": "Identity",
-        "items": ["Passport copy", "Visit Japan Web QR print"]
+        "items": [
+          "Passport copy; Visit Japan Web QR print"
+        ]
       },
       {
         "heading": "Transport",
-        "items": ["JR Pass voucher", "Shirakawa-go bus confirmation", "KIX transfer timing"]
+        "items": [
+          "JR Pass voucher; Shirakawa-go bus confirmation; KIX transfer timing"
+        ]
       },
       {
         "heading": "Lodging",
-        "items": ["All hotel confirmations (JP + EN)"]
+        "items": [
+          "All hotel confirmations (JP + EN addresses)"
+        ]
       },
       {
         "heading": "Universal",
-        "items": ["Insurance + emergency card", "Credit card lost/stolen hotlines"]
+        "items": [
+          "Insurance; emergency card; credit card lost/stolen hotlines"
+        ]
       }
     ]
   },
   "wardrobe": {
-    "caption": "Summer Wardrobe",
-    "columns": ["Category", "Pack", "Notes"],
-    "rows": [
-      ["Tops", "5–6 breathable shirts (linen, merino, Airism)", "Quick-dry; one modest for temples"],
-      ["Bottoms", "2 trousers + 1 shorts", "Knees covered at temples"],
-      ["Layer", "Packable cardigan / ultralight fleece", "Takayama evenings + train AC"],
-      ["Footwear", "Trail runners + compact sandals", "Ryokan/onsen slip-ons"],
-      ["Basics", "7 underwear + 3 merino socks", "Laundry Day 5 or Day 9"],
-      ["Rain", "Jacket + folding umbrella", "Konbini umbrellas ¥500"]
-    ]
-  },
-  "adventure": {
-    "caption": "Hike & Adventure Gear",
-    "columns": ["Item", "Bring / Rent / Skip"],
-    "rows": [
-      ["Trail runners (broken in)", "✅ Bring"],
-      ["Daypack 20–25 L", "✅ Bring — water, rain layer, power bank"],
-      ["Collapsible water bottle", "✅ Bring — refill at konbini"],
-      ["Trekking poles", "Optional — Fushimi stairs; collapsible OK"],
-      ["Wide-brim hat + sunglasses", "✅ Bring"],
-      ["Bear bell", "Optional — buy locally ¥500"],
-      ["Hiking boots", "❌ Skip — trail runners sufficient"],
-      ["Full hiking pack 40 L+", "❌ Skip"],
-      ["Swimsuit", "❌ Skip — no swimming in itinerary"]
-    ]
+    "caption": "China & Vietnam Wardrobe",
+    "columns": [
+      "Item",
+      "Why"
+    ],
+    "rows": []
   },
   "tech": {
-    "caption": "Tech & Power",
-    "columns": ["Item", "Use"],
-    "rows": [
-      ["eSIM (Airalo/Ubigi 15-day)", "Data-only; US number for 2FA"],
-      ["20,000 mAh power bank", "Shinkansen + Fushimi 05:30; no shrine outlets"],
-      ["USB-C cable + dual-port cube", "Phone + bank overnight"],
-      ["Suica in Apple/Google Wallet", "Transit + konbini tap"],
-      ["Noise-canceling earbuds", "11–14 hr flights; Shinkansen focus"],
-      ["Offline Google Maps (Japan)", "~400 MB; hiking + transit"],
-      ["Google Translate offline", "Camera mode for menus/signs"],
-      ["JNTO Travel App", "Disaster alerts + WiFi map"]
-    ]
-  },
-  "health": {
-    "caption": "Health Kit",
-    "columns": ["Category", "Location"],
-    "rows": [
-      ["Prescription meds + doctor note", "Carry-on only"],
-      ["Imodium, ibuprofen, antihistamine", "Carry-on pouch"],
-      ["ORS / electrolyte tablets", "Carry-on"],
-      ["Sunscreen (100 mL)", "Carry-on TSA quart bag"],
-      ["Blister Compeed + moleskin", "Carry-on"],
-      ["Insect repellent", "Checked or buy locally"],
-      ["Hand sanitizer", "Carry-on"]
-    ]
-  },
-  "transit_bag": {
-    "caption": "Rail & Transit Day Bag (D6, D7, D8, D12, D14)",
-    "columns": ["Item", "Why"],
-    "rows": [
-      ["Passport + wallet", "ID; cash for rural buses"],
-      ["Phone + power bank + cable", "Navigation; seat reservations"],
-      ["JR Pass + seat printouts", "Takayama/Kyoto legs"],
-      ["Snacks (onigiri, energy bar)", "4.5 hr Tokyo→Takayama"],
-      ["Water bottle + rain jacket", "Hydration; Alps weather"],
-      ["One spare shirt + earbuds", "AC + sweat; long Shinkansen"],
-      ["Small tenugui towel", "Onsen/hands"]
-    ]
-  },
-  "flight_outfit": {
-    "caption": "Border-Crossing Flight Outfit (D1 + D14)",
-    "columns": ["Item", "Why"],
-    "rows": [
-      ["Slip-on shoes", "Fast security"],
-      ["Comfortable joggers/trousers", "14 hr seated"],
-      ["Breathable shirt + light layer", "Plane AC"],
-      ["Compression socks", "Circulation on long haul"],
-      ["Empty water bottle", "Fill post-security"]
-    ]
-  },
-  "luggage": {
-    "caption": "Takkyubin & Luggage Strategy",
-    "bags": [
-      { "icon": "🧳", "name": "Checked 24–26\"", "role": "Main wardrobe; forward Jul 28 & Aug 3 via takkyubin (¥1,500–2,500)" },
-      { "icon": "🎒", "name": "Carry-on 40 L", "role": "3-day clothes, valuables, meds, all documents" },
-      { "icon": "👜", "name": "Packable daypack 18–20 L", "role": "Folds flat; deploy for hikes + transit days" }
+    "caption": "Tech & Power (from 09-tech-connectivity)",
+    "columns": [
+      "Item",
+      "Use"
     ],
-    "note": "Day 6: carry-on only if bag forwarded Jul 28 eve. Kappabashi knives must be checked — never carry-on."
+    "rows": [
+      [
+        "eSIM (Airalo/Ubigi 15-day unlimited)",
+        "Data-only; US number stays active for 2FA"
+      ],
+      [
+        "20,000 mAh power bank",
+        "Shinkansen days; Fushimi 05:30 start; no outlets at shrines"
+      ],
+      [
+        "USB-C cable + dual-port cube",
+        "Phone + power bank overnight"
+      ],
+      [
+        "Phone with Suica in Apple/Google Wallet",
+        "Tap transit + konbini"
+      ],
+      [
+        "Noise-canceling earbuds",
+        "11–14 hr flights; Shinkansen focus"
+      ],
+      [
+        "Offline Google Maps (Japan downloaded)",
+        "~400 MB; hiking + offline transit"
+      ],
+      [
+        "Google Translate (Japanese offline pack)",
+        "Camera mode for menus/signs"
+      ],
+      [
+        "Japan Official Travel App (JNTO)",
+        "Disaster alerts + WiFi map"
+      ]
+    ]
   },
   "checklist": {
     "caption": "Printable Checklist Highlights",
     "categories": [
       {
         "heading": "Documents",
-        "items": ["Passport (2028)", "VJW QR", "JR Pass voucher", "Insurance card", "Shirakawa-go bus", "Hotel JP addresses", "KIX flight"]
+        "items": [
+          "Passport (valid through 2028)",
+          "Visit Japan Web QR (print + offline)",
+          "JR Pass voucher",
+          "Travel insurance + emergency card",
+          "Shirakawa-go bus ticket",
+          "All hotel confirmations (Japanese addresses)",
+          "KIX departure flight confirmation"
+        ]
       },
       {
         "heading": "Electronics",
-        "items": ["eSIM active", "Power bank 20k mAh", "USB-C + cube", "Earbuds", "Offline maps/Translate", "Suica loaded"]
+        "items": [
+          "Phone + eSIM activated",
+          "Power bank 20,000 mAh",
+          "USB-C cables + cube",
+          "Earbuds",
+          "Offline maps + Translate downloaded",
+          "Suica loaded in wallet app"
+        ]
       },
       {
-        "heading": "Clothing & Gear",
-        "items": ["5–6 shirts", "2 trousers + shorts", "Trail runners", "Sandals", "Rain + umbrella", "Hat/sunglasses", "Daypack 20–25 L", "Water bottle"]
+        "heading": "Clothing",
+        "items": [
+          "5–6 breathable shirts",
+          "2 trousers + 1 shorts",
+          "Trail runners (broken in)",
+          "Sandals",
+          "Rain jacket + umbrella",
+          "Hat + sunglasses",
+          "Modest temple outfit",
+          "7 underwear + 3 hiking socks"
+        ]
+      },
+      {
+        "heading": "Health",
+        "items": [
+          "Prescriptions + doctor note",
+          "ORS, ibuprofen, Imodium",
+          "SPF 50 sunscreen",
+          "Hand sanitizer"
+        ]
+      },
+      {
+        "heading": "Misc",
+        "items": [
+          "Packing cubes",
+          "Small cash USD backup",
+          "TSA locks on checked bag",
+          "Laundry soap sheets (optional)"
+        ]
       }
     ]
   },
-  "footer": "Day-pack loadout for adventure days: 1–2 L water · electrolyte · sunscreen stick · ¥2,000–5,000 cash · rain layer · power bank.",
-  "intro": "---",
-  "callouts": []
+  "footer": "VPN must be installed before China entry; never check prescriptions."
 }

@@ -88,6 +88,83 @@ what is not present rather than inventing it):
         }
       }
     },
+    "flight_snapshot": {
+      "type": "object",
+      "description": "Route slide: distilled MCP flight picks from opt-02.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "picks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "leg": { "type": "string" },
+              "price": { "type": "string" },
+              "stops": { "type": "string" },
+              "duration": { "type": "string" },
+              "airlines": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        }
+      }
+    },
+    "flights": {
+      "type": "object",
+      "description": "Transport-money slide: structured MCP flight comparison from opt-07.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        },
+        "legs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "recommended": {
+                "type": "object",
+                "properties": {
+                  "price": { "type": "string" },
+                  "stops": { "type": "string" },
+                  "duration": { "type": "string" },
+                  "airlines": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "options": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        },
+        "leg_tables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "caption": { "type": "string" },
+              "columns": { "type": "array", "items": { "type": "string" } },
+              "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        }
+      }
+    },
     "summary": {
       "type": "object",
       "properties": {
@@ -675,14 +752,17 @@ Required top-level values for THIS aspect:
   "title": "Shopping"
 
 Target type: "shopping"
-Summary of what to capture: Regional shopping hubs slide: left-stacked + right-tall hub panels with day/spot/buy tables.
+Summary of what to capture: Three slides with per-hub geo maps (day pins per city), day-plan city maps, Hội An tailoring map.
 Fields to populate (use null/omit when absent — every field is optional):
   - slide_title
   - slide_title_accent
   - section_kicker
-  - regional { kicker, left[] { name, days, icon, columns[], rows[][] }, right { name, days, icon, columns[], rows[][] } }
+  - regional { kicker, left[] { name, days, icon, columns[], rows[][], map { bounds, nodes[], hide_route } }, right { ... } }
+  - day_plan { kicker, cities[] { name, map, rows[][] }, columns[], rows[][] }
+  - strength_matrix { caption, columns[], rows[][] }
+  - tailoring { map, timeline, protocol, tailors, turnaround, red_flags }
   - footer
-
+Notes: Each hub.map.nodes uses real lat/lng per shopping day; match spots from plan text when possible.
 Image categories to tag: temple, takoyaki, profile-icon
 
 CRITICAL for any map_nodes: use REAL geographic latitude/longitude for each city.
@@ -908,7 +988,7 @@ No price advantage in China or Vietnam for European/US luxury shoe brands. Skip 
 | Total goods | $800 | 3–5% duty on next $1,000 |
 | Alcohol | 1 liter | Duty applies |
 | Tobacco | 200 cigarettes | Duty applies |
-| **Per couple total** | **$1,600** | — |
+| **Per party (3) total** | **$1,600** | — |
 
 **High-value item strategy**:
 - Register any valuables leaving the US (watches, jewelry) on **CBP Form 4457** at your departure airport — prevents being taxed on re-entry

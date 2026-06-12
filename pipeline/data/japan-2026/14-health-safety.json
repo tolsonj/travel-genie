@@ -4,7 +4,7 @@
   "trip": "japan-2026",
   "title": "Health Safety",
   "slide_title": "HEALTH",
-  "intro": "---",
+  "intro": "Travel Medicine Clinic: Schedule May–June 2026; bring printed 04-master-itinerary; verify CDC Japan notices at [travel.cdc.gov](https://travel.cdc.gov).",
   "tables": [
     {
       "caption": "Vaccinations (travel medicine clinic 4–6 weeks before Jul 24 departure)",
@@ -241,6 +241,240 @@
           "Minor issues; ask hotel to call"
         ]
       ]
+    },
+    {
+      "caption": "Kyoto (Days 8–11)",
+      "columns": [
+        "Facility",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Kyoto University Hospital",
+          "Major emergency facility; +81-75-751-3111"
+        ],
+        [
+          "Japan Baptist Hospital Kyoto",
+          "English-speaking staff; GP + emergency"
+        ],
+        [
+          "Koseikai Takeda Hospital International Dept.",
+          "Tourist/expat clinic; appointments recommended"
+        ]
+      ]
+    },
+    {
+      "caption": "Osaka (Days 12–13)",
+      "columns": [
+        "Facility",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Osaka University Hospital",
+          "Emergency; +81-6-6879-5111"
+        ],
+        [
+          "Osaka Medical and Pharmaceutical University Hospital",
+          "Full services"
+        ],
+        [
+          "Primary Care Osaka (Umeda/Namba area clinics)",
+          "English GP; search before travel for current location"
+        ]
+      ]
+    },
+    {
+      "caption": "Emergency Numbers & Embassy",
+      "columns": [
+        "Service",
+        "Number",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Police",
+          "110",
+          "English available in major cities"
+        ],
+        [
+          "Ambulance / Fire",
+          "119",
+          "Say \"kyūkyūsha\" (ambulance); English operators in Tokyo/Osaka"
+        ],
+        [
+          "Police consultation (non-emergency)",
+          "#9110",
+          "Tokyo English support"
+        ],
+        [
+          "Japan Helpline",
+          "0570-000-911",
+          "24/7 English assistance (non-government)"
+        ],
+        [
+          "US Embassy Tokyo",
+          "+81-3-3224-5000",
+          "24/7 emergency; 1-10-5 Akasaka, Minato-ku"
+        ],
+        [
+          "US Consulate Osaka-Kobe",
+          "+81-6-6315-5900",
+          "Covers Kansai region"
+        ],
+        [
+          "US State Dept (overseas)",
+          "+1-202-501-4444",
+          "Emergency assistance"
+        ]
+      ]
+    },
+    {
+      "caption": "Adventure-Specific Health (from 04-master-itinerary)",
+      "columns": [
+        "Activity",
+        "Day",
+        "Intensity",
+        "Medical notes"
+      ],
+      "rows": [
+        [
+          "Kamakura Daibutsu + Enoshima walk",
+          "4",
+          "●●●○○",
+          "Sun + cobblestones; water 2 L; Compeed essential"
+        ],
+        [
+          "Shirakawa-go village walk",
+          "7",
+          "●●○○○",
+          "Uneven paths; rain jacket; no swimming in rivers"
+        ],
+        [
+          "Fushimi Inari summit loop",
+          "9",
+          "●●●○○",
+          "2–3 hrs stairs; start 05:30 to beat heat; knee-friendly pace"
+        ],
+        [
+          "Arashiyama bamboo + river path",
+          "10",
+          "●●●○○",
+          "Rental cycle optional; monkey park steep—skip if fatigued"
+        ],
+        [
+          "Philosopher's Path + Kiyomizu",
+          "11",
+          "●●●○○",
+          "Uphill to Kiyomizu; hydrate before climb"
+        ],
+        [
+          "Osaka Castle park exterior",
+          "13",
+          "●●○○○",
+          "Morning only; skip interior if heat advisory"
+        ]
+      ]
+    },
+    {
+      "caption": "Safety Per Region",
+      "columns": [
+        "Risk",
+        "Level",
+        "Mitigation"
+      ],
+      "rows": [
+        [
+          "Petty theft",
+          "Very low",
+          "Japan is among safest globally; still watch bags on crowded trains"
+        ],
+        [
+          "Scams",
+          "Low",
+          "Overpriced bars in Golden Gai/Shinsekai—check menu prices before ordering"
+        ],
+        [
+          "Traffic",
+          "Low–moderate",
+          "Look both ways at crossings; cyclists on sidewalks in Kyoto"
+        ],
+        [
+          "Earthquake",
+          "Moderate (constant low probability)",
+          "Know hotel evacuation route; J-Alert app; \"drop, cover, hold on\""
+        ],
+        [
+          "Heat illness",
+          "High (seasonal)",
+          "Midday indoor pivot; electrolytes; know 119 protocol"
+        ],
+        [
+          "Typhoon",
+          "Moderate (seasonal)",
+          "Monitor JMA; indoor backup days built into 04-master-itinerary"
+        ],
+        [
+          "Bear (Alps)",
+          "Very low",
+          "Stay on marked paths; optional bear bell at trail shops ¥500"
+        ],
+        [
+          "Crowd crush",
+          "Moderate",
+          "Deal-breaker from profile-japan—early starts per 17-time-optimization"
+        ]
+      ]
+    },
+    {
+      "caption": "Document Backup Protocol",
+      "columns": [
+        "Document",
+        "Digital backup",
+        "Physical backup"
+      ],
+      "rows": [
+        [
+          "US passport",
+          "iCloud/Google Drive encrypted",
+          "Photocopy in daypack + hotel safe"
+        ],
+        [
+          "Visit Japan Web QR",
+          "Screenshot + email to self",
+          "Print immigration/customs QR"
+        ],
+        [
+          "JR Pass voucher",
+          "PDF in email",
+          "Print copy"
+        ],
+        [
+          "Travel insurance",
+          "Email policy PDF",
+          "Wallet card"
+        ],
+        [
+          "Hotel confirmations",
+          "Notes app + email",
+          "One printed sheet all addresses (Japanese + English)"
+        ],
+        [
+          "Flight confirmations",
+          "Airline app + email",
+          "Print KIX departure Aug 6"
+        ],
+        [
+          "Credit card # + bank intl hotline",
+          "Password manager",
+          "Paper in secured luggage"
+        ],
+        [
+          "Prescription list",
+          "Photo in phone",
+          "Doctor note in carry-on"
+        ]
+      ]
     }
   ],
   "bullets": [
@@ -271,6 +505,9 @@
   "slide_title_accent": "SAFETY",
   "section_label": "Health Safety",
   "section_kicker": "Vaccines · heat · clinics · first-aid kit",
+  "banner": {
+    "text": "Travel Medicine Clinic: Schedule May–June 2026; bring printed 04-master-itinerary; verify CDC Japan notices at [travel.cdc.gov](https://travel.cdc.gov)."
+  },
   "sidebar": [
     {
       "type": "list",
@@ -531,6 +768,240 @@
         [
           "Takayama City Health Center",
           "Minor issues; ask hotel to call"
+        ]
+      ]
+    },
+    {
+      "caption": "Kyoto (Days 8–11)",
+      "columns": [
+        "Facility",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Kyoto University Hospital",
+          "Major emergency facility; +81-75-751-3111"
+        ],
+        [
+          "Japan Baptist Hospital Kyoto",
+          "English-speaking staff; GP + emergency"
+        ],
+        [
+          "Koseikai Takeda Hospital International Dept.",
+          "Tourist/expat clinic; appointments recommended"
+        ]
+      ]
+    },
+    {
+      "caption": "Osaka (Days 12–13)",
+      "columns": [
+        "Facility",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Osaka University Hospital",
+          "Emergency; +81-6-6879-5111"
+        ],
+        [
+          "Osaka Medical and Pharmaceutical University Hospital",
+          "Full services"
+        ],
+        [
+          "Primary Care Osaka (Umeda/Namba area clinics)",
+          "English GP; search before travel for current location"
+        ]
+      ]
+    },
+    {
+      "caption": "Emergency Numbers & Embassy",
+      "columns": [
+        "Service",
+        "Number",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Police",
+          "110",
+          "English available in major cities"
+        ],
+        [
+          "Ambulance / Fire",
+          "119",
+          "Say \"kyūkyūsha\" (ambulance); English operators in Tokyo/Osaka"
+        ],
+        [
+          "Police consultation (non-emergency)",
+          "#9110",
+          "Tokyo English support"
+        ],
+        [
+          "Japan Helpline",
+          "0570-000-911",
+          "24/7 English assistance (non-government)"
+        ],
+        [
+          "US Embassy Tokyo",
+          "+81-3-3224-5000",
+          "24/7 emergency; 1-10-5 Akasaka, Minato-ku"
+        ],
+        [
+          "US Consulate Osaka-Kobe",
+          "+81-6-6315-5900",
+          "Covers Kansai region"
+        ],
+        [
+          "US State Dept (overseas)",
+          "+1-202-501-4444",
+          "Emergency assistance"
+        ]
+      ]
+    },
+    {
+      "caption": "Adventure-Specific Health (from 04-master-itinerary)",
+      "columns": [
+        "Activity",
+        "Day",
+        "Intensity",
+        "Medical notes"
+      ],
+      "rows": [
+        [
+          "Kamakura Daibutsu + Enoshima walk",
+          "4",
+          "●●●○○",
+          "Sun + cobblestones; water 2 L; Compeed essential"
+        ],
+        [
+          "Shirakawa-go village walk",
+          "7",
+          "●●○○○",
+          "Uneven paths; rain jacket; no swimming in rivers"
+        ],
+        [
+          "Fushimi Inari summit loop",
+          "9",
+          "●●●○○",
+          "2–3 hrs stairs; start 05:30 to beat heat; knee-friendly pace"
+        ],
+        [
+          "Arashiyama bamboo + river path",
+          "10",
+          "●●●○○",
+          "Rental cycle optional; monkey park steep—skip if fatigued"
+        ],
+        [
+          "Philosopher's Path + Kiyomizu",
+          "11",
+          "●●●○○",
+          "Uphill to Kiyomizu; hydrate before climb"
+        ],
+        [
+          "Osaka Castle park exterior",
+          "13",
+          "●●○○○",
+          "Morning only; skip interior if heat advisory"
+        ]
+      ]
+    },
+    {
+      "caption": "Safety Per Region",
+      "columns": [
+        "Risk",
+        "Level",
+        "Mitigation"
+      ],
+      "rows": [
+        [
+          "Petty theft",
+          "Very low",
+          "Japan is among safest globally; still watch bags on crowded trains"
+        ],
+        [
+          "Scams",
+          "Low",
+          "Overpriced bars in Golden Gai/Shinsekai—check menu prices before ordering"
+        ],
+        [
+          "Traffic",
+          "Low–moderate",
+          "Look both ways at crossings; cyclists on sidewalks in Kyoto"
+        ],
+        [
+          "Earthquake",
+          "Moderate (constant low probability)",
+          "Know hotel evacuation route; J-Alert app; \"drop, cover, hold on\""
+        ],
+        [
+          "Heat illness",
+          "High (seasonal)",
+          "Midday indoor pivot; electrolytes; know 119 protocol"
+        ],
+        [
+          "Typhoon",
+          "Moderate (seasonal)",
+          "Monitor JMA; indoor backup days built into 04-master-itinerary"
+        ],
+        [
+          "Bear (Alps)",
+          "Very low",
+          "Stay on marked paths; optional bear bell at trail shops ¥500"
+        ],
+        [
+          "Crowd crush",
+          "Moderate",
+          "Deal-breaker from profile-japan—early starts per 17-time-optimization"
+        ]
+      ]
+    },
+    {
+      "caption": "Document Backup Protocol",
+      "columns": [
+        "Document",
+        "Digital backup",
+        "Physical backup"
+      ],
+      "rows": [
+        [
+          "US passport",
+          "iCloud/Google Drive encrypted",
+          "Photocopy in daypack + hotel safe"
+        ],
+        [
+          "Visit Japan Web QR",
+          "Screenshot + email to self",
+          "Print immigration/customs QR"
+        ],
+        [
+          "JR Pass voucher",
+          "PDF in email",
+          "Print copy"
+        ],
+        [
+          "Travel insurance",
+          "Email policy PDF",
+          "Wallet card"
+        ],
+        [
+          "Hotel confirmations",
+          "Notes app + email",
+          "One printed sheet all addresses (Japanese + English)"
+        ],
+        [
+          "Flight confirmations",
+          "Airline app + email",
+          "Print KIX departure Aug 6"
+        ],
+        [
+          "Credit card # + bank intl hotline",
+          "Password manager",
+          "Paper in secured luggage"
+        ],
+        [
+          "Prescription list",
+          "Photo in phone",
+          "Doctor note in carry-on"
         ]
       ]
     }

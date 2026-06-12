@@ -7,7 +7,7 @@
   "country_label": "CHINA · VIETNAM",
   "intelligence": {
     "label": "Travel Intelligence",
-    "text": "Couple (traveler + wife) · China  → Vietnam · September 1–14, 2026 (14 days). Budget $20,000 USD for both travelers. Constraint: Avoid peak tourist hours."
+    "text": "Party of 3 (couple + 1) · China  → Vietnam · September 1–14, 2026 (14 days). Budget $30,000 USD for all travelers. Constraint: Avoid peak tourist hours."
   },
   "metrics": [
     {
@@ -23,12 +23,17 @@
     {
       "icon": "👤",
       "label": "Party",
-      "value": "Couple (traveler + wife)"
+      "value": "Party of 3 (couple + 1) · 3 adults pax"
+    },
+    {
+      "icon": "✈️",
+      "label": "Home airport",
+      "value": "ATL (Hartsfield-Jackson)"
     },
     {
       "icon": "💵",
       "label": "Budget",
-      "value": "$20,000 USD for both travelers"
+      "value": "$30,000 USD for all travelers"
     },
     {
       "icon": "⭐",
@@ -39,6 +44,11 @@
       "icon": "💪",
       "label": "Physical",
       "value": "Both travelers in excellent physical condition"
+    },
+    {
+      "icon": "🎫",
+      "label": "Cabin",
+      "value": "Economy; compare business on long-hauls"
     }
   ],
   "seasonality": {
@@ -135,7 +145,7 @@
         ],
         [
           "Travel party",
-          "Couple (traveler + wife)"
+          "Party of 3 (couple + 1)"
         ],
         [
           "Decision authority",
@@ -144,6 +154,18 @@
         [
           "Citizenship",
           "Assumed US *(unconfirmed — verify before Step 03)*"
+        ],
+        [
+          "Home airport",
+          "ATL (Hartsfield-Jackson)"
+        ],
+        [
+          "Passengers",
+          "3 adults"
+        ],
+        [
+          "Cabin preference",
+          "Economy; compare business on long-hauls"
         ]
       ]
     },
@@ -156,7 +178,7 @@
       "rows": [
         [
           "Total",
-          "$20,000 USD for both travelers"
+          "$30,000 USD for all travelers"
         ],
         [
           "Allocation intent",
@@ -164,7 +186,7 @@
         ],
         [
           "Per-day estimate",
-          "~$1,428/day total (both) across 14 days"
+          "~$2,143/day total (party of 3) across 14 days"
         ]
       ]
     },

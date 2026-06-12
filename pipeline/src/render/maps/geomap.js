@@ -76,11 +76,20 @@ export const GEOMAP_CLIENT_SCRIPT = `
         .style("font-size", "10px").text(cfg.depart.caption || "Depart");
     }
 
-    var node = svg.append("g").selectAll("g").data(pts).join("g");
-    node.append("text").attr("class", "city-label")
-      .attr("x", function (d) { return d.p[0]; })
-      .attr("y", function (d) { return d.p[1] + (d.labelDy || -18); })
-      .attr("text-anchor", "middle").text(function (d) { return d.label; });
+    function labelText(d) {
+      return d.mapLabel || d.label || "";
+    }
+
+    function labelLines(d) {
+      var raw = labelText(d);
+      if (!raw) return [];
+      if (raw.indexOf("/") !== -1) {
+        return raw.split(/\\s*\\/\\s*/).map(function (s) { return s.trim(); }).filter(Boolean);
+      }
+      return [raw];
+    }
+
+    var node = svg.append("g").selectAll("g.node").data(pts).join("g").attr("class", "node");
     node.append("circle")
       .attr("cx", function (d) { return d.p[0]; })
       .attr("cy", function (d) { return d.p[1]; })
@@ -90,6 +99,45 @@ export const GEOMAP_CLIENT_SCRIPT = `
       .attr("x", function (d) { return d.p[0]; })
       .attr("y", function (d) { return d.p[1] + 4; })
       .attr("text-anchor", "middle").text(function (d) { return d.marker || ""; });
+
+    var labelGroups = node.append("g").attr("class", "city-label-group");
+    labelGroups.each(function (d) {
+      var g = d3.select(this);
+      var lines = labelLines(d);
+      if (!lines.length) return;
+      var x = d.p[0] + (d.labelDx || 0);
+      var y = d.p[1] + (d.labelDy || -18);
+      var text = g.append("text").attr("class", "city-label")
+        .attr("x", x).attr("y", y).attr("text-anchor", "middle");
+      lines.forEach(function (line, i) {
+        text.append("tspan")
+          .attr("x", x)
+          .attr("dy", i === 0 ? 0 : "1.15em")
+          .text(line);
+      });
+      var bbox = text.node().getBBox();
+      g.insert("rect", "text")
+        .attr("class", "city-label-bg")
+        .attr("x", bbox.x - 4).attr("y", bbox.y - 2)
+        .attr("width", bbox.width + 8).attr("height", bbox.height + 4)
+        .attr("rx", 3);
+      d._labelBox = { x: bbox.x - 4, y: bbox.y - 2, w: bbox.width + 8, h: bbox.height + 4 };
+    });
+
+    // Nudge overlapping labels apart vertically.
+    for (var a = 0; a < pts.length; a++) {
+      for (var b = a + 1; b < pts.length; b++) {
+        var ba = pts[a]._labelBox, bb = pts[b]._labelBox;
+        if (!ba || !bb) continue;
+        var overlapX = ba.x < bb.x + bb.w && ba.x + ba.w > bb.x;
+        var overlapY = ba.y < bb.y + bb.h && ba.y + ba.h > bb.y;
+        if (!overlapX || !overlapY) continue;
+        var shift = Math.ceil((ba.y + ba.h - bb.y + 4) / 2);
+        pts[b]._labelBox.y += shift;
+        var gB = d3.select(labelGroups.nodes()[b]);
+        gB.attr("transform", "translate(0," + shift + ")");
+      }
+    }
   }
 
   function drawAll() {

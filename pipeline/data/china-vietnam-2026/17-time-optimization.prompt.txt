@@ -88,6 +88,83 @@ what is not present rather than inventing it):
         }
       }
     },
+    "flight_snapshot": {
+      "type": "object",
+      "description": "Route slide: distilled MCP flight picks from opt-02.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "picks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "leg": { "type": "string" },
+              "price": { "type": "string" },
+              "stops": { "type": "string" },
+              "duration": { "type": "string" },
+              "airlines": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        }
+      }
+    },
+    "flights": {
+      "type": "object",
+      "description": "Transport-money slide: structured MCP flight comparison from opt-07.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        },
+        "legs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "recommended": {
+                "type": "object",
+                "properties": {
+                  "price": { "type": "string" },
+                  "stops": { "type": "string" },
+                  "duration": { "type": "string" },
+                  "airlines": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "options": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        },
+        "leg_tables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "caption": { "type": "string" },
+              "columns": { "type": "array", "items": { "type": "string" } },
+              "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        }
+      }
+    },
     "summary": {
       "type": "object",
       "properties": {
@@ -703,6 +780,22 @@ hero-image: https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=1200&
 ---
 
 # Time Optimization
+
+---
+
+
+### Date-flex savings (long-hauls only)
+
+*MCP search ±2 days around Step 2 dates · 2026-06-12*
+
+| Leg | Base date | Alt date | Savings (pp) | Worth it? |
+|-----|-----------|----------|-------------:|-----------|
+| ATL → HKG | Sep 1 | Aug 31 | ~$40–80 | Marginal — loses soft arrival day |
+| ATL → HKG | Sep 1 | Sep 2 | ~$0–50 | **No** — misses HK check-in Sep 1 |
+| DAD → ATL | Sep 14 | Sep 13 | ~$60 | **Maybe** — if resort allows early checkout |
+| DAD → ATL | Sep 14 | Sep 15 | ~$30 | **No** — extends trip past window |
+
+**Verdict:** Keep itinerary dates; savings do not justify shifting soft days or resort nights for this profile.
 
 ---
 

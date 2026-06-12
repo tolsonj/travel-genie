@@ -136,6 +136,13 @@ tbody td:first-child { font-weight: 600; }
 .transit-path .arrow { color: var(--gold); font-weight: 700; margin: 0 2px; }
 .transit-path .bracket { color: var(--muted); font-style: italic; }
 
+.flight-snapshot {
+  margin-top: 6px; font-size: 12px; color: var(--text-secondary); line-height: 1.45;
+}
+.flight-snapshot strong { color: var(--gold); font-weight: 600; }
+.flight-snapshot .muted { color: var(--muted); font-weight: 400; }
+.flight-snapshot .flight-pick { white-space: nowrap; }
+
 .summary-box {
   background: var(--banner-bg); color: var(--banner-text); border-radius: 8px;
   padding: 12px 16px; min-width: 280px; font-size: 12px; line-height: 1.45;
@@ -981,6 +988,26 @@ tbody td:first-child { font-weight: 600; }
   padding: 8px 10px 10px;
   min-height: 0;
 }
+.shop-hub-body-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 8px;
+  align-items: stretch;
+}
+.shop-hub-map {
+  min-height: 108px;
+  height: 108px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.shop-hub-tall .shop-hub-map {
+  min-height: 168px;
+  height: 168px;
+}
+.shop-hub-table-wrap {
+  min-height: 0;
+  overflow: hidden;
+}
 .shop-table {
   width: 100%;
   font-size: 10px;
@@ -1022,6 +1049,174 @@ tbody td:first-child { font-weight: 600; }
   border-top: 1px solid var(--border);
   padding-top: 8px;
 }
+
+.shop-matrix-wrap {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+.shop-matrix-caption {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.shop-matrix-table {
+  width: 100%;
+  font-size: 8.5px;
+  border-collapse: collapse;
+}
+.shop-matrix-table th,
+.shop-matrix-table td {
+  padding: 4px 6px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+.shop-matrix-table thead th {
+  background: #4a6278;
+  color: #fff;
+  font-size: 8px;
+}
+
+.shop-day-slide {
+  padding-top: 0;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  gap: 8px;
+}
+.shop-day-body {
+  min-height: 0;
+  overflow: hidden;
+}
+.shop-day-cities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  min-height: 0;
+  align-content: start;
+}
+.shop-day-city {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.shop-day-city-head {
+  background: var(--table-head);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.shop-day-city-body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 6px;
+  padding: 6px 8px 8px;
+  min-height: 0;
+}
+.shop-day-city-map {
+  min-height: 120px;
+  height: 120px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.shop-day-city-table {
+  min-height: 0;
+  overflow: auto;
+}
+.shop-day-city-table .shop-day-table {
+  font-size: 9px;
+}
+.shop-day-table {
+  width: 100%;
+  font-size: 10px;
+  border-collapse: collapse;
+  line-height: 1.35;
+}
+.shop-day-table thead th {
+  background: var(--table-head);
+  color: #fff;
+  padding: 6px 8px;
+  font-size: 9.5px;
+  text-align: left;
+}
+.shop-day-table tbody th {
+  font-weight: 600;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  white-space: nowrap;
+  width: 56px;
+}
+.shop-day-table tbody td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.shop-day-table tbody tr.shop-day-table-stripe td,
+.shop-day-table tbody tr.shop-day-table-stripe th {
+  background: #f0f7ff;
+}
+
+.shop-tailor-slide {
+  padding-top: 0;
+  grid-template-rows: auto auto auto auto minmax(0, 1fr);
+  gap: 8px;
+}
+.shop-tailor-banner {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--table-head);
+  background: #f0f7ff;
+  border-left: 4px solid var(--gold);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.shop-tailor-map {
+  min-height: 100px;
+  height: 100px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.shop-tailor-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 14px;
+  min-height: 0;
+}
+.shop-tailor-col { min-height: 0; }
+.shop-panel-caption {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--table-head);
+  margin-bottom: 6px;
+}
+.shop-callout {
+  font-size: 9.5px;
+  line-height: 1.4;
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: #fffbeb;
+  border: 1px solid #f0e6c8;
+  border-radius: 6px;
+}
+.shop-red-flags {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 9px;
+  line-height: 1.35;
+}
+.shop-red-flags li { margin-bottom: 4px; }
 
 /* culture & museums slide */
 .culture-slide {
@@ -1783,6 +1978,7 @@ tbody td:first-child { font-weight: 600; }
       </div>
       <div class="footer">
         <div class="transit-path"><span class="leg">Home (arrive)</span><span class="arrow"> → </span><span class="bracket">[Tokyo: Flight 11–14 hrs from US]</span><span class="arrow"> → </span><span class="bracket">[Tokyo → Takayama: Shinkansen (Tokyo→Nagoya) + Hida Limited Express ~4–4.5 hrs]</span><span class="arrow"> → </span><span class="bracket">[Takayama → Kyoto: Hida Limited Express → Shinkansen via Nagoya ~3.5 hrs]</span><span class="arrow"> → </span><span class="bracket">[Kyoto → Osaka: JR Special Rapid / Shinkansen 15–30 min]</span><span class="arrow"> → </span><span class="bracket">[Osaka → KIX: Nankai / JR Haruka 45–70 min]</span><span class="arrow"> → </span><span class="bracket">[Takayama ↔ Shirakawa-go → Takayama ↔ Shirakawa-go: Highway bus ~50 min each way]</span></div>
+        
         <div class="summary-box">
          <span class="check" aria-hidden="true">✓</span>
          <span>: ~2.5 transit-equivalent days (Day 1 partial, Day 6, Day 8, Day 12 partial, Day 14 partial) ≈ 18% of 14 days — under 20% threshold ✓</span>
@@ -1820,6 +2016,13 @@ tbody td:first-child { font-weight: 600; }
         <div class="metric-body">
           <div class="metric-label">Party</div>
           <div class="metric-value">Solo</div>
+        </div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon" aria-hidden="true">✈️</span>
+        <div class="metric-body">
+          <div class="metric-label">Home airport</div>
+          <div class="metric-value">—</div>
         </div>
       </div>
       <div class="metric-card">
@@ -1861,64 +2064,46 @@ tbody td:first-child { font-weight: 600; }
           
     <div class="food-intel-box">
       <div class="food-intel-head">Profile Intelligence</div>
-      <div class="food-intel-body"><p>Single-country Japan trip. Profile loaded from 01-traveler-profile — solo traveler, $5,000 all-in budget, Nature · Food · History priorities.</p></div>
+      <div class="food-intel-body"><p>Japan solo · Late Jul–Aug 2026 · $5K · Nature · Food · History · Moderate pace.</p></div>
     </div>
           
     <div class="food-intel-box">
       <div class="food-intel-head">Food &amp; Dining Intelligence</div>
-      <div class="food-intel-body"><ul class="food-intel-list"><li><strong>Interest:</strong> #2 Priority (after Nature)</li><li><strong>Solo Traveler:</strong> No restrictions — counter seats welcome</li><li><strong>Budget:</strong> ~$70–95 / day (~¥10,000–14,000)</li><li><strong>July Focus:</strong> Summer fish, alpine Hida beef, festival street food</li><li><strong>Logistics:</strong> Early departures D4 (Enoshima), D6 (Alps train), D8 (Kyoto move)</li></ul></div>
+      <div class="food-intel-body"><ul class="food-intel-list"><li><strong>Breakfast:</strong> $8–15 — Konbini onigiri/coffee OR market standing sushi</li><li><strong>Lunch:</strong> $15–25 — Set lunch (teishoku), market grazing, ramen</li><li><strong>Dinner:</strong> $35–55 — Izakaya, specialty regional, one splurge</li><li><strong>Snacks/drinks:</strong> $10–15 — Vending, soft cream, beer</li><li><strong>Typical day:</strong> ~$70–95 — Leaves buffer for splurge nights</li></ul></div>
     </div>
         </aside>
         <div class="food-content">
           
     <div class="food-regional">
-      <div class="food-regional-kicker">Dynamic, mutually exclusive</div>
+      <div class="food-regional-kicker">Regional highlights</div>
       <div class="food-regional-title">Regional</div>
       <div class="food-regional-grid">
         <div class="food-regional-callouts">
     <div class="food-region-card">
       <div class="food-region-hub">Tokyo</div>
-      <div class="food-region-dish"><strong>Key:</strong> Ramen · Tsukiji sushi</div>
-      <div class="food-region-detail">Gyudon arrival, izakaya Hoppy Street</div>
-      <div class="food-region-hood"><strong>Best neighborhoods:</strong> Ueno, Ameyoko, Tsukishima</div>
+      <div class="food-region-dish"><strong>Key:</strong> Arrival</div>
+      <div class="food-region-detail">Arrival, neighborhoods, food</div>
+      <div class="food-region-hood"><strong>Best neighborhoods:</strong> Kanto</div>
     </div>
     <div class="food-region-card">
-      <div class="food-region-hub">Takayama / Alps</div>
-      <div class="food-region-dish"><strong>Key:</strong> Hida beef · soba</div>
-      <div class="food-region-detail">Goheimochi, hoba miso, ryokan dinner</div>
-      <div class="food-region-hood"><strong>Best neighborhoods:</strong> Sanmachi, Shirakawa-go</div>
+      <div class="food-region-hub">Japanese Alps</div>
+      <div class="food-region-dish"><strong>Key:</strong> Nature</div>
+      <div class="food-region-detail">Nature, hiking, onsen</div>
+      <div class="food-region-hood"><strong>Best neighborhoods:</strong> Nagano/Takayama</div>
     </div>
     <div class="food-region-card">
       <div class="food-region-hub">Kyoto</div>
-      <div class="food-region-dish"><strong>Key:</strong> Obanzai · yudofu</div>
-      <div class="food-region-detail">Nishiki market grazing, Pontocho canal</div>
-      <div class="food-region-hood"><strong>Best neighborhoods:</strong> Nishiki, Gion, Fushimi</div>
-    </div>
-    <div class="food-region-card">
-      <div class="food-region-hub">Osaka</div>
-      <div class="food-region-dish"><strong>Key:</strong> Takoyaki · kushikatsu</div>
-      <div class="food-region-detail">Okonomiyaki Dotonbori, Kuromon lunch</div>
-      <div class="food-region-hood"><strong>Best neighborhoods:</strong> Dotonbori, Shinsekai, Namba</div>
+      <div class="food-region-dish"><strong>Key:</strong> Temples</div>
+      <div class="food-region-detail">Temples, history, cuisine</div>
+      <div class="food-region-hood"><strong>Best neighborhoods:</strong> Kansai</div>
     </div></div>
-        <div class="food-regional-map map-panel" data-geomap="{&quot;nodes&quot;:[{&quot;label&quot;:&quot;Tokyo&quot;,&quot;marker&quot;:&quot;T&quot;,&quot;lng&quot;:139.6917,&quot;lat&quot;:35.6895,&quot;color&quot;:&quot;#c0392b&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Takayama&quot;,&quot;marker&quot;:&quot;A&quot;,&quot;lng&quot;:137.252,&quot;lat&quot;:36.146,&quot;color&quot;:&quot;#27ae60&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Kyoto&quot;,&quot;marker&quot;:&quot;K&quot;,&quot;lng&quot;:135.7681,&quot;lat&quot;:35.0116,&quot;color&quot;:&quot;#d4a017&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Osaka&quot;,&quot;marker&quot;:&quot;O&quot;,&quot;lng&quot;:135.5023,&quot;lat&quot;:34.6937,&quot;color&quot;:&quot;#8e44ad&quot;,&quot;labelDy&quot;:26}],&quot;bounds&quot;:{&quot;west&quot;:132,&quot;south&quot;:33,&quot;east&quot;:142,&quot;north&quot;:38},&quot;highlight_countries&quot;:[&quot;Japan&quot;],&quot;country_labels&quot;:[],&quot;hide_route&quot;:true}"></div>
+        <div class="food-regional-map map-panel" data-geomap="{&quot;nodes&quot;:[{&quot;label&quot;:&quot;Tokyo&quot;,&quot;marker&quot;:&quot;T&quot;,&quot;lng&quot;:139.6917,&quot;lat&quot;:35.6895,&quot;color&quot;:&quot;#c0392b&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Japanese Alps&quot;,&quot;marker&quot;:&quot;A&quot;,&quot;lng&quot;:137.252,&quot;lat&quot;:36.146,&quot;color&quot;:&quot;#27ae60&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Kyoto&quot;,&quot;marker&quot;:&quot;K&quot;,&quot;lng&quot;:135.7681,&quot;lat&quot;:35.0116,&quot;color&quot;:&quot;#d4a017&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Osaka&quot;,&quot;marker&quot;:&quot;O&quot;,&quot;lng&quot;:135.5023,&quot;lat&quot;:34.6937,&quot;color&quot;:&quot;#8e44ad&quot;,&quot;labelDy&quot;:26}],&quot;bounds&quot;:{&quot;west&quot;:132,&quot;south&quot;:33,&quot;east&quot;:142,&quot;north&quot;:38},&quot;highlight_countries&quot;:[&quot;Japan&quot;],&quot;country_labels&quot;:[],&quot;hide_route&quot;:true}"></div>
       </div>
     </div>
           
-    <div class="food-meal-panel">
-      <div class="food-meal-title">Day-by-Day Meal Mapping</div>
-      <table class="food-meal-table">
-        <thead>
-          <tr><th class="food-meal-corner"></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Context</th><td>Arrival</td><td>Tokyo</td><td>Tokyo</td><td>Enoshima</td><td>Tsukiji</td><td>Transit</td><td>Alps</td><td>Transit</td><td>Kyoto</td><td>Kyoto</td><td>Kyoto</td><td>Osaka</td><td>Osaka</td><td>Depart</td></tr>
-          <tr><th scope="row">Meal Strategy</th><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍙</span><span>Konbini</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍢</span><span>Izakaya</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍜</span><span>Ramen</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍣</span><span>Coastal lunch</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🏪</span><span>Market AM</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍱</span><span>Ekiben</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🥩</span><span>Hida beef</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍜</span><span>Soba</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🏪</span><span>Nishiki graze</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍽</span><span>Obanzai</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍽</span><span>Yudofu</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🐙</span><span>Takoyaki</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍢</span><span>Kushikatsu</span></td><td class="food-meal-cell"><span class="food-meal-icon" aria-hidden="true">🍙</span><span>Konbini</span></td></tr>
-        </tbody>
-      </table>
-    </div>
         </div>
       </div>
-      <div class="food-footer">Key experience recommendations: Tsukiji breakfast (D5), Hida beef splurge (D7), Nishiki grazing (D9), Dotonbori crawl (D12), Daruma kushikatsu (D13). Book Hida beef and Warajiya 2–4 weeks ahead.</div>
+      <div class="food-footer">Book Da Dong Peking Duck and White Rose Restaurant in advance; use Grab/DiDi — avoid street taxis.</div>
       <div class="watermark">travel-genie · japan-2026</div>
     </section>
 
@@ -1929,120 +2114,88 @@ tbody td:first-child { font-weight: 600; }
           <span class="itinerary-title-main">MASTER</span>
           <span class="itinerary-title-accent">ITINERARY</span>
         </h1>
-        <div class="itinerary-subtitle">Day-by-Day Schedule (Part 1)</div>
+        <div class="itinerary-subtitle">Days 1–5</div>
       </div>
       <div class="itinerary-grid">
         <div class="itinerary-featured">
     <article class="day-card day-card-featured">
-      <header class="day-card-head">Day 1 — Arrival (Soft)</header>
-      <div class="day-card-loc"><strong>Location:</strong> NRT/HND → Tokyo hotel</div>
+      <header class="day-card-head">Day 1 — Friday, Jul 24: ARRIVAL (Soft)</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>Morning</td><td>Land NRT or HND; VJW QR immigration/customs; train to hotel</td></tr><tr><td>Afternoon</td><td>Check-in; buy/load Suica; konbini lunch; short neighborhood walk</td></tr><tr><td>Evening</td><td>Early ramen or gyudon; bed by 21:00 (jet lag)</td></tr></tbody>
+      <tbody><tr><td>Morning</td><td>Land NRT or HND; VJW QR immigration/customs (03-immigration-entry); Narita Express / Keisei / Haneda monorail to hotel</td></tr><tr><td>Afternoon</td><td>Check-in; buy/load Suica; convenience-store lunch; short walk in neighborhood (Ueno Park edge or Sumida river if near Asakusa)</td></tr><tr><td>Evening</td><td>Early ramen or gyudon near hotel; bed by 21:00 (jet lag)</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
-        <span><strong>WOW MOMENT:</strong> First night skyline — Sumida River or Tokyo Station Marunouchi facades</span>
+        <span><strong>WOW MOMENT:</strong> First night skyline—Sumida River or Tokyo Station Marunouchi lit facades</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Hotel convenience store dinner only</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Underground Tokyo Station → Marunouchi + depachika</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🚃</span><span><strong>Transit:</strong> ~1.5 hrs airport → hotel</span></span></footer>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Hotel convenience store dinner only; no walking tour</span></span></footer>
     </article></div>
         <div class="itinerary-right">
     <article class="day-card">
-      <header class="day-card-head">Day 2 — Ueno Nature + Asakusa</header>
-      <div class="day-card-loc"><strong>Location:</strong> Ueno / Asakusa</div>
+      <header class="day-card-head">Day 2 — Saturday, Jul 25: Ueno Nature + Asakusa History</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>07:30</td><td>Ueno Park — Shinobazu Pond lotus; optional Tokyo National Museum</td></tr><tr><td>Afternoon</td><td>Sensō-ji outer grounds; Kappabashi kitchen street</td></tr><tr><td>Evening</td><td>Hoppy Street izakaya or Ameyoko market grazing</td></tr></tbody>
+      <tbody><tr><td>Morning anchor (07:30)</td><td>Ueno Park — Shinobazu Pond lotus, wooded paths, fewer crowds than Shibuya; optional Tokyo National Museum (AC, history without heat)</td></tr><tr><td>Afternoon</td><td>Asakusa — Sensō-ji outer grounds and Nakamise early; shift to indoor Kappabashi kitchen street (food culture)</td></tr><tr><td>Evening</td><td>Dinner Ueno / Okachimachi izakaya alley (Hoppy Street) or Ameyoko market grazing</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
-        <span><strong>WOW MOMENT:</strong> Lotus pond reflection at Shinobazu before crowds</span>
+        <span><strong>WOW MOMENT:</strong> Lotus pond reflection at Shinobazu before crowds arrive</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Museum-only morning; skip Nakamise</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Full museum day + covered Nakamise arcade</span></span></footer>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Museum-only morning; skip Nakamise shopping</span></span></footer>
     </article>
     <article class="day-card">
-      <header class="day-card-head">Day 3 — Meiji Forest + Shinjuku</header>
-      <div class="day-card-loc"><strong>Location:</strong> Meiji / Harajuku / Shinjuku</div>
+      <header class="day-card-head">Day 3 — Sunday, Jul 26: Meiji Forest + Harajuku Light Touch</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>08:00</td><td>Meiji Jingu forest approach — shaded, quiet</td></tr><tr><td>Afternoon</td><td>Yoyogi Park edges; Omotesando backstreets</td></tr><tr><td>Evening</td><td>Omoide Yokocho or Golden Gai (early)</td></tr></tbody>
+      <tbody><tr><td>Morning anchor (08:00)</td><td>Meiji Jingu forest approach — shaded, nature-first; quiet before tour buses</td></tr><tr><td>Afternoon</td><td>Yoyogi Park edges; coffee in Omotesando backstreets (skip Takeshita crush unless brief)</td></tr><tr><td>Evening</td><td>Shinjuku Omoide Yokocho or Golden Gai (one small bar, early); avoid peak 22:00 crush</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
         <span><strong>WOW MOMENT:</strong> Torii tunnel at Meiji in morning mist after rain</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Meiji only; afternoon café and hotel bath</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Teien Art Museum or teamLab Planets (book ahead)</span></span></footer>
-    </article><div class="day-card day-card-next"><p>Next Segments: Kamakura, Tsukiji &amp; Japanese Alps (Part 2)</p></div></div>
-      </div>
-      <div class="itinerary-footer">PART 1: TOKYO ARRIVAL &amp; NEIGHBORHOODS</div>
-      <div class="watermark">travel-genie · japan-2026</div>
-    </section>
-
-    <section class="slide itinerary-slide">
-      <div class="itinerary-top-bar" aria-hidden="true"></div>
-      <div class="itinerary-title-row">
-        <h1 class="itinerary-slide-title">
-          <span class="itinerary-title-main">MASTER</span>
-          <span class="itinerary-title-accent">ITINERARY</span>
-        </h1>
-        <div class="itinerary-subtitle">Day-by-Day Schedule (Part 2)</div>
-      </div>
-      <div class="itinerary-grid">
-        <div class="itinerary-featured">
-    <article class="day-card day-card-featured">
-      <header class="day-card-head">Day 5 — Tokyo: Market &amp; Imperial</header>
-      <div class="day-card-loc"><strong>Location:</strong> Tsukiji / Imperial Palace</div>
-      
-    <table class="day-schedule">
-      <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>07:00</td><td>Tsukiji Outer Market — sushi breakfast, tamagoyaki</td></tr><tr><td>Afternoon</td><td>Imperial Palace East Gardens (shaded history)</td></tr><tr><td>Evening</td><td>Pack/prep — takkyubin to Kyoto if sending luggage</td></tr></tbody>
-    </table>
-      
-      <div class="day-wow">
-        <span class="day-wow-icon" aria-hidden="true">✓</span>
-        <span><strong>WOW MOMENT:</strong> Sashimi breakfast standing at Tsukiji counter</span>
-      </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Market only; skip palace gardens</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Depachika Tokyo Station + Japan Food Town indoor</span></span></footer>
-    </article></div>
-        <div class="itinerary-right">
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Meiji only; afternoon café and hotel pool/onsen if hotel has bath</span></span></footer>
+    </article><div class="day-card day-card-next"><p>Next: Days 6–10</p></div>
     <article class="day-card">
-      <header class="day-card-head">Day 4 — Kamakura Coast</header>
-      <div class="day-card-loc"><strong>Location:</strong> Kamakura / Enoshima</div>
+      <header class="day-card-head">Day 4 — Monday, Jul 27: Day Trip — Kamakura Coast (Nature &gt; History)</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>07:30</td><td>JR to Kamakura — Daibutsu (Great Buddha) wooded approach</td></tr><tr><td>Afternoon</td><td>Enoshima or Hase coastal walk; Enoden line scenery</td></tr><tr><td>Evening</td><td>Return Tokyo; simple dinner near hotel</td></tr></tbody>
+      <tbody><tr><td>Morning anchor (07:30 train)</td><td>JR to Kamakura — Daibutsu (Great Buddha) walk through wooded approach</td></tr><tr><td>Afternoon</td><td>Enoshima or Hase coastal walk (Enoden line scenery); seafood lunch</td></tr><tr><td>Evening</td><td>Return Tokyo; simple dinner near hotel</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
         <span><strong>WOW MOMENT:</strong> Enoden coastal tram view with Fuji on clear days</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Kamakura town + Buddha only; skip Enoshima climb</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Nikko Toshogu OR Edo-Tokyo Museum</span></span></footer>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Kamakura town + Buddha only; skip Enoshima climb</span></span></footer>
     </article>
     <article class="day-card">
-      <header class="day-card-head">Day 6 — Transit + Takayama</header>
-      <div class="day-card-loc"><strong>Location:</strong> Tokyo → Takayama</div>
+      <header class="day-card-head">Day 5 — Tuesday, Jul 28: Tsukiji Outer + Imperial East Gardens</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>Morning</td><td>Shinkansen Tokyo → Nagoya + Hida Limited Express; activate JR Pass</td></tr><tr><td>Afternoon</td><td>Sanmachi Suji preserved merchant streets</td></tr><tr><td>Evening</td><td>Hida beef dinner (reserve) — splurge night</td></tr></tbody>
+      <tbody><tr><td>Morning anchor (07:00)</td><td>Tsukiji Outer Market — sushi breakfast, tamagoyaki, grilled seafood</td></tr><tr><td>Afternoon</td><td>Imperial Palace East Gardens (free, shaded history walk); Marunouchi architecture stroll</td></tr><tr><td>Evening</td><td>Pack light bag for Takayama; prep takkyubin if sending large luggage to Kyoto hotel (ask hotel front desk)</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
-        <span><strong>WOW MOMENT:</strong> Cedar-scented old town at dusk</span>
+        <span><strong>WOW MOMENT:</strong> First tuna/sashimi breakfast standing at Tsukiji counter</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Hotel onsen/rest only after rail day</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Sake brewery tastings + Hida Folk Village</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🚃</span><span><strong>Transit:</strong> ~4.5 hrs Tokyo → Takayama</span></span></footer>
-    </article><div class="day-card day-card-next"><p>Next Segments: Kyoto, Osaka, &amp; Departure (Part 3)</p></div></div>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Market only; skip palace gardens</span></span></footer>
+    </article></div>
       </div>
-      <div class="itinerary-footer">PART 2: TOKYO &amp; JAPAN ALPS PLANNING</div>
+      
       <div class="watermark">travel-genie · japan-2026</div>
     </section>
 
@@ -2053,120 +2206,88 @@ tbody td:first-child { font-weight: 600; }
           <span class="itinerary-title-main">MASTER</span>
           <span class="itinerary-title-accent">ITINERARY</span>
         </h1>
-        <div class="itinerary-subtitle">Day-by-Day Schedule (Part 3)</div>
+        <div class="itinerary-subtitle">Days 6–10</div>
       </div>
       <div class="itinerary-grid">
         <div class="itinerary-featured">
     <article class="day-card day-card-featured">
-      <header class="day-card-head">Day 7 — Shirakawa-go</header>
-      <div class="day-card-loc"><strong>Location:</strong> Shirakawa-go / Takayama</div>
+      <header class="day-card-head">Day 6 — Wednesday, Jul 29: TRANSIT + Takayama Old Town (Soft)</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>08:00</td><td>Highway bus to Shirakawa-go gassho-zukuri village</td></tr><tr><td>Afternoon</td><td>Return Takayama; Miyagawa Morning Market or riverside walk</td></tr><tr><td>Evening</td><td>Light soba or hotel kaiseki-lite; early sleep</td></tr></tbody>
+      <tbody><tr><td>Morning</td><td>Shinkansen Tokyo → Nagoya + Hida Limited Express to Takayama; activate JR Pass if using</td></tr><tr><td>Afternoon</td><td>Check-in; Sanmachi Suji preserved merchant streets (Hida architecture, sake breweries)</td></tr><tr><td>Evening</td><td>Hida beef dinner (reserve)—budget splurge night</td></tr></tbody>
+    </table>
+      
+      <div class="day-wow">
+        <span class="day-wow-icon" aria-hidden="true">✓</span>
+        <span><strong>WOW MOMENT:</strong> First glimpse of cedar-scented old town at dusk</span>
+      </div>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Hotel onsen/rest only after rail day</span></span></footer>
+    </article></div>
+        <div class="itinerary-right">
+    <article class="day-card">
+      <header class="day-card-head">Day 7 — Thursday, Jul 30: Shirakawa-go + Morning Market</header>
+      
+      
+    <table class="day-schedule">
+      <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+      <tbody><tr><td>Morning anchor (08:00 bus)</td><td>Shirakawa-go gassho-zukuri village—first bus = fewest tour groups</td></tr><tr><td>Afternoon</td><td>Return Takayama; Miyagawa Morning Market (if Fri/Sat/Sun overlap—else riverside walk); pack for Kyoto</td></tr><tr><td>Evening</td><td>Light soba or hotel kaiseki-lite; early sleep</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
         <span><strong>WOW MOMENT:</strong> Ogimachi viewpoint over thatched roofs before 10:00 crowds</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Takayama market + onsen only; skip Shirakawa-go</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Hida Takayama Museum + covered arcade</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🚃</span><span><strong>Transit:</strong> Highway bus day trip (book RT)</span></span></footer>
-    </article></div>
-        <div class="itinerary-right">
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Takayama market + onsen only; skip Shirakawa-go</span></span></footer>
+    </article>
     <article class="day-card">
-      <header class="day-card-head">Day 8 — Transit + Nishiki</header>
-      <div class="day-card-loc"><strong>Location:</strong> Takayama → Kyoto</div>
+      <header class="day-card-head">Day 8 — Friday, Jul 31: TRANSIT + Nishiki (Soft)</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>Morning</td><td>Hida Express → Nagoya → Shinkansen Kyoto; receive forwarded luggage</td></tr><tr><td>Afternoon</td><td>Nishiki Market covered food arcade; Pontocho stroll</td></tr><tr><td>Evening</td><td>Casual izakaya near Kawaramachi; early night</td></tr></tbody>
+      <tbody><tr><td>Morning</td><td>Hida Express → Nagoya → Shinkansen Kyoto; drop bags or receive forwarded luggage</td></tr><tr><td>Afternoon</td><td>Nishiki Market covered food arcade; Pontocho alley stroll (reserve no dinner yet)</td></tr><tr><td>Evening</td><td>Casual izakaya near Kawaramachi; early night</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
         <span><strong>WOW MOMENT:</strong> First Kyoto canal glimpse at twilight near Pontocho</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Market grazing only; hotel bath</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Nishiki fully covered; Kyoto Railway Museum</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🚃</span><span><strong>Transit:</strong> ~3.5 hrs Takayama → Kyoto</span></span></footer>
-    </article>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Market grazing only; hotel bath</span></span></footer>
+    </article><div class="day-card day-card-next"><p>Next: Days 11–14</p></div>
     <article class="day-card">
-      <header class="day-card-head">Day 9 — Fushimi Inari + Sake</header>
-      <div class="day-card-loc"><strong>Location:</strong> Fushimi / Gion</div>
+      <header class="day-card-head">Day 9 — Saturday, Aug 1: Fushimi Inari + Sake (Early Beat Crowds)</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>05:30</td><td>Fushimi Inari — torii tunnel to first overlook</td></tr><tr><td>Afternoon</td><td>Fushimi sake district — Gekkeikan Okura Museum</td></tr><tr><td>Evening</td><td>Gion backstreets at distance; Pontocho or Nishijin soba</td></tr></tbody>
+      <tbody><tr><td>Morning anchor (05:30–06:00)</td><td>Fushimi Inari — torii tunnel to first overlook before tour buses</td></tr><tr><td>Afternoon</td><td>Fushimi sake district — Gekkeikan Okura Sake Museum or brewery tour (indoor/cool)</td></tr><tr><td>Evening</td><td>Gion backstreets at distance—observe, do not chase geiko; dinner Pontocho or Nishijin soba</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
         <span><strong>WOW MOMENT:</strong> Empty torii corridor in early light</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Fushimi base only; return hotel by 11:00</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Inari with umbrella; afternoon indoor sake museum</span></span></footer>
-    </article><div class="day-card day-card-next"><p>Next Segments: Arashiyama, Higashiyama &amp; Osaka (Part 4)</p></div></div>
-      </div>
-      <div class="itinerary-footer">PART 3: ALPS FINISH &amp; KYOTO</div>
-      <div class="watermark">travel-genie · japan-2026</div>
-    </section>
-
-    <section class="slide itinerary-slide">
-      <div class="itinerary-top-bar" aria-hidden="true"></div>
-      <div class="itinerary-title-row">
-        <h1 class="itinerary-slide-title">
-          <span class="itinerary-title-main">MASTER</span>
-          <span class="itinerary-title-accent">ITINERARY</span>
-        </h1>
-        <div class="itinerary-subtitle">Day-by-Day Schedule (Part 4)</div>
-      </div>
-      <div class="itinerary-grid">
-        <div class="itinerary-featured">
-    <article class="day-card day-card-featured">
-      <header class="day-card-head">Day 10 — Arashiyama Bamboo</header>
-      <div class="day-card-loc"><strong>Location:</strong> Arashiyama / Western Kyoto</div>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Fushimi base only; return hotel by 11:00</span></span></footer>
+    </article>
+    <article class="day-card">
+      <header class="day-card-head">Day 10 — Sunday, Aug 2: Arashiyama Bamboo + River (Nature Day)</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>07:00</td><td>Bamboo grove then Tenryu-ji garden (shade)</td></tr><tr><td>Afternoon</td><td>Hozu River walk or Katsura cycle paths</td></tr><tr><td>Evening</td><td>Obanzai dinner at Warajiya (reserve)</td></tr></tbody>
+      <tbody><tr><td>Morning anchor (07:00)</td><td>Arashiyama bamboo grove then Tenryu-ji garden (enter temple for shade)</td></tr><tr><td>Afternoon</td><td>Hozu River scenery walk or rental cycle on Katsura paths; monkeys park optional (steep climb—skip if low energy)</td></tr><tr><td>Evening</td><td>Obanzai home-style Kyoto dinner (Warajiya or similar—reserve)</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
         <span><strong>WOW MOMENT:</strong> Bamboo grove when still quiet; river mountain backdrop</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Tenryu-ji garden only; tram back to central Kyoto</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Sagano Romantic Train or Manga Museum + café</span></span></footer>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Tenryu-ji garden only; tram back to central Kyoto</span></span></footer>
     </article></div>
-        <div class="itinerary-right">
-    <article class="day-card">
-      <header class="day-card-head">Day 11 — Higashiyama Dawn</header>
-      <div class="day-card-loc"><strong>Location:</strong> Kiyomizu / Philosopher&#39;s Path</div>
-      
-    <table class="day-schedule">
-      <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>06:30</td><td>Kiyomizu-dera early entry; Ninenzaka/Sannenzaka descent</td></tr><tr><td>Afternoon</td><td>Philosopher&#39;s Path → Ginkaku-ji (Silver Pavilion)</td></tr><tr><td>Evening</td><td>Pack for Osaka; yudofu or tofu kaiseki</td></tr></tbody>
-    </table>
-      
-      <div class="day-wow">
-        <span class="day-wow-icon" aria-hidden="true">✓</span>
-        <span><strong>WOW MOMENT:</strong> Kiyomizu stage view over Kyoto basin in morning air</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Philosopher&#39;s Path flat walk only; skip Kiyomizu climb</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Nanzen-ji covered corridors + Kyoto National Museum</span></span></footer>
-    </article>
-    <article class="day-card">
-      <header class="day-card-head">Day 12 — Transit + Dotonbori</header>
-      <div class="day-card-loc"><strong>Location:</strong> Kyoto → Osaka</div>
       
-    <table class="day-schedule">
-      <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>Morning</td><td>JR Kyoto → Osaka (~30 min); hotel drop bags</td></tr><tr><td>Afternoon</td><td>Kuromon Ichiba Market — takoyaki, kushikatsu samples</td></tr><tr><td>Evening</td><td>Dotonbori neon food crawl — okonomiyaki, gyoza alley</td></tr></tbody>
-    </table>
-      
-      <div class="day-wow">
-        <span class="day-wow-icon" aria-hidden="true">✓</span>
-        <span><strong>WOW MOMENT:</strong> Glico sign reflection on canal after dark</span>
-      </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Kuromon only; convenience-store dinner</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> Osaka Aquarium Kaiyukan or Umeda Sky Building</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🚃</span><span><strong>Transit:</strong> ~0.5 hr Kyoto → Osaka</span></span></footer>
-    </article><div class="day-card day-card-next"><p>Next Segments: Castle, Departure &amp; Wrap-Up (Part 5)</p></div></div>
-      </div>
-      <div class="itinerary-footer">PART 4: KYOTO DEEP DIVE &amp; OSAKA</div>
       <div class="watermark">travel-genie · japan-2026</div>
     </section>
 
@@ -2177,43 +2298,73 @@ tbody td:first-child { font-weight: 600; }
           <span class="itinerary-title-main">MASTER</span>
           <span class="itinerary-title-accent">ITINERARY</span>
         </h1>
-        <div class="itinerary-subtitle">Day-by-Day Schedule (Part 5)</div>
+        <div class="itinerary-subtitle">Days 11–14</div>
       </div>
       <div class="itinerary-grid">
         <div class="itinerary-featured">
     <article class="day-card day-card-featured">
-      <header class="day-card-head">Day 13 — Castle + Namba</header>
-      <div class="day-card-loc"><strong>Location:</strong> Osaka Castle / Namba</div>
+      <header class="day-card-head">Day 11 — Monday, Aug 3: Higashiyama Dawn + Philosopher’s Path</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>08:00</td><td>Osaka Castle Park grounds and moat walk (exterior)</td></tr><tr><td>Afternoon</td><td>Namba Yasaka Shrine; Amerikamura café; Shinsekai kushikatsu</td></tr><tr><td>Evening</td><td>Final splurge kushikatsu or yakiniku; confirm KIX transfer</td></tr></tbody>
+      <tbody><tr><td>Morning anchor (06:30)</td><td>Kiyomizu-dera early entry; descend Ninenzaka/Sannenzaka before shops fully open</td></tr><tr><td>Afternoon</td><td>Philosopher’s Path shaded canal walk → Ginkaku-ji (Silver Pavilion gardens)</td></tr><tr><td>Evening</td><td>Pack for Osaka; Namba-bound snack prep; try yudofu or tofu kaiseki (budget pick one)</td></tr></tbody>
+    </table>
+      
+      <div class="day-wow">
+        <span class="day-wow-icon" aria-hidden="true">✓</span>
+        <span><strong>WOW MOMENT:</strong> Kiyomizu stage view over Kyoto basin in morning air</span>
+      </div>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Philosopher’s Path flat walk only; skip Kiyomizu climb</span></span></footer>
+    </article></div>
+        <div class="itinerary-right">
+    <article class="day-card">
+      <header class="day-card-head">Day 12 — Tuesday, Aug 4: TRANSIT + Dotonbori Food (Soft)</header>
+      
+      
+    <table class="day-schedule">
+      <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+      <tbody><tr><td>Morning</td><td>JR Kyoto → Osaka (~30 min); hotel drop bags</td></tr><tr><td>Afternoon</td><td>Kuromon Ichiba Market — takoyaki, kushikatsu samples, fruit</td></tr><tr><td>Evening</td><td>Dotonbori neon food crawl—okonomiyaki (Mizuno or Chibo), gyoza alley; stay weekday to reduce crush vs weekend</td></tr></tbody>
+    </table>
+      
+      <div class="day-wow">
+        <span class="day-wow-icon" aria-hidden="true">✓</span>
+        <span><strong>WOW MOMENT:</strong> Glico sign reflection on canal after dark</span>
+      </div>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Kuromon only; convenience-store dinner</span></span></footer>
+    </article>
+    <article class="day-card">
+      <header class="day-card-head">Day 13 — Wednesday, Aug 5: Castle Exterior + Namba Gems</header>
+      
+      
+    <table class="day-schedule">
+      <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+      <tbody><tr><td>Morning anchor (08:00)</td><td>Osaka Castle Park grounds and moat walk—skip interior museum if crowds/heat; free exterior history fix</td></tr><tr><td>Afternoon</td><td>Namba Yasaka Shrine (lion head stage) + Amerikamura café break; optional Shinsekai kushikatsu (late lunch)</td></tr><tr><td>Evening</td><td>Final splurge kushikatsu or yakiniku; confirm Haruka or Nankai KIX timing</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
         <span><strong>WOW MOMENT:</strong> Castle ramparts view from Nishinomaru Garden</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Namba neighborhood food only; skip castle</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">☔</span><span><strong>Rainy Day:</strong> TeamLab Osaka or Kaiyukan full afternoon</span></span></footer>
-    </article></div>
-        <div class="itinerary-right">
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Namba neighborhood food only; skip castle</span></span></footer>
+    </article>
     <article class="day-card">
-      <header class="day-card-head">Day 14 — Departure</header>
-      <div class="day-card-loc"><strong>Location:</strong> Osaka → KIX → US</div>
+      <header class="day-card-head">Day 14 — Thursday, Aug 6: DEPARTURE</header>
+      
       
     <table class="day-schedule">
       <thead><tr><th>Time</th><th>Activity</th></tr></thead>
-      <tbody><tr><td>Morning</td><td>Checkout; carry-on only or luggage already forwarded</td></tr><tr><td>Midday</td><td>Nankai Rapi:t or Haruka to KIX — allow 2.5–3 hrs pre-flight</td></tr><tr><td>Afternoon</td><td>Flight KIX → US (open-jaw completion)</td></tr></tbody>
+      <tbody><tr><td>Morning</td><td>Checkout; takkyubin should have preceded you or carry-on only</td></tr><tr><td>Midday</td><td>Nankai Rapi:t or Haruka to KIX — allow 2.5–3 hrs before international departure</td></tr><tr><td>Afternoon/Evening</td><td>Flight KIX → US (open-jaw completion)</td></tr></tbody>
     </table>
       
       <div class="day-wow">
         <span class="day-wow-icon" aria-hidden="true">✓</span>
-        <span><strong>WOW MOMENT:</strong> Last convenience-store onigiri at gate — trip bookend</span>
+        <span><strong>WOW MOMENT:</strong> Last convenience-store onigiri at gate—trip bookend</span>
       </div>
-      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Airport lounge if access; minimal morning activity</span></span><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🚃</span><span><strong>Transit:</strong> ~1 hr Osaka → KIX + flight</span></span></footer>
-    </article><div class="day-card day-card-next"><p>End of itinerary — Jul 24 – Aug 6, 2026</p></div></div>
+      <footer class="day-card-foot"><span class="day-foot-item"><span class="day-foot-ic" aria-hidden="true">🔋</span><span><strong>Low Energy:</strong> Airport lounge if access; minimal morning activity</span></span></footer>
+    </article></div>
       </div>
-      <div class="itinerary-footer">PART 5: OSAKA FINISH &amp; DEPARTURE</div>
+      <div class="itinerary-footer">Open-jaw: PEK in · DAD out</div>
       <div class="watermark">travel-genie · japan-2026</div>
     </section>
 
@@ -2231,161 +2382,122 @@ tbody td:first-child { font-weight: 600; }
         
     <div class="acc-strategy-box">
       <div class="acc-strategy-head">Accommodation</div>
-      <ul class="acc-strategy-list"><li><strong>Budget envelope (lodging only)</strong></li><li><strong>Booking Strategy (Solo)</strong></li><li><strong>Book 8–12 weeks out</strong> — Pre-Obon domestic travel lifts Jul 27–Aug 3 weekend rates</li><li><strong>Platforms</strong> — Booking.com (free cancel), Agoda, Rakuten Travel; Japan Hotel Search for ryokan</li><li><strong>Room type</strong> — Single or semi-double — confirm bed width (140 cm semi-double OK solo)</li><li><strong>Cancellation</strong> — Flexible until 7 days out on city hotels; ryokan often stricter</li><li><strong>Luggage</strong> — Use hotel takkyubin Jul 28 Tokyo→Kyoto, carry day bag on Takayama leg</li><li><strong>Check-in</strong> — Many hotels 15:00; drop bags early; ask English front desk for forwarding forms</li><li>No ryokan multi-night required — one Alps night delivers culture without blowing budget.</li><li>Capsule hotels: OK for 1 night experiment; skip if you need guaranteed sleep (jet lag).</li></ul>
+      <ul class="acc-strategy-list"><li><strong>4–5★ on US booking platforms; splurge in Vietnam.</strong></li><li><strong>Booking Strategy</strong></li><li><strong>Book 8–12 weeks out</strong> — Pre-Obon domestic travel lifts Jul 27–Aug 3 weekend rates</li><li><strong>Platforms</strong> — Booking.com (free cancel), Agoda, Rakuten Travel; Japan Hotel Search for ryokan</li><li><strong>Room type</strong> — Single or semi-double — confirm bed width (140 cm semi-double OK solo)</li><li><strong>Cancellation</strong> — Flexible until 7 days out on city hotels; ryokan often stricter</li><li><strong>Luggage</strong> — Use hotel takkyubin Jul 28 Tokyo→Kyoto, carry day bag on Takayama leg</li><li><strong>Check-in</strong> — Many hotels 15:00; drop bags early; ask English front desk for forwarding forms</li></ul>
     </div>
         
     <div class="acc-tables-grid">
-      <div class="acc-budget-col"><div class="acc-table-caption">Budget Breakdown</div><table class="acc-table acc-budget-table"><thead><tr><th>Hub</th><th>Nights</th><th>Target/night</th><th>Subtotal</th></tr></thead><tbody><tr><th scope="row">Tokyo</th><td>5</td><td>$85–110</td><td>$425–550</td></tr><tr><th scope="row">Takayama</th><td>2</td><td>$120–180 (1 ryokan night)</td><td>$240–360</td></tr><tr><th scope="row">Kyoto</th><td>4</td><td>$90–120</td><td>$360–480</td></tr><tr><th scope="row">Osaka</th><td>2</td><td>$80–100</td><td>$160–200</td></tr><tr><th scope="row">Total</th><td>13</td><td>—</td><td>~$1,185–1,590</td></tr></tbody></table><div class="acc-table-foot">*Nights align with Day-by-Day Schedule (Part 2 onwards).</div></div>
-      <div class="acc-districts-col"><div class="acc-table-caption">Tokyo Districts Comparison</div><table class="acc-table"><thead><tr><th>Factor</th><th>Ueno/Asakusa</th><th>Shinjuku west</th></tr></thead><tbody><tr><th scope="row">Itinerary fit</th><td>Day 2 Ueno/Asakusa; easy Keisei/Narita access</td><td>Day 3 Meiji/Harajuku; Day 5 Tsukiji reachable</td></tr><tr><th scope="row">Transit</th><td>JR Yamanote + Ginza/Keisei</td><td>JR + metro hub</td></tr><tr><th scope="row">Crowds</th><td>Lower at night than Shibuya</td><td>Busier but manageable west of station</td></tr><tr><th scope="row">Solo</th><td>Many business hotels with singles</td><td>Excellent late food options</td></tr></tbody></table><div class="acc-table-caption">Kyoto Districts Comparison</div><table class="acc-table"><thead><tr><th>Factor</th><th>Kawaramachi</th><th>Kyoto Station</th></tr></thead><tbody><tr><th scope="row">Itinerary</th><td>Nishiki (Day 8), Pontocho, Fushimi line access</td><td>Better for Arashiyama JR (Day 10)</td></tr><tr><th scope="row">Heat</th><td>Covered arcades, canal walks</td><td>Underground mall AC</td></tr><tr><th scope="row">Crowds</th><td>Touristy strip but flat evening strolls</td><td>Tour bus volume</td></tr></tbody></table></div>
+      <div class="acc-budget-col"></div>
+      <div class="acc-districts-col"></div>
     </div>
       </div>
-      <div class="acc-picks-panel">
-         <div class="acc-picks-title">Top Picks &amp; Recommendations</div>
-         <div class="acc-picks-grid">
-    <div class="acc-picks-col">
-      <div class="acc-picks-col-head">Top Picks (US-bookable, solo-friendly)</div>
-      <div class="acc-picks-sub">Property — Area — Est./night — Why</div>
-      <ul class="acc-picks-list"><li><strong>Mitsui Garden Hotel Ueno</strong> — Ueno · $95–130 · Reliable chain; AC; walk to Ueno Park; singles common</li><li><strong>Richmond Hotel Premier Asakusa International</strong> — Asakusa · $85–115 · Near Sensō-ji; good arrival-night base</li><li><strong>Hotel Gracery Shinjuku</strong> — Shinjuku · $100–140 · Famous Godzilla head; strong transit; use if Ueno sold out</li><li><strong>sequence MIYASHITA PARK</strong> — Shibuya-adjacent · $110–150 · Splurge-leaning; only if anime/evening Shibuya priority</li></ul>
-    </div>
-    <div class="acc-picks-col">
-      <div class="acc-picks-col-head">Top Picks — Takayama / Alps</div>
-      <div class="acc-picks-sub">Property — Type — Est./night — Why</div>
-      <ul class="acc-picks-list"><li><strong>Oyado Koto No Yume</strong> — Ryokan · $140–200 · Central; tatami + kaiseki option; solo rooms sometimes</li><li><strong>Takayama Ouan</strong> — Ryokan/onsen · $130–180 · Rooftop bath; walk to old town</li><li><strong>Hida Hotel Plaza</strong> — Business · $90–120 · Station-adjacent; Western beds; good rainy backup</li><li><strong>Best Western Hotel Takayama</strong> — Business · $85–110 · Predictable AC; less character</li></ul>
-    </div></div>
-       </div>
-      <div class="acc-footer-bar">Part 5: Logistics &amp; Accommodation</div>
+      
+      <div class="acc-footer-bar">No ryokan multi-night required — one Alps night delivers culture without blowing budget.</div>
       <div class="watermark">travel-genie · japan-2026</div>
     </section>
 
     <section class="slide shop-slide">
       <div class="shop-top-bar" aria-hidden="true"></div>
-      <h1 class="shop-slide-title">
-        <span class="shop-title-main">SHOPPING</span>
-        <span class="shop-title-accent">HUBS</span>
-      </h1>
+      
+    <h1 class="shop-slide-title">
+      <span class="shop-title-main">SHOPPING</span>
+      <span class="shop-title-accent">HUBS</span>
+    </h1>
       <div class="shop-kicker">Regional Shopping Hubs</div>
       <div class="shop-grid">
         <div class="shop-left">
-    <div class="shop-hub">
-      <div class="shop-hub-head">
-        <span class="shop-hub-title">Takayama / Alps</span>
-        <span class="shop-hub-days">Days 6–7</span>
-        <span class="shop-hub-icon" aria-hidden="true">🎎</span>
-      </div>
-      <div class="shop-hub-body"><table class="shop-table"><thead><tr><th>Day</th><th>Spot</th><th>Buy</th></tr></thead><tbody><tr><th scope="row">6</th><td>Sanmachi Suji</td><td>Sake cups, sarubobo charm, Hida wood</td></tr><tr class="shop-stripe"><th scope="row">7</th><td>Shirakawa-go</td><td>Local soba kits, woven goods (small)</td></tr></tbody></table></div>
-    </div>
     <div class="shop-hub">
       <div class="shop-hub-head">
         <span class="shop-hub-title">Kyoto</span>
         <span class="shop-hub-days">Days 8–11</span>
         <span class="shop-hub-icon" aria-hidden="true">⛩</span>
       </div>
-      <div class="shop-hub-body"><table class="shop-table"><thead><tr><th>Day</th><th>Spot</th><th>Buy</th></tr></thead><tbody><tr><th scope="row">8</th><td>Nishiki</td><td>Tsukemono, yatsuhashi, tea — eat some, gift sealed packs</td></tr><tr class="shop-stripe"><th scope="row">9</th><td>Fushimi</td><td>Sake brewery bottle (check flight liquids)</td></tr><tr><th scope="row">11</th><td>Kiyomizu-zaka early</td><td>1 ceramic piece before shops heat up</td></tr></tbody></table></div>
-    </div></div>
-        <div class="shop-right">
-    <div class="shop-hub shop-hub-tall">
+      <div class="shop-hub-body shop-hub-body-split">
+        
+    <div class="shop-hub-map map-panel" data-geomap="{&quot;bounds&quot;:{&quot;west&quot;:135.648,&quot;east&quot;:135.905,&quot;south&quot;:34.82,&quot;north&quot;:35.125},&quot;nodes&quot;:[{&quot;label&quot;:&quot;Day 8&quot;,&quot;marker&quot;:&quot;8&quot;,&quot;lng&quot;:135.768,&quot;lat&quot;:35.005,&quot;color&quot;:&quot;#d4a017&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Day 9&quot;,&quot;marker&quot;:&quot;9&quot;,&quot;lng&quot;:135.768,&quot;lat&quot;:34.94,&quot;color&quot;:&quot;#d4a017&quot;,&quot;labelDy&quot;:22},{&quot;label&quot;:&quot;Day 11&quot;,&quot;marker&quot;:&quot;11&quot;,&quot;lng&quot;:135.785,&quot;lat&quot;:34.995,&quot;color&quot;:&quot;#d4a017&quot;,&quot;labelDy&quot;:-18}],&quot;highlight_countries&quot;:[&quot;Japan&quot;],&quot;hide_route&quot;:false}">
+      <span class="map-caption">Kyoto · shopping days</span>
+    </div>
+        <div class="shop-hub-table-wrap"><table class="shop-table"><thead><tr><th>Day</th><th>Spot</th><th>Buy</th></tr></thead><tbody><tr><th scope="row">8</th><td>Nishiki</td><td>Tsukemono, yatsuhashi, tea — eat some, gift sealed packs</td></tr><tr class="shop-table-stripe"><th scope="row">9</th><td>Fushimi</td><td>Sake brewery bottle (check flight liquids)</td></tr><tr><th scope="row">11</th><td>Kiyomizu-zaka early</td><td>1 ceramic piece before shops heat up</td></tr></tbody></table></div>
+      </div>
+    </div>
+    <div class="shop-hub">
       <div class="shop-hub-head">
         <span class="shop-hub-title">Osaka</span>
         <span class="shop-hub-days">Days 12–13</span>
         <span class="shop-hub-icon" aria-hidden="true">🐧</span>
       </div>
-      <div class="shop-hub-body"><table class="shop-table"><thead><tr><th>Day</th><th>Spot</th><th>Buy</th></tr></thead><tbody><tr><th scope="row">12</th><td>Kuromon</td><td>Food souvenirs same-day eat vs sealed</td></tr><tr class="shop-stripe"><th scope="row">12–13</th><td>Don Quijote Namba</td><td>Tax-free snack/clothing bulk</td></tr><tr><th scope="row">13</th><td>Nipponbashi</td><td>Games/anime if Tokyo missed</td></tr></tbody></table></div>
+      <div class="shop-hub-body shop-hub-body-split">
+        
+    <div class="shop-hub-map map-panel" data-geomap="{&quot;bounds&quot;:{&quot;west&quot;:135.382,&quot;east&quot;:135.627,&quot;south&quot;:34.54,&quot;north&quot;:34.785},&quot;nodes&quot;:[{&quot;label&quot;:&quot;Day 12&quot;,&quot;marker&quot;:&quot;12&quot;,&quot;lng&quot;:135.507,&quot;lat&quot;:34.665,&quot;color&quot;:&quot;#8e44ad&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Day 12&quot;,&quot;marker&quot;:&quot;12&quot;,&quot;lng&quot;:135.502,&quot;lat&quot;:34.663,&quot;color&quot;:&quot;#8e44ad&quot;,&quot;labelDy&quot;:22},{&quot;label&quot;:&quot;Day 13&quot;,&quot;marker&quot;:&quot;13&quot;,&quot;lng&quot;:135.506,&quot;lat&quot;:34.66,&quot;color&quot;:&quot;#8e44ad&quot;,&quot;labelDy&quot;:-18}],&quot;highlight_countries&quot;:[&quot;Japan&quot;],&quot;hide_route&quot;:false}">
+      <span class="map-caption">Osaka · shopping days</span>
+    </div>
+        <div class="shop-hub-table-wrap"><table class="shop-table"><thead><tr><th>Day</th><th>Spot</th><th>Buy</th></tr></thead><tbody><tr><th scope="row">12</th><td>Kuromon</td><td>Food souvenirs same-day eat vs sealed</td></tr><tr class="shop-table-stripe"><th scope="row">12–13</th><td>Don Quijote Namba</td><td>Tax-free snack/clothing bulk</td></tr><tr><th scope="row">13</th><td>Nipponbashi</td><td>Games/anime if Tokyo missed</td></tr></tbody></table></div>
+      </div>
+    </div>
+    <div class="shop-hub">
+      <div class="shop-hub-head">
+        <span class="shop-hub-title">Takayama / Alps</span>
+        <span class="shop-hub-days">Days 6–7</span>
+        <span class="shop-hub-icon" aria-hidden="true">🎎</span>
+      </div>
+      <div class="shop-hub-body shop-hub-body-split">
+        
+    <div class="shop-hub-map map-panel" data-geomap="{&quot;bounds&quot;:{&quot;west&quot;:136.78799999999998,&quot;east&quot;:137.372,&quot;south&quot;:36.026,&quot;north&quot;:36.376},&quot;nodes&quot;:[{&quot;label&quot;:&quot;Day 6&quot;,&quot;marker&quot;:&quot;6&quot;,&quot;lng&quot;:137.252,&quot;lat&quot;:36.146,&quot;color&quot;:&quot;#27ae60&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Day 7&quot;,&quot;marker&quot;:&quot;7&quot;,&quot;lng&quot;:136.908,&quot;lat&quot;:36.256,&quot;color&quot;:&quot;#27ae60&quot;,&quot;labelDy&quot;:22}],&quot;highlight_countries&quot;:[&quot;Japan&quot;],&quot;hide_route&quot;:false}">
+      <span class="map-caption">Takayama / Alps · shopping days</span>
+    </div>
+        <div class="shop-hub-table-wrap"><table class="shop-table"><thead><tr><th>Day</th><th>Spot</th><th>Buy</th></tr></thead><tbody><tr><th scope="row">6</th><td>Sanmachi Suji</td><td>Sake cups, sarubobo charm, Hida wood</td></tr><tr class="shop-table-stripe"><th scope="row">7</th><td>Shirakawa-go</td><td>Local soba kits, woven goods (small)</td></tr></tbody></table></div>
+      </div>
+    </div></div>
+        <div class="shop-right">
+    <div class="shop-hub shop-hub-tall">
+      <div class="shop-hub-head">
+        <span class="shop-hub-title">Tokyo</span>
+        <span class="shop-hub-days">Days 1–5</span>
+        <span class="shop-hub-icon" aria-hidden="true">🗼</span>
+      </div>
+      <div class="shop-hub-body shop-hub-body-split">
+        
+    <div class="shop-hub-map map-panel" data-geomap="{&quot;bounds&quot;:{&quot;west&quot;:139.5717,&quot;east&quot;:139.916,&quot;south&quot;:35.569500000000005,&quot;north&quot;:35.832},&quot;nodes&quot;:[{&quot;label&quot;:&quot;Day 2&quot;,&quot;marker&quot;:&quot;2&quot;,&quot;lng&quot;:139.796,&quot;lat&quot;:35.712,&quot;color&quot;:&quot;#c0392b&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Day 2&quot;,&quot;marker&quot;:&quot;2&quot;,&quot;lng&quot;:139.6917,&quot;lat&quot;:35.6895,&quot;color&quot;:&quot;#c0392b&quot;,&quot;labelDy&quot;:22},{&quot;label&quot;:&quot;Day 3&quot;,&quot;marker&quot;:&quot;3&quot;,&quot;lng&quot;:139.6917,&quot;lat&quot;:35.6895,&quot;color&quot;:&quot;#c0392b&quot;,&quot;labelDy&quot;:-18},{&quot;label&quot;:&quot;Day 5&quot;,&quot;marker&quot;:&quot;5&quot;,&quot;lng&quot;:139.6917,&quot;lat&quot;:35.6895,&quot;color&quot;:&quot;#c0392b&quot;,&quot;labelDy&quot;:22},{&quot;label&quot;:&quot;Day 5&quot;,&quot;marker&quot;:&quot;5&quot;,&quot;lng&quot;:139.6917,&quot;lat&quot;:35.6895,&quot;color&quot;:&quot;#c0392b&quot;,&quot;labelDy&quot;:-18}],&quot;highlight_countries&quot;:[&quot;Japan&quot;],&quot;hide_route&quot;:false}">
+      <span class="map-caption">Tokyo · shopping days</span>
+    </div>
+        <div class="shop-hub-table-wrap"><table class="shop-table"><thead><tr><th>Day</th><th>Spot</th><th>Buy</th></tr></thead><tbody><tr><th scope="row">2</th><td>After Asakusa</td><td>Kitchen tools, fake food samples</td></tr><tr class="shop-table-stripe"><th scope="row">2</th><td>Optional</td><td>1 omamori only if meaningful</td></tr><tr><th scope="row">3</th><td>Skip</td><td>Too crowded — photo walk only</td></tr><tr class="shop-table-stripe"><th scope="row">5</th><td>AM/PM</td><td>Premium snacks for gifts; no tax-free on food eaten in Japan</td></tr><tr><th scope="row">5</th><td>Rainy</td><td>Pens, notebooks</td></tr></tbody></table></div>
+      </div>
     </div></div>
       </div>
-      <div class="shop-footer-bar">Part 5: Logistics &amp; Accommodation</div>
+      
+      <div class="shop-footer-bar">Prioritize tailoring and silk in Hội An (last stop before home).</div>
       <div class="watermark">travel-genie · japan-2026</div>
     </section>
 
     <section class="slide culture-slide">
       <div class="culture-top-bar" aria-hidden="true"></div>
       <h1 class="culture-slide-title">
-        <span class="culture-title-main">CULTURE &amp;</span>
+        <span class="culture-title-main">CULTURE &amp; MUSEUMS</span>
         <span class="culture-title-accent">MUSEUMS</span>
       </h1>
       <div class="culture-section-row">
-        <span class="culture-section-pill">Culture Philosophy</span>
-        <span class="culture-section-kicker">Regional Anchors · Museum Picks · Fatigue Audit</span>
+        <span class="culture-section-pill">Culture Strategy</span>
+        <span class="culture-section-kicker">Sites · Crowd timing · Cross-border transitions</span>
       </div>
       <div class="culture-body">
         <aside class="culture-sidebar">
     <div class="culture-intel-box">
       <div class="culture-intel-head">Culture Philosophy</div>
-      <div class="culture-intel-body"><ul class="culture-intel-list"><li><span class="culture-rule-ic" aria-hidden="true">⛩</span><span><strong>Outdoor history before 10:00</strong> — Fushimi, Kiyomizu, Shirakawa-go</span></li><li><span class="culture-rule-ic" aria-hidden="true">🏛</span><span><strong>Indoor AC midday</strong> — Museums, sake museums, depachika culture</span></li><li><span class="culture-rule-ic" aria-hidden="true">👘</span><span><strong>Observe, don&#39;t perform</strong> — Gion geiko district — no blocking alleys for photos</span></li><li><span class="culture-rule-ic" aria-hidden="true">🏯</span><span><strong>One wow shrine/temple per day</strong> — Depth over checklist</span></li></ul></div>
+      <div class="culture-intel-body"><ul class="culture-intel-list"><li><span class="culture-rule-ic" aria-hidden="true">🎯</span><span><strong>One anchor site per day</strong> — Avoid museum fatigue; match relaxed pace</span></li><li><span class="culture-rule-ic" aria-hidden="true">🎫</span><span><strong>Book timed entry online</strong> — Forbidden City and major sites sell out</span></li><li><span class="culture-rule-ic" aria-hidden="true">🌅</span><span><strong>Early entry beats crowds</strong> — Deal-breaker: large crowds</span></li></ul></div>
     </div>
     <div class="culture-intel-box">
-      <div class="culture-intel-head">Cross-Hub History Thread</div>
-      <div class="culture-intel-body"><ul class="culture-theme-list"><li><span class="culture-theme-n">1.</span> Shinto vs Buddhist — Meiji, Sensō-ji, Fushimi, Tenryu-ji</li><li><span class="culture-theme-n">2.</span> Merchant class — Takayama Sanmachi → Nishiki → Osaka trade city</li><li><span class="culture-theme-n">3.</span> Feudal to modern — Edo-Tokyo Museum → Osaka Castle → Imperial East Gardens</li></ul></div>
+      <div class="culture-intel-head">Cross-Hub Themes</div>
+      <div class="culture-intel-body"><ul class="culture-theme-list"><li><span class="culture-theme-n">1.</span> Shinto vs Buddhist: Meiji (Shinto), Sensō-ji (Buddhist), Fushimi (Shinto), Tenryu-ji (Zen Buddhist)</li><li><span class="culture-theme-n">2.</span> Merchant class: Takayama Sanmachi → Nishiki food merchants → Osaka trade city</li><li><span class="culture-theme-n">3.</span> Feudal to modern: Edo-Tokyo Museum → Osaka Castle → Imperial East Gardens</li></ul></div>
     </div>
     <div class="culture-intel-box">
-      <div class="culture-intel-head">Museum Fatigue Audit</div>
-      <div class="culture-intel-body"><table class="culture-audit-table"><thead><tr><th>Day</th><th>Museums</th><th>Temples</th><th>Verdict</th></tr></thead><tbody><tr><th scope="row">2</th><td>0–1</td><td>1</td><td>OK</td></tr><tr><th scope="row">3</th><td>0–1</td><td>1</td><td>OK</td></tr><tr><th scope="row">9</th><td>1 sake</td><td>1 major</td><td>OK</td></tr><tr><th scope="row">10</th><td>0</td><td>1 + garden</td><td>OK</td></tr><tr><th scope="row">11</th><td>0–1 backup</td><td>2</td><td>OK — early Kiyomizu</td></tr></tbody></table><div class="culture-audit-verdict pass"><span class="culture-audit-ic" aria-hidden="true">✓</span>No triple-temple days — PASS</div></div>
+      <div class="culture-intel-head">Tokyo Museum Picks</div>
+      <div class="culture-intel-body"><table class="culture-audit-table"><thead><tr><th>Museum</th><th>Day fit</th><th>Ticket</th><th>Time</th></tr></thead><tbody><tr><th scope="row">Tokyo National Museum</th><td>2 rainy</td><td>¥1,000</td><td>2 hr — Japan gallery focus, not full campus</td></tr><tr><th scope="row">Edo-Tokyo Museum</th><td>4 rainy</td><td>¥600</td><td>2 hr — city history narrative</td></tr><tr><th scope="row">Nezu Museum</th><td>Optional swap Day 3</td><td>¥1,300</td><td>1.5 hr — garden + small collection; Omotesando</td></tr></tbody></table></div>
     </div></aside>
         <div class="culture-content">
-          <div class="culture-hub-grid">
-    <article class="culture-hub">
-      <header class="culture-hub-head">
-        <span class="culture-hub-name">Tokyo</span>
-        <span class="culture-hub-days">Days 1–5</span>
-        <span class="culture-hub-icon" aria-hidden="true">🗼</span>
-      </header>
-      <div class="culture-hub-body">
-        <table class="culture-hub-table"><thead><tr><th>Day</th><th>Primary</th><th>Rainy backup</th></tr></thead><tbody><tr><th scope="row">1</th><td>Neighborhood walk only</td><td>Soft arrival</td></tr><tr class="culture-stripe"><th scope="row">2</th><td>Sensō-ji outer grounds</td><td>Tokyo National Museum (Ueno)</td></tr><tr><th scope="row">3</th><td>Meiji Jingu forest shrine</td><td>Teien Art Museum / teamLab</td></tr><tr class="culture-stripe"><th scope="row">4</th><td>Kamakura Daibutsu + Hase-dera</td><td>Edo-Tokyo Museum</td></tr><tr><th scope="row">5</th><td>Imperial Palace East Gardens</td><td>Marunouchi architecture stroll</td></tr></tbody></table>
-        <div class="culture-hub-note">Skip TeamLab unless pre-booked — heat exhaustion risk on Day 3 eve only.</div>
-      </div>
-    </article>
-    <article class="culture-hub">
-      <header class="culture-hub-head">
-        <span class="culture-hub-name">Takayama / Alps</span>
-        <span class="culture-hub-days">Days 6–7</span>
-        <span class="culture-hub-icon" aria-hidden="true">🏔</span>
-      </header>
-      <div class="culture-hub-body">
-        <table class="culture-hub-table"><thead><tr><th>Day</th><th>Primary</th><th>Secondary</th></tr></thead><tbody><tr><th scope="row">6</th><td>Sanmachi Suji merchant town</td><td>Sake brewery tasting</td></tr><tr class="culture-stripe"><th scope="row">7</th><td>Shirakawa-go gassho village</td><td>Hida Folk Village or History Museum</td></tr></tbody></table>
-        <ul class="culture-hub-highlights"><li>Wada House thatched interior (¥300)</li><li>Myōzen-ji temple gate near Sanmachi</li><li>UNESCO gassho roofs — green rice fields in summer</li></ul>
-      </div>
-    </article>
-    <article class="culture-hub">
-      <header class="culture-hub-head">
-        <span class="culture-hub-name">Kyoto</span>
-        <span class="culture-hub-days">Days 8–11</span>
-        <span class="culture-hub-icon" aria-hidden="true">⛩</span>
-      </header>
-      <div class="culture-hub-body">
-        <table class="culture-hub-table"><thead><tr><th>Day</th><th>Primary</th><th>Crowd protocol</th></tr></thead><tbody><tr><th scope="row">8</th><td>Nishiki food culture</td><td>Pontocho observe-only, no flash</td></tr><tr class="culture-stripe"><th scope="row">9</th><td>Fushimi Inari torii (05:30)</td><td>Gekkeikan Sake Museum PM</td></tr><tr><th scope="row">10</th><td>Tenryu-ji Zen garden</td><td>Arashiyama bamboo 07:00</td></tr><tr class="culture-stripe"><th scope="row">11</th><td>Kiyomizu-dera (06:30)</td><td>Ginkaku-ji + Philosopher&#39;s Path</td></tr></tbody></table>
-        <div class="culture-hub-note">Gion: do not enter private maiko paths; no geiko photos without permission.</div>
-      </div>
-    </article>
-    <article class="culture-hub">
-      <header class="culture-hub-head">
-        <span class="culture-hub-name">Osaka</span>
-        <span class="culture-hub-days">Days 12–13</span>
-        <span class="culture-hub-icon" aria-hidden="true">🏯</span>
-      </header>
-      <div class="culture-hub-body">
-        <table class="culture-hub-table"><thead><tr><th>Day</th><th>Primary</th><th>Secondary</th></tr></thead><tbody><tr><th scope="row">12</th><td>Dotonbori neon + food culture</td><td>Kuromon market history</td></tr><tr class="culture-stripe"><th scope="row">13</th><td>Osaka Castle Park exterior/moat</td><td>Namba Yasaka lion stage</td></tr></tbody></table>
-        <div class="culture-hub-note">Skip castle interior in August heat — moat walk sufficient history fix.</div>
-      </div>
-    </article></div>
           
-    <div class="culture-spotlight">
-      <div class="culture-spotlight-title">Site Notes &amp; Rainy Backups</div>
-      <div class="culture-spotlight-grid">
-    <div class="culture-spot-col">
-      <div class="culture-spot-head">Tokyo Museum Picks</div>
-      <ul class="culture-spot-list"><li><strong>Tokyo National Museum</strong> — Day 2 rainy · ¥1,000 · Japan gallery focus</li><li><strong>Edo-Tokyo Museum</strong> — Day 4 rainy · ¥600 · city history narrative</li><li><strong>Nezu Museum</strong> — Day 3 swap · ¥1,300 · garden + small collection</li></ul>
-    </div>
-    <div class="culture-spot-col">
-      <div class="culture-spot-head">Kyoto Temple Fees</div>
-      <ul class="culture-spot-list"><li><strong>Fushimi Inari</strong> — Free — turn back at first overlook if tired</li><li><strong>Kiyomizu-dera</strong> — ¥400 — check 2026 stage renovation status</li><li><strong>Tenryu-ji / Ginkaku-ji</strong> — ¥500 each — garden alone sufficient in heat</li></ul>
-    </div>
-    <div class="culture-spot-col">
-      <div class="culture-spot-head">Osaka Indoor (Heat/Rain)</div>
-      <ul class="culture-spot-list"><li><strong>Kaiyukan</strong> — Days 12–13 · world-class · book timed entry</li><li><strong>Osaka Museum of History</strong> — Day 13 rainy · near castle · AC</li><li><strong>Kyoto Railway Museum</strong> — Day 8 backup if Nishiki overload · ¥1,200</li></ul>
-    </div></div>
-    </div>
+          
         </div>
       </div>
-      <div class="culture-footer">One wow moment per day · outdoor before 10:00 · observe Gion respectfully · no triple-temple stacking.</div>
+      <div class="culture-footer">Forbidden City tickets at pm.com.cn; Mutianyu over Badaling for crowds.</div>
       <div class="watermark">travel-genie · japan-2026</div>
     </section>
 
@@ -2397,106 +2509,74 @@ tbody td:first-child { font-weight: 600; }
       </h1>
       <div class="pack-section-row">
         <span class="pack-section-pill">Do Not Forget</span>
-        <span class="pack-section-kicker">Summer Wardrobe · Adventure Gear · Luggage Flow</span>
+        <span class="pack-section-kicker">Climate · Gear · Border-day carry-on</span>
       </div>
       <div class="pack-body">
         <aside class="pack-sidebar">
     <div class="pack-intel-box">
-      <div class="pack-intel-head">Summer Japan Climate</div>
-      <div class="pack-intel-body"><p class="pack-climate-text">30–35°C humid (Tokyo/Kyoto/Osaka); 25–30°C Takayama; AC aggressive indoors.</p><div class="pack-climate-note">Temple kit: shoulders covered; slip-on sandals for ryokan/onsen. Japan 100V Type A — US chargers OK.</div></div>
+      <div class="pack-intel-head">September Climate</div>
+      <div class="pack-intel-body"><p class="pack-climate-text">Beijing shoulder (20–26°C); Vietnam warm-humid with typhoon tail risk in central coast.</p><div class="pack-climate-note">Schedule outdoor Vietnam time early AM / evening.</div></div>
     </div>
     <div class="pack-intel-box">
-      <div class="pack-intel-head">Core Do Not Forget (15)</div>
-      <div class="pack-intel-body"><ol class="pack-essentials-list"><li><span class="pack-item-ic" aria-hidden="true">🛂</span><span><strong>1.</strong> Valid US passport — expires 2028; one blank page</span></li><li><span class="pack-item-ic" aria-hidden="true">📱</span><span><strong>2.</strong> Visit Japan Web QR codes — offline + printed</span></li><li><span class="pack-item-ic" aria-hidden="true">🏥</span><span><strong>3.</strong> Travel insurance + emergency line — wallet card printed</span></li><li><span class="pack-item-ic" aria-hidden="true">🚃</span><span><strong>4.</strong> JR Pass 7-day voucher — activate Jul 29</span></li><li><span class="pack-item-ic" aria-hidden="true">📶</span><span><strong>5.</strong> Japan eSIM activated — Airalo/Ubigi 15-day</span></li><li><span class="pack-item-ic" aria-hidden="true">💳</span><span><strong>6.</strong> Cards + bank travel notification — 7-Eleven ATM compatible</span></li><li><span class="pack-item-ic" aria-hidden="true">🎫</span><span><strong>7.</strong> Suica/PASMO loaded — ¥3,000–5,000 before leaving airport</span></li><li><span class="pack-item-ic" aria-hidden="true">💊</span><span><strong>8.</strong> Prescription medications — 17-day supply + doctor note</span></li><li><span class="pack-item-ic" aria-hidden="true">🔋</span><span><strong>9.</strong> 20,000 mAh USB-C power bank — Fushimi dawn + bus days</span></li><li><span class="pack-item-ic" aria-hidden="true">👟</span><span><strong>10.</strong> Broken-in trail runners — Fushimi stairs + Kamakura cobble</span></li><li><span class="pack-item-ic" aria-hidden="true">🌧</span><span><strong>11.</strong> Ultralight rain jacket — afternoon storms + Alps</span></li><li><span class="pack-item-ic" aria-hidden="true">☀</span><span><strong>12.</strong> SPF 50 + hat — reapply every 2 hrs</span></li><li><span class="pack-item-ic" aria-hidden="true">💧</span><span><strong>13.</strong> Electrolyte tablets / ORS — Kyoto/Osaka heat days</span></li><li><span class="pack-item-ic" aria-hidden="true">🎒</span><span><strong>14.</strong> Compression packing cubes — takkyubin split Jul 28</span></li><li><span class="pack-item-ic" aria-hidden="true">🏨</span><span><strong>15.</strong> Hotel confirmations — Japanese + English addresses</span></li></ol></div>
+      <div class="pack-intel-head">Core Do Not Forget</div>
+      <div class="pack-intel-body"><ol class="pack-essentials-list"><li><span class="pack-item-ic" aria-hidden="true">📄</span><span><strong>1.</strong> Valid US passport — expires 2028 ✓; one blank page minimum</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>2.</strong> Visit Japan Web QR codes — immigration + customs saved offline + printed (03-immigration-entry)</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>3.</strong> Travel insurance policy # + 24/7 emergency line — phone contact + printed wallet card (14-health-safety)</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>4.</strong> JR Pass 7-day exchange voucher — print + PDF; activate Jul 29 (07-transport-money)</span></li><li><span class="pack-item-ic" aria-hidden="true">📱</span><span><strong>5.</strong> Japan eSIM activated before departure — Airalo/Ubigi 15-day; QR saved in email (09-tech-connectivity)</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>6.</strong> Credit/debit cards + bank travel notification — 7-Eleven ATM compatible (no foreign fee card ideal)</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>7.</strong> Virtual or physical Suica/PASMO — loaded ¥3,000–5,000 before leaving airport</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>8.</strong> Prescription medications — 17-day supply in carry-on + doctor note in English</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>9.</strong> 20,000 mAh USB-C power bank — airline-compliant; essential for Fushimi dawn + Shirakawa-go bus day</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>10.</strong> Trail runners or broken-in walking shoes — Fushimi stairs + Kamakura cobblestones; not new shoes</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>11.</strong> Ultralight rain jacket — afternoon thunderstorms; Alps weather shifts fast</span></li><li><span class="pack-item-ic" aria-hidden="true">✓</span><span><strong>12.</strong> SPF 50 sunscreen + hat — non-negotiable for Jul/Aug; reapply every 2 hrs</span></li></ol></div>
     </div>
     <div class="pack-intel-box">
       <div class="pack-intel-head">Document Folder</div>
       <div class="pack-intel-body"><div class="pack-doc-grid">
     <div class="pack-doc-section">
       <div class="pack-doc-head">Identity</div>
-      <ul class="pack-doc-list"><li>Passport copy</li><li>Visit Japan Web QR print</li></ul>
+      <ul class="pack-doc-list"><li>Passport copy; Visit Japan Web QR print</li></ul>
     </div>
     <div class="pack-doc-section">
       <div class="pack-doc-head">Transport</div>
-      <ul class="pack-doc-list"><li>JR Pass voucher</li><li>Shirakawa-go bus confirmation</li><li>KIX transfer timing</li></ul>
+      <ul class="pack-doc-list"><li>JR Pass voucher; Shirakawa-go bus confirmation; KIX transfer timing</li></ul>
     </div>
     <div class="pack-doc-section">
       <div class="pack-doc-head">Lodging</div>
-      <ul class="pack-doc-list"><li>All hotel confirmations (JP + EN)</li></ul>
+      <ul class="pack-doc-list"><li>All hotel confirmations (JP + EN addresses)</li></ul>
     </div>
     <div class="pack-doc-section">
       <div class="pack-doc-head">Universal</div>
-      <ul class="pack-doc-list"><li>Insurance + emergency card</li><li>Credit card lost/stolen hotlines</li></ul>
+      <ul class="pack-doc-list"><li>Insurance; emergency card; credit card lost/stolen hotlines</li></ul>
     </div></div></div>
     </div></aside>
         <div class="pack-content">
           <div class="pack-grid">
     <div class="pack-panel">
-      <div class="pack-panel-head">Summer Wardrobe</div>
-      <div class="pack-panel-body"><div class="pack-table-caption">Summer Wardrobe</div><table class="pack-table"><thead><tr><th>Category</th><th>Pack</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Tops</th><td>5–6 breathable shirts (linen, merino, Airism)</td><td>Quick-dry; one modest for temples</td></tr><tr class=" pack-stripe"><th scope="row">Bottoms</th><td>2 trousers + 1 shorts</td><td>Knees covered at temples</td></tr><tr class=""><th scope="row">Layer</th><td>Packable cardigan / ultralight fleece</td><td>Takayama evenings + train AC</td></tr><tr class=" pack-stripe"><th scope="row">Footwear</th><td>Trail runners + compact sandals</td><td>Ryokan/onsen slip-ons</td></tr><tr class=""><th scope="row">Basics</th><td>7 underwear + 3 merino socks</td><td>Laundry Day 5 or Day 9</td></tr><tr class=" pack-stripe"><th scope="row">Rain</th><td>Jacket + folding umbrella</td><td>Konbini umbrellas ¥500</td></tr></tbody></table></div>
-    </div>
-    <div class="pack-panel">
-      <div class="pack-panel-head">Hike &amp; Adventure Gear</div>
-      <div class="pack-panel-body"><div class="pack-table-caption">Hike &amp; Adventure Gear</div><table class="pack-table"><thead><tr><th>Item</th><th>Bring / Rent / Skip</th></tr></thead><tbody><tr class=""><th scope="row">Trail runners (broken in)</th><td><span class="pack-status">✅ Bring</span></td></tr><tr class=" pack-stripe"><th scope="row">Daypack 20–25 L</th><td><span class="pack-status">✅ Bring — water, rain layer, power bank</span></td></tr><tr class=""><th scope="row">Collapsible water bottle</th><td><span class="pack-status">✅ Bring — refill at konbini</span></td></tr><tr class=" pack-stripe"><th scope="row">Trekking poles</th><td><span class="pack-status">◦ Optional — Fushimi stairs; collapsible OK</span></td></tr><tr class=""><th scope="row">Wide-brim hat + sunglasses</th><td><span class="pack-status">✅ Bring</span></td></tr><tr class=" pack-stripe"><th scope="row">Bear bell</th><td><span class="pack-status">◦ Optional — buy locally ¥500</span></td></tr><tr class=""><th scope="row">Hiking boots</th><td><span class="pack-status">❌ Skip — trail runners sufficient</span></td></tr><tr class=" pack-stripe"><th scope="row">Full hiking pack 40 L+</th><td><span class="pack-status">❌ Skip</span></td></tr><tr class=""><th scope="row">Swimsuit</th><td><span class="pack-status">❌ Skip — no swimming in itinerary</span></td></tr></tbody></table></div>
-    </div>
-    <div class="pack-panel">
-      <div class="pack-panel-head">Tech &amp; Power</div>
-      <div class="pack-panel-body"><div class="pack-table-caption">Tech &amp; Power</div><table class="pack-table"><thead><tr><th>Item</th><th>Use</th></tr></thead><tbody><tr class=""><th scope="row">eSIM (Airalo/Ubigi 15-day)</th><td>Data-only; US number for 2FA</td></tr><tr class=" pack-stripe"><th scope="row">20,000 mAh power bank</th><td>Shinkansen + Fushimi 05:30; no shrine outlets</td></tr><tr class=""><th scope="row">USB-C cable + dual-port cube</th><td>Phone + bank overnight</td></tr><tr class=" pack-stripe"><th scope="row">Suica in Apple/Google Wallet</th><td>Transit + konbini tap</td></tr><tr class=""><th scope="row">Noise-canceling earbuds</th><td>11–14 hr flights; Shinkansen focus</td></tr><tr class=" pack-stripe"><th scope="row">Offline Google Maps (Japan)</th><td>~400 MB; hiking + transit</td></tr><tr class=""><th scope="row">Google Translate offline</th><td>Camera mode for menus/signs</td></tr><tr class=" pack-stripe"><th scope="row">JNTO Travel App</th><td>Disaster alerts + WiFi map</td></tr></tbody></table></div>
-    </div>
-    <div class="pack-panel">
-      <div class="pack-panel-head">Health Kit</div>
-      <div class="pack-panel-body"><div class="pack-table-caption">Health Kit</div><table class="pack-table"><thead><tr><th>Category</th><th>Location</th></tr></thead><tbody><tr class=""><th scope="row">Prescription meds + doctor note</th><td>Carry-on only</td></tr><tr class=" pack-stripe"><th scope="row">Imodium, ibuprofen, antihistamine</th><td>Carry-on pouch</td></tr><tr class=""><th scope="row">ORS / electrolyte tablets</th><td>Carry-on</td></tr><tr class=" pack-stripe"><th scope="row">Sunscreen (100 mL)</th><td>Carry-on TSA quart bag</td></tr><tr class=""><th scope="row">Blister Compeed + moleskin</th><td>Carry-on</td></tr><tr class=" pack-stripe"><th scope="row">Insect repellent</th><td>Checked or buy locally</td></tr><tr class=""><th scope="row">Hand sanitizer</th><td>Carry-on</td></tr></tbody></table></div>
+      <div class="pack-panel-head">Tech &amp; Power (from 09-tech-connectivity)</div>
+      <div class="pack-panel-body"><div class="pack-table-caption">Tech &amp; Power (from 09-tech-connectivity)</div><table class="pack-table"><thead><tr><th>Item</th><th>Use</th></tr></thead><tbody><tr class=""><th scope="row">eSIM (Airalo/Ubigi 15-day unlimited)</th><td>Data-only; US number stays active for 2FA</td></tr><tr class=" pack-stripe"><th scope="row">20,000 mAh power bank</th><td>Shinkansen days; Fushimi 05:30 start; no outlets at shrines</td></tr><tr class=""><th scope="row">USB-C cable + dual-port cube</th><td>Phone + power bank overnight</td></tr><tr class=" pack-stripe"><th scope="row">Phone with Suica in Apple/Google Wallet</th><td>Tap transit + konbini</td></tr><tr class=""><th scope="row">Noise-canceling earbuds</th><td>11–14 hr flights; Shinkansen focus</td></tr><tr class=" pack-stripe"><th scope="row">Offline Google Maps (Japan downloaded)</th><td>~400 MB; hiking + offline transit</td></tr><tr class=""><th scope="row">Google Translate (Japanese offline pack)</th><td>Camera mode for menus/signs</td></tr><tr class=" pack-stripe"><th scope="row">Japan Official Travel App (JNTO)</th><td>Disaster alerts + WiFi map</td></tr></tbody></table></div>
     </div></div>
-          <div class="pack-extras">
-    <div class="pack-panel">
-      <div class="pack-panel-head">Rail &amp; Transit Day Bag (D6, D7, D8, D12, D14)</div>
-      <div class="pack-panel-body"><div class="pack-table-caption">Rail &amp; Transit Day Bag (D6, D7, D8, D12, D14)</div><table class="pack-table"><thead><tr><th>Item</th><th>Why</th></tr></thead><tbody><tr class=""><th scope="row">Passport + wallet</th><td>ID; cash for rural buses</td></tr><tr class=" pack-stripe"><th scope="row">Phone + power bank + cable</th><td>Navigation; seat reservations</td></tr><tr class=""><th scope="row">JR Pass + seat printouts</th><td>Takayama/Kyoto legs</td></tr><tr class=" pack-stripe"><th scope="row">Snacks (onigiri, energy bar)</th><td>4.5 hr Tokyo→Takayama</td></tr><tr class=""><th scope="row">Water bottle + rain jacket</th><td>Hydration; Alps weather</td></tr><tr class=" pack-stripe"><th scope="row">One spare shirt + earbuds</th><td>AC + sweat; long Shinkansen</td></tr><tr class=""><th scope="row">Small tenugui towel</th><td>Onsen/hands</td></tr></tbody></table></div>
-    </div>
-    <div class="pack-panel">
-      <div class="pack-panel-head">Border-Crossing Flight Outfit (D1 + D14)</div>
-      <div class="pack-panel-body"><div class="pack-table-caption">Border-Crossing Flight Outfit (D1 + D14)</div><table class="pack-table"><thead><tr><th>Item</th><th>Why</th></tr></thead><tbody><tr class=""><th scope="row">Slip-on shoes</th><td>Fast security</td></tr><tr class=" pack-stripe"><th scope="row">Comfortable joggers/trousers</th><td>14 hr seated</td></tr><tr class=""><th scope="row">Breathable shirt + light layer</th><td>Plane AC</td></tr><tr class=" pack-stripe"><th scope="row">Compression socks</th><td>Circulation on long haul</td></tr><tr class=""><th scope="row">Empty water bottle</th><td>Fill post-security</td></tr></tbody></table></div>
-    </div></div>
+          <div class="pack-extras"></div>
           
-    <div class="pack-luggage">
-      <div class="pack-luggage-title">Takkyubin &amp; Luggage Strategy</div>
-      <div class="pack-bag-row">
-    <div class="pack-bag-card">
-      <div class="pack-bag-icon" aria-hidden="true">🧳</div>
-      <div class="pack-bag-name">Checked 24–26&quot;</div>
-      <div class="pack-bag-role">Main wardrobe; forward Jul 28 &amp; Aug 3 via takkyubin (¥1,500–2,500)</div>
-    </div>
-    <div class="pack-bag-card">
-      <div class="pack-bag-icon" aria-hidden="true">🎒</div>
-      <div class="pack-bag-name">Carry-on 40 L</div>
-      <div class="pack-bag-role">3-day clothes, valuables, meds, all documents</div>
-    </div>
-    <div class="pack-bag-card">
-      <div class="pack-bag-icon" aria-hidden="true">👜</div>
-      <div class="pack-bag-name">Packable daypack 18–20 L</div>
-      <div class="pack-bag-role">Folds flat; deploy for hikes + transit days</div>
-    </div></div>
-      <div class="pack-luggage-note">Day 6: carry-on only if bag forwarded Jul 28 eve. Kappabashi knives must be checked — never carry-on.</div>
-    </div>
           
     <div class="pack-checklist">
       <div class="pack-checklist-title">Printable Checklist Highlights</div>
       <div class="pack-checklist-grid">
     <div class="pack-check-col">
       <div class="pack-check-head">Documents</div>
-      <ul class="pack-check-list"><li>Passport (2028)</li><li>VJW QR</li><li>JR Pass voucher</li><li>Insurance card</li><li>Shirakawa-go bus</li><li>Hotel JP addresses</li><li>KIX flight</li></ul>
+      <ul class="pack-check-list"><li>Passport (valid through 2028)</li><li>Visit Japan Web QR (print + offline)</li><li>JR Pass voucher</li><li>Travel insurance + emergency card</li><li>Shirakawa-go bus ticket</li><li>All hotel confirmations (Japanese addresses)</li><li>KIX departure flight confirmation</li></ul>
     </div>
     <div class="pack-check-col">
       <div class="pack-check-head">Electronics</div>
-      <ul class="pack-check-list"><li>eSIM active</li><li>Power bank 20k mAh</li><li>USB-C + cube</li><li>Earbuds</li><li>Offline maps/Translate</li><li>Suica loaded</li></ul>
+      <ul class="pack-check-list"><li>Phone + eSIM activated</li><li>Power bank 20,000 mAh</li><li>USB-C cables + cube</li><li>Earbuds</li><li>Offline maps + Translate downloaded</li><li>Suica loaded in wallet app</li></ul>
     </div>
     <div class="pack-check-col">
-      <div class="pack-check-head">Clothing &amp; Gear</div>
-      <ul class="pack-check-list"><li>5–6 shirts</li><li>2 trousers + shorts</li><li>Trail runners</li><li>Sandals</li><li>Rain + umbrella</li><li>Hat/sunglasses</li><li>Daypack 20–25 L</li><li>Water bottle</li></ul>
+      <div class="pack-check-head">Clothing</div>
+      <ul class="pack-check-list"><li>5–6 breathable shirts</li><li>2 trousers + 1 shorts</li><li>Trail runners (broken in)</li><li>Sandals</li><li>Rain jacket + umbrella</li><li>Hat + sunglasses</li><li>Modest temple outfit</li><li>7 underwear + 3 hiking socks</li></ul>
+    </div>
+    <div class="pack-check-col">
+      <div class="pack-check-head">Health</div>
+      <ul class="pack-check-list"><li>Prescriptions + doctor note</li><li>ORS, ibuprofen, Imodium</li><li>SPF 50 sunscreen</li><li>Hand sanitizer</li></ul>
+    </div>
+    <div class="pack-check-col">
+      <div class="pack-check-head">Misc</div>
+      <ul class="pack-check-list"><li>Packing cubes</li><li>Small cash USD backup</li><li>TSA locks on checked bag</li><li>Laundry soap sheets (optional)</li></ul>
     </div></div>
     </div>
         </div>
       </div>
-      <div class="pack-footer">Day-pack loadout for adventure days: 1–2 L water · electrolyte · sunscreen stick · ¥2,000–5,000 cash · rain layer · power bank.</div>
+      <div class="pack-footer">VPN must be installed before China entry; never check prescriptions.</div>
       <div class="watermark">travel-genie · japan-2026</div>
     </section>
 
@@ -2507,145 +2587,48 @@ tbody td:first-child { font-weight: 600; }
         <span class="etiq-title-accent">GUIDE</span>
       </h1>
       <div class="etiq-grid">
-        <div class="etiq-top">
-    <div class="etiq-panel">
-      <div class="etiq-panel-head">Daily Norms &amp; Social Etiquette</div>
-      <div class="etiq-panel-body"><table class="etiq-table"><thead><tr><th>Situation</th><th>Do</th><th>Don&#39;t</th></tr></thead><tbody><tr><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">👋</span>Greeting</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Small bow or nod; arigatou gozaimasu</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Loud handshake default</span></td></tr><tr class="etiq-stripe"><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">👟</span>Shoes</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Remove when tatami / some ryokan/inns</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Walk on tatami with outdoor shoes</span></td></tr><tr><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">🗑</span>Trash</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Pocket trash; konbini bins</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Eat walking + litter</span></td></tr><tr class="etiq-stripe"><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">🔇</span>Volume</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Quiet on trains, temples</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Phone calls on Shinkansen/local train</span></td></tr><tr><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">💴</span>Tipping</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Never</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Leave coins — staff may chase you</span></td></tr><tr class="etiq-stripe"><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">📋</span>Queues</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Single file; wait marked lines</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Cut</span></td></tr><tr><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">📷</span>Photos</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Ask at shrines/shops if unsure</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Flash in dark halls; drone without permit</span></td></tr><tr class="etiq-stripe"><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">🚭</span>Smoking</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Use designated zones</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Walk-smoke (illegal many wards)</span></td></tr><tr><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">💴</span>Cash</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Carry ¥5,000–10,000</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Assume every stall takes card</span></td></tr><tr class="etiq-stripe"><th scope="row"><span class="etiq-situation"><span class="etiq-cell-ic" aria-hidden="true">☀</span>Hot weather</span></th><td><span class="etiq-do"><span class="etiq-cell-ic" aria-hidden="true">✓</span>Sleeve in temples (light scarf)</span></td><td><span class="etiq-dont"><span class="etiq-cell-ic" aria-hidden="true">✗</span>Shirtless in public</span></td></tr></tbody></table></div>
-      <div class="etiq-panel-foot">Part 6: Culture &amp; Etiquette</div>
-    </div>
-    <div class="etiq-panel">
-      <div class="etiq-panel-head">Essential Japanese Phrases</div>
-      <div class="etiq-panel-body"><table class="etiq-table"><thead><tr><th>Japanese</th><th>Romaji</th><th>When to Use</th><th>Meaning</th></tr></thead><tbody><tr><th scope="row">すみません</th><td>Sumimasen</td><td>Get attention / apologize</td><td>Excuse me / sorry</td></tr><tr class="etiq-stripe"><th scope="row">ありがとうございます</th><td>Arigatou gozaimasu</td><td>After service or help</td><td>Thank you (standard)</td></tr><tr><th scope="row">お願いします</th><td>Onegaishimasu</td><td>Ordering, asking</td><td>Please</td></tr><tr class="etiq-stripe"><th scope="row">ひとりです</th><td>Hitori desu</td><td>Entering restaurant</td><td>Table for one</td></tr><tr><th scope="row">おすすめは？</th><td>Osusume wa?</td><td>At counter / menu</td><td>What do you recommend?</td></tr><tr class="etiq-stripe"><th scope="row">英語メニューありますか？</th><td>Eigo menu arimasu ka?</td><td>Sit-down restaurants</td><td>English menu?</td></tr><tr><th scope="row">ごちそうさまでした</th><td>Gochisousama deshita</td><td>Leaving restaurant</td><td>Thank you for the meal</td></tr><tr class="etiq-stripe"><th scope="row">トイレはどこですか？</th><td>Toire wa doko desu ka?</td><td>Anywhere</td><td>Where is the bathroom?</td></tr><tr><th scope="row">これください</th><td>Kore kudasai</td><td>Markets / konbini</td><td>This one please</td></tr><tr class="etiq-stripe"><th scope="row">いくらですか？</th><td>Ikura desu ka?</td><td>Shops / stalls</td><td>How much?</td></tr></tbody></table></div>
-      <div class="etiq-panel-foot">Part 6: Culture &amp; Etiquette</div>
-    </div></div>
+        <div class="etiq-top"></div>
         <div class="etiq-bottom">
     <div class="etiq-panel">
-      <div class="etiq-panel-head">Train &amp; Shinkansen Etiquette</div>
-      <div class="etiq-panel-body"><table class="etiq-table"><thead><tr><th>Rule</th><th>Detail</th></tr></thead><tbody><tr><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>Priority seats</span></th><td>Avoid unless marked open; yield to elderly</td></tr><tr class="etiq-stripe"><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>Backpack</span></th><td>Front pack or between feet in rush hour</td></tr><tr><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>Talking</span></th><td>Low voice; no speakerphone</td></tr><tr class="etiq-stripe"><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>Food</span></th><td>OK on Shinkansen; avoid strong smells on commuter metro</td></tr><tr><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>Queue marks</span></th><td>Stand on platform floor arrows</td></tr><tr class="etiq-stripe"><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>JR Pass seats</span></th><td>Sit in unreserved or reserved seat on ticket — not Green unless paid</td></tr><tr><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>Late night</span></th><td>Last trains ~midnight Tokyo; plan taxi or stay near Dotonbori</td></tr></tbody></table></div>
+      <div class="etiq-panel-head">Transit &amp; Street Culture</div>
+      <div class="etiq-panel-body"><table class="etiq-table"><thead><tr><th>Rule</th><th>Detail</th></tr></thead><tbody><tr><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>Motorbike crossings</span></th><td>Walk steady — bikes flow around you (Vietnam)</td></tr><tr class="etiq-stripe"><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>Taxis</span></th><td>Use DiDi (China) and Grab (Vietnam) — avoid airport street taxis</td></tr><tr><th scope="row"><span class="etiq-rule"><span class="etiq-cell-ic" aria-hidden="true">•</span>Crowds</span></th><td>Early entry + shoulder season timing</td></tr></tbody></table></div>
       <div class="etiq-panel-foot">Part 6: Culture &amp; Etiquette</div>
     </div>
     <div class="etiq-panel">
       <div class="etiq-panel-head">Temple &amp; Shrine Etiquette</div>
-      <div class="etiq-panel-body"><table class="etiq-table"><thead><tr><th>Shinto Shrine</th><th>Step</th><th>Buddhist Temple</th></tr></thead><tbody><tr><th scope="row">Torii = bow once entering/leaving</th><td>Entry</td><td>Gate bow optional</td></tr><tr class="etiq-stripe"><th scope="row">Rinse left hand, right hand, mouth at chozuya</th><td>Purify</td><td>Same if present</td></tr><tr><th scope="row">2 bows, 2 claps, 1 bow at main hall</th><td>Pray</td><td>Incense, single bow; no clap at some</td></tr><tr class="etiq-stripe"><th scope="row">Coin in box; no required amount</th><td>Donation</td><td>Same</td></tr><tr><th scope="row">Check signs; no drones</th><td>Photography</td><td>Interior often no photo</td></tr><tr class="etiq-stripe"><th scope="row">Quiet paths; step aside for ceremonies</th><td>Attire</td><td>Cover shoulders in halls</td></tr></tbody></table></div>
-      <div class="etiq-panel-foot">Part 6: Culture &amp; Etiquette</div>
-    </div>
-    <div class="etiq-panel">
-      <div class="etiq-panel-head">Dining, Ryokan &amp; Onsen Etiquette</div>
-      <div class="etiq-panel-body"><div class="etiq-split">
-    <div class="etiq-list-col">
-      <div class="etiq-list-head">Dining Etiquette (Solo)</div>
-      <ul class="etiq-list">
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🥢</span>
-          <span><strong>Chopsticks</strong> — Don&#39;t stick upright in rice; don&#39;t pass food chopstick-to-chopstick</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🍜</span>
-          <span><strong>Slurping</strong> — Noodles — OK and appreciated</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🍶</span>
-          <span><strong>Soy sauce</strong> — Don&#39;t pour over rice bowl at kaiseki</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🍺</span>
-          <span><strong>Izakaya</strong> — Order drink first; shared plates normal even solo</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🍣</span>
-          <span><strong>Sushi counter</strong> — Ask chef omakase or point; eat piece within moment</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🍢</span>
-          <span><strong>Kushikatsu</strong> — No double-dipping sauce (one bite per dip rule)</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🏪</span>
-          <span><strong>Konbini</strong> — Eat at store counter or park bench — not walking</span>
-        </span>
-      </li></ul>
-    </div>
-    <div class="etiq-list-col">
-      <div class="etiq-list-head">Ryokan &amp; Onsen (Takayama Night)</div>
-      <ul class="etiq-list">
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">♨</span>
-          <span><strong>Onsen order</strong> — Wash body completely before entering tub</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🎨</span>
-          <span><strong>Tattoos</strong> — Some public baths restrict — ryokan private bath often OK</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🧖</span>
-          <span><strong>Towel</strong> — Never in tub water; fold on head or edge</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">👤</span>
-          <span><strong>Solo</strong> — Normal; quiet soak</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">👘</span>
-          <span><strong>Yukata</strong> — Left over right (right = deceased)</span>
-        </span>
-      </li>
-      <li>
-        <span class="etiq-list-item">
-          <span class="etiq-cell-ic" aria-hidden="true">🍽</span>
-          <span><strong>Dinner</strong> — Arrive on time for kaiseki seatings</span>
-        </span>
-      </li></ul>
-    </div></div></div>
+      <div class="etiq-panel-body"><table class="etiq-table"><thead><tr><th>Setting</th><th>Do</th><th>Avoid</th></tr></thead><tbody><tr><th scope="row">China temples</th><td>Shoulders/knees covered; no flash where signed</td><td>Chopsticks upright in rice</td></tr><tr class="etiq-stripe"><th scope="row">Vietnam pagodas</th><td>Remove shoes; borrow sarong if offered</td><td>Touching adults&#39; heads</td></tr><tr><th scope="row">Photos</th><td>Ask when unsure; respect 禁止拍照 signs</td><td>Drone without permit</td></tr></tbody></table></div>
       <div class="etiq-panel-foot">Part 6: Culture &amp; Etiquette</div>
     </div></div>
       </div>
-      <div class="etiq-footer-bar">Part 6: Culture &amp; Etiquette</div>
+      <div class="etiq-footer-bar">China: no tipping · Vietnam: soft tip 10–15% at sit-down restaurants.</div>
       <div class="watermark">travel-genie · japan-2026</div>
     </section>
 
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">IMMIGRATION</span>
+        <span class="dash-title-main">IMMIGRATION ENTRY</span>
         <span class="dash-title-accent">ENTRY</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Immigration Entry</span>
-        <span class="dash-section-kicker">VJW · visa-free · passport · timeline</span>
+        
       </div>
-      <div class="dash-banner">✅ Complete VJW before boarding—saves 15–30 min at Narita/Haneda and reduces form errors.</div>
+      
       <div class="dash-body">
          <aside class="dash-sidebar">
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Overview</div>
+      <div class="dash-intel-body"><p class="dash-text">✅ Complete VJW before boarding—saves 15–30 min at Narita/Haneda and reduces form errors.</p></div>
+    </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Customs &amp; Prohibited Items (High-Signal)</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Drugs: Strict zero tolerance—including some US OTC medications (e.g., pseudoephedrine-containing products). Bring only personal quantities; keep prescriptions in original packaging.</li><li>Food/agriculture: Fresh fruit, meat, and some plant products restricted—declare or discard.</li><li>Cash: Declare if carrying &gt; ¥1,000,000 (~$6,700 USD equivalent).</li><li>Alcohol/tobacco: Personal allowance limits apply—declare excess.</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Practical Entry Checklist — Japan</div>
-      <div class="dash-intel-body"><ol class="dash-list"><li>[ ] Valid US passport (exp. 2028)</li><li>[ ] 1+ blank passport page</li><li>[ ] Open-jaw ticket: into NRT/HND, out KIX</li><li>[ ] First hotel address in Tokyo (English + Japanese if hotel provides)</li><li>[ ] Visit Japan Web completed; immigration + customs QR saved offline</li><li>[ ] Travel insurance purchased (medical + trip delay—summer weather/disruptions)</li><li>[ ] Credit card with no foreign transaction fee; notify bank of Japan dates</li><li>[ ] IC card plan: Suica/PASMO (mobile wallet or physical) for Tokyo/Kansai local transit</li><li>[ ] JR Pass voucher (if using) — exchange at airport or major JR office Day 1 or Day 6</li><li>[ ] Immigration: passport + VJW QR (or paper form if not using VJW)</li></ol></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>[ ] Valid US passport (exp. 2028)</li><li>[ ] 1+ blank passport page</li><li>[ ] Open-jaw ticket: into NRT/HND, out KIX</li><li>[ ] First hotel address in Tokyo (English + Japanese if hotel provides)</li><li>[ ] Visit Japan Web completed; immigration + customs QR saved offline</li><li>[ ] Travel insurance purchased (medical + trip delay—summer weather/disruptions)</li><li>[ ] Credit card with no foreign transaction fee; notify bank of Japan dates</li><li>[ ] IC card plan: Suica/PASMO (mobile wallet or physical) for Tokyo/Kansai local transit</li><li>[ ] JR Pass voucher (if using) — exchange at airport or major JR office Day 1 or Day 6</li><li>[ ] Immigration: passport + VJW QR (or paper form if not using VJW)</li><li>[ ] Finger photo/biometrics if requested (standard for foreign nationals)</li><li>[ ] Customs: VJW customs QR or declaration form</li><li>[ ] Activate/connect phone (eSIM or pocket WiFi pickup if pre-ordered)</li><li>[ ] Load Suica/PASMO; confirm train route to hotel</li><li>[ ] Keep landing card stub if issued (rare with VJW—follow airport staff direction)</li><li>[ ] Carry passport or secure photocopy + photo ID for hotel check-in</li><li>[ ] Shinkansen: match JR Pass activation date to inter-hub travel (02-route-optimization)</li><li>[ ] Allow 2.5–3 hrs before international flight</li><li>[ ] Departure immigration + customs (no exit tax separate fee beyond ticket taxes)</li><li>[ ] Tax-free shopping receipts may need stamp at customs if applicable</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Validations</div>
@@ -2685,17 +2668,21 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">TRANSPORT</span>
+        <span class="dash-title-main">TRANSPORT MONEY</span>
         <span class="dash-title-accent">MONEY</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Transport Money</span>
-        <span class="dash-section-kicker">JR Pass verdict · legs · airport transfers · yen</span>
+        
       </div>
-      <div class="dash-banner">Recommendation: Skip JR Pass; book Hikari + Hida seats on [SmartEX](https://smart-ex.jp/en/) / [Eki-net](https://www.eki-net.com) / JR East Travel Service Center 4 weeks before travel. Aligns with 04-master-itinerary rail days but avoids overpaying for pass subsidy.</div>
+      
       <div class="dash-body">
          <aside class="dash-sidebar">
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Overview</div>
+      <div class="dash-intel-body"><p class="dash-text">Recommendation: Skip JR Pass; book Hikari + Hida seats on [SmartEX](https://smart-ex.jp/en/) / [Eki-net](https://www.eki-net.com) / JR East Travel Service Center 4 weeks before travel. Aligns with 04-master-itinerary rail days but avoids overpaying for pass subsidy.</p></div>
+    </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Intercity Legs (Booked Tickets)</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Buy ekiben at Tokyo Station before Jul 29 departure.</li><li>Takkyubin: Forward large bag Tokyo → Kyoto hotel on Jul 28 (04-master-itinerary Day 5); carry 3-day pack to Takayama.</li><li>Shirakawa-go (Jul 30): Nohi Bus — not JR; book RT ~2–4 weeks ahead ([www.nouhibus.jp](https://www.nouhibus.jp/)).</li></ul></div>
@@ -2709,6 +2696,10 @@ tbody td:first-child { font-weight: 600; }
       <div class="dash-intel-body"><div class="dash-val-grid"><div class="dash-val pass"><span class="dash-val-ic" aria-hidden="true">✓</span><span>8 validation check(s) passed in source plan.</span></div></div></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
+    <div class="dash-panel">
+      <div class="dash-panel-head">Transport Budget Summary</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Category</th><th>Est. USD</th><th>Est. JPY</th></tr></thead><tbody><tr class=""><th scope="row">Airport in + out</th><td>$35</td><td>¥5,000</td></tr><tr class=" dash-stripe"><th scope="row">Tokyo IC + Kamakura</th><td>$55</td><td>¥8,000</td></tr><tr class=""><th scope="row">Intercity rail (individual)</th><td>$205</td><td>¥30,800</td></tr><tr class=" dash-stripe"><th scope="row">Shirakawa-go bus</th><td>$20</td><td>¥3,000</td></tr><tr class=""><th scope="row">Kyoto buses</th><td>$25</td><td>¥3,500</td></tr><tr class=" dash-stripe"><th scope="row">Osaka IC + KIX</th><td>$25</td><td>¥3,500</td></tr><tr class=""><th scope="row">Takkyubin (1×)</th><td>$20</td><td>¥3,000</td></tr><tr class=" dash-stripe"><th scope="row">ATM fees (buffer)</th><td>$10</td><td>—</td></tr><tr class=""><th scope="row">On-ground transport total</th><td>~$395</td><td>~¥59,000</td></tr><tr class=" dash-stripe"><th scope="row">Intl flights (separate)</th><td>$1,100–1,400</td><td>—</td></tr><tr class=""><th scope="row">Remaining for lodging/food/activities</th><td>~$3,200–3,500</td><td>—</td></tr></tbody></table></div>
+    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">Pass options (foreign tourist, 2026 baseline — verify at [japanrailpass.net](https://www.japanrailpass.net/en/) before purchase)</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Pass</th><th>Duration</th><th>Approx price</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">JR Pass Ordinary</th><td>7 consecutive days</td><td>¥50,000 (~$335 @ ¥150/$)</td><td>Hikari/Kodama shinkansen; most JR local; not Nozomi (unless paid add-on where offered)</td></tr><tr class=" dash-stripe"><th scope="row">JR Pass Ordinary</th><td>14 consecutive days</td><td>¥80,000 (~$535)</td><td>Overkill for 14-day trip with only 3 inter-hub moves</td></tr><tr class=""><th scope="row">Regional passes</th><td>Varies</td><td>¥15,000–25,000</td><td>Poor fit—route crosses Tokaido + Hida, not one region</td></tr></tbody></table></div>
@@ -2732,6 +2723,26 @@ tbody td:first-child { font-weight: 600; }
     <div class="dash-panel">
       <div class="dash-panel-head">Departure — Aug 6 (KIX from Osaka)</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>From</th><th>Mode</th><th>Time</th><th>Cost</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Namba</th><td>Nankai Rapi:t</td><td>38 min</td><td>¥1,430–1,630</td><td>Match itinerary hotel zone</td></tr><tr class=" dash-stripe"><th scope="row">Shin-Osaka</th><td>Haruka (JR)</td><td>50 min</td><td>¥2,850 (reserved)</td><td>JR Pass holders: covered with seat fee if using pass</td></tr><tr class=""><th scope="row">Either</th><td>Allow 2.5–3 hr before intl departure</td><td>—</td><td>—</td><td>Summer queues + security</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Intercity Legs (Booked Tickets)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Day</th><th>Route</th><th>Trains</th><th>Duration</th><th>Booking</th></tr></thead><tbody><tr class=""><th scope="row">Jul 29</th><td>Tokyo → Takayama</td><td>Shinkansen Hikari (Tokyo→Nagoya) + Hida (Nagoya→Takayama)</td><td>~4–4.5 hr</td><td>Reserve both; window seat on Hida if possible</td></tr><tr class=" dash-stripe"><th scope="row">Jul 31</th><td>Takayama → Kyoto</td><td>Hida (→Nagoya) + Hikari (→Kyoto)</td><td>~3.5 hr</td><td>Morning departure per 04-master-itinerary</td></tr><tr class=""><th scope="row">Aug 4</th><td>Kyoto → Osaka</td><td>JR Kyoto Line Special Rapid</td><td>~30 min</td><td>Walk-up; Suica</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">IC Cards (Suica / PASMO / ICOCA)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Topic</th><th>Detail</th></tr></thead><tbody><tr class=""><th scope="row">What</th><td>Reloadable contactless fare card; works on JR, metro, most buses nationwide</td></tr><tr class=" dash-stripe"><th scope="row">Buy</th><td>Airport or any major station; ¥2,000 minimum (¥500 refundable deposit)</td></tr><tr class=""><th scope="row">Use</th><td>Tap in / tap out; fares auto-deduct</td></tr><tr class=" dash-stripe"><th scope="row">Reload</th><td>Station machines, ¥1,000 increments; 7-Eleven ATMs for cash refill</td></tr><tr class=""><th scope="row">iPhone</th><td>Add Suica to Apple Wallet (US App Store) before trip—backup physical card</td></tr><tr class=" dash-stripe"><th scope="row">Return</th><td>Refund balance + deposit at JR East service center (small handling fee)</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Details</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>City</th><th>Days</th><th>Est./day</th><th>Subtotal</th></tr></thead><tbody><tr class=""><th scope="row">Tokyo</th><td>5</td><td>¥1,000</td><td>¥5,000</td></tr><tr class=" dash-stripe"><th scope="row">Takayama</th><td>2</td><td>¥300 (minimal)</td><td>¥600</td></tr><tr class=""><th scope="row">Kyoto</th><td>4</td><td>¥700 (bus-heavy; day pass ¥700)</td><td>¥2,800</td></tr><tr class=" dash-stripe"><th scope="row">Osaka</th><td>2</td><td>¥900</td><td>¥1,800</td></tr><tr class=""><th scope="row">Total IC + bus passes</th><td></td><td></td><td>~¥10,200 (~$68)</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Tokyo (Jul 24–28)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Mode</th><th>When</th><th>Cost</th></tr></thead><tbody><tr class=""><th scope="row">Metro + Toei + JR Yamanote</th><td>All urban days</td><td>¥170–320/trip</td></tr><tr class=" dash-stripe"><th scope="row">JR</th><td>Kamakura day (Jul 27)</td><td>~¥1,900 RT from central Tokyo</td></tr><tr class=""><th scope="row">Avoid</th><td>Rush 7:30–9:00, 17:30–19:00</td><td>Packed trains</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Takayama (Jul 29–30)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Mode</th><th>When</th><th>Cost</th></tr></thead><tbody><tr class=""><th scope="row">Walk</th><td>Sanmachi old town</td><td>Free</td></tr><tr class=" dash-stripe"><th scope="row">Bus</th><td>Shirakawa-go (reserved)</td><td>~¥2,600–3,000 RT</td></tr><tr class=""><th scope="row">Cash</th><td>Some rural buses</td><td>Keep ¥5,000 in wallet</td></tr></tbody></table></div>
     </div></div></div>
        </div>
       
@@ -2742,26 +2753,30 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">CUSTOMS</span>
+        <span class="dash-title-main">CUSTOMS BORDERS</span>
         <span class="dash-title-accent">BORDERS</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Customs Borders</span>
-        <span class="dash-section-kicker">Arrival · duty-free · tax-free · US re-entry</span>
+        
       </div>
       
       <div class="dash-body">
          <aside class="dash-sidebar">
     <div class="dash-intel-box">
+      <div class="dash-intel-head">Overview</div>
+      <div class="dash-intel-body"><p class="dash-text">1. Complete VJW before flight; save immigration + customs QR screenshots offline. 2. Immigration: passport + QR; fingerprint/photo on first visit (may repeat). 3. Customs: Choose channel per declaration:    - Green — nothing to declare (within allowances, no restricted goods).    - Red — goods to declare or unsure. 4. Do not accept “helpers” outside official queues.</p></div>
+    </div>
+    <div class="dash-intel-box">
       <div class="dash-intel-head">US Re-Entry Customs (Final Leg Home)</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>All merchandise acquired abroad (gifts, souvenirs).</li><li>Food: Generally no fresh fruit, meat, rice, or agricultural products—packaged commercial tea/candy often allowed; when unsure, declare.</li><li>Gifts for others — count toward your $800.</li></ul></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Immigration</div>
+      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Event</th><th>Date</th><th>Airport</th><th>Type</th></tr></thead><tbody><tr class=""><th scope="row">Arrival</th><td>Jul 24, 2026</td><td>NRT or HND</td><td>US → Japan immigration + customs</td></tr><tr class=" dash-stripe"><th scope="row">Domestic travel</th><td>Jul 25 – Aug 5</td><td>—</td><td>No customs (Tokyo → Takayama → Kyoto → Osaka)</td></tr><tr class=""><th scope="row">Departure</th><td>Aug 6, 2026</td><td>KIX</td><td>Japan exit + airline security; US customs on US arrival</td></tr></tbody></table></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
-    <div class="dash-panel">
-      <div class="dash-panel-head">Trip Customs Overview</div>
-      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Event</th><th>Date</th><th>Airport</th><th>Type</th></tr></thead><tbody><tr class=""><th scope="row">Arrival</th><td>Jul 24, 2026</td><td>NRT or HND</td><td>US → Japan immigration + customs</td></tr><tr class=" dash-stripe"><th scope="row">Domestic travel</th><td>Jul 25 – Aug 5</td><td>—</td><td>No customs (Tokyo → Takayama → Kyoto → Osaka)</td></tr><tr class=""><th scope="row">Departure</th><td>Aug 6, 2026</td><td>KIX</td><td>Japan exit + airline security; US customs on US arrival</td></tr></tbody></table></div>
-    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">Immigration</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Rule</th></tr></thead><tbody><tr class=""><th scope="row">Visa</th><td>Not required — US passport, tourism ≤90 days (03-immigration-entry)</td></tr><tr class=" dash-stripe"><th scope="row">Documents</th><td>Passport, return/onward ticket, first-night hotel address</td></tr><tr class=""><th scope="row">Digital</th><td>Visit Japan Web QR for immigration + customs (complete within 72 hr of departure)</td></tr><tr class=" dash-stripe"><th scope="row">Queue time</th><td>30–60 min typical at NRT; often faster at HND</td></tr></tbody></table></div>
@@ -2781,6 +2796,38 @@ tbody td:first-child { font-weight: 600; }
     <div class="dash-panel">
       <div class="dash-panel-head">Tax-Free Shopping (Japan)</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody><tr class=""><th scope="row">Who</th><td>Tourists on short stay; passport required at purchase</td></tr><tr class=" dash-stripe"><th scope="row">Rate</th><td>Consumption tax 10% waived on eligible goods</td></tr><tr class=""><th scope="row">Where</th><td>Stores displaying Tax-Free sign (department stores, electronics, some drugstores)</td></tr><tr class=" dash-stripe"><th scope="row">Process</th><td>Show passport; goods sealed in bag until departure from Japan</td></tr><tr class=""><th scope="row">At KIX</th><td>If asked, present purchases + receipts at customs inspection before check-in (usually quick for compliant sealed bags)</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Japan exit</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Step</th><th>Action</th></tr></thead><tbody><tr class=""><th scope="row">1</th><td>Confirm tax-free bags sealed; have receipts</td></tr><tr class=" dash-stripe"><th scope="row">2</th><td>Airline check-in → security → immigration departure stamp</td></tr><tr class=""><th scope="row">3</th><td>Optional customs desk if carrying restricted export items (rare for tourists)</td></tr><tr class=" dash-stripe"><th scope="row">4</th><td>Duty-free airside at KIX (alcohol, snacks)—limits apply to US import on arrival home</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Duty-free allowance (US resident returning from abroad)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Category</th><th>Allowance</th></tr></thead><tbody><tr class=""><th scope="row">Merchandise</th><td>$800 fair retail value per person</td></tr><tr class=" dash-stripe"><th scope="row">Alcohol</th><td>1 liter (33.8 oz) duty-free if 21+</td></tr><tr class=""><th scope="row">Tobacco</th><td>200 cigarettes (1 carton)</td></tr><tr class=" dash-stripe"><th scope="row">Above $800</th><td>Flat ~3% on next $1,000 (simplified; CBP may classify some items higher)</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">High-value items you take from the US</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Action</th><th>Why</th></tr></thead><tbody><tr class=""><th scope="row">Register watch/camera/jewelry on CBP Form 4457 before departure (optional)</th><td>Proves pre-existing ownership—avoids duty dispute on return</td></tr><tr class=" dash-stripe"><th scope="row">Keep serial photos / purchase records</th><td>Backup proof</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Prohibited into US (common Japan purchases)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>US rule</th></tr></thead><tbody><tr class=""><th scope="row">Fresh fruit, meat, homemade food</th><td>Prohibited</td></tr><tr class=" dash-stripe"><th scope="row">Certain meat jerky / instant ramen with meat</th><td>Often prohibited—check USDA</td></tr><tr class=""><th scope="row">Ivory, coral, certain traditional crafts</th><td>Prohibited or permit required</td></tr><tr class=" dash-stripe"><th scope="row">Counterfeit goods</th><td>Seizure + penalties</td></tr><tr class=""><th scope="row">Switchblades, butterfly knives</th><td>Prohibited</td></tr><tr class=" dash-stripe"><th scope="row">Kitchen knives</th><td>Checked baggage only</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Estimated duty exposure (this trip)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Scenario</th><th>Est. duty</th></tr></thead><tbody><tr class=""><th scope="row">Souvenirs &lt; $800</th><td>$0</td></tr><tr class=" dash-stripe"><th scope="row">$1,200 total goods</th><td>~$12–40 on amount over $800 (mostly 3% tier)</td></tr><tr class=""><th scope="row">Luxury watch bought in Japan</th><td>Declare; may exceed $800—plan for 3%+</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">What to Declare — Quick Reference</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Situation</th><th>Japan arrival</th><th>US return</th></tr></thead><tbody><tr class=""><th scope="row">Cash &gt; thresholds</th><td>Yes (¥1M+ into Japan)</td><td>Yes if &gt; $10,000 equivalent aggregate</td></tr><tr class=" dash-stripe"><th scope="row">Prescription meds</th><td>Personal quantity + Rx letter (14-health-safety when written)</td><td>Allowed with Rx</td></tr><tr class=""><th scope="row">Gifts for friends</th><td>Within allowance</td><td>Count toward $800</td></tr><tr class=" dash-stripe"><th scope="row">Tax-free sealed bag</th><td>N/A until exit</td><td>Open after US entry; keep receipts until cleared</td></tr><tr class=""><th scope="row">Food souvenirs</th><td>Don&#39;t import fresh into Japan</td><td>Declare packaged; avoid fresh/agricultural</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Restricted Items Matrix</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Into Japan</th><th>Within Japan</th><th>Into US</th></tr></thead><tbody><tr class=""><th scope="row">Rx medications</th><td>Allowed with Rx; watch banned ingredients</td><td>—</td><td>Allowed with Rx</td></tr><tr class=" dash-stripe"><th scope="row">OTC cold meds (pseudoephedrine)</th><td>Risk — check ingredients</td><td>—</td><td>Allowed</td></tr><tr class=""><th scope="row">Pocket knives (&lt;3&quot;)</th><td>Personal use, declare if asked</td><td>—</td><td>Checked only</td></tr><tr class=" dash-stripe"><th scope="row">Chef knives</th><td>Checked luggage</td><td>Buy tax-free possible</td><td>Checked only</td></tr><tr class=""><th scope="row">Anime figures, games</th><td>OK</td><td>OK</td><td>OK; declare value</td></tr><tr class=" dash-stripe"><th scope="row">Tea (sealed commercial)</th><td>OK</td><td>OK</td><td>Usually OK</td></tr><tr class=""><th scope="row">Fresh sushi omiyage</th><td>No</td><td>Eat in Japan</td><td>No</td></tr><tr class=" dash-stripe"><th scope="row">Alcohol (bought in Japan)</th><td>Within import limit</td><td>Tax-free shop</td><td>1 L duty-free to US</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Purchasing vs Customs (Cross-Reference)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Category</th><th>Customs note</th></tr></thead><tbody><tr class=""><th scope="row">Electronics</th><td>Tax-free in Japan helps; declare value on US entry</td></tr><tr class=" dash-stripe"><th scope="row">Knives (kitchen)</th><td>Checked bag only; declare if asked</td></tr><tr class=""><th scope="row">Anime/retro games</th><td>OK; keep reasonable quantities</td></tr><tr class=" dash-stripe"><th scope="row">Clothing</th><td>Under $800 aggregate easily</td></tr><tr class=""><th scope="row">Alcohol from KIX duty-free</th><td>Max 1 L into US duty-free</td></tr></tbody></table></div>
     </div></div></div>
        </div>
       
@@ -2791,30 +2838,34 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">TECH</span>
+        <span class="dash-title-main">TECH CONNECTIVITY</span>
         <span class="dash-title-accent">CONNECTIVITY</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Tech Connectivity</span>
-        <span class="dash-section-kicker">eSIM · apps · Suica · offline maps · power</span>
+        
       </div>
-      <div class="dash-banner">Setup</div>
+      
       <div class="dash-body">
          <aside class="dash-sidebar">
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Overview</div>
+      <div class="dash-intel-body"><p class="dash-text">Setup</p></div>
+    </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Connectivity Strategy</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Sakura Mobile / Japan Wireless pocket WiFi — overkill solo; skip unless no eSIM phone.</li><li>Airport SIM (NRT/HND): Bic Camera or vending — ¥3,000–5,000 for 10 GB if eSIM fails.</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Pre-Departure Checklist</div>
-      <div class="dash-intel-body"><ol class="dash-list"><li>[ ] eSIM purchased + tested at home (airplane mode off, data on eSIM)</li><li>[ ] Suica added to Wallet OR plan to buy at airport station</li><li>[ ] Google Translate Japanese offline pack</li><li>[ ] Offline map packs: Tokyo, Takayama, Kyoto, Osaka</li><li>[ ] Visit Japan Web registration complete</li><li>[ ] JR Pass voucher / digital exchange instructions saved offline</li><li>[ ] Hotel addresses in Japanese in Notes app (one per hub)</li><li>[ ] Airline app + KIX departure saved</li></ol></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>[ ] eSIM purchased + tested at home (airplane mode off, data on eSIM)</li><li>[ ] Suica added to Wallet OR plan to buy at airport station</li><li>[ ] Google Translate Japanese offline pack</li><li>[ ] Offline map packs: Tokyo, Takayama, Kyoto, Osaka</li><li>[ ] Visit Japan Web registration complete</li><li>[ ] JR Pass voucher / digital exchange instructions saved offline</li><li>[ ] Hotel addresses in Japanese in Notes app (one per hub)</li><li>[ ] Airline app + KIX departure saved</li></ul></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Essential Apps</div>
+      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Provider</th><th>Plan</th><th>Est. cost</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Airalo</th><td>Japan 10–20 GB / 15–30 days</td><td>$18–28</td><td>Easy QR; top up in app</td></tr><tr class=" dash-stripe"><th scope="row">Ubigi</th><td>Japan unlimited fair-use 15 days</td><td>$25–35</td><td>Good for maps + photos</td></tr><tr class=""><th scope="row">Holafly</th><td>Unlimited Japan 15 days</td><td>$35–45</td><td>Higher cost; simple</td></tr></tbody></table></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
-    <div class="dash-panel">
-      <div class="dash-panel-head">Recommended: Japan eSIM (install before departure)</div>
-      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Provider</th><th>Plan</th><th>Est. cost</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Airalo</th><td>Japan 10–20 GB / 15–30 days</td><td>$18–28</td><td>Easy QR; top up in app</td></tr><tr class=" dash-stripe"><th scope="row">Ubigi</th><td>Japan unlimited fair-use 15 days</td><td>$25–35</td><td>Good for maps + photos</td></tr><tr class=""><th scope="row">Holafly</th><td>Unlimited Japan 15 days</td><td>$35–45</td><td>Higher cost; simple</td></tr></tbody></table></div>
-    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">Essential Apps</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>App</th><th>Purpose</th></tr></thead><tbody><tr class=""><th scope="row">Google Maps</th><td>Primary navigation; transit times; walking</td></tr><tr class=" dash-stripe"><th scope="row">Japan Transit Planner (Jorudan) or Navitime</th><td>Train exactness; platform numbers</td></tr><tr class=""><th scope="row">Google Translate</th><td>Camera menu mode; download Japanese offline</td></tr><tr class=" dash-stripe"><th scope="row">Visit Japan Web</th><td>Immigration QR (03-immigration-entry)</td></tr><tr class=""><th scope="row">Suica / PASMO app (iPhone Wallet)</th><td>IC card on phone — see below</td></tr><tr class=" dash-stripe"><th scope="row">Tabelog</th><td>Restaurant ratings (Japanese-heavy; use stars + photos)</td></tr><tr class=""><th scope="row">PayPay</th><td>Optional; many shops — often need Japanese phone; skip unless local friend</td></tr><tr class=" dash-stripe"><th scope="row">Booking.com / Rakuten</th><td>Hotel confirmations offline</td></tr><tr class=""><th scope="row">Wise or bank app</th><td>FX check; low-fee ATM if needed</td></tr></tbody></table></div>
@@ -2850,20 +2901,24 @@ tbody td:first-child { font-weight: 600; }
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Adventure</span>
-        <span class="dash-section-kicker">Day hikes · Kamikochi option · gear · safety</span>
+        
       </div>
       
       <div class="dash-body">
          <aside class="dash-sidebar">
     <div class="dash-intel-box">
+      <div class="dash-intel-head">Overview</div>
+      <div class="dash-intel-body"><p class="dash-text">Recommendation: If Shirakawa-go feels too touristy, swap to Kamikochi — stronger nature payoff for your interest stack.</p></div>
+    </div>
+    <div class="dash-intel-box">
       <div class="dash-intel-head">Safety &amp; Season</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Heat exhaustion: Rest 11:00–15:00 indoor on Aug 1–3 Kyoto hikes.</li><li>Thunderstorms: Alps afternoon — descend Kamikochi by 14:00 if cells build.</li><li>Bears: Kamikochi — rare on main trails; bell not required on crowded paths.</li><li>Solo hiking: Japan trail culture safe; tell hotel front desk if solo alpine bus day.</li></ul></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">1. Kamakura Coastal Walk — Day 4 (Scheduled)</div>
+      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Level</th><th>This trip</th></tr></thead><tbody><tr class=""><th scope="row">You</th><td>High fitness; multi-mile walks OK</td></tr><tr class=" dash-stripe"><th scope="row">Target difficulty</th><td>Moderate — elevation &lt;600 m, 3–5 hr active</td></tr><tr class=""><th scope="row">Avoid</th><td>Technical climbs, monkey park steep stairs if low energy, Fushimi full summit loop in heat</td></tr></tbody></table></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
-    <div class="dash-panel">
-      <div class="dash-panel-head">Fitness Profile Match</div>
-      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Level</th><th>This trip</th></tr></thead><tbody><tr class=""><th scope="row">You</th><td>High fitness; multi-mile walks OK</td></tr><tr class=" dash-stripe"><th scope="row">Target difficulty</th><td>Moderate — elevation &lt;600 m, 3–5 hr active</td></tr><tr class=""><th scope="row">Avoid</th><td>Technical climbs, monkey park steep stairs if low energy, Fushimi full summit loop in heat</td></tr></tbody></table></div>
-    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">1. Kamakura Coastal Walk — Day 4 (Scheduled)</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody><tr class=""><th scope="row">Activity</th><td>Daibutsu approach walk + Enoden coastal tram + optional Enoshima island climb</td></tr><tr class=" dash-stripe"><th scope="row">Distance</th><td>~5–8 km total if Enoshima included</td></tr><tr class=""><th scope="row">Elevation</th><td>Enoshima ~120 m to lighthouse (optional)</td></tr><tr class=" dash-stripe"><th scope="row">Duration</th><td>6–7 hr with lunch</td></tr><tr class=""><th scope="row">Difficulty</th><td>Easy–moderate</td></tr><tr class=" dash-stripe"><th scope="row">Gear</th><td>Walking shoes, sunscreen, ¥500 coin for lockers</td></tr><tr class=""><th scope="row">Low energy</th><td>Daibutsu + Hase-dera only; skip Enoshima</td></tr><tr class=" dash-stripe"><th scope="row">Wow</th><td>Enoden sea view; Fuji on clear days</td></tr></tbody></table></div>
@@ -2883,6 +2938,30 @@ tbody td:first-child { font-weight: 600; }
     <div class="dash-panel">
       <div class="dash-panel-head">Kamikochi Alpine Valley — Swap for Day 7 OR extra Takayama day</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody><tr class=""><th scope="row">Why</th><td>Premier #1 nature hit — Azusa River, Hotaka peaks views</td></tr><tr class=" dash-stripe"><th scope="row">Access</th><td>Bus from Matsumoto or Takayama area (~2.5–3 hr each way from Takayama — long day)</td></tr><tr class=""><th scope="row">Better access</th><td>Stay Takayama; tour bus Jul 30 early — replaces Shirakawa-go if already seen OR skip market</td></tr><tr class=" dash-stripe"><th scope="row">Trails</th><td>Kappa Bridge loop 1.5 hr easy; Myojin Pond 2–3 hr moderate flat</td></tr><tr class=""><th scope="row">Elevation</th><td>~1,500 m base — cooler than cities</td></tr><tr class=" dash-stripe"><th scope="row">Season</th><td>Open late Apr–Nov; Jul 30 OK</td></tr><tr class=""><th scope="row">Cost</th><td>Bus + ¥700 conservation fee</td></tr><tr class=" dash-stripe"><th scope="row">Fitness</th><td>Moderate; no climbing required for valley floor</td></tr><tr class=""><th scope="row">Book</th><td>Alpico bus seats summer peak</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Mt Takao — Swap for Day 4 (Tokyo) instead of Kamakura</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody><tr class=""><th scope="row">Why</th><td>Forested mountain 45 min from Shinjuku; cooler elevation</td></tr><tr class=" dash-stripe"><th scope="row">Access</th><td>Keio line to Takaosanguchi; cablecar or trail 1</td></tr><tr class=""><th scope="row">Trails</th><td>Trail 1 (paved, 90 min up); Trail 6 watercourse — more nature</td></tr><tr class=" dash-stripe"><th scope="row">Elevation</th><td>599 m summit</td></tr><tr class=""><th scope="row">Duration</th><td>Half to full day</td></tr><tr class=" dash-stripe"><th scope="row">Difficulty</th><td>Moderate — your fitness handles easily</td></tr><tr class=""><th scope="row">Crowds</th><td>Weekday better; Jul 27 Mon fits itinerary if Kamakura done elsewhere</td></tr><tr class=" dash-stripe"><th scope="row">Gear</th><td>Trail shoes; insect repellent</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Tokyo Urban Nature (Low-Intensity)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Site</th><th>Day</th><th>Activity</th></tr></thead><tbody><tr class=""><th scope="row">Ueno Park / Shinobazu Pond</th><td>2</td><td>Flat 2 km loop; lotus viewing</td></tr><tr class=" dash-stripe"><th scope="row">Meiji Jingu forest approach</th><td>3</td><td>1 km shaded walk</td></tr><tr class=""><th scope="row">Imperial East Gardens</th><td>5</td><td>Historical garden walk 1.5 km</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Alps / Takayama Add-Ons</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Activity</th><th>Duration</th><th>Difficulty</th></tr></thead><tbody><tr class=""><th scope="row">Miyagawa riverside walk</th><td>30 min</td><td>Easy</td></tr><tr class=" dash-stripe"><th scope="row">Hida Folk Village open-air</th><td>1.5 hr</td><td>Easy</td></tr><tr class=""><th scope="row">Bike rental Takayama</th><td>2 hr flat</td><td>Easy</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Osaka Nature</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Site</th><th>Day</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Osaka Castle Park moat loop</th><td>13</td><td>~3 km; morning before heat</td></tr><tr class=" dash-stripe"><th scope="row">Namba parks</th><td>13</td><td>Low-key; not adventure anchor</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Gear Checklist (Adventure Days)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Item</th><th>When</th></tr></thead><tbody><tr class=""><th scope="row">Broken-in walking shoes</th><td>All hike days</td></tr><tr class=" dash-stripe"><th scope="row">Lightweight rain shell</th><td>Alps + Kamakura</td></tr><tr class=""><th scope="row">2L water capacity</th><td>Kamikochi, Takao, Kamakura</td></tr><tr class=" dash-stripe"><th scope="row">Sun hat + SPF 50</th><td>Every outdoor block</td></tr><tr class=""><th scope="row">Small towel</th><td>Takayama onsen days</td></tr><tr class=" dash-stripe"><th scope="row">Trek poles</th><td>Optional; not required</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Adventure Day vs Transit Day Matrix</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Day</th><th>Adventure load</th><th>Transit?</th></tr></thead><tbody><tr class=""><th scope="row">4</th><td>Kamakura OR Takao</td><td>No</td></tr><tr class=" dash-stripe"><th scope="row">7</th><td>Shirakawa-go OR Kamikochi</td><td>No</td></tr><tr class=""><th scope="row">10</th><td>Arashiyama</td><td>No</td></tr><tr class=" dash-stripe"><th scope="row">11</th><td>Kiyomizu + Philosopher&#39;s Path</td><td>No</td></tr><tr class=""><th scope="row">6, 8, 12</th><td>Soft — no major hike</td><td>Yes ✓</td></tr></tbody></table></div>
     </div></div></div>
        </div>
       
@@ -2893,26 +2972,30 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">HIDDEN</span>
+        <span class="dash-title-main">HIDDEN GEMS</span>
         <span class="dash-title-accent">GEMS</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Hidden Gems</span>
-        <span class="dash-section-kicker">Local favorites · tourist traps · solo swaps</span>
+        
       </div>
-      <div class="dash-banner">Pick one gem per city max — do not stack off-itinerary detours. - Best inserted when low energy or rainy backup slots open. - Solo-friendly = counter food, public baths, neighborhood walks.</div>
+      
       <div class="dash-body">
          <aside class="dash-sidebar">
     <div class="dash-intel-box">
+      <div class="dash-intel-head">Overview</div>
+      <div class="dash-intel-body"><p class="dash-text">- Pick one gem per city max — do not stack off-itinerary detours. - Best inserted when low energy or rainy backup slots open. - Solo-friendly = counter food, public baths, neighborhood walks.</p></div>
+    </div>
+    <div class="dash-intel-box">
       <div class="dash-intel-head">How to Use This List</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>Pick one gem per city max — do not stack off-itinerary detours.</li><li>Best inserted when low energy or rainy backup slots open.</li><li>Solo-friendly = counter food, public baths, neighborhood walks.</li></ul></div>
+    </div>
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">TAKAYAMA / ALPS</div>
+      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Gem</th><th>Area</th><th>Why</th><th>Swap for trap</th></tr></thead><tbody><tr class=""><th scope="row">Yanaka Ginza</th><td>Yanaka</td><td>Showa-era shopping street, cats, old Tokyo calm</td><td>Nakamise overbuying</td></tr><tr class=" dash-stripe"><th scope="row">Nezu Shrine azalea paths</th><td>Nezu</td><td>Small shrine, tunnel torii — quieter than Inari preview</td><td>—</td></tr><tr class=""><th scope="row">Kagurazaka</th><td>Shinjuku edge</td><td>French-Japanese alley, stone steps, evening solo dining</td><td>Golden Gai peak 22:00</td></tr><tr class=" dash-stripe"><th scope="row">Todoroki Valley</th><td>Setagaya</td><td>1 km gorge 20 min from Shibuya — nature hidden</td><td>Overhyped Shibuya crossing linger</td></tr><tr class=""><th scope="row">Sumida Hokusai Museum</th><td>Ryogoku</td><td>Small focused museum + river walk</td><td>Skytree mall</td></tr><tr class=" dash-stripe"><th scope="row">Jimbocho book district</th><td>Kanda</td><td>Used books, curry shops</td><td>Akihabara maid cafes</td></tr></tbody></table></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
-    <div class="dash-panel">
-      <div class="dash-panel-head">TOKYO — Local Favorites</div>
-      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Gem</th><th>Area</th><th>Why</th><th>Swap for trap</th></tr></thead><tbody><tr class=""><th scope="row">Yanaka Ginza</th><td>Yanaka</td><td>Showa-era shopping street, cats, old Tokyo calm</td><td>Nakamise overbuying</td></tr><tr class=" dash-stripe"><th scope="row">Nezu Shrine azalea paths</th><td>Nezu</td><td>Small shrine, tunnel torii — quieter than Inari preview</td><td>—</td></tr><tr class=""><th scope="row">Kagurazaka</th><td>Shinjuku edge</td><td>French-Japanese alley, stone steps, evening solo dining</td><td>Golden Gai peak 22:00</td></tr><tr class=" dash-stripe"><th scope="row">Todoroki Valley</th><td>Setagaya</td><td>1 km gorge 20 min from Shibuya — nature hidden</td><td>Overhyped Shibuya crossing linger</td></tr><tr class=""><th scope="row">Sumida Hokusai Museum</th><td>Ryogoku</td><td>Small focused museum + river walk</td><td>Skytree mall</td></tr><tr class=" dash-stripe"><th scope="row">Jimbocho book district</th><td>Kanda</td><td>Used books, curry shops</td><td>Akihabara maid cafes</td></tr></tbody></table></div>
-    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">TAKAYAMA / ALPS</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Gem</th><th>Why</th></tr></thead><tbody><tr class=""><th scope="row">Shiroyama Park viewpoint</th><td>Sunset over old town; 10 min climb; locals jog here</td></tr><tr class=" dash-stripe"><th scope="row">Miyagawa morning market (local side)</th><td>Buy pickles from farmers, not gift stalls</td></tr><tr class=""><th scope="row">Funamachi canal lane</th><td>Evening walk; fireflies rare Jul</td></tr><tr class=" dash-stripe"><th scope="row">Hida no Sato (if Shirakawa-go sold out)</th><td>Open-air museum closer; fewer tour buses than Ogimachi peak</td></tr></tbody></table></div>
@@ -2932,6 +3015,10 @@ tbody td:first-child { font-weight: 600; }
     <div class="dash-panel">
       <div class="dash-panel-head">Anime/Gaming (Optional, Not Trap-Heavy)</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Spot</th><th>Note</th></tr></thead><tbody><tr class=""><th scope="row">Nakano Broadway</th><td>Used figures; less manic than Akihabara</td></tr><tr class=" dash-stripe"><th scope="row">Super Potato Osaka</th><td>Retro games Nipponbashi</td></tr><tr class=""><th scope="row">GiGO (formerly SEGA)</th><td>Short visit; skip crane game spend spiral</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Authenticity Filters</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Green flags</th><th>Red flags</th></tr></thead><tbody><tr class=""><th scope="row">Menu only Japanese, locals at counter</th><td>Photo menu + hawkers outside</td></tr><tr class=" dash-stripe"><th scope="row">Residential side street 5 min off main</th><td>Bus tour parking lot</td></tr><tr class=""><th scope="row">Seasonal ingredient handwritten board</th><td>&quot;Best in Japan&quot; LED signs</td></tr><tr class=" dash-stripe"><th scope="row">Onsen with locals reading newspaper</th><td>Theme park priced &quot;culture&quot;</td></tr></tbody></table></div>
     </div></div></div>
        </div>
       
@@ -2942,20 +3029,24 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">HEALTH</span>
+        <span class="dash-title-main">HEALTH SAFETY</span>
         <span class="dash-title-accent">SAFETY</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Health Safety</span>
-        <span class="dash-section-kicker">Vaccines · heat · clinics · first-aid kit</span>
+        
       </div>
       
       <div class="dash-body">
          <aside class="dash-sidebar">
     <div class="dash-intel-box">
+      <div class="dash-intel-head">Overview</div>
+      <div class="dash-intel-body"><p class="dash-text">Travel Medicine Clinic: Schedule May–June 2026; bring printed 04-master-itinerary; verify CDC Japan notices at [travel.cdc.gov](https://travel.cdc.gov).</p></div>
+    </div>
+    <div class="dash-intel-box">
       <div class="dash-intel-head">Pre-Trip Health</div>
-      <div class="dash-intel-body"><ul class="dash-list"><li>Emergency medical + medical evacuation (helicopter rescue from Alps trails = $10,000+ without coverage)</li><li>Trip interruption / cancellation for typhoon or flight disruption (KIX departure Aug 6)</li><li>Activity coverage: hiking on marked trails, cycling (Arashiyama), walking tours</li><li>Baggage delay (takkyubin misdelivery rare but possible)</li><li>Pre-existing condition waiver if applicable</li><li>World Nomads Explorer (~$130–160 for 14 days solo): Covers hiking Category 1–3; evacuation included</li><li>Allianz OneTrip Premier (~$110–140): Strong medical limits; widely accepted at international clinics</li><li>Purchase: Same day as first flight booking to activate pre-departure cancellation</li></ul></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Emergency medical + medical evacuation (helicopter rescue from Alps trails = $10,000+ without coverage)</li><li>Trip interruption / cancellation for typhoon or flight disruption (KIX departure Aug 6)</li><li>Activity coverage: hiking on marked trails, cycling (Arashiyama), walking tours</li><li>Baggage delay (takkyubin misdelivery rare but possible)</li><li>Pre-existing condition waiver if applicable</li><li>World Nomads Explorer (~$130–160 for 14 days solo): Covers hiking Category 1–3; evacuation included</li><li>Allianz OneTrip Premier (~$110–140): Strong medical limits; widely accepted at international clinics</li><li>Purchase: Same day as first flight booking to activate pre-departure cancellation</li><li>14-day supply + 3 extra days buffer in carry-on (never checked)</li><li>Original prescription + doctor note in English (Japan customs may inspect controlled substances)</li><li>Japan import restrictions: Codeine, amphetamine-class ADHD meds, and some sleep aids face strict limits—verify via [mhlw.go.jp](https://www.mhlw.go.jp) &quot;Guide for Bringing Medicines&quot; or embassy guidance; apply for Yunyu Kakunin-sho (import certificate) if required</li><li>OTC carry-on: Imodium, oral rehydration salts, ibuprofen, antihistamine</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Validations</div>
@@ -2985,6 +3076,30 @@ tbody td:first-child { font-weight: 600; }
     <div class="dash-panel">
       <div class="dash-panel-head">Takayama / Japanese Alps (Days 6–7)</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Facility</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Hida Takayama Red Cross Hospital</th><td>Main local hospital; limited English; +81-577-32-1111</td></tr><tr class=" dash-stripe"><th scope="row">Takayama City Health Center</th><td>Minor issues; ask hotel to call</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Kyoto (Days 8–11)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Facility</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Kyoto University Hospital</th><td>Major emergency facility; +81-75-751-3111</td></tr><tr class=" dash-stripe"><th scope="row">Japan Baptist Hospital Kyoto</th><td>English-speaking staff; GP + emergency</td></tr><tr class=""><th scope="row">Koseikai Takeda Hospital International Dept.</th><td>Tourist/expat clinic; appointments recommended</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Osaka (Days 12–13)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Facility</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Osaka University Hospital</th><td>Emergency; +81-6-6879-5111</td></tr><tr class=" dash-stripe"><th scope="row">Osaka Medical and Pharmaceutical University Hospital</th><td>Full services</td></tr><tr class=""><th scope="row">Primary Care Osaka (Umeda/Namba area clinics)</th><td>English GP; search before travel for current location</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Emergency Numbers &amp; Embassy</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Service</th><th>Number</th><th>Notes</th></tr></thead><tbody><tr class=""><th scope="row">Police</th><td>110</td><td>English available in major cities</td></tr><tr class=" dash-stripe"><th scope="row">Ambulance / Fire</th><td>119</td><td>Say &quot;kyūkyūsha&quot; (ambulance); English operators in Tokyo/Osaka</td></tr><tr class=""><th scope="row">Police consultation (non-emergency)</th><td>#9110</td><td>Tokyo English support</td></tr><tr class=" dash-stripe"><th scope="row">Japan Helpline</th><td>0570-000-911</td><td>24/7 English assistance (non-government)</td></tr><tr class=""><th scope="row">US Embassy Tokyo</th><td>+81-3-3224-5000</td><td>24/7 emergency; 1-10-5 Akasaka, Minato-ku</td></tr><tr class=" dash-stripe"><th scope="row">US Consulate Osaka-Kobe</th><td>+81-6-6315-5900</td><td>Covers Kansai region</td></tr><tr class=""><th scope="row">US State Dept (overseas)</th><td>+1-202-501-4444</td><td>Emergency assistance</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Adventure-Specific Health (from 04-master-itinerary)</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Activity</th><th>Day</th><th>Intensity</th><th>Medical notes</th></tr></thead><tbody><tr class=""><th scope="row">Kamakura Daibutsu + Enoshima walk</th><td>4</td><td>●●●○○</td><td>Sun + cobblestones; water 2 L; Compeed essential</td></tr><tr class=" dash-stripe"><th scope="row">Shirakawa-go village walk</th><td>7</td><td>●●○○○</td><td>Uneven paths; rain jacket; no swimming in rivers</td></tr><tr class=""><th scope="row">Fushimi Inari summit loop</th><td>9</td><td>●●●○○</td><td>2–3 hrs stairs; start 05:30 to beat heat; knee-friendly pace</td></tr><tr class=" dash-stripe"><th scope="row">Arashiyama bamboo + river path</th><td>10</td><td>●●●○○</td><td>Rental cycle optional; monkey park steep—skip if fatigued</td></tr><tr class=""><th scope="row">Philosopher&#39;s Path + Kiyomizu</th><td>11</td><td>●●●○○</td><td>Uphill to Kiyomizu; hydrate before climb</td></tr><tr class=" dash-stripe"><th scope="row">Osaka Castle park exterior</th><td>13</td><td>●●○○○</td><td>Morning only; skip interior if heat advisory</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Safety Per Region</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Risk</th><th>Level</th><th>Mitigation</th></tr></thead><tbody><tr class=""><th scope="row">Petty theft</th><td>Very low</td><td>Japan is among safest globally; still watch bags on crowded trains</td></tr><tr class=" dash-stripe"><th scope="row">Scams</th><td>Low</td><td>Overpriced bars in Golden Gai/Shinsekai—check menu prices before ordering</td></tr><tr class=""><th scope="row">Traffic</th><td>Low–moderate</td><td>Look both ways at crossings; cyclists on sidewalks in Kyoto</td></tr><tr class=" dash-stripe"><th scope="row">Earthquake</th><td>Moderate (constant low probability)</td><td>Know hotel evacuation route; J-Alert app; &quot;drop, cover, hold on&quot;</td></tr><tr class=""><th scope="row">Heat illness</th><td>High (seasonal)</td><td>Midday indoor pivot; electrolytes; know 119 protocol</td></tr><tr class=" dash-stripe"><th scope="row">Typhoon</th><td>Moderate (seasonal)</td><td>Monitor JMA; indoor backup days built into 04-master-itinerary</td></tr><tr class=""><th scope="row">Bear (Alps)</th><td>Very low</td><td>Stay on marked paths; optional bear bell at trail shops ¥500</td></tr><tr class=" dash-stripe"><th scope="row">Crowd crush</th><td>Moderate</td><td>Deal-breaker from profile-japan—early starts per 17-time-optimization</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Document Backup Protocol</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Document</th><th>Digital backup</th><th>Physical backup</th></tr></thead><tbody><tr class=""><th scope="row">US passport</th><td>iCloud/Google Drive encrypted</td><td>Photocopy in daypack + hotel safe</td></tr><tr class=" dash-stripe"><th scope="row">Visit Japan Web QR</th><td>Screenshot + email to self</td><td>Print immigration/customs QR</td></tr><tr class=""><th scope="row">JR Pass voucher</th><td>PDF in email</td><td>Print copy</td></tr><tr class=" dash-stripe"><th scope="row">Travel insurance</th><td>Email policy PDF</td><td>Wallet card</td></tr><tr class=""><th scope="row">Hotel confirmations</th><td>Notes app + email</td><td>One printed sheet all addresses (Japanese + English)</td></tr><tr class=" dash-stripe"><th scope="row">Flight confirmations</th><td>Airline app + email</td><td>Print KIX departure Aug 6</td></tr><tr class=""><th scope="row">Credit card # + bank intl hotline</th><td>Password manager</td><td>Paper in secured luggage</td></tr><tr class=" dash-stripe"><th scope="row">Prescription list</th><td>Photo in phone</td><td>Doctor note in carry-on</td></tr></tbody></table></div>
     </div></div></div>
        </div>
       
@@ -3001,18 +3116,18 @@ tbody td:first-child { font-weight: 600; }
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Contingency</span>
-        <span class="dash-section-kicker">Scenario playbooks · emergency numbers</span>
+        
       </div>
       
       <div class="dash-body">
          <aside class="dash-sidebar">
     <div class="dash-intel-box">
-      <div class="dash-intel-head">Emergency Quick-Reference Card</div>
-      <div class="dash-intel-body"><table class="dash-table"><thead><tr><th>Service</th><th>Number</th></tr></thead><tbody><tr class=""><th scope="row">Police</th><td>110</td></tr><tr class=" dash-stripe"><th scope="row">Ambulance/Fire</th><td>119</td></tr><tr class=""><th scope="row">Japan Helpline (English)</th><td>0570-000-911</td></tr><tr class=" dash-stripe"><th scope="row">US Embassy Tokyo</th><td>+81-3-3224-5000</td></tr><tr class=""><th scope="row">US Consulate Osaka</th><td>+81-6-6315-5900</td></tr><tr class=" dash-stripe"><th scope="row">Yamato (takkyubin) EN</th><td>+81-57-0-003-010</td></tr><tr class=""><th scope="row">JR Pass / JR West info</th><td>Visit JR Midori-no-madoguchi at any major station</td></tr></tbody></table></div>
+      <div class="dash-intel-head">Overview</div>
+      <div class="dash-intel-body"><p class="dash-text">Heat advisory (&gt;35°C real-feel) - Action: Execute rainy/heat backups already in 04-master-itinerary—shift outdoor block to 06:00 start OR swap to indoor pivot - Tokyo: teamLab Planets, Teien Art Museum, depachika food floors - Takayama: Sake breweries, Hida Folk Village partial cover, hotel onsen - Kyoto: Railway Museum, Manga Museum, covered Nishiki Market - Osaka: Kaiyukan aquarium, TeamLab Osaka, Umeda Sky if evening clears - No phone needed for most pivots—self-directed</p></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Scenario 1: Weather Ruins Outdoor Day</div>
-      <div class="dash-intel-body"><ul class="dash-list"><li>Action: Execute rainy/heat backups already in 04-master-itinerary—shift outdoor block to 06:00 start OR swap to indoor pivot</li><li>Tokyo: teamLab Planets, Teien Art Museum, depachika food floors</li><li>Takayama: Sake breweries, Hida Folk Village partial cover, hotel onsen</li><li>Kyoto: Railway Museum, Manga Museum, covered Nishiki Market</li><li>Osaka: Kaiyukan aquarium, TeamLab Osaka, Umeda Sky if evening clears</li><li>No phone needed for most pivots—self-directed</li><li>Use per-day Rainy backup lines in 04-master-itinerary</li><li>Fushimi Inari: light rain OK with umbrella; cancel if lightning</li></ul></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>Action: Execute rainy/heat backups already in 04-master-itinerary—shift outdoor block to 06:00 start OR swap to indoor pivot</li><li>Tokyo: teamLab Planets, Teien Art Museum, depachika food floors</li><li>Takayama: Sake breweries, Hida Folk Village partial cover, hotel onsen</li><li>Kyoto: Railway Museum, Manga Museum, covered Nishiki Market</li><li>Osaka: Kaiyukan aquarium, TeamLab Osaka, Umeda Sky if evening clears</li><li>No phone needed for most pivots—self-directed</li><li>Use per-day Rainy backup lines in 04-master-itinerary</li><li>Fushimi Inari: light rain OK with umbrella; cancel if lightning</li><li>Arashiyama: swap to Sagano Romantic Train (if booked) or indoor museum day</li><li>Monitor JMA + NHK World; see Scenario 10 below</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Scenario 3: Missed Shinkansen or Reserved Train</div>
@@ -3026,6 +3141,10 @@ tbody td:first-child { font-weight: 600; }
     <div class="dash-panel">
       <div class="dash-panel-head">Details</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Cut</th><th>Savings</th></tr></thead><tbody><tr class=""><th scope="row">Skip Hida beef splurge → soba/izakaya</th><td>~¥8,000 ($55)</td></tr><tr class=" dash-stripe"><th scope="row">Convenience-store breakfast all week</th><td>~¥500/day</td></tr><tr class=""><th scope="row">Skip paid teamLab/Kaiyukan (use free rainy backups)</th><td>~¥3,000–4,000</td></tr><tr class=" dash-stripe"><th scope="row">Walk vs taxi in Kyoto</th><td>~¥1,000/trip</td></tr><tr class=""><th scope="row">One less souvenir shopping session (Kappabashi/Kyoto crafts)</th><td>Variable</td></tr><tr class=" dash-stripe"><th scope="row">Downgrade final Osaka dinner to kuromon grazing</th><td>~¥5,000</td></tr></tbody></table></div>
+    </div>
+    <div class="dash-panel">
+      <div class="dash-panel-head">Emergency Quick-Reference Card</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Service</th><th>Number</th></tr></thead><tbody><tr class=""><th scope="row">Police</th><td>110</td></tr><tr class=" dash-stripe"><th scope="row">Ambulance/Fire</th><td>119</td></tr><tr class=""><th scope="row">Japan Helpline (English)</th><td>0570-000-911</td></tr><tr class=" dash-stripe"><th scope="row">US Embassy Tokyo</th><td>+81-3-3224-5000</td></tr><tr class=""><th scope="row">US Consulate Osaka</th><td>+81-6-6315-5900</td></tr><tr class=" dash-stripe"><th scope="row">Yamato (takkyubin) EN</th><td>+81-57-0-003-010</td></tr><tr class=""><th scope="row">JR Pass / JR West info</th><td>Visit JR Midori-no-madoguchi at any major station</td></tr></tbody></table></div>
     </div></div></div>
        </div>
       
@@ -3036,30 +3155,38 @@ tbody td:first-child { font-weight: 600; }
     <section class="slide dash-slide">
       <div class="dash-top-bar" aria-hidden="true"></div>
       <h1 class="dash-slide-title">
-        <span class="dash-title-main">TIME</span>
+        <span class="dash-title-main">TIME OPTIMIZATION</span>
         <span class="dash-title-accent">OPTIMIZATION</span>
       </h1>
       
       <div class="dash-section-row">
         <span class="dash-section-pill">Time Optimization</span>
-        <span class="dash-section-kicker">PTO · clustering · crowd timing · scorecard</span>
+        
       </div>
       
       <div class="dash-body">
          <aside class="dash-sidebar">
+    <div class="dash-intel-box">
+      <div class="dash-intel-head">Overview</div>
+      <div class="dash-intel-body"><p class="dash-text">Anchor window: Jul 24 (Fri) – Aug 6 (Thu), 2026 — 14 calendar days.</p></div>
+    </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Jet Lag Management</div>
       <div class="dash-intel-body"><ul class="dash-list"><li>In flight: Sleep if arriving morning; stay awake if arriving evening—target 21:00 JST bedtime</li><li>Day 1 (Jul 24): No naps &gt;20 min; sunlight walk 15:00–17:00; bed by 21:00 ✓ per 04-master-itinerary</li><li>Day 2: Near-normal; slight 15:00 slump OK</li><li>Day 3 (Jul 26): Full energy for Meiji + Kamakura prep</li><li>Melatonin: 0.5 mg at local bedtime Days 1–2 only (not high-dose)</li><li>Easier direction; body extends day naturally</li><li>Hydrate on flight; walk airport before boarding</li><li>US recovery: 2–3 days to normal sleep</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Activity Clustering</div>
-      <div class="dash-intel-body"><ul class="dash-list"><li>East cluster: Ueno → Asakusa → Ameyoko (Day 2)</li><li>West cluster: Meiji → Yoyogi → Omotesando → Shinjuku (Day 3)</li><li>Day trip: Kamakura standalone (Day 4)—correctly isolated</li><li>Central: Tsukiji → Imperial East Gardens → Marunouchi (Day 5)</li><li>Old town + sake breweries walkable cluster (Day 6 PM)</li><li>Shirakawa-go = full-day excursion (Day 7 AM)—not clusterable</li><li>South: Fushimi Inari → Fushimi sake → Gion distance (Day 9)</li><li>West: Arashiyama bamboo → Tenryu-ji → river path (Day 10)</li></ul></div>
+      <div class="dash-intel-body"><ul class="dash-list"><li>East cluster: Ueno → Asakusa → Ameyoko (Day 2)</li><li>West cluster: Meiji → Yoyogi → Omotesando → Shinjuku (Day 3)</li><li>Day trip: Kamakura standalone (Day 4)—correctly isolated</li><li>Central: Tsukiji → Imperial East Gardens → Marunouchi (Day 5)</li><li>Old town + sake breweries walkable cluster (Day 6 PM)</li><li>Shirakawa-go = full-day excursion (Day 7 AM)—not clusterable</li><li>South: Fushimi Inari → Fushimi sake → Gion distance (Day 9)</li><li>West: Arashiyama bamboo → Tenryu-ji → river path (Day 10)</li><li>East: Kiyomizu → Ninenzaka → Philosopher&#39;s Path → Ginkaku-ji (Day 11)—same-day Higashiyama sweep ✓</li><li>Central: Nishiki + Pontocho (Day 8 soft)</li><li>Namba cluster: Kuromon → Dotonbori → Namba Yasaka (Days 12–13)</li><li>Castle: Standalone north (Day 13 AM)—one metro ride from Namba</li></ul></div>
     </div>
     <div class="dash-intel-box">
       <div class="dash-intel-head">Validations</div>
       <div class="dash-intel-body"><div class="dash-val-grid"><div class="dash-val pass"><span class="dash-val-ic" aria-hidden="true">✓</span><span>18 validation check(s) passed in source plan.</span></div></div></div>
     </div></aside>
          <div class="dash-content"><div class="dash-grid">
+    <div class="dash-panel">
+      <div class="dash-panel-head">Details</div>
+      <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Strategy</th><th>Application</th></tr></thead><tbody><tr class=""><th scope="row">Depart US Thu/Fri evening</th><td>Land Tokyo Fri/Sat AM; use weekend for jet-lag recovery without burning PTO on travel day</td></tr><tr class=" dash-stripe"><th scope="row">Return Thu Aug 6</th><td>Midweek return often cheaper; full Osaka food day Aug 5 before departure</td></tr><tr class=""><th scope="row">Obon buffer</th><td>Full Obon (mid-Aug) starts after departure—avoid worst domestic crush</td></tr><tr class=" dash-stripe"><th scope="row">Net PTO (typical US job)</th><td>~8–10 weekdays depending on departure day; depart Jul 23 evening → return Aug 6 = 9 PTO days</td></tr></tbody></table></div>
+    </div>
     <div class="dash-panel">
       <div class="dash-panel-head">Transit Time Minimization</div>
       <div class="dash-panel-body"><table class="dash-table"><thead><tr><th>Strategy</th><th>Applied?</th><th>Result</th></tr></thead><tbody><tr class=""><th scope="row">Open-jaw NRT/HND → KIX</th><td>✅ Yes</td><td>Saves ~2.5 hrs + ¥14,000 vs Tokyo roundtrip (02-route-optimization)</td></tr><tr class=" dash-stripe"><th scope="row">Hub order (geographic sweep)</th><td>✅ Tokyo→Alps→Kyoto→Osaka</td><td>No backtracking</td></tr><tr class=""><th scope="row">7-day JR Pass window</th><td>✅ Activate Jul 29</td><td>Covers longest rail block only</td></tr><tr class=" dash-stripe"><th scope="row">Takkyubin luggage forward</th><td>✅ Jul 28 + Aug 3</td><td>Eliminates suitcase on Shinkansen + cobblestone drag</td></tr><tr class=""><th scope="row">IC card for Tokyo local days</th><td>✅ Days 1–5</td><td>No ticket queue time</td></tr><tr class=" dash-stripe"><th scope="row">Kyoto→Osaka JR Special Rapid</th><td>✅ Day 12</td><td>30 min vs highway bus 1 hr</td></tr></tbody></table></div>

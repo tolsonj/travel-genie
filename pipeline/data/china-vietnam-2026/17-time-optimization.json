@@ -4,8 +4,48 @@
   "trip": "china-vietnam-2026",
   "title": "Time Optimization",
   "slide_title": "TIME",
-  "intro": "Current dates: September 1–14, 2026 (Tuesday to Monday) - Departure: Tuesday Sept 1 — uses 1 PTO (Monday is Labor Day in US — Sept 7, 2026 is Labor Day) - Wait: Labor Day 2026 is September 7 — if trip departs on Tuesday Sept 2, Labor Day weekend extends without using it as PTO - Revised suggestion: Depart Monday Sept 1 (use 0 PTO; Labor Day is a holiday) → or depart Sunday Aug 31 (evening flight, arrive Beijing Tuesday) → land Beijing Sept 1 (Day 1 is essentially \"free\" because you crossed the date line)",
+  "intro": "*MCP search ±2 days around Step 2 dates · 2026-06-12*",
   "tables": [
+    {
+      "caption": "",
+      "columns": [
+        "Leg",
+        "Base date",
+        "Alt date",
+        "Savings (pp)",
+        "Worth it?"
+      ],
+      "rows": [
+        [
+          "ATL → HKG",
+          "Sep 1",
+          "Aug 31",
+          "~$40–80",
+          "Marginal — loses soft arrival day"
+        ],
+        [
+          "ATL → HKG",
+          "Sep 1",
+          "Sep 2",
+          "~$0–50",
+          "No — misses HK check-in Sep 1"
+        ],
+        [
+          "DAD → ATL",
+          "Sep 14",
+          "Sep 13",
+          "~$60",
+          "Maybe — if resort allows early checkout"
+        ],
+        [
+          "DAD → ATL",
+          "Sep 14",
+          "Sep 15",
+          "~$30",
+          "No — extends trip past window"
+        ]
+      ]
+    },
     {
       "caption": "Transit Time Minimization",
       "columns": [
@@ -306,9 +346,9 @@
   ],
   "slide_title_accent": "OPTIMIZATION",
   "section_label": "Time Optimization",
-  "section_kicker": "PTO · clustering · crowd timing · scorecard",
+  "section_kicker": "PTO · date-flex flights · crowd timing · scorecard",
   "banner": {
-    "text": "Current dates: September 1–14, 2026 (Tuesday to Monday) - Departure: Tuesday Sept 1 — uses 1 PTO (Monday is Labor Day in US — Sept 7, 2026 is Labor Day) - Wait: Labor Day 2026 is September 7 — if trip departs on Tuesday Sept 2, Labor Day weekend extends without using it as PTO - Revised suggestion: Depart Monday Sept 1 (use 0 PTO; Labor Day is a holiday) → or depart Sunday Aug 31 (evening flight, arrive Beijing Tuesday) → land Beijing Sept 1 (Day 1 is essentially \"free\" because you crossed the date line)"
+    "text": "*MCP search ±2 days around Step 2 dates · 2026-06-12*"
   },
   "sidebar": [
     {
@@ -351,6 +391,46 @@
     }
   ],
   "panels": [
+    {
+      "caption": "Details",
+      "columns": [
+        "Leg",
+        "Base date",
+        "Alt date",
+        "Savings (pp)",
+        "Worth it?"
+      ],
+      "rows": [
+        [
+          "ATL → HKG",
+          "Sep 1",
+          "Aug 31",
+          "~$40–80",
+          "Marginal — loses soft arrival day"
+        ],
+        [
+          "ATL → HKG",
+          "Sep 1",
+          "Sep 2",
+          "~$0–50",
+          "No — misses HK check-in Sep 1"
+        ],
+        [
+          "DAD → ATL",
+          "Sep 14",
+          "Sep 13",
+          "~$60",
+          "Maybe — if resort allows early checkout"
+        ],
+        [
+          "DAD → ATL",
+          "Sep 14",
+          "Sep 15",
+          "~$30",
+          "No — extends trip past window"
+        ]
+      ]
+    },
     {
       "caption": "Transit Time Minimization",
       "columns": [

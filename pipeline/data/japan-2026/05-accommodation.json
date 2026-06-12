@@ -4,13 +4,322 @@
   "trip": "japan-2026",
   "title": "Accommodation",
   "slide_title": "ACCOMMODATION",
+  "intro": "Budget envelope (lodging only)",
+  "tables": [
+    {
+      "caption": "Booking Strategy (Solo)",
+      "columns": [
+        "Tactic",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Book 8–12 weeks out",
+          "Pre-Obon domestic travel lifts Jul 27–Aug 3 weekend rates"
+        ],
+        [
+          "Platforms",
+          "Booking.com (free cancel), Agoda, Rakuten Travel; Japan Hotel Search for ryokan"
+        ],
+        [
+          "Room type",
+          "Single or semi-double — confirm bed width (140 cm semi-double OK solo)"
+        ],
+        [
+          "Cancellation",
+          "Flexible until 7 days out on city hotels; ryokan often stricter"
+        ],
+        [
+          "Luggage",
+          "Use hotel takkyubin Jul 28 Tokyo→Kyoto, carry day bag on Takayama leg"
+        ],
+        [
+          "Check-in",
+          "Many hotels 15:00; drop bags early; ask English front desk for forwarding forms"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Hub",
+        "Nights",
+        "Target/night",
+        "Subtotal"
+      ],
+      "rows": [
+        [
+          "Tokyo",
+          "5",
+          "$85–110",
+          "$425–550"
+        ],
+        [
+          "Takayama",
+          "2",
+          "$120–180 (1 ryokan night)",
+          "$240–360"
+        ],
+        [
+          "Kyoto",
+          "4",
+          "$90–120",
+          "$360–480"
+        ],
+        [
+          "Osaka",
+          "2",
+          "$80–100",
+          "$160–200"
+        ],
+        [
+          "Total",
+          "13",
+          "—",
+          "~$1,185–1,590"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Factor",
+        "Ueno/Asakusa",
+        "Shinjuku west"
+      ],
+      "rows": [
+        [
+          "Itinerary fit",
+          "Day 2 Ueno/Asakusa; easy Keisei/Narita access",
+          "Day 3 Meiji/Harajuku; Day 5 Tsukiji reachable"
+        ],
+        [
+          "Transit",
+          "JR Yamanote + Ginza/Keisei",
+          "JR + metro hub"
+        ],
+        [
+          "Crowds",
+          "Lower at night than Shibuya",
+          "Busier but manageable west of station"
+        ],
+        [
+          "Solo",
+          "Many business hotels with singles",
+          "Excellent late food options"
+        ]
+      ]
+    },
+    {
+      "caption": "Top Picks (US-bookable, solo-friendly)",
+      "columns": [
+        "Property",
+        "Area",
+        "Est./night",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Mitsui Garden Hotel Ueno",
+          "Ueno",
+          "$95–130",
+          "Reliable chain; AC; walk to Ueno Park; singles common"
+        ],
+        [
+          "Richmond Hotel Premier Asakusa International",
+          "Asakusa",
+          "$85–115",
+          "Near Sensō-ji; good arrival-night base"
+        ],
+        [
+          "Hotel Gracery Shinjuku",
+          "Shinjuku",
+          "$100–140",
+          "Famous Godzilla head; strong transit; use if Ueno sold out"
+        ],
+        [
+          "sequence MIYASHITA PARK",
+          "Shibuya-adjacent",
+          "$110–150",
+          "Splurge-leaning; only if anime/evening Shibuya priority"
+        ]
+      ]
+    },
+    {
+      "caption": "Top Picks",
+      "columns": [
+        "Property",
+        "Type",
+        "Est./night",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Oyado Koto No Yume",
+          "Ryokan",
+          "$140–200",
+          "Central; tatami + kaiseki option; solo rooms sometimes"
+        ],
+        [
+          "Takayama Ouan",
+          "Ryokan/onsen",
+          "$130–180",
+          "Rooftop bath; walk to old town"
+        ],
+        [
+          "Hida Hotel Plaza",
+          "Business",
+          "$90–120",
+          "Station-adjacent; Western beds; good rainy backup"
+        ],
+        [
+          "Best Western Hotel Takayama",
+          "Business",
+          "$85–110",
+          "Predictable AC; less character"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "Factor",
+        "Kawaramachi",
+        "Kyoto Station"
+      ],
+      "rows": [
+        [
+          "Itinerary",
+          "Nishiki (Day 8), Pontocho, Fushimi line access",
+          "Better for Arashiyama JR (Day 10)"
+        ],
+        [
+          "Heat",
+          "Covered arcades, canal walks",
+          "Underground mall AC"
+        ],
+        [
+          "Crowds",
+          "Touristy strip but flat evening strolls",
+          "Tour bus volume"
+        ]
+      ]
+    },
+    {
+      "caption": "Top Picks",
+      "columns": [
+        "Property",
+        "Est./night",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Hotel Gracery Kyoto Sanjo",
+          "$95–125",
+          "Central; singles; walk Nishiki"
+        ],
+        [
+          "Mitsui Garden Hotel Kyoto Sanjo",
+          "$110–145",
+          "Quiet chain quality; laundry"
+        ],
+        [
+          "Hotel Tavinos Kyoto",
+          "$70–95",
+          "Budget capsule-hotel style but private rooms; solo travelers"
+        ],
+        [
+          "Piece Hostel Sanjo",
+          "$55–75",
+          "Social solo option; lockers; not ideal if jet-lagged"
+        ]
+      ]
+    },
+    {
+      "caption": "Top Picks",
+      "columns": [
+        "Property",
+        "Est./night",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Cross Hotel Osaka",
+          "$100–130",
+          "Namba walk; design-forward; solo rooms"
+        ],
+        [
+          "Hotel Gracery Osaka Namba",
+          "$90–120",
+          "Same chain consistency as Tokyo/Kyoto"
+        ],
+        [
+          "Fraser Residence Nankai Osaka",
+          "$110–150",
+          "Apartment-style; good pre-flight pack night"
+        ],
+        [
+          "Dormy Inn Premium Namba",
+          "$85–110",
+          "Onsen on roof; laundry; solo favorite"
+        ]
+      ]
+    },
+    {
+      "caption": "Booking Priority Queue",
+      "columns": [
+        "Priority",
+        "Item",
+        "By when"
+      ],
+      "rows": [
+        [
+          "1",
+          "Tokyo 5 nights (flex cancel)",
+          "ASAP"
+        ],
+        [
+          "2",
+          "Takayama ryokan Jul 29 dinner",
+          "4–8 weeks"
+        ],
+        [
+          "3",
+          "Kyoto 4 nights Kawaramachi",
+          "8 weeks"
+        ],
+        [
+          "4",
+          "Osaka Namba 2 nights",
+          "8 weeks"
+        ],
+        [
+          "5",
+          "Confirm takkyubin service at each property",
+          "Check-in Day 1"
+        ]
+      ]
+    }
+  ],
+  "bullets": [
+    {
+      "heading": "Solo Traveler Notes",
+      "items": [
+        "No ryokan multi-night required — one Alps night delivers culture without blowing budget.",
+        "Capsule hotels: OK for 1 night experiment; skip if you need guaranteed sleep (jet lag).",
+        "Anime optional: If evening Akihabara wanted, stay Ueno and take Ginza Line — do not move hotel.",
+        "Noise: Request quiet floor / away from elevator at booking; earplugs for Golden Gai night (Day 3)."
+      ]
+    }
+  ],
+  "callouts": [],
   "slide_title_accent": "STRATEGY",
   "section_label": "Accommodation Strategy",
   "section_kicker": "Budget Breakdown & Neighborhoods",
   "strategy": {
     "title": "Accommodation",
-    "intro": "Budget envelope (lodging only)",
-    "label": "Booking Strategy (Solo)",
+    "intro": "4–5★ on US booking platforms; splurge in Vietnam.",
+    "label": "Booking Strategy",
     "tactics": [
       {
         "tactic": "Book 8–12 weeks out",
@@ -37,119 +346,8 @@
         "why": "Many hotels 15:00; drop bags early; ask English front desk for forwarding forms"
       }
     ],
-    "notes": [
-      "No ryokan multi-night required — one Alps night delivers culture without blowing budget.",
-      "Capsule hotels: OK for 1 night experiment; skip if you need guaranteed sleep (jet lag)."
-    ]
+    "notes": []
   },
-  "budget": {
-    "caption": "Budget Breakdown",
-    "footnote": "*Nights align with Day-by-Day Schedule (Part 2 onwards).",
-    "columns": ["Hub", "Nights", "Target/night", "Subtotal"],
-    "rows": [
-      ["Tokyo", "5", "$85–110", "$425–550"],
-      ["Takayama", "2", "$120–180 (1 ryokan night)", "$240–360"],
-      ["Kyoto", "4", "$90–120", "$360–480"],
-      ["Osaka", "2", "$80–100", "$160–200"],
-      ["Total", "13", "—", "~$1,185–1,590"]
-    ]
-  },
-  "districts": [
-    {
-      "caption": "Tokyo Districts Comparison",
-      "columns": ["Factor", "Ueno/Asakusa", "Shinjuku west"],
-      "rows": [
-        ["Itinerary fit", "Day 2 Ueno/Asakusa; easy Keisei/Narita access", "Day 3 Meiji/Harajuku; Day 5 Tsukiji reachable"],
-        ["Transit", "JR Yamanote + Ginza/Keisei", "JR + metro hub"],
-        ["Crowds", "Lower at night than Shibuya", "Busier but manageable west of station"],
-        ["Solo", "Many business hotels with singles", "Excellent late food options"]
-      ]
-    },
-    {
-      "caption": "Kyoto Districts Comparison",
-      "columns": ["Factor", "Kawaramachi", "Kyoto Station"],
-      "rows": [
-        ["Itinerary", "Nishiki (Day 8), Pontocho, Fushimi line access", "Better for Arashiyama JR (Day 10)"],
-        ["Heat", "Covered arcades, canal walks", "Underground mall AC"],
-        ["Crowds", "Touristy strip but flat evening strolls", "Tour bus volume"]
-      ]
-    }
-  ],
-  "top_picks": {
-    "caption": "Top Picks & Recommendations",
-    "columns": [
-      {
-        "heading": "Top Picks (US-bookable, solo-friendly)",
-        "subheading": "Property — Area — Est./night — Why",
-        "items": [
-          {
-            "property": "Mitsui Garden Hotel Ueno",
-            "area": "Ueno",
-            "price": "$95–130",
-            "why": "Reliable chain; AC; walk to Ueno Park; singles common"
-          },
-          {
-            "property": "Richmond Hotel Premier Asakusa International",
-            "area": "Asakusa",
-            "price": "$85–115",
-            "why": "Near Sensō-ji; good arrival-night base"
-          },
-          {
-            "property": "Hotel Gracery Shinjuku",
-            "area": "Shinjuku",
-            "price": "$100–140",
-            "why": "Famous Godzilla head; strong transit; use if Ueno sold out"
-          },
-          {
-            "property": "sequence MIYASHITA PARK",
-            "area": "Shibuya-adjacent",
-            "price": "$110–150",
-            "why": "Splurge-leaning; only if anime/evening Shibuya priority"
-          }
-        ]
-      },
-      {
-        "heading": "Top Picks — Takayama / Alps",
-        "subheading": "Property — Type — Est./night — Why",
-        "items": [
-          {
-            "property": "Oyado Koto No Yume",
-            "type": "Ryokan",
-            "price": "$140–200",
-            "why": "Central; tatami + kaiseki option; solo rooms sometimes"
-          },
-          {
-            "property": "Takayama Ouan",
-            "type": "Ryokan/onsen",
-            "price": "$130–180",
-            "why": "Rooftop bath; walk to old town"
-          },
-          {
-            "property": "Hida Hotel Plaza",
-            "type": "Business",
-            "price": "$90–120",
-            "why": "Station-adjacent; Western beds; good rainy backup"
-          },
-          {
-            "property": "Best Western Hotel Takayama",
-            "type": "Business",
-            "price": "$85–110",
-            "why": "Predictable AC; less character"
-          }
-        ]
-      }
-    ]
-  },
-  "footer": "Part 5: Logistics & Accommodation",
-  "intro": "Budget envelope (lodging only)",
-  "bullets": [
-    {
-      "heading": "Solo Traveler Notes",
-      "items": [
-        "Anime optional: If evening Akihabara wanted, stay Ueno and take Ginza Line — do not move hotel.",
-        "Noise: Request quiet floor / away from elevator at booking; earplugs for Golden Gai night (Day 3)."
-      ]
-    }
-  ],
-  "callouts": []
+  "districts": [],
+  "footer": "No ryokan multi-night required — one Alps night delivers culture without blowing budget."
 }

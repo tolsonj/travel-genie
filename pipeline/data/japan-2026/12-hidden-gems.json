@@ -192,6 +192,31 @@
           "Short visit; skip crane game spend spiral"
         ]
       ]
+    },
+    {
+      "caption": "Authenticity Filters",
+      "columns": [
+        "Green flags",
+        "Red flags"
+      ],
+      "rows": [
+        [
+          "Menu only Japanese, locals at counter",
+          "Photo menu + hawkers outside"
+        ],
+        [
+          "Residential side street 5 min off main",
+          "Bus tour parking lot"
+        ],
+        [
+          "Seasonal ingredient handwritten board",
+          "\"Best in Japan\" LED signs"
+        ],
+        [
+          "Onsen with locals reading newspaper",
+          "Theme park priced \"culture\""
+        ]
+      ]
     }
   ],
   "bullets": [
@@ -408,6 +433,31 @@
         [
           "GiGO (formerly SEGA)",
           "Short visit; skip crane game spend spiral"
+        ]
+      ]
+    },
+    {
+      "caption": "Authenticity Filters",
+      "columns": [
+        "Green flags",
+        "Red flags"
+      ],
+      "rows": [
+        [
+          "Menu only Japanese, locals at counter",
+          "Photo menu + hawkers outside"
+        ],
+        [
+          "Residential side street 5 min off main",
+          "Bus tour parking lot"
+        ],
+        [
+          "Seasonal ingredient handwritten board",
+          "\"Best in Japan\" LED signs"
+        ],
+        [
+          "Onsen with locals reading newspaper",
+          "Theme park priced \"culture\""
         ]
       ]
     }

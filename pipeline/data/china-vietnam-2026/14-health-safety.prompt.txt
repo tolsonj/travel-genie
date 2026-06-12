@@ -88,6 +88,83 @@ what is not present rather than inventing it):
         }
       }
     },
+    "flight_snapshot": {
+      "type": "object",
+      "description": "Route slide: distilled MCP flight picks from opt-02.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "picks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "leg": { "type": "string" },
+              "price": { "type": "string" },
+              "stops": { "type": "string" },
+              "duration": { "type": "string" },
+              "airlines": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        }
+      }
+    },
+    "flights": {
+      "type": "object",
+      "description": "Transport-money slide: structured MCP flight comparison from opt-07.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        },
+        "legs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "recommended": {
+                "type": "object",
+                "properties": {
+                  "price": { "type": "string" },
+                  "stops": { "type": "string" },
+                  "duration": { "type": "string" },
+                  "airlines": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "options": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        },
+        "leg_tables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "caption": { "type": "string" },
+              "columns": { "type": "array", "items": { "type": "string" } },
+              "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        }
+      }
+    },
     "summary": {
       "type": "object",
       "properties": {

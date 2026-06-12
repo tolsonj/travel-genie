@@ -2,6 +2,7 @@
 import { readFileSync } from "node:fs";
 import { ROUTE_PRESETS, PROFILE_SEASON_PRESETS } from "./md-extract-presets.js";
 import { enrichAspect } from "./aspect-enrich.js";
+import { flightSnapshotFromTables } from "./flight-extract.js";
 
 function stripFrontmatter(text) {
   if (!text.startsWith("---")) return text;
@@ -121,7 +122,16 @@ function extractRouteOptimization(md, meta) {
     .map(h => {
       const key = Object.keys(hubCoords).find(k => h.hub.includes(k) || k.includes(h.hub.split("/")[0].trim()));
       const c = hubCoords[key] || Object.values(hubCoords)[0];
-      return { label: h.hub, marker: c.marker, lng: c.lng, lat: c.lat, color: c.color, labelDy: c.labelDy ?? -18 };
+      return {
+        label: h.hub,
+        mapLabel: c.mapLabel,
+        marker: c.marker,
+        lng: c.lng,
+        lat: c.lat,
+        color: c.color,
+        labelDy: c.labelDy ?? -18,
+        labelDx: c.labelDx
+      };
     });
 
   const transitTable = parseTables(body).find(t =>
@@ -150,6 +160,7 @@ function extractRouteOptimization(md, meta) {
   const summaryM = body.match(/Transit ratio[:\s]*([^\n]+)/i) ||
     body.match(/Transit vs Exploration Ratio[:\s]*([^\n]+)/i);
   const summaryMsg = summaryM ? stripMd(summaryM[1]) : "Transit ratio under 20% threshold";
+  const flight_snapshot = flightSnapshotFromTables(body, parseTables(body));
 
   return {
     aspect: meta.id,
@@ -166,13 +177,23 @@ function extractRouteOptimization(md, meta) {
     map_nodes: map_nodes.length ? map_nodes : preset.defaultHubs.filter(h => !/^home$/i.test(h.hub)).map(h => {
       const key = Object.keys(hubCoords).find(k => h.hub.includes(k));
       const c = hubCoords[key];
-      return { label: h.hub, marker: c.marker, lng: c.lng, lat: c.lat, color: c.color, labelDy: c.labelDy ?? -18 };
+      return {
+        label: h.hub,
+        mapLabel: c.mapLabel,
+        marker: c.marker,
+        lng: c.lng,
+        lat: c.lat,
+        color: c.color,
+        labelDy: c.labelDy ?? -18,
+        labelDx: c.labelDx
+      };
     }),
     map_bounds: preset.map_bounds,
     highlight_countries: preset.highlight_countries,
     country_labels: preset.country_labels,
     depart_node: preset.depart_node,
     transit_legs,
+    flight_snapshot: flight_snapshot || undefined,
     summary: { message: summaryMsg }
   };
 }
@@ -234,6 +255,11 @@ function extractTravelerProfile(md, meta) {
   const window = fieldFromTable(core, /travel window|dates/i);
   const party = fieldFromTable(core, /party|companions/i);
   const totalBudget = fieldFromTable(budgetTbl, /^total$/i);
+  const homeAirport =
+    fieldFromTable(core, /home airport/i) ||
+    (body.match(/home airport[:\s—-]+([A-Z]{3})\b/i)?.[1] || "");
+  const passengers = fieldFromTable(core, /passengers/i);
+  const cabin = fieldFromTable(core, /cabin/i);
 
   const physical = bullets.find(b => /physical/i.test(b.heading));
   const fitness = physical?.items?.[0] ? stripMd(physical.items[0]) : "See profile";
@@ -272,10 +298,18 @@ function extractTravelerProfile(md, meta) {
   const metrics = [
     { icon: "📍", label: "Destination", value: countries.replace(/\(.*\)/, "").trim() || "—" },
     { icon: "📅", label: "Dates", value: window || "—" },
-    { icon: "👤", label: "Party", value: party || "—" },
+    {
+      icon: "👤",
+      label: "Party",
+      value: party
+        ? `${party}${passengers ? ` · ${passengers} pax` : ""}`
+        : passengers || "—"
+    },
+    { icon: "✈️", label: "Home airport", value: homeAirport || "—" },
     { icon: "💵", label: "Budget", value: totalBudget || "—" },
     { icon: "⭐", label: "Priorities", value: rankedInterests(body) || "—" },
-    { icon: "💪", label: "Physical", value: fitness.split(";")[0] }
+    { icon: "💪", label: "Physical", value: fitness.split(";")[0] },
+    ...(cabin ? [{ icon: "🎫", label: "Cabin", value: cabin }] : [])
   ];
 
   return {

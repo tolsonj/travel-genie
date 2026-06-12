@@ -34,7 +34,19 @@ export function discoverAspects(trip) {
 
   // When opt-* print sources exist, use them instead of numbered planning files.
   const optFiles = files.filter(f => f.startsWith("opt-"));
-  if (optFiles.length > 0) files = optFiles;
+  if (optFiles.length > 0) {
+    files = [...optFiles];
+    // Manifest sidecars (e.g. flight-comparison.md) without a matching opt-* file.
+    const optBases = new Set(optFiles.map(f => basename(f, ".md").slice(4)));
+    for (const entry of manifest.aspects) {
+      if (optBases.has(entry.id)) continue;
+      const opt = `opt-${entry.id}.md`;
+      const side = `${entry.id}.md`;
+      if (existsSync(join(dir, opt))) files.push(opt);
+      else if (existsSync(join(dir, side))) files.push(side);
+    }
+    files = [...new Set(files)];
+  }
 
   const order = new Map(manifest.aspects.map((a, i) => [a.id, i]));
 

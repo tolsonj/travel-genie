@@ -88,6 +88,83 @@ what is not present rather than inventing it):
         }
       }
     },
+    "flight_snapshot": {
+      "type": "object",
+      "description": "Route slide: distilled MCP flight picks from opt-02.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "picks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "leg": { "type": "string" },
+              "price": { "type": "string" },
+              "stops": { "type": "string" },
+              "duration": { "type": "string" },
+              "airlines": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        }
+      }
+    },
+    "flights": {
+      "type": "object",
+      "description": "Transport-money slide: structured MCP flight comparison from opt-07.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        },
+        "legs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "recommended": {
+                "type": "object",
+                "properties": {
+                  "price": { "type": "string" },
+                  "stops": { "type": "string" },
+                  "duration": { "type": "string" },
+                  "airlines": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "options": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        },
+        "leg_tables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "caption": { "type": "string" },
+              "columns": { "type": "array", "items": { "type": "string" } },
+              "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        }
+      }
+    },
     "summary": {
       "type": "object",
       "properties": {
@@ -686,6 +763,7 @@ Fields to populate (use null/omit when absent — every field is optional):
   - highlight_countries[]
   - country_labels[] { name, lng, lat }
   - transit_legs[] { from, to, mode, duration }
+  - flight_snapshot { search_date, picks[], trip_total, budget_note }
   - summary.message
 Notes: map_nodes must use REAL lat/long for each hub city. map_bounds should pad the hub extent by ~8-12 degrees. Pick map_bounds + country highlights from the actual countries visited.
 Image categories to tag: map
@@ -734,6 +812,52 @@ Home → Hong Kong (HKG) [3 nights]
 | **Departure** | Sept 14 | — | Buffer | DAD international |
 
 **Transit ratio**: ~2.5 transit-equivalent days / 14 = **18%** — under 20% ✓
+
+### Flight Price Snapshot
+*Search date: 2026-06-12 · ATL · 3 pax · economy*
+
+#### Leg: ATL → HKG (2026-09-01)
+
+| Price | Stops | Duration | Airlines | Notes |
+|------:|-------|----------|----------|-------|
+| $1,109 | 2 | 25 hr 32 min | Alaska + ANA | Cheapest (2-stop) |
+| $1,926 | 1 | 24 hr 55 min | JetBlue + Cathay Pacific | Good 1-stop value |
+| $1,995 | 1 | 20 hr 55 min | American + Cathay Pacific | **Recommended** — fewest hours, 1 stop |
+
+#### Leg: CAN → HAN (2026-09-06)
+
+| Price | Stops | Duration | Airlines | Notes |
+|------:|-------|----------|----------|-------|
+| $179 | 0 | 1 hr 55 min | VietJet | Red-eye; cheapest |
+| $342 | 0 | 2 hr 5 min | China Southern | Evening direct |
+| $405 | 0 | 2 hr 10 min | Vietnam Airlines | **Recommended** — afternoon, full-service |
+
+#### Leg: HAN → DAD (2026-09-08)
+
+| Price | Stops | Duration | Airlines | Notes |
+|------:|-------|----------|----------|-------|
+| $74 | 0 | 1 hr 25 min | Vietravel Airlines | Cheapest |
+| $85 | 0 | 1 hr 20 min | VietJet | **Recommended** — afternoon slot |
+| $93 | 0 | 1 hr 25 min | Vietnam Airlines | Morning alternative |
+
+#### Leg: DAD → ATL (2026-09-14)
+
+| Price | Stops | Duration | Airlines | Notes |
+|------:|-------|----------|----------|-------|
+| $1,119 | 1 | 29 hr 23 min | Korean Air + Delta | Cheapest 1-stop |
+| $1,123 | 1 | 23 hr 10 min | Korean Air | **Recommended** — best duration |
+| $1,465 | 1 | 21 hr 40 min | Korean Air | Faster morning arrival ATL |
+
+### Trip Total Summary
+
+| Scenario | Per person | Total (3 pax) | % of $30K budget |
+|----------|-----------:|--------------:|-----------------:|
+| Cheapest mix | $1,477 | $2,954 | 15% |
+| **Recommended balanced** | $5,410 | **$16,230** | **36%** |
+| Business long-hauls (est.) | ~$8,500 | ~$17,000 | 85% |
+
+*Remaining ~$12,800 for hotels, food, activities, and buffer at recommended economy mix.*
+
 
 ### Transit Methods
 

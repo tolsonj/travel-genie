@@ -1,4 +1,63 @@
+# Travel Prompt CoT — Flight search (MCP)
+
+When a **Google Flights MCP server** is available in the agent environment, use it for **live fare data** during planning. Do **not** guess international flight prices when MCP is connected.
+
+## MCP tools (typical names)
+
+| Tool | Use for |
+|------|---------|
+| `get_flights_on_date` / `search_flights` | One-way leg on a specific date (open-jaw and multi-city trips) |
+| `get_round_trip_flights` | Simple round-trip home ↔ single destination |
+| `find_all_flights_in_range` / `search_dates` | ±2–3 day date flex on long-haul legs (Step 17) |
+
+**Server names in Cursor:** `fli` (Fli / `fli-mcp`), `google-flights` (npm), or `MCP_DOCKER` gateway — tool names may differ; read the MCP tool schema before calling.
+
+## Required profile fields (for MCP)
+
+Collect in Step 1 / `profile.md` if missing:
+
+- **Home airport** — IATA code (e.g. `ATL`, `SFO`, `JFK`)
+- **Passengers** — adult count (default 1)
+- **Cabin preference** — `economy` (always search); optionally compare `business` when budget allows splurge
+
+## When to query MCP
+
+| Step | What to search |
+|------|----------------|
+| **02 Route Optimization** | Snapshot: international inbound + outbound open-jaw legs; validate airport choices |
+| **07 Transport & Money** | Full leg-by-leg economy (+ business if comparing); trip total vs budget |
+| **17 Time Optimization** | Date-flex on long-hauls only (`find_all_flights_in_range` or shift ±2 days) |
+
+## Per-leg search workflow
+
+1. Derive legs from route Output: `Home (IATA) → first hub`, each inter-country flight, `last hub → Home`.
+2. For each leg, call MCP with: `origin`, `destination`, `date` (YYYY-MM-DD), `adults`, `seat_type`.
+3. Record **search date** (today) — prices are point-in-time snapshots.
+4. Present top 3–5 options per leg: price, stops, duration, airlines, departure window notes.
+5. Mark one **recommended balanced** pick per leg (not always cheapest — avoid 2-stop red-eyes unless profile tolerates).
+6. Add **Google Flights deep links** for manual re-check before booking.
+7. Note: separate one-way tickets = no connection protection; mention multi-city fare as alternative on long-hauls.
+
+## Optional sidecar
+
+Write `trips/{slug}/flight-comparison.md` with full tables; reference from Steps 02 and 07 via wikilinks. Copy distilled tables into `opt-02-route-optimization.md` and `opt-07-transport-money.md` Output sections.
+
+## Output table format (per leg)
+
+| Price | Stops | Duration | Airlines | Notes |
+|------:|-------|----------|----------|-------|
+| $873 | 1 | ~21 hr | JetBlue + Cathay Pacific | Recommended balance |
+
+Include a **trip total** row (sum of one-way legs × passengers) and compare to profile budget.
+
+## Fallback
+
+If MCP is unavailable or a search fails: use estimate ranges, flag as **unverified**, and list legs the user should check manually.
+
+---
+
 ```
+STEP 1 — Traveler profile
 
 I want to plan a multi-country trip. Ask me 8-10 targeted questions about:
 - How many countries I want to visit and which ones I'm considering
@@ -12,10 +71,17 @@ I want to plan a multi-country trip. Ask me 8-10 targeted questions about:
 - Deal-breakers (crowds, heat, long drives, frequent border crossings, etc.)
 - If traveling with others: who decides when we disagree?
 
-After I answer, summarize my traveler profile and recommend whether my country count is realistic for my timeframe.
+Also confirm (required for flight search):
+- **Home airport** — nearest major airport IATA code (e.g. ATL, LAX, ORD)
+- **Passengers** — how many adults flying
+- **Cabin preference** — economy only, or compare business on long-hauls
+
+After I answer, summarize my traveler profile and recommend whether my country count is realistic for my timeframe. Record home airport, passengers, and cabin preference in the profile summary.
 ```
 
 ```
+STEP 2 — Route optimization
+
 ROLE: Multi-country route strategist.
 PERSONA: [Paste your traveler profile from Step 1]
 SITUATION: I want to visit [list countries] over [total days].
@@ -41,16 +107,28 @@ TASK:
    - Whether open-jaw (fly into A, out of B) saves time vs round-trip
    - Overland border crossings vs flights between countries
 
+5. LIVE FLIGHT PRICES (MCP — if available):
+   - Query Google Flights MCP for **inbound** (home airport → recommended entry airport) and **outbound** (recommended exit airport → home) on itinerary dates
+   - Query each **inter-country flight leg** in the recommended route (skip ground/rail segments)
+   - Use profile: home airport IATA, passenger count, `economy` (add `business` if profile requests comparison)
+   - Include a **Flight Price Snapshot** subsection: per-leg table (price, stops, duration, airlines, recommended pick)
+   - Sum one-way legs × passengers; note whether total fits remaining budget after hotels/activities
+   - Flag date-line effects (e.g. US→Asia departure may arrive next calendar day)
+   - If MCP unavailable: label estimates **unverified** and list legs to check manually
+
 OUTPUT:
 - Visual route summary (country order with transit methods)
 - Day allocation table
+- Flight price snapshot (MCP) or unverified estimate table
 - 2 alternative routes with trade-offs
 - Booking priority queue (what to book first to lock the route)
 
-VALIDATION: Check for "country hopping fatigue" — warn me if transit exceeds 20% of total trip time.
+VALIDATION: Check for "country hopping fatigue" — warn me if transit exceeds 20% of total trip time. If MCP was used, confirm every flight leg in the route was searched and search date is recorded.
 ```
 
 ```
+STEP 3 — Immigration and entry
+
 ROLE: Immigration and entry specialist.
 SITUATION: I am a citizen of [your country] traveling to [list countries] from [dates].
 PASSPORTS HELD: [list all passports if dual/multiple citizenship]
@@ -92,6 +170,8 @@ VALIDATION: Confirm all information is current as of 2026 and flag any policies 
 ```
 
 ```
+STEP 4 — Master itinerary
+
 Plan a [number]-day multi-country trip visiting [countries in order].
 
 Travel dates: [dates]. Budget: [total or daily per country].
@@ -121,6 +201,8 @@ VALIDATION: Check for transit overload — warn if I'm spending more than 2 hour
 ```
 
 ```
+STEP 5 — Accommodation
+
 ROLE: Multi-country accommodation strategist.
 PERSONA: [Paste traveler profile]
 ITINERARY: [Paste from Step 4]
@@ -153,6 +235,8 @@ VALIDATION: Confirm each accommodation is within 30 minutes of 60% of planned ac
 ```
 
 ```
+STEP 6 — Shopping
+
 ROLE: Multi-country shopping strategist.
 PERSONA: [Paste traveler profile]
 ITINERARY: [Paste from Step 4 — full day-by-day schedule]
@@ -235,6 +319,8 @@ VALIDATION: Confirm shopping days are scheduled on non-transit days in **itinera
 ```
 
 ```
+STEP 6b — Food & dining
+
 ROLE: Multi-country food anthropologist.
 PERSONA: [Paste traveler profile]
 ITINERARY: [Paste from Step 4 — full day-by-day schedule]
@@ -288,7 +374,11 @@ VALIDATION: No meal requires >30 minutes extra transit from that day's anchor un
 ```
 
 ```
+STEP 7 — Transport & money
+
 I'm traveling through [countries in order] from [home city].
+ROUTE: [Paste from Step 2 — legs, airports, dates]
+PROFILE: [Home airport IATA, passengers, cabin preference, total budget]
 
 For EACH LEG (between countries AND within countries):
 1. Compare transport options: flight, train, bus, rental car, ferry
@@ -300,6 +390,17 @@ For EACH LEG (between countries AND within countries):
 3. Exact booking platforms/apps per country
 
 4. Scams and mistakes specific to that route
+
+FLIGHT LEGS — LIVE PRICES (MCP — if available):
+- For every **flight** leg in Step 2 route (international + inter-country), query Google Flights MCP
+- Search **economy** for all legs; search **business** on long-haul legs if profile compares cabins
+- Per leg: top 3–5 options table (price, stops, duration, airlines, notes) + one **recommended balanced** pick
+- **Trip total summary**: cheapest possible vs recommended balanced (economy and business if compared)
+- Compare flight total × passengers against profile budget; show % of $20K (or stated budget) for flights vs ground spend
+- Note one-way vs multi-city booking trade-off (connection protection)
+- Google Flights deep links per leg for re-check before purchase
+- Write or update `flight-comparison.md` sidecar; distill key tables into Output
+- If MCP unavailable: keep estimate ranges but mark **unverified**
 
 MULTI-COUNTRY MONEY MANAGEMENT:
 - Currencies needed and exchange strategy (ATM vs exchange booth vs card)
@@ -315,10 +416,14 @@ DUTY-FREE & CUSTOMS:
 - Security tamper-evident bag (STEB) rules for duty-free liquids on connections 
 - Countries with strict medication import rules
 
-OUTPUT: Transport and money strategy document per country transition.
+OUTPUT: Transport and money strategy document per country transition, including MCP flight comparison tables (or unverified estimates).
+
+VALIDATION: Every flight leg from Step 2 was searched via MCP or explicitly marked unverified. Trip flight total is reconciled with budget.
 ```
 
 ```
+STEP 8 — Customs & borders
+
 ROLE: Customs and border crossing specialist.
 SITUATION: I am crossing borders between [list countries in order] via [modes: flight/train/bus/car].
 
@@ -358,6 +463,8 @@ OUTPUT: Border-by-border crossing guide with packing restrictions and purchasing
 ```
 
 ```
+STEP 9 — Tech & connectivity
+
 ROLE: Multi-country tech survival guide.
 SITUATION: I'm visiting [list countries] for [total days].
 
@@ -392,6 +499,8 @@ OUTPUT: Tech setup checklist and offline survival kit for the entire multi-count
 ```
 
 ```
+STEP 10 — Culture & museums
+
 ROLE: Multi-country cultural curator.
 PERSONA: [Paste traveler profile]
 ITINERARY: [Paste from Step 4 — full day-by-day schedule]
@@ -434,6 +543,8 @@ VALIDATION: Check for museum fatigue across the entire trip, not just per countr
 ```
 
 ```
+STEP 11 — Adventure
+
 ROLE: Multi-country adventure specialist.
 PERSONA: [Paste traveler profile — include fitness level]
 ITINERARY: [Paste from Step 4 — full day-by-day schedule]
@@ -478,6 +589,8 @@ VALIDATION: High-intensity activities only on non-transit days in itinerary citi
 ```
 
 ```
+STEP 12 — Hidden gems
+
 ROLE: Multi-country local insider.
 PERSONA: [Paste traveler profile]
 ITINERARY: [Paste from Step 4 — full day-by-day schedule]
@@ -504,6 +617,8 @@ VALIDATION: Note reservations, limited hours, or seasonality for each gem.
 ```
 
 ```
+STEP 13 — Etiquette
+
 ROLE: Multi-country cultural bridge guide.
 SITUATION: Visiting [list countries] from [home country].
 
@@ -524,6 +639,8 @@ OUTPUT: Country-by-country cultural cheat sheet + cross-cultural transition guid
 ```
 
 ```
+STEP 14 — Health & safety
+
 ROLE: Multi-country health and safety officer.
 SITUATION: Traveling through [list countries] for [total days].
 ACTIVITIES: [Paste from Steps 10, 11]
@@ -560,6 +677,8 @@ OUTPUT: Printable emergency card per country + pre-departure health checklist.
 ```
 
 ```
+STEP 15 — Packing
+
 Packing for [list countries] in [months]. Total trip: [days].
 Activities: [paste from all previous steps]
 Tech needs: [paste from Step 9]
@@ -582,6 +701,8 @@ MULTI-COUNTRY PACKING RULES:
 ```
 
 ```
+STEP 16 — Contingency
+
 Itinerary: [paste from Step 4]
 Countries: [list]
 Travel dates: [dates]
@@ -602,8 +723,11 @@ For each: exact phone numbers, apps, websites, and embassy contacts.
 ```
 
 ```
+STEP 17 — Time optimization
+
 ROLE: Time optimization specialist.
 SITUATION: I have [total days] to visit [list countries]. I want to maximize experience per day.
+ROUTE & FLIGHTS: [Paste from Step 2 and Step 7 flight legs]
 
 TASK:
 1. PTO HACKING:
@@ -614,6 +738,12 @@ TASK:
    - Red-eye flights vs day flights (sleep on plane = save a day)
    - Overnight trains/buses as "moving hotels" (save accommodation cost + wake up in new city)
    - Which border crossings are fastest vs most scenic
+
+2b. DATE-FLEX FLIGHT SAVINGS (MCP — if available):
+   - On **long-haul legs only** (home ↔ Asia/Europe/etc.), use `find_all_flights_in_range` or search ±2 days around Step 2 dates
+   - Compare cheapest date shift vs itinerary impact (hotel nights, visa windows, booked activities)
+   - Report savings in $ and whether shift is worth it for this profile
+   - Do not flex short domestic/regional legs unless user requests
 
 3. THE "70% RULE" FOR MULTI-COUNTRY:
    - Plan only 70% of each day, 30% for spontaneity and rest 
@@ -634,10 +764,14 @@ TASK:
 7. THE "POWER PLAY":
    - If I can add 2-3 PTO days, which extension gives maximum return?
 
-OUTPUT: Efficiency scorecard showing how many "pure experience hours" vs "transit hours" my plan contains, with optimization suggestions.
+OUTPUT: Efficiency scorecard showing how many "pure experience hours" vs "transit hours" my plan contains, with optimization suggestions. Include date-flex flight savings table if MCP was used.
+
+VALIDATION: Any recommended date shift must not break Step 4 anchors or Step 3 visa/entry windows.
 ```
 
 ```
+STEP 18 — Final assembly
+
 ROLE: Expert multi-country travel agent.
 SITUATION: [number]-day multi-country trip to [countries] from [dates].
 CITIZENSHIP: [your country]. PASSPORTS: [list].
@@ -651,7 +785,8 @@ Generate a complete multi-country travel brief:
 4. ACCOMMODATION: Neighborhoods and booking strategy per country
 5. FOOD: Signature dishes and experiences per **itinerary city**, social-media food highlights mapped to days, border-crossing meal plans
 5b. SHOPPING: Category strategy per country scoped to **itinerary cities**, social-media shopping districts, VAT/customs
-6. TRANSPORT: Between and within countries, with booking platforms
+6. TRANSPORT: Between and within countries, with booking platforms; **flight totals from Step 7 MCP data** (economy + business if compared)
+6b. FLIGHTS: Per-leg recommended picks, trip total, budget %, link to `flight-comparison.md` if present
 7. CUSTOMS: Duty-free allowances, restricted items, purchasing strategy per country
 8. TECH: Multi-country connectivity, offline kits, power adapters
 9. CULTURE: Museums and activities per **itinerary city**, social-media cultural picks, etiquette + cross-cultural transitions
@@ -662,7 +797,7 @@ Generate a complete multi-country travel brief:
 14. PACKING: Multi-climate, border-crossing day bag, document organization
 15. CONTINGENCY: 10 scenarios with step-by-step recovery per country
 16. EFFICIENCY: PTO hacking, transit minimization, jet lag strategy, activity clustering
-17. BOOKING QUEUE: Everything to reserve now with deadlines
+17. BOOKING QUEUE: Everything to reserve now with deadlines (flights first if MCP shows limited inventory or rising fares)
 
 VALIDATION:
 - Transit under 20% of total time
@@ -670,5 +805,6 @@ VALIDATION:
 - Border crossing days are never followed by intense activities
 - Museum fatigue check across entire trip
 - "Soft day" after every border crossing
+- Flight costs sourced from MCP (with search date) or flagged unverified
 ```
 

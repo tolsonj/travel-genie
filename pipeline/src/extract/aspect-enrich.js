@@ -1,6 +1,8 @@
 // Map generic md-extract output → template-specific JSON fields.
 import { ROUTE_PRESETS } from "./md-extract-presets.js";
 import { attachShoppingMaps, buildDayPlanCities, buildHubMap } from "../geo/shopping-geo.js";
+import { extractFlights } from "./flight-extract.js";
+import { extractHotels } from "./hotel-extract.js";
 
 function stripMd(s) {
   return String(s || "")
@@ -174,11 +176,13 @@ export function enrichFoodDining(base, body, tables) {
           const c = preset.hubCoords[key] || Object.values(preset.hubCoords)[0];
           return {
             label: h.hub,
+            mapLabel: c.mapLabel,
             marker: c.marker,
             lng: c.lng,
             lat: c.lat,
             color: c.color,
-            labelDy: c.labelDy ?? -18
+            labelDy: c.labelDy ?? -18,
+            labelDx: c.labelDx
           };
         }),
       map_bounds: preset.map_bounds,
@@ -843,11 +847,70 @@ function parseTables(block) {
   return tables;
 }
 
+function enrichFlights(base, body, tables, { includeGround = true } = {}) {
+  const flights = extractFlights(body, tables);
+  const reordered = [
+    ...flights.leg_tables,
+    ...(flights.trip_total ? [flights.trip_total] : []),
+    ...(includeGround ? flights.ground_tables : [])
+  ];
+  const intro =
+    cleanIntro(base.intro) ||
+    (flights.search_date ? `MCP flight search · ${flights.search_date}` : null);
+
+  return {
+    ...base,
+    intro,
+    flights: {
+      search_date: flights.search_date,
+      legs: flights.legs,
+      trip_total: flights.trip_total,
+      leg_tables: flights.leg_tables,
+      budget_note: flights.budget_note
+    },
+    tables: reordered.slice(0, 12)
+  };
+}
+
+function enrichTransportMoney(base, body, tables) {
+  return enrichFlights(base, body, tables, { includeGround: true });
+}
+
+function enrichFlightComparison(base, body, tables) {
+  return enrichFlights(base, body, tables, { includeGround: true });
+}
+
+function enrichHotels(base, body, tables) {
+  const hotels = extractHotels(body, tables);
+  const reordered = [
+    ...hotels.hotel_tables,
+    ...(hotels.total ? [hotels.total] : []),
+    ...hotels.other_tables
+  ];
+  const intro =
+    cleanIntro(base.intro) ||
+    (hotels.search_date ? `Hotel rate check · ${hotels.search_date}` : null);
+
+  return {
+    ...base,
+    intro,
+    hotels: {
+      search_date: hotels.search_date,
+      picks: hotels.picks,
+      total: hotels.total,
+      hotel_tables: hotels.hotel_tables,
+      budget_note: hotels.budget_note
+    },
+    tables: reordered.slice(0, 12)
+  };
+}
+
 export function enrichAspect(base, body) {
   // Parse all tables from source — base.tables is capped for generic slides only.
   const tables = parseTables(body);
   const full = { ...base, tables };
   const type = base.type;
+  const aspect = base.aspect;
 
   switch (type) {
     case "food-dining":
@@ -864,6 +927,16 @@ export function enrichAspect(base, body) {
       return enrichPacking(full, body, tables);
     case "etiquette":
       return enrichEtiquette(full, body, tables);
+    case "flight-comparison":
+      return enrichFlightComparison(full, body, tables);
+    case "hotel-comparison":
+      return enrichHotels(full, body, tables);
+    case "transport-money":
+    case "dashboard":
+      if (aspect === "07-transport-money") {
+        return enrichTransportMoney(full, body, tables);
+      }
+      return { ...full, intro: cleanIntro(base.intro) };
     default:
       return { ...full, intro: cleanIntro(base.intro) };
   }

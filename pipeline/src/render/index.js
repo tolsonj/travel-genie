@@ -16,6 +16,8 @@ import * as shopping from "./templates/shopping.js";
 import * as cultureMuseums from "./templates/culture-museums.js";
 import * as packing from "./templates/packing.js";
 import * as dashboard from "./templates/dashboard.js";
+import * as flights from "./templates/flights.js";
+import * as hotels from "./templates/hotels.js";
 import * as generic from "./templates/generic.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -32,6 +34,8 @@ const TEMPLATES = {
   "culture-museums": cultureMuseums,
   packing,
   dashboard,
+  flights,
+  hotels,
   generic
 };
 

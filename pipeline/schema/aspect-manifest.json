@@ -23,10 +23,55 @@
           "highlight_countries[]",
           "country_labels[] { name, lng, lat }",
           "transit_legs[] { from, to, mode, duration }",
+          "flight_snapshot { search_date, picks[], trip_total, budget_note }",
           "summary.message"
         ],
         "image_categories": ["map"],
         "notes": "map_nodes must use REAL lat/long for each hub city. map_bounds should pad the hub extent by ~8-12 degrees. Pick map_bounds + country highlights from the actual countries visited."
+      }
+    },
+    {
+      "id": "flight-comparison",
+      "match": "^flight-comparison$",
+      "type": "flight-comparison",
+      "template": "flights",
+      "title": "Flight Comparison",
+      "hints": {
+        "summary": "Dedicated flight slide: trip total sidebar, recommended picks, per-leg MCP price panels, search log.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_kicker",
+          "banner { text }",
+          "flights { search_date, legs[], trip_total, budget_note, leg_tables[] }",
+          "sidebar[]",
+          "panels[]",
+          "footer"
+        ],
+        "notes": "Source: opt-flight-comparison.md or trips/{slug}/flight-comparison.md. Leg tables use Price | Stops | Duration | Airlines | Notes columns.",
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "hotel-comparison",
+      "match": "^hotel-comparison$",
+      "type": "hotel-comparison",
+      "template": "hotels",
+      "title": "Hotel Comparison",
+      "hints": {
+        "summary": "Dedicated hotel slide: lodging total sidebar, recommended picks per city/hub, booking/rate tables, search log.",
+        "fields": [
+          "slide_title",
+          "slide_title_accent",
+          "section_kicker",
+          "banner { text }",
+          "hotels { search_date, picks[], total, budget_note, hotel_tables[] }",
+          "sidebar[]",
+          "panels[]",
+          "footer"
+        ],
+        "notes": "Source: opt-hotel-comparison.md or trips/{slug}/hotel-comparison.md. Typical tables include Hotel/Property, Price per night, Location/Area, Rating, Notes.",
+        "image_categories": ["profile-icon"]
       }
     },
     {
@@ -232,17 +277,19 @@
       "template": "dashboard",
       "title": "Transport Money",
       "hints": {
-        "summary": "Dashboard: skip-JR-pass banner, money sidebar, pass/legs/verdict/airport panels.",
+        "summary": "Dashboard: flight search sidebar (trip total + recommended picks), per-leg price panels, ground transport + money tables.",
         "fields": [
           "slide_title",
           "slide_title_accent",
           "section_label",
           "section_kicker",
           "banner { text }",
+          "flights { search_date, legs[], trip_total, budget_note, leg_tables[] }",
           "sidebar[]",
           "panels[]",
           "footer"
         ],
+        "notes": "Flight tables use columns Price | Stops | Duration | Airlines | Notes under ### Leg: ORIG → DEST headings. Trip total table under ### Trip Total Summary.",
         "image_categories": ["profile-icon"]
       }
     },

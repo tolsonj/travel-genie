@@ -78,10 +78,13 @@ The architecture is **two-stage and decoupled**:
 
 ### Phase 0 — Profile
 
-Write a predefined profile at `trips/<slug>/profile.md`. Required fields: countries, dates/duration, budget, citizenship/passports, interests, pace/style, deal-breakers.
+Write a predefined profile at `trips/<slug>/profile.md`. Required fields: countries, dates/duration, budget, citizenship/passports, interests, pace/style, deal-breakers. For live flight search (Google Flights MCP in Steps 02, 07, 17), also include **home airport IATA**, **passenger count**, and **cabin preference**.
 
 ```markdown
 What countries: China and Vietnam
+Home airport: ATL
+Passengers: 2
+Cabin preference: economy (compare business on long-hauls)
 Travel Date: Sept 1, 2026 - Sept 14, 2026
 Travel style: Relaxed and cultural experience
 Hotel: 4 or 5 stars, resorts OK, on US booking sites
@@ -126,6 +129,14 @@ hero-image: https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1200&
 
 These are what the rendering pipeline consumes.
 
+**Flight tables** (from MCP during Steps 02, 07, 17) go into `opt-02-route-optimization.md`, `opt-07-transport-money.md`, and `opt-17-time-optimization.md` using the table contract in `prompts/Travel-Prompt-cot.md` (preamble). The pipeline extracts them into:
+
+- Route slide — `flight_snapshot` (recommended picks in footer)
+- Transport slide — sidebar trip total + recommended picks; per-leg price panels first
+- Time optimization slide — date-flex savings in sidebar
+
+Optional full comparison tables: `trips/<slug>/flight-comparison.md` (Obsidian sidecar; not a deck slide by default).
+
 ### Phase 3 — Final assembly (optional)
 
 Step 18 produces `TRAVEL_MASTER.md`: a wikilink table of contents + 2–4 sentence executive summaries + efficiency scorecard. Not required for the deck.
@@ -136,8 +147,8 @@ Step 18 produces `TRAVEL_MASTER.md`: a wikilink table of contents + 2–4 senten
 opt-*.md ─▶ fill-from-opt.js ─▶ JSON ─▶ fill-dashboard.js ─▶ build.js ─▶ deck.html ─▶ export-pdf.js ─▶ deck.pdf
 ```
 
-- `fill-from-opt.js` — extracts canonical JSON from each `opt-*.md` (no API key needed).
-- `fill-dashboard.js` — normalizes generic aspects into the dashboard layout (sidebar + panels).
+- `fill-from-opt.js` — extracts canonical JSON from each `opt-*.md` (no API key needed); flight tables → `flights` / `flight_snapshot` fields via `flight-extract.js`.
+- `fill-dashboard.js` — normalizes generic aspects into the dashboard layout (sidebar + panels); prioritizes flight content on the transport slide.
 - `build.js --skip-extract` — deterministic render to `deck.html`.
 - `export-pdf.js` — renders each slide on a fixed 1280×720 canvas, auto-scales to fit one page, re-runs the inlined D3 map scripts, and merges to `deck.pdf`.
 

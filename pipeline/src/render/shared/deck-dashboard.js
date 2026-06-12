@@ -139,9 +139,48 @@ export function normalizeDashboard(d) {
   if (callouts.length) {
     out.sidebar.push({ type: "validations", items: callouts });
   } else if (tables.length > 4) {
-    out.sidebar.push({ type: "table", ...tables.shift(), caption: tables[0]?.caption || "Quick Reference" });
+    const shifted = tables.shift();
+    out.sidebar.push({
+      type: "table",
+      ...shifted,
+      caption: shifted.caption || "Quick Reference"
+    });
   }
 
-  out.panels = tables.map(t => ({ ...t, caption: t.caption || "Details" }));
+  if (d.flights?.leg_tables?.length) {
+    const tripTotal = d.flights.trip_total;
+    const other = tables.filter(t => t !== tripTotal && !/trip total/i.test(t.caption || ""));
+    out.panels = [
+      ...d.flights.leg_tables.map(t => ({ ...t, caption: t.caption || "Flight leg" })),
+      ...(tripTotal ? [{ ...tripTotal, caption: tripTotal.caption || "Trip Total" }] : []),
+      ...other.map(t => ({ ...t, caption: t.caption || "Details" }))
+    ];
+    if (d.flights.search_date) {
+      out.sidebar.unshift({
+        type: "list",
+        caption: "Flight search",
+        items: [`Search date: ${d.flights.search_date}`]
+      });
+    }
+    if (tripTotal?.rows?.length) {
+      out.sidebar.push({
+        type: "table",
+        ...tripTotal,
+        caption: tripTotal.caption || "Trip Total"
+      });
+    }
+    const picks = (d.flights.legs || [])
+      .filter(l => l.recommended?.price)
+      .map(l => {
+        const leg = l.label.replace(/^leg:\s*/i, "").trim();
+        const r = l.recommended;
+        return `${leg}: ${r.price} · ${r.stops} stop · ${r.duration}`;
+      });
+    if (picks.length) {
+      out.sidebar.push({ type: "list", caption: "Recommended picks", items: picks });
+    }
+  } else {
+    out.panels = tables.map(t => ({ ...t, caption: t.caption || "Details" }));
+  }
   return out;
 }

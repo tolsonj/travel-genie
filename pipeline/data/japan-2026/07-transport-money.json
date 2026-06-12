@@ -7,6 +7,71 @@
   "intro": "Recommendation: Skip JR Pass; book Hikari + Hida seats on [SmartEX](https://smart-ex.jp/en/) / [Eki-net](https://www.eki-net.com) / JR East Travel Service Center 4 weeks before travel. Aligns with 04-master-itinerary rail days but avoids overpaying for pass subsidy.",
   "tables": [
     {
+      "caption": "Transport Budget Summary",
+      "columns": [
+        "Category",
+        "Est. USD",
+        "Est. JPY"
+      ],
+      "rows": [
+        [
+          "Airport in + out",
+          "$35",
+          "¥5,000"
+        ],
+        [
+          "Tokyo IC + Kamakura",
+          "$55",
+          "¥8,000"
+        ],
+        [
+          "Intercity rail (individual)",
+          "$205",
+          "¥30,800"
+        ],
+        [
+          "Shirakawa-go bus",
+          "$20",
+          "¥3,000"
+        ],
+        [
+          "Kyoto buses",
+          "$25",
+          "¥3,500"
+        ],
+        [
+          "Osaka IC + KIX",
+          "$25",
+          "¥3,500"
+        ],
+        [
+          "Takkyubin (1×)",
+          "$20",
+          "¥3,000"
+        ],
+        [
+          "ATM fees (buffer)",
+          "$10",
+          "—"
+        ],
+        [
+          "On-ground transport total",
+          "~$395",
+          "~¥59,000"
+        ],
+        [
+          "Intl flights (separate)",
+          "$1,100–1,400",
+          "—"
+        ],
+        [
+          "Remaining for lodging/food/activities",
+          "~$3,200–3,500",
+          "—"
+        ]
+      ]
+    },
+    {
       "caption": "Pass options (foreign tourist, 2026 baseline — verify at [japanrailpass.net](https://www.japanrailpass.net/en/) before purchase)",
       "columns": [
         "Pass",
@@ -241,6 +306,163 @@
           "Summer queues + security"
         ]
       ]
+    },
+    {
+      "caption": "Intercity Legs (Booked Tickets)",
+      "columns": [
+        "Day",
+        "Route",
+        "Trains",
+        "Duration",
+        "Booking"
+      ],
+      "rows": [
+        [
+          "Jul 29",
+          "Tokyo → Takayama",
+          "Shinkansen Hikari (Tokyo→Nagoya) + Hida (Nagoya→Takayama)",
+          "~4–4.5 hr",
+          "Reserve both; window seat on Hida if possible"
+        ],
+        [
+          "Jul 31",
+          "Takayama → Kyoto",
+          "Hida (→Nagoya) + Hikari (→Kyoto)",
+          "~3.5 hr",
+          "Morning departure per 04-master-itinerary"
+        ],
+        [
+          "Aug 4",
+          "Kyoto → Osaka",
+          "JR Kyoto Line Special Rapid",
+          "~30 min",
+          "Walk-up; Suica"
+        ]
+      ]
+    },
+    {
+      "caption": "IC Cards (Suica / PASMO / ICOCA)",
+      "columns": [
+        "Topic",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "What",
+          "Reloadable contactless fare card; works on JR, metro, most buses nationwide"
+        ],
+        [
+          "Buy",
+          "Airport or any major station; ¥2,000 minimum (¥500 refundable deposit)"
+        ],
+        [
+          "Use",
+          "Tap in / tap out; fares auto-deduct"
+        ],
+        [
+          "Reload",
+          "Station machines, ¥1,000 increments; 7-Eleven ATMs for cash refill"
+        ],
+        [
+          "iPhone",
+          "Add Suica to Apple Wallet (US App Store) before trip—backup physical card"
+        ],
+        [
+          "Return",
+          "Refund balance + deposit at JR East service center (small handling fee)"
+        ]
+      ]
+    },
+    {
+      "caption": "",
+      "columns": [
+        "City",
+        "Days",
+        "Est./day",
+        "Subtotal"
+      ],
+      "rows": [
+        [
+          "Tokyo",
+          "5",
+          "¥1,000",
+          "¥5,000"
+        ],
+        [
+          "Takayama",
+          "2",
+          "¥300 (minimal)",
+          "¥600"
+        ],
+        [
+          "Kyoto",
+          "4",
+          "¥700 (bus-heavy; day pass ¥700)",
+          "¥2,800"
+        ],
+        [
+          "Osaka",
+          "2",
+          "¥900",
+          "¥1,800"
+        ],
+        [
+          "Total IC + bus passes",
+          "",
+          "",
+          "~¥10,200 (~$68)"
+        ]
+      ]
+    },
+    {
+      "caption": "Tokyo (Jul 24–28)",
+      "columns": [
+        "Mode",
+        "When",
+        "Cost"
+      ],
+      "rows": [
+        [
+          "Metro + Toei + JR Yamanote",
+          "All urban days",
+          "¥170–320/trip"
+        ],
+        [
+          "JR",
+          "Kamakura day (Jul 27)",
+          "~¥1,900 RT from central Tokyo"
+        ],
+        [
+          "Avoid",
+          "Rush 7:30–9:00, 17:30–19:00",
+          "Packed trains"
+        ]
+      ]
+    },
+    {
+      "caption": "Takayama (Jul 29–30)",
+      "columns": [
+        "Mode",
+        "When",
+        "Cost"
+      ],
+      "rows": [
+        [
+          "Walk",
+          "Sanmachi old town",
+          "Free"
+        ],
+        [
+          "Bus",
+          "Shirakawa-go (reserved)",
+          "~¥2,600–3,000 RT"
+        ],
+        [
+          "Cash",
+          "Some rural buses",
+          "Keep ¥5,000 in wallet"
+        ]
+      ]
     }
   ],
   "bullets": [
@@ -270,13 +492,150 @@
       "text": "8 validation check(s) passed in source plan."
     }
   ],
+  "flights": {
+    "search_date": null,
+    "legs": [],
+    "trip_total": {
+      "caption": "Transport Budget Summary",
+      "columns": [
+        "Category",
+        "Est. USD",
+        "Est. JPY"
+      ],
+      "rows": [
+        [
+          "Airport in + out",
+          "$35",
+          "¥5,000"
+        ],
+        [
+          "Tokyo IC + Kamakura",
+          "$55",
+          "¥8,000"
+        ],
+        [
+          "Intercity rail (individual)",
+          "$205",
+          "¥30,800"
+        ],
+        [
+          "Shirakawa-go bus",
+          "$20",
+          "¥3,000"
+        ],
+        [
+          "Kyoto buses",
+          "$25",
+          "¥3,500"
+        ],
+        [
+          "Osaka IC + KIX",
+          "$25",
+          "¥3,500"
+        ],
+        [
+          "Takkyubin (1×)",
+          "$20",
+          "¥3,000"
+        ],
+        [
+          "ATM fees (buffer)",
+          "$10",
+          "—"
+        ],
+        [
+          "On-ground transport total",
+          "~$395",
+          "~¥59,000"
+        ],
+        [
+          "Intl flights (separate)",
+          "$1,100–1,400",
+          "—"
+        ],
+        [
+          "Remaining for lodging/food/activities",
+          "~$3,200–3,500",
+          "—"
+        ]
+      ]
+    },
+    "leg_tables": [],
+    "budget_note": null
+  },
   "slide_title_accent": "MONEY",
   "section_label": "Transport Money",
-  "section_kicker": "JR Pass verdict · legs · airport transfers · yen",
+  "section_kicker": "Flights · trip total · ground legs · money",
   "banner": {
     "text": "Recommendation: Skip JR Pass; book Hikari + Hida seats on [SmartEX](https://smart-ex.jp/en/) / [Eki-net](https://www.eki-net.com) / JR East Travel Service Center 4 weeks before travel. Aligns with 04-master-itinerary rail days but avoids overpaying for pass subsidy."
   },
   "sidebar": [
+    {
+      "type": "table",
+      "caption": "Transport Budget Summary",
+      "columns": [
+        "Category",
+        "Est. USD",
+        "Est. JPY"
+      ],
+      "rows": [
+        [
+          "Airport in + out",
+          "$35",
+          "¥5,000"
+        ],
+        [
+          "Tokyo IC + Kamakura",
+          "$55",
+          "¥8,000"
+        ],
+        [
+          "Intercity rail (individual)",
+          "$205",
+          "¥30,800"
+        ],
+        [
+          "Shirakawa-go bus",
+          "$20",
+          "¥3,000"
+        ],
+        [
+          "Kyoto buses",
+          "$25",
+          "¥3,500"
+        ],
+        [
+          "Osaka IC + KIX",
+          "$25",
+          "¥3,500"
+        ],
+        [
+          "Takkyubin (1×)",
+          "$20",
+          "¥3,000"
+        ],
+        [
+          "ATM fees (buffer)",
+          "$10",
+          "—"
+        ],
+        [
+          "On-ground transport total",
+          "~$395",
+          "~¥59,000"
+        ],
+        [
+          "Intl flights (separate)",
+          "$1,100–1,400",
+          "—"
+        ],
+        [
+          "Remaining for lodging/food/activities",
+          "~$3,200–3,500",
+          "—"
+        ]
+      ]
+    },
     {
       "type": "list",
       "caption": "Intercity Legs (Booked Tickets)",
@@ -312,6 +671,71 @@
   ],
   "panels": [
     {
+      "caption": "Transport Budget Summary",
+      "columns": [
+        "Category",
+        "Est. USD",
+        "Est. JPY"
+      ],
+      "rows": [
+        [
+          "Airport in + out",
+          "$35",
+          "¥5,000"
+        ],
+        [
+          "Tokyo IC + Kamakura",
+          "$55",
+          "¥8,000"
+        ],
+        [
+          "Intercity rail (individual)",
+          "$205",
+          "¥30,800"
+        ],
+        [
+          "Shirakawa-go bus",
+          "$20",
+          "¥3,000"
+        ],
+        [
+          "Kyoto buses",
+          "$25",
+          "¥3,500"
+        ],
+        [
+          "Osaka IC + KIX",
+          "$25",
+          "¥3,500"
+        ],
+        [
+          "Takkyubin (1×)",
+          "$20",
+          "¥3,000"
+        ],
+        [
+          "ATM fees (buffer)",
+          "$10",
+          "—"
+        ],
+        [
+          "On-ground transport total",
+          "~$395",
+          "~¥59,000"
+        ],
+        [
+          "Intl flights (separate)",
+          "$1,100–1,400",
+          "—"
+        ],
+        [
+          "Remaining for lodging/food/activities",
+          "~$3,200–3,500",
+          "—"
+        ]
+      ]
+    },
+    {
       "caption": "Pass options (foreign tourist, 2026 baseline — verify at [japanrailpass.net](https://www.japanrailpass.net/en/) before purchase)",
       "columns": [
         "Pass",
@@ -544,6 +968,163 @@
           "—",
           "—",
           "Summer queues + security"
+        ]
+      ]
+    },
+    {
+      "caption": "Intercity Legs (Booked Tickets)",
+      "columns": [
+        "Day",
+        "Route",
+        "Trains",
+        "Duration",
+        "Booking"
+      ],
+      "rows": [
+        [
+          "Jul 29",
+          "Tokyo → Takayama",
+          "Shinkansen Hikari (Tokyo→Nagoya) + Hida (Nagoya→Takayama)",
+          "~4–4.5 hr",
+          "Reserve both; window seat on Hida if possible"
+        ],
+        [
+          "Jul 31",
+          "Takayama → Kyoto",
+          "Hida (→Nagoya) + Hikari (→Kyoto)",
+          "~3.5 hr",
+          "Morning departure per 04-master-itinerary"
+        ],
+        [
+          "Aug 4",
+          "Kyoto → Osaka",
+          "JR Kyoto Line Special Rapid",
+          "~30 min",
+          "Walk-up; Suica"
+        ]
+      ]
+    },
+    {
+      "caption": "IC Cards (Suica / PASMO / ICOCA)",
+      "columns": [
+        "Topic",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "What",
+          "Reloadable contactless fare card; works on JR, metro, most buses nationwide"
+        ],
+        [
+          "Buy",
+          "Airport or any major station; ¥2,000 minimum (¥500 refundable deposit)"
+        ],
+        [
+          "Use",
+          "Tap in / tap out; fares auto-deduct"
+        ],
+        [
+          "Reload",
+          "Station machines, ¥1,000 increments; 7-Eleven ATMs for cash refill"
+        ],
+        [
+          "iPhone",
+          "Add Suica to Apple Wallet (US App Store) before trip—backup physical card"
+        ],
+        [
+          "Return",
+          "Refund balance + deposit at JR East service center (small handling fee)"
+        ]
+      ]
+    },
+    {
+      "caption": "Details",
+      "columns": [
+        "City",
+        "Days",
+        "Est./day",
+        "Subtotal"
+      ],
+      "rows": [
+        [
+          "Tokyo",
+          "5",
+          "¥1,000",
+          "¥5,000"
+        ],
+        [
+          "Takayama",
+          "2",
+          "¥300 (minimal)",
+          "¥600"
+        ],
+        [
+          "Kyoto",
+          "4",
+          "¥700 (bus-heavy; day pass ¥700)",
+          "¥2,800"
+        ],
+        [
+          "Osaka",
+          "2",
+          "¥900",
+          "¥1,800"
+        ],
+        [
+          "Total IC + bus passes",
+          "",
+          "",
+          "~¥10,200 (~$68)"
+        ]
+      ]
+    },
+    {
+      "caption": "Tokyo (Jul 24–28)",
+      "columns": [
+        "Mode",
+        "When",
+        "Cost"
+      ],
+      "rows": [
+        [
+          "Metro + Toei + JR Yamanote",
+          "All urban days",
+          "¥170–320/trip"
+        ],
+        [
+          "JR",
+          "Kamakura day (Jul 27)",
+          "~¥1,900 RT from central Tokyo"
+        ],
+        [
+          "Avoid",
+          "Rush 7:30–9:00, 17:30–19:00",
+          "Packed trains"
+        ]
+      ]
+    },
+    {
+      "caption": "Takayama (Jul 29–30)",
+      "columns": [
+        "Mode",
+        "When",
+        "Cost"
+      ],
+      "rows": [
+        [
+          "Walk",
+          "Sanmachi old town",
+          "Free"
+        ],
+        [
+          "Bus",
+          "Shirakawa-go (reserved)",
+          "~¥2,600–3,000 RT"
+        ],
+        [
+          "Cash",
+          "Some rural buses",
+          "Keep ¥5,000 in wallet"
         ]
       ]
     }
