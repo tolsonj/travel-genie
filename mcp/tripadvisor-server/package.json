@@ -1,0 +1,21 @@
+{
+  "name": "serpapi-tripadvisor-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for searching TripAdvisor venues via SerpAPI",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "serpapi-tripadvisor-mcp-server": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.24.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

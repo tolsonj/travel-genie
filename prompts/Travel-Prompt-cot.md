@@ -56,6 +56,170 @@ If MCP is unavailable or a search fails: use estimate ranges, flag as **unverifi
 
 ---
 
+# Travel Prompt CoT — Hotel search (MCP)
+
+When a **SerpAPI Google Hotels MCP server** is available in the agent environment, use it for **live hotel rate data** during planning. Do **not** guess hotel prices when MCP is connected.
+
+## MCP tools (typical names)
+
+| Tool | Use for |
+|------|---------|
+| `search_hotels` | Primary: per-city search with check-in/out dates, star class, rating filters |
+| `get_hotel_details` | Confirm Booking.com / Expedia / Hotels.com prices for **recommended pick only** |
+| `get_hotel_reviews` | Skip by default (extra API credits; use only on user request) |
+
+**Server name in Cursor:** `serpapi-hotels` (`serpapi-hotels-mcp-server` via npx) — read the MCP tool schema before calling.
+
+## Required profile fields (for MCP)
+
+Collect in Step 1 / `profile.md` if missing:
+
+- **Hotel star preference** — e.g. 4–5★
+- **Rooms** — count and bed type (king / two queens)
+- **Guests** — adults and children (with ages for children)
+- **Booking requirement** — e.g. must be bookable on US platforms (Booking.com, Expedia, Hotels.com, Marriott, Hilton)
+
+## When to query MCP
+
+| Step | What to search |
+|------|----------------|
+| **05 Accommodation** | Full per-city rate check for every hub in Step 4 itinerary |
+| **18 Final assembly** | Reference sidecar totals; do not re-search |
+
+## Per-city search workflow
+
+1. Derive cities from Step 4: `{city}, {country}`, check-in, check-out, nights, rooms, adults.
+2. For each city, call `search_hotels` with:
+   - `query`: `"Hotels in {City}, {Country}"`
+   - `check_in_date` / `check_out_date` (YYYY-MM-DD from itinerary)
+   - `hotel_class`: from profile (e.g. `"4,5"`)
+   - `rating`: `8` (4.0+) or `9` (4.5+) per profile quality bar
+   - `sort_by`: `8` (highest rating) for splurge cities; `3` (lowest price) for value cities — match profile splurge rules
+3. Record **search date** (today) — prices are point-in-time snapshots.
+4. Present top 3–5 options per city: hotel name, price/night, area, rating, notes.
+5. Mark one **recommended** pick per city (neighborhood fit from Step 5 analysis + rating + US-platform availability).
+6. For recommended pick only: `get_hotel_details` → note lowest Booking.com / Expedia / Hotels.com source in Notes column.
+7. Write or update `trips/{slug}/hotel-comparison.md`; distill key tables into `opt-05-accommodation.md` Output.
+
+## Optional sidecar
+
+Write `trips/{slug}/hotel-comparison.md` with full tables; reference from Step 5 via wikilinks. Copy distilled tables into `opt-05-accommodation.md` Output section.
+
+## Output table format (per city)
+
+```markdown
+### Hotel Rate Snapshot
+*Search date: 2026-06-14 · 1 room · 2 adults + 1 child*
+
+#### City: Hanoi (2026-09-06 – 2026-09-08)
+
+| Hotel | Price / night | Area | Rating | Notes |
+|-------|--------------:|------|--------|-------|
+| Sofitel Legend Metropole | $320 | Old Quarter | 4.8★ | **Recommended** · Booking.com $315 |
+```
+
+Include a **Lodging Total Summary** table (sum nights × rooms; compare to profile budget) and an **MCP search log**:
+
+| City | Check-in | Check-out | Tool |
+|------|----------|-----------|------|
+| Hanoi | 2026-09-06 | 2026-09-08 | search_hotels |
+
+## Fallback
+
+If MCP is unavailable or a search fails: use estimate ranges, flag as **unverified**, and list cities the user should check manually.
+
+---
+
+# Travel Prompt CoT — TripAdvisor (MCP)
+
+When a **SerpAPI TripAdvisor MCP server** is available in the agent environment, use it for **live restaurant and attraction data** during planning. Do **not** guess venue ratings or popularity when MCP is connected.
+
+## MCP tools (typical names)
+
+| Tool | Use for |
+|------|---------|
+| `search_venues` | Primary: per-city restaurant or attraction search with category filter |
+| `get_venue_details` | Ranking, subratings, and description for **recommended pick only** |
+
+**Server name in Cursor:** `serpapi-tripadvisor` (`mcp/tripadvisor-server/index.js`) — read the MCP tool schema before calling. Uses the same `SERPAPI_API_KEY` as `serpapi-hotels`.
+
+## Required profile fields (for MCP)
+
+Collect in Step 1 / `profile.md` if missing:
+
+- **Dietary needs** — none / vegetarian / allergies
+- **Cuisine preferences** — e.g. street food, fine dining, local-only
+- **Price tier** — budget ($) through splurge ($$$$)
+- **Reservation tolerance** — walk-in only vs willing to book ahead
+
+## When to query MCP
+
+| Step | What to search |
+|------|----------------|
+| **06b Food & dining** | Restaurants per itinerary city (`category=restaurants`) |
+| **10 Culture & museums** | Attractions and museums per city (`category=attractions`) |
+| **12 Hidden gems** | Off-beat attractions per city (`category=attractions`, higher review threshold) |
+| **18 Final assembly** | Reference sidecar totals; do not re-search |
+
+## Per-city search workflow
+
+1. Derive cities from Step 4: `{city}, {country}` and meal/sight slots from itinerary days.
+2. For each city, call `search_venues` with:
+   - `query`: `"restaurants in {City}, {Country}"` or `"things to do in {City}, {Country}"`
+   - `category`: `restaurants` (Step 06b) or `attractions` (Steps 10, 12)
+   - `limit`: 10 (present top 3–5 in output)
+3. Record **search date** (today) — ratings are point-in-time snapshots.
+4. Present top 3–5 options per city: name, rating, review count, price/cuisine or type, notes.
+5. Mark one **recommended** pick per city (itinerary fit + rating + review volume).
+6. For recommended pick only: `get_venue_details` → note ranking and subratings in Notes column.
+7. Write or update sidecars:
+   - Step 06b → `trips/{slug}/restaurant-comparison.md`
+   - Steps 10/12 → `trips/{slug}/attractions-comparison.md`
+8. Distill key tables into the matching `opt-*.md` Output section.
+
+## Optional sidecars
+
+- `trips/{slug}/restaurant-comparison.md` — referenced from Step 06b via wikilinks
+- `trips/{slug}/attractions-comparison.md` — referenced from Steps 10 and 12 via wikilinks
+
+## Output table format (restaurants, per city)
+
+```markdown
+### Venue Snapshot — Restaurants
+*Search date: 2026-06-14 · Party of 3 · dietary: none*
+
+#### City: Hanoi (dinner slots Days 6–7)
+
+| Restaurant | Rating | Reviews | Price | Cuisine | Notes |
+|------------|-------:|--------:|-------|---------|-------|
+| Phở Gia Truyền | 4.5★ | 2,400 | $ | Vietnamese | **Recommended** |
+```
+
+## Output table format (attractions, per city)
+
+```markdown
+### Venue Snapshot — Attractions
+*Search date: 2026-06-14*
+
+#### City: Hanoi
+
+| Attraction | Rating | Reviews | Type | Notes |
+|------------|-------:|--------:|------|-------|
+| Hoan Kiem Lake | 4.7★ | 18,000 | Landmark | **Recommended** |
+```
+
+Include an **MCP search log**:
+
+| City | Query | Category | Tool |
+|------|-------|----------|------|
+| Hanoi | restaurants Old Quarter | restaurants | search_venues |
+
+## Fallback
+
+If MCP is unavailable or a search fails: use desk research and social-media anchors, flag as **unverified**, and list cities the user should check manually.
+
+---
+
 ```
 STEP 1 — Traveler profile
 
@@ -231,7 +395,17 @@ TASK:
    - Solo traveler considerations by neighborhood
    - Countries where hotel registration with police is required
 
-VALIDATION: Confirm each accommodation is within 30 minutes of 60% of planned activities AND within reasonable distance of my exit point to the next country.
+LIVE HOTEL PRICES (MCP — if available):
+- Parse Step 4 for each hub city: name, country, check-in, check-out, nights
+- Query SerpAPI Hotels MCP per city (see Hotel search preamble)
+- Per city: top 3–5 options + one recommended pick aligned with neighborhood analysis
+- Lodging total vs profile budget; booking urgency per city
+- Write or update `hotel-comparison.md` sidecar; distill into Output
+- If MCP unavailable: keep strategy/neighborhood content but mark rates **unverified**
+
+OUTPUT: Accommodation strategy per country, neighborhood picks, MCP hotel comparison tables (or unverified estimates), booking strategy.
+
+VALIDATION: Confirm each accommodation is within 30 minutes of 60% of planned activities AND within reasonable distance of my exit point to the next country. If MCP was used, confirm every itinerary city was searched and search date is recorded.
 ```
 
 ```
@@ -338,6 +512,13 @@ TASK:
    - **Itinerary fit:** map each viral food spot to a specific day/meal or flag **off-itinerary city** / **needs detour**
    - Note platform access where Western social apps are restricted
 
+LIVE VENUE DATA (MCP — if available):
+- Parse Step 4 for each hub city with meal slots
+- Query SerpAPI TripAdvisor MCP per city (`search_venues`, `category=restaurants`) — see TripAdvisor preamble
+- Per city: top 3–5 restaurants + one recommended pick aligned with neighborhood and dietary needs
+- Write or update `restaurant-comparison.md` sidecar; distill into Output
+- If MCP unavailable: keep social-media and dish content but mark venue ratings **unverified**
+
 1. SIGNATURE DISHES PER COUNTRY: 5 must-try dishes per country with:
    - Pronunciation guide
    - What to order with it
@@ -370,7 +551,7 @@ OUTPUT:
 - **Social vs plan matrix** for food (scheduled | add slot | off-route / skip)
 - DIY search strings: YouTube food vlogs + TikTok/Instagram tags per itinerary city
 
-VALIDATION: No meal requires >30 minutes extra transit from that day's anchor unless flagged. Viral spots must fit dietary needs and food budget. Flag overhyped creator traps vs high-quality local picks.
+VALIDATION: No meal requires >30 minutes extra transit from that day's anchor unless flagged. Viral spots must fit dietary needs and food budget. Flag overhyped creator traps vs high-quality local picks. If MCP was used, confirm every itinerary city was searched and search date is recorded.
 ```
 
 ```
@@ -515,6 +696,13 @@ TASK:
    - Tag each as **on-route + day match** | **on-route, needs slot** | **viral but off-itinerary**
    - Filter creator-famous spots for crowd level, booking lead time, and authenticity vs photo-backdrop traps
 
+LIVE ATTRACTION DATA (MCP — if available):
+- Parse Step 4 for each hub city with cultural sight slots
+- Query SerpAPI TripAdvisor MCP per city (`search_venues`, `category=attractions`) — see TripAdvisor preamble
+- Per city: top 3–5 attractions + one recommended pick aligned with one-site-per-day strategy
+- Write or update `attractions-comparison.md` sidecar; distill into Output
+- If MCP unavailable: keep social-media cultural picks but mark ratings **unverified**
+
 TASK PER COUNTRY (prioritize itinerary cities):
 1. MUSEUM STRATEGY:
    - One museum/site per day with hidden corners
@@ -539,7 +727,7 @@ TASK PER COUNTRY (prioritize itinerary cities):
 
 OUTPUT: Per-itinerary-city cultural calendar + social-vs-plan matrix + DIY YouTube/TikTok/Instagram search strings per city.
 
-VALIDATION: Check for museum fatigue across the entire trip, not just per country. Activities must land in cities on Step 4 unless I approve a routing change.
+VALIDATION: Check for museum fatigue across the entire trip, not just per country. Activities must land in cities on Step 4 unless I approve a routing change. If MCP was used, confirm every itinerary city was searched and search date is recorded.
 ```
 
 ```
@@ -603,6 +791,12 @@ TASK:
    - Cross-check against Step 4: skip duplicates already scheduled; elevate under-the-radar spots that fit open slots
    - Flag "Instagram trap" locations (long queues, low payoff) vs genuine hidden gems
 
+LIVE HIDDEN GEM DATA (MCP — if available):
+- Re-use `attractions-comparison.md` from Step 10 or run fresh `search_venues` with `category=attractions` for off-beat queries per city
+- Cross-check MCP results against Step 4 open slots; elevate high-review local favorites not already scheduled
+- Mark creator-hyped traps when MCP review volume or rating contradicts social hype
+- If MCP unavailable: rely on social discovery layer and flag venue ratings **unverified**
+
 1. HIDDEN GEMS PER COUNTRY: 5 places/experiences locals love — **at least 3 per itinerary city**
 2. "ONLY HERE" PER COUNTRY: 2 things I can only do there
 3. NEIGHBORHOOD DEEP-DIVES: 1 non-touristy neighborhood per country
@@ -613,7 +807,7 @@ TASK:
 
 5. NIGHTTIME SECRETS PER COUNTRY
 
-VALIDATION: Note reservations, limited hours, or seasonality for each gem.
+VALIDATION: Note reservations, limited hours, or seasonality for each gem. If MCP was used, confirm attractions sidecar is referenced and search date is recorded.
 ```
 
 ```
@@ -783,15 +977,16 @@ Generate a complete multi-country travel brief:
 2. VISA & ENTRY: Per-country requirements, deadlines, red flags
 3. ITINERARY: Day-by-day across all countries with anchors, wow moments, backups
 4. ACCOMMODATION: Neighborhoods and booking strategy per country
-5. FOOD: Signature dishes and experiences per **itinerary city**, social-media food highlights mapped to days, border-crossing meal plans
+4b. HOTELS: Per-city recommended picks, lodging total, budget %, link to `hotel-comparison.md` if present
+5. FOOD: Signature dishes and experiences per **itinerary city**, social-media food highlights mapped to days, border-crossing meal plans; link to `restaurant-comparison.md` if present
 5b. SHOPPING: Category strategy per country scoped to **itinerary cities**, social-media shopping districts, VAT/customs
 6. TRANSPORT: Between and within countries, with booking platforms; **flight totals from Step 7 MCP data** (economy + business if compared)
 6b. FLIGHTS: Per-leg recommended picks, trip total, budget %, link to `flight-comparison.md` if present
 7. CUSTOMS: Duty-free allowances, restricted items, purchasing strategy per country
 8. TECH: Multi-country connectivity, offline kits, power adapters
-9. CULTURE: Museums and activities per **itinerary city**, social-media cultural picks, etiquette + cross-cultural transitions
+9. CULTURE: Museums and activities per **itinerary city**, social-media cultural picks, TripAdvisor attraction picks; link to `attractions-comparison.md` if present; etiquette + cross-cultural transitions
 10. ADVENTURE: Water/land activities per **itinerary city** with seasonal viability and creator-trending options filtered for fitness
-11. HIDDEN GEMS: Locals + creator-surfaced secrets per itinerary city (social-vs-plan matrix)
+11. HIDDEN GEMS: Locals + creator-surfaced secrets per itinerary city (social-vs-plan matrix); link to `attractions-comparison.md` if present
 12. HEALTH: Vaccinations, insurance, emergency protocols per country
 13. MONEY: Currency strategy, ATM networks, tipping, VAT refunds
 14. PACKING: Multi-climate, border-crossing day bag, document organization
@@ -806,5 +1001,7 @@ VALIDATION:
 - Museum fatigue check across entire trip
 - "Soft day" after every border crossing
 - Flight costs sourced from MCP (with search date) or flagged unverified
+- Hotel costs sourced from MCP (with search date) or flagged unverified
+- Restaurant and attraction ratings sourced from TripAdvisor MCP (with search date) or flagged unverified
 ```
 

@@ -78,7 +78,49 @@ The architecture is **two-stage and decoupled**:
 
 ### Phase 0 — Profile
 
-Write a predefined profile at `trips/<slug>/profile.md`. Required fields: countries, dates/duration, budget, citizenship/passports, interests, pace/style, deal-breakers. For live flight search (Google Flights MCP in Steps 02, 07, 17), also include **home airport IATA**, **passenger count**, and **cabin preference**.
+Write a predefined profile at `trips/<slug>/profile.md`. Required fields: countries, dates/duration, budget, citizenship/passports, interests, pace/style, deal-breakers. For live flight search (Google Flights MCP in Steps 02, 07, 17), also include **home airport IATA**, **passenger count**, and **cabin preference**. For live hotel search (SerpAPI Hotels MCP in Step 05), also include **star preference**, **rooms**, **guest counts**, and **booking-platform requirements**. For live restaurant and attraction search (SerpAPI TripAdvisor MCP in Steps 06b, 10, 12), also include **dietary needs**, **cuisine preferences**, **price tier**, and **reservation tolerance**.
+
+### MCP setup (Cursor)
+
+**Flights** — Google Flights tools via `MCP_DOCKER`, `fli`, or `google-flights` (see flight preamble in `Travel-Prompt-cot.md`).
+
+**Hotels** — add SerpAPI Google Hotels MCP. Copy [`.cursor/mcp.json.example`](.cursor/mcp.json.example) into Cursor **Settings → MCP** (merge with existing servers). Requires a [SerpAPI API key](https://serpapi.com/manage-api-key) (free tier ~100 searches/mo). **Do not commit real keys.**
+
+```json
+{
+  "mcpServers": {
+    "serpapi-hotels": {
+      "command": "npx",
+      "args": ["-y", "serpapi-hotels-mcp-server"],
+      "env": { "SERPAPI_API_KEY": "<your_key>" }
+    }
+  }
+}
+```
+
+**TripAdvisor (restaurants & attractions)** — local MCP server in this repo. Uses the same SerpAPI key. One-time install:
+
+```bash
+cd mcp/tripadvisor-server && npm install
+```
+
+Add to `.cursor/mcp.json` (merge with existing servers):
+
+```json
+{
+  "mcpServers": {
+    "serpapi-tripadvisor": {
+      "command": "node",
+      "args": ["mcp/tripadvisor-server/index.js"],
+      "env": { "SERPAPI_API_KEY": "<your_key>" }
+    }
+  }
+}
+```
+
+**API budget (hotels):** ~1 `search_hotels` call per itinerary city + 1 `get_hotel_details` for the recommended pick only ≈ 8 calls for a 4-city trip.
+
+**API budget (TripAdvisor):** ~1 `search_venues` call per itinerary city for restaurants (Step 06b) + ~1 per city for attractions (Steps 10/12) + 1 `get_venue_details` for recommended picks only ≈ 12–16 calls for a 4-city trip. Skip venue reviews unless the user explicitly requests them.
 
 ```markdown
 What countries: China and Vietnam
@@ -88,6 +130,7 @@ Cabin preference: economy (compare business on long-hauls)
 Travel Date: Sept 1, 2026 - Sept 14, 2026
 Travel style: Relaxed and cultural experience
 Hotel: 4 or 5 stars, resorts OK, on US booking sites
+How many rooms needed: One room with king bed or two queen
 Travel Partner: Traveling with wife (great shape)
 Total budget: $20,000, splurge in Vietnam
 Top interests: shopping, nature, food, history
@@ -136,6 +179,13 @@ These are what the rendering pipeline consumes.
 - Time optimization slide — date-flex savings in sidebar
 
 Optional full comparison tables: `trips/<slug>/flight-comparison.md` (Obsidian sidecar; not a deck slide by default).
+
+**Hotel tables** (from SerpAPI Hotels MCP during Step 05) go into `opt-05-accommodation.md` using the table contract in `prompts/Travel-Prompt-cot.md` (hotel preamble). The pipeline extracts them into:
+
+- Accommodation slide — neighborhood strategy + distilled recommended picks per city
+- Hotel comparison slide — lodging total sidebar, per-city rate panels, MCP search log
+
+Optional full comparison tables: `trips/<slug>/hotel-comparison.md` (manifest sidecar → dedicated HOTELS deck slide).
 
 ### Phase 3 — Final assembly (optional)
 
@@ -299,6 +349,11 @@ generate any missing opt files, then build the deck.
 | Aspect renders with "generic layout" footer | Add/adjust its entry in `pipeline/schema/aspect-manifest.json`, then rebuild. |
 | JSON didn't update after editing opt file | Re-run with `--force` / `--force-json`. |
 | `playwright` missing | `cd pipeline && npm install --no-save playwright pdf-lib`. |
+| SerpAPI MCP not connected | Add `serpapi-hotels` per `.cursor/mcp.json.example`; restart Cursor. Step 5 falls back to **unverified** rate estimates. |
+| SerpAPI TripAdvisor MCP not connected | Run `cd mcp/tripadvisor-server && npm install`; add `serpapi-tripadvisor` per `.cursor/mcp.json.example`; restart Cursor. Steps 06b/10/12 fall back to **unverified** venue ratings. |
+| SerpAPI quota exceeded | Reduce `get_hotel_details` / `get_venue_details` calls (recommended pick only); upgrade SerpAPI plan or re-run cities on next billing cycle. |
+| No HOTEL COMPARISON slide in deck | Ensure `trips/<slug>/hotel-comparison.md` exists; rebuild with `--force-json`. |
+| Restaurant/attraction sidecars missing | Ensure `trips/<slug>/restaurant-comparison.md` and `attractions-comparison.md` exist; rebuild with `--force-json`. |
 
 ---
 

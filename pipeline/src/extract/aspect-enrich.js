@@ -1,8 +1,12 @@
 // Map generic md-extract output → template-specific JSON fields.
+import { readFileSync, existsSync } from "node:fs";
+import { join } from "node:path";
 import { ROUTE_PRESETS } from "./md-extract-presets.js";
 import { attachShoppingMaps, buildDayPlanCities, buildHubMap } from "../geo/shopping-geo.js";
+import { REPO_ROOT } from "../discover.js";
 import { extractFlights } from "./flight-extract.js";
 import { extractHotels } from "./hotel-extract.js";
+import { extractVenues } from "./tripadvisor-extract.js";
 
 function stripMd(s) {
   return String(s || "")
@@ -22,6 +26,41 @@ const TRIP_INTEL = {
   "japan-2026":
     "Japan solo · Late Jul–Aug 2026 · $5K · Nature · Food · History · Moderate pace."
 };
+
+function loadVenueSidecar(trip, sidecarFile) {
+  if (!trip) return null;
+  const path = join(REPO_ROOT, "trips", trip, sidecarFile);
+  if (!existsSync(path)) return null;
+  const body = readFileSync(path, "utf8");
+  return extractVenues(body, parseTables(body));
+}
+
+function venuePickItems(picks) {
+  return (picks || [])
+    .filter(p => p.recommended?.name)
+    .map(p => ({
+      label: p.label.replace(/^City:\s*/i, "").trim(),
+      value: [
+        p.recommended.name,
+        p.recommended.rating,
+        p.recommended.reviews ? `${p.recommended.reviews} reviews` : "",
+        p.recommended.price,
+        p.recommended.notes
+      ]
+        .filter(Boolean)
+        .join(" · ")
+    }));
+}
+
+function attractionPanels(picks) {
+  return (picks || []).map(p => ({
+    heading: p.label.replace(/^City:\s*/i, "").trim(),
+    items: (p.options || []).slice(0, 5).map(row => ({
+      label: stripMd(row[0]),
+      detail: [row[1], row[2], row[3], row[4]].filter(Boolean).map(stripMd).join(" · ")
+    }))
+  }));
+}
 
 function splitSections(body, re = /\n(?=###\s+)/) {
   return body.split(re).filter(s => s.trim());
@@ -149,6 +188,12 @@ export function enrichFoodDining(base, body, tables) {
     base.bullets?.find(b => /Hội An|splurge/i.test(b.heading || ""))?.items?.[0] ||
     "Book Da Dong Peking Duck and White Rose Restaurant in advance; use Grab/DiDi — avoid street taxis.";
 
+  const restaurantSidecar = loadVenueSidecar(base.trip, "restaurant-comparison.md");
+  const venueItems = venuePickItems(restaurantSidecar?.picks);
+  const mergedDiningItems = venueItems.length
+    ? [...venueItems, ...diningItems]
+    : diningItems;
+
   return {
     ...base,
     slide_title_accent: "STRATEGY",
@@ -157,8 +202,16 @@ export function enrichFoodDining(base, body, tables) {
       label: "Profile Intelligence",
       text: TRIP_INTEL[base.trip] || cleanIntro(base.intro) || base.title
     },
-    dining_intelligence: diningItems.length
-      ? { label: "Food & Dining Intelligence", items: diningItems }
+    dining_intelligence: mergedDiningItems.length
+      ? { label: "Food & Dining Intelligence", items: mergedDiningItems }
+      : undefined,
+    venue_snapshot: restaurantSidecar
+      ? {
+          search_date: restaurantSidecar.search_date,
+          kind: restaurantSidecar.kind,
+          picks: restaurantSidecar.picks,
+          venue_tables: restaurantSidecar.venue_tables
+        }
       : undefined,
     regional: {
       subtitle: "Regional highlights",
@@ -629,6 +682,20 @@ export function enrichCulture(base, body, tables) {
     .slice(0, 3)
     .map(m => stripMd(m[2]));
 
+  const attractionsSidecar = loadVenueSidecar(base.trip, "attractions-comparison.md");
+  const attractionPicks = attractionsSidecar?.picks || [];
+  const spotlightItems = attractionPicks.slice(0, 3).map(p => ({
+    label: p.recommended?.name || p.label,
+    detail: [
+      p.recommended?.rating,
+      p.recommended?.reviews ? `${p.recommended.reviews} reviews` : "",
+      p.recommended?.category,
+      p.recommended?.notes
+    ]
+      .filter(Boolean)
+      .join(" · ")
+  }));
+
   return {
     ...base,
     slide_title: "CULTURE & MUSEUMS",
@@ -653,7 +720,51 @@ export function enrichCulture(base, body, tables) {
       verdict_status: "pass"
     },
     hubs,
+    spotlight: spotlightItems.length
+      ? {
+          caption: "TripAdvisor Attraction Picks",
+          columns: [{ heading: "Recommended", items: spotlightItems }]
+        }
+      : undefined,
+    venue_snapshot: attractionsSidecar
+      ? {
+          search_date: attractionsSidecar.search_date,
+          kind: attractionsSidecar.kind,
+          picks: attractionsSidecar.picks,
+          venue_tables: attractionsSidecar.venue_tables
+        }
+      : undefined,
     footer: "Forbidden City tickets at pm.com.cn; Mutianyu over Badaling for crowds."
+  };
+}
+
+export function enrichHiddenGems(base, body, tables) {
+  const attractionsSidecar = loadVenueSidecar(base.trip, "attractions-comparison.md");
+  const panels = attractionPanels(attractionsSidecar?.picks);
+  const sidebar = (base.sidebar || []).length
+    ? base.sidebar
+    : panels.length
+      ? [{ heading: "TripAdvisor hidden picks", items: panels.map(p => p.heading) }]
+      : [];
+
+  return {
+    ...base,
+    intro: cleanIntro(base.intro),
+    banner: base.banner || {
+      text: attractionsSidecar?.search_date
+        ? `Hidden gems · TripAdvisor search ${attractionsSidecar.search_date}`
+        : "Hidden gems · local favorites filtered for itinerary fit"
+    },
+    sidebar,
+    panels: panels.length ? panels : base.panels || [],
+    venue_snapshot: attractionsSidecar
+      ? {
+          search_date: attractionsSidecar.search_date,
+          kind: attractionsSidecar.kind,
+          picks: attractionsSidecar.picks,
+          venue_tables: attractionsSidecar.venue_tables
+        }
+      : undefined
   };
 }
 
@@ -905,6 +1016,56 @@ function enrichHotels(base, body, tables) {
   };
 }
 
+function enrichRestaurantComparison(base, body, tables) {
+  const venues = extractVenues(body, tables);
+  const reordered = [
+    ...venues.venue_tables,
+    ...(venues.search_log ? [venues.search_log] : []),
+    ...venues.other_tables
+  ];
+  const intro =
+    cleanIntro(base.intro) ||
+    (venues.search_date ? `Restaurant venue check · ${venues.search_date}` : null);
+
+  return {
+    ...base,
+    intro,
+    venues: {
+      search_date: venues.search_date,
+      kind: venues.kind,
+      picks: venues.picks,
+      venue_tables: venues.venue_tables,
+      search_log: venues.search_log
+    },
+    tables: reordered.slice(0, 12)
+  };
+}
+
+function enrichAttractionsComparison(base, body, tables) {
+  const venues = extractVenues(body, tables);
+  const reordered = [
+    ...venues.venue_tables,
+    ...(venues.search_log ? [venues.search_log] : []),
+    ...venues.other_tables
+  ];
+  const intro =
+    cleanIntro(base.intro) ||
+    (venues.search_date ? `Attractions venue check · ${venues.search_date}` : null);
+
+  return {
+    ...base,
+    intro,
+    venues: {
+      search_date: venues.search_date,
+      kind: venues.kind,
+      picks: venues.picks,
+      venue_tables: venues.venue_tables,
+      search_log: venues.search_log
+    },
+    tables: reordered.slice(0, 12)
+  };
+}
+
 export function enrichAspect(base, body) {
   // Parse all tables from source — base.tables is capped for generic slides only.
   const tables = parseTables(body);
@@ -923,6 +1084,8 @@ export function enrichAspect(base, body) {
       return enrichShopping(full, body, tables);
     case "culture-museums":
       return enrichCulture(full, body, tables);
+    case "hidden-gems":
+      return enrichHiddenGems(full, body, tables);
     case "packing":
       return enrichPacking(full, body, tables);
     case "etiquette":
@@ -931,6 +1094,10 @@ export function enrichAspect(base, body) {
       return enrichFlightComparison(full, body, tables);
     case "hotel-comparison":
       return enrichHotels(full, body, tables);
+    case "restaurant-comparison":
+      return enrichRestaurantComparison(full, body, tables);
+    case "attractions-comparison":
+      return enrichAttractionsComparison(full, body, tables);
     case "transport-money":
     case "dashboard":
       if (aspect === "07-transport-money") {

@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "serpapi-hotels": {
+      "command": "npx",
+      "args": ["-y", "serpapi-hotels-mcp-server"],
+      "env": {
+        "SERPAPI_API_KEY": "<your_key>"
+      }
+    },
+    "serpapi-tripadvisor": {
+      "command": "node",
+      "args": ["mcp/tripadvisor-server/index.js"],
+      "env": {
+        "SERPAPI_API_KEY": "<your_key>"
+      }
+    }
+  }
+}

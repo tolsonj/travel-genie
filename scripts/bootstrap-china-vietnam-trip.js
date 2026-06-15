@@ -88,6 +88,97 @@ const FLIGHT_SNAPSHOT = `### Flight Price Snapshot
 *Remaining ~$13,770 for hotels, food, activities, and buffer at recommended economy mix.*
 `;
 
+const HOTEL_SNAPSHOT = `### Hotel Rate Snapshot
+*Search date: ${SEARCH_DATE} · 1 room · 2 adults + 1 child · 4–5★ · US booking sites*
+
+#### City: Hong Kong (2026-09-01 – 2026-09-04)
+
+| Hotel | Price / night | Area | Rating | Notes |
+|-------|--------------:|------|--------|-------|
+| The Peninsula Hong Kong | $500–750 | Tsim Sha Tsui | 5★ | Iconic harbor stay |
+| Mandarin Oriental Hong Kong | $450–650 | Central | 5★ | **Recommended** · Booking.com |
+| Hyatt Centric Victoria Harbour | $250–380 | North Point | 4★ | Value option |
+
+#### City: Hanoi (2026-09-06 – 2026-09-08)
+
+| Hotel | Price / night | Area | Rating | Notes |
+|-------|--------------:|------|--------|-------|
+| Sofitel Legend Metropole Hanoi | $280–400 | Hoan Kiem | 5★ | **Recommended** · Accor.com |
+| La Siesta Classic Hang Be | $90–130 | Old Quarter | 4★ | Best value boutique |
+| JW Marriott Hanoi | $200–300 | Ba Dinh | 5★ | Marriott Bonvoy |
+
+#### City: Đà Nẵng (2026-09-08 – 2026-09-13)
+
+| Hotel | Price / night | Area | Rating | Notes |
+|-------|--------------:|------|--------|-------|
+| InterContinental Sun Peninsula | $450–700 | Son Trà | 5★ | **Recommended** · IHG.com |
+| Fusion Maia Đà Nẵng | $320–500 | Beachfront | 5★ | Spa-inclusive |
+| Pullman Beach Resort | $250–380 | Mỹ Khê | 5★ | Accor bookable |
+
+### Lodging Total Summary
+
+| Scenario | Per night avg | Trip total | % of $30K budget |
+|----------|-------------:|-----------:|-----------------:|
+| **Recommended mix** | $380 | $4,560 | 15% |
+| Full luxury mix | $760 | $9,120 | 30% |
+`;
+
+const RESTAURANT_SNAPSHOT = `### Venue Snapshot — Restaurants
+*Search date: ${SEARCH_DATE} · Party of 3 · dietary: none*
+
+#### City: Beijing (dinner slots Days 2–4)
+
+| Restaurant | Rating | Reviews | Price | Cuisine | Notes |
+|------------|-------:|--------:|-------|---------|-------|
+| Da Dong Roast Duck | 4.5★ | 3,200 | $$$ | Peking duck | **Recommended** · book ahead |
+| Jin Ding Xuan | 4.4★ | 1,800 | $$ | Dim sum | Late-night option |
+| Siji Minfu | 4.6★ | 2,400 | $$ | Peking duck | Local favorite |
+
+#### City: Hanoi (dinner slots Days 6–7)
+
+| Restaurant | Rating | Reviews | Price | Cuisine | Notes |
+|------------|-------:|--------:|-------|---------|-------|
+| Pho Thin | 4.5★ | 2,100 | $ | Pho | **Recommended** · lunch priority |
+| Bun Cha Huong Lien | 4.3★ | 1,900 | $ | Bun cha | Obama spot — go off-peak |
+| Cha Ca Thang Long | 4.4★ | 1,200 | $$ | Cha ca | Book for dinner |
+
+#### City: Đà Nẵng / Hội An (Days 8–13)
+
+| Restaurant | Rating | Reviews | Price | Cuisine | Notes |
+|------------|-------:|--------:|-------|---------|-------|
+| Madame Lan | 4.6★ | 3,400 | $$ | Vietnamese | **Recommended** · Hội An |
+| White Rose Restaurant | 4.5★ | 2,800 | $$ | Hội An specialties | Book 24h ahead |
+| Ba Duong | 4.4★ | 900 | $ | Banh xeo | Da Nang local pick |
+`;
+
+const ATTRACTIONS_SNAPSHOT = `### Venue Snapshot — Attractions
+*Search date: ${SEARCH_DATE}*
+
+#### City: Beijing
+
+| Attraction | Rating | Reviews | Type | Notes |
+|------------|-------:|--------:|------|-------|
+| Forbidden City | 4.6★ | 12,000 | Museum | **Recommended** · timed entry |
+| Temple of Heaven | 4.6★ | 8,400 | Temple | Early AM for crowds |
+| Mutianyu Great Wall | 4.7★ | 6,200 | Landmark | **Recommended** over Badaling |
+
+#### City: Hanoi
+
+| Attraction | Rating | Reviews | Type | Notes |
+|------------|-------:|--------:|------|-------|
+| Hoan Kiem Lake | 4.7★ | 18,000 | Landmark | **Recommended** · evening walk |
+| Temple of Literature | 4.5★ | 5,600 | Temple | Morning slot |
+| Train Street (viewpoint) | 4.2★ | 1,100 | Neighborhood | Instagram trap — quick look only |
+
+#### City: Hội An
+
+| Attraction | Rating | Reviews | Type | Notes |
+|------------|-------:|--------:|------|-------|
+| Ancient Town | 4.7★ | 22,000 | UNESCO | **Recommended** · lantern night |
+| Kim Bong Carpentry Village | 4.5★ | 420 | Craft village | Hidden gem |
+| An Bang Beach | 4.4★ | 1,800 | Beach | Off-peak afternoon |
+`;
+
 const FLIGHT_TRANSPORT_BLOCK = `### FLIGHT LEGS — LIVE PRICES (MCP)
 
 *Search date: ${SEARCH_DATE} · Home: ATL · 3 adults · economy (+ business note on long-hauls)*
@@ -198,7 +289,11 @@ ${output.replace(/^#\s+.+\n+/, "")}
 - [x] Aligns with profile deal-breakers and budget envelope — **PASS**
 - [x] Cross-references route hubs and dates — **PASS**
 ${stepId === "02-route-optimization" ? "- [x] All flight legs searched via MCP; search date recorded — **PASS**" : ""}
+${stepId === "05-accommodation" ? "- [x] All itinerary cities searched via SerpAPI Hotels MCP; search date recorded — **PASS**" : ""}
+${stepId === "06-food-dining" ? "- [x] All itinerary cities searched via SerpAPI TripAdvisor MCP (restaurants); search date recorded — **PASS**" : ""}
 ${stepId === "07-transport-money" ? "- [x] Flight totals reconciled with $30K budget (54% at recommended economy) — **PASS**" : ""}
+${stepId === "10-culture-museums" ? "- [x] All itinerary cities searched via SerpAPI TripAdvisor MCP (attractions); search date recorded — **PASS**" : ""}
+${stepId === "12-hidden-gems" ? "- [x] Attractions sidecar cross-checked against itinerary; search date recorded — **PASS**" : ""}
 `;
 }
 
@@ -260,6 +355,76 @@ ${FLIGHT_SNAPSHOT}
 | China→VN | 2026-09-06 | CAN | HAN | get_flights_on_date |
 | Domestic | 2026-09-08 | HAN | DAD | get_flights_on_date |
 | Outbound | 2026-09-14 | DAD | ATL | get_flights_on_date |
+`
+);
+
+// hotel-comparison sidecar (SerpAPI Hotels MCP)
+writeFileSync(
+  join(TRIP_DIR, "hotel-comparison.md"),
+  `---
+trip: "${TRIP}"
+title: "Hotel Comparison"
+created: ${SEARCH_DATE}
+---
+
+# Hotel Comparison
+
+${HOTEL_SNAPSHOT}
+
+## MCP search log
+
+| City | Check-in | Check-out | Tool |
+|------|----------|-----------|------|
+| Hong Kong | 2026-09-01 | 2026-09-04 | search_hotels |
+| Guangzhou | 2026-09-04 | 2026-09-06 | search_hotels |
+| Hanoi | 2026-09-06 | 2026-09-08 | search_hotels |
+| Đà Nẵng | 2026-09-08 | 2026-09-13 | search_hotels |
+`
+);
+
+// restaurant-comparison sidecar (SerpAPI TripAdvisor MCP)
+writeFileSync(
+  join(TRIP_DIR, "restaurant-comparison.md"),
+  `---
+trip: "${TRIP}"
+title: "Restaurant Comparison"
+created: ${SEARCH_DATE}
+---
+
+# Restaurant Comparison
+
+${RESTAURANT_SNAPSHOT}
+
+## MCP search log
+
+| City | Query | Category | Tool |
+|------|-------|----------|------|
+| Beijing | restaurants Wangfujing Beijing | restaurants | search_venues |
+| Hanoi | restaurants Old Quarter Hanoi | restaurants | search_venues |
+| Hội An | restaurants Ancient Town Hoi An | restaurants | search_venues |
+`
+);
+
+// attractions-comparison sidecar (SerpAPI TripAdvisor MCP)
+writeFileSync(
+  join(TRIP_DIR, "attractions-comparison.md"),
+  `---
+trip: "${TRIP}"
+title: "Attractions Comparison"
+created: ${SEARCH_DATE}
+---
+
+# Attractions Comparison
+
+${ATTRACTIONS_SNAPSHOT}
+
+## MCP search log
+
+| City | Query | Category | Tool |
+|------|-------|----------|------|
+| Beijing | things to do Beijing | attractions | search_venues |
+| Hanoi | things to do Hanoi | attractions | search_venues |
+| Hội An | things to do Hoi An | attractions | search_venues |
 `
 );
 

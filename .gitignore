@@ -10,6 +10,11 @@ secrets.json
 # Dependencies
 node_modules/
 
+# Cursor MCP — commit example only; keep live config local (contains SERPAPI_API_KEY)
+!.cursor/
+.cursor/*
+!.cursor/mcp.json.example
+
 # OS / editor
 .DS_Store
 .idea/

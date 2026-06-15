@@ -45,6 +45,7 @@ function isHotelTable(table) {
 function parseSearchDate(body) {
   const m =
     body.match(/\*?\*?Search date:\s*([^\n*]+)/i) ||
+    body.match(/\*?\*?Hotel Rate Snapshot[\s\S]*?\*Search date:\s*([^\n*]+)/i) ||
     body.match(/\*?\*?Rate check(?:ed)?(?: on)?:\s*([^\n*]+)/i) ||
     body.match(/(?:prices?|rates?)\s+(?:checked|searched)\s+(?:on\s+)?(\d{4}-\d{2}-\d{2})/i);
   return m ? stripMd(m[1]).trim() : null;

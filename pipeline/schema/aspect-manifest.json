@@ -70,7 +70,37 @@
           "panels[]",
           "footer"
         ],
-        "notes": "Source: opt-hotel-comparison.md or trips/{slug}/hotel-comparison.md. Typical tables include Hotel/Property, Price per night, Location/Area, Rating, Notes.",
+        "notes": "Source: opt-hotel-comparison.md or trips/{slug}/hotel-comparison.md. SerpAPI MCP tools: search_hotels (per city), get_hotel_details (recommended pick). Tables: Hotel/Property, Price per night, Location/Area, Rating, Notes; MCP search log uses Tool column search_hotels.",
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "restaurant-comparison",
+      "match": "^restaurant-comparison$",
+      "type": "restaurant-comparison",
+      "template": "generic",
+      "title": "Restaurant Comparison",
+      "hints": {
+        "summary": "Per-city restaurant venue snapshot from SerpAPI TripAdvisor MCP.",
+        "fields": [
+          "venues { search_date, kind, picks[], venue_tables[], search_log }"
+        ],
+        "notes": "Source: trips/{slug}/restaurant-comparison.md. SerpAPI MCP tools: search_venues (category=restaurants), get_venue_details (recommended pick). Augments 06-food-dining via enrichFoodDining. Tables: Restaurant, Rating, Reviews, Price, Cuisine, Notes; MCP search log uses Tool column search_venues.",
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
+      "id": "attractions-comparison",
+      "match": "^attractions-comparison$",
+      "type": "attractions-comparison",
+      "template": "generic",
+      "title": "Attractions Comparison",
+      "hints": {
+        "summary": "Per-city attractions and hidden-gem snapshot from SerpAPI TripAdvisor MCP.",
+        "fields": [
+          "venues { search_date, kind, picks[], venue_tables[], search_log }"
+        ],
+        "notes": "Source: trips/{slug}/attractions-comparison.md. SerpAPI MCP tools: search_venues (category=attractions), get_venue_details (recommended pick). Augments 10-culture-museums and 12-hidden-gems. Tables: Attraction, Rating, Reviews, Type, Notes; MCP search log uses Tool column search_venues.",
         "image_categories": ["profile-icon"]
       }
     },
