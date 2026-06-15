@@ -20,6 +20,7 @@ profile.md ──▶ CoT steps 01–17 ──▶ opt-*.md ──▶ canonical JS
 7. [Regenerating pipeline data](#regenerating-pipeline-data)
 8. [Example agent prompts](#example-agent-prompts)
 9. [Troubleshooting](#troubleshooting)
+10. [Cursor extensions](#cursor-extensions)
 
 ---
 
@@ -461,6 +462,114 @@ generate any missing opt files, then build the deck.
 | SerpAPI quota exceeded | Reduce `get_hotel_details` / `get_venue_details` calls (recommended pick only); upgrade SerpAPI plan or re-run cities on next billing cycle. |
 | No HOTEL COMPARISON slide in deck | Ensure `trips/<slug>/hotel-comparison.md` exists; rebuild with `--force-json`. |
 | Restaurant/attraction sidecars missing | Ensure `trips/<slug>/restaurant-comparison.md` and `attractions-comparison.md` exist; rebuild with `--force-json`. |
+
+---
+
+## Cursor extensions
+
+Extensions installed in Cursor on the author's machine (Mar 2026). List locally with:
+
+```bash
+cursor --list-extensions
+```
+
+### Cursor / remote
+
+| Extension | Purpose |
+|-----------|---------|
+| `anysphere.cursorpyright` | Python language support (Cursor) |
+| `anysphere.remote-containers` | Dev Containers |
+| `anysphere.remote-ssh` | Remote SSH |
+
+### Python
+
+| Extension | Purpose |
+|-----------|---------|
+| `ms-python.python` | Python |
+| `ms-python.debugpy` | Python debugger |
+| `kevinrose.vsc-python-indent` | Python indentation |
+
+### Java
+
+| Extension | Purpose |
+|-----------|---------|
+| `vscjava.vscode-java-pack` | Java extension pack |
+| `redhat.java` | Language Support for Java |
+| `vscjava.vscode-java-debug` | Debugger for Java |
+| `vscjava.vscode-java-test` | Test Runner for Java |
+| `vscjava.vscode-java-dependency` | Dependency Viewer |
+| `vscjava.vscode-gradle` | Gradle for Java |
+| `vscjava.vscode-maven` | Maven for Java |
+| `visualstudioexptteam.vscodeintellicode` | IntelliCode |
+| `visualstudioexptteam.intellicode-api-usage-examples` | IntelliCode API examples |
+
+### Dart / Flutter / Vue
+
+| Extension | Purpose |
+|-----------|---------|
+| `dart-code.dart-code` | Dart |
+| `dart-code.flutter` | Flutter |
+| `vue.volar` | Vue language support |
+
+### Docker & containers
+
+| Extension | Purpose |
+|-----------|---------|
+| `ms-azuretools.vscode-docker` | Docker |
+| `ms-azuretools.vscode-containers` | Dev Containers (Microsoft) |
+
+### Git
+
+| Extension | Purpose |
+|-----------|---------|
+| `eamodio.gitlens` | GitLens |
+| `donjayamanne.githistory` | Git History |
+
+### Markdown & docs
+
+| Extension | Purpose |
+|-----------|---------|
+| `shd101wyy.markdown-preview-enhanced` | Markdown Preview Enhanced |
+| `bierner.markdown-mermaid` | Markdown Mermaid |
+| `bpruitt-goddard.mermaid-markdown-syntax-highlighting` | Mermaid syntax highlighting |
+| `marp-team.marp-vscode` | Marp slide decks |
+| `canadaduane.notes` | Notes |
+| `mafut.vsnotes-todo` | VSNotes todo |
+
+### Data & SQL
+
+| Extension | Purpose |
+|-----------|---------|
+| `mechatroner.rainbow-csv` | Rainbow CSV |
+| `mtxr.sqltools` | SQLTools |
+| `mtxr.sqltools-driver-pg` | SQLTools PostgreSQL driver |
+
+### Formatting & quality
+
+| Extension | Purpose |
+|-----------|---------|
+| `esbenp.prettier-vscode` | Prettier |
+| `redhat.vscode-yaml` | YAML |
+| `streetsidesoftware.code-spell-checker` | Code Spell Checker |
+
+### MCP, browser & AI tooling
+
+| Extension | Purpose |
+|-----------|---------|
+| `serkan-ozal.browser-devtools-mcp-vscode` | Browser DevTools MCP (Playwright) |
+| `google.gemini-cli-vscode-ide-companion` | Gemini CLI IDE companion |
+| `specstory.specstory-vscode` | SpecStory |
+
+### Other
+
+| Extension | Purpose |
+|-----------|---------|
+| `christian-kohler.npm-intellisense` | npm IntelliSense |
+| `github.vscode-github-actions` | GitHub Actions |
+| `firefox-devtools.vscode-firefox-debug` | Firefox debugger |
+| `tomoki1207.pdf` | PDF viewer |
+| `emilast.logfilehighlighter` | Log File Highlighter |
+| `k--kato.intellij-idea-keybindings` | IntelliJ IDEA keybindings |
 
 ---
 
