@@ -10,6 +10,12 @@ secrets.json
 # Dependencies
 node_modules/
 
+# Pipeline build outputs and local tooling
+pipeline/
+
+# Trip planning content (local)
+trips/
+
 # Cursor MCP — commit example only; keep live config local (contains SERPAPI_API_KEY)
 !.cursor/
 .cursor/*
