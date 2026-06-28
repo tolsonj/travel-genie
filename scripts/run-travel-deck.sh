@@ -4,14 +4,33 @@
 set -euo pipefail
 
 TRIP="${1:?Usage: $0 <trip-slug> [--force-json]}"
+ROOT_PRE="$(cd "$(dirname "$0")/.." && pwd)"
+
+# Load .env so SERPAPI_API_KEY is available when running outside Cursor.
+# Do not `source` — values like SERPAPI_API_KEY=<key> break bash parsing.
+if [[ -f "$ROOT_PRE/.env" ]]; then
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+    line="${line%"${line##*[![:space:]]}"}" # trim trailing whitespace
+    export "$line"
+  done < "$ROOT_PRE/.env"
+fi
+
+echo "── preflight: serpapi-tripadvisor"
+node "$ROOT_PRE/scripts/check-serpapi.js"
 FORCE="${2:-}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PIPELINE="$ROOT/pipeline"
 TRIP_DIR="$ROOT/trips/$TRIP"
 
+if [[ ! -d "$ROOT/trips" ]]; then
+  mkdir -p "$ROOT/trips"
+  echo "created: $ROOT/trips"
+fi
+
 if [[ ! -d "$TRIP_DIR" ]]; then
-  echo "error: trip folder not found: $TRIP_DIR" >&2
-  exit 1
+  mkdir -p "$TRIP_DIR"
+  echo "created: $TRIP_DIR"
 fi
 
 OPT_COUNT="$(find "$TRIP_DIR" -maxdepth 1 -name 'opt-*.md' | wc -l | tr -d ' ')"
