@@ -27,6 +27,8 @@ profile.md ──▶ CoT steps 01–17 ──▶ opt-*.md ──▶ canonical JS
 
 ---
 
+
+
 ## Development stack
 
 No web framework and no build step — plain **Node.js ES modules** that read markdown and emit a single self-contained HTML file, plus a headless-browser pass for PDF.
@@ -55,6 +57,8 @@ Why this shape:
 - **AI isolated to Stage 1** → the only nondeterministic, network-dependent, optional part.
 
 ---
+
+
 
 ## Concepts & layout
 
@@ -99,7 +103,7 @@ Why this shape:
 | `.cursor/skills/travel-planning-cot/`        | Agent skill for planning only (no deck build).                                                                                     |
 
 
-**Trip slug** = lowercase `{countries}-{year}` (e.g. `japan-2026`, `china-vietnam-2026`).
+**Trip slug** = lowercase `{countries}-{year}` (e.g. `spain-portugal-2026`). The repo includes a fictional demo at `trips/example-trip/`.
 
 The architecture is **two-stage and decoupled**:
 
@@ -107,6 +111,8 @@ The architecture is **two-stage and decoupled**:
 - **Stage 2 — render** (fully deterministic): same JSON always produces the same deck. No AI, no network.
 
 ---
+
+
 
 ## First-time setup
 
@@ -197,7 +203,11 @@ If MCP is unavailable, planning still works — rates and venue ratings are flag
 
 ---
 
+
+
 ## The complete process
+
+
 
 ### Phase 0 — Profile
 
@@ -237,20 +247,24 @@ cd mcp/tripadvisor-server && npm install        # TripAdvisor only
 
 
 ```markdown
-What countries: China and Vietnam
-Home airport: ATL
+What countries: Spain and Portugal
+Home airport: SFO
 Passengers: 2
-Cabin preference: economy (compare business on long-hauls)
-Travel Date: Sept 1, 2026 - Sept 14, 2026
+Cabin preference: economy
+Travel Date: May 10, 2026 - May 20, 2026
 Travel style: Relaxed and cultural experience
-Hotel: 4 or 5 stars, resorts OK, on US booking sites
-How many rooms needed: One room with king bed or two queen
-Travel Partner: Traveling with wife (great shape)
-Total budget: $20,000, splurge in Vietnam
+Hotel: 3 or 4 stars on major booking sites
+How many rooms needed: One room with king bed
+Travel Partner: Traveling with partner
+Total budget: $12,000
 Top interests: shopping, nature, food, history
 Physical limitations: none
-Deal-breakers: large crowds, heat
+Deal-breakers: large crowds, extreme heat
 ```
+
+See also the committed demo at [`trips/example-trip/profile.md`](trips/example-trip/profile.md). Personal folders such as `trips/china-vietnam-2026/` and `trips/japan-2026/` are gitignored so real plans stay local.
+
+
 
 ### Phase 1 — CoT planning (steps 01–17)
 
@@ -273,13 +287,13 @@ Steps and dependencies are listed in `.cursor/skills/travel-cot-deck/prompts.md`
 
 ### Phase 2 — Print sources (`opt-*.md`)
 
-For each step, write `opt-NN-step-name.md` containing **only the `## Output` section** plus frontmatter:
+For each step, write `opt-NN-step-name.md` containing **only the** `## Output` **section** plus frontmatter:
 
 ```yaml
 ---
 step: "06-food-dining"
 title: "Food & Dining"
-trip: "china-vietnam-2026"
+trip: "example-trip"
 hero-image: https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1200&q=80
 ---
 ```
@@ -344,6 +358,8 @@ opt-*.md ─▶ fill-from-opt.js ─▶ JSON ─▶ fill-dashboard.js ─▶ bui
 - `export-pdf.js` — renders each slide on a fixed 1280×720 canvas, auto-scales to fit one page, re-runs the inlined D3 map scripts, and merges to `deck.pdf`.
 
 ---
+
+
 
 ## From sidecars to deck
 
@@ -415,25 +431,27 @@ flowchart TB
 3. `**aspect-enrich.js**` — sidecars also **merge into** other aspects (e.g. `restaurant-comparison.md` → food-dining JSON) even when building from `opt-06-food-dining.md`.
 4. `**build.js**` — renders one slide (or slide group) per JSON file using the template from `aspect-manifest.json`.
 
+
+
 ### Step 1 — Get sidecars (CoT + MCP)
 
 1. Complete [First-time setup](#first-time-setup) (`.env`, `.cursor/mcp.json`, `npm install` in `mcp/tripadvisor-server`).
 2. Run the planning workflow with the `**travel-cot-deck**` or `**travel-planning-cot**` skill, or ask the agent explicitly:
 
 ```
-Run the travel-cot-deck workflow for china-vietnam-2026.
+Run the travel-cot-deck workflow for example-trip.
 Use SerpAPI MCP for Step 05 (hotels) and Steps 06b/10/12 (venues).
-Write full tables to trips/china-vietnam-2026/hotel-comparison.md,
+Write full tables to trips/example-trip/hotel-comparison.md,
 restaurant-comparison.md, attractions-comparison.md, and shopping-comparison.md.
 Mark one **Recommended** row per city. Include an MCP search log at the bottom of each sidecar.
 ```
 
 1. Table contracts and column headers are in `prompts/Travel-Prompt-cot.md` (hotel, TripAdvisor, and shopping preambles).
 
-**Example sidecar header** (`trips/china-vietnam-2026/hotel-comparison.md`):
+**Example sidecar header** (`trips/example-trip/hotel-comparison.md`):
 
 ```markdown
-# Hotel Comparison — china-vietnam-2026
+# Hotel Comparison — example-trip
 
 *Search date: 2026-06-28 · 1 room · 2 adults · 4–5★ · SerpAPI verified*
 
@@ -467,23 +485,23 @@ node scripts/check-serpapi.js
 node scripts/check-google-maps.js
 
 # JSON from opt + sidecars → trip site (default)
-./scripts/run-travel-deck.sh china-vietnam-2026
+./scripts/run-travel-deck.sh example-trip
 
 # + slide deck (and PDF)
-./scripts/run-travel-deck.sh china-vietnam-2026 --deck --pdf
+./scripts/run-travel-deck.sh example-trip --deck --pdf
 
 # Force refresh JSON after editing sidecars or opt files
-./scripts/run-travel-deck.sh china-vietnam-2026 --deck --force-json
+./scripts/run-travel-deck.sh example-trip --deck --force-json
 ```
 
 Manual equivalent:
 
 ```bash
 cd pipeline
-node src/extract/fill-from-opt.js china-vietnam-2026 --force   # opt + sidecars → JSON
-node src/geo/sync-google-geo.js china-vietnam-2026             # if GOOGLE_MAPS_API_KEY set
-node src/build.js china-vietnam-2026 --skip-extract --target deck
-node src/export-pdf.js china-vietnam-2026                      # optional PDF
+node src/extract/fill-from-opt.js example-trip --force   # opt + sidecars → JSON
+node src/geo/sync-google-geo.js example-trip             # if GOOGLE_MAPS_API_KEY set
+node src/build.js example-trip --skip-extract --target deck
+node src/export-pdf.js example-trip                      # optional PDF
 ```
 
 **Output:** `pipeline/dist/<slug>/trip.html` (includes **Maps** section when `hotel-comparison.md` + `shopping-comparison.md` exist) and `pipeline/dist/<slug>/deck.html` for slide layout.
@@ -494,7 +512,7 @@ Sidecars also feed phone maps (no extra step if you already ran the build script
 
 ```bash
 cd pipeline
-node src/export/generate-maps-csv.js china-vietnam-2026
+node src/export/generate-maps-csv.js example-trip
 ```
 
 Import `trips/<slug>/maps/*.csv` into [Google My Maps](https://www.google.com/maps/d/).
@@ -511,17 +529,19 @@ Import `trips/<slug>/maps/*.csv` into [Google My Maps](https://www.google.com/ma
 
 ---
 
+
+
 ## Regenerating pipeline data
 
 `pipeline/data/<slug>/` is a **cache** produced by `fill-from-opt.js` from `trips/<slug>/opt-*.md` and manifest sidecars. It is safe to delete entirely — the folder can stay empty until you extract again.
 
 ```bash
 # Delete all cached JSON (optional)
-rm -rf pipeline/data/china-vietnam-2026 pipeline/data/japan-2026
+rm -rf pipeline/data/<your-trip-slug>
 
 # Regenerate from opt files + sidecars
 cd pipeline
-node src/extract/fill-from-opt.js china-vietnam-2026 --force
+node src/extract/fill-from-opt.js example-trip --force
 ```
 
 Requirements for extract to succeed:
@@ -533,7 +553,7 @@ Requirements for extract to succeed:
 
 ```bash
 cd pipeline
-node src/export/generate-maps-csv.js china-vietnam-2026
+node src/export/generate-maps-csv.js example-trip
 ```
 
 Format: `Name,Description,Address` (Google My Maps import). Addresses resolve from an optional `venue-addresses.json` override file, built-in venue registry, or area+city fallback. Add an `Address` column to any sidecar table to pin exact locations.
@@ -543,10 +563,12 @@ For **hotel proximity maps** (walking distances + static map slides on the deck)
 `pipeline/dist/` is also fully regeneratable:
 
 ```bash
-./scripts/run-travel-deck.sh china-vietnam-2026
+./scripts/run-travel-deck.sh example-trip
 ```
 
 ---
+
+
 
 ## Google Maps integration
 
@@ -555,11 +577,13 @@ travel-genie maps venue data to Google in **two independent paths** — one for 
 ### Two outputs
 
 
-| Output                    | API key required?           | Where it lands                                                                         | Use on trip                                       |
-| ------------------------- | --------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| Output                    | API key required?           | Where it lands                                                                                    | Use on trip                                                                 |
+| ------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | **My Maps CSVs**          | No                          | `trips/<slug>/maps/*.csv` → **manual import** at [Google My Maps](https://www.google.com/maps/d/) | Toggleable layers on phone (Saved → Maps) — **not** regular maps.google.com |
-| **Maps in trip.html**     | Yes (`GOOGLE_MAPS_API_KEY`) | **Maps** section in `trip.html` (sidebar nav)                                          | Static map + venue list + open in Google Maps     |
-| **Proximity deck slides** | Yes (`GOOGLE_MAPS_API_KEY`) | Extra slides after **HOTEL COMPARISON** in `deck.html`                                 | Same proximity data, slide layout                 |
+| **Maps in trip.html**     | Yes (`GOOGLE_MAPS_API_KEY`) | **Maps** section in `trip.html` (sidebar nav)                                                     | Static map + venue list + open in Google Maps                               |
+| **Proximity deck slides** | Yes (`GOOGLE_MAPS_API_KEY`) | Extra slides after **HOTEL COMPARISON** in `deck.html`                                            | Same proximity data, slide layout                                           |
+
+
 
 
 ### Data flow
@@ -621,6 +645,8 @@ Without `GOOGLE_MAPS_API_KEY`, proximity slides still render using **straight-li
 3. Add the key to API restrictions on your credential (all three APIs listed if using “Restrict key”).
 4. Optional — register the `**google-maps**` MCP server in `.cursor/mcp.json` for geocoding during CoT planning (see [First-time setup](#first-time-setup)).
 
+
+
 ### How to run
 
 **Preflight** (from repo root; loads `.env` automatically):
@@ -635,15 +661,15 @@ Expect three `ok` lines (Geocoding, Distance Matrix, Maps Static). If the key is
 
 ```bash
 cd pipeline
-node src/geo/sync-google-geo.js china-vietnam-2026
+node src/geo/sync-google-geo.js example-trip
 ```
 
-Writes / updates `pipeline/data/china-vietnam-2026/google-geo-cache.json`. Re-run whenever you edit hotel, shopping, or restaurant sidecars.
+Writes / updates `pipeline/data/example-trip/google-geo-cache.json`. Re-run whenever you edit hotel, shopping, or restaurant sidecars.
 
 **Build deck with proximity slides**:
 
 ```bash
-./scripts/run-travel-deck.sh china-vietnam-2026 --deck
+./scripts/run-travel-deck.sh example-trip --deck
 ```
 
 When `GOOGLE_MAPS_API_KEY` is in `.env`, `run-travel-deck.sh` runs `sync-google-geo.js` automatically before render.
@@ -652,23 +678,23 @@ Or manually:
 
 ```bash
 cd pipeline
-node src/geo/sync-google-geo.js china-vietnam-2026
-node src/build.js china-vietnam-2026 --skip-extract --target deck
+node src/geo/sync-google-geo.js example-trip
+node src/build.js example-trip --skip-extract --target deck
 ```
 
-Open `pipeline/dist/china-vietnam-2026/deck.html` and scroll past **HOTEL COMPARISON** to the per-city **DISTANCE FROM HOTEL** slides.
+Open `pipeline/dist/example-trip/deck.html` and scroll past **HOTEL COMPARISON** to the per-city **DISTANCE FROM HOTEL** slides.
 
-The same points appear in **`trip.html`** → sidebar **Maps** (static Google map per city, tap distances for directions, CSV links for My Maps import).
+The same points appear in `trip.html` → sidebar **Maps** (static Google map per city, tap distances for directions, CSV links for My Maps import).
 
 ### Cache file
 
 `pipeline/data/<slug>/google-geo-cache.json` stores:
 
 
-| Key         | Contents                                                                    |
-| ----------- | --------------------------------------------------------------------------- |
-| `venues`    | `city|venue name` → `{ lat, lng, source, address? }`                        |
-| `distances` | `city|hotel|venue` → `{ walking: { distance, duration, meters, seconds } }` |
+| Key         | Contents |
+| ----------- | -------- |
+| `venues`    | `city    |
+| `distances` | `city    |
 
 
 Safe to delete; re-run `sync-google-geo.js` to rebuild. Not committed (lives under gitignored `pipeline/data/`).
@@ -701,35 +727,39 @@ Use separate keys for server-side sync vs browser-hosted decks if you need tight
 
 ---
 
+
+
 ## Quick start (fully automated)
 
 **Option A — one shell command** (planning already done, `opt-*.md` exist):
 
 ```bash
 chmod +x scripts/run-travel-deck.sh        # one-time
-./scripts/run-travel-deck.sh china-vietnam-2026
+./scripts/run-travel-deck.sh example-trip
 
-# Output: pipeline/dist/china-vietnam-2026/trip.html  ← open in browser or phone
+# Output: pipeline/dist/example-trip/trip.html  ← open in browser or phone
 # Optional: also build slide deck and PDF
-./scripts/run-travel-deck.sh china-vietnam-2026 --deck --pdf
+./scripts/run-travel-deck.sh example-trip --deck --pdf
 ```
 
 Force a JSON refresh after editing `opt-*.md`:
 
 ```bash
-./scripts/run-travel-deck.sh china-vietnam-2026 --force-json
+./scripts/run-travel-deck.sh example-trip --force-json
 ```
 
 Outputs:
 
 ```
-pipeline/dist/china-vietnam-2026/deck.html
-pipeline/dist/china-vietnam-2026/deck.pdf
+pipeline/dist/example-trip/deck.html
+pipeline/dist/example-trip/deck.pdf
 ```
 
 **Option B — full pipeline from a profile via the agent skill.** See [example prompts](#example-agent-prompts) below.
 
 ---
+
+
 
 ## Running every step individually
 
@@ -747,29 +777,37 @@ Copy the `## Output` section of a single step into its `opt-` file (agent task),
 
 ```bash
 cd pipeline
-node src/extract/fill-from-opt.js china-vietnam-2026          # only missing
-node src/extract/fill-from-opt.js china-vietnam-2026 --force  # rebuild all
+node src/extract/fill-from-opt.js example-trip          # only missing
+node src/extract/fill-from-opt.js example-trip --force  # rebuild all
 ```
+
+
 
 ### 4. Normalize dashboard aspects
 
 ```bash
-node src/extract/fill-dashboard.js china-vietnam-2026
+node src/extract/fill-dashboard.js example-trip
 ```
+
+
 
 ### 5. Render the HTML deck
 
 ```bash
-node src/build.js china-vietnam-2026 --skip-extract           # all slides
-node src/build.js china-vietnam-2026 --skip-extract --only 02-route-optimization
+node src/build.js example-trip --skip-extract           # all slides
+node src/build.js example-trip --skip-extract --only 02-route-optimization
 ```
+
+
 
 ### 6. Export the PDF
 
 ```bash
 npm install --no-save playwright pdf-lib    # one-time
-node src/export-pdf.js china-vietnam-2026
+node src/export-pdf.js example-trip
 ```
+
+
 
 ### 7. Build standalone 8×10 print PDFs (alternative)
 
@@ -777,7 +815,7 @@ A separate workflow builds individual 8×10-inch pages from `opt-*.md` using **p
 
 ```bash
 ./scripts/build-opt-print.sh                                    # all opt-*.md in default trip
-TRIP_DIR=trips/china-vietnam-2026 ./scripts/build-opt-print.sh  # specific trip
+TRIP_DIR=trips/example-trip ./scripts/build-opt-print.sh  # specific trip
 ./scripts/build-opt-print.sh opt-06-food-dining                 # single file
 ./scripts/build-opt-print.sh --html-only                        # skip PDF step
 ```
@@ -792,6 +830,8 @@ Requires `pandoc` and Google Chrome installed locally. Outputs `opt-NN-*-print.h
 
 ---
 
+
+
 ## Example agent prompts
 
 Use these with the `**travel-cot-deck**` skill.
@@ -799,16 +839,18 @@ Use these with the `**travel-cot-deck**` skill.
 ### Run the entire process automatically
 
 ```
-Run the travel-cot-deck workflow for china-vietnam-2026 using
-trips/china-vietnam-2026/profile.md. Execute CoT steps 01–17, write all
+Run the travel-cot-deck workflow for example-trip using
+trips/example-trip/profile.md. Execute CoT steps 01–17, write all
 opt-*.md files, write MCP sidecars (hotel-comparison.md, restaurant-comparison.md,
-attractions-comparison.md, shopping-comparison.md), then build deck.html and deck.pdf.
+attractions-comparison.md, shopping-comparison.md), then build deck.html, trip.html and deck.pdf.
 ```
+
+
 
 ### Build the deck only (planning already complete)
 
 ```
-Build the HTML and PDF deck for china-vietnam-2026. The opt-*.md files and
+Build the HTML and PDF deck for example-trip. The opt-*.md files and
 sidecars already exist — run fill-from-opt --force, sync-google-geo if
 GOOGLE_MAPS_API_KEY is set, then build.js --target deck and export-pdf.js.
 ```
@@ -818,46 +860,56 @@ See [From sidecars to deck](#from-sidecars-to-deck) for how each sidecar maps to
 ### Run one CoT step
 
 ```
-Execute Step 04 (Master Itinerary) for china-vietnam-2026. Read the profile,
+Execute Step 04 (Master Itinerary) for example-trip. Read the profile,
 01-traveler-profile.md, 02-route-optimization.md, and 03-immigration-entry.md
 for context. Use the Step 4 prompt from prompts/Travel-Prompt-cot.md. Write
 04-master-itinerary.md with Reasoning → Output → Validation, then write
 opt-04-master-itinerary.md (Output section only).
 ```
 
+
+
 ### Run a parallel wave
 
 ```
-Run Wave B for china-vietnam-2026 in parallel: steps 05, 06-shopping,
+Run Wave B for example-trip in parallel: steps 05, 06-shopping,
 06-food-dining, 09, 10, 11, 12, 13. All depend on the profile, 01, and 04.
 Write each NN-*.md and its matching opt-*.md. For Step 05 write hotel-comparison.md;
 for 06b/10/12 write restaurant-comparison.md and attractions-comparison.md;
 for shopping write shopping-comparison.md.
 ```
 
+
+
 ### Regenerate all opt files
 
 ```
-Regenerate every opt-*.md for china-vietnam-2026 from the current
+Regenerate every opt-*.md for example-trip from the current
 NN-*.md step files (Output section only, with hero-image frontmatter).
 ```
+
+
 
 ### Redo one step and rebuild
 
 ```
-Redo Step 06-food-dining for china-vietnam-2026, update its opt file, then
+Redo Step 06-food-dining for example-trip, update its opt file, then
 rebuild deck.html and deck.pdf.
 ```
+
+
 
 ### Resume a paused trip
 
 ```
-Resume the travel-cot-deck workflow for china-vietnam-2026. Read
+Resume the travel-cot-deck workflow for example-trip. Read
 00-workflow-state.md, continue from the first pending step through 17,
 generate any missing opt files, then build the deck.
 ```
 
 ---
+
+
 
 ## Troubleshooting
 
@@ -891,6 +943,8 @@ generate any missing opt files, then build the deck.
 
 ---
 
+
+
 ## Workspace rules
 
 
@@ -901,6 +955,8 @@ generate any missing opt files, then build the deck.
 
 ---
 
+
+
 ## Cursor extensions
 
 Extensions installed in Cursor on the author's machine (Jun 2026). List locally with:
@@ -908,6 +964,8 @@ Extensions installed in Cursor on the author's machine (Jun 2026). List locally 
 ```bash
 cursor --list-extensions
 ```
+
+
 
 ### Cursor / remote
 
@@ -919,6 +977,8 @@ cursor --list-extensions
 | `anysphere.remote-ssh`        | Remote SSH                       |
 
 
+
+
 ### Python
 
 
@@ -927,6 +987,8 @@ cursor --list-extensions
 | `ms-python.python`            | Python             |
 | `ms-python.debugpy`           | Python debugger    |
 | `kevinrose.vsc-python-indent` | Python indentation |
+
+
 
 
 ### Java
@@ -945,6 +1007,8 @@ cursor --list-extensions
 | `visualstudioexptteam.intellicode-api-usage-examples` | IntelliCode API examples  |
 
 
+
+
 ### Dart / Flutter / Vue
 
 
@@ -953,6 +1017,8 @@ cursor --list-extensions
 | `dart-code.dart-code` | Dart                 |
 | `dart-code.flutter`   | Flutter              |
 | `vue.volar`           | Vue language support |
+
+
 
 
 ### Docker & containers
@@ -964,6 +1030,8 @@ cursor --list-extensions
 | `ms-azuretools.vscode-containers` | Dev Containers (Microsoft) |
 
 
+
+
 ### Git
 
 
@@ -971,6 +1039,8 @@ cursor --list-extensions
 | ------------------------- | ----------- |
 | `eamodio.gitlens`         | GitLens     |
 | `donjayamanne.githistory` | Git History |
+
+
 
 
 ### Markdown & docs
@@ -986,6 +1056,8 @@ cursor --list-extensions
 | `mafut.vsnotes-todo`                                   | VSNotes todo                |
 
 
+
+
 ### Data & SQL
 
 
@@ -994,6 +1066,8 @@ cursor --list-extensions
 | `mechatroner.rainbow-csv` | Rainbow CSV                |
 | `mtxr.sqltools`           | SQLTools                   |
 | `mtxr.sqltools-driver-pg` | SQLTools PostgreSQL driver |
+
+
 
 
 ### Formatting & quality
@@ -1006,6 +1080,8 @@ cursor --list-extensions
 | `streetsidesoftware.code-spell-checker` | Code Spell Checker |
 
 
+
+
 ### MCP, browser & AI tooling
 
 
@@ -1015,6 +1091,8 @@ cursor --list-extensions
 | `serkan-ozal.browser-devtools-mcp-vscode`      | Browser DevTools MCP (Playwright)                                                   |
 | `google.gemini-cli-vscode-ide-companion`       | Gemini CLI IDE companion                                                            |
 | `specstory.specstory-vscode`                   | SpecStory                                                                           |
+
+
 
 
 ### Other
@@ -1031,6 +1109,8 @@ cursor --list-extensions
 
 
 ---
+
+
 
 ## Reference
 

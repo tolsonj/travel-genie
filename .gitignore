@@ -21,6 +21,16 @@ pipeline/.playwright-browsers/
 .cursor/*
 !.cursor/mcp.json.example
 
+# Personal trip plans (keep local only; public repo ships trips/example-trip/)
+trips/china-vietnam-2026/
+trips/thailand-2026/
+trips/Croatia-2026/
+trips/japan-2026/
+TRAVEL_MASTER*.md
+*.gdoc
+*.gslides
+*.gsheet
+
 # OS / editor
 .DS_Store
 .idea/

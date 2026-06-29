@@ -10,7 +10,7 @@
 //   node src/build.js <trip> --target deck          build deck.html
 //   node src/build.js <trip> --target both          build trip.html + deck.html
 //
-// Default trip: china-vietnam-2026
+// Default trip: example-trip
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { discoverAspects, dataDir, PIPELINE_ROOT } from "./discover.js";
@@ -33,7 +33,7 @@ function parseArgs(argv) {
   if (onlyIdx !== -1) flags.only = args[onlyIdx + 1];
   const targetIdx = args.indexOf("--target");
   if (targetIdx !== -1) flags.target = args[targetIdx + 1];
-  const trip = args.find(a => !a.startsWith("--") && a !== flags.only && a !== flags.target) || "china-vietnam-2026";
+  const trip = args.find(a => !a.startsWith("--") && a !== flags.only && a !== flags.target) || "example-trip";
   return { trip, flags };
 }
 

@@ -126,23 +126,23 @@ Add `pipeline/schema/trip-site.schema.json`:
 
 ```json
 {
-  "trip": "china-vietnam-2026",
+  "trip": "example-trip",
   "meta": {
-    "title": "Tolson | Mondrian HK | Hong Kong · Vietnam",
-    "subtitle": "Sept 1 – 14, 2026 · 2 travelers",
-    "dates": { "start": "2026-09-01", "end": "2026-09-14" },
+    "title": "Alex | Demo Boutique Alfama | Lisbon · Barcelona",
+    "subtitle": "May 10 – 20, 2026 · 2 travelers",
+    "dates": { "start": "2026-05-10", "end": "2026-05-20" },
     "hero_image": "https://…"
   },
   "days": [
     {
       "day": 1,
-      "title": "Tuesday, Sept 1 · En route · ATL → HKG",
+      "title": "Sunday, May 10 · En route · SFO → LIS",
       "location": "In transit",
       "theme": "Travel day",
       "events": [
         {
           "name": "Morning",
-          "lines": ["Final pack; rideshare to ATL"],
+          "lines": ["Rideshare to SFO"],
           "kind": "transit",
           "tags": ["book-now"]
         }
@@ -253,7 +253,7 @@ Add `pipeline/schema/trip-site.schema.json`:
 | DOC1 | Update root `README.md` — site as primary output, PDF secondary | P0 |
 | DOC2 | Update `pipeline/README.md` with site build commands | P0 |
 | DOC3 | Update `.cursor/skills/travel-cot-deck/SKILL.md` build phase | P1 |
-| DOC4 | Add example prompt: “Build trip site for china-vietnam-2026” | P1 |
+| DOC4 | Add example prompt: “Build trip site for example-trip” | P1 |
 
 ### 8.5 [infra] Deployment (v1)
 
@@ -266,7 +266,7 @@ Add `pipeline/schema/trip-site.schema.json`:
 
 | ID | Requirement | Priority |
 |----|-------------|----------|
-| T1 | Snapshot test: `assemble-trip-site` output for `china-vietnam-2026` | P0 |
+| T1 | Snapshot test: `assemble-trip-site` output for `example-trip` | P0 |
 | T2 | Smoke test: built `trip.html` contains one H2 per itinerary day | P0 |
 | T3 | Visual check at 375px viewport — no horizontal scroll on body | P1 |
 
@@ -319,11 +319,11 @@ flowchart TD
 
 ## 11. Live Application Verification Criteria
 
-Use trip slug **`china-vietnam-2026`** (complete JSON cache in repo).
+Use trip slug **`example-trip`** (complete JSON cache in repo).
 
 | # | Check | Pass criteria |
 |---|-------|---------------|
-| V1 | Build | `./scripts/run-travel-build.sh china-vietnam-2026` exits 0; `pipeline/dist/china-vietnam-2026/trip.html` exists |
+| V1 | Build | `./scripts/run-travel-build.sh example-trip` exits 0; `pipeline/dist/example-trip/trip.html` exists |
 | V2 | Offline | Open `trip.html` with network disabled — page renders fully |
 | V3 | Day coverage | HTML contains ≥ 10 day headings matching master itinerary day count |
 | V4 | Event structure | Each day has ≥ 1 `h3` event with detail lines |
@@ -357,7 +357,7 @@ Use trip slug **`china-vietnam-2026`** (complete JSON cache in repo).
 
 | # | Question | Decision |
 |---|----------|---------|
-| Q1 | Trip title source? | **Humanized slug** — `china-vietnam-2026` → `China · Vietnam 2026` |
+| Q1 | Trip title source? | **Humanized slug** — `example-trip` → `Example Trip` |
 | Q2 | Which reference sections? | **Travel-day subset only:** Flights, Hotels, Food & Dining, Immigration, Health & Safety, Contingency |
 | Q3 | Presenter mode link in site header? | **No** — deck.html stays a separate artifact |
 | Q4 | GitHub Pages hosting? | **v1** — include static publish script in scope |
@@ -369,7 +369,7 @@ Use trip slug **`china-vietnam-2026`** (complete JSON cache in repo).
 
 | Metric | Target |
 |--------|--------|
-| Build time (site only) | < 5s for china-vietnam-2026 (no Playwright) |
+| Build time (site only) | < 5s for example-trip (no Playwright) |
 | Mobile Lighthouse Performance | ≥ 90 (static, inlined CSS) |
 | Day/event coverage | 100% of master itinerary days rendered |
 | User-facing command change | One command produces shareable HTML |
