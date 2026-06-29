@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-genie/schema/trip-site.schema.json",
+  "title": "Trip Itinerary Site",
+  "description": "Assembled, cross-aspect model powering trip.html. Built from pipeline/data/<slug>/*.json by assemble-trip-site.js.",
+  "type": "object",
+  "required": ["trip", "meta", "days"],
+  "properties": {
+    "trip": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Humanized trip label, e.g. 'China · Vietnam 2026'" },
+        "subtitle": { "type": "string", "description": "e.g. 'Sept 1–14, 2026 · 2 travelers'" },
+        "dates": {
+          "type": "object",
+          "properties": { "start": { "type": "string" }, "end": { "type": "string" } }
+        },
+        "party": { "type": "string" },
+        "budget": { "type": "string" },
+        "hero_image": { "type": "string" }
+      }
+    },
+    "booking_queue": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "book_now": { "type": "string" },
+          "book_later": { "type": "string" },
+          "deadline": { "type": "string" }
+        }
+      }
+    },
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["day", "title"],
+        "properties": {
+          "day": { "type": "integer" },
+          "title": { "type": "string" },
+          "location": { "type": "string" },
+          "theme": { "type": "string" },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": { "type": "string", "description": "Morning, Afternoon, Evening, or named activity" },
+                "lines": { "type": "array", "items": { "type": "string" } },
+                "kind": { "type": "string", "enum": ["transit", "activity", "dining", "accommodation", "free"] },
+                "tags": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          },
+          "footnotes": {
+            "type": "object",
+            "properties": {
+              "wow_moment": { "type": "string" },
+              "low_energy": { "type": "string" },
+              "rainy_day": { "type": "string" },
+              "transit": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Reference sections rendered after the day-by-day itinerary.",
+      "items": {
+        "type": "object",
+        "required": ["id", "title"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "aspect": { "type": "string", "description": "Source aspect id, e.g. flight-comparison" },
+          "anchor": { "type": "boolean" },
+          "tables": { "type": "array" },
+          "bullets": { "type": "array" },
+          "intro": { "type": "string" }
+        }
+      }
+    }
+  }
+}

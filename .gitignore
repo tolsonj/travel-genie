@@ -10,11 +10,11 @@ secrets.json
 # Dependencies
 node_modules/
 
-# Pipeline build outputs and local tooling
-pipeline/
-
-# Trip planning content (local)
-trips/
+# Pipeline build outputs and local cache (source under pipeline/ is tracked)
+pipeline/data/
+pipeline/dist/
+pipeline/node_modules/
+pipeline/.playwright-browsers/
 
 # Cursor MCP — commit example only; keep live config local (contains SERPAPI_API_KEY)
 !.cursor/

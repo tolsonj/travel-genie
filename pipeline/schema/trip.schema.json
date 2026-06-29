@@ -1,0 +1,784 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://travel-genie/schema/trip.schema.json",
+  "title": "Canonical Trip Aspect",
+  "description": "One extracted aspect of a trip plan. Generic by design so it generalizes across single- and multi-country trips. Every field beyond `aspect`/`type` is optional; the renderer hides absent sections rather than erroring.",
+  "type": "object",
+  "required": ["aspect", "type", "trip"],
+  "properties": {
+    "aspect": { "type": "string", "description": "Aspect id, e.g. route-optimization." },
+    "type": { "type": "string", "description": "Canonical type used to pick a slide template." },
+    "trip": { "type": "string", "description": "Trip slug, e.g. china-vietnam-2026." },
+    "title": { "type": "string" },
+    "slide_title": { "type": "string" },
+
+    "recommended_route": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "name": { "type": "string" },
+        "rationale": { "type": "string" }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hub": { "type": "string" },
+          "days": { "type": "string" },
+          "region": { "type": "string" },
+          "primary_draw": { "type": "string" }
+        }
+      }
+    },
+    "map_nodes": {
+      "type": "array",
+      "description": "Geographic markers plotted from REAL coordinates.",
+      "items": {
+        "type": "object",
+        "required": ["label", "lng", "lat"],
+        "properties": {
+          "label": { "type": "string" },
+          "marker": { "type": "string", "description": "Short glyph shown in the node circle." },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" },
+          "color": { "type": "string" },
+          "labelDy": { "type": "number", "description": "Vertical label offset in px (negative = above)." }
+        }
+      }
+    },
+    "map_bounds": {
+      "type": "object",
+      "properties": {
+        "west": { "type": "number" },
+        "south": { "type": "number" },
+        "east": { "type": "number" },
+        "north": { "type": "number" }
+      }
+    },
+    "highlight_countries": { "type": "array", "items": { "type": "string" } },
+    "country_labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "lng": { "type": "number" },
+          "lat": { "type": "number" }
+        }
+      }
+    },
+    "transit_legs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "mode": { "type": "string" },
+          "duration": { "type": "string" }
+        }
+      }
+    },
+    "flight_snapshot": {
+      "type": "object",
+      "description": "Route slide: distilled MCP flight picks from opt-02.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "picks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "leg": { "type": "string" },
+              "price": { "type": "string" },
+              "stops": { "type": "string" },
+              "duration": { "type": "string" },
+              "airlines": { "type": "string" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        }
+      }
+    },
+    "flights": {
+      "type": "object",
+      "description": "Transport-money slide: structured MCP flight comparison from opt-07.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "trip_total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        },
+        "legs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "recommended": {
+                "type": "object",
+                "properties": {
+                  "price": { "type": "string" },
+                  "stops": { "type": "string" },
+                  "duration": { "type": "string" },
+                  "airlines": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "options": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        },
+        "leg_tables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "caption": { "type": "string" },
+              "columns": { "type": "array", "items": { "type": "string" } },
+              "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        }
+      }
+    },
+    "hotels": {
+      "type": "object",
+      "description": "Hotel-comparison slide: structured MCP hotel comparison tables.",
+      "properties": {
+        "search_date": { "type": "string" },
+        "budget_note": { "type": "string" },
+        "total": {
+          "type": "object",
+          "properties": {
+            "caption": { "type": "string" },
+            "columns": { "type": "array", "items": { "type": "string" } },
+            "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+          }
+        },
+        "picks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "recommended": {
+                "type": "object",
+                "properties": {
+                  "property": { "type": "string" },
+                  "price": { "type": "string" },
+                  "location": { "type": "string" },
+                  "rating": { "type": "string" },
+                  "notes": { "type": "string" }
+                }
+              },
+              "options": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        },
+        "hotel_tables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "caption": { "type": "string" },
+              "columns": { "type": "array", "items": { "type": "string" } },
+              "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "headline": { "type": "string" },
+        "detail": { "type": "string" }
+      }
+    },
+
+    "country_label": { "type": "string", "description": "Profile dashboard: country pill (e.g. JAPAN)." },
+    "intelligence": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": { "type": "string" },
+          "label": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "seasonality": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } },
+        "chosen_column": { "type": "integer", "description": "0-based index of highlighted season column." },
+        "summary": { "type": "string" }
+      }
+    },
+    "validations": {
+      "type": "array",
+      "description": "Profile dashboard: validation checklist items.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    },
+
+    "slide_title_accent": { "type": "string", "description": "Food slide: accent word in title (e.g. STRATEGY)." },
+    "profile_intelligence": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    },
+    "dining_intelligence": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string" },
+        "text": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "regional": {
+      "type": "object",
+      "properties": {
+        "subtitle": { "type": "string" },
+        "caption": { "type": "string" },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "hub": { "type": "string" },
+              "key_dish": { "type": "string" },
+              "detail": { "type": "string" },
+              "neighborhoods": { "type": "string" }
+            }
+          }
+        },
+        "map_nodes": { "$ref": "#/properties/map_nodes" },
+        "map_bounds": { "$ref": "#/properties/map_bounds" },
+        "highlight_countries": { "$ref": "#/properties/highlight_countries" }
+      }
+    },
+    "meal_mapping": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "days": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "day": { "type": ["string", "integer"] },
+              "context": { "type": "string" },
+              "strategy": { "type": "string" },
+              "icon": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "footer": { "type": "string", "description": "Food slide: key experience recommendations line." },
+
+    "parts": {
+      "type": "array",
+      "description": "Master itinerary: one slide per part.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "subtitle": { "type": "string" },
+          "footer": { "type": "string" },
+          "featured_index": { "type": "integer", "description": "0-based index of the large featured day card." },
+          "next_segment": { "type": "string" },
+          "days": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "day": { "type": ["string", "integer"] },
+                "title": { "type": "string" },
+                "location": { "type": "string" },
+                "schedule": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "time": { "type": "string" },
+                      "activity": { "type": "string" }
+                    }
+                  }
+                },
+                "wow_moment": { "type": "string" },
+                "low_energy": { "type": "string" },
+                "rainy_day": { "type": "string" },
+                "transit": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "days": {
+      "type": "array",
+      "description": "Master itinerary fallback: flat days list for a single slide.",
+      "items": { "$ref": "#/properties/parts/items/properties/days/items" }
+    },
+    "subtitle": { "type": "string" },
+    "next_segment": { "type": "string" },
+
+    "section_label": { "type": "string" },
+    "section_kicker": { "type": "string" },
+    "strategy": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "intro": { "type": "string" },
+        "label": { "type": "string" },
+        "tactics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tactic": { "type": "string" },
+              "why": { "type": "string" }
+            }
+          }
+        },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "footnote": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "districts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caption": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+    "top_picks": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": { "type": "string" },
+              "subheading": { "type": "string" },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "property": { "type": "string" },
+                    "area": { "type": "string" },
+                    "type": { "type": "string" },
+                    "price": { "type": "string" },
+                    "why": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "daily_norms": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "footer": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "phrases": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "footer": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "train": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "footer": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "temple": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "footer": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "dining": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "footer": { "type": "string" },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": { "type": "string" },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": { "type": "string" },
+                    "detail": { "type": "string" },
+                    "icon": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "section_kicker": { "type": "string" },
+    "regional": {
+      "type": "object",
+      "properties": {
+        "kicker": { "type": "string" },
+        "left": {
+          "type": "array",
+          "items": { "$ref": "#/properties/hubs/items" }
+        },
+        "right": { "$ref": "#/properties/hubs/items" }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "days": { "type": "string" },
+          "icon": { "type": "string" },
+          "placement": { "type": "string", "enum": ["left", "right"] },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+
+    "philosophy": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "label": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rule": { "type": "string" },
+              "why": { "type": "string" },
+              "icon": { "type": "string" }
+            }
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rule": { "type": "string" },
+              "why": { "type": "string" },
+              "icon": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "themes": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "items": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "fatigue_audit": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } },
+        "verdict": { "type": "string" },
+        "verdict_status": { "type": "string", "enum": ["pass", "warn"] }
+      }
+    },
+    "hubs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "days": { "type": "string" },
+          "icon": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } },
+          "highlights": { "type": "array", "items": { "type": "string" } },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "spotlight": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": { "type": "string" },
+              "caption": { "type": "string" },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": { "type": "string" },
+                    "detail": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "climate": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "text": { "type": "string" },
+        "summary": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "essentials": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "n": { "type": "integer" },
+              "label": { "type": "string" },
+              "detail": { "type": "string" },
+              "icon": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "documents": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": { "type": "string" },
+              "items": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "wardrobe": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "adventure": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "tech": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "health": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "transit_bag": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "flight_outfit": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "luggage": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "bags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": { "type": "string" },
+              "name": { "type": "string" },
+              "role": { "type": "string" }
+            }
+          }
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "checklist": {
+      "type": "object",
+      "properties": {
+        "caption": { "type": "string" },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": { "type": "string" },
+              "items": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+
+    "intro": { "type": "string", "description": "Generic-layout: lead paragraph." },
+    "tables": {
+      "type": "array",
+      "description": "Generic-layout: zero or more tables.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "caption": { "type": "string" },
+          "columns": { "type": "array", "items": { "type": "string" } },
+          "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    },
+    "bullets": {
+      "type": "array",
+      "description": "Generic-layout: grouped bullet lists.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "callouts": {
+      "type": "array",
+      "description": "Generic-layout: status callouts (validation checks, warnings).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["pass", "warn", "info"] },
+          "text": { "type": "string" }
+        }
+      }
+    }
+  }
+}
