@@ -20,7 +20,8 @@ profile.md ──▶ CoT steps 01–17 ──▶ opt-*.md ──▶ canonical JS
 7. [Regenerating pipeline data](#regenerating-pipeline-data)
 8. [Example agent prompts](#example-agent-prompts)
 9. [Troubleshooting](#troubleshooting)
-10. [Cursor extensions](#cursor-extensions)
+10. [Workspace rules](#workspace-rules)
+11. [Cursor extensions](#cursor-extensions)
 
 ---
 
@@ -56,6 +57,7 @@ Why this shape:
 | Path | Purpose |
 |------|---------|
 | `prompts/Travel-Prompt-cot.md` | The 17 chain-of-thought planning prompts (source of truth). |
+| `prompts/start-prompt.md` | Original kickoff prompt describing the task-list approach. |
 | `trips/<slug>/profile.md` | **Your input.** Predefined traveler profile. |
 | `trips/<slug>/NN-*.md` | CoT step outputs (`## Reasoning` → `## Output` → `## Validation`). |
 | `trips/<slug>/opt-NN-*.md` | Print sources — the **`## Output` only** copy of each step. The pipeline reads these. |
@@ -65,14 +67,23 @@ Why this shape:
 | `trips/<slug>/hotel-comparison.md` | Optional SerpAPI Hotels sidecar → dedicated HOTELS deck slide. |
 | `trips/<slug>/restaurant-comparison.md` | Optional SerpAPI TripAdvisor sidecar (restaurants per city). |
 | `trips/<slug>/attractions-comparison.md` | Optional SerpAPI TripAdvisor sidecar (attractions / hidden gems). |
+| `trips/<slug>/shopping-comparison.md` | Optional SerpAPI TripAdvisor sidecar (shopping venues per city). |
+| `pipeline/` | **Local-only (gitignored).** Contains `src/`, `schema/`, `vendor/`, `data/`, `dist/`. Generated on first build. |
 | `pipeline/data/<slug>/*.json` | Canonical extracted data (one file per aspect). **Regeneratable** — see [Regenerating pipeline data](#regenerating-pipeline-data). |
 | `pipeline/dist/<slug>/deck.html` | Self-contained slide deck (maps + data inlined). **Generated** — safe to delete locally. |
 | `pipeline/dist/<slug>/deck.pdf` | One slide per page, 1280×720, backgrounds + maps. **Generated** — safe to delete locally. |
 | `pipeline/schema/aspect-manifest.json` | Registry: aspect → type, slide template, extraction hints. |
-| `mcp/tripadvisor-server/` | Local SerpAPI TripAdvisor MCP server (`search_venues`, `get_venue_details`). |
-| `.cursor/mcp.json.example` | MCP config template (hotels + TripAdvisor). Copy locally — **do not commit** `.cursor/mcp.json`. |
 | `scripts/run-travel-deck.sh` | One-command build: opt files → JSON → HTML → PDF. |
-| `.cursor/skills/travel-cot-deck/` | Agent skill that drives the whole workflow. |
+| `scripts/build-opt-print.sh` | Standalone 8×10 print builder: `opt-*.md` → HTML (pandoc) → PDF (headless Chrome). |
+| `scripts/check-serpapi.js` | SerpAPI preflight: validates API key, account status, and TripAdvisor engine access. |
+| `scripts/opt-print.css` | Stylesheet for print output — 8×10 page, hero banners, tables, Caveat/Inter fonts. |
+| `mcp/tripadvisor-server/` | Local SerpAPI TripAdvisor MCP server (`search_venues`, `get_venue_details`). |
+| `poc/` | Proof-of-concept route-optimization slide prototypes (HTML + screenshots). |
+| `.env.example` | Template for local `.env` (API keys). |
+| `.cursor/mcp.json.example` | MCP config template (hotels + TripAdvisor). Copy locally — **do not commit** `.cursor/mcp.json`. |
+| `.cursor/rules/ironbee-devtools-use.mdc` | Workspace rule: enforce IronBee DevTools for all browser verification. |
+| `.cursor/skills/travel-cot-deck/` | Agent skill that drives the full workflow (profile → CoT → opt → deck). |
+| `.cursor/skills/travel-planning-cot/` | Agent skill for planning only (no deck build). |
 
 **Trip slug** = lowercase `{countries}-{year}` (e.g. `japan-2026`, `china-vietnam-2026`).
 
@@ -85,13 +96,31 @@ The architecture is **two-stage and decoupled**:
 
 ## First-time setup
 
-After cloning the repo, configure MCP and install the local TripAdvisor server **once**:
+After cloning the repo you will notice that `pipeline/` and `trips/` are **gitignored** — they are generated/populated locally and never committed. The repo ships only source code, prompts, MCP server source, build scripts, and configuration examples.
 
-### 1. SerpAPI key
+The workspace doubles as an **Obsidian vault** (`.obsidian/` is present). Step outputs use `[[wikilinks]]` for cross-references; open the repo root in Obsidian for linked navigation.
+
+### 1. Environment variables
+
+Copy the example and fill in your keys:
+
+```bash
+cp .env.example .env
+```
+
+| Variable | Required | Purpose |
+|----------|----------|---------|
+| `ANTHROPIC_API_KEY` | optional | Stage 1 extraction (`extract.js`) via Anthropic. Override model with `ANTHROPIC_MODEL`. |
+| `OPENAI_API_KEY` | optional | Stage 1 extraction via OpenAI. Override model with `OPENAI_MODEL`. |
+| `OPENCLAW_GATEWAY_TOKEN` | optional | Discord / OpenClaw gateway integration (see `Discord Setup.md`). |
+
+At least one AI key is needed only if you run Stage 1 extraction with `extract.js`. Building from `opt-*.md` requires **no API key**.
+
+### 2. SerpAPI key
 
 Get a free key at [serpapi.com/manage-api-key](https://serpapi.com/manage-api-key) (~100 searches/mo on the free tier). One key powers both hotel and TripAdvisor MCP servers.
 
-### 2. Cursor MCP config
+### 3. Cursor MCP config
 
 Copy the example config and add your key:
 
@@ -110,7 +139,7 @@ Edit `.cursor/mcp.json` — replace `<your_key>` with your SerpAPI key in **both
 
 Alternatively, merge the same JSON blocks into **Cursor → Settings → MCP** instead of using a project-level file.
 
-### 3. Install TripAdvisor MCP dependencies
+### 4. Install TripAdvisor MCP dependencies
 
 Hotels MCP needs no local install (`npx` fetches it). TripAdvisor MCP is local:
 
@@ -120,11 +149,11 @@ cd mcp/tripadvisor-server && npm install
 
 Run from the **repo root** when starting the server (Cursor resolves `mcp/tripadvisor-server/index.js` relative to the workspace).
 
-### 4. Restart Cursor
+### 5. Restart Cursor
 
 MCP servers load at startup. After editing `mcp.json` or installing dependencies, restart Cursor (or reload MCP from Settings).
 
-### 5. Verify MCP is connected
+### 6. Verify MCP is connected
 
 In a Cursor chat, ask the agent to list MCP tools or run a test query:
 
@@ -135,12 +164,13 @@ If MCP is unavailable, planning still works — rates and venue ratings are flag
 
 ### What to commit vs keep local
 
-| Commit | Keep local |
-|--------|------------|
-| `mcp/tripadvisor-server/` source + `package-lock.json` | `mcp/tripadvisor-server/node_modules/` |
-| `.cursor/mcp.json.example` | `.cursor/mcp.json` (API key) |
-| `pipeline/src/`, `pipeline/schema/`, `prompts/` | `pipeline/dist/` (regenerate with build) |
-| `trips/<slug>/opt-*.md` + sidecars (your choice) | `pipeline/data/` optional (regenerate from opt files) |
+| Commit | Keep local (gitignored) |
+|--------|------------------------|
+| `prompts/`, `scripts/`, `mcp/tripadvisor-server/` source | `mcp/tripadvisor-server/node_modules/` |
+| `.cursor/mcp.json.example`, `.env.example` | `.cursor/mcp.json`, `.env` (API keys) |
+| `.cursor/rules/`, `.cursor/skills/` | `.cursor/*` (other Cursor state) |
+| `poc/` (prototypes) | `pipeline/` (entire directory — regenerate with build) |
+| — | `trips/` (all trip content — local planning data) |
 
 ---
 
@@ -249,6 +279,7 @@ Optional full comparison tables: `trips/<slug>/hotel-comparison.md` (manifest si
 |---------|----------------|----------|
 | `restaurant-comparison.md` | Step 06b | Food & dining slide (`dining_intelligence`, `venue_snapshot`) |
 | `attractions-comparison.md` | Steps 10, 12 | Culture & museums slide (`spotlight`) and hidden gems slide (`panels`) |
+| `shopping-comparison.md` | Step 06 (shopping) | Shopping slide (venue ratings per city) |
 
 Per-city table format:
 
@@ -376,7 +407,20 @@ npm install --no-save playwright pdf-lib    # one-time
 node src/export-pdf.js china-vietnam-2026
 ```
 
-### 7. Verify
+### 7. Build standalone 8×10 print PDFs (alternative)
+
+A separate workflow builds individual 8×10-inch pages from `opt-*.md` using **pandoc** and **headless Chrome** (no pipeline needed):
+
+```bash
+./scripts/build-opt-print.sh                                    # all opt-*.md in default trip
+TRIP_DIR=trips/china-vietnam-2026 ./scripts/build-opt-print.sh  # specific trip
+./scripts/build-opt-print.sh opt-06-food-dining                 # single file
+./scripts/build-opt-print.sh --html-only                        # skip PDF step
+```
+
+Requires `pandoc` and Google Chrome installed locally. Outputs `opt-NN-*-print.html` and `opt-NN-*-print.pdf` beside each source file. Stylesheet: `scripts/opt-print.css`.
+
+### 8. Verify
 
 - `deck.html` opens offline (everything is inlined).
 - PDF page count equals the number of slides.
@@ -455,6 +499,7 @@ generate any missing opt files, then build the deck.
 | Aspect renders with "generic layout" footer | Add/adjust its entry in `pipeline/schema/aspect-manifest.json`, then rebuild. |
 | JSON didn't update after editing opt file | Re-run with `--force` / `--force-json`. |
 | `playwright` missing | `cd pipeline && npm install --no-save playwright pdf-lib`. |
+| SerpAPI preflight fails | Run `node scripts/check-serpapi.js` with `SERPAPI_API_KEY` in env. Checks account status and TripAdvisor engine access without consuming search credits. |
 | SerpAPI MCP not connected | Copy `.cursor/mcp.json.example` → `.cursor/mcp.json`, add key, restart Cursor. Step 05 falls back to **unverified** rate estimates. |
 | SerpAPI TripAdvisor MCP not connected | Run `cd mcp/tripadvisor-server && npm install`; ensure `serpapi-tripadvisor` is in `.cursor/mcp.json`; restart Cursor. Steps 06b/10/12 fall back to **unverified** venue ratings. |
 | `Error: SERPAPI_API_KEY environment variable is required` | Key missing from `.cursor/mcp.json` `env` block for the failing server. |
@@ -462,12 +507,22 @@ generate any missing opt files, then build the deck.
 | SerpAPI quota exceeded | Reduce `get_hotel_details` / `get_venue_details` calls (recommended pick only); upgrade SerpAPI plan or re-run cities on next billing cycle. |
 | No HOTEL COMPARISON slide in deck | Ensure `trips/<slug>/hotel-comparison.md` exists; rebuild with `--force-json`. |
 | Restaurant/attraction sidecars missing | Ensure `trips/<slug>/restaurant-comparison.md` and `attractions-comparison.md` exist; rebuild with `--force-json`. |
+| Shopping sidecar missing | Ensure `trips/<slug>/shopping-comparison.md` exists; rebuild with `--force-json`. |
+| `pandoc` missing (print build) | Install pandoc: `brew install pandoc` (macOS). Required only for `build-opt-print.sh`, not for the deck pipeline. |
+
+---
+
+## Workspace rules
+
+| Rule file | Scope | Purpose |
+|-----------|-------|---------|
+| `.cursor/rules/ironbee-devtools-use.mdc` | always applied | Requires all browser-based verification to use **IronBee DevTools** (Playwright MCP). Forbids Cursor's built-in browser agent for this workspace. Defines the verify-before-finish workflow: navigate → exercise change → screenshot/ARIA snapshot → check console errors. |
 
 ---
 
 ## Cursor extensions
 
-Extensions installed in Cursor on the author's machine (Mar 2026). List locally with:
+Extensions installed in Cursor on the author's machine (Jun 2026). List locally with:
 
 ```bash
 cursor --list-extensions
@@ -556,6 +611,7 @@ cursor --list-extensions
 
 | Extension | Purpose |
 |-----------|---------|
+| `ironbee-ai.ironbee-devtools-vscode-extension` | IronBee DevTools — Playwright browser MCP (primary browser tool for this workspace) |
 | `serkan-ozal.browser-devtools-mcp-vscode` | Browser DevTools MCP (Playwright) |
 | `google.gemini-cli-vscode-ide-companion` | Gemini CLI IDE companion |
 | `specstory.specstory-vscode` | SpecStory |
@@ -575,8 +631,13 @@ cursor --list-extensions
 
 ## Reference
 
-- Pipeline internals: [`pipeline/README.md`](pipeline/README.md)
+- Pipeline internals: [`pipeline/README.md`](pipeline/README.md) (local only — generated on first build)
 - CoT prompts: [`prompts/Travel-Prompt-cot.md`](prompts/Travel-Prompt-cot.md)
+- Kickoff prompt: [`prompts/start-prompt.md`](prompts/start-prompt.md)
 - Skill (full workflow): [`.cursor/skills/travel-cot-deck/SKILL.md`](.cursor/skills/travel-cot-deck/SKILL.md)
 - Step registry: [`.cursor/skills/travel-cot-deck/prompts.md`](.cursor/skills/travel-cot-deck/prompts.md)
 - Planning-only (no deck): [`.cursor/skills/travel-planning-cot/SKILL.md`](.cursor/skills/travel-planning-cot/SKILL.md)
+- Workspace rule (IronBee): [`.cursor/rules/ironbee-devtools-use.mdc`](.cursor/rules/ironbee-devtools-use.mdc)
+- Discord / OpenClaw notes: [`Discord Setup.md`](Discord%20Setup.md)
+- Environment template: [`.env.example`](.env.example)
+- MCP config template: [`.cursor/mcp.json.example`](.cursor/mcp.json.example)
