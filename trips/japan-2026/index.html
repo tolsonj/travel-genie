@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japan 2026 — Itinerary</title>
+  <style>
+/* ── Reset & base ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: #fafaf8;
+  color: #1a1a1a;
+}
+
+a { color: inherit; }
+
+/* ── Hero ─────────────────────────────────────────────────────────── */
+.site-hero {
+  background: #1c2b3a;
+  color: white;
+  padding: 3rem 1rem 2rem;
+}
+
+.site-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.site-hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.site-hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+.site-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* ── Layout: sidebar + main ───────────────────────────────────────── */
+.site-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Sidebar day menu ─────────────────────────────────────────────── */
+.site-sidebar {
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.site-sidebar-header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #efefef;
+}
+
+.site-sidebar-trip {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1c2b3a;
+  text-decoration: none;
+  line-height: 1.35;
+}
+
+.site-sidebar-trip:hover {
+  color: #3d5a73;
+}
+
+.site-sidebar-days {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  padding: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.site-sidebar-days::-webkit-scrollbar { display: none; }
+
+.site-sidebar-sections {
+  display: none;
+}
+
+.site-sidebar-link {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 0.65rem 1rem;
+  font-size: 0.8rem;
+  color: #555;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  border-right: 1px solid #f0f0f0;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.site-sidebar-link:last-child {
+  border-right: none;
+}
+
+.site-sidebar-link-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1c2b3a;
+  white-space: nowrap;
+}
+
+.site-sidebar-link-weekday {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 0.1rem;
+  white-space: nowrap;
+}
+
+.site-sidebar-link--active,
+.site-sidebar-link:hover {
+  background: #f5f7f9;
+}
+
+.site-sidebar-link--active .site-sidebar-link-date,
+.site-sidebar-link:hover .site-sidebar-link-date {
+  color: #1c2b3a;
+}
+
+.site-sidebar-link--active {
+  border-bottom-color: #1c2b3a;
+}
+
+.site-sidebar-link--section {
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-right: none;
+  border-left: 3px solid transparent;
+}
+
+.site-sidebar-link--section.site-sidebar-link--active {
+  border-bottom-color: transparent;
+  border-left-color: #1c2b3a;
+  background: #f5f7f9;
+}
+
+/* ── Section wrapper ──────────────────────────────────────────────── */
+.site-section-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ── Booking queue ────────────────────────────────────────────────── */
+.site-booking-queue {
+  background: #f5f4f1;
+  padding: 1.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.site-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1c2b3a;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Tables ───────────────────────────────────────────────────────── */
+.site-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.site-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.site-table th {
+  background: #1c2b3a;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.site-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e5e5e5;
+  vertical-align: top;
+}
+
+.site-table tr:last-child td { border-bottom: none; }
+
+.site-table tr:nth-child(even) td { background: #fafaf8; }
+
+/* ── Itinerary ────────────────────────────────────────────────────── */
+.site-itinerary {
+  padding: 2rem 0;
+}
+
+.site-day {
+  margin-bottom: 2.5rem;
+}
+
+.site-day-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1c2b3a;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #1c2b3a;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.site-day-events {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.site-event {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  border: 1px solid #efefef;
+}
+
+.site-event-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.site-event-lines {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-event-lines li {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #2a2a2a;
+}
+
+.site-event-lines li + li {
+  margin-top: 0.3rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.site-day-divider {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 2rem 0;
+}
+
+.site-day-footnotes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.site-footnote {
+  font-size: 0.8rem;
+  color: #666;
+  background: #f5f5f3;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.site-footnote--wow {
+  background: #f0f7f0;
+  color: #2d6a2d;
+}
+
+.site-footnote--transit {
+  background: #f0f4ff;
+  color: #1a3a8f;
+}
+
+/* ── Reference sections ───────────────────────────────────────────── */
+.site-reference-sections {
+  padding: 2rem 0;
+  background: #f5f4f1;
+}
+
+.site-ref-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0de;
+}
+
+.site-ref-section:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.site-ref-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1c2b3a;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.site-ref-intro {
+  font-size: 0.875rem;
+  color: #555;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+.site-footer {
+  background: #1c2b3a;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 1.5rem 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.site-footer-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Responsive: 768px+ — left sidebar ──────────────────────────── */
+@media (min-width: 768px) {
+  .site-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .site-sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    width: 220px;
+    flex-shrink: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    border-bottom: none;
+    border-right: 1px solid #e5e5e5;
+    box-shadow: 1px 0 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .site-sidebar-days {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
+  .site-sidebar-link {
+    border-right: none;
+    border-bottom: 1px solid #f5f5f5;
+    border-left: 3px solid transparent;
+  }
+
+  .site-sidebar-link--day.site-sidebar-link--active {
+    border-bottom-color: #f5f5f5;
+    border-left-color: #1c2b3a;
+  }
+
+  .site-sidebar-sections {
+    display: block;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 0.25rem;
+  }
+
+  .site-main .site-section-inner {
+    max-width: none;
+    padding: 0 2rem;
+  }
+}
+
+/* ── Responsive: 640px+ ───────────────────────────────────────────── */
+@media (min-width: 640px) {
+  .site-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .site-event {
+    padding: 1rem 1.5rem;
+  }
+
+  .site-day-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* ── Print / PDF ──────────────────────────────────────────────────── */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+
+  .site-nav,
+  .site-sidebar,
+  .site-footer,
+  .site-booking-queue {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 11pt;
+  }
+
+  .site-hero {
+    background: #1c2b3a !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .site-day {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .site-day-title {
+    page-break-before: auto;
+  }
+
+  .site-event {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .site-table th {
+    background: #1c2b3a !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+/* Bullet groups (reference sections) */
+.site-bullet-group { margin: 1rem 0; }
+.site-bullet-heading { font-size: 1rem; font-weight: 600; color: #1c2b3a; margin-bottom: 0.4rem; }
+.site-bullet-list { padding-left: 1.5rem; margin: 0; }
+.site-bullet-list li { font-size: 0.9rem; line-height: 1.55; color: #2a2a2a; margin-bottom: 0.2rem; }
+.site-ref-note { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.75rem; }
+.site-table-caption { font-size: 0.9rem; font-weight: 600; color: #1c2b3a; margin: 1rem 0 0.25rem; }
+
+/* ── Maps section ─────────────────────────────────────────────────── */
+.site-maps-section { background: #f4f7fa; }
+.site-map-legend {
+  font-size: 0.85rem;
+  color: #56636f;
+  margin: 0 0 1rem;
+}
+.site-map-legend-h { color: #2980b9; font-weight: 700; }
+.site-map-legend-alt { color: #8e44ad; font-weight: 700; }
+.site-map-legend-s { color: #c9920d; font-weight: 700; }
+.site-map-legend-r { color: #27ae60; font-weight: 700; }
+.site-map-cities {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.site-map-city {
+  background: white;
+  border: 1px solid #e0e6ed;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.site-map-city-head {
+  padding: 1rem 1rem 0.5rem;
+}
+.site-map-city-title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #1c2b3a;
+}
+.site-map-city-sub {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+.site-map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.35rem;
+}
+.site-map-open-all,
+.site-map-import {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a73e8;
+  text-decoration: none;
+}
+.site-map-open-all:hover,
+.site-map-import:hover { text-decoration: underline; }
+.site-map-hotels {
+  margin: 0.75rem 0 0;
+  padding: 0.65rem 0.75rem;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e8ecf0;
+}
+.site-map-hotels-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+}
+.site-map-hotels-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+.site-map-hotel-alt { margin: 0.15rem 0; }
+.site-map-figure { margin: 0; }
+.site-map-caption {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+  color: #888;
+  background: #fafbfc;
+  border-top: 1px solid #e8ecf0;
+}
+.site-map-steps {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.55;
+}
+.site-map-steps li { margin: 0.35rem 0; }
+.site-map-steps a { color: #1a73e8; }
+.site-map-csv-subtitle {
+  font-size: 0.9rem;
+  margin: 1rem 0 0.4rem;
+  color: #1c2b3a;
+}
+.site-map-img-link { display: block; line-height: 0; }
+.site-map-img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  border-top: 1px solid #e8ecf0;
+  border-bottom: 1px solid #e8ecf0;
+}
+.site-map-fallback {
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #eef2f6;
+}
+.site-map-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+.site-map-venue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.site-map-venue {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  padding: 0.6rem 1rem;
+  border-top: 1px solid #f0f2f5;
+  font-size: 0.88rem;
+}
+.site-map-venue-name { font-weight: 600; color: #1a1a1a; }
+.site-map-venue-kind { color: #888; font-size: 0.8rem; }
+.site-map-venue-dist { text-align: right; font-size: 0.82rem; }
+.site-map-venue-dist a { color: #1a73e8; text-decoration: none; }
+.site-map-venue-dist a:hover { text-decoration: underline; }
+.site-map-layer-downloads {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid #d4e4f7;
+  border-radius: 8px;
+}
+.site-map-layer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.65rem 1rem;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.site-map-layer-grid li { margin: 0; }
+.site-map-layer-btn {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  background: #1a73e8;
+  color: #fff !important;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-map-layer-btn:hover { background: #1557b0; }
+.site-map-layer-grid .site-map-csv-meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  text-align: center;
+}
+.site-map-csv {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dde3ea;
+}
+.site-map-csv-title { font-size: 1rem; margin: 0 0 0.35rem; color: #1c2b3a; }
+.site-map-csv-note { font-size: 0.85rem; color: #666; margin: 0 0 0.75rem; }
+.site-map-csv-note a { color: #1a73e8; }
+.site-map-csv-list { margin: 0; padding-left: 1.25rem; font-size: 0.9rem; }
+.site-map-csv-meta { color: #999; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+  <header class="site-hero">
+    <div class="site-hero-inner">
+      <div class="site-hero-title">Japan 2026</div>
+      <div class="site-hero-subtitle">2026-07-31 → 2026-08-07 · 1 traveler</div>
+      <div class="site-hero-meta">
+        <span class="site-meta-item">💵 $5,000 total all-in</span>
+        <span class="site-meta-item">👥 1</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="site-layout">
+
+  <aside class="site-sidebar" aria-label="Trip days">
+    <div class="site-sidebar-header">
+      <a class="site-sidebar-trip" href="#itinerary">Japan 2026</a>
+    </div>
+    <nav class="site-sidebar-days">
+      <a class="site-sidebar-link site-sidebar-link--day" href="#day-1">
+        <span class="site-sidebar-link-date">Jul 31</span>
+        <span class="site-sidebar-link-weekday">Friday</span>
+      </a>
+      <a class="site-sidebar-link site-sidebar-link--day" href="#day-2">
+        <span class="site-sidebar-link-date">Aug 1</span>
+        <span class="site-sidebar-link-weekday">Saturday</span>
+      </a>
+      <a class="site-sidebar-link site-sidebar-link--day" href="#day-3">
+        <span class="site-sidebar-link-date">Aug 2</span>
+        <span class="site-sidebar-link-weekday">Sunday</span>
+      </a>
+      <a class="site-sidebar-link site-sidebar-link--day" href="#day-4">
+        <span class="site-sidebar-link-date">Aug 3</span>
+        <span class="site-sidebar-link-weekday">Monday</span>
+      </a>
+      <a class="site-sidebar-link site-sidebar-link--day" href="#day-5">
+        <span class="site-sidebar-link-date">Aug 4</span>
+        <span class="site-sidebar-link-weekday">Tuesday</span>
+      </a>
+      <a class="site-sidebar-link site-sidebar-link--day" href="#day-6">
+        <span class="site-sidebar-link-date">Aug 5</span>
+        <span class="site-sidebar-link-weekday">Wednesday</span>
+      </a>
+      <a class="site-sidebar-link site-sidebar-link--day" href="#day-7">
+        <span class="site-sidebar-link-date">Aug 6</span>
+        <span class="site-sidebar-link-weekday">Thursday</span>
+      </a>
+      <a class="site-sidebar-link site-sidebar-link--day" href="#day-8">
+        <span class="site-sidebar-link-date">Aug 7</span>
+        <span class="site-sidebar-link-weekday">Friday</span>
+      </a>
+    </nav>
+    <nav class="site-sidebar-sections" aria-label="Reference sections">
+      <a class="site-sidebar-link site-sidebar-link--section" href="#maps">Maps</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#flights">Flights</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#hotels">Hotels</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#restaurants">Restaurants</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#attractions">Attractions</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#shopping-comparison">Shopping</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#food">Food &amp; Dining</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#immigration">Immigration</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#health">Health &amp; Safety</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#contingency">Contingency</a>
+    </nav>
+  </aside>
+
+  <div class="site-main">
+
+  <section class="site-booking-queue" id="booking-queue">
+    <div class="site-section-inner">
+      <h2 class="site-section-title">Booking Queue</h2>
+      <div class="site-table-wrap">
+        <table class="site-table">
+          <thead><tr><th>Book Now</th><th>Book Later</th><th>Deadline</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>ATL→HND + KIX→ATL</td>
+              <td>Wagyu Bungo Gion reservation</td>
+              <td>Flights: T-90d</td>
+            </tr>
+            <tr>
+              <td>Tokyo + Kyoto hotels (refundable)</td>
+              <td>Enoshima day — no booking needed</td>
+              <td>Hotels: T-45d</td>
+            </tr>
+            <tr>
+              <td>Shinkansen Tokyo→Kyoto Aug 4 PM</td>
+              <td>teamLab Planets if rainy-day swap</td>
+              <td>Rail: T-30d</td>
+            </tr>
+            <tr>
+              <td>Shibuya Sky sunset slot</td>
+              <td>—</td>
+              <td>T-14d</td>
+            </tr>
+            <tr>
+              <td>Travel insurance</td>
+              <td>—</td>
+              <td>Before final payment</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <main class="site-itinerary" id="itinerary">
+    <div class="site-section-inner">
+      
+        <article class="site-day" id="day-1">
+          <h2 class="site-day-title">Day 1 — Friday, Jul 31 · En route · ATL → HND</h2>
+          <div class="site-day-events">
+            
+            <div class="site-event">
+              <h3 class="site-event-name">Morning</h3>
+              <ul class="site-event-lines">
+              <li>Final pack; MARTA/rideshare to ATL</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Afternoon</h3>
+              <ul class="site-event-lines">
+              <li>Depart ATL (Delta nonstop ~1:30 PM or connection)</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Evening</h3>
+              <ul class="site-event-lines">
+              <li>In flight — sleep if possible (eastbound)</li>
+              </ul>
+            </div>
+          </div>
+          
+        </article>
+        <hr class="site-day-divider" />
+
+        <article class="site-day" id="day-2">
+          <h2 class="site-day-title">Day 2 — Saturday, Aug 1 · SOFT DAY · Arrive Tokyo</h2>
+          <div class="site-day-events">
+            
+            <div class="site-event">
+              <h3 class="site-event-name">Morning</h3>
+              <ul class="site-event-lines">
+              <li>Land HND (~3:00–4:00 PM typical); Tokyo Monorail or Keikyu to city; drop bags at [[05-accommodation</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Afternoon</h3>
+              <ul class="site-event-lines">
+              <li>Late brunch near Ueno — Ameyoko market stalls or hotel café; slow settle</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Evening</h3>
+              <ul class="site-event-lines">
+              <li>Gentle Ueno Park pond walk OR early night</li>
+              </ul>
+            </div>
+          </div>
+          
+        </article>
+        <hr class="site-day-divider" />
+
+        <article class="site-day" id="day-3">
+          <h2 class="site-day-title">Day 3 — Sunday, Aug 2 · Tokyo · Temple + city views</h2>
+          <div class="site-day-events">
+            
+            <div class="site-event">
+              <h3 class="site-event-name">Morning</h3>
+              <ul class="site-event-lines">
+              <li>Senso-ji (Asakusa) — depart hotel by 6:45 AM (crowd/heat avoidance)</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Afternoon</h3>
+              <ul class="site-event-lines">
+              <li>AC lunch [[06-food-dining</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Evening</h3>
+              <ul class="site-event-lines">
+              <li>Shibuya Sky — pre-booked sunset slot (~6:30 PM Aug) for city-nature panorama</li>
+              </ul>
+            </div>
+          </div>
+          
+        </article>
+        <hr class="site-day-divider" />
+
+        <article class="site-day" id="day-4">
+          <h2 class="site-day-title">Day 4 — Monday, Aug 3 · Tokyo · Perfect-day Enoshima + shopping</h2>
+          <div class="site-day-events">
+            
+            <div class="site-event">
+              <h3 class="site-event-name">Morning</h3>
+              <ul class="site-event-lines">
+              <li>Late brunch in Shimokitazawa (vintage cafés) — profile slow start</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Afternoon</h3>
+              <ul class="site-event-lines">
+              <li>Enoshima day trip — Odakyu Line from Shinjuku (~1h15); island beach walk, Iwaya caves, sea views</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Evening</h3>
+              <ul class="site-event-lines">
+              <li>Return Tokyo; optional Omotesando evening stroll (architecture + boutiques)</li>
+              </ul>
+            </div>
+          </div>
+          
+        </article>
+        <hr class="site-day-divider" />
+
+        <article class="site-day" id="day-5">
+          <h2 class="site-day-title">Day 5 — Tuesday, Aug 4 · SOFT HUB DAY · Tokyo → Kyoto</h2>
+          <div class="site-day-events">
+            
+            <div class="site-event">
+              <h3 class="site-event-name">Morning</h3>
+              <ul class="site-event-lines">
+              <li>Checkout; slow Ueno neighborhood coffee; pack</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Afternoon</h3>
+              <ul class="site-event-lines">
+              <li>Tokaido Shinkansen Tokyo/Shinagawa → Kyoto (~2h15); reserved seat; late lunch ekiben on train</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Evening</h3>
+              <ul class="site-event-lines">
+              <li>Check in [[05-accommodation</li>
+              </ul>
+            </div>
+          </div>
+          
+        </article>
+        <hr class="site-day-divider" />
+
+        <article class="site-day" id="day-6">
+          <h2 class="site-day-title">Day 6 — Wednesday, Aug 5 · Kyoto · Shrines + golden pavilion</h2>
+          <div class="site-day-events">
+            
+            <div class="site-event">
+              <h3 class="site-event-name">Morning</h3>
+              <ul class="site-event-lines">
+              <li>Fushimi Inari — depart hotel by 5:30 AM (dawn, cool, empty torii tunnels)</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Afternoon</h3>
+              <ul class="site-event-lines">
+              <li>Hotel rest 11 AM–2 PM (heat); Kinkakuji arrive 3:30 PM (closing light, fewer buses)</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Evening</h3>
+              <ul class="site-event-lines">
+              <li>[[06-food-dining</li>
+              </ul>
+            </div>
+          </div>
+          
+        </article>
+        <hr class="site-day-divider" />
+
+        <article class="site-day" id="day-7">
+          <h2 class="site-day-title">Day 7 — Thursday, Aug 6 · Kyoto · Bamboo + market</h2>
+          <div class="site-day-events">
+            
+            <div class="site-event">
+              <h3 class="site-event-name">Morning</h3>
+              <ul class="site-event-lines">
+              <li>Arashiyama Bamboo Grove — depart by 6:30 AM; Tenryu-ji garden adjacent</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Afternoon</h3>
+              <ul class="site-event-lines">
+              <li>Late brunch; Nishiki Market grazing (tako tamago, yuba, pickles)</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Evening</h3>
+              <ul class="site-event-lines">
+              <li>Gion dusk walk (spot geiko from respectful distance); pack for early departure</li>
+              </ul>
+            </div>
+          </div>
+          
+        </article>
+        <hr class="site-day-divider" />
+
+        <article class="site-day" id="day-8">
+          <h2 class="site-day-title">Day 8 — Friday, Aug 7 · Depart · KIX → ATL</h2>
+          <div class="site-day-events">
+            
+            <div class="site-event">
+              <h3 class="site-event-name">Morning</h3>
+              <ul class="site-event-lines">
+              <li>Checkout; Haruka limited express Kyoto Station → KIX (~75 min); aim airport by 10 AM for noon+ flight</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Afternoon</h3>
+              <ul class="site-event-lines">
+              <li>Fly KIX→ATL via ICN (Korean Air + Delta)</li>
+              </ul>
+            </div>
+            <div class="site-event">
+              <h3 class="site-event-name">Evening</h3>
+              <ul class="site-event-lines">
+              <li>Arrive ATL same day (~6:00–8:00 PM typical)</li>
+              </ul>
+            </div>
+          </div>
+          
+        </article>
+    </div>
+  </main>
+
+  <div class="site-reference-sections">
+    <section class="site-ref-section site-maps-section" id="maps">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">🗺 Maps</h2>
+    <p class="site-ref-intro">The preview images below are static snapshots. For interactive maps with toggleable layers (hotels, shopping, restaurants), import the CSVs into Google My Maps — see steps at the bottom of this section.</p>
+    <div class="site-map-layer-downloads">
+        <h3 class="site-map-csv-title">Download layer CSVs</h3>
+        <p class="site-map-csv-note">Import each file as a <strong>separate layer</strong> in Google My Maps (hotels · shopping · restaurants · attractions).</p>
+        <ul class="site-map-layer-grid">
+          <li><a class="site-map-layer-btn" href="maps/attractions.csv" download>Attractions</a><span class="site-map-csv-meta">maps/attractions.csv</span></li>
+          <li><a class="site-map-layer-btn" href="maps/hotels.csv" download>Hotels</a><span class="site-map-csv-meta">maps/hotels.csv</span></li>
+          <li><a class="site-map-layer-btn" href="maps/restaurants.csv" download>Restaurants</a><span class="site-map-csv-meta">maps/restaurants.csv</span></li>
+          <li><a class="site-map-layer-btn" href="maps/shopping.csv" download>Shopping</a><span class="site-map-csv-meta">maps/shopping.csv</span></li>
+        </ul>
+      </div><div class="site-map-csv">
+        <h3 class="site-map-csv-title">Import into Google My Maps</h3>
+        <p class="site-map-csv-note"><strong>Regular Google Maps</strong> (maps.google.com) does <em>not</em> read CSV files from this site. You need <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener">Google My Maps</a> — a separate product — and a one-time import.</p>
+        <ol class="site-map-steps">
+          <li>Open <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener">Google My Maps</a> → <strong>Create new map</strong> (or open your existing trip map, e.g. “HK Shopping”).</li>
+          <li><strong>Add layer</strong> → <strong>Import</strong> → pick a CSV from above (repeat for each layer).</li>
+          <li>Or use a city bundle below for one layer with everything in that hub.</li>
+          <li>On your phone: Google Maps app → <strong>Saved</strong> → <strong>Maps</strong> → open your map.</li>
+        </ol>
+        <h4 class="site-map-csv-subtitle">City bundles (optional)</h4>
+        <ul class="site-map-csv-list">
+          <li><a href="maps/kyoto-all.csv" download>kyoto (all types)</a> <span class="site-map-csv-meta">kyoto-all.csv — one layer, all hotels + POIs for this city</span></li>
+          <li><a href="maps/tokyo-all.csv" download>tokyo (all types)</a> <span class="site-map-csv-meta">tokyo-all.csv — one layer, all hotels + POIs for this city</span></li>
+        </ul>
+      </div>
+    <p class="site-map-legend"><span class="site-map-legend-h">H</span> recommended hotel · <span class="site-map-legend-alt">2·3·4</span> other hotels · <span class="site-map-legend-s">S</span> shopping · <span class="site-map-legend-r">R</span> restaurant</p>
+    <div class="site-map-cities">
+    <article class="site-map-city" id="map-kyoto">
+      <header class="site-map-city-head">
+        <h3 class="site-map-city-title">Kyoto</h3>
+        <p class="site-map-city-sub">MIMARU Kyoto Nijo Castle · Google Maps walking distances from your hotel</p>
+        <div class="site-map-actions">
+          <a class="site-map-import" href="maps/kyoto-all.csv" download>Download Kyoto CSV</a>
+          <a class="site-map-open-all" href="https://www.google.com/maps/d/" target="_blank" rel="noopener">Open Google My Maps</a>
+        </div>
+      </header>
+      <figure class="site-map-figure">
+        <img class="site-map-img" src="https://maps.googleapis.com/maps/api/staticmap?size=640x480&amp;scale=2&amp;maptype=roadmap&amp;key=AIzaSyC4yqSX5HhNF9sIQOuGJJTFjOxIYnRUDQA&amp;markers=color:blue|label:H|35.0116,135.7681&amp;markers=color:purple|label:2|35.005,135.768&amp;markers=color:orange|label:S|35.005,135.768" alt="Map preview — Kyoto — hotels and POIs" loading="lazy" />
+        <figcaption class="site-map-caption">Build-time preview only — not interactive. Pins can overlap when hotels and POIs are far apart (e.g. Hội An vs Đà Nẵng).</figcaption>
+      </figure>
+      <div class="site-map-hotels">
+        <p class="site-map-hotels-title">Also comparing</p>
+        <ul class="site-map-hotels-list"><li class="site-map-hotel-alt">Miru Kyoto Nishiki</li></ul>
+      </div>
+      <ul class="site-map-venue-list" aria-label="POIs near recommended hotel">
+        <li class="site-map-venue">
+        <span class="site-map-venue-name">Nishiki Market</span>
+        <span class="site-map-venue-kind">Shopping</span>
+        <span class="site-map-venue-dist"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=35.0069439%2C135.7520933&amp;destination=35.005%2C135.768&amp;travelmode=walking" target="_blank" rel="noopener">1.7 km · 25 mins walk</a></span>
+      </li>
+      </ul>
+    </article>
+    <article class="site-map-city" id="map-tokyo">
+      <header class="site-map-city-head">
+        <h3 class="site-map-city-title">Tokyo</h3>
+        <p class="site-map-city-sub">Sakura Cross Hotel Ueno Okachimachi · Google Maps walking distances from your hotel</p>
+        <div class="site-map-actions">
+          <a class="site-map-import" href="maps/tokyo-all.csv" download>Download Tokyo CSV</a>
+          <a class="site-map-open-all" href="https://www.google.com/maps/d/" target="_blank" rel="noopener">Open Google My Maps</a>
+        </div>
+      </header>
+      <figure class="site-map-figure">
+        <img class="site-map-img" src="https://maps.googleapis.com/maps/api/staticmap?size=640x480&amp;scale=2&amp;maptype=roadmap&amp;key=AIzaSyC4yqSX5HhNF9sIQOuGJJTFjOxIYnRUDQA&amp;markers=color:blue|label:H|35.6895,139.6917&amp;markers=color:orange|label:S|35.672,139.768&amp;markers=color:orange|label:S|35.672,139.768&amp;markers=color:green|label:R|35.672,139.768" alt="Map preview — Tokyo — hotels and POIs" loading="lazy" />
+        <figcaption class="site-map-caption">Build-time preview only — not interactive. Pins can overlap when hotels and POIs are far apart (e.g. Hội An vs Đà Nẵng).</figcaption>
+      </figure>
+      
+      <ul class="site-map-venue-list" aria-label="POIs near recommended hotel">
+        <li class="site-map-venue">
+        <span class="site-map-venue-name">Ginza</span>
+        <span class="site-map-venue-kind">Shopping</span>
+        <span class="site-map-venue-dist"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=35.7055922%2C139.783345&amp;destination=35.672%2C139.768&amp;travelmode=walking" target="_blank" rel="noopener">4.6 km · 1 hour 6 mins walk</a></span>
+      </li>
+        <li class="site-map-venue">
+        <span class="site-map-venue-name">Yanaka Ginza Shopping Street</span>
+        <span class="site-map-venue-kind">Shopping</span>
+        <span class="site-map-venue-dist"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=35.7055922%2C139.783345&amp;destination=35.672%2C139.768&amp;travelmode=walking" target="_blank" rel="noopener">4.6 km · 1 hour 6 mins walk</a></span>
+      </li>
+        <li class="site-map-venue">
+        <span class="site-map-venue-name">Kyubey Ginza Honten</span>
+        <span class="site-map-venue-kind">Restaurant</span>
+        <span class="site-map-venue-dist"><a href="https://www.google.com/maps/dir/?api=1&amp;origin=35.7055922%2C139.783345&amp;destination=35.672%2C139.768&amp;travelmode=walking" target="_blank" rel="noopener">4.6 km · 1 hour 6 mins walk</a></span>
+      </li>
+      </ul>
+    </article>
+    </div>
+    <div class="site-map-layer-downloads">
+        <h3 class="site-map-csv-title">Download layer CSVs</h3>
+        <p class="site-map-csv-note">Import each file as a <strong>separate layer</strong> in Google My Maps (hotels · shopping · restaurants · attractions).</p>
+        <ul class="site-map-layer-grid">
+          <li><a class="site-map-layer-btn" href="maps/attractions.csv" download>Attractions</a><span class="site-map-csv-meta">maps/attractions.csv</span></li>
+          <li><a class="site-map-layer-btn" href="maps/hotels.csv" download>Hotels</a><span class="site-map-csv-meta">maps/hotels.csv</span></li>
+          <li><a class="site-map-layer-btn" href="maps/restaurants.csv" download>Restaurants</a><span class="site-map-csv-meta">maps/restaurants.csv</span></li>
+          <li><a class="site-map-layer-btn" href="maps/shopping.csv" download>Shopping</a><span class="site-map-csv-meta">maps/shopping.csv</span></li>
+        </ul>
+      </div><div class="site-map-csv">
+        <h3 class="site-map-csv-title">Import into Google My Maps</h3>
+        <p class="site-map-csv-note"><strong>Regular Google Maps</strong> (maps.google.com) does <em>not</em> read CSV files from this site. You need <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener">Google My Maps</a> — a separate product — and a one-time import.</p>
+        <ol class="site-map-steps">
+          <li>Open <a href="https://www.google.com/maps/d/" target="_blank" rel="noopener">Google My Maps</a> → <strong>Create new map</strong> (or open your existing trip map, e.g. “HK Shopping”).</li>
+          <li><strong>Add layer</strong> → <strong>Import</strong> → pick a CSV from above (repeat for each layer).</li>
+          <li>Or use a city bundle below for one layer with everything in that hub.</li>
+          <li>On your phone: Google Maps app → <strong>Saved</strong> → <strong>Maps</strong> → open your map.</li>
+        </ol>
+        <h4 class="site-map-csv-subtitle">City bundles (optional)</h4>
+        <ul class="site-map-csv-list">
+          <li><a href="maps/kyoto-all.csv" download>kyoto (all types)</a> <span class="site-map-csv-meta">kyoto-all.csv — one layer, all hotels + POIs for this city</span></li>
+          <li><a href="maps/tokyo-all.csv" download>tokyo (all types)</a> <span class="site-map-csv-meta">tokyo-all.csv — one layer, all hotels + POIs for this city</span></li>
+        </ul>
+      </div>
+  </div>
+</section>
+<section class="site-ref-section" id="flights">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">✈ Flights</h2>
+    
+    
+    <h3 class="site-table-caption">Leg: ATL → HND (2026-07-31)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr><td>$644</td><td>1</td><td>~19h40</td><td>Air Canada via YVR</td><td>Cheapest · arrives Aug 1 afternoon</td></tr><tr><td>$734</td><td>0</td><td>~14h</td><td>Delta</td><td>Recommended · nonstop · best balance</td></tr><tr><td>$738</td><td>1</td><td>~17h</td><td>United / ANA</td><td>Good schedule via SFO or ORD</td></tr><tr><td>$742</td><td>1</td><td>~22h</td><td>Korean Air via ICN</td><td>Alt hub</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Leg: KIX → ATL (2026-08-07)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Price</th><th>Stops</th><th>Duration</th><th>Airlines</th><th>Notes</th></tr></thead><tbody><tr><td>$1,237</td><td>2</td><td>~31h</td><td>STARLUX + Alaska</td><td>Cheapest · long layovers</td></tr><tr><td>$1,379</td><td>2</td><td>~19h</td><td>United</td><td>Same-day arrival ATL evening</td></tr><tr><td>$1,380</td><td>1</td><td>~17h45</td><td>Korean Air + Delta</td><td>Recommended · via ICN · same-day arrival</td></tr><tr><td>$1,535</td><td>1</td><td>~20h</td><td>Korean Air</td><td>Direct KE routing</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Date-flex snapshot (inbound only)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Date</th><th>Cheapest ATL→HND</th><th>vs Jul 31 baseline</th></tr></thead><tbody><tr><td>2026-07-30</td><td>$604 (Air Canada)</td><td>−$40 vs $644 cheapest on Jul 31</td></tr><tr><td>2026-07-31</td><td>$644 (Air Canada) / $734 (Delta nonstop)</td><td>baseline</td></tr><tr><td>2026-08-01</td><td>$604 (Air Canada, +2 day arrival)</td><td>Not recommended — loses Tokyo day</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Trip Total Summary</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>Per person</th><th>Total (1 pax)</th><th>% of $5,000 budget</th></tr></thead><tbody><tr><td>Cheapest mix</td><td>$1,881</td><td>$1,881</td><td>38%</td></tr><tr><td>Recommended balanced</td><td>$2,114</td><td>$2,114</td><td>42%</td></tr><tr><td>Premium (Delta both ways)</td><td>~$2,400+</td><td>~$2,400+</td><td>48%</td></tr></tbody></table></div>
+  </div>
+</section>
+<section class="site-ref-section" id="hotels">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">🏨 Hotels</h2>
+    
+    
+    <h3 class="site-table-caption">Tokyo (2026-08-01 – 2026-08-04)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Hotel</th><th>Price / night</th><th>Area</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>Sakura Cross Hotel Ueno Okachimachi</td><td>$115</td><td>Ueno / Asakusa corridor</td><td>4.8★</td><td>Recommended · compact rooms · walk to Senso-ji · Booking.com</td></tr><tr><td>Sakura Cross Hotel Ueno-Iriya Annex</td><td>$127</td><td>Ueno</td><td>4.9★</td><td>Alt · slightly farther from core sights</td></tr><tr><td>Sakura Cross Hotel Shinjuku East</td><td>—</td><td>Shinjuku</td><td>4.8★</td><td>Shopping-hub alt · busier neighborhood</td></tr><tr><td>Hotel Amanek Kamata Ekimae</td><td>$50</td><td>Kamata</td><td>4.0★</td><td>Value pick · farther from sights</td></tr><tr><td>MIMARU Tokyo Ueno Inaricho</td><td>$286</td><td>Ueno</td><td>4.9★</td><td>Splurge · apartment-style</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Kyoto (2026-08-04 – 2026-08-07)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Hotel</th><th>Price / night</th><th>Area</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>MIMARU Kyoto Nijo Castle</td><td>$135</td><td>Nijo / downtown west</td><td>4.8★</td><td>Recommended · kitchenette · near Nijo Castle · Expedia</td></tr><tr><td>Miru Kyoto Nishiki</td><td>$117</td><td>Nishiki market</td><td>4.9★</td><td>Food/shopping corridor · compact</td></tr><tr><td>Kyoto Takasegawa Bettei</td><td>$144</td><td>Takase River</td><td>4.9★</td><td>Boutique · traditional lane feel</td></tr><tr><td>MIMARU Kyoto Shinmachi Sanjo</td><td>$199</td><td>Sanjo</td><td>4.8★</td><td>Splurge-alt · central</td></tr><tr><td>Hotel M&#39;s Plus Shijō Ōmiya</td><td>$28</td><td>Shijo</td><td>4.2★</td><td>Budget backup · small rooms</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Lodging Total Summary</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Hub</th><th>Nights</th><th>Recommended / night</th><th>Subtotal</th></tr></thead><tbody><tr><td>Tokyo</td><td>3</td><td>$115</td><td>$345</td></tr><tr><td>Kyoto</td><td>3</td><td>$135</td><td>$405</td></tr><tr><td>Total</td><td>6</td><td>—</td><td>$750</td></tr></tbody></table></div>
+<div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>TYO / night</th><th>KYO / night</th><th>6-night total</th></tr></thead><tbody><tr><td>Recommended</td><td>$115</td><td>$135</td><td>$750</td></tr><tr><td>Value mix</td><td>$50</td><td>$28</td><td>$234</td></tr><tr><td>Splurge mix</td><td>$286</td><td>$199</td><td>$1,047</td></tr></tbody></table></div>
+  </div>
+</section>
+<section class="site-ref-section" id="restaurants">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">🍽 Restaurants</h2>
+    
+    
+    <h3 class="site-table-caption">City: Tokyo (Aug 1–4)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Restaurant</th><th>Rating</th><th>Reviews</th><th>Price</th><th>Cuisine</th><th>Notes</th></tr></thead><tbody><tr><td>Gyopao Gyoza Shinjuku</td><td>4.9★</td><td>2,305</td><td>$</td><td>Japanese / gyoza</td><td>Recommended · Shinjuku · casual lunch</td></tr><tr><td>GYOPAO Gyoza Roppongi</td><td>4.9★</td><td>3,963</td><td>$</td><td>Japanese / gyoza</td><td>Alt · Roppongi evening</td></tr><tr><td>Ichiran Shinjuku Central East</td><td>4.4★</td><td>1,331</td><td>$</td><td>Ramen</td><td>Solo booth · iconic chain</td></tr><tr><td>Ise Sueyoshi</td><td>4.9★</td><td>972</td><td>$$$</td><td>Kaiseki</td><td>Splurge · reservation required</td></tr><tr><td>Kyubey Ginza Honten</td><td>4.4★</td><td>909</td><td>$$$$</td><td>Sushi</td><td>Omakase splurge · Ginza</td></tr></tbody></table></div>
+<h3 class="site-table-caption">City: Kyoto (Aug 4–7)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Restaurant</th><th>Rating</th><th>Reviews</th><th>Price</th><th>Cuisine</th><th>Notes</th></tr></thead><tbody><tr><td>Wagyu Restaurant Bungo Gion</td><td>5.0★</td><td>2,010</td><td>$$</td><td>Wagyu / teppanyaki</td><td>Recommended · Gion · book ahead</td></tr><tr><td>Matsuzakagyu What&#39;s Kyoto Muromachi</td><td>4.8★</td><td>761</td><td>$$</td><td>Wagyu</td><td>Alt · downtown</td></tr><tr><td>Fire Ramen Menbaka</td><td>4.5★</td><td>1,150</td><td>$</td><td>Ramen</td><td>Show-style · tourist fun</td></tr><tr><td>Sugarhill Kyoto</td><td>4.7★</td><td>707</td><td>$$</td><td>International / cafe</td><td>Brunch option</td></tr><tr><td>Hafuu Honten</td><td>4.6★</td><td>790</td><td>$$</td><td>Wagyu sandwich</td><td>Lunch · casual</td></tr></tbody></table></div>
+  </div>
+</section>
+<section class="site-ref-section" id="attractions">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">🏛 Attractions</h2>
+    
+    
+    <h3 class="site-table-caption">City: Tokyo (Aug 1–4)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Attraction</th><th>Rating</th><th>Reviews</th><th>Type</th><th>Notes</th></tr></thead><tbody><tr><td>Senso-ji Temple</td><td>4.4★</td><td>9,855</td><td>Temple</td><td>Recommended · Asakusa · go before 8 AM</td></tr><tr><td>Shibuya Sky</td><td>4.4★</td><td>312</td><td>Observation deck</td><td>Recommended · city views · book sunset slot</td></tr><tr><td>Ginza</td><td>4.3★</td><td>4,808</td><td>Shopping district</td><td>History + luxury window shopping</td></tr><tr><td>teamLab Planets TOKYO</td><td>4.3★</td><td>5,280</td><td>Digital art</td><td>Rainy-day backup · timed tickets</td></tr><tr><td>Shibuya Crossing</td><td>4.2★</td><td>7,898</td><td>Landmark</td><td>Quick photo · avoid peak Friday PM</td></tr></tbody></table></div>
+<h3 class="site-table-caption">City: Kyoto (Aug 4–7)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Attraction</th><th>Rating</th><th>Reviews</th><th>Type</th><th>Notes</th></tr></thead><tbody><tr><td>Kinkakuji Temple</td><td>4.5★</td><td>17,560</td><td>Temple</td><td>Recommended · arrive opening (9 AM)</td></tr><tr><td>Fushimi Inari Taisha</td><td>4.6★</td><td>—</td><td>Shrine</td><td>Desk research · dawn hike · free</td></tr><tr><td>Arashiyama Bamboo Grove</td><td>4.3★</td><td>—</td><td>Nature walk</td><td>Desk research · before 7:30 AM</td></tr><tr><td>Hidden Kyoto E-Biking tour</td><td>5.0★</td><td>1,404</td><td>Tour</td><td>Low-crowd alt · book ahead</td></tr><tr><td>Kyoto Station Building</td><td>4.4★</td><td>4,331</td><td>Architecture</td><td>Free · evening light</td></tr></tbody></table></div>
+  </div>
+</section>
+<section class="site-ref-section" id="shopping-comparison">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">🛍 Shopping</h2>
+    
+    
+    <h3 class="site-table-caption">City: Tokyo (Aug 1–4)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>District / Venue</th><th>Rating</th><th>Reviews</th><th>Type</th><th>Notes</th></tr></thead><tbody><tr><td>Ginza</td><td>4.3★</td><td>4,808</td><td>Luxury shopping street</td><td>Recommended · flagship stores · tax-free counters</td></tr><tr><td>Omotesando</td><td>4.2★</td><td>1,954</td><td>Fashion avenue</td><td>Recommended · architecture + boutiques</td></tr><tr><td>Shimokitazawa</td><td>4.3★</td><td>516</td><td>Vintage / indie</td><td>Thrift + local designers · low crowd vs Shibuya</td></tr><tr><td>Shibuya Cat Street</td><td>4.1★</td><td>535</td><td>Street fashion</td><td>Sneakers + youth brands</td></tr><tr><td>Yanaka Ginza Shopping Street</td><td>3.9★</td><td>440</td><td>Traditional shotengai</td><td>Souvenirs + snacks · quiet local feel</td></tr></tbody></table></div>
+<h3 class="site-table-caption">City: Kyoto (Aug 4–7)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>District / Venue</th><th>Rating</th><th>Reviews</th><th>Type</th><th>Notes</th></tr></thead><tbody><tr><td>Nishiki Market</td><td>—</td><td>—</td><td>Food / crafts arcade</td><td>Recommended · kitchenware + pickles · morning</td></tr><tr><td>Teramachi &amp; Shinkyogoku</td><td>—</td><td>—</td><td>Covered shopping arcades</td><td>Manga, crafts, casual fashion</td></tr><tr><td>Sannenzaka / Ninenzaka</td><td>—</td><td>—</td><td>Traditional lane</td><td>Ceramics + sweets · go early</td></tr><tr><td>Kyoto Station Isetan</td><td>4.4★</td><td>—</td><td>Department store</td><td>Depachika food hall · last-day gifts</td></tr></tbody></table></div>
+  </div>
+</section>
+<section class="site-ref-section" id="food">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">Food &amp; Dining</h2>
+    
+    
+    <h3 class="site-table-caption">Tokyo (Aug 1–4)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Restaurant</th><th>Rating</th><th>Reviews</th><th>Price</th><th>Cuisine</th><th>Notes</th></tr></thead><tbody><tr><td>Gyopao Gyoza Shinjuku</td><td>4.9★</td><td>2,305</td><td>$</td><td>Gyoza</td><td>Recommended · Day 3 lunch</td></tr><tr><td>Ichiran Shinjuku Central East</td><td>4.4★</td><td>1,331</td><td>$</td><td>Ramen</td><td>Solo booth · backup</td></tr><tr><td>Ise Sueyoshi</td><td>4.9★</td><td>972</td><td>$$$</td><td>Kaiseki</td><td>Splurge alt · reserve</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Kyoto (Aug 4–7)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Restaurant</th><th>Rating</th><th>Reviews</th><th>Price</th><th>Cuisine</th><th>Notes</th></tr></thead><tbody><tr><td>Wagyu Restaurant Bungo Gion</td><td>5.0★</td><td>2,010</td><td>$$</td><td>Wagyu teppanyaki</td><td>Recommended · Day 6 dinner</td></tr><tr><td>Sugarhill Kyoto</td><td>4.7★</td><td>707</td><td>$$</td><td>Café/brunch</td><td>Day 7 late brunch</td></tr><tr><td>Hafuu Honten</td><td>4.6★</td><td>790</td><td>$$</td><td>Wagyu sandwich</td><td>Casual lunch alt</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Signature dishes — Japan</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Dish</th><th>Pronunciation</th><th>Order with</th><th>Best in</th><th>Price</th></tr></thead><tbody><tr><td>Gyoza</td><td>gyo-za</td><td>Beer, fried rice</td><td>Shinjuku (Gyopao)</td><td>¥600–1,200</td></tr><tr><td>Ramen</td><td>ra-men</td><td>Kaedama (extra noodles)</td><td>Ichiran, any shop</td><td>¥900–1,400</td></tr><tr><td>Sushi</td><td>su-shi</td><td>Miso soup, green tea</td><td>Toyosu market morning</td><td>¥2,000–8,000</td></tr><tr><td>Okonomiyaki</td><td>oko-no-mi-yaki</td><td>Beer, yakisoba side</td><td>Osaka-style in Tokyo ok</td><td>¥1,000–1,500</td></tr><tr><td>Wagyu teppanyaki</td><td>wa-gyu</td><td>Rice, miso, salad</td><td>Gion (Bungo)</td><td>¥8,000–15,000</td></tr><tr><td>Yudofu</td><td>yu-do-fu</td><td>Rice, pickles</td><td>Kyoto Nanzenji area</td><td>¥1,500–2,500</td></tr><tr><td>Matcha parfait</td><td>ma-cha</td><td>—</td><td>Gion/Sanjo cafés</td><td>¥800–1,200</td></tr><tr><td>Tako tamago</td><td>ta-ko ta-ma-go</td><td>—</td><td>Nishiki Market</td><td>¥300/stick</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Food experiences</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Experience</th><th>City</th><th>Day</th><th>Book?</th></tr></thead><tbody><tr><td>Gyoza lunch crawl</td><td>Tokyo Shinjuku</td><td>Aug 2</td><td>Walk-in OK</td></tr><tr><td>Enoshima seafood grill</td><td>Enoshima</td><td>Aug 3</td><td>Walk-in</td></tr><tr><td>Nishiki Market self-guided graze</td><td>Kyoto</td><td>Aug 6</td><td>No booking</td></tr><tr><td>Wagyu teppanyaki dinner</td><td>Kyoto Gion</td><td>Aug 5</td><td>Reserve T-14d</td></tr><tr><td>Ekiben on Shinkansen</td><td>Train</td><td>Aug 4</td><td>Buy at Tokyo Station</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Meal mapping to itinerary</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th></tr></thead><tbody><tr><td>Aug 1</td><td>Plane</td><td>—</td><td>Convenience store / Ameyoko</td></tr><tr><td>Aug 2</td><td>Hotel coffee</td><td>Gyopao Gyoza</td><td>Ginza ramen or department store food hall</td></tr><tr><td>Aug 3</td><td>Late brunch Shimokitazawa</td><td>Enoshima seafood</td><td>Omotesando café</td></tr><tr><td>Aug 4</td><td>Kyoto Station pastry</td><td>Ekiben on Shinkansen</td><td>Kyoto Station Isetan</td></tr><tr><td>Aug 5</td><td>7-Eleven onigiri (pre-dawn)</td><td>Nishiki snack or soba</td><td>Wagyu Bungo Gion</td></tr><tr><td>Aug 6</td><td>Hotel</td><td>Nishiki grazing</td><td>Gion walk + dessert</td></tr><tr><td>Aug 7</td><td>Kyoto Station</td><td>Airport food</td><td>Plane</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Social vs plan matrix</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Spot</th><th>Status</th><th>Action</th></tr></thead><tbody><tr><td>Gyopao Gyoza</td><td>Scheduled</td><td>Day 3 lunch</td></tr><tr><td>Wagyu Bungo</td><td>Scheduled</td><td>Day 6 dinner — book</td></tr><tr><td>Ichiran</td><td>Backup</td><td>Day 3 if gyoza line long</td></tr><tr><td>teamLab café</td><td>Rainy backup</td><td>Day 3</td></tr><tr><td>Kobe beef Osaka</td><td>Skip</td><td>Off-route</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Food safety</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Topic</th><th>Japan</th></tr></thead><tbody><tr><td>Tap water</td><td>Safe to drink</td></tr><tr><td>Street food</td><td>High hygiene; busy stalls = turnover</td></tr><tr><td>Raw food</td><td>Sushi/sashimi standard; trust busy counters</td></tr><tr><td>Summer</td><td>Carry electrolytes; avoid unrefrigerated display cases in extreme heat</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Dining customs</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Custom</th><th>Detail</th></tr></thead><tbody><tr><td>Tipping</td><td>Not done — can offend</td></tr><tr><td>Meal timing</td><td>Lunch 11:30–2; dinner 6–9 (earlier than Spain, later than US lunch)</td></tr><tr><td>Chopsticks</td><td>Never stick upright in rice; don&#39;t pass food chopstick-to-chopstick</td></tr><tr><td>Solo</td><td>Welcomed; say &quot;hitori desu&quot; (one person)</td></tr><tr><td>Cash</td><td>Some small shops cash-only; IC card works at chains</td></tr></tbody></table></div>
+<h3 class="site-table-caption">DIY search strings</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>City</th><th>YouTube</th><th>TikTok / Instagram</th></tr></thead><tbody><tr><td>Tokyo</td><td>&quot;Tokyo gyoza best&quot;, &quot;Shinjuku food tour&quot;</td><td>#tokyofood #gyoza #shinjukufood</td></tr><tr><td>Kyoto</td><td>&quot;Nishiki Market guide&quot;, &quot;Gion wagyu Kyoto&quot;</td><td>#nishikimarket #kyotofood #wagyu</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Food budget estimate</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Category</th><th>Daily</th><th>6 days</th></tr></thead><tbody><tr><td>Meals (mix street + 2 splurge)</td><td>~$45–55</td><td>~$270–330</td></tr><tr><td>Snacks / convenience</td><td>~$10</td><td>~$60</td></tr><tr><td>Total</td><td>~$55–65</td><td>~$330–390</td></tr></tbody></table></div>
+  </div>
+</section>
+<section class="site-ref-section" id="immigration">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">Immigration</h2>
+    <p class="site-ref-intro">Immigration Entry — key planning details below.</p>
+    
+    <h3 class="site-table-caption">Country entry checklist — Japan</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Requirement</th><th>Detail</th></tr></thead><tbody><tr><td>Visa</td><td>Not required — US citizens, tourism ≤90 days</td></tr><tr><td>Stay limit</td><td>90 days</td></tr><tr><td>Processing</td><td>N/A — stamp on arrival</td></tr><tr><td>Cost</td><td>Free</td></tr><tr><td>Documents</td><td>Valid passport; return/onward ticket; proof of funds (rarely asked)</td></tr><tr><td>Visit Japan Web</td><td>Register at [vjw-lp.digital.go.jp](https://vjw-lp.digital.go.jp) — QR for immigration + customs</td></tr><tr><td>Landing card</td><td>Replaced by VJW QR when registered</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Travel authorizations (2026)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>System</th><th>Applies?</th><th>Action</th></tr></thead><tbody><tr><td>ETIAS (EU)</td><td>No</td><td>—</td></tr><tr><td>UK ETA</td><td>No</td><td>—</td></tr><tr><td>Japan VJW</td><td>Yes</td><td>Complete 3 days before arrival</td></tr><tr><td>US ESTA</td><td>N/A (US citizen)</td><td>—</td></tr><tr><td>Transit visa (ICN layover)</td><td>No — Korean Air + Delta connection at ICN stays airside if same ticket</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Passport validity rules</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Rule</th><th>Japan</th></tr></thead><tbody><tr><td>Minimum validity</td><td>Duration of stay (recommend 6+ months)</td></tr><tr><td>Blank pages</td><td>1+ for entry stamp</td></tr><tr><td>Dual citizenship</td><td>Enter/exit on same passport; use US passport throughout</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Vaccination &amp; health declarations</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Item</th><th>Status</th></tr></thead><tbody><tr><td>Yellow fever</td><td>Not required from US</td></tr><tr><td>Routine vaccines</td><td>Hep A, tetanus — standard travel health</td></tr><tr><td>COVID</td><td>No entry test/vaccine mandate (verify T-30 days)</td></tr><tr><td>Health declaration</td><td>Via Visit Japan Web if prompted</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Reciprocal restrictions</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody><tr><td>US travel bans affecting Japan entry</td><td>None</td></tr><tr><td>Japan entry restrictions on US citizens</td><td>None for tourism</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Application timeline</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>When</th><th>Action</th></tr></thead><tbody><tr><td>Now</td><td>Confirm passport expiry ≥ Feb 2027</td></tr><tr><td>T-90 days</td><td>Book flights (open-jaw)</td></tr><tr><td>T-30 days</td><td>Complete Visit Japan Web registration</td></tr><tr><td>T-14 days</td><td>Print/save VJW QR + hotel confirmations offline</td></tr><tr><td>Arrival HND Aug 1</td><td>Immigration → customs → activate IC card</td></tr><tr><td>Departure KIX Aug 7</td><td>Tax-free shopping receipts if applicable</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Red flags</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Flag</th><th>Mitigation</th></tr></thead><tbody><tr><td>Separate one-way tickets (no connection protection)</td><td>Allow 3+ hr layover at ICN; consider travel insurance with missed-connection cover</td></tr><tr><td>Medication import</td><td>Declare prescription meds; carry doctor&#39;s note in English</td></tr><tr><td>Working remotely</td><td>Tourist entry does not permit paid work — meetings OK, employment not</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Backup plan if entry denied</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>Action</th></tr></thead><tbody><tr><td>Immigration questions</td><td>Show return ticket KIX→ATL Aug 7, hotel bookings, VJW QR</td></tr><tr><td>Visa overstay risk</td><td>Not applicable — 6 nights well within 90 days</td></tr><tr><td>Denied entry (rare)</td><td>Contact US Embassy Tokyo +1-301-985-8840 (after hours); rebook via airline</td></tr></tbody></table></div>
+  </div>
+</section>
+<section class="site-ref-section" id="health">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">Health &amp; Safety</h2>
+    <p class="site-ref-intro">``` TRAVELER: US citizen · Solo TRIP: Japan · Jul 31 – Aug 7, 2026 BLOOD TYPE: [fill in] ALLERGIES: [fill in] INSURANCE: [policy #] · [24h phone] MEDICATIONS: [list] TOKYO HOTEL: Sakura Cross Ueno Okachimachi · [confirmation #] KYOTO HOTEL: MIMARU Nijo Castle · [confirmation #] EMERGENCY JAPAN: 110 police · 119 ambulance US EMBASSY TOKYO: +81-3-3224-5000 ```</p>
+    
+    <h3 class="site-table-caption">Pre-trip health checklist</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Item</th><th>Action</th><th>Deadline</th></tr></thead><tbody><tr><td>Hepatitis A vaccine</td><td>Recommended for food travelers</td><td>T-30 days</td></tr><tr><td>Tetanus booster</td><td>If &gt;10 years</td><td>T-30 days</td></tr><tr><td>Travel insurance</td><td>Medical + evacuation + trip cancel</td><td>Before flight payment</td></tr><tr><td>Prescriptions</td><td>1.5× supply + doctor&#39;s note in English</td><td>T-14 days</td></tr><tr><td>Heat plan</td><td>Electrolyte packets, SPF 50, hat</td><td>Pack</td></tr><tr><td>First aid</td><td>Blister kit, ibuprofen, antihistamine</td><td>Pack</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Health per hub</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Hub</th><th>Hospital</th><th>Tap water</th><th>Food safety</th><th>Common issues</th></tr></thead><tbody><tr><td>Tokyo Ueno</td><td>Toho University Sakura Medical Center (Ueno)</td><td>Safe</td><td>Excellent</td><td>Heat exhaustion, blisters</td></tr><tr><td>Kyoto Nijo</td><td>Kyoto University Hospital</td><td>Safe</td><td>Excellent</td><td>Heat, insect bites</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Emergency protocol — Japan</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Service</th><th>Number</th></tr></thead><tbody><tr><td>Police</td><td>110</td></tr><tr><td>Ambulance / Fire</td><td>119</td></tr><tr><td>Japan Helpline (English)</td><td>050-3816-2787</td></tr><tr><td>US Embassy Tokyo</td><td>+81-3-3224-5000</td></tr><tr><td>US Embassy Osaka (covers Kyoto)</td><td>+81-6-6315-5900</td></tr><tr><td>Insurance hotline</td><td>[Your policy 24h number]</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Safety per hub</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Topic</th><th>Detail</th></tr></thead><tbody><tr><td>Scams</td><td>Minimal — fake monks, overpriced bars in Kabukicho (avoid late night Shinjuku touts)</td></tr><tr><td>Neighborhoods to avoid late night</td><td>Roppongi alley touts, Kabukicho 2 AM+</td></tr><tr><td>Solo traveler</td><td>Very safe; women — use women-only train cars during rush if desired</td></tr><tr><td>Heat</td><td>Heatstroke risk 11 AM–3 PM — retreat indoors</td></tr><tr><td>Enoshima</td><td>Strong sun; rocky paths — watch footing</td></tr><tr><td>Fushimi</td><td>Stairs uneven; carry water</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Document backup</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Document</th><th>Backup method</th></tr></thead><tbody><tr><td>Passport</td><td>Encrypted cloud + paper copy in luggage</td></tr><tr><td>VJW QR</td><td>Screenshot + email to self</td></tr><tr><td>Insurance card</td><td>Photo in phone + physical copy</td></tr><tr><td>Flight/hotel confirmations</td><td>PDF offline in Files</td></tr><tr><td>Prescription list</td><td>Photo + paper</td></tr></tbody></table></div>
+  </div>
+</section>
+<section class="site-ref-section" id="contingency">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">Contingency</h2>
+    <p class="site-ref-intro">Contingency — key planning details below.</p>
+    
+    <h3 class="site-table-caption">1. Weather ruins outdoor day</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>Action</th></tr></thead><tbody><tr><td>Typhoon/rain Aug 2 (Senso-ji)</td><td>Swap to teamLab Planets (indoor) + Tokyo National Museum</td></tr><tr><td>Rain Aug 3 (Enoshima)</td><td>Shimokitazawa vintage + Tokyo Midtown / Ginza Six indoor</td></tr><tr><td>Rain Aug 5 (Fushimi/Kinkakuji)</td><td>Nijo Castle interior + Kyoto International Manga Museum</td></tr><tr><td>Rain Aug 6 (Arashiyama)</td><td>Nishiki Market extended + Kyoto Railway Museum</td></tr><tr><td>App</td><td>Japan Meteorological Agency; check typhoon track T-24h</td></tr></tbody></table></div>
+<h3 class="site-table-caption">2. Missed flight / connection</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>Action</th></tr></thead><tbody><tr><td>Miss ATL departure Jul 31</td><td>Call Delta 1-800-221-1212 immediately; rebook next available; hotels flexible if notified</td></tr><tr><td>Miss ICN connection Aug 7</td><td>Korean Air desk at ICN +82-2-2656-2001; separate tickets — no protection; insurance claim</td></tr><tr><td>Miss KIX check-in</td><td>Haruka + security need 90 min; if late, call Korean Air rebooking</td></tr></tbody></table></div>
+<h3 class="site-table-caption">3. Sick during trip</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>Action</th></tr></thead><tbody><tr><td>Mild illness</td><td>Rest at hotel; konbini electrolytes; pharmacy (matsukiyo) for OTC</td></tr><tr><td>Need doctor</td><td>Hotel front desk calls taxi to clinic; or 119 ambulance if emergency</td></tr><tr><td>Cannot do dawn activity</td><td>Skip Fushimi summit; do Nijo Castle interior instead</td></tr><tr><td>Insurance</td><td>Call 24h hotline before non-emergency ER visit</td></tr></tbody></table></div>
+<h3 class="site-table-caption">4. Visa / entry denied</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>Action</th></tr></thead><tbody><tr><td>Denied at HND (rare)</td><td>US Embassy +81-3-3224-5000; airline returns you on same carrier</td></tr><tr><td>Backup</td><td>Show return ticket KIX→ATL, hotel bookings, funds</td></tr></tbody></table></div>
+<h3 class="site-table-caption">5. Lost passport</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Step</th><th>Action</th></tr></thead><tbody><tr><td>1</td><td>File police report at nearest koban (police box) — get report number</td></tr><tr><td>2</td><td>Contact US Embassy Tokyo +81-3-3224-5000 (emergency after-hours +81-3-3224-5000)</td></tr><tr><td>3</td><td>Bring police report, passport photo, ID copy, travel itinerary</td></tr><tr><td>4</td><td>Emergency passport issued — allow 1–3 business days</td></tr><tr><td>5</td><td>Rebook KIX→ATL if passport not ready by Aug 7</td></tr></tbody></table></div>
+<h3 class="site-table-caption">6. Political unrest / travel ban</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>Action</th></tr></thead><tbody><tr><td>US State Dept Level 3–4 advisory</td><td>Check [travel.state.gov](https://travel.state.gov); contact airline for waiver</td></tr><tr><td>Natural disaster (earthquake)</td><td>Follow hotel evacuation; US Embassy STEP enrollment alerts</td></tr><tr><td>Japan risk</td><td>Low — earthquake protocol: drop-cover-hold; know hotel exits</td></tr></tbody></table></div>
+<h3 class="site-table-caption">7. Solo traveler wants to change plans</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>Action</th></tr></thead><tbody><tr><td>Skip Kyoto</td><td>Not recommended — hotels booked; minimum enjoy Nishiki + one temple</td></tr><tr><td>Extend Tokyo</td><td>Requires rebooking KIX flight + Kyoto hotel cancel — expensive</td></tr><tr><td>Add Osaka day trip</td><td>Skip — violates relaxed pace</td></tr></tbody></table></div>
+<h3 class="site-table-caption">8. Budget overrun</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Cut</th><th>Save</th></tr></thead><tbody><tr><td>Skip Wagyu splurge</td><td>~$80–120</td></tr><tr><td>Convenience store meals 2 days</td><td>~$60</td></tr><tr><td>Skip Shibuya Sky (free TMG building)</td><td>~$15</td></tr><tr><td>Cheaper flights (Air Canada + STARLUX)</td><td>~$233 vs recommended</td></tr><tr><td>Downgrade Kyoto hotel to M&#39;s Plus</td><td>~$320 total lodging</td></tr></tbody></table></div>
+<h3 class="site-table-caption">9. Lost luggage</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Step</th><th>Action</th></tr></thead><tbody><tr><td>1</td><td>File PIR at airport baggage office before leaving</td></tr><tr><td>2</td><td>Photograph form; get reference number</td></tr><tr><td>3</td><td>Buy essentials — keep receipts for insurance</td></tr><tr><td>4</td><td>Uniqlo GU for replacement clothes (~¥2,000/item)</td></tr><tr><td>5</td><td>Delivery to hotel via takkyubin when found</td></tr></tbody></table></div>
+<h3 class="site-table-caption">10. Strike / natural disaster closes transport</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Scenario</th><th>Action</th></tr></thead><tbody><tr><td>Shinkansen suspended (typhoon)</td><td>Stay Tokyo extra night; rebook Kyoto hotel; take next available train</td></tr><tr><td>Haruka suspended</td><td>Highway bus KIX (~¥2,500); allow +60 min</td></tr><tr><td>All KIX flights cancelled</td><td>Hotel near airport (KIX Sheraton); rebook via airline app</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Key contacts</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Service</th><th>Contact</th></tr></thead><tbody><tr><td>Delta Airlines</td><td>1-800-221-1212</td></tr><tr><td>Korean Air</td><td>+82-2-2656-2001</td></tr><tr><td>Sakura Cross Tokyo</td><td>[Booking.com confirmation phone]</td></tr><tr><td>MIMARU Kyoto</td><td>[Expedia confirmation phone]</td></tr><tr><td>US Embassy Tokyo</td><td>+81-3-3224-5000</td></tr><tr><td>Japan Police</td><td>110</td></tr><tr><td>Japan Ambulance</td><td>119</td></tr><tr><td>Travel insurance</td><td>[Your 24h number]</td></tr></tbody></table></div>
+  </div>
+</section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      travel-genie · japan-2026
+    </div>
+  </footer>
+  </div>
+  </div>
+
+  <script>
+    (function() {
+      const links = document.querySelectorAll('.site-sidebar-link');
+      const dayIds = ["day-1","day-2","day-3","day-4","day-5","day-6","day-7","day-8"];
+      const sectionIds = ["maps","flights","hotels","restaurants","attractions","shopping-comparison","food","immigration","health","contingency"];
+      const anchors = [...dayIds, ...sectionIds]
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+      function onScroll() {
+        let active = anchors[0];
+        for (const el of anchors) {
+          if (el.getBoundingClientRect().top <= 96) active = el;
+        }
+        links.forEach(l => {
+          l.classList.toggle('site-sidebar-link--active',
+            l.getAttribute('href') === '#' + active.id);
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
