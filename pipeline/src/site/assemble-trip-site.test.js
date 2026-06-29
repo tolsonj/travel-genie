@@ -48,9 +48,11 @@ assert(Array.isArray(day1.events[0].lines), "event has lines array");
 // T3: section ids match expected set
 const sectionIds = site.sections.map(s => s.id);
 for (const id of [
+  "maps",
   "hotels",
   "restaurants",
   "attractions",
+  "spas",
   "shopping-comparison",
   "food",
   "immigration",
@@ -71,8 +73,11 @@ if (existsSync(htmlPath)) {
   assert(html.includes('class="site-sidebar"'), "trip.html has sidebar nav");
   assert(html.includes('id="itinerary"'), 'trip.html has id="itinerary" anchor');
   assert(html.includes('id="hotels"'), 'trip.html has id="hotels" section');
+  assert(html.includes('id="maps"'), 'trip.html has id="maps" section');
+  assert(html.includes("site-map-img") || html.includes("site-map-fallback"), "trip.html has map visuals");
   assert(html.includes('id="restaurants"'), 'trip.html has id="restaurants" section');
   assert(html.includes('id="attractions"'), 'trip.html has id="attractions" section');
+  assert(html.includes('id="spas"'), 'trip.html has id="spas" section');
   assert(html.includes('id="shopping-comparison"'), 'trip.html has id="shopping-comparison" section');
   assert(html.includes('@media print'), "trip.html CSS includes @media print");
   assert(html.length > 30000, `trip.html size > 30 KB (got ${html.length} bytes)`);

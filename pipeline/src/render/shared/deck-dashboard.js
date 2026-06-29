@@ -1,5 +1,6 @@
 // Shared deck-dashboard chrome helpers (used by dashboard + bespoke templates).
 import { esc, has } from "../util.js";
+import { publishIntro, sanitizeDashboardModel } from "../../shared/publish-filter.js";
 
 export function intelBox(content, label, cls = "dash-intel-box") {
   if (!content) return "";
@@ -72,8 +73,9 @@ export function slideChrome(d, bodyHtml, extra = "") {
   const sectionKicker = d.section_kicker || "";
 
   const bannerText = d.banner?.text || (d.intro && d.intro !== "---" && !d.sidebar?.length ? d.intro : "");
-  const banner = bannerText
-    ? `<div class="dash-banner">${d.banner?.label ? `<strong>${esc(d.banner.label)}</strong>` : ""}${esc(bannerText.replace(/^>\s*/, ""))}</div>`
+  const cleanBanner = publishIntro(bannerText);
+  const banner = cleanBanner
+    ? `<div class="dash-banner">${d.banner?.label ? `<strong>${esc(d.banner.label)}</strong>` : ""}${esc(cleanBanner.replace(/^>\s*/, ""))}</div>`
     : "";
 
   return `
@@ -215,7 +217,7 @@ export function splitDashboardSlides(d) {
 }
 
 export function normalizeDashboard(d) {
-  if (d.sidebar?.length || d.panels?.length) return d;
+  if (d.sidebar?.length || d.panels?.length) return sanitizeDashboardModel(d);
 
   const split = splitTitle(d.title);
   const out = {
@@ -257,13 +259,6 @@ export function normalizeDashboard(d) {
       ...(tripTotal ? [{ ...tripTotal, caption: tripTotal.caption || "Trip Total" }] : []),
       ...other.map(t => ({ ...t, caption: t.caption || "Details" }))
     ];
-    if (d.flights.search_date) {
-      out.sidebar.unshift({
-        type: "list",
-        caption: "Flight search",
-        items: [`Search date: ${d.flights.search_date}`]
-      });
-    }
     if (tripTotal?.rows?.length) {
       out.sidebar.push({
         type: "table",
@@ -284,5 +279,5 @@ export function normalizeDashboard(d) {
   } else {
     out.panels = tables.map(t => ({ ...t, caption: t.caption || "Details" }));
   }
-  return out;
+  return sanitizeDashboardModel(out);
 }

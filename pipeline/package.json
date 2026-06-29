@@ -10,7 +10,9 @@
   "scripts": {
     "build": "node src/build.js",
     "extract": "node src/extract/extract.js",
-    "render": "node src/build.js --skip-extract"
+    "render": "node src/build.js --skip-extract",
+    "maps-csv": "node src/export/generate-maps-csv.js",
+    "sync-google-geo": "node src/geo/sync-google-geo.js"
   },
   "engines": {
     "node": ">=18"

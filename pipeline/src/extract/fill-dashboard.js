@@ -6,13 +6,22 @@ import { fileURLToPath } from "url";
 import { splitTitle } from "../render/shared/deck-dashboard.js";
 import { isFlightTable, isDateFlexTable, isTripTotalTable } from "./flight-extract.js";
 import { extractHotels } from "./hotel-extract.js";
+import {
+  filterPublisherPanels,
+  filterPublisherSidebar,
+  filterPublisherTables,
+  isSearchLogTable,
+  publishBanner,
+  publishIntro,
+  publishKicker
+} from "../shared/publish-filter.js";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const dataRoot = join(__dir, "../../data");
 
 const KICKERS = {
-  "flight-comparison": "MCP live fares · per-leg options · trip total vs budget",
-  "hotel-comparison": "MCP rate checks · city options · lodging total vs budget",
+  "flight-comparison": "Live fares · per-leg options · trip total vs budget",
+  "hotel-comparison": "Rate checks · city options · lodging total vs budget",
   "03-immigration-entry": "VJW · visa-free · passport · timeline",
   "07-transport-money": "Flights · trip total · ground legs · money",
   "08-customs-borders": "Arrival · duty-free · tax-free · US re-entry",
@@ -87,11 +96,8 @@ function buildSidebar(d, aspect) {
   }
 
   if ((aspect === "07-transport-money" || aspect === "flight-comparison") && d.flights) {
-    const meta = [];
-    if (d.flights.search_date) meta.push(`Search date: ${d.flights.search_date}`);
-    if (d.flights.budget_note) meta.push(d.flights.budget_note);
-    if (meta.length) {
-      sidebar.push({ type: "list", caption: "Flight search", items: meta });
+    if (d.flights.budget_note) {
+      sidebar.push({ type: "list", caption: "Budget", items: [d.flights.budget_note] });
     }
     if (d.flights.trip_total?.rows?.length) {
       sidebar.push({
@@ -113,11 +119,8 @@ function buildSidebar(d, aspect) {
   }
 
   if (aspect === "hotel-comparison" && d.hotels) {
-    const meta = [];
-    if (d.hotels.search_date) meta.push(`Search date: ${d.hotels.search_date}`);
-    if (d.hotels.budget_note) meta.push(d.hotels.budget_note);
-    if (meta.length) {
-      sidebar.push({ type: "list", caption: "Hotel search", items: meta });
+    if (d.hotels.budget_note) {
+      sidebar.push({ type: "list", caption: "Budget", items: [d.hotels.budget_note] });
     }
     if (d.hotels.total?.rows?.length) {
       sidebar.push({
@@ -176,7 +179,7 @@ function buildSidebar(d, aspect) {
 }
 
 function buildPanels(d, aspect) {
-  let tables = [...(d.tables || [])].filter(t => t.rows?.length);
+  let tables = filterPublisherTables([...(d.tables || [])].filter(t => t.rows?.length));
 
   if (aspect === "07-transport-money" || aspect === "flight-comparison") {
     if (d.flights?.trip_total) {
@@ -194,8 +197,9 @@ function buildPanels(d, aspect) {
       tables = tables.filter(t => t !== d.hotels.total && t.caption !== cap && !isTripTotalTable(t));
     }
     const hotelLike = table =>
-      /hotel|property|lodging|accommodation|city:/i.test(table.caption || "") ||
-      (table.columns || []).some(c => /hotel|property|night|rate|district|area/i.test(c));
+      !isSearchLogTable(table) &&
+      (/hotel|property|lodging|accommodation|city:/i.test(table.caption || "") ||
+      (table.columns || []).some(c => /hotel|property|night|rate|district|area/i.test(c)));
     const hotelTables = tables.filter(hotelLike);
     const other = tables.filter(t => !hotelLike(t));
     tables = [...hotelTables, ...other];
@@ -262,7 +266,7 @@ function rebalanceDenseDashboard(d, aspect) {
 export function migrateDashboard(d) {
   const aspect = d.aspect;
   const { main, accent } = splitTitle(d.title);
-  const intro = cleanIntro(d.intro);
+  const intro = publishIntro(cleanIntro(d.intro));
 
   const scorecard =
     aspect === "17-time-optimization"
@@ -277,10 +281,10 @@ export function migrateDashboard(d) {
       : main,
     slide_title_accent: ACCENTS[aspect] || accent,
     section_label: d.title,
-    section_kicker: KICKERS[aspect] || "",
-    banner: intro ? { text: intro } : undefined,
-    sidebar: buildSidebar(d, aspect),
-    panels: buildPanels(d, aspect),
+    section_kicker: publishKicker(KICKERS[aspect] || ""),
+    banner: intro ? publishBanner({ text: intro }) : undefined,
+    sidebar: filterPublisherSidebar(buildSidebar(d, aspect)),
+    panels: filterPublisherPanels(buildPanels(d, aspect)),
     scorecard: scorecard || d.scorecard,
     footer: d.footer
   }, aspect);

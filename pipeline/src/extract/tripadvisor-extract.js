@@ -13,15 +13,15 @@ function colMatch(columns, re) {
 
 export function looksLikeVenueTable(table) {
   const cols = table.columns || [];
-  const hasName = colMatch(cols, /restaurant|attraction|venue|name|place/i);
-  const hasSignal = colMatch(cols, /rating|review|price|cuisine|type/i);
+  const hasName = colMatch(cols, /restaurant|attraction|spa|venue|name|place/i);
+  const hasSignal = colMatch(cols, /rating|review|price|cuisine|type|duration/i);
   return hasName && hasSignal;
 }
 
 function isVenueCaption(caption) {
   const c = caption || "";
   return (
-    /venue snapshot|restaurant comparison|attractions comparison|restaurant options|attraction options/i.test(c) ||
+    /venue snapshot|restaurant comparison|attractions comparison|spa comparison|restaurant options|attraction options|spa options/i.test(c) ||
     /^city:\s*/i.test(c) ||
     /^hub:\s*/i.test(c)
   );
@@ -48,6 +48,7 @@ function parseSearchDate(body) {
 function parseVenueKind(body) {
   if (/venue snapshot\s*[—–-]\s*restaurants|restaurant comparison/i.test(body)) return "restaurants";
   if (/venue snapshot\s*[—–-]\s*attractions|attractions comparison/i.test(body)) return "attractions";
+  if (/venue snapshot\s*[—–-]\s*spas|spa comparison/i.test(body)) return "spas";
   return "venues";
 }
 
@@ -67,12 +68,13 @@ function rowToPick(row, columns) {
   };
   return {
     name:
-      col("restaurant|attraction|venue|place|name") || stripMd(row[0]),
+      col("restaurant|attraction|spa|venue|place|name") || stripMd(row[0]),
     rating: col("rating|score|stars") || stripMd(row[1]),
     reviews: col("review") || "",
-    price: col("price|cuisine|type") || stripMd(row[2]),
-    category: col("cuisine|type|category") || "",
-    notes: col("note|why|pros|comments") || stripMd(row[row.length - 1])
+    price: col("price|rate") || "",
+    category: col("cuisine|type|category|treatment") || "",
+    duration: col("duration|length|time") || "",
+    notes: col("note|why|pros|comments|book") || stripMd(row[row.length - 1])
   };
 }
 

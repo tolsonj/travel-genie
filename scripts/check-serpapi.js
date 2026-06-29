@@ -7,6 +7,10 @@
  * zero-result tripadvisor ping to confirm engine access.
  */
 
+import { loadEnvFromRepo } from "./load-env.js";
+
+loadEnvFromRepo();
+
 const API_KEY = process.env.SERPAPI_API_KEY;
 const BASE = "https://serpapi.com";
 const TIMEOUT = 10_000;

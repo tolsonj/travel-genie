@@ -3,6 +3,8 @@ import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { ROUTE_PRESETS } from "./md-extract-presets.js";
 import { attachShoppingMaps, buildDayPlanCities, buildHubMap } from "../geo/shopping-geo.js";
+import { buildTripProximityMaps } from "../geo/venue-proximity.js";
+import { enrichProximityWithGoogle } from "../geo/enrich-proximity-google.js";
 import { getCachedRoutePreset } from "../geo/preset-resolver.js";
 import { REPO_ROOT } from "../discover.js";
 import { extractFlights } from "./flight-extract.js";
@@ -1435,6 +1437,23 @@ function enrichHotels(base, body, tables) {
     cleanIntro(base.intro) ||
     (hotels.search_date ? `Hotel rate check · ${hotels.search_date}` : null);
 
+  const trip = base.trip;
+  let proximity = [];
+  if (trip) {
+    const shoppingPath = join(REPO_ROOT, "trips", trip, "shopping-comparison.md");
+    const restaurantPath = join(REPO_ROOT, "trips", trip, "restaurant-comparison.md");
+    const shopping = existsSync(shoppingPath)
+      ? extractShopping(readFileSync(shoppingPath, "utf8"), parseTables(readFileSync(shoppingPath, "utf8")))
+      : null;
+    const restaurants = existsSync(restaurantPath)
+      ? extractVenues(readFileSync(restaurantPath, "utf8"), parseTables(readFileSync(restaurantPath, "utf8")))
+      : null;
+    proximity = enrichProximityWithGoogle(
+      buildTripProximityMaps(trip, { hotels, shopping, restaurants }),
+      trip
+    );
+  }
+
   return {
     ...base,
     intro,
@@ -1445,6 +1464,7 @@ function enrichHotels(base, body, tables) {
       hotel_tables: hotels.hotel_tables,
       budget_note: hotels.budget_note
     },
+    proximity,
     tables: reordered
   };
 }
@@ -1484,6 +1504,31 @@ function enrichAttractionsComparison(base, body, tables) {
   const intro =
     cleanIntro(base.intro) ||
     (venues.search_date ? `Attractions venue check · ${venues.search_date}` : null);
+
+  return {
+    ...base,
+    intro,
+    venues: {
+      search_date: venues.search_date,
+      kind: venues.kind,
+      picks: venues.picks,
+      venue_tables: venues.venue_tables,
+      search_log: venues.search_log
+    },
+    tables: reordered
+  };
+}
+
+function enrichSpaComparison(base, body, tables) {
+  const venues = extractVenues(body, tables);
+  const reordered = [
+    ...venues.venue_tables,
+    ...(venues.search_log ? [venues.search_log] : []),
+    ...venues.other_tables
+  ];
+  const intro =
+    cleanIntro(base.intro) ||
+    (venues.search_date ? `Spa & wellness check · ${venues.search_date}` : null);
 
   return {
     ...base,
@@ -1554,6 +1599,8 @@ export function enrichAspect(base, body) {
       return enrichRestaurantComparison(full, body, tables);
     case "attractions-comparison":
       return enrichAttractionsComparison(full, body, tables);
+    case "spa-comparison":
+      return enrichSpaComparison(full, body, tables);
     case "shopping-comparison":
       return enrichShoppingComparison(full, body, tables);
     case "transport-money":

@@ -1,3 +1,5 @@
+import { filterPublisherTables, publishIntro } from "../../shared/publish-filter.js";
+
 function esc(str) {
   return String(str ?? "")
     .replace(/&/g, "&amp;")
@@ -22,6 +24,7 @@ function renderTable(table) {
 const SECTION_ICONS = {
   restaurants: "🍽",
   attractions: "🏛",
+  spas: "💆",
   "shopping-comparison": "🛍",
   hotels: "🏨",
   flights: "✈"
@@ -34,8 +37,9 @@ const SECTION_ICONS = {
  */
 export function renderComparisonSection(section) {
   const icon = SECTION_ICONS[section.id] ?? "📋";
-  const intro = section.intro
-    ? `<p class="site-ref-intro">${esc(section.intro)}</p>`
+  const introText = publishIntro(section.intro);
+  const intro = introText
+    ? `<p class="site-ref-intro">${esc(introText)}</p>`
     : "";
 
   const bulletsHtml = Array.isArray(section.bullets)
@@ -51,7 +55,7 @@ export function renderComparisonSection(section) {
         .join("\n")
     : "";
 
-  const tablesHtml = (section.tables ?? []).map(table => renderTable(table)).join("\n");
+  const tablesHtml = filterPublisherTables(section.tables ?? []).map(table => renderTable(table)).join("\n");
 
   return `<section class="site-ref-section" id="${esc(section.id)}">
   <div class="site-section-inner">

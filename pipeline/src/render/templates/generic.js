@@ -3,6 +3,10 @@
 // groups + status callouts. Ensures a NEW aspect produces an on-brand slide
 // the first time, with zero design work.
 import { esc, has } from "../util.js";
+import {
+  filterPublisherTables,
+  publishIntro
+} from "../../shared/publish-filter.js";
 
 export const type = "generic";
 export const usesMap = false;
@@ -37,16 +41,13 @@ function isCityTable(t) {
 }
 
 function slideFooter(d) {
-  return `
-      <div class="footer">
-        <div class="transit-path">Generated from <em>${esc(d.aspect)}</em> · generic layout</div>
-      </div>
-      <div class="watermark">travel-genie · ${esc(d.trip)}</div>`;
+  return `<div class="watermark">travel-genie · ${esc(d.trip)}</div>`;
 }
 
 function renderComparisonSlide(d, cityTable, rightHtml, multiCity) {
-  const intro = d.intro
-    ? `<div class="banner"><strong>${esc(d.title || "")}</strong>${esc(d.intro)}</div>`
+  const introText = publishIntro(d.intro);
+  const intro = introText
+    ? `<div class="banner"><strong>${esc(d.title || "")}</strong>${esc(introText)}</div>`
     : "";
   const cityLabel = (cityTable.caption || "").replace(/^City:\s*/i, "");
   const baseTitle = d.slide_title || d.title || d.aspect || "Aspect";
@@ -66,9 +67,12 @@ function renderComparisonSlide(d, cityTable, rightHtml, multiCity) {
 }
 
 function renderStandardSlide(d) {
-  const intro = d.intro ? `<div class="banner"><strong>${esc(d.title || "")}</strong>${esc(d.intro)}</div>` : "";
+  const introText = publishIntro(d.intro);
+  const intro = introText
+    ? `<div class="banner"><strong>${esc(d.title || "")}</strong>${esc(introText)}</div>`
+    : "";
 
-  const tables = (d.tables || []).map(renderTable).join("");
+  const tables = filterPublisherTables(d.tables || []).map(renderTable).join("");
   const bullets = (d.bullets || []).map(renderBulletGroup).join("");
   const callouts = has(d.callouts)
     ? `<div><div class="block-caption">Validation</div><div class="callouts">${d.callouts.map(renderCallout).join("")}</div></div>`
@@ -91,8 +95,8 @@ function renderStandardSlide(d) {
 
 export function render(d) {
   if (isComparisonAspect(d)) {
-    const cityTables = (d.tables || []).filter(isCityTable);
-    const other = (d.tables || []).filter(t => !isCityTable(t));
+    const cityTables = filterPublisherTables(d.tables || []).filter(isCityTable);
+    const other = filterPublisherTables(d.tables || []).filter(t => !isCityTable(t));
     if (cityTables.length >= 3) {
       const meta = [
         other.map(renderTable).join(""),

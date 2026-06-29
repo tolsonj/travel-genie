@@ -1,3 +1,5 @@
+import { filterPublisherTables, publishIntro } from "../../shared/publish-filter.js";
+
 function esc(str) {
   return String(str ?? "")
     .replace(/&/g, "&amp;")
@@ -25,8 +27,9 @@ function renderTable(table, maxRows = 20) {
  * @returns {string}
  */
 export function renderGenericSection(section) {
-  const intro = section.intro
-    ? `<p class="site-ref-intro">${esc(section.intro)}</p>`
+  const introText = publishIntro(section.intro);
+  const intro = introText
+    ? `<p class="site-ref-intro">${esc(introText)}</p>`
     : "";
 
   const bulletsHtml = Array.isArray(section.bullets)
@@ -43,7 +46,7 @@ export function renderGenericSection(section) {
     : "";
 
   const tablesHtml = Array.isArray(section.tables)
-    ? (section.tables ?? []).map(table => renderTable(table)).join("\n")
+    ? filterPublisherTables(section.tables ?? []).map(table => renderTable(table)).join("\n")
     : "";
 
   return `<section class="site-ref-section" id="${esc(section.id)}">

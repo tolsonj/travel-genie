@@ -63,6 +63,43 @@ export const GEOMAP_CLIENT_SCRIPT = `
         .attr("stroke-dasharray", "6 4").attr("stroke-linecap", "round");
     }
 
+    var anchorIdx = cfg.anchor_index;
+    if (cfg.distance_edges && anchorIdx != null && pts[anchorIdx]) {
+      var ap = pts[anchorIdx].p;
+      cfg.distance_edges.forEach(function (e) {
+        var bp = pts[e.to]?.p;
+        if (!bp) return;
+        svg.append("line")
+          .attr("x1", ap[0]).attr("y1", ap[1])
+          .attr("x2", bp[0]).attr("y2", bp[1])
+          .attr("stroke", "var(--dist-line, #7f8c8d)")
+          .attr("stroke-width", 1.5)
+          .attr("stroke-dasharray", "3 3")
+          .attr("opacity", 0.85);
+        var mx = (ap[0] + bp[0]) / 2;
+        var my = (ap[1] + bp[1]) / 2;
+        var dx = bp[0] - ap[0];
+        var dy = bp[1] - ap[1];
+        var len = Math.sqrt(dx * dx + dy * dy) || 1;
+        var nx = -dy / len;
+        var ny = dx / len;
+        var lx = mx + nx * 10;
+        var ly = my + ny * 10;
+        var g = svg.append("g").attr("class", "dist-label");
+        var text = g.append("text")
+          .attr("x", lx).attr("y", ly)
+          .attr("text-anchor", "middle")
+          .attr("class", "dist-label-text")
+          .text(e.label || "");
+        var bb = text.node().getBBox();
+        g.insert("rect", "text")
+          .attr("class", "dist-label-bg")
+          .attr("x", bb.x - 3).attr("y", bb.y - 1)
+          .attr("width", bb.width + 6).attr("height", bb.height + 2)
+          .attr("rx", 2);
+      });
+    }
+
     if (cfg.depart && pts.length) {
       var last = pts[pts.length - 1].p;
       var end = [Math.min(last[0] + 70, w - 8), Math.min(last[1] + 48, h - 8)];
@@ -93,8 +130,9 @@ export const GEOMAP_CLIENT_SCRIPT = `
     node.append("circle")
       .attr("cx", function (d) { return d.p[0]; })
       .attr("cy", function (d) { return d.p[1]; })
-      .attr("r", 13).attr("fill", function (d) { return d.color || "#c0392b"; })
-      .attr("stroke", "#fff").attr("stroke-width", 2.5);
+      .attr("r", function (d) { return d.role === "anchor" ? 16 : 13; })
+      .attr("fill", function (d) { return d.color || "#c0392b"; })
+      .attr("stroke", "#fff").attr("stroke-width", function (d) { return d.role === "anchor" ? 3 : 2.5; });
     node.append("text").attr("class", "node-letter")
       .attr("x", function (d) { return d.p[0]; })
       .attr("y", function (d) { return d.p[1] + 4; })

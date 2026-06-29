@@ -10,7 +10,9 @@ import { readFileSync, readdirSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join, basename } from "node:path";
 import { parseItineraryTables, parseBookingQueue } from "./parse-itinerary-tables.js";
+import { buildMapsSection } from "./build-maps-section.js";
 import { dataDir } from "../discover.js";
+import { publishSection } from "../shared/publish-filter.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -20,6 +22,7 @@ const SECTION_ASPECTS = [
   { id: "hotels",                title: "Hotels",               aspect: "hotel-comparison" },
   { id: "restaurants",           title: "Restaurants",          aspect: "restaurant-comparison" },
   { id: "attractions",           title: "Attractions",          aspect: "attractions-comparison" },
+  { id: "spas",                  title: "Spas & Wellness",      aspect: "spa-comparison" },
   { id: "shopping-comparison",   title: "Shopping",             aspect: "shopping-comparison" },
   { id: "food",                  title: "Food & Dining",        aspect: "06-food-dining" },
   { id: "immigration",           title: "Immigration",          aspect: "03-immigration-entry" },
@@ -179,20 +182,22 @@ export function assembleTripSite(slug) {
   const booking_queue = itinerary ? parseBookingQueue(itinerary) : [];
 
   // --- sections ---
-  const sections = SECTION_ASPECTS
-    .filter(spec => aspects.has(spec.aspect))
-    .map(spec => {
+  const mapsSection = buildMapsSection(slug, aspects);
+  const sections = [
+    ...(mapsSection ? [mapsSection] : []),
+    ...SECTION_ASPECTS.filter(spec => aspects.has(spec.aspect)).map(spec => {
       const data = aspects.get(spec.aspect);
-      return {
+      return publishSection({
         id: spec.id,
         title: spec.title,
         aspect: spec.aspect,
         anchor: true,
-        ...(data.intro   != null && { intro:   data.intro }),
-        ...(data.tables  != null && { tables:  data.tables }),
-        ...(data.bullets != null && { bullets: data.bullets }),
-      };
-    });
+        ...(data.intro != null && { intro: data.intro }),
+        ...(data.tables != null && { tables: data.tables }),
+        ...(data.bullets != null && { bullets: data.bullets })
+      });
+    })
+  ];
 
   return {
     trip: slug,

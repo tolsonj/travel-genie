@@ -159,6 +159,7 @@ Collect in Step 1 / `profile.md` if missing:
 | **06b Food & dining** | Restaurants per itinerary city (`category=restaurants`) |
 | **10 Culture & museums** | Attractions and museums per city (`category=attractions`) |
 | **12 Hidden gems** | Off-beat attractions per city (`category=attractions`, higher review threshold) |
+| **11 Adventure** | Spa/wellness per hub — write `spa-comparison.md` sidecar |
 | **18 Final assembly** | Reference sidecar totals; do not re-search |
 
 ## Per-city search workflow
@@ -175,12 +176,14 @@ Collect in Step 1 / `profile.md` if missing:
 7. Write or update sidecars:
    - Step 06b → `trips/{slug}/restaurant-comparison.md`
    - Steps 10/12 → `trips/{slug}/attractions-comparison.md`
+   - Step 11 (wellness) → `trips/{slug}/spa-comparison.md`
 8. Distill key tables into the matching `opt-*.md` Output section.
 
 ## Optional sidecars
 
 - `trips/{slug}/restaurant-comparison.md` — referenced from Step 06b via wikilinks
 - `trips/{slug}/attractions-comparison.md` — referenced from Steps 10 and 12 via wikilinks
+- `trips/{slug}/spa-comparison.md` — referenced from Step 11 (adventure/wellness) via wikilinks; renders in `trip.html` and `deck.html`
 
 ## Output table format (restaurants, per city)
 

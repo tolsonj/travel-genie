@@ -19,6 +19,7 @@ import { extractFromMarkdown, readTripFromFrontmatter } from "./extract/md-extra
 import { renderDeck } from "./render/index.js";
 import { assembleTripSite } from "./site/assemble-trip-site.js";
 import { renderTripSite } from "./site/render-trip-site.js";
+import { exportGoogleMapsCsvForTrip } from "./export/google-maps-csv.js";
 
 function parseArgs(argv) {
   const args = argv.slice(2);
@@ -86,6 +87,15 @@ async function main() {
   const outDir = join(PIPELINE_ROOT, "dist", trip);
   mkdirSync(outDir, { recursive: true });
   const written = [];
+
+  try {
+    const mapCsvs = exportGoogleMapsCsvForTrip(trip);
+    for (const w of mapCsvs) {
+      console.log(`  ✓ maps/${w.out.padEnd(16)} (${w.count} rows)`);
+    }
+  } catch (e) {
+    console.warn(`  … maps CSV export skipped: ${e.message}`);
+  }
 
   // Stage 2a: site render (default).
   if (flags.target === "site" || flags.target === "both") {

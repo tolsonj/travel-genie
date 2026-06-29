@@ -20,6 +20,7 @@ export const THEME_CSS = `
   --pass-green: #1fa35a;
   --warn-amber: #c98a00;
   --route-line: #c9920d;
+  --dist-line: #7f8c8d;
   --sea: #d6e8f4;
   --land: #dde3da;
   --land-line: #b4bfaa;
@@ -143,6 +144,8 @@ body {
   stroke-width: 0.5;
 }
 .node-letter { font-size: 12px; font-weight: 700; fill: #fff; }
+.dist-label-text { font-size: 9px; font-weight: 700; fill: #3d4f5f; }
+.dist-label-bg { fill: rgba(255, 255, 255, 0.92); stroke: rgba(61, 79, 95, 0.15); stroke-width: 0.5; }
 
 table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 thead th {
@@ -1964,6 +1967,58 @@ tbody td:first-child { font-weight: 600; }
 .dash-slide-hotels .dash-sidebar .dash-intel-body {
   max-height: 170px;
 }
+
+.proximity-slide .proximity-body {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+.proximity-slide {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 10px;
+}
+.proximity-slide .proximity-map {
+  min-height: 480px;
+  height: 100%;
+}
+.proximity-map-stack {
+  position: relative;
+  min-height: 480px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--sea);
+}
+.proximity-gmap-img {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+.proximity-map-fallback {
+  display: none;
+}
+.proximity-gmap-link {
+  color: var(--table-head);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--muted);
+}
+.proximity-gmap-link:hover { color: var(--gold-dark); }
+.proximity-table-wrap {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 480px;
+  background: #fff;
+}
+.proximity-table { font-size: 11px; }
+.proximity-table th { font-size: 10px; }
+.proximity-table tbody th { font-weight: 600; text-align: left; }
+
 .dash-slide-immigration .dash-body {
   grid-template-columns: 268px 1fr;
   gap: 10px;

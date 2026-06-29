@@ -105,6 +105,21 @@
       }
     },
     {
+      "id": "spa-comparison",
+      "match": "^spa-comparison$",
+      "type": "spa-comparison",
+      "template": "generic",
+      "title": "Spa Comparison",
+      "hints": {
+        "summary": "Per-city spa and wellness picks (resort spas, couples massage, foot massage).",
+        "fields": [
+          "venues { search_date, kind, picks[], venue_tables[], search_log }"
+        ],
+        "notes": "Source: trips/{slug}/spa-comparison.md. Tables: Spa, Rating, Price, Type, Duration, Notes. Optional Address column or venue-addresses.json for My Maps. Distill into accommodation/adventure steps when relevant.",
+        "image_categories": ["profile-icon"]
+      }
+    },
+    {
       "id": "shopping-comparison",
       "match": "^shopping-comparison$",
       "type": "shopping-comparison",

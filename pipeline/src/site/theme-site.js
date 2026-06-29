@@ -475,4 +475,183 @@ a { color: inherit; }
 .site-bullet-list li { font-size: 0.9rem; line-height: 1.55; color: #2a2a2a; margin-bottom: 0.2rem; }
 .site-ref-note { font-size: 0.8rem; color: #777; font-style: italic; margin-top: 0.75rem; }
 .site-table-caption { font-size: 0.9rem; font-weight: 600; color: #1c2b3a; margin: 1rem 0 0.25rem; }
+
+/* ── Maps section ─────────────────────────────────────────────────── */
+.site-maps-section { background: #f4f7fa; }
+.site-map-legend {
+  font-size: 0.85rem;
+  color: #56636f;
+  margin: 0 0 1rem;
+}
+.site-map-legend-h { color: #2980b9; font-weight: 700; }
+.site-map-legend-alt { color: #8e44ad; font-weight: 700; }
+.site-map-legend-s { color: #c9920d; font-weight: 700; }
+.site-map-legend-r { color: #27ae60; font-weight: 700; }
+.site-map-cities {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.site-map-city {
+  background: white;
+  border: 1px solid #e0e6ed;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.site-map-city-head {
+  padding: 1rem 1rem 0.5rem;
+}
+.site-map-city-title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #1c2b3a;
+}
+.site-map-city-sub {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+.site-map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.35rem;
+}
+.site-map-open-all,
+.site-map-import {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a73e8;
+  text-decoration: none;
+}
+.site-map-open-all:hover,
+.site-map-import:hover { text-decoration: underline; }
+.site-map-hotels {
+  margin: 0.75rem 0 0;
+  padding: 0.65rem 0.75rem;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e8ecf0;
+}
+.site-map-hotels-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+}
+.site-map-hotels-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+.site-map-hotel-alt { margin: 0.15rem 0; }
+.site-map-figure { margin: 0; }
+.site-map-caption {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+  color: #888;
+  background: #fafbfc;
+  border-top: 1px solid #e8ecf0;
+}
+.site-map-steps {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.55;
+}
+.site-map-steps li { margin: 0.35rem 0; }
+.site-map-steps a { color: #1a73e8; }
+.site-map-csv-subtitle {
+  font-size: 0.9rem;
+  margin: 1rem 0 0.4rem;
+  color: #1c2b3a;
+}
+.site-map-img-link { display: block; line-height: 0; }
+.site-map-img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  border-top: 1px solid #e8ecf0;
+  border-bottom: 1px solid #e8ecf0;
+}
+.site-map-fallback {
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #eef2f6;
+}
+.site-map-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+.site-map-venue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.site-map-venue {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  padding: 0.6rem 1rem;
+  border-top: 1px solid #f0f2f5;
+  font-size: 0.88rem;
+}
+.site-map-venue-name { font-weight: 600; color: #1a1a1a; }
+.site-map-venue-kind { color: #888; font-size: 0.8rem; }
+.site-map-venue-dist { text-align: right; font-size: 0.82rem; }
+.site-map-venue-dist a { color: #1a73e8; text-decoration: none; }
+.site-map-venue-dist a:hover { text-decoration: underline; }
+.site-map-layer-downloads {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid #d4e4f7;
+  border-radius: 8px;
+}
+.site-map-layer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.65rem 1rem;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.site-map-layer-grid li { margin: 0; }
+.site-map-layer-btn {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  background: #1a73e8;
+  color: #fff !important;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-map-layer-btn:hover { background: #1557b0; }
+.site-map-layer-grid .site-map-csv-meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  text-align: center;
+}
+.site-map-csv {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dde3ea;
+}
+.site-map-csv-title { font-size: 1rem; margin: 0 0 0.35rem; color: #1c2b3a; }
+.site-map-csv-note { font-size: 0.85rem; color: #666; margin: 0 0 0.75rem; }
+.site-map-csv-note a { color: #1a73e8; }
+.site-map-csv-list { margin: 0; padding-left: 1.25rem; font-size: 0.9rem; }
+.site-map-csv-meta { color: #999; font-size: 0.8rem; }
 `;

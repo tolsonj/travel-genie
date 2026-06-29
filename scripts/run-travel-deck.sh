@@ -19,6 +19,9 @@ fi
 echo "── preflight: serpapi-tripadvisor"
 node "$ROOT/scripts/check-serpapi.js"
 
+echo "── preflight: google-maps (optional)"
+node "$ROOT/scripts/check-google-maps.js"
+
 FORCE_JSON=false
 BUILD_DECK=false
 BUILD_PDF=false
@@ -59,6 +62,14 @@ fi
 echo "── fill JSON from opt-*.md ($TRIP)"
 node src/extract/fill-from-opt.js "$TRIP" $FORCE_FLAG
 
+echo "── Google Maps CSV (shopping, hotels, restaurants, attractions)"
+node src/export/generate-maps-csv.js "$TRIP"
+
+if [[ -n "${GOOGLE_MAPS_API_KEY:-}" ]]; then
+  echo "── Google Maps geo sync (geocode + walking distances)"
+  node src/geo/sync-google-geo.js "$TRIP" || true
+fi
+
 if [[ -f src/extract/fill-dashboard.js ]]; then
   echo "── normalize dashboard JSON"
   node src/extract/fill-dashboard.js "$TRIP" || true
@@ -93,6 +104,9 @@ if [[ "$BUILD_DECK" == "true" ]]; then
 fi
 if [[ "$BUILD_PDF" == "true" ]]; then
   echo "  $PIPELINE/dist/$TRIP/deck.pdf"
+fi
+if [[ -d "$PIPELINE/dist/$TRIP/maps" ]]; then
+  echo "  $PIPELINE/dist/$TRIP/maps/*.csv"
 fi
 echo ""
 echo "Open: file://$SITE_HTML"
