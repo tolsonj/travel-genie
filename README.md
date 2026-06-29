@@ -3,8 +3,10 @@
 Turn a single **traveler profile** into a polished, print-ready **travel deck** (HTML + PDF) using a 17-step chain-of-thought (CoT) planning workflow and a deterministic rendering pipeline.
 
 ```
-profile.md ──▶ CoT steps 01–17 ──▶ opt-*.md ──▶ canonical JSON ──▶ deck.html ──▶ deck.pdf
- (you write)     (AI planning)      (print src)   (extract)        (render)      (export)
+profile.md ──▶ CoT steps 01–17 ──▶ opt-*.md ──▶ canonical JSON ──▶ trip.html   (primary)
+ (you write)     (AI planning)      (print src)   (extract)        (site)
+                                                                  ──▶ deck.html  (optional --deck)
+                                                                  ──▶ deck.pdf   (optional --pdf)
 ```
 
 ---
@@ -70,8 +72,9 @@ Why this shape:
 | `trips/<slug>/shopping-comparison.md` | Optional SerpAPI TripAdvisor sidecar (shopping venues per city). |
 | `pipeline/` | **Local-only (gitignored).** Contains `src/`, `schema/`, `vendor/`, `data/`, `dist/`. Generated on first build. |
 | `pipeline/data/<slug>/*.json` | Canonical extracted data (one file per aspect). **Regeneratable** — see [Regenerating pipeline data](#regenerating-pipeline-data). |
-| `pipeline/dist/<slug>/deck.html` | Self-contained slide deck (maps + data inlined). **Generated** — safe to delete locally. |
-| `pipeline/dist/<slug>/deck.pdf` | One slide per page, 1280×720, backgrounds + maps. **Generated** — safe to delete locally. |
+| `pipeline/dist/<slug>/trip.html` | Mobile-first scrollable itinerary site. **Primary deliverable.** |
+| `pipeline/dist/<slug>/deck.html` | Slide deck (1280×720). Optional; use --deck flag. |
+| `pipeline/dist/<slug>/deck.pdf` | Slide PDF (Playwright). Optional; use --pdf flag. |
 | `pipeline/schema/aspect-manifest.json` | Registry: aspect → type, slide template, extraction hints. |
 | `scripts/run-travel-deck.sh` | One-command build: opt files → JSON → HTML → PDF. |
 | `scripts/build-opt-print.sh` | Standalone 8×10 print builder: `opt-*.md` → HTML (pandoc) → PDF (headless Chrome). |
@@ -348,6 +351,10 @@ Requirements for extract to succeed:
 ```bash
 chmod +x scripts/run-travel-deck.sh        # one-time
 ./scripts/run-travel-deck.sh china-vietnam-2026
+
+# Output: pipeline/dist/china-vietnam-2026/trip.html  ← open in browser or phone
+# Optional: also build slide deck and PDF
+./scripts/run-travel-deck.sh china-vietnam-2026 --deck --pdf
 ```
 
 Force a JSON refresh after editing `opt-*.md`:
@@ -509,6 +516,9 @@ generate any missing opt files, then build the deck.
 | Restaurant/attraction sidecars missing | Ensure `trips/<slug>/restaurant-comparison.md` and `attractions-comparison.md` exist; rebuild with `--force-json`. |
 | Shopping sidecar missing | Ensure `trips/<slug>/shopping-comparison.md` exists; rebuild with `--force-json`. |
 | `pandoc` missing (print build) | Install pandoc: `brew install pandoc` (macOS). Required only for `build-opt-print.sh`, not for the deck pipeline. |
+| `trip.html` not built | Run `./scripts/run-travel-deck.sh <slug>` (default now builds site, not deck). |
+| Site missing sections | Ensure aspect JSON exists in `pipeline/data/<slug>/`; rebuild. |
+| Print layout broken | Open `trip.html` in Chrome → Ctrl+P → select "Save as PDF". |
 
 ---
 

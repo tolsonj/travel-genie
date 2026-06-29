@@ -1,25 +1,35 @@
 #!/usr/bin/env bash
-# Extract JSON from opt-*.md → render deck.html → export deck.pdf
-# Usage: ./scripts/run-travel-deck.sh <trip-slug> [--force-json]
+# Extract JSON from opt-*.md → render trip.html (default) | deck.html | deck.pdf
+# Usage: ./scripts/run-travel-deck.sh <trip-slug> [--force-json] [--deck] [--pdf]
 set -euo pipefail
 
-TRIP="${1:?Usage: $0 <trip-slug> [--force-json]}"
-ROOT_PRE="$(cd "$(dirname "$0")/.." && pwd)"
+TRIP="${1:?Usage: $0 <trip-slug> [--force-json] [--deck] [--pdf]}"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 # Load .env so SERPAPI_API_KEY is available when running outside Cursor.
 # Do not `source` — values like SERPAPI_API_KEY=<key> break bash parsing.
-if [[ -f "$ROOT_PRE/.env" ]]; then
+if [[ -f "$ROOT/.env" ]]; then
   while IFS= read -r line || [[ -n "$line" ]]; do
     [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
     line="${line%"${line##*[![:space:]]}"}" # trim trailing whitespace
     export "$line"
-  done < "$ROOT_PRE/.env"
+  done < "$ROOT/.env"
 fi
 
 echo "── preflight: serpapi-tripadvisor"
-node "$ROOT_PRE/scripts/check-serpapi.js"
-FORCE="${2:-}"
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+node "$ROOT/scripts/check-serpapi.js"
+
+FORCE_JSON=false
+BUILD_DECK=false
+BUILD_PDF=false
+for arg in "${@:2}"; do
+  case "$arg" in
+    --force-json) FORCE_JSON=true ;;
+    --deck)       BUILD_DECK=true ;;
+    --pdf)        BUILD_PDF=true ;;
+  esac
+done
+
 PIPELINE="$ROOT/pipeline"
 TRIP_DIR="$ROOT/trips/$TRIP"
 
@@ -42,7 +52,7 @@ fi
 cd "$PIPELINE"
 
 FORCE_FLAG=""
-if [[ "$FORCE" == "--force-json" ]]; then
+if [[ "$FORCE_JSON" == "true" ]]; then
   FORCE_FLAG="--force"
 fi
 
@@ -54,19 +64,36 @@ if [[ -f src/extract/fill-dashboard.js ]]; then
   node src/extract/fill-dashboard.js "$TRIP" || true
 fi
 
-echo "── render deck.html"
-node src/build.js "$TRIP" --skip-extract
+# Always build site (primary deliverable)
+echo "── render trip.html (site)"
+node src/build.js "$TRIP" --skip-extract --target site
 
-echo "── export deck.pdf"
-if [[ ! -d node_modules/playwright ]] || [[ ! -d node_modules/pdf-lib ]]; then
-  echo "   installing playwright + pdf-lib (one-time)…"
-  npm install --no-save playwright pdf-lib >/dev/null
+# Optional: slide deck
+if [[ "$BUILD_DECK" == "true" ]]; then
+  echo "── render deck.html (slide deck)"
+  node src/build.js "$TRIP" --skip-extract --target deck
 fi
-node src/export-pdf.js "$TRIP"
 
-HTML="$PIPELINE/dist/$TRIP/deck.html"
-PDF="$PIPELINE/dist/$TRIP/deck.pdf"
+# Optional: slide PDF (requires Playwright)
+if [[ "$BUILD_PDF" == "true" ]]; then
+  echo "── export deck.pdf (Playwright)"
+  if [[ ! -d node_modules/playwright ]] || [[ ! -d node_modules/pdf-lib ]]; then
+    echo "   installing playwright + pdf-lib (one-time)…"
+    npm install --no-save playwright pdf-lib >/dev/null
+  fi
+  node src/export-pdf.js "$TRIP"
+fi
+
+SITE_HTML="$PIPELINE/dist/$TRIP/trip.html"
 echo ""
 echo "Done:"
-echo "  $HTML"
-echo "  $PDF"
+echo "  $SITE_HTML"
+if [[ "$BUILD_DECK" == "true" ]]; then
+  echo "  $PIPELINE/dist/$TRIP/deck.html"
+fi
+if [[ "$BUILD_PDF" == "true" ]]; then
+  echo "  $PIPELINE/dist/$TRIP/deck.pdf"
+fi
+echo ""
+echo "Open: file://$SITE_HTML"
+echo "Print: open in browser → Ctrl+P / Cmd+P"
