@@ -4,17 +4,17 @@
 
 **Pace:** Relaxed cultural couple — one anchor per day, late brunch default, 70% scheduled / 30% open. Vote on forks (e.g., Ha Long day trip vs in-city Hanoi).
 
-**Interest mapping:** Hong Kong = shopping (dupes/electronics) + harbor history + Peak nature; Hanoi = Old Quarter food + Temple of Literature history; Đà Nẵng/Hội An = beach perfect-day finale + tailoring + Marble Mountains nature.
+**Interest mapping:** Hong Kong = harbor + Peak nature + all China shopping (electronics, purses/watches, sneakers); Hanoi = Old Quarter food + Temple of Literature history; Đà Nẵng/Hội An = beach perfect-day finale + sneakers + Marble Mountains (no tailoring).
 
 **Heat/crowd protocol:** Outdoor sights before 10 AM or after 4 PM; malls/museums midday; AC hotel break 1–3 PM.
 
-**Soft days:** Sep 2 (HKG jet lag), Sep 5 (HKG→HAN hub change), Sep 8 (HAN→DAD hub change).
+**Soft days:** Sep 2 (HKG jet lag), Sep 6 (HKG→HAN hub change), Sep 9 (HAN→DAD hub change).
 
 **Transit:** MTR + Grab Hong Kong; Grab Hanoi and Đà Nẵng — no street taxis.
 
-**Tailoring lead time:** Hội An fittings Sep 9 (first) and Sep 11 (final) for Sep 12 pickup.
+**Visa:** **Hong Kong only** on the China leg — **no mainland China visa required**. (Shenzhen/Guangzhou removed.) Vietnam e-visa still needed.
 
-**Open-jaw:** HKG in / DAD out — no backtracking.
+**Open-jaw:** HKG in / DAD out — no backtracking. Vietnam exit **one day earlier** (Sep 12).
 
 ## Output
 
@@ -22,22 +22,25 @@
 
 | Field | Value |
 |-------|-------|
-| Dates | 2026-09-01 → 2026-09-14 |
+| Dates | 2026-09-01 → 2026-09-13 |
 | Countries | China (Hong Kong SAR) · Vietnam |
 | Budget | $30,000 all-in; splurge Vietnam |
 | Pace | Relaxed cultural |
-| Hub nights | Hong Kong 3 · Hanoi 3 · Đà Nẵng 5 |
-| Duration | 11 hub nights · 14 calendar days (incl. travel) |
+| Hub nights | Hong Kong 4 · Hanoi 3 · Đà Nẵng 3 |
+| Duration | 10 hub nights · 13 calendar days (incl. travel) |
 | Entry | HKG · Exit DAD (open-jaw) |
+| China shopping focus | Electronics, purses/watches, sneakers — **all in Hong Kong** |
+| Removed | Shenzhen · Guangzhou · Hội An tailored suits · mainland China visa |
 
 ### Booking queue
 
 | Book now | Book later | Deadline |
 |----------|------------|----------|
-| ATL→HKG + DAD→ATL (refundable) | Hội An tailoring appointment | Flights: T-90d |
-| Hong Kong + Đà Nẵng hotels (refundable) | Ha Long day trip (if voting yes) | Domestic: T-30d |
-| HKG→HAN, HAN→DAD | Peak Tram tickets | Hotels: T-45d |
-| Travel insurance | Marble Mountains guide | Before final payment |
+| ATL→HKG + DAD→ATL (refundable) | Ha Long day trip (if voting yes) | Flights: T-90d |
+| Hong Kong + Đà Nẵng hotels (refundable) | Peak Tram tickets | Hotels: T-45d |
+| HKG→HAN, HAN→DAD | Marble Mountains guide | Domestic: T-30d |
+| Vietnam e-visa | — | Before travel |
+| Travel insurance | — | Before final payment |
 
 ---
 
@@ -77,13 +80,13 @@
 
 ---
 
-### Day 3 — Thursday, Sep 3 · Hong Kong · Shopping + Peak
+### Day 3 — Thursday, Sep 3 · Hong Kong · Peak + Causeway Bay shopping
 
 | Slot | Plan |
 |------|------|
 | **Morning** | **Peak Tram** to Victoria Peak — depart hotel by **7:30 AM** (crowd avoidance) |
 | **Afternoon** | **Causeway Bay** shopping (Times Square, SOGO); AC lunch |
-| **Evening** | **Temple Street Night Market** — browse only; dinner **Tim Ho Wan** dim sum |
+| **Evening** | **Temple Street Night Market** — bags/watches browse; dinner **Tim Ho Wan** dim sum |
 
 **Wow moment:** Peak panorama at sunrise.  
 **Low energy:** Peak tram round trip only; mall browsing seated.  
@@ -94,12 +97,12 @@
 
 ---
 
-### Day 4 — Friday, Sep 4 · Hong Kong · Electronics + dupes
+### Day 4 — Friday, Sep 4 · Hong Kong · Electronics + purses
 
 | Slot | Plan |
 |------|------|
-| **Morning** | **Mong Kok** — **Sin Tat Plaza** / **Sin Centre** (phones, cameras, headphones) |
-| **Afternoon** | **Ladies Market** + **Fa Yuen Street** (Sneaker Street) — bags, watches (dupes) |
+| **Morning** | **Mong Kok** — **Sin Tat Plaza** / **Sin Centre** (phones, tablets, cameras, headphones) |
+| **Afternoon** | **Ladies Market** + **Fa Yuen Street** — bags/purses, watches (dupes) |
 | **Evening** | **Star Ferry** to Central; **Man Mo Dim Sum** or hotel dinner |
 
 **Wow moment:** Neon-soaked Mong Kok street energy.  
@@ -111,7 +114,24 @@
 
 ---
 
-### Day 5 — Saturday, Sep 5 · **SOFT HUB DAY** · HKG → Hanoi
+### Day 5 — Saturday, Sep 5 · Hong Kong · Sneakers + electronics finish
+
+| Slot | Plan |
+|------|------|
+| **Morning** | **Fa Yuen Street (Sneaker Street)** — Nike, Adidas, New Balance (US/EU sizes) |
+| **Afternoon** | **Sham Shui Po** — **Golden Computer Centre / Apliu Street** for remaining electronics; compare prices |
+| **Evening** | Harbour walk; dinner in TST or **Ladies Market** return for any missed purses |
+
+**Wow moment:** Sneaker Street lineup of limited releases.  
+**Low energy:** One mall + seated dinner.  
+**Rainy-day backup:** **Langham Place** / **MOKO** malls (indoor, Mong Kok).  
+**Skip the trap:** Fake "outlet" sneakers — buy authentic from known shops.  
+**Free:** Window shopping · **Splurge:** Sneaker + final electronics.  
+**Transit:** MTR within Kowloon <20 min.
+
+---
+
+### Day 6 — Sunday, Sep 6 · **SOFT HUB DAY** · HKG → Hanoi
 
 | Slot | Plan |
 |------|------|
@@ -125,11 +145,11 @@
 **Skip the trap:** Airport taxi touts — Grab only.  
 **Free:** Lake walk · **Splurge:** Essence dinner.  
 **Transit:** Grab HAN airport ~30 min.  
-**Documents:** Vietnam e-visa printout.
+**Documents:** Vietnam e-visa printout; pack HK shopping receipts for ATL customs.
 
 ---
 
-### Day 6 — Sunday, Sep 6 · Hanoi · History + food
+### Day 7 — Monday, Sep 7 · Hanoi · History + food
 
 | Slot | Plan |
 |------|------|
@@ -146,7 +166,7 @@
 
 ---
 
-### Day 7 — Monday, Sep 7 · Hanoi · Vote day
+### Day 8 — Tuesday, Sep 8 · Hanoi · Vote day
 
 | Slot | Plan |
 |------|------|
@@ -163,7 +183,7 @@
 
 ---
 
-### Day 8 — Tuesday, Sep 8 · **SOFT HUB DAY** · HAN → Đà Nẵng
+### Day 9 — Wednesday, Sep 9 · **SOFT HUB DAY** · HAN → Đà Nẵng
 
 | Slot | Plan |
 |------|------|
@@ -180,29 +200,12 @@
 
 ---
 
-### Day 9 — Wednesday, Sep 9 · Hội An · Tailoring + Ancient Town
-
-| Slot | Plan |
-|------|------|
-| **Morning** | Grab to **Hội An Ancient Town** (~45 min); tailor fitting #1 (**Be Be Tailor** or **Yaly Couture**) |
-| **Afternoon** | Ancient Town walk — Japanese Covered Bridge, lantern shops; **late brunch** **Morning Glory** |
-| **Evening** | Lantern-lit old town; fitting notes for tailor |
-
-**Wow moment:** Lanterns at dusk on Thu Bon River.  
-**Low energy:** Tailor + seated café.  
-**Rainy-day backup:** Tailor indoor + **Hội An Museum**.  
-**Skip the trap:** 24-hour tailor scams — use 48h+ shops.  
-**Free:** Town walk (ticket for heritage buildings) · **Splurge:** Suit deposit.  
-**Transit:** Grab 45 min each way.
-
----
-
 ### Day 10 — Thursday, Sep 10 · **PERFECT DAY** · Beach + Marble Mountains
 
 | Slot | Plan |
 |------|------|
 | **Morning** | **Late brunch** at resort beach club |
-| **Afternoon** | **Marble Mountains** (Am Phu Cave) — 8 AM start if redoing morning; else 3 PM |
+| **Afternoon** | **Marble Mountains** (Am Phu Cave) — prefer **3 PM** start after brunch (or 8 AM if heat-sensitive swap) |
 | **Evening** | **My Khe Beach** walk; seafood at **Thìa Gỗ Đà Nẵng** |
 
 **Wow moment:** Marble Mountain cave pagoda views.  
@@ -214,41 +217,24 @@
 
 ---
 
-### Day 11 — Friday, Sep 11 · Hội An · Fitting + sneakers
+### Day 11 — Friday, Sep 11 · Hội An · Ancient Town + sneakers
 
 | Slot | Plan |
 |------|------|
-| **Morning** | **An Bang Beach** walk (quieter than My Khe) |
-| **Afternoon** | Hội An tailor fitting #2 (final); **Fa Yuen-style sneaker hunt** at **Hội An Central Market** / Đà Nẵng **Vincom** (Nike, Adidas, New Balance) |
-| **Evening** | Resort dinner; pack suit garment bag |
+| **Morning** | Grab to **Hội An Ancient Town** (~45 min); Japanese Covered Bridge, lantern shops; **late brunch** **Morning Glory** |
+| **Afternoon** | Sneaker hunt at Đà Nẵng **Vincom** (Nike, Adidas, New Balance) — authorized retailers only |
+| **Evening** | Lantern-lit old town OR resort dinner (vote); pack for early exit |
 
-**Wow moment:** An Bang palm-lined beach morning.  
-**Low energy:** Market browsing seated.  
-**Rainy-day backup:** **Vincom Plaza Đà Nẵng** indoor mall.  
+**Wow moment:** Lanterns at dusk on Thu Bon River.  
+**Low energy:** Seated café + mall browsing.  
+**Rainy-day backup:** **Hội An Museum** + **Vincom Plaza** indoor.  
 **Skip the trap:** Fake sneaker "factory outlet" alleys — buy from authorized retailers.  
-**Free:** An Bang · **Splurge:** Sneaker purchases + suit balance.  
-**Transit:** Grab Hội An ~45 min.
+**Free:** Town walk (ticket for heritage buildings) · **Splurge:** Sneaker purchases.  
+**Transit:** Grab 45 min each way.
 
 ---
 
-### Day 12 — Saturday, Sep 12 · Đà Nẵng · Nature + pickup
-
-| Slot | Plan |
-|------|------|
-| **Morning** | **Son Tra Peninsula** (Lady Buddha viewpoint) — early for heat |
-| **Afternoon** | Pick up tailored suits from Hội An; resort pool |
-| **Evening** | **Hội An Eco Cooking Class** OR relaxed resort dinner (vote) |
-
-**Wow moment:** Lady Buddha panoramic bay view.  
-**Low energy:** Viewpoint drive-by only.  
-**Rainy-day backup:** **Da Nang Museum of Cham Sculpture**.  
-**Skip the trap:** Monkey Mountain unlicensed bike rentals.  
-**Free:** Viewpoint · **Splurge:** Cooking class.  
-**Transit:** Grab Son Tra ~25 min.
-
----
-
-### Day 13 — Sunday, Sep 13 · Departure · DAD → ATL
+### Day 12 — Saturday, Sep 12 · Departure · DAD → ATL
 
 | Slot | Plan |
 |------|------|
@@ -256,33 +242,35 @@
 | **Afternoon** | Grab to **DAD**; depart (~1–3 PM typical for US connections) |
 | **Evening** | In flight via ICN/NRT/HKG hub |
 
-**Wow moment:** Final harbor/beach goodbye.  
+**Wow moment:** Final beach goodbye (Vietnam exit **one day earlier** than original plan).  
 **Low energy:** Airport only.  
 **Rainy-day backup:** Airport lounge.  
-**Skip the trap:** Duty-free overspend on last-minute dupes.  
+**Skip the trap:** Duty-free overspend on last-minute dupes — HK haul already done.  
 **Free:** — · **Splurge:** Business upgrade if comparing cabins.  
 **Transit:** Grab DAD ~20 min.  
 **Book now:** Online check-in T-24h.
 
 ---
 
-### Day 14 — Monday, Sep 14 · Arrive ATL
+### Day 13 — Sunday, Sep 13 · Arrive ATL
 
 | Slot | Plan |
 |------|------|
-| **Morning** | Land **ATL** (evening Sep 13 or morning Sep 14 depending on routing) |
-| **Afternoon** | Customs declaration for shopping goods; rideshare home |
+| **Morning** | Land **ATL** (evening Sep 12 or morning Sep 13 depending on routing) |
+| **Afternoon** | Customs declaration for shopping goods (purses, watches, electronics, sneakers); rideshare home |
 | **Evening** | Unpack; rest |
 
 **Wow moment:** —  
-**Documents:** US customs declaration for watches, electronics, suits.
+**Documents:** US customs declaration for watches, bags/purses, electronics — no suits.
 
 ## Validation
 
 | Check | Result |
 |-------|--------|
 | Transit < 20% of trip? | **Pass** — 2 inter-country flights + airport transfers |
-| Soft days after arrivals/hub changes? | **Pass** — Sep 2, 5, 8 |
-| Shopping days on non-transit days? | **Pass** — Sep 3–4 HK, Sep 9–11 VN |
-| Tailoring lead time sufficient? | **Pass** — Sep 9 first fitting, Sep 11 final, Sep 12 pickup |
+| Soft days after arrivals/hub changes? | **Pass** — Sep 2, 6, 9 |
+| Shopping days on non-transit days? | **Pass** — Sep 3–5 HK; sneakers Sep 11 |
+| Mainland China visa avoided? | **Pass** — Hong Kong only, no SZ/GZ |
+| Tailoring removed? | **Pass** — no Hội An suit fittings |
+| Vietnam exit one day earlier? | **Pass** — DAD Sep 12; ATL Sep 13 |
 | Heat/crowd protocol applied? | **Pass** — dawn starts, AC breaks |
