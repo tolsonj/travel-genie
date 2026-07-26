@@ -8,25 +8,26 @@
 
 | Hub | Dates | Pick | Nights | $/night | Subtotal |
 |-----|-------|------|--------|---------|----------|
-| Hong Kong | Sep 2–6 | **AKI Hotel MGallery** | 4 | $197 | $788 |
+| Hong Kong | Sep 2–6 | **Mondrian Hong Kong** | 4 | $176 | $704 |
 | Hanoi | Sep 6–9 | **Le Premier Hotel** | 3 | $90 | $270 |
 | Đà Nẵng | Sep 9–12 | **Naman Retreat** | 3 | $105 | $315 |
-| **Total** | | | **10** | | **$1,373** |
+| **Total** | | | **10** | | **$1,289** |
 
-Vietnam splurge swap: **InterContinental Danang Sun Peninsula** (~$486/night) instead of Naman.
+Vietnam splurge swap: **InterContinental Danang Sun Peninsula** (~$486/night) instead of Naman, but its Sơn Trà location adds travel time to Marble Mountains and Hội An.
 
 ---
 
 ## Hong Kong — Sep 2–6, 2026 (4 nights)
 
-**Neighborhood:** Tsim Sha Tsui / Kowloon waterfront preferred for harbour walks (AKI live listing is Wan Chai / Causeway Bay–adjacent — still strong MTR access).
+**Neighborhood:** Tsim Sha Tsui / Kowloon waterfront is preferred for harbour walks and direct MTR access to Mong Kok, Fa Yuen Street, and Sham Shui Po.
 
-### 1. AKI Hotel MGallery — **Recommended**
+### 1. AKI Hotel MGallery — Island-side alternative
 
 | | |
 |--|--|
 | Area / rating | Wan Chai (MGallery) · 4.8★ |
 | Plan rate | $197 / night |
+| Trade-off | Strong hotel, but requires a harbor crossing for the revised Kowloon-heavy shopping plan |
 | Live spot-check | Hotels.com ~$198 · Agoda ~$178 · Booking/Expedia ~$198 |
 | Official | [aki-hongkong-mgallery.com](https://www.aki-hongkong-mgallery.com/) · [Accor](https://all.accor.com/lien_externe.svlt?goto=fiche_hotel&code_hotel=B5L5) |
 | **Hotels.com** | [AKI Hong Kong – MGallery](https://www.hotels.com/ho2499298816/aki-hong-kong-mgallery-hong-kong-hong-kong-sar/) |
@@ -45,19 +46,31 @@ Vietnam splurge swap: **InterContinental Danang Sun Peninsula** (~$486/night) in
 | Booking.com | [Search Silveri HK (Sep 2–6)](https://www.booking.com/searchresults.html?ss=The+Silveri+Hotel+Hong+Kong+MGallery&checkin=2026-09-02&checkout=2026-09-06&group_adults=2&no_rooms=1) |
 | Expedia | [Search Silveri HK (Sep 2–6)](https://www.expedia.com/Hotel-Search?destination=The%20Silveri%20Hotel%20Hong%20Kong%20MGallery&startDate=2026-09-02&endDate=2026-09-06&adults=2&rooms=1) |
 
-### 3. Mondrian Hong Kong — Value / harbour-adjacent
+### 3. Mondrian Hong Kong — **Recommended**
 
 | | |
 |--|--|
 | Area / rating | Tsim Sha Tsui · 4.7★ |
 | Plan rate | $176 / night |
+| Route fit | Best balance for TST promenade plus direct Kowloon MTR access to Days 4–5 shopping |
 | Live spot-check | ~$164–200 / night (Super.com low; Hotels.com/Expedia ~$200) |
 | Official | [mondrianhotels.com/hong-kong](https://mondrianhotels.com/hong-kong/) |
 | **Hotels.com** | [Search Mondrian Hong Kong (Sep 2–6)](https://www.hotels.com/Hotel-Search?destination=Mondrian%20Hong%20Kong&startDate=2026-09-02&endDate=2026-09-06&adults=2&rooms=1) |
 | Booking.com | [Search Mondrian HK (Sep 2–6)](https://www.booking.com/searchresults.html?ss=Mondrian+Hong+Kong&checkin=2026-09-02&checkout=2026-09-06&group_adults=2&no_rooms=1) |
 | Expedia | [Search Mondrian HK (Sep 2–6)](https://www.expedia.com/Hotel-Search?destination=Mondrian%20Hong%20Kong&startDate=2026-09-02&endDate=2026-09-06&adults=2&rooms=1) |
 
-### 4. The Peninsula Hong Kong — Splurge
+### 4. Royal Plaza Hotel — Shopping-proximity alternative
+
+| | |
+|--|--|
+| Area / rating | Mong Kok · live rating/price must be verified |
+| Route fit | Above Mong Kok East MTR; closest option for electronics and sneaker shopping |
+| Trade-off | Densest, busiest neighborhood — weaker fit for the crowd-avoidance preference |
+| Official | [royalplaza.com.hk](https://www.royalplaza.com.hk/) |
+| Booking.com | [Search Royal Plaza HK (Sep 2–6)](https://www.booking.com/searchresults.html?ss=Royal+Plaza+Hotel+Hong+Kong&checkin=2026-09-02&checkout=2026-09-06&group_adults=2&no_rooms=1) |
+| Expedia | [Search Royal Plaza HK (Sep 2–6)](https://www.expedia.com/Hotel-Search?destination=Royal%20Plaza%20Hotel%20Hong%20Kong&startDate=2026-09-02&endDate=2026-09-06&adults=2&rooms=1) |
+
+### 5. The Peninsula Hong Kong — Splurge
 
 | | |
 |--|--|

@@ -32,9 +32,10 @@ hero-image: https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
-| AKI Hotel MGallery | $197 | Tsim Sha Tsui | 4.8★ | **Recommended** · Accor MGallery |
+| AKI Hotel MGallery | $197 | Wan Chai | 4.8★ | Island-side alternative · requires harbor crossing for Kowloon shopping |
 | Silveri Hong Kong MGallery | $191 | Central / Sheung Wan | 4.8★ | Island alt · design-forward |
-| Mondrian Hong Kong | $176 | Tsim Sha Tsui | 4.7★ | Value pick · harbour-adjacent |
+| Mondrian Hong Kong | $176 | Tsim Sha Tsui | 4.7★ | **Recommended** · Kowloon shopping access · harbour-adjacent |
+| Royal Plaza Hotel | Verify live | Mong Kok | Verify live | Shopping-proximity alt · above Mong Kok East MTR · busier area |
 | The Peninsula Hong Kong | $516 | Tsim Sha Tsui | 4.9★ | Splurge · harbor icon |
 
 #### Hanoi (2026-09-06 – 2026-09-09)
@@ -60,10 +61,10 @@ hero-image: https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&
 
 | Hub | Nights | Rate / night | Subtotal |
 |-----|-------:|-------------:|---------:|
-| Hong Kong | 4 | $197 | $788 |
+| Hong Kong | 4 | $176 | $704 |
 | Hanoi | 3 | $90 | $270 |
 | Đà Nẵng | 3 | $105 | $315 |
-| **Total** | **10** | — | **$1,373** |
+| **Total** | **10** | — | **$1,289** |
 
 **% of $30K budget:** ~5% (recommended picks)
 

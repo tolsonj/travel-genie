@@ -4,16 +4,17 @@
 
 ---
 
-### Hong Kong (2026-09-02 – 2026-09-05)
+### Hong Kong (2026-09-02 – 2026-09-06)
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
-| AKI Hotel MGallery | $197 | Tsim Sha Tsui | 4.8★ | **Recommended** · Accor MGallery · MTR TST ~5 min walk |
+| AKI Hotel MGallery | $197 | Wan Chai | 4.8★ | Island-side alternative · harbor crossing to Kowloon shopping |
 | Silveri Hong Kong MGallery | $191 | Central / Sheung Wan | 4.8★ | Island alt · design-forward · Sheung Wan MTR |
-| Mondrian Hong Kong | $176 | Tsim Sha Tsui | 4.7★ | Value pick · harbour-adjacent |
+| Mondrian Hong Kong | $176 | Tsim Sha Tsui | 4.7★ | **Recommended** · direct Kowloon shopping access · harbour-adjacent |
+| Royal Plaza Hotel | Verify live | Mong Kok | Verify live | Shopping-proximity alt · above Mong Kok East MTR · crowded district |
 | The Peninsula Hong Kong | $516 | Tsim Sha Tsui | 4.9★ | Splurge · harbor icon · Lobby brunch option (Day 2) |
 
-### Hanoi (2026-09-05 – 2026-09-08)
+### Hanoi (2026-09-06 – 2026-09-09)
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
@@ -22,7 +23,7 @@
 | MAY DE VILLE Crown Hotel | $99 | Hoan Kiem | 4.8★ | Boutique alt · near cathedral |
 | Meritel Hanoi Hotel | $95 | Old Quarter | 4.7★ | Value pick · compact rooms |
 
-### Đà Nẵng (2026-09-08 – 2026-09-13)
+### Đà Nẵng (2026-09-09 – 2026-09-12)
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
@@ -38,28 +39,28 @@
 
 | Hub | Nights | Recommended / night | Subtotal |
 |-----|-------:|--------------------:|---------:|
-| Hong Kong | 3 | $197 | $591 |
+| Hong Kong | 4 | $176 | $704 |
 | Hanoi | 3 | $90 | $270 |
-| Đà Nẵng | 5 | $105 | $525 |
-| **Total** | **11** | — | **$1,386** |
+| Đà Nẵng | 3 | $105 | $315 |
+| **Total** | **10** | — | **$1,289** |
 
-**Budget note:** ~5% of $30,000 recommended — leaves headroom for Vietnam splurge upgrades, flights, tailoring, and shopping
+**Budget note:** ~4% of $30,000 recommended — leaves headroom for flights, shopping, and optional upgrades.
 
-| Scenario | HK / night | HAN / night | DAD / night | 11-night total |
+| Scenario | HK / night | HAN / night | DAD / night | 10-night total |
 |----------|----------:|------------:|------------:|---------------:|
-| Recommended | $197 | $90 | $105 | **$1,386** |
-| Value mix | $176 | $95 | $72 | $1,183 |
-| Splurge mix | $516 | $130 | $486 | $4,008 |
+| Recommended | $176 | $90 | $105 | **$1,289** |
+| Value mix | $176 | $95 | $72 | $1,205 |
+| Splurge mix | $516 | $130 | $486 | $3,910 |
 
 ### MCP search log
 
 | City | Check-in | Check-out | Tool | Status |
 |------|----------|-----------|------|--------|
-| Hong Kong | 2026-09-02 | 2026-09-05 | search_hotels | **OK** |
-| Hong Kong (recommended) | 2026-09-02 | 2026-09-05 | get_hotel_details | AKI Hotel MGallery |
-| Hong Kong (splurge) | 2026-09-02 | 2026-09-05 | get_hotel_details | The Peninsula Hong Kong |
-| Hanoi | 2026-09-05 | 2026-09-08 | search_hotels | **OK** |
-| Hanoi (recommended) | 2026-09-05 | 2026-09-08 | get_hotel_details | Le Premier Hotel |
-| Đà Nẵng | 2026-09-08 | 2026-09-13 | search_hotels | **OK** |
-| Đà Nẵng (recommended) | 2026-09-08 | 2026-09-13 | get_hotel_details | Naman Retreat |
-| Đà Nẵng (splurge) | 2026-09-08 | 2026-09-13 | get_hotel_details | InterContinental Danang Sun Peninsula Resort |
+| Hong Kong | 2026-09-02 | 2026-09-06 | prior search; recheck before booking | Mondrian selected for revised route |
+| Hong Kong (recommended) | 2026-09-02 | 2026-09-06 | prior details | Mondrian Hong Kong |
+| Hong Kong (splurge) | 2026-09-02 | 2026-09-06 | prior details | The Peninsula Hong Kong |
+| Hanoi | 2026-09-06 | 2026-09-09 | prior search; recheck before booking | **OK** |
+| Hanoi (recommended) | 2026-09-06 | 2026-09-09 | prior details | Le Premier Hotel |
+| Đà Nẵng | 2026-09-09 | 2026-09-12 | prior search; recheck before booking | **OK** |
+| Đà Nẵng (recommended) | 2026-09-09 | 2026-09-12 | prior details | Naman Retreat |
+| Đà Nẵng (splurge) | 2026-09-09 | 2026-09-12 | prior details | InterContinental Danang Sun Peninsula Resort |

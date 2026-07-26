@@ -28,22 +28,23 @@
 |-----|-----------------|--------------|-------|
 | Hong Kong | T-60d | Free cancel until T-14d | Sep 2 Wed arrival — midweek rates; avoid prepaid non-ref |
 | Hanoi | T-45d | Flexible | High Old Quarter supply; book breakfast-inclusive if late brunch |
-| Đà Nẵng | T-60d | Refundable | 5-night stay — negotiate resort perks; splurge vote on Sun Peninsula |
+| Đà Nẵng | T-60d | Refundable | 3-night stay — negotiate resort perks; Naman best fits southbound activities |
 
 ### Hotel Rate Snapshot
 
 *Search date: **2026-06-28** · 1 room · 2 adults · **SerpAPI verified** · See [[hotel-comparison]]*
 
-#### Hong Kong (2026-09-02 – 2026-09-05)
+#### Hong Kong (2026-09-02 – 2026-09-06)
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
-| AKI Hotel MGallery | $197 | Tsim Sha Tsui | 4.8★ | **Recommended** · Accor MGallery |
+| AKI Hotel MGallery | $197 | Wan Chai | 4.8★ | Island-side alternative · requires harbor crossing for Kowloon shopping |
 | Silveri Hong Kong MGallery | $191 | Central / Sheung Wan | 4.8★ | Island alt · design-forward |
-| Mondrian Hong Kong | $176 | Tsim Sha Tsui | 4.7★ | Value pick · harbour-adjacent |
+| Mondrian Hong Kong | $176 | Tsim Sha Tsui | 4.7★ | **Recommended** · Kowloon shopping access · harbour-adjacent |
+| Royal Plaza Hotel | Verify live | Mong Kok | Verify live | Shopping-proximity alt · above Mong Kok East MTR · busier area |
 | The Peninsula Hong Kong | $516 | Tsim Sha Tsui | 4.9★ | Splurge · harbor icon |
 
-#### Hanoi (2026-09-05 – 2026-09-08)
+#### Hanoi (2026-09-06 – 2026-09-09)
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
@@ -52,7 +53,7 @@
 | MAY DE VILLE Crown Hotel | $99 | Hoan Kiem | 4.8★ | Boutique alt |
 | Meritel Hanoi Hotel | $95 | Old Quarter | 4.7★ | Value pick |
 
-#### Đà Nẵng (2026-09-08 – 2026-09-13)
+#### Đà Nẵng (2026-09-09 – 2026-09-12)
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
@@ -66,14 +67,14 @@
 
 | Hub | Nights | Rate / night | Subtotal |
 |-----|-------:|-------------:|---------:|
-| Hong Kong | 3 | $197 | $591 |
+| Hong Kong | 4 | $176 | $704 |
 | Hanoi | 3 | $90 | $270 |
-| Đà Nẵng | 5 | $105 | $525 |
-| **Total** | **11** | — | **$1,386** |
+| Đà Nẵng | 3 | $105 | $315 |
+| **Total** | **10** | — | **$1,289** |
 
 **% of $30K budget:** ~5% (recommended picks)
 
-**Splurge scenario (Peninsula HK + Sun Peninsula DAD + Le Premier HAN):** ~$4,008 (13%)
+**Trade-off:** InterContinental Danang is the luxury splurge, but Naman Retreat better fits Marble Mountains and Hội An during this short 3-night stay.
 
 ### Safety notes
 
