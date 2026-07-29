@@ -19,7 +19,7 @@ hero-image: https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&
 | Dates | **2026-09-01 → 2026-09-14** (11 hub nights; 14 calendar days) |
 | Countries | **China (Hong Kong SAR)** · **Vietnam** |
 | Entry | **HKG** (Hong Kong) |
-| Exit | **DAD** (Đà Nẵng) open-jaw |
+| Exit | **HKG** (via LAX; DAD→HKG Sep 13) |
 | Style | Relaxed cultural — late starts, one anchor activity/day |
 | Budget | **$30,000** total all-in; **splurge in Vietnam** |
 | Hotels | 4–5★; resorts OK; US booking sites; **1 room** king or two queens |
@@ -36,7 +36,7 @@ hero-image: https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&
 | Assessment | Detail |
 |------------|--------|
 | Verdict | **Realistic** — 2 countries / 3 hubs / 2 inter-country flights |
-| Hub nights | Hong Kong 3 · Hanoi 3 · Đà Nẵng 5 |
+| Hub nights | Hong Kong 3 · Hanoi 3 · Đà Nẵng 4 · HKG transit 1 |
 | Border crossings | 1 (HKG → HAN flight; separate immigration) |
 | Risk | Adding Shenzhen day trip + Ha Long overnight would be **tight** in 14 days |
 
@@ -62,7 +62,7 @@ hero-image: https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&
 
 ### Constraints for downstream steps
 
-1. Schedule **soft days** after Sep 2 HKG arrival and Sep 5/8 hub changes.
+1. Schedule **soft days** after Sep 3 HKG arrival and Sep 6/9 hub changes.
 2. Default to **MTR + Grab** in Hong Kong; **Grab** in Hanoi and Đà Nẵng — no airport taxi touts.
 3. Crowd avoidance: Victoria Peak before 9 AM; Old Quarter sights by 8 AM.
 4. Hội An tailoring requires **48–72h lead time** — start fittings Day 9 for Day 12 pickup.

@@ -15,6 +15,8 @@ fi
 
 echo "── publishing $TRIP to gh-pages"
 
+ORIG_BRANCH=$(git -C "$ROOT" rev-parse --abbrev-ref HEAD)
+
 # Stash any uncommitted changes so we can switch branches safely
 HAS_CHANGES=$(git -C "$ROOT" status --porcelain | wc -l | tr -d ' ')
 if [[ "$HAS_CHANGES" -gt 0 ]]; then
@@ -24,33 +26,66 @@ else
   STASHED=false
 fi
 
-# Create or reset the gh-pages branch (orphan if first time)
+# Create or switch to gh-pages branch
 if git -C "$ROOT" show-ref --quiet refs/heads/gh-pages; then
   git -C "$ROOT" checkout gh-pages
-  git -C "$ROOT" rm -rf "trips/$TRIP" 2>/dev/null || true
 else
   git -C "$ROOT" checkout --orphan gh-pages
   git -C "$ROOT" rm -rf . 2>/dev/null || true
 fi
 
-# Copy built site
+# Remove prior deploy for this trip (tracked + untracked source files)
+git -C "$ROOT" rm -rf "trips/$TRIP" 2>/dev/null || true
+rm -rf "$ROOT/trips/$TRIP"
+
+# Copy built site only
 mkdir -p "$ROOT/trips/$TRIP"
 cp "$DIST/trip.html" "$ROOT/trips/$TRIP/index.html"
-[[ -f "$DIST/deck.html" ]] && cp "$DIST/deck.html" "$ROOT/trips/$TRIP/deck.html" || true
+if [[ -f "$DIST/deck.html" ]]; then
+  cp "$DIST/deck.html" "$ROOT/trips/$TRIP/deck.html"
+fi
+if [[ -d "$DIST/maps" ]]; then
+  cp -R "$DIST/maps" "$ROOT/trips/$TRIP/maps"
+fi
+
+# Root index listing published trips
+{
+  echo '<!DOCTYPE html>'
+  echo '<html lang="en"><head><meta charset="utf-8">'
+  echo '<meta name="viewport" content="width=device-width,initial-scale=1">'
+  echo '<title>travel-genie trips</title></head><body>'
+  echo '<h1>travel-genie trips</h1><ul>'
+  for trip_dir in "$ROOT"/trips/*/; do
+    [[ -d "$trip_dir" ]] || continue
+    slug=$(basename "$trip_dir")
+    [[ -f "$trip_dir/index.html" ]] || continue
+    echo "<li><a href=\"trips/$slug/\">$slug</a> — <a href=\"trips/$slug/deck.html\">deck</a></li>"
+  done
+  echo '</ul></body></html>'
+} > "$ROOT/index.html"
 
 # Commit and push
-git -C "$ROOT" add "trips/$TRIP"
+git -C "$ROOT" add index.html "trips/$TRIP/index.html"
+[[ -f "$ROOT/trips/$TRIP/deck.html" ]] && git -C "$ROOT" add "trips/$TRIP/deck.html"
+[[ -d "$ROOT/trips/$TRIP/maps" ]] && git -C "$ROOT" add -f "trips/$TRIP/maps"
 git -C "$ROOT" commit -m "deploy: $TRIP site $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 git -C "$ROOT" push origin gh-pages
 
-# Return to previous branch
-git -C "$ROOT" checkout -
+git -C "$ROOT" checkout "$ORIG_BRANCH"
 
-# Restore stash if we created one
 if [[ "$STASHED" == "true" ]]; then
   git -C "$ROOT" stash pop
 fi
 
+REMOTE=$(git -C "$ROOT" remote get-url origin)
+if [[ "$REMOTE" =~ github\.com[:/]([^/]+)/([^/.]+) ]]; then
+  OWNER="${BASH_REMATCH[1]}"
+  REPO="${BASH_REMATCH[2]%.git}"
+  BASE="https://${OWNER}.github.io/${REPO}"
+else
+  BASE="https://<owner>.github.io/<repo>"
+fi
+
 echo ""
-echo "Published → https://<owner>.github.io/<repo>/trips/$TRIP/"
-echo "(Replace <owner>/<repo> with your GitHub repository slug)"
+echo "Published → ${BASE}/trips/${TRIP}/"
+echo "Deck      → ${BASE}/trips/${TRIP}/deck.html"

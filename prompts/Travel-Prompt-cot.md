@@ -31,28 +31,47 @@ Collect in Step 1 / `profile.md` if missing:
 ## Per-leg search workflow
 
 1. Derive legs from route Output: `Home (IATA) → first hub`, each inter-country flight, `last hub → Home`.
-2. For each leg, call MCP with: `origin`, `destination`, `date` (YYYY-MM-DD), `adults`, `seat_type`.
+2. For each leg, call MCP with: `origin`, `destination`, `date` (YYYY-MM-DD), `adults`, `seat_type`. Prefer **one-way** searches (open-jaw / multi-city trips are not round-trips).
 3. Record **search date** (today) — prices are point-in-time snapshots.
-4. Present top 3–5 options per leg: price, stops, duration, airlines, departure window notes.
-5. Mark one **recommended balanced** pick per leg (not always cheapest — avoid 2-stop red-eyes unless profile tolerates).
+4. Present top 3–5 options per leg: price, stops, duration, airlines, **local departure and arrival times with timezone abbreviations** (e.g. `08:45 HKT → 09:55 ICT`).
+5. Mark one **recommended balanced** pick per leg (not always cheapest — avoid 2-stop red-eyes unless profile tolerates). Fit the pick to hub soft days and hotel check-in/out.
 6. Add **Google Flights deep links** for manual re-check before booking.
 7. Note: separate one-way tickets = no connection protection; mention multi-city fare as alternative on long-hauls.
+8. Label prices clearly: **OW** (one-way) vs **RT** (round-trip). Never present RT Google Flights quotes as the cost of a one-way booking without converting / estimating OW.
+9. When Google Flights MCP is unavailable: use browser Google Flights (or IronBee browser tools) to verify live options on the exact dates; still write verified picks into `flight-comparison.md`.
+
+## Time zones & clock math (required)
+
+For every flight leg, record:
+- **Local dep / arr** with IATA timezone labels (EDT, PDT, HKT, ICT, JST, etc.)
+- **Calendar-day shift** when crossing the International Date Line or overnight flights (e.g. dep Sep 1 → arr Sep 3)
+- **Hub soft-day impact**: arrival time → hotel check-in feasibility; departure time → checkout + airport buffer
+- **Connection buffers** on separate tickets (especially reposition legs before long-haul home)
+
+## Booking channels
+
+- Google Flights = **compare only** (does not sell tickets). Checkout is airline direct or an OTA (Trip.com, Traveloka, Expedia).
+- Prefer **airline direct** for LCCs (VietJet, HK Express, etc.) so baggage / changes are simpler.
+- Prefer **no foreign-transaction-fee** cards when airline sites charge in HKD / VND / other local currency.
+- Write a **Regional flights to book** / **Verified picks** table with: date, airline, local schedule, est. OW price, booking link.
 
 ## Optional sidecar
 
-Write `trips/{slug}/flight-comparison.md` with full tables; reference from Steps 02 and 07 via wikilinks. Copy distilled tables into `opt-02-route-optimization.md` and `opt-07-transport-money.md` Output sections.
+Write `trips/{slug}/flight-comparison.md` with full tables; reference from Steps 02 and 07 via wikilinks. Copy distilled tables into `opt-02-route-optimization.md` and `opt-07-transport-money.md` Output sections. This sidecar feeds the **Flights** section of `trip.html`.
 
 ## Output table format (per leg)
 
 | Price | Stops | Duration | Airlines | Notes |
 |------:|-------|----------|----------|-------|
-| $873 | 1 | ~21 hr | JetBlue + Cathay Pacific | Recommended balance |
+| $873 OW | 1 | ~21 hr | JetBlue + Cathay Pacific | **Recommended** · dep 19:20 EDT → arr 05:00+2 HKT |
 
 Include a **trip total** row (sum of one-way legs × passengers) and compare to profile budget.
 
+Also include a **Google Flights verified picks** summary table (date · airline · local schedule · RT/OW fare · deep link).
+
 ## Fallback
 
-If MCP is unavailable or a search fails: use estimate ranges, flag as **unverified**, and list legs the user should check manually.
+If MCP is unavailable or a search fails: verify via browser Google Flights when possible; otherwise use estimate ranges, flag as **unverified**, and list legs the user should check manually.
 
 ---
 
@@ -88,7 +107,7 @@ Collect in Step 1 / `profile.md` if missing:
 
 ## Per-city search workflow
 
-1. Derive cities from Step 4: `{city}, {country}`, check-in, check-out, nights, rooms, adults.
+1. Derive cities from Step 4: `{city}, {country}`, check-in, check-out, nights, rooms, adults. Align check-in/out with **flight arrival/departure local times** (same-day hub change = soft day + realistic airport transfer).
 2. For each city, call `search_hotels` with:
    - `query`: `"Hotels in {City}, {Country}"`
    - `check_in_date` / `check_out_date` (YYYY-MM-DD from itinerary)
@@ -96,8 +115,10 @@ Collect in Step 1 / `profile.md` if missing:
    - `rating`: `8` (4.0+) or `9` (4.5+) per profile quality bar
    - `sort_by`: `8` (highest rating) for splurge cities; `3` (lowest price) for value cities — match profile splurge rules
 3. Record **search date** (today) — prices are point-in-time snapshots.
-4. Present top 3–5 options per city: hotel name, price/night, area, rating, notes.
+4. Present top 3–5 options per city: hotel name, price/night, area, rating, notes (transit to MTR/Grab/airport, breakfast if profile cares).
 5. Mark one **recommended** pick per city (neighborhood fit from Step 5 analysis + rating + US-platform availability).
+6. Include **transit / airport hotel nights** when the itinerary requires an early long-haul departure (e.g. Regal Airport before 09:25 outbound).
+7. Write a **Lodging dates table** (city · hotel · check-in · check-out · nights) that matches Step 4 flight days.
 6. For recommended pick only: `get_hotel_details` → note lowest Booking.com / Expedia / Hotels.com source in Notes column.
 7. Write or update `trips/{slug}/hotel-comparison.md`; distill key tables into `opt-05-accommodation.md` Output.
 
@@ -349,22 +370,31 @@ Hard no: [what to avoid]
 Already booked: [flights, hotels, etc.]
 
 Build my itinerary:
-1. Day-by-day schedule with morning, afternoon, and evening anchors
+1. Day-by-day schedule with morning, afternoon, and evening anchors — include **concrete activities** (named venues, tours, shopping districts, spas, meals) not vague placeholders
 2. For each day: one "wow moment," one "low energy" option, one rainy-day backup
 3. Travel time between activities (walking, transit, driving)
 4. One "skip the tourist trap" local recommendation per day
 5. A free/cheap activity balanced with a splurge activity each day
-6. A booking queue: what to book NOW vs later, with deadlines
-7. "SOFT DAYS": Schedule lighter days after border crossings and long transit
+6. A booking queue: what to book NOW vs later, with deadlines (flights, hotels, tours, visas)
+7. "SOFT DAYS": Schedule lighter days after border crossings, long-haul arrivals, and hub-change flight days
 8. DEPARTURE/ARRIVAL DAYS: Buffer days for international flights and border formalities
+9. Embed **flight legs on hub-change days** with local times + timezone labels (e.g. `fly HKG→HAN (~08:45 HKT, ~2h)`)
+10. Align hotel check-in/out dates with flight days; name recommended hotels when known from Step 5 / `hotel-comparison.md`
 
 MULTI-COUNTRY SPECIFIC:
 - Border crossing days: What time to cross, what documents to carry, estimated crossing duration
 - Currency transition days: When to exchange money, ATM strategy per country
-- Time zone changes: How jet lag affects each leg
+- **Time zone changes**: How jet lag / IDL / overnight flights shift calendar days; never schedule intense AM activities after long-haul dawn arrivals
 - "First day in country" protocol: Always lighter to account for orientation fatigue
+- New activities from profile or user updates (shopping, spa, tours, tailoring, beach, museums) must appear on specific days with transit time
 
-VALIDATION: Check for transit overload — warn if I'm spending more than 2 hours daily in transit or more than 20% of total trip in transit between countries.
+FLIGHT + HOTEL CLOCK RULES:
+- Every regional and long-haul flight day must show **local dep/arr + duration**
+- Soft hub days after each flight arrival or same-day city change
+- Airport transfer time before dep and after arr (Grab / Airport Express / hotel shuttle)
+- Do not book DAD→HKG (or similar reposition) so late that the next-day long-haul is at risk
+
+VALIDATION: Check for transit overload — warn if I'm spending more than 2 hours daily in transit or more than 20% of total trip in transit between countries. Confirm every flight day has local times and every hub night has matching hotel dates.
 ```
 
 ```
@@ -575,16 +605,22 @@ For EACH LEG (between countries AND within countries):
 
 4. Scams and mistakes specific to that route
 
-FLIGHT LEGS — LIVE PRICES (MCP — if available):
-- For every **flight** leg in Step 2 route (international + inter-country), query Google Flights MCP
-- Search **economy** for all legs; search **business** on long-haul legs if profile compares cabins
-- Per leg: top 3–5 options table (price, stops, duration, airlines, notes) + one **recommended balanced** pick
-- **Trip total summary**: cheapest possible vs recommended balanced (economy and business if compared)
-- Compare flight total × passengers against profile budget; show % of $20K (or stated budget) for flights vs ground spend
-- Note one-way vs multi-city booking trade-off (connection protection)
-- Google Flights deep links per leg for re-check before purchase
-- Write or update `flight-comparison.md` sidecar; distill key tables into Output
-- If MCP unavailable: keep estimate ranges but mark **unverified**
+FLIGHT LEGS — LIVE PRICES (MCP — if available; else browser Google Flights):
+- For every **flight** leg in Step 2 route (international + inter-country), query Google Flights MCP **or** verify in browser Google Flights
+- Search **one-way** for open-jaw / multi-city trips; search **economy** for all legs; search **business** on long-haul legs if profile compares cabins
+- Per leg: top 3–5 options table (price with **OW/RT label**, stops, duration, airlines, **local dep→arr + timezone**, notes) + one **recommended balanced** pick
+- Include a **Regional flights to book** / **Google Flights verified picks** table: date · airline · local schedule · fare · deep link · hotel alignment
+- **Trip total summary**: cheapest possible vs recommended balanced (economy and business if compared); estimate OW from RT quotes when only RT is shown
+- Compare flight total × passengers against profile budget; show % of budget for flights vs ground spend
+- Note one-way vs multi-city booking trade-off (connection protection); prefer airline direct for LCCs
+- Google Flights deep links per leg for re-check before purchase; note OTA vs airline-direct guidance
+- Write or update `flight-comparison.md` sidecar; distill key tables into Output (`opt-07-transport-money.md`)
+- If MCP unavailable: verify via browser Google Flights when possible; otherwise keep estimate ranges but mark **unverified**
+
+TIME ZONES & HUB TIMING:
+- For each flight: local times + TZ abbreviations + calendar-day shift
+- Soft-day after arrivals; checkout/airport buffer before departures
+- Reposition legs (e.g. DAD→HKG before HKG long-haul) must land with overnight buffer before next-day international dep
 
 MULTI-COUNTRY MONEY MANAGEMENT:
 - Currencies needed and exchange strategy (ATM vs exchange booth vs card)
@@ -593,6 +629,7 @@ MULTI-COUNTRY MONEY MANAGEMENT:
 - Dynamic currency conversion — when to decline
 - Tipping culture per country (can vary dramatically)
 - Budget tracking across currencies — recommended multi-currency app
+- Prefer **no foreign-transaction-fee** cards for airline/OTA charges in HKD, VND, or other local currencies
 
 DUTY-FREE & CUSTOMS:
 - Duty-free allowances per country I'm entering 
@@ -600,9 +637,9 @@ DUTY-FREE & CUSTOMS:
 - Security tamper-evident bag (STEB) rules for duty-free liquids on connections 
 - Countries with strict medication import rules
 
-OUTPUT: Transport and money strategy document per country transition, including MCP flight comparison tables (or unverified estimates).
+OUTPUT: Transport and money strategy document per country transition, including verified flight comparison tables (or unverified estimates), booking channel guidance, and timezone/clock math.
 
-VALIDATION: Every flight leg from Step 2 was searched via MCP or explicitly marked unverified. Trip flight total is reconciled with budget.
+VALIDATION: Every flight leg from Step 2 was searched via MCP/browser or explicitly marked unverified. Every recommended pick has local times + TZ. Trip flight total is reconciled with budget. Hotel check-in/out dates match flight hub days.
 ```
 
 ```
@@ -983,28 +1020,70 @@ Generate a complete multi-country travel brief:
 4b. HOTELS: Per-city recommended picks, lodging total, budget %, link to `hotel-comparison.md` if present
 5. FOOD: Signature dishes and experiences per **itinerary city**, social-media food highlights mapped to days, border-crossing meal plans; link to `restaurant-comparison.md` if present
 5b. SHOPPING: Category strategy per country scoped to **itinerary cities**, social-media shopping districts, VAT/customs
-6. TRANSPORT: Between and within countries, with booking platforms; **flight totals from Step 7 MCP data** (economy + business if compared)
-6b. FLIGHTS: Per-leg recommended picks, trip total, budget %, link to `flight-comparison.md` if present
+6. TRANSPORT: Between and within countries, with booking platforms; **flight totals from Step 7 MCP/browser data** (economy + business if compared)
+6b. FLIGHTS: Per-leg recommended picks with **local times + timezones**, trip total, budget %, OW vs RT labels, link to `flight-comparison.md` if present
+6c. ACTIVITIES: Day-level named activities from Step 4 (tours, shopping, spa, culture, food anchors) reflected in itinerary summary
 7. CUSTOMS: Duty-free allowances, restricted items, purchasing strategy per country
 8. TECH: Multi-country connectivity, offline kits, power adapters
 9. CULTURE: Museums and activities per **itinerary city**, social-media cultural picks, TripAdvisor attraction picks; link to `attractions-comparison.md` if present; etiquette + cross-cultural transitions
 10. ADVENTURE: Water/land activities per **itinerary city** with seasonal viability and creator-trending options filtered for fitness
 11. HIDDEN GEMS: Locals + creator-surfaced secrets per itinerary city (social-vs-plan matrix); link to `attractions-comparison.md` if present
 12. HEALTH: Vaccinations, insurance, emergency protocols per country
-13. MONEY: Currency strategy, ATM networks, tipping, VAT refunds
+13. MONEY: Currency strategy, ATM networks, tipping, VAT refunds; **no foreign-transaction-fee card** note for airline bookings in local currency
 14. PACKING: Multi-climate, border-crossing day bag, document organization
 15. CONTINGENCY: 10 scenarios with step-by-step recovery per country
-16. EFFICIENCY: PTO hacking, transit minimization, jet lag strategy, activity clustering
-17. BOOKING QUEUE: Everything to reserve now with deadlines (flights first if MCP shows limited inventory or rising fares)
+16. EFFICIENCY: PTO hacking, transit minimization, jet lag / timezone strategy, activity clustering
+17. BOOKING QUEUE: Everything to reserve now with deadlines (flights first if inventory limited or rising fares)
+18. **HTML SITE**: After assembly (or when user asks to publish), rebuild and publish trip HTML so flights, hotels, activities, and verified picks appear on the live site (see Trip HTML site publishing below)
 
 VALIDATION:
 - Transit under 20% of total time
 - No more than 2 hours daily in-city transit
 - Border crossing days are never followed by intense activities
 - Museum fatigue check across entire trip
-- "Soft day" after every border crossing
-- Flight costs sourced from MCP (with search date) or flagged unverified
-- Hotel costs sourced from MCP (with search date) or flagged unverified
+- "Soft day" after every border crossing / long-haul arrival / hub flight day
+- Flight costs sourced from MCP or browser Google Flights (with search date) or flagged unverified
+- Every recommended flight pick includes local dep/arr + timezone
+- Hotel costs sourced from MCP (with search date) or flagged unverified; dates align with flight hubs
 - Restaurant and attraction ratings sourced from TripAdvisor MCP (with search date) or flagged unverified
+- `trip.html` Flights / Hotels / itinerary sections reflect current sidecars after rebuild
 ```
+
+---
+
+# Travel Prompt CoT — Trip HTML site publishing
+
+When the user asks to **add information to the HTML site**, **rebuild**, **publish**, or when Step 18 / deck workflow completes with site output:
+
+## What must appear in `trip.html`
+
+| Section (sidebar) | Source files | Required content |
+|-------------------|--------------|------------------|
+| Day itinerary | `opt-04-master-itinerary.md` | Named activities; flight legs with local times on hub days |
+| **Flights** | `flight-comparison.md` (+ `opt-07-transport-money.md`) | Regional flights to book · verified picks · per-leg tables · OW/RT labels · Google Flights links · booking sites |
+| **Hotels** | `hotel-comparison.md` (+ `opt-05-accommodation.md`) | Per-city tables with check-in/out dates · recommended picks · transit hotel if needed |
+| Restaurants / Attractions / Spas / Shopping | comparison sidecars | City-scoped venues aligned to itinerary dates |
+| Food / Immigration / etc. | matching `opt-*.md` | As present for the trip |
+
+## Agent workflow (required)
+
+1. Update trip markdown sources first (`04-master-itinerary.md`, `flight-comparison.md`, `hotel-comparison.md`, `opt-*.md`, etc.).
+2. Rebuild site JSON + HTML from repo root:
+   ```bash
+   ./scripts/run-travel-deck.sh <trip-slug> --force-json
+   ```
+3. Confirm `pipeline/dist/<trip-slug>/trip.html` contains the new Flights / Hotels / activity content (sidebar `#flights`, `#hotels`, day cards).
+4. Publish to GitHub Pages when the user wants it live:
+   ```bash
+   ./scripts/publish-github-pages.sh <trip-slug>
+   ```
+5. Return the live URL: `https://{owner}.github.io/{repo}/trips/{slug}/` (and `#flights` / `#hotels` anchors when relevant).
+6. **Stash caveat:** `publish-github-pages.sh` stashes untracked trip files. After publish, **re-create** any new untracked sidecars (`flight-comparison.md`, `opt-07-transport-money.md`, etc.) if the stash drop removed them — prefer keeping sources tracked or re-writing them immediately after publish.
+
+## Validation
+
+- [ ] Flights section shows verified picks with local times + timezones
+- [ ] Hotels section shows dates aligned to hub nights
+- [ ] Itinerary day cards mention hub flights and new activities
+- [ ] Live GitHub Pages page matches local `trip.html` after hard refresh
 

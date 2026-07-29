@@ -89,13 +89,13 @@ ATL → HKG → Shenzhen → [fly] → Hanoi → Ha Long Bay → [fly] → Da Na
 
 ### Booking Priority Queue
 
-1. ATL → HKG (Sep 1) — book now, limited seats
-2. HCMC → ATL (Sep 14) — book now, same urgency
-3. Ha Long Bay overnight cruise — premium boats sell out 3–6 months ahead
-4. Hoi An tailor appointment — book 1–2 weeks ahead (WhatsApp most shops)
-5. Shenzhen → Hanoi flight (Sep 4)
-6. Hanoi → Da Nang (Sep 9)
-7. Hotels — 4★+ HK and HCMC book fast for Sep; mid-tier Hanoi/Hoi An more flexible
+1. ATL → HKG via LAX (**DL0763** + **DL0089**, Sep 1 → arr Sep 3) — book now
+2. HKG → ATL via LAX (**DL0088** + **DL0327**, Sep 14) — book now, same PNR
+3. DAD → HKG (Sep 13 afternoon) — required for Delta return
+4. HKG→HAN (Sep 6), HAN→DAD (Sep 9)
+5. Ha Long Bay day cruise — if voting yes; book T-30d
+6. Hoi An tailor appointment — book 1–2 weeks ahead (WhatsApp most shops)
+7. Hotels — HK Sep 3–6 + Regal Airport Sep 13; Đà Nẵng Sep 9–13
 
 ## Validation
 

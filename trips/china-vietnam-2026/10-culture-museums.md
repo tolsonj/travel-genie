@@ -28,7 +28,7 @@
 
 | Day | Anchor | Backup | Time |
 |-----|--------|--------|------|
-| Sep 2 | TST Promenade + Symphony of Lights | Harbour City indoor | Evening only — soft arrival |
+| Sep 3 | TST Promenade + Symphony of Lights | Harbour City indoor | Evening only — soft arrival |
 | Sep 3 | **Peak Tram** + Peak Circle Walk | Sky100 / IFC Mall | **7:30 AM** start |
 | Sep 4 AM | **Nan Lian Garden + Chi Lin Nunnery** | Man Mo Temple + Star Ferry | 8 AM before Mong Kok shopping |
 
@@ -36,7 +36,7 @@
 
 | Day | Anchor | Backup | Time |
 |-----|--------|--------|------|
-| Sep 5 | **Hoan Kiem Lake** stroll + Ngoc Son exterior | Old Quarter covered arcades | Evening — soft hub day |
+| Sep 6 | **Hoan Kiem Lake** stroll + Ngoc Son exterior | Old Quarter covered arcades | Evening — soft hub day |
 | Sep 6 | **Temple of Literature** | Vietnam National Museum of History | **8 AM** open |
 | Sep 7 | **Option A:** Ha Long Bay cruise **OR Option B:** **Hoa Lo Prison** + Tran Quoc Pagoda | St. Joseph's Cathedral + café | Vote day — one anchor only |
 

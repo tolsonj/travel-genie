@@ -5,13 +5,17 @@
 export const GEOMAP_CLIENT_SCRIPT = `
 (function () {
   function drawOne(panel) {
+    if (panel.querySelector("svg")) return;
     var cfg;
     try { cfg = JSON.parse(panel.getAttribute("data-geomap")); }
     catch (e) { return; }
     if (!cfg) return;
 
     var w = panel.clientWidth, h = panel.clientHeight;
-    if (!w || !h) return;
+    if (!w || !h) {
+      requestAnimationFrame(function () { drawOne(panel); });
+      return;
+    }
 
     var svg = d3.select(panel).append("svg")
       .attr("viewBox", "0 0 " + w + " " + h)

@@ -6,7 +6,7 @@
 
 ### Venue Snapshot — Spas
 
-#### City: Hong Kong (Sep 2–5)
+#### City: Hong Kong (Sep 3–6)
 
 | Spa | Rating | Price | Type | Duration | Notes |
 |-----|-------:|-------|------|----------|-------|
@@ -14,7 +14,7 @@
 | ESPA at The Ritz-Carlton Hong Kong | 4.5★ | $$$$ | Signature massage | 60 min | Splurge alt · ICC · harbour views |
 | Happy Foot Massage (TST) | 4.2★ | $ | Foot reflexology | 60 min | Value · evening after shopping · walk-in OK |
 
-#### City: Hanoi (Sep 5–8)
+#### City: Hanoi (Sep 6–9)
 
 | Spa | Rating | Price | Type | Duration | Notes |
 |-----|-------:|-------|------|----------|-------|
@@ -22,7 +22,7 @@
 | Sofitel Legend Metropole Spa | 4.8★ | $$$ | Couples ritual | 120 min | Splurge · book ahead · post–cooking class recovery |
 | Footmaster Spa Hang Be | 4.4★ | $ | Foot massage | 60 min | Rainy-day backup · no reservation |
 
-#### City: Đà Nẵng / Hội An (Sep 8–13)
+#### City: Đà Nẵng / Hội An (Sep 9–13)
 
 | Spa | Rating | Price | Type | Duration | Notes |
 |-----|-------:|-------|------|----------|-------|

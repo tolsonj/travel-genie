@@ -6,7 +6,7 @@
 
 ### Venue Snapshot — Restaurants
 
-#### City: Hong Kong (Sep 2–5)
+#### City: Hong Kong (Sep 3–6)
 
 | Restaurant | Rating | Reviews | Price | Cuisine | Notes |
 |------------|-------:|--------:|-------|---------|-------|
@@ -16,16 +16,16 @@
 | Zuma | 4.2★ | — | $$$ | Japanese / Izakaya | Splurge · IFC/Central · book ahead |
 | The Lobby, Peninsula | 4.2★ | — | $$$ | Cantonese / Afternoon tea | Jet-lag brunch splurge · TST |
 
-#### City: Hanoi (Sep 5–8)
+#### City: Hanoi (Sep 6–9)
 
 | Restaurant | Rating | Reviews | Price | Cuisine | Notes |
 |------------|-------:|--------:|-------|---------|-------|
-| Essence Restaurant | 5.0★ | 6,736 | $$ | Vietnamese | **Recommended** · arrival dinner Sep 5 |
+| Essence Restaurant | 5.0★ | 6,736 | $$ | Vietnamese | **Recommended** · arrival dinner Sep 6 |
 | Hong Hoai's Restaurant | 4.9★ | 8,818 | $$ | Vietnamese | Old Quarter · high volume · book |
 | Duong's Restaurant & Cooking Class | 4.9★ | — | $$ | Vietnamese | Half-day class + dinner · Sep 7 |
 | Hanoi Food Culture | 4.9★ | — | $ | Vietnamese | Guided street-food tasting alt |
 
-#### City: Đà Nẵng / Hội An (Sep 8–13)
+#### City: Đà Nẵng / Hội An (Sep 9–13)
 
 | Restaurant | Rating | Reviews | Price | Cuisine | Notes |
 |------------|-------:|--------:|-------|---------|-------|

@@ -2,7 +2,7 @@
 
 ## Reasoning
 
-**Multi-country:** Hong Kong SAR (Sep 2–5) + Vietnam (Sep 5–13) — two jurisdictions, one phone. Dual-eSIM iPhone/Android preferred: install **Hong Kong eSIM** before departure, add **Vietnam eSIM** on landing HAN (Sep 5) without removing HK profile if data exhausted.
+**Multi-country:** Hong Kong SAR (Sep 3–6 + Sep 13 transit) + Vietnam (Sep 6–13) — two jurisdictions, one phone. Dual-eSIM iPhone/Android preferred: install **Hong Kong eSIM** before departure, add **Vietnam eSIM** on landing HAN (Sep 6) without removing HK profile if data exhausted.
 
 **Offline critical:** Grab (Vietnam), MTR/Octopus (HK), Google Maps offline packs, Vietnam e-visa PDF, hotel confirmations, tailoring receipts, customs shopping list, boarding passes.
 
@@ -24,14 +24,14 @@
 | Backup HK | 7-Eleven / airport **CSL/Smartone** SIM | Hong Kong only | 8 GB / 7d | ~HKD 118 | Physical SIM if eSIM fails |
 | Backup VN | **Viettel** tourist SIM at HAN | Vietnam only | 10 GB | ~VND 300k | Airport kiosk after immigration |
 
-**Swap protocol:** Sep 5 HAN arrival — disable HK eSIM data (keep line for OTP if needed), enable VN eSIM as default data. Sep 13 departure — reverse not needed (VN eSIM expires).
+**Swap protocol:** Sep 6 HAN arrival — disable HK eSIM data (keep line for OTP if needed), enable VN eSIM as default data. Sep 13 departure — reverse not needed (VN eSIM expires).
 
 ### Pre-departure offline kit
 
 | Item | Action |
 |------|--------|
 | Google Maps | Download offline: **Hong Kong**, **Hanoi**, **Đà Nẵng**, **Hội An** |
-| Grab | Install + link **Visa** before Sep 5 (primary VN transport) |
+| Grab | Install + link **Visa** before Sep 6 (primary VN transport) |
 | Octopus | Download **Octopus App**; add card or buy physical at HKG Airport Express |
 | Google Translate | Offline packs: **Chinese (Traditional)**, **Vietnamese** |
 | MTR Mobile | Install for HK station exits + trip planner |
@@ -49,7 +49,7 @@
 | Plug type | **Type G** (3 rectangular pins) | **Type A** / **Type C** (2 round or flat pins) |
 | Voltage | 220V | 220V |
 | US plug fit | **No** — adapter required | **Often yes** — Type A accepts US two-pin |
-| Adapter | **Type G required** Sep 2–5 | Optional Sep 5–13; bring universal anyway |
+| Adapter | ****Type G required** Sep 3–6 + Sep 13 | Optional Sep 6–13; bring universal anyway |
 | Portable charger | 10,000 mAh — long transit Sep 1, 13 | Same — beach days + Grab maps |
 | Resort note | Hotel may provide USB-A; bring **Type G** for dual-voltage hair tools |
 
@@ -78,7 +78,7 @@
 
 ### Tech setup checklist
 
-- [ ] Hong Kong eSIM purchased + installed (data off until Sep 2 landing)
+- [ ] Hong Kong eSIM purchased + installed (data off until Sep 3 landing)
 - [ ] Vietnam eSIM purchased (install profile Sep 5; do not activate early)
 - [ ] Octopus card or app ready at HKG
 - [ ] Grab account + Visa linked

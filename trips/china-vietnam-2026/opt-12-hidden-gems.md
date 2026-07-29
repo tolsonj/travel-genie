@@ -19,7 +19,7 @@ hero-image: https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&
 | **Nan Lian Garden + Chi Lin Nunnery** | Garden/Temple | Sep 4 AM | 4.6★ both · Tang wood architecture · free · zero tour buses at 8 AM |
 | **PMQ (Police Married Quarters)** | Art/Design | Sep 3 PM or Sep 4 rainy | Central creative hub · local makers · AC |
 | **Tai Kwun (Centre for Heritage & Arts)** | Heritage/Bar | Sep 4 eve post-shopping | Former prison + courtyard bars · evening cool |
-| **Kennedy Town waterfront + Sai Wan** | Neighborhood | Sep 2 eve backup | Local cafés · no Peak crowds |
+| **Kennedy Town waterfront + Sai Wan** | Neighborhood | Sep 3 eve backup | Local cafés · no Peak crowds |
 | **Shek O village + beach** | Coastal | Sep 4 if Dragon's Back | Fishing village lunch · combine with hike backup |
 
 #### Vietnam — Hanoi + Đà Nẵng/Hội An (5 gems, 3+ per city)
@@ -68,7 +68,7 @@ hero-image: https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&
 | Thread | HK ↔ Vietnam link |
 |--------|-------------------|
 | **Cantonese diaspora** | Hội An assembly halls (Quang Dong, Fujian) mirror HK merchant guild temples — same southern Chinese trade routes |
-| **Colonial architecture** | British HK (Peak, Star Ferry) vs French Hanoi (St. Joseph's, opera house) — compare over Sep 5 dinner conversation |
+| **Colonial architecture** | British HK (Peak, Star Ferry) vs French Hanoi (St. Joseph's, opera house) — compare over Sep 6 dinner conversation |
 | **Confucian education** | Temple of Literature stelae ↔ Chi Lin/Tang Buddhist discipline — meritocracy vs monastic paths |
 | **Harbor cities** | Victoria Harbour skyline walk (Sep 2) → Đà Nẵng Han River bridges (Sep 8) — both port cities reinvented for tourism |
 | **Street food culture** | Dim sum/yum cha (HK) → bia hơi plastic stools (Hanoi) — shared "eat loud, eat shared" DNA |

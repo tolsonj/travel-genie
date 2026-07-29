@@ -2,7 +2,7 @@
 
 ## Reasoning
 
-**Itinerary scope:** Sep 1–14 · Hong Kong Sep 2–5, Hanoi Sep 5–8, Đà Nẵng/Hội An Sep 8–13. Couple, relaxed cultural pace — late brunch default, one food anchor per day max.
+**Itinerary scope:** Sep 1–14 · Hong Kong Sep 3–6, Hanoi Sep 6–9, Đà Nẵng/Hội An Sep 9–13. Couple, relaxed cultural pace — late brunch default, one food anchor per day max.
 
 **Interest fit:** Food weighted 25% alongside shopping, nature, history. Hong Kong = dim sum + harbor splurge; Hanoi = street-level northern Vietnamese + one cooking class; central Vietnam = seafood finale + Hội An regional dishes.
 
@@ -37,7 +37,7 @@
 
 *Search date: 2026-06-28 · Party of 2 · dietary: none · **SerpAPI verified** · See [[restaurant-comparison]]*
 
-#### Hong Kong (Sep 2–5)
+#### Hong Kong (Sep 3–6)
 
 | Restaurant | Rating | Reviews | Price | Cuisine | Notes |
 |------------|-------:|--------:|-------|---------|-------|
@@ -45,18 +45,18 @@
 | Man Mo Dim Sum | 4.3★ | — | $$ | Cantonese / Dim Sum | Star Ferry eve backup |
 | Dim Sum Square | 4.2★ | — | $ | Cantonese / Dim Sum | Mong Kok area alt |
 | Zuma | 4.2★ | — | $$$ | Japanese / Izakaya | Splurge · Central |
-| The Lobby, Peninsula | 4.2★ | — | $$$ | Cantonese / Afternoon tea | Sep 2 jet-lag brunch splurge |
+| The Lobby, Peninsula | 4.2★ | — | $$$ | Cantonese / Afternoon tea | Sep 3 jet-lag brunch splurge |
 
-#### Hanoi (Sep 5–8)
+#### Hanoi (Sep 6–9)
 
 | Restaurant | Rating | Reviews | Price | Cuisine | Notes |
 |------------|-------:|--------:|-------|---------|-------|
-| Essence Restaurant | 5.0★ | 6,736 | $$ | Vietnamese | **Recommended** · Sep 5 arrival dinner |
+| Essence Restaurant | 5.0★ | 6,736 | $$ | Vietnamese | **Recommended** · Sep 6 arrival dinner |
 | Hong Hoai's Restaurant | 4.9★ | 8,818 | $$ | Vietnamese | Sep 6 splurge · Old Quarter |
 | Duong's Restaurant & Cooking Class | 4.9★ | — | $$ | Vietnamese | Sep 7 cooking class (book T-14d) |
 | Hanoi Food Culture | 4.9★ | — | $ | Vietnamese | Street-style guided tasting alt |
 
-#### Đà Nẵng / Hội An (Sep 8–13)
+#### Đà Nẵng / Hội An (Sep 9–13)
 
 | Restaurant | Rating | Reviews | Price | Cuisine | Notes |
 |------------|-------:|--------:|-------|---------|-------|
@@ -80,10 +80,10 @@
 
 | Day | Date | Breakfast | Lunch | Dinner |
 |-----|------|-----------|-------|--------|
-| 2 | Sep 2 | Hotel light | **The Lobby, Peninsula** (splurge) | Promenade bites / hotel |
+| 3 | Sep 3 | Hotel light | **The Lobby, Peninsula** (splurge) | Promenade bites / hotel |
 | 3 | Sep 3 | Hotel + cha chaan teng | Causeway Bay AC café | **Tim Ho Wan** dim sum |
 | 4 | Sep 4 | Hotel | Mong Kok noodles | **Man Mo Dim Sum** or Dim Sum Square |
-| 5 | Sep 5 | HKG airport | HAN hotel rest | **Essence Restaurant** + lake stroll |
+| 6 | Sep 6 | HKG airport | HAN hotel rest | **Essence Restaurant** + lake stroll |
 | 6 | Sep 6 | Hotel phở nearby | Old Quarter food walk | **Hong Hoai's** |
 | 7 | Sep 7 | Hotel | West Lake café (if Option B) | **Duong's** cooking class |
 | 9 | Sep 9 | Resort | **Morning Glory** Hội An | Ancient Town street snacks |
@@ -117,8 +117,8 @@
 |-------|--------|
 | Tim Ho Wan | **Plan** — Sep 3 dinner |
 | Man Mo Dim Sum | **Plan** — Sep 4 dinner |
-| The Lobby, Peninsula | **Plan** — Sep 2 splurge brunch |
-| Essence Restaurant | **Plan** — Sep 5 arrival |
+| The Lobby, Peninsula | **Plan** — Sep 3 splurge brunch |
+| Essence Restaurant | **Plan** — Sep 6 arrival |
 | Hong Hoai's | **Plan** — Sep 6 dinner |
 | Duong's cooking class | **Plan** — Sep 7 (book ahead) |
 | Morning Glory | **Plan** — Sep 9 Hội An lunch |

@@ -56,6 +56,13 @@ html, body {
   margin: 0 !important;
   transform-origin: top left;
 }
+.pdf-frame .map-panel,
+.pdf-frame .proximity-map {
+  width: 100% !important;
+  min-width: 480px !important;
+  min-height: 420px !important;
+  height: 420px !important;
+}
 `;
 
 if (!existsSync(deckHtml)) {
@@ -91,10 +98,14 @@ for (let i = 0; i < sections.length; i++) {
 
   if (needsMap) {
     await page.waitForFunction(() => {
-      const panels = document.querySelectorAll("[data-geomap]");
-      return panels.length > 0
-        && [...panels].every(p => p.querySelector("svg path"));
-    }, { timeout: 15_000 });
+      const panels = [...document.querySelectorAll("[data-geomap]")].filter(p => {
+        const cs = getComputedStyle(p);
+        if (cs.display === "none" || cs.visibility === "hidden") return false;
+        return p.clientWidth > 0 && p.clientHeight > 0;
+      });
+      if (!panels.length) return true;
+      return panels.every(p => p.querySelector("svg path, svg line, svg circle"));
+    }, { timeout: 30_000 });
   }
 
   const scale = await page.evaluate(({ w, h }) => {

@@ -8,7 +8,7 @@
 
 **Booking urgency:** Sep 1–14 is post-summer peak but still warm — book Hong Kong refundable by T-60d (Golden Week spillover risk); Hanoi ample supply; Đà Nẵng resort strip books early for weekend Sep 12–13.
 
-**Splurge allocation:** Profile directs splurge to Vietnam — **InterContinental Sun Peninsula** ($486/night) is the Vietnam splurge anchor; Hong Kong **Peninsula** ($516/night) is optional harbor splurge vs recommended **AKI MGallery** ($197/night).
+**Splurge allocation:** Profile directs splurge to Vietnam — **InterContinental Sun Peninsula** ($486/night) is the Vietnam splurge anchor; Hong Kong **Peninsula** ($516/night) is optional harbor splurge vs recommended **AKI MGallery** ($197/night). **The Langham, Hong Kong** (~$320–360) is the TST transport + buffet upgrade (East TST MTR Exit L5 ~2 min; Food Gallery breakfast).
 
 **MCP:** SerpAPI Hotels verified 2026-06-28 · 2 adults · 4–5★. See [[hotel-comparison]].
 
@@ -18,30 +18,30 @@
 
 | Hub | Recommended area | Why | Exit logistics |
 |-----|------------------|-----|----------------|
-| Hong Kong (Sep 2–5) | Tsim Sha Tsui / Kowloon waterfront | Harbor promenade perfect-day walks; MTR to Peak, Causeway Bay, Mong Kok; Symphony of Lights on foot | HKG 24 min Airport Express from Hong Kong Station + Grab |
-| Hanoi (Sep 5–8) | Hoan Kiem / Old Quarter (east) | Walk to Temple of Literature, pho alleys, lake loop; Grab to airport | HAN 30 min Grab (off-peak) |
-| Đà Nẵng (Sep 8–13) | My Khe Beach / resort coast | Beach walks, resort pool AC breaks; Grab to Hội An tailoring + Marble Mountains | DAD 20 min Grab |
+| Hong Kong (Sep 3–6) | Tsim Sha Tsui / Kowloon waterfront | Harbor promenade perfect-day walks; MTR to Peak, Causeway Bay, Mong Kok; Symphony of Lights on foot | HKG 24 min Airport Express from Hong Kong Station + Grab |
+| Hanoi (Sep 6–9) | Hoan Kiem / Old Quarter (east) | Walk to Temple of Literature, pho alleys, lake loop; Grab to airport | HAN 30 min Grab (off-peak) |
+| Đà Nẵng (Sep 9–13) | My Khe Beach / resort coast | Beach walks, resort pool AC breaks; Grab to Hội An tailoring + Marble Mountains | DAD 20 min Grab |
 
 ### Booking strategy
 
 | Hub | Advance booking | Cancellation | Notes |
 |-----|-----------------|--------------|-------|
-| Hong Kong | T-60d | Free cancel until T-14d | Sep 2 Wed arrival — midweek rates; avoid prepaid non-ref |
+| Hong Kong | T-60d | Free cancel until T-14d | Sep 3 Thu arrival — midweek rates; avoid prepaid non-ref |
 | Hanoi | T-45d | Flexible | High Old Quarter supply; book breakfast-inclusive if late brunch |
-| Đà Nẵng | T-60d | Refundable | 3-night stay — negotiate resort perks; Naman best fits southbound activities |
+| Đà Nẵng | T-60d | Refundable | 5-night stay — negotiate resort perks; splurge vote on Sun Peninsula |
 
 ### Hotel Rate Snapshot
 
 *Search date: **2026-06-28** · 1 room · 2 adults · **SerpAPI verified** · See [[hotel-comparison]]*
 
-#### Hong Kong (2026-09-02 – 2026-09-06)
+#### Hong Kong (2026-09-03 – 2026-09-06)
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
-| AKI Hotel MGallery | $197 | Wan Chai | 4.8★ | Island-side alternative · requires harbor crossing for Kowloon shopping |
+| AKI Hotel MGallery | $197 | Wan Chai | 4.8★ | **Recommended** · Accor MGallery |
+| **The Langham, Hong Kong** | ~$320–360 | Tsim Sha Tsui | 4.8★ | **Transport pick** · East TST MTR L5 ~2 min · Food Gallery buffet |
 | Silveri Hong Kong MGallery | $191 | Central / Sheung Wan | 4.8★ | Island alt · design-forward |
-| Mondrian Hong Kong | $176 | Tsim Sha Tsui | 4.7★ | **Recommended** · Kowloon shopping access · harbour-adjacent |
-| Royal Plaza Hotel | Verify live | Mong Kok | Verify live | Shopping-proximity alt · above Mong Kok East MTR · busier area |
+| Mondrian Hong Kong | $176 | Tsim Sha Tsui | 4.7★ | Value pick · harbour-adjacent |
 | The Peninsula Hong Kong | $516 | Tsim Sha Tsui | 4.9★ | Splurge · harbor icon |
 
 #### Hanoi (2026-09-06 – 2026-09-09)
@@ -53,7 +53,7 @@
 | MAY DE VILLE Crown Hotel | $99 | Hoan Kiem | 4.8★ | Boutique alt |
 | Meritel Hanoi Hotel | $95 | Old Quarter | 4.7★ | Value pick |
 
-#### Đà Nẵng (2026-09-09 – 2026-09-12)
+#### Đà Nẵng (2026-09-09 – 2026-09-13)
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
@@ -67,14 +67,15 @@
 
 | Hub | Nights | Rate / night | Subtotal |
 |-----|-------:|-------------:|---------:|
-| Hong Kong | 4 | $176 | $704 |
+| Hong Kong | 3 | $197 | $591 |
 | Hanoi | 3 | $90 | $270 |
-| Đà Nẵng | 3 | $105 | $315 |
-| **Total** | **10** | — | **$1,289** |
+| Đà Nẵng | 4 | $105 | $420 |
+| HKG transit | 1 | $180 | $180 |
+| **Total** | **11** | — | **$1,461** |
 
 **% of $30K budget:** ~5% (recommended picks)
 
-**Trade-off:** InterContinental Danang is the luxury splurge, but Naman Retreat better fits Marble Mountains and Hội An during this short 3-night stay.
+**Splurge scenario (Peninsula HK + Sun Peninsula DAD + Le Premier HAN + SkyCity transit):** ~$3,666 (12%)
 
 ### Safety notes
 
@@ -90,7 +91,7 @@
 | Check | Result |
 |-------|--------|
 | Within 30 min of 60% activities? | **Pass** — TST, Old Quarter, My Khe all central to itinerary |
-| Reasonable distance to exit airport? | **Pass** — HKG Express, HAN 30 min, DAD 20 min |
-| MCP searched every city? | **Pass** — search date 2026-06-28 recorded |
+| Reasonable distance to exit airport? | **Pass** — DAD→HKG Sep 13; Regal Airport for DL0088 09:25 |
+| MCP searched every city? | **Pass** — search date 2026-06-28 recorded (hub dates shifted for Delta) |
 | Splurge option identified for Vietnam? | **Pass** — InterContinental Sun Peninsula |
-| Open-jaw exit (DAD) supported? | **Pass** — My Khe / resort coast 20 min to DAD |
+| HKG return (Delta via LAX) supported? | **Pass** — DAD→HKG + airport hotel Sep 13 |
