@@ -2,6 +2,8 @@
 
 Turn a single **traveler profile** into a polished, print-ready **travel deck** (HTML + PDF) using a 17-step chain-of-thought (CoT) planning workflow and a deterministic rendering pipeline.
 
+**Live itinerary:** [China · Vietnam 2026](https://tolsonj.github.io/travel-genie/trips/china-vietnam-2026/) · [Hotels](https://tolsonj.github.io/travel-genie/trips/china-vietnam-2026/#hotels)
+
 ```
 profile.md ──▶ CoT steps 01–17 ──▶ opt-*.md ──▶ canonical JSON ──▶ trip.html   (primary)
  (you write)     (AI planning)      (print src)   (extract)        (site)
@@ -262,7 +264,7 @@ Physical limitations: none
 Deal-breakers: large crowds, extreme heat
 ```
 
-See also the committed demo at [`trips/example-trip/profile.md`](trips/example-trip/profile.md). Personal folders such as `trips/china-vietnam-2026/` and `trips/japan-2026/` are gitignored so real plans stay local.
+See also the committed demo at [`trips/example-trip/profile.md`](trips/example-trip/profile.md). Live published itinerary: [China · Vietnam 2026](https://tolsonj.github.io/travel-genie/trips/china-vietnam-2026/). Personal folders such as `trips/japan-2026/` are gitignored so real plans stay local.
 
 
 
