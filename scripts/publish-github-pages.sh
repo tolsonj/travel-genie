@@ -34,6 +34,13 @@ else
   git -C "$ROOT" rm -rf . 2>/dev/null || true
 fi
 
+# Preserve booking artifacts already on gh-pages (not rebuilt from DIST)
+PRESERVE=$(mktemp -d)
+trap 'rm -rf "$PRESERVE"' EXIT
+if [[ -d "$ROOT/trips/$TRIP/hotel-info" ]]; then
+  cp -a "$ROOT/trips/$TRIP/hotel-info" "$PRESERVE/hotel-info"
+fi
+
 # Remove prior deploy for this trip (tracked + untracked source files)
 git -C "$ROOT" rm -rf "trips/$TRIP" 2>/dev/null || true
 rm -rf "$ROOT/trips/$TRIP"
@@ -46,6 +53,14 @@ if [[ -f "$DIST/deck.html" ]]; then
 fi
 if [[ -d "$DIST/maps" ]]; then
   cp -R "$DIST/maps" "$ROOT/trips/$TRIP/maps"
+fi
+for companion in chart.html chart.md; do
+  if [[ -f "$DIST/$companion" ]]; then
+    cp "$DIST/$companion" "$ROOT/trips/$TRIP/$companion"
+  fi
+done
+if [[ -d "$PRESERVE/hotel-info" ]]; then
+  cp -a "$PRESERVE/hotel-info" "$ROOT/trips/$TRIP/hotel-info"
 fi
 
 # Root index listing published trips
@@ -68,6 +83,9 @@ fi
 git -C "$ROOT" add index.html "trips/$TRIP/index.html"
 [[ -f "$ROOT/trips/$TRIP/deck.html" ]] && git -C "$ROOT" add "trips/$TRIP/deck.html"
 [[ -d "$ROOT/trips/$TRIP/maps" ]] && git -C "$ROOT" add -f "trips/$TRIP/maps"
+[[ -f "$ROOT/trips/$TRIP/chart.html" ]] && git -C "$ROOT" add -f "trips/$TRIP/chart.html"
+[[ -f "$ROOT/trips/$TRIP/chart.md" ]] && git -C "$ROOT" add -f "trips/$TRIP/chart.md"
+[[ -d "$ROOT/trips/$TRIP/hotel-info" ]] && git -C "$ROOT" add -f "trips/$TRIP/hotel-info"
 git -C "$ROOT" commit -m "deploy: $TRIP site $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 git -C "$ROOT" push origin gh-pages
 
@@ -89,3 +107,4 @@ fi
 echo ""
 echo "Published → ${BASE}/trips/${TRIP}/"
 echo "Deck      → ${BASE}/trips/${TRIP}/deck.html"
+echo "Chart     → ${BASE}/trips/${TRIP}/chart.html"
