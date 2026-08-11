@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>China · Vietnam 2026 — Flights, Hotels &amp; Activities</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { font-size: 16px; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.55;
+      background: #fafaf8;
+      color: #1a1a1a;
+    }
+    a { color: #1c2b3a; }
+    a:hover { color: #3d5a73; }
+    .hero {
+      background: #1c2b3a;
+      color: #fff;
+      padding: 2.5rem 1rem 2rem;
+    }
+    .hero-inner, .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: 1.85rem;
+      letter-spacing: -0.4px;
+    }
+    .hero p {
+      margin: 0.4rem 0 0;
+      opacity: 0.8;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .nav-links a {
+      color: #fff;
+      opacity: 0.9;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .wrap { padding: 1.5rem 1rem 3rem; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin: 0 0 1.5rem;
+    }
+    .stat {
+      background: #fff;
+      border: 1px solid #e8e8e4;
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      line-height: 1.1;
+      color: #1c2b3a;
+    }
+    .stat span {
+      font-size: 0.8rem;
+      color: #666;
+    }
+    h2 {
+      margin: 2rem 0 0.75rem;
+      font-size: 1.25rem;
+      color: #1c2b3a;
+    }
+    .note {
+      background: #eef3f7;
+      border-left: 3px solid #1c2b3a;
+      padding: 0.75rem 1rem;
+      margin: 0 0 1.25rem;
+      font-size: 0.92rem;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      background: #fff;
+      border: 1px solid #e8e8e4;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 720px;
+    }
+    th, td {
+      padding: 0.65rem 0.8rem;
+      border-bottom: 1px solid #efefef;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f4f5f3;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #555;
+      white-space: nowrap;
+    }
+    tr:last-child td { border-bottom: none; }
+    .muted { color: #777; font-size: 0.85rem; }
+    .pill {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      margin: 0.1rem 0.2rem 0.1rem 0;
+      background: #eef3f7;
+      color: #1c2b3a;
+      white-space: nowrap;
+    }
+    .pill.food { background: #f7efe6; }
+    .pill.culture { background: #e8f3ea; }
+    .pill.adventure { background: #e9eef8; }
+    .pill.transit { background: #f0f0ee; color: #666; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e8e8e4;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1rem;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+    .card li { margin: 0.35rem 0; }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+    @media (max-width: 800px) {
+      .stats { grid-template-columns: 1fr 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>China · Vietnam 2026 — Flights, Hotels &amp; Activities</h1>
+      <p>Booked trip · 3 travelers · Sep 1–14, 2026</p>
+      <div class="nav-links">
+        <a href="./">← Full itinerary</a>
+        <a href="#flights">Flights</a>
+        <a href="#hotels">Hotels</a>
+        <a href="#activities">Activities</a>
+        <a href="./chart.md">Markdown source</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="stats">
+      <div class="stat"><strong>5</strong><span>Shopping days</span></div>
+      <div class="stat"><strong>10</strong><span>Food days</span></div>
+      <div class="stat"><strong>6</strong><span>Culture days</span></div>
+      <div class="stat"><strong>6</strong><span>Adventure / nature days</span></div>
+    </div>
+
+    <div class="note">
+      Day links open the matching day on the live itinerary.
+      Soft/transit days still include light food or culture where planned.
+    </div>
+
+    <h2 id="flights">Flights (booked)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Flight</th>
+            <th>Route</th>
+            <th>Depart → Arrive</th>
+            <th>PNR</th>
+            <th>Airline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sep 1</td>
+            <td><strong>DL0763</strong></td>
+            <td>ATL → LAX</td>
+            <td>19:20 EDT → 20:45 PDT</td>
+            <td>Delta long-haul</td>
+            <td><a href="https://www.delta.com/">Delta</a></td>
+          </tr>
+          <tr>
+            <td>Sep 1–3</td>
+            <td><strong>DL0089</strong></td>
+            <td>LAX → HKG</td>
+            <td>23:30 PDT → 05:00 HKT (Sep 3)</td>
+            <td>Delta long-haul</td>
+            <td><a href="https://www.delta.com/">Delta</a></td>
+          </tr>
+          <tr>
+            <td>Sep 6</td>
+            <td><strong>CX741</strong></td>
+            <td>HKG → HAN</td>
+            <td>08:45 HKT → 09:55 ICT</td>
+            <td><strong>DITRCK</strong></td>
+            <td><a href="https://www.cathaypacific.com/">Cathay Pacific</a></td>
+          </tr>
+          <tr>
+            <td>Sep 9</td>
+            <td><strong>VietJet SkyBoss</strong></td>
+            <td>HAN → DAD</td>
+            <td>09:05 → 10:25 ICT</td>
+            <td><strong>MKJZ3W</strong> (30kg)</td>
+            <td><a href="https://www.vietjetair.com/">VietJet</a></td>
+          </tr>
+          <tr>
+            <td>Sep 13</td>
+            <td><strong>UO559</strong></td>
+            <td>DAD → HKG</td>
+            <td>18:10 ICT → 21:10 HKT</td>
+            <td><strong>E73C9M</strong></td>
+            <td><a href="https://www.hkexpress.com/">HK Express</a></td>
+          </tr>
+          <tr>
+            <td>Sep 14</td>
+            <td><strong>DL0088</strong></td>
+            <td>HKG → LAX</td>
+            <td>09:25 HKT → 08:00 PDT</td>
+            <td>Delta long-haul</td>
+            <td><a href="https://www.delta.com/">Delta</a></td>
+          </tr>
+          <tr>
+            <td>Sep 14</td>
+            <td><strong>DL0327</strong></td>
+            <td>LAX → ATL</td>
+            <td>09:30 PDT → 16:30 EDT</td>
+            <td>Delta long-haul</td>
+            <td><a href="https://www.delta.com/">Delta</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">
+      Manage:
+      <a href="https://www.delta.com/us/en/my-trips/overview">Delta My Trips</a> ·
+      <a href="https://www.cathaypacific.com/cx/en_US/manage-booking.html">Cathay</a> ·
+      <a href="https://www.vietjetair.com/">VietJet</a> ·
+      <a href="https://www.hkexpress.com/">HK Express</a>
+    </p>
+
+    <h2 id="hotels">Hotels (booked)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Hotel</th>
+            <th>Stay</th>
+            <th>Confirmation</th>
+            <th>Site</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hong Kong (TST)</td>
+            <td><strong>The Langham</strong></td>
+            <td>Sep 3–6</td>
+            <td><strong>27404SG770342</strong></td>
+            <td><a href="https://www.langhamhotels.com/en/the-langham/hong-kong/">langhamhotels.com</a></td>
+          </tr>
+          <tr>
+            <td>Hanoi</td>
+            <td><strong>Le Premier</strong> (27 Hang Hanh)</td>
+            <td>Sep 6–9</td>
+            <td><strong>3998735961041</strong></td>
+            <td><a href="https://lepremierhotel.com/">lepremierhotel.com</a></td>
+          </tr>
+          <tr>
+            <td>Đà Nẵng / Hội An coast</td>
+            <td><strong>Naman Retreat</strong></td>
+            <td>Sep 9–13</td>
+            <td><strong>BBA26072921033823</strong></td>
+            <td><a href="https://namanretreat.com/en">namanretreat.com</a></td>
+          </tr>
+          <tr>
+            <td>HKG Airport</td>
+            <td><strong>Regal Airport Hotel</strong></td>
+            <td>Sep 13 night</td>
+            <td><strong>RAH10913216420</strong></td>
+            <td><a href="https://www.regalhotel.com/regal-airport-hotel/">regalhotel.com</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Typical check-in ~15:00 / check-out ~11:00–12:00 (Regal is late arrival after UO559).</p>
+
+    <h2 id="activities">Activity chart (by day)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Date / city</th>
+            <th>Shopping</th>
+            <th>Food</th>
+            <th>Culture</th>
+            <th>Adventure / nature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="./#day-1">Day 1</a></td>
+            <td>Tue Sep 1<br /><span class="muted">ATL → LAX · En route</span><br /><span class="pill transit">Transit</span></td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-2">Day 2</a></td>
+            <td>Wed Sep 2<br /><span class="muted">Over Pacific · In flight</span><br /><span class="pill transit">Transit</span></td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-3">Day 3</a></td>
+            <td>Thu Sep 3<br /><span class="muted">Hong Kong · Soft arrive</span><br /><span class="pill food">Food</span><span class="pill culture">Culture</span></td>
+            <td>—</td>
+            <td>Late brunch · Peninsula Lobby (opt)</td>
+            <td>TST Promenade · Symphony of Lights 8 PM</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-4">Day 4</a></td>
+            <td>Fri Sep 4<br /><span class="muted">Hong Kong · Shopping + Peak</span><br /><span class="pill">Shopping</span><span class="pill food">Food</span><span class="pill adventure">Adventure</span></td>
+            <td>Causeway Bay · Temple Street browse</td>
+            <td>AC lunch · Tim Ho Wan</td>
+            <td>—</td>
+            <td>Peak Tram / Victoria Peak (7:30 AM)</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-5">Day 5</a></td>
+            <td>Sat Sep 5<br /><span class="muted">Hong Kong · Electronics + dupes</span><br /><span class="pill">Shopping</span><span class="pill food">Food</span><span class="pill culture">Culture</span></td>
+            <td>Sin Tat · Ladies Market · Fa Yuen Street</td>
+            <td>Man Mo Dim Sum or hotel dinner</td>
+            <td>Star Ferry to Central</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-6">Day 6</a></td>
+            <td>Sun Sep 6<br /><span class="muted">HKG → Hanoi · Soft hub</span><br /><span class="pill transit">Transit</span><span class="pill food">Food</span><span class="pill culture">Culture</span></td>
+            <td>—</td>
+            <td>Late pho · Bát Đàn or Essence</td>
+            <td>Hoan Kiem Lake stroll</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-7">Day 7</a></td>
+            <td>Mon Sep 7<br /><span class="muted">Hanoi · History + food</span><br /><span class="pill culture">Culture</span><span class="pill food">Food</span></td>
+            <td>—</td>
+            <td>Old Quarter food walk · Hong Hoai's or bia hơi</td>
+            <td>Temple of Literature 8 AM</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-8">Day 8</a></td>
+            <td>Tue Sep 8<br /><span class="muted">Hanoi · Vote day</span><br /><span class="pill adventure">Adventure</span><span class="pill culture">Culture</span><span class="pill food">Food</span></td>
+            <td>—</td>
+            <td>Duong's cooking class OR Old Quarter dinner</td>
+            <td>Option B: Hoa Lo + Tran Quoc Pagoda</td>
+            <td>Option A: Ha Long Bay day cruise</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-9">Day 9</a></td>
+            <td>Wed Sep 9<br /><span class="muted">HAN → Đà Nẵng · Soft hub</span><br /><span class="pill transit">Transit</span><span class="pill food">Food</span><span class="pill adventure">Adventure</span></td>
+            <td>—</td>
+            <td>Late lunch beachside</td>
+            <td>—</td>
+            <td>My Khe beach · sunset walk</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-10">Day 10</a></td>
+            <td>Thu Sep 10<br /><span class="muted">Hội An · Ancient Town</span><br /><span class="pill">Shopping</span><span class="pill food">Food</span><span class="pill culture">Culture</span></td>
+            <td>Tailor fitting #1 (vote) · lantern shops</td>
+            <td>Morning Glory late brunch</td>
+            <td>Japanese Covered Bridge · lantern evening</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-11">Day 11</a></td>
+            <td>Fri Sep 11<br /><span class="muted">Đà Nẵng · Perfect day</span><br /><span class="pill food">Food</span><span class="pill adventure">Adventure</span></td>
+            <td>—</td>
+            <td>Beach club brunch · Thìa Gỗ seafood</td>
+            <td>—</td>
+            <td>Marble Mountains · My Khe walk</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-12">Day 12</a></td>
+            <td>Sat Sep 12<br /><span class="muted">Hội An / Đà Nẵng</span><br /><span class="pill">Shopping</span><span class="pill food">Food</span><span class="pill adventure">Adventure</span></td>
+            <td>Tailor #2 · Vincom sneakers</td>
+            <td>Resort dinner</td>
+            <td>—</td>
+            <td>An Bang Beach morning</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-13">Day 13</a></td>
+            <td>Sun Sep 13<br /><span class="muted">DAD → HKG</span><br /><span class="pill adventure">Adventure</span><span class="pill">Shopping</span><span class="pill transit">Transit</span></td>
+            <td>Suit pickup (if tailor)</td>
+            <td>Light dinner near Regal</td>
+            <td>—</td>
+            <td>Son Tra / Lady Buddha (opt) or beach</td>
+          </tr>
+          <tr>
+            <td><a href="./#day-14">Day 14</a></td>
+            <td>Mon Sep 14<br /><span class="muted">HKG → ATL · Homebound</span><br /><span class="pill transit">Transit</span></td>
+            <td>—</td><td>—</td><td>—</td><td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Quick filter</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Shopping</h3>
+        <ul>
+          <li><a href="./#day-4">Day 4</a> — Causeway Bay · Temple Street</li>
+          <li><a href="./#day-5">Day 5</a> — Sin Tat · Ladies Market · Fa Yuen</li>
+          <li><a href="./#day-10">Day 10</a> — Tailor #1 · lanterns</li>
+          <li><a href="./#day-12">Day 12</a> — Tailor #2 · Vincom sneakers</li>
+          <li><a href="./#day-13">Day 13</a> — Suit pickup (opt)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Culture</h3>
+        <ul>
+          <li><a href="./#day-3">Day 3</a> — Promenade / Symphony</li>
+          <li><a href="./#day-5">Day 5</a> — Star Ferry</li>
+          <li><a href="./#day-7">Day 7</a> — Temple of Literature</li>
+          <li><a href="./#day-8">Day 8</a> — Hoa Lo / West Lake (vote)</li>
+          <li><a href="./#day-10">Day 10</a> — Hội An Ancient Town</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Food</h3>
+        <ul>
+          <li><a href="./#day-5">Day 5</a> — Man Mo Dim Sum</li>
+          <li><a href="./#day-7">Day 7</a> — Old Quarter food walk</li>
+          <li><a href="./#day-8">Day 8</a> — Cooking class (vote)</li>
+          <li><a href="./#day-10">Day 10</a> — Morning Glory</li>
+          <li><a href="./#day-11">Day 11</a> — Thìa Gỗ seafood</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Adventure / nature</h3>
+        <ul>
+          <li><a href="./#day-4">Day 4</a> — Peak Tram</li>
+          <li><a href="./#day-8">Day 8</a> — Ha Long Bay (vote)</li>
+          <li><a href="./#day-9">Day 9</a> — My Khe sunset</li>
+          <li><a href="./#day-11">Day 11</a> — Marble Mountains</li>
+          <li><a href="./#day-13">Day 13</a> — Son Tra / Lady Buddha (opt)</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      Day 8 is a vote: Ha Long (adventure) vs in-city Hanoi (culture).
+      Tailor slots on Days 10/12/13 are optional pending the “no suits” decision.
+      Source: <a href="./chart.md">chart.md</a> ·
+      <a href="./">itinerary home</a>
+    </footer>
+  </main>
+</body>
+</html>
