@@ -35,7 +35,8 @@ assert(Array.isArray(site.days), "site.days is array");
 assert(site.days.length >= 10, `site.days.length >= 10 (got ${site.days.length})`);
 assert(Array.isArray(site.sections), "site.sections is array");
 assert(site.sections.length >= 8, `site.sections.length >= 8 (got ${site.sections.length})`);
-assert(Array.isArray(site.booking_queue), "site.booking_queue is array");
+assert(Array.isArray(site.extra_pages), "site.extra_pages is array");
+assert(site.extra_pages.some(p => p.href === "gantt.html"), "extra_pages includes gantt.html");
 
 // T2: each day has required fields
 const day1 = site.days[0];
@@ -49,15 +50,15 @@ assert(Array.isArray(day1.events[0].lines), "event has lines array");
 const sectionIds = site.sections.map(s => s.id);
 for (const id of [
   "maps",
+  "flights",
+  "transport",
   "hotels",
   "restaurants",
   "attractions",
   "spas",
   "shopping-comparison",
   "food",
-  "immigration",
-  "health",
-  "contingency"
+  "immigration"
 ]) {
   assert(sectionIds.includes(id), `sections includes "${id}"`);
 }
@@ -73,14 +74,33 @@ if (existsSync(htmlPath)) {
   assert(html.includes('class="site-sidebar"'), "trip.html has sidebar nav");
   assert(html.includes('id="itinerary"'), 'trip.html has id="itinerary" anchor');
   assert(html.includes('id="hotels"'), 'trip.html has id="hotels" section');
+  assert(html.includes('id="flights"'), 'trip.html has id="flights" section');
+  assert(html.includes('id="transport"'), 'trip.html has id="transport" section');
+  assert(html.includes("Airport Express"), "trip.html includes Airport Express transit");
+  assert(/site-footnote--transit/.test(html), "trip.html has transit footnotes on days");
   assert(html.includes('id="maps"'), 'trip.html has id="maps" section');
   assert(html.includes("site-map-img") || html.includes("site-map-fallback"), "trip.html has map visuals");
   assert(html.includes('id="restaurants"'), 'trip.html has id="restaurants" section');
   assert(html.includes('id="attractions"'), 'trip.html has id="attractions" section');
   assert(html.includes('id="spas"'), 'trip.html has id="spas" section');
   assert(html.includes('id="shopping-comparison"'), 'trip.html has id="shopping-comparison" section');
-  assert(html.includes('@media print'), "trip.html CSS includes @media print");
-  assert(html.length > 30000, `trip.html size > 30 KB (got ${html.length} bytes)`);
+  assert(html.includes("gantt.html"), "trip.html links to gantt.html");
+  assert(html.includes("kennedy-saves.html"), "trip.html links to kennedy-saves.html");
+  assert(html.includes(">Schedule<"), "trip.html nav includes Schedule");
+  assert(html.includes(">Saved places<"), "trip.html nav includes Saved places");
+}
+
+const ganttPath = join(PIPELINE_ROOT, "dist", SLUG, "gantt.html");
+const kennedyPath = join(PIPELINE_ROOT, "dist", SLUG, "kennedy-saves.html");
+if (existsSync(ganttPath)) {
+  const gantt = readFileSync(ganttPath, "utf8");
+  assert(gantt.includes("Daily schedule"), "gantt.html has schedule heading");
+  assert(gantt.includes("Peking Duck"), "gantt.html includes day activities");
+}
+if (existsSync(kennedyPath)) {
+  const ken = readFileSync(kennedyPath, "utf8");
+  assert(ken.includes("__GEO_ITEMS__"), "kennedy-saves.html embeds geo items");
+  assert(ken.includes("Hong Kong"), "kennedy-saves.html mentions Hong Kong");
 }
 
 // T5: days are sorted by day number

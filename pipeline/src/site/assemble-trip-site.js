@@ -11,14 +11,17 @@ import { fileURLToPath } from "node:url";
 import { dirname, join, basename } from "node:path";
 import { parseItineraryTables, parseBookingQueue } from "./parse-itinerary-tables.js";
 import { buildMapsSection } from "./build-maps-section.js";
+import { listHotelInfoDocuments } from "./hotel-info-docs.js";
 import { dataDir } from "../discover.js";
 import { publishSection } from "../shared/publish-filter.js";
+import { listExtraPages } from "./render-extra-pages.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /** Ordered list of reference sections to include in the trip-site model. */
 const SECTION_ASPECTS = [
   { id: "flights",               title: "Flights",              aspect: "flight-comparison" },
+  { id: "transport",             title: "Getting around",       aspect: "07-transport-money" },
   { id: "hotels",                title: "Hotels",               aspect: "hotel-comparison" },
   { id: "restaurants",           title: "Restaurants",          aspect: "restaurant-comparison" },
   { id: "attractions",           title: "Attractions",          aspect: "attractions-comparison" },
@@ -66,6 +69,70 @@ function parseDateRange(value) {
 function extractPartyCount(value) {
   const m = (value ?? "").match(/^(\d+)/);
   return m ? m[1] : value ?? "";
+}
+
+const GETTING_AROUND_CAPTION =
+  /ground transport|airport transfer|activity transit|how to ride|octopus|getting around/i;
+
+function isGettingAroundTable(table) {
+  return GETTING_AROUND_CAPTION.test(table?.caption || "");
+}
+
+const TRANSPORT_INTRO =
+  "Airport Express, MTR, Grab, and hotel cars — how to get to and from each airport and to the day’s activities.";
+
+/**
+ * Build per-day transit footnotes from airport-transfer + activity-transit tables.
+ * @param {object[]} days
+ * @param {object} transport
+ * @returns {object[]}
+ */
+function attachTransitToDays(days, transport) {
+  const tables = (transport?.tables ?? []).filter(t =>
+    /airport transfer|activity transit/i.test(t.caption || "")
+  );
+  if (!tables.length) return days;
+
+  const byDay = new Map();
+  for (const table of tables) {
+    const cols = table.columns ?? [];
+    const dayIdx = cols.findIndex(c => /^day$/i.test(c));
+    const routeIdx = cols.findIndex(c => /from|route|leg/i.test(c));
+    const modeIdx = cols.findIndex(c => /mode|how/i.test(c));
+    const timeIdx = cols.findIndex(c => /time|duration/i.test(c));
+    const activityIdx = cols.findIndex(c => /^activity$/i.test(c));
+    const isAirport = /airport transfer/i.test(table.caption || "");
+
+    for (const row of table.rows ?? []) {
+      const dayCell = String(row[dayIdx >= 0 ? dayIdx : 0] ?? "");
+      const dayNums = [...dayCell.matchAll(/\d+/g)].map(m => parseInt(m[0], 10));
+      const route = routeIdx >= 0 ? row[routeIdx] : "";
+      const mode = modeIdx >= 0 ? row[modeIdx] : "";
+      const time = timeIdx >= 0 ? row[timeIdx] : "";
+      const activity = activityIdx >= 0 ? row[activityIdx] : "";
+      const label = isAirport
+        ? [route, mode, time].filter(Boolean).join(" · ")
+        : [activity, route, mode, time].filter(Boolean).join(" · ");
+      if (!label) continue;
+      for (const n of dayNums) {
+        if (!byDay.has(n)) byDay.set(n, []);
+        byDay.get(n).push(label);
+      }
+    }
+  }
+
+  return days.map(day => {
+    const lines = byDay.get(day.day);
+    if (!lines?.length) return day;
+    const existing = day.footnotes?.transit;
+    return {
+      ...day,
+      footnotes: {
+        ...day.footnotes,
+        transit: existing || lines.join(" · ")
+      }
+    };
+  });
 }
 
 /**
@@ -176,6 +243,7 @@ export function assembleTripSite(slug) {
       days = parseItineraryTables(itinerary);
     }
     days.sort((a, b) => a.day - b.day);
+    days = attachTransitToDays(days, aspects.get("07-transport-money"));
   }
 
   // --- booking_queue ---
@@ -187,15 +255,29 @@ export function assembleTripSite(slug) {
     ...(mapsSection ? [mapsSection] : []),
     ...SECTION_ASPECTS.filter(spec => aspects.has(spec.aspect)).map(spec => {
       const data = aspects.get(spec.aspect);
-      return publishSection({
+      const section = publishSection({
         id: spec.id,
         title: spec.title,
         aspect: spec.aspect,
         anchor: true,
         ...(data.intro != null && { intro: data.intro }),
         ...(data.tables != null && { tables: data.tables }),
-        ...(data.bullets != null && { bullets: data.bullets })
+        ...(data.bullets != null && { bullets: data.bullets }),
+        ...(data.links != null && { links: data.links })
       });
+      if (spec.id === "hotels") {
+        const documents = listHotelInfoDocuments(slug, "hotels");
+        if (documents.length) section.documents = documents;
+      }
+      if (spec.id === "flights") {
+        const documents = listHotelInfoDocuments(slug, "flights");
+        if (documents.length) section.documents = documents;
+      }
+      if (spec.id === "transport") {
+        section.tables = (section.tables ?? []).filter(isGettingAroundTable);
+        section.intro = TRANSPORT_INTRO;
+      }
+      return section;
     })
   ];
 
@@ -206,6 +288,7 @@ export function assembleTripSite(slug) {
     booking_queue,
     days,
     sections,
+    extra_pages: listExtraPages(slug)
   };
 }
 

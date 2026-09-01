@@ -19,6 +19,8 @@ import { extractFromMarkdown, readTripFromFrontmatter } from "./extract/md-extra
 import { renderDeck } from "./render/index.js";
 import { assembleTripSite } from "./site/assemble-trip-site.js";
 import { renderTripSite } from "./site/render-trip-site.js";
+import { copyHotelInfoToDist } from "./site/hotel-info-docs.js";
+import { writeExtraPages } from "./site/render-extra-pages.js";
 import { exportGoogleMapsCsvForTrip } from "./export/google-maps-csv.js";
 
 function parseArgs(argv) {
@@ -104,6 +106,13 @@ async function main() {
     const siteFile = join(outDir, "trip.html");
     writeFileSync(siteFile, siteHtml, "utf8");
     written.push(siteFile);
+    const docsCopied = copyHotelInfoToDist(trip);
+    if (docsCopied) console.log(`  ✓ hotel-info/ (${docsCopied} PDF${docsCopied === 1 ? "" : "s"})`);
+    const extra = writeExtraPages(trip);
+    for (const f of extra) {
+      console.log(`  ✓ ${f}`);
+      written.push(join(outDir, f));
+    }
   }
 
   // Stage 2b: deck render.

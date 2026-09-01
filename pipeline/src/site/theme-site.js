@@ -654,4 +654,72 @@ a { color: inherit; }
 .site-map-csv-note a { color: #1a73e8; }
 .site-map-csv-list { margin: 0; padding-left: 1.25rem; font-size: 0.9rem; }
 .site-map-csv-meta { color: #999; font-size: 0.8rem; }
+
+.site-hotel-docs { margin: 1rem 0 1.25rem; }
+.site-hotel-doc-list {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+.site-hotel-doc-link { color: #1a73e8; text-decoration: none; }
+.site-hotel-doc-link:hover { text-decoration: underline; }
+
+/* ── Extra pages (gantt / saved places) ───────────────────────────── */
+.site-extra-back {
+  display: inline-block;
+  color: #9ec0e8;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+.site-extra-back:hover { text-decoration: underline; }
+.site-extra-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+.site-extra-lede { font-size: 0.95rem; color: #555; margin: 0 0 0.75rem; }
+.site-extra-lede a { color: #1a73e8; }
+.site-extra-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin: 1rem 0 1.5rem;
+}
+.site-extra-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.site-extra-stat strong { font-size: 1.6rem; letter-spacing: -0.03em; color: #1c2b3a; }
+.site-extra-stat span { font-size: 0.8rem; color: #666; }
+.site-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.1rem;
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0 0 1.25rem;
+}
+.site-legend-item { display: inline-flex; align-items: center; gap: 0.4rem; }
+.site-legend-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.site-gantt-wrap { overflow-x: auto; margin: 0.75rem 0 2rem; }
+.site-gantt { display: block; width: 100%; min-width: 848px; }
+.site-geo-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0; }
+.site-geo-chip {
+  border: 1px solid #dde3ea;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.site-geo-chip.is-active { background: #1c2b3a; color: #fff; border-color: #1c2b3a; }
+.site-geo-toolbar { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 0.5rem 0 1rem; }
+.site-geo-toolbar select,
+.site-geo-toolbar input {
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #dde3ea;
+  border-radius: 6px;
+}
+.site-geo-toolbar input { min-width: 16rem; flex: 1; }
+.site-geo-map { width: 100%; max-width: 640px; background: #eef1f4; border-radius: 6px; display: block; }
+.site-sidebar-link--page { font-weight: 600; }
 `;

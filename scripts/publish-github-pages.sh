@@ -47,6 +47,14 @@ fi
 if [[ -d "$DIST/maps" ]]; then
   cp -R "$DIST/maps" "$ROOT/trips/$TRIP/maps"
 fi
+# Extra canvas pages (gantt, saved places, …)
+shopt -s nullglob
+for extra in "$DIST"/*.html; do
+  base=$(basename "$extra")
+  [[ "$base" == "trip.html" || "$base" == "deck.html" || "$base" == "index.html" ]] && continue
+  cp "$extra" "$ROOT/trips/$TRIP/$base"
+done
+shopt -u nullglob
 
 # Root index listing published trips
 {
@@ -68,6 +76,7 @@ fi
 git -C "$ROOT" add index.html "trips/$TRIP/index.html"
 [[ -f "$ROOT/trips/$TRIP/deck.html" ]] && git -C "$ROOT" add "trips/$TRIP/deck.html"
 [[ -d "$ROOT/trips/$TRIP/maps" ]] && git -C "$ROOT" add -f "trips/$TRIP/maps"
+git -C "$ROOT" add "trips/$TRIP/"*.html 2>/dev/null || true
 git -C "$ROOT" commit -m "deploy: $TRIP site $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 git -C "$ROOT" push origin gh-pages
 
@@ -89,3 +98,5 @@ fi
 echo ""
 echo "Published → ${BASE}/trips/${TRIP}/"
 echo "Deck      → ${BASE}/trips/${TRIP}/deck.html"
+echo "Schedule  → ${BASE}/trips/${TRIP}/gantt.html"
+echo "Saves     → ${BASE}/trips/${TRIP}/kennedy-saves.html"

@@ -112,7 +112,7 @@ function renderTables(tables) {
  * @returns {Promise<string>} complete HTML string
  */
 export async function renderTripSite(site, opts = {}) {
-  const { meta, booking_queue = [], days = [], sections = [] } = site;
+  const { meta, booking_queue = [], days = [], sections = [], extra_pages = [] } = site;
 
   // party_short: leading number from party string, e.g. "2 (couple...)" → "2"
   const partyShort = meta.party ? (meta.party.match(/^(\d+)/) ?? [, meta.party])[1] : "";
@@ -146,9 +146,14 @@ export async function renderTripSite(site, opts = {}) {
       </a>`;
   }).join("\n      ");
 
-  const sectionLinks = sections
-    .map(s => `<a class="site-sidebar-link site-sidebar-link--section" href="#${esc(s.id)}">${esc(s.title)}</a>`)
-    .join("\n      ");
+  const sectionLinks = [
+    ...extra_pages.map(p =>
+      `<a class="site-sidebar-link site-sidebar-link--section site-sidebar-link--page" href="${esc(p.href)}">${esc(p.title)}</a>`
+    ),
+    ...sections.map(s =>
+      `<a class="site-sidebar-link site-sidebar-link--section" href="#${esc(s.id)}">${esc(s.title)}</a>`
+    )
+  ].join("\n      ");
 
   const sidebarHtml = `
   <aside class="site-sidebar" aria-label="Trip days">
@@ -158,7 +163,7 @@ export async function renderTripSite(site, opts = {}) {
     <nav class="site-sidebar-days">
       ${dayLinks}
     </nav>
-    ${sections.length > 0 ? `<nav class="site-sidebar-sections" aria-label="Reference sections">
+    ${(sections.length > 0 || extra_pages.length > 0) ? `<nav class="site-sidebar-sections" aria-label="Reference sections">
       ${sectionLinks}
     </nav>` : ""}
   </aside>`;
