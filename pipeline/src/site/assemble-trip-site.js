@@ -28,6 +28,7 @@ const SECTION_ASPECTS = [
   { id: "spas",                  title: "Spas & Wellness",      aspect: "spa-comparison" },
   { id: "shopping-comparison",   title: "Shopping",             aspect: "shopping-comparison" },
   { id: "food",                  title: "Food & Dining",        aspect: "06-food-dining" },
+  { id: "etiquette",             title: "Money & tipping",      aspect: "13-etiquette" },
   { id: "immigration",           title: "Immigration",          aspect: "03-immigration-entry" },
   { id: "health",                title: "Health & Safety",      aspect: "14-health-safety" },
   { id: "contingency",           title: "Contingency",          aspect: "16-contingency" },

@@ -1,8 +1,10 @@
-/** 14-day China → Vietnam gantt data (from china-vietnam-gantt canvas). */
+/** 14-day Hong Kong → HCMC → Da Nang gantt (booked itinerary). */
 export const PHASE_META = {
-  china: { banner: "CHINA  ·  BEIJING  ·  Sept 1 – 6  ·  5 nights", color: "#2E79B5" },
-  hanoi: { banner: "VIETNAM  ·  HANOI  ·  Sept 6 – 8  ·  2 nights", color: "#1F8A65" },
-  danang: { banner: "VIETNAM  ·  DA NANG / HOI AN  ·  Sept 8 – 14  ·  5 nights", color: "#C06028" }
+  enroute: { banner: "EN ROUTE  ·  ATL → HKG  ·  Sept 1 – 3", color: "#6b7280" },
+  hk: { banner: "HONG KONG  ·  Sept 3 – 6  ·  3 nights", color: "#2E79B5" },
+  hcmc: { banner: "VIETNAM  ·  HO CHI MINH CITY  ·  Sept 6 – 9  ·  3 nights", color: "#C06028" },
+  danang: { banner: "VIETNAM  ·  DA NANG / HOI AN  ·  Sept 9 – 13  ·  4 nights", color: "#1F8A65" },
+  home: { banner: "HOMEBOUND  ·  HKG → ATL  ·  Sept 13 – 14", color: "#6b7280" }
 };
 
 export const ACTIVITY_COLORS = {
@@ -27,476 +29,187 @@ export const ACTIVITY_LABEL = {
 
 export const DAYS = [
   {
-    "day": 1,
-    "date": "Sept 1",
-    "dow": "Tue",
-    "location": "Beijing",
-    "phase": "china",
-    "activities": [
-      {
-        "label": "PEK Arrival + Transfer",
-        "start": 11,
-        "end": 15.5,
-        "type": "transit"
-      },
-      {
-        "label": "Check-in + Rest",
-        "start": 15.5,
-        "end": 17.5,
-        "type": "rest"
-      },
-      {
-        "label": "Wangfujing Stroll",
-        "start": 17.5,
-        "end": 19.5,
-        "type": "cultural"
-      },
-      {
-        "label": "Peking Duck Dinner",
-        "start": 20,
-        "end": 22,
-        "type": "food"
-      }
+    day: 1,
+    date: "Sept 1",
+    dow: "Tue",
+    location: "ATL → LAX",
+    phase: "enroute",
+    isTransit: true,
+    activities: [
+      { label: "Pack + ATL", start: 14, end: 19.3, type: "transit" },
+      { label: "DL763 ATL→LAX", start: 19.3, end: 23, type: "transit" }
     ],
-    "wow": "Forbidden City gates lit at dusk — first glimpse of Beijing"
+    wow: "Wheels up from Atlanta — trip officially starts"
   },
   {
-    "day": 2,
-    "date": "Sept 2",
-    "dow": "Wed",
-    "location": "Beijing",
-    "phase": "china",
-    "activities": [
-      {
-        "label": "Forbidden City",
-        "start": 8.5,
-        "end": 12,
-        "type": "landmark"
-      },
-      {
-        "label": "Jingshan Park",
-        "start": 12,
-        "end": 13,
-        "type": "cultural"
-      },
-      {
-        "label": "Nanluoguxiang Hutong",
-        "start": 13,
-        "end": 17,
-        "type": "cultural"
-      },
-      {
-        "label": "Hutong Dinner",
-        "start": 19,
-        "end": 21,
-        "type": "food"
-      }
+    day: 2,
+    date: "Sept 2",
+    dow: "Wed",
+    location: "Over Pacific",
+    phase: "enroute",
+    isTransit: true,
+    activities: [
+      { label: "DL89 LAX→HKG (in flight)", start: 6, end: 23, type: "transit" }
     ],
-    "wow": "Golden rooftops of Forbidden City from Jingshan Hill"
+    wow: "Overnight over the Pacific — sleep as much as possible"
   },
   {
-    "day": 3,
-    "date": "Sept 3",
-    "dow": "Thu",
-    "location": "Beijing",
-    "phase": "china",
-    "activities": [
-      {
-        "label": "Drive to Mutianyu",
-        "start": 6.5,
-        "end": 8.5,
-        "type": "transit"
-      },
-      {
-        "label": "Great Wall — Mutianyu",
-        "start": 9,
-        "end": 14,
-        "type": "landmark"
-      },
-      {
-        "label": "Return + Rest",
-        "start": 14,
-        "end": 17,
-        "type": "transit"
-      },
-      {
-        "label": "Da Dong Peking Duck",
-        "start": 19,
-        "end": 21,
-        "type": "food"
-      }
+    day: 3,
+    date: "Sept 3",
+    dow: "Thu",
+    location: "Hong Kong",
+    phase: "hk",
+    activities: [
+      { label: "Land 05:00 + Rosewood", start: 6, end: 10, type: "transit" },
+      { label: "Brunch + rest", start: 10, end: 16, type: "rest" },
+      { label: "TST Promenade + Symphony", start: 18, end: 21, type: "landmark" }
     ],
-    "wow": "Unreconstructed Wall beyond Tower 14 — nearly empty, dramatic views"
+    wow: "First look at Victoria Harbour from the Tsim Sha Tsui promenade"
   },
   {
-    "day": 4,
-    "date": "Sept 4",
-    "dow": "Fri",
-    "location": "Beijing",
-    "phase": "china",
-    "activities": [
-      {
-        "label": "Temple of Heaven",
-        "start": 9,
-        "end": 11,
-        "type": "landmark"
-      },
-      {
-        "label": "Qianmen Street",
-        "start": 11,
-        "end": 13,
-        "type": "shopping"
-      },
-      {
-        "label": "Sanlitun Shopping",
-        "start": 14,
-        "end": 18,
-        "type": "shopping"
-      },
-      {
-        "label": "Jing A + Rooftop Bar",
-        "start": 19,
-        "end": 22,
-        "type": "food"
-      }
+    day: 4,
+    date: "Sept 4",
+    dow: "Fri",
+    location: "Hong Kong",
+    phase: "hk",
+    activities: [
+      { label: "Peak Tram 7:30 AM", start: 7.5, end: 11, type: "landmark" },
+      { label: "Causeway Bay (SOGO)", start: 12, end: 17, type: "shopping" },
+      { label: "Temple Street + dim sum", start: 18, end: 21.5, type: "food" }
     ],
-    "wow": "Echoing Wall whisper — physics at 1420 AD scale"
+    wow: "Victoria Peak before the crowds — harbor from above"
   },
   {
-    "day": 5,
-    "date": "Sept 5",
-    "dow": "Sat",
-    "location": "Beijing",
-    "phase": "china",
-    "activities": [
-      {
-        "label": "Summer Palace",
-        "start": 9,
-        "end": 12,
-        "type": "landmark"
-      },
-      {
-        "label": "Pack + Hotel",
-        "start": 12,
-        "end": 14.5,
-        "type": "rest"
-      },
-      {
-        "label": "Last Beijing Shopping",
-        "start": 14.5,
-        "end": 16.5,
-        "type": "shopping"
-      },
-      {
-        "label": "Airport Transfer",
-        "start": 18,
-        "end": 20,
-        "type": "transit"
-      }
+    day: 5,
+    date: "Sept 5",
+    dow: "Sat",
+    location: "Hong Kong",
+    phase: "hk",
+    activities: [
+      { label: "Sin Tat / electronics", start: 10, end: 13, type: "shopping" },
+      { label: "Ladies Market + sneakers", start: 13, end: 17, type: "shopping" },
+      { label: "Star Ferry + dim sum", start: 18, end: 21, type: "food" }
     ],
-    "wow": "Rowboat on Kunming Lake — pagodas perfectly reflected in still water"
+    wow: "Star Ferry across the harbor at dusk"
   },
   {
-    "day": 6,
-    "date": "Sept 6",
-    "dow": "Sun",
-    "location": "BJS → HAN",
-    "phase": "china",
-    "isTransit": true,
-    "activities": [
-      {
-        "label": "Beijing Morning",
-        "start": 9,
-        "end": 12,
-        "type": "cultural"
-      },
-      {
-        "label": "PEK → HAN  (~4 hrs)",
-        "start": 13,
-        "end": 17,
-        "type": "transit"
-      },
-      {
-        "label": "Hoan Kiem + Pho",
-        "start": 19,
-        "end": 21.5,
-        "type": "cultural"
-      }
+    day: 6,
+    date: "Sept 6",
+    dow: "Sun",
+    location: "HKG → SGN",
+    phase: "hcmc",
+    isTransit: true,
+    activities: [
+      { label: "CX767 08:20→10:05", start: 7, end: 10.1, type: "transit" },
+      { label: "Reverie check-in + rest", start: 10.5, end: 16, type: "rest" },
+      { label: "Dong Khoi dinner", start: 18, end: 21, type: "food" }
     ],
-    "wow": "Hoan Kiem Lake glowing at night — first moments in Vietnam"
+    wow: "First walk down Nguyen Hue — Saigon after the Hong Kong hop"
   },
   {
-    "day": 7,
-    "date": "Sept 7",
-    "dow": "Mon",
-    "location": "Hanoi",
-    "phase": "hanoi",
-    "activities": [
-      {
-        "label": "Hoan Kiem + Ngoc Son",
-        "start": 8.5,
-        "end": 10.5,
-        "type": "cultural"
-      },
-      {
-        "label": "Old Quarter Walk",
-        "start": 10.5,
-        "end": 13,
-        "type": "cultural"
-      },
-      {
-        "label": "Temple of Literature",
-        "start": 13,
-        "end": 16,
-        "type": "landmark"
-      },
-      {
-        "label": "Night Market / Beer St",
-        "start": 19,
-        "end": 22,
-        "type": "cultural"
-      }
+    day: 7,
+    date: "Sept 7",
+    dow: "Mon",
+    location: "Ho Chi Minh City",
+    phase: "hcmc",
+    activities: [
+      { label: "Notre-Dame + Post Office", start: 9, end: 11.5, type: "landmark" },
+      { label: "War Remnants / Palace", start: 12, end: 16, type: "cultural" },
+      { label: "District 1 dinner", start: 18.5, end: 21, type: "food" }
     ],
-    "wow": "Temple of Literature at golden hour — 1000-year-old courtyards"
+    wow: "Notre-Dame and the Central Post Office a few minutes from the hotel"
   },
   {
-    "day": 8,
-    "date": "Sept 8",
-    "dow": "Tue",
-    "location": "HAN → DAD",
-    "phase": "hanoi",
-    "isTransit": true,
-    "activities": [
-      {
-        "label": "Ho Chi Minh Mausoleum",
-        "start": 8,
-        "end": 10,
-        "type": "cultural"
-      },
-      {
-        "label": "HAN → DAD  (~1.25 hrs)",
-        "start": 11,
-        "end": 13,
-        "type": "transit"
-      },
-      {
-        "label": "Resort Check-in",
-        "start": 14,
-        "end": 16,
-        "type": "rest"
-      },
-      {
-        "label": "Beach Walk + Dinner",
-        "start": 18,
-        "end": 20.5,
-        "type": "beach"
-      }
+    day: 8,
+    date: "Sept 8",
+    dow: "Tue",
+    location: "Ho Chi Minh City",
+    phase: "hcmc",
+    activities: [
+      { label: "Cu Chi or Mekong (vote)", start: 8, end: 15, type: "cultural" },
+      { label: "Ben Thanh / District 1", start: 15.5, end: 18, type: "shopping" },
+      { label: "Cooking class or dinner", start: 18.5, end: 21.5, type: "food" }
     ],
-    "wow": "First My Khe Beach sunset — 20 km of white sand, virtually empty"
+    wow: "Vote day — tunnels or the Mekong, then back to District 1"
   },
   {
-    "day": 9,
-    "date": "Sept 9",
-    "dow": "Wed",
-    "location": "Da Nang",
-    "phase": "danang",
-    "activities": [
-      {
-        "label": "Marble Mountains",
-        "start": 9,
-        "end": 11,
-        "type": "landmark"
-      },
-      {
-        "label": "Resort Pool + Beach",
-        "start": 12,
-        "end": 15,
-        "type": "beach"
-      },
-      {
-        "label": "My Khe Beach Walk",
-        "start": 16,
-        "end": 18,
-        "type": "beach"
-      },
-      {
-        "label": "Seafood Dinner",
-        "start": 19,
-        "end": 21,
-        "type": "food"
-      }
+    day: 9,
+    date: "Sept 9",
+    dow: "Wed",
+    location: "SGN → DAD",
+    phase: "danang",
+    isTransit: true,
+    activities: [
+      { label: "VJ630 09:00→10:20", start: 7, end: 10.3, type: "transit" },
+      { label: "InterContinental + pool", start: 11, end: 16, type: "beach" },
+      { label: "Sunset beach walk", start: 17.5, end: 19.5, type: "beach" }
     ],
-    "wow": "Buddhist shrines inside limestone caves, lit by natural sky-holes"
+    wow: "Sơn Trà private beach — Vietnam splurge starts"
   },
   {
-    "day": 10,
-    "date": "Sept 10",
-    "dow": "Thu",
-    "location": "Hoi An",
-    "phase": "danang",
-    "activities": [
-      {
-        "label": "Ancient Town",
-        "start": 8,
-        "end": 10,
-        "type": "cultural"
-      },
-      {
-        "label": "Tailor Consultation",
-        "start": 10,
-        "end": 12,
-        "type": "shopping"
-      },
-      {
-        "label": "Cao Lau Lunch",
-        "start": 12,
-        "end": 13,
-        "type": "food"
-      },
-      {
-        "label": "Old Town + Market",
-        "start": 14,
-        "end": 17,
-        "type": "cultural"
-      },
-      {
-        "label": "Lantern-lit Old Town",
-        "start": 17,
-        "end": 21,
-        "type": "cultural"
-      }
+    day: 10,
+    date: "Sept 10",
+    dow: "Thu",
+    location: "Hội An",
+    phase: "danang",
+    activities: [
+      { label: "Tailor fitting #1", start: 9.5, end: 11.5, type: "shopping" },
+      { label: "Ancient Town + brunch", start: 11.5, end: 16, type: "cultural" },
+      { label: "Lantern old town", start: 18, end: 21, type: "landmark" }
     ],
-    "wow": "Hoi An under silk lanterns at night — unlike anywhere in Asia"
+    wow: "Hội An lanterns after dark — Japanese Covered Bridge at night"
   },
   {
-    "day": 11,
-    "date": "Sept 11",
-    "dow": "Fri",
-    "location": "Da Nang",
-    "phase": "danang",
-    "activities": [
-      {
-        "label": "Tailor Fitting",
-        "start": 9,
-        "end": 11,
-        "type": "shopping"
-      },
-      {
-        "label": "Son Tra Peninsula",
-        "start": 11,
-        "end": 13,
-        "type": "landmark"
-      },
-      {
-        "label": "Resort + Pool",
-        "start": 13,
-        "end": 17,
-        "type": "beach"
-      },
-      {
-        "label": "Sky 36 Rooftop Bar",
-        "start": 20,
-        "end": 22,
-        "type": "food"
-      }
+    day: 11,
+    date: "Sept 11",
+    dow: "Fri",
+    location: "Đà Nẵng",
+    phase: "danang",
+    activities: [
+      { label: "Beach club brunch", start: 9.5, end: 12.5, type: "beach" },
+      { label: "Marble Mountains", start: 14, end: 17, type: "landmark" },
+      { label: "Mỹ Khê + seafood", start: 17.5, end: 21, type: "food" }
     ],
-    "wow": "Wild douc langurs spotted at Son Tra — Asia's most beautiful primates"
+    wow: "Marble Mountains caves, then seafood on the Mỹ Khê strip"
   },
   {
-    "day": 12,
-    "date": "Sept 12",
-    "dow": "Sat",
-    "location": "My Son",
-    "phase": "danang",
-    "activities": [
-      {
-        "label": "My Son Sanctuary",
-        "start": 7.5,
-        "end": 10.5,
-        "type": "landmark"
-      },
-      {
-        "label": "Tailor Pickup",
-        "start": 10.5,
-        "end": 12,
-        "type": "shopping"
-      },
-      {
-        "label": "White Rose Lunch",
-        "start": 12,
-        "end": 13,
-        "type": "food"
-      },
-      {
-        "label": "Resort Beach",
-        "start": 13,
-        "end": 17,
-        "type": "beach"
-      }
+    day: 12,
+    date: "Sept 12",
+    dow: "Sat",
+    location: "Hội An",
+    phase: "danang",
+    activities: [
+      { label: "An Bang Beach", start: 8.5, end: 11.5, type: "beach" },
+      { label: "Tailor #2 + Vincom", start: 12, end: 17, type: "shopping" },
+      { label: "Resort dinner + pack", start: 18.5, end: 21, type: "food" }
     ],
-    "wow": "My Son at dawn in morning mist — Angkor vibes without the crowds"
+    wow: "Final fitting pickup — suits ready for the flight home"
   },
   {
-    "day": 13,
-    "date": "Sept 13",
-    "dow": "Sun",
-    "location": "Da Nang",
-    "phase": "danang",
-    "activities": [
-      {
-        "label": "Sunrise Beach Walk",
-        "start": 7,
-        "end": 9,
-        "type": "beach"
-      },
-      {
-        "label": "My Khe Final Beach",
-        "start": 9,
-        "end": 13,
-        "type": "beach"
-      },
-      {
-        "label": "Mall Shopping",
-        "start": 14,
-        "end": 17,
-        "type": "shopping"
-      },
-      {
-        "label": "NON La Farewell Dinner",
-        "start": 19,
-        "end": 21,
-        "type": "food"
-      }
+    day: 13,
+    date: "Sept 13",
+    dow: "Sun",
+    location: "DAD → HKG",
+    phase: "home",
+    isTransit: true,
+    activities: [
+      { label: "Lady Buddha or beach", start: 7.5, end: 11, type: "landmark" },
+      { label: "Checkout + buffer", start: 12, end: 16, type: "rest" },
+      { label: "UO559 18:10→21:10", start: 16.5, end: 22, type: "transit" }
     ],
-    "wow": "Final sunset on My Khe Beach — the perfect last day"
+    wow: "Last Sơn Trà view before the hop back to Hong Kong"
   },
   {
-    "day": 14,
-    "date": "Sept 14",
-    "dow": "Mon",
-    "location": "Departure",
-    "phase": "danang",
-    "isTransit": true,
-    "activities": [
-      {
-        "label": "Checkout + Buffer",
-        "start": 9,
-        "end": 11.5,
-        "type": "rest"
-      },
-      {
-        "label": "DAD Airport",
-        "start": 11.5,
-        "end": 14,
-        "type": "transit"
-      },
-      {
-        "label": "Flight Home",
-        "start": 14,
-        "end": 23,
-        "type": "transit"
-      }
+    day: 14,
+    date: "Sept 14",
+    dow: "Mon",
+    location: "HKG → ATL",
+    phase: "home",
+    isTransit: true,
+    activities: [
+      { label: "DL88 09:25 HKG→LAX", start: 7, end: 12, type: "transit" },
+      { label: "DL327 LAX→ATL", start: 12.5, end: 16.5, type: "transit" }
     ],
-    "wow": "Adventure complete — homeward bound with stories and custom suits"
+    wow: "Home the same calendar day — land ATL 4:30pm"
   }
 ];

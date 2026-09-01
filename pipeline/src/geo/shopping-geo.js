@@ -41,6 +41,8 @@ export const SHOPPING_GEO = {
       "Hong Kong": { lng: 114.1694, lat: 22.3193, marker: "HK", color: "#c0392b", labelDy: -18 },
       Guangzhou: { lng: 113.2644, lat: 23.1291, marker: "GZ", color: "#8e44ad", labelDy: -18 },
       Beijing: { lng: 116.4074, lat: 39.9042, marker: "BJ", color: "#c0392b", labelDy: -18 },
+      "Ho Chi Minh City": { lng: 106.7019, lat: 10.7769, marker: "SG", color: "#d4a017", labelDy: -18 },
+      HCMC: { lng: 106.7019, lat: 10.7769, marker: "SG", color: "#d4a017", labelDy: -18 },
       Hanoi: { lng: 105.8542, lat: 21.0285, marker: "HN", color: "#d4a017", labelDy: -18 },
       "Hội An / Đà Nẵng": { lng: 108.329, lat: 15.877, marker: "HA", color: "#27ae60", labelDy: 26 },
       "Hội An": { lng: 108.329, lat: 15.877, marker: "HA", color: "#27ae60", labelDy: 26 },

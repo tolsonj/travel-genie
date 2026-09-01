@@ -27,7 +27,8 @@ const SECTION_ICONS = {
   spas: "💆",
   "shopping-comparison": "🛍",
   hotels: "🏨",
-  flights: "✈"
+  flights: "✈",
+  transport: "🚃"
 };
 
 /**
@@ -57,10 +58,23 @@ export function renderComparisonSection(section) {
 
   const tablesHtml = filterPublisherTables(section.tables ?? []).map(table => renderTable(table)).join("\n");
 
+  const docsHtml = Array.isArray(section.documents) && section.documents.length
+    ? `<div class="site-hotel-docs">
+  <h3 class="site-table-caption">Booking confirmations</h3>
+  <ul class="site-hotel-doc-list">${section.documents
+    .map(
+      doc =>
+        `<li><a class="site-hotel-doc-link" href="${esc(doc.href)}" target="_blank" rel="noopener">${esc(doc.label)}</a></li>`
+    )
+    .join("")}</ul>
+</div>`
+    : "";
+
   return `<section class="site-ref-section" id="${esc(section.id)}">
   <div class="site-section-inner">
     <h2 class="site-ref-title">${icon} ${esc(section.title)}</h2>
     ${intro}
+    ${docsHtml}
     ${bulletsHtml}
     ${tablesHtml}
   </div>

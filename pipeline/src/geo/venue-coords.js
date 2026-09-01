@@ -8,10 +8,12 @@ import { dataDir } from "../discover.js";
 /** @type {{ pattern: RegExp, lng: number, lat: number, city?: RegExp }[]} */
 export const VENUE_COORD_RULES = [
   // Hong Kong — hotels
+  { pattern: /rosewood hong kong/i, lng: 114.1765, lat: 22.2946, city: /hong kong/i },
   { pattern: /aki hotel|aki mgallery/i, lng: 114.1727, lat: 22.2974, city: /hong kong/i },
   { pattern: /silveri hong kong/i, lng: 114.137, lat: 22.286, city: /hong kong/i },
   { pattern: /mondrian hong kong/i, lng: 114.171, lat: 22.294, city: /hong kong/i },
   { pattern: /peninsula hong kong/i, lng: 114.165, lat: 22.294, city: /hong kong/i },
+  { pattern: /reverie saigon/i, lng: 106.7038, lat: 10.774, city: /ho chi minh|hcmc|saigon|sài gòn/i },
 
   // Hanoi — hotels
   { pattern: /le premier hotel/i, lng: 105.852, lat: 21.035, city: /hanoi/i },
@@ -134,6 +136,7 @@ export function citiesMatch(a, b) {
   const aliases = [
     ["hong kong", "hk"],
     ["hanoi", "hn"],
+    ["ho chi minh", "hcmc", "saigon", "sài gòn"],
     ["đà nẵng", "da nang", "danang", "hội an", "hoi an"],
     ["beijing", "bj"],
     ["bangkok", "bkk"],

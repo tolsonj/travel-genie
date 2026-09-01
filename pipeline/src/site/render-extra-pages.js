@@ -26,7 +26,10 @@ export function listExtraPages(slug) {
   if (slug === "china-vietnam-2026") {
     pages.push({ href: "gantt.html", title: "Schedule" });
   }
-  if (existsSync(join(tripSourceDir(slug), "Kennedy-Data", "geo-items.json"))) {
+  if (
+    existsSync(join(tripSourceDir(slug), "Kennedy-Data", "geo-items.json")) ||
+    existsSync(join(PIPELINE_ROOT, "dist", slug, "kennedy-saves.html"))
+  ) {
     pages.push({ href: "kennedy-saves.html", title: "Saved places" });
   }
   return pages;
@@ -155,7 +158,7 @@ function renderGanttPage() {
   ).join("\n");
 
   const body = `
-    <p class="site-extra-lede">14-day itinerary · 2 travelers · Beijing → Hanoi → Da Nang / Hoi An · hour of day is local time.</p>
+    <p class="site-extra-lede">14-day itinerary · 3 travelers · Hong Kong → Ho Chi Minh City → Da Nang / Hoi An · hour of day is local time.</p>
     <div class="site-extra-stats">
       <div class="site-extra-stat"><strong>14</strong><span>Total days</span></div>
       <div class="site-extra-stat"><strong>3</strong><span>Destination cities</span></div>
@@ -174,8 +177,8 @@ function renderGanttPage() {
     </div>`;
 
   return pageShell({
-    title: "China & Vietnam — September 2026",
-    subtitle: "Daily schedule gantt · Beijing → Hanoi → Da Nang / Hoi An",
+    title: "Hong Kong & Vietnam — September 2026",
+    subtitle: "Daily schedule gantt · Hong Kong → Ho Chi Minh City → Da Nang / Hoi An",
     body
   });
 }
@@ -383,13 +386,16 @@ export function writeExtraPages(slug) {
       written.push("gantt.html");
     }
     if (page.href === "kennedy-saves.html") {
-      writeFileSync(join(outDir, "kennedy-saves.html"), renderKennedyPage(slug), "utf8");
-      written.push("kennedy-saves.html");
-      const csvSrc = join(tripSourceDir(slug), "maps", "kennedy-saves-by-city.csv");
-      if (existsSync(csvSrc)) {
-        const mapsDir = join(outDir, "maps");
-        mkdirSync(mapsDir, { recursive: true });
-        copyFileSync(csvSrc, join(mapsDir, "kennedy-saves-by-city.csv"));
+      const geoPath = join(tripSourceDir(slug), "Kennedy-Data", "geo-items.json");
+      if (existsSync(geoPath)) {
+        writeFileSync(join(outDir, "kennedy-saves.html"), renderKennedyPage(slug), "utf8");
+        written.push("kennedy-saves.html");
+        const csvSrc = join(tripSourceDir(slug), "maps", "kennedy-saves-by-city.csv");
+        if (existsSync(csvSrc)) {
+          const mapsDir = join(outDir, "maps");
+          mkdirSync(mapsDir, { recursive: true });
+          copyFileSync(csvSrc, join(mapsDir, "kennedy-saves-by-city.csv"));
+        }
       }
     }
   }

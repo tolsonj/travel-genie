@@ -27,7 +27,7 @@ export function cleanIntro(intro) {
 
 const TRIP_INTEL = {
   "china-vietnam-2026":
-    "China → Vietnam · Sept 1–14, 2026 · Couple · $20K all-in · Splurge in Vietnam · Priorities: shopping, food, nature, history · Avoid crowds & peak heat.",
+    "Hong Kong → Vietnam · Sept 1–14, 2026 · 3 adults · $30K all-in · Splurge in Vietnam · Priorities: shopping, food, nature, history.",
   "thailand-2026":
     "Thailand · Jul 25–Aug 8, 2026 · Couple · $30K all-in · Splurge Koh Samui resort · Priorities: shopping, food, nature, history · Avoid crowds & heat.",
   "japan-2026":
@@ -35,7 +35,7 @@ const TRIP_INTEL = {
 };
 
 const TRIP_ITINERARY_FOOTERS = {
-  "china-vietnam-2026": "Open-jaw: PEK in · DAD out",
+  "china-vietnam-2026": "HKG in/out · HCMC · Đà Nẵng",
   "thailand-2026": "Open-jaw: BKK arrive · USM depart",
   "japan-2026": "Open-jaw: HND arrive · KIX depart"
 };
@@ -61,7 +61,7 @@ const TRIP_CLIMATE = {
 };
 
 const ACCOMM_CITY_RE =
-  /Beijing|Hanoi|Đà Nẵng|Da Nang|Hội An|Bangkok|Chiang Mai|Koh Samui|Samui/i;
+  /Hong Kong|Ho Chi Minh|HCMC|Beijing|Hanoi|Đà Nẵng|Da Nang|Hội An|Bangkok|Chiang Mai|Koh Samui|Samui/i;
 
 function loadVenueSidecar(trip, sidecarFile) {
   if (!trip) return null;
@@ -656,6 +656,7 @@ function normalizeShoppingCity(city) {
   if (/bangkok/i.test(city)) return "Bangkok";
   if (/chiang mai/i.test(city)) return "Chiang Mai";
   if (/koh samui|samui/i.test(city)) return "Koh Samui";
+  if (/ho chi minh|hcmc|saigon/i.test(city)) return "Ho Chi Minh City";
   if (/hanoi/i.test(city)) return "Hanoi";
   if (/hong kong/i.test(city)) return "Hong Kong";
   if (/guangzhou/i.test(city)) return "Guangzhou";

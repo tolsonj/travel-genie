@@ -160,8 +160,6 @@ function buildCityMap({ city, hotel, alternateHotels, venues, trip }) {
     });
   }
 
-  if (!venueNodes.length) return null;
-
   const nodes = [anchor, ...venueNodes];
   const overview_nodes = [anchor, ...altNodes, ...venueNodes];
   const distance_edges = venueNodes.map((_, i) => {

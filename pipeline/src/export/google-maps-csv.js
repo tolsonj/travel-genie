@@ -53,7 +53,7 @@ function parseCitySections(body) {
     const cityM =
       raw.match(/^City:\s*(.+)$/i) ||
       raw.match(/^(.+?)\s*\(\d{4}-\d{2}-\d{2}/) ||
-      raw.match(/^(Hong Kong|Hanoi|Đà Nẵng|Da Nang|Hội An|Beijing|Bangkok|Tokyo|Kyoto|Osaka|Chiang Mai|Koh Samui)/i);
+      raw.match(/^(Hong Kong|Ho Chi Minh|HCMC|Hanoi|Đà Nẵng|Da Nang|Hội An|Beijing|Bangkok|Tokyo|Kyoto|Osaka|Chiang Mai|Koh Samui)/i);
     if (!cityM) continue;
     const city = stripMd(cityM[1]).replace(/\s*\(.*$/, "").trim();
     const tables = parseTables(part);
@@ -332,15 +332,17 @@ export function exportGoogleMapsCsv(trip, { distDir } = {}) {
     }
   }
 
-  // Remove stale city-bundle CSVs from prior slug logic.
-  const validBundles = new Set(
-    [...cityBuckets.keys()].map(k => `${cityFileSlug(k)}-all.csv`)
-  );
-  for (const dir of [mapsDir, distDir ? join(distDir, "maps") : null].filter(Boolean)) {
-    if (!existsSync(dir)) continue;
-    for (const file of readdirSync(dir)) {
-      if (file.endsWith("-all.csv") && !validBundles.has(file)) {
-        unlinkSync(join(dir, file));
+  // Remove stale city-bundle CSVs from prior slug logic (only when this run wrote bundles).
+  if (cityBuckets.size) {
+    const validBundles = new Set(
+      [...cityBuckets.keys()].map(k => `${cityFileSlug(k)}-all.csv`)
+    );
+    for (const dir of [mapsDir, distDir ? join(distDir, "maps") : null].filter(Boolean)) {
+      if (!existsSync(dir)) continue;
+      for (const file of readdirSync(dir)) {
+        if (file.endsWith("-all.csv") && !validBundles.has(file)) {
+          unlinkSync(join(dir, file));
+        }
       }
     }
   }

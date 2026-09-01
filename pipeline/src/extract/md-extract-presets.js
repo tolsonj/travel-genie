@@ -27,11 +27,11 @@ export const ROUTE_PRESETS = {
     ]
   },
   "china-vietnam-2026": {
-    name: "China-then-Vietnam Open-Jaw Circuit",
-    rationale: "Beijing → Hanoi → Đà Nẵng/Hội An — open-jaw (PEK in / DAD out) eliminates backtracking.",
+    name: "Hong Kong → Ho Chi Minh City → Đà Nẵng",
+    rationale: "Hong Kong first (no mainland visa); Vietnam via SGN then DAD; HKG in/out via LAX.",
     hubCoords: {
-      Beijing: { lng: 116.4074, lat: 39.9042, marker: "B", color: "#c0392b", labelDy: -20 },
-      Hanoi: { lng: 105.8542, lat: 21.0285, marker: "H", color: "#d4a017", labelDy: -22, labelDx: -34 },
+      "Hong Kong": { lng: 114.1694, lat: 22.3193, marker: "HK", color: "#c0392b", labelDy: -20 },
+      "Ho Chi Minh City": { lng: 106.7019, lat: 10.7769, marker: "SG", color: "#d4a017", labelDy: -22, labelDx: -34 },
       "Đà Nẵng": {
         lng: 108.2022, lat: 16.0544, marker: "D", color: "#27ae60",
         labelDy: 30, labelDx: 34, mapLabel: "Da Nang / Hoi An"
@@ -46,23 +46,24 @@ export const ROUTE_PRESETS = {
       }
     },
     defaultHubs: [
-      { hub: "Beijing", days: "1–5", region: "North China", primary_draw: "Forbidden City, Great Wall, hutongs" },
-      { hub: "Hanoi", days: "6–8", region: "Northern Vietnam", primary_draw: "Old Quarter food, Hoan Kiem Lake" },
-      { hub: "Đà Nẵng / Hội An", days: "9–13", region: "Central Vietnam", primary_draw: "Beach resort, Ancient Town, My Son" },
-      { hub: "Home", days: "14", region: "Departure", primary_draw: "Open-jaw exit via Đà Nẵng (DAD)" }
+      { hub: "Hong Kong", days: "3–6", region: "Hong Kong SAR", primary_draw: "Harbor, Peak, Mong Kok shopping" },
+      { hub: "Ho Chi Minh City", days: "6–9", region: "Southern Vietnam", primary_draw: "District 1, history, food" },
+      { hub: "Đà Nẵng / Hội An", days: "9–13", region: "Central Vietnam", primary_draw: "Beach resort, Ancient Town" },
+      { hub: "Home", days: "14", region: "Departure", primary_draw: "HKG → LAX → ATL" }
     ],
-    map_bounds: { west: 95, south: 6, east: 128, north: 46 },
+    map_bounds: { west: 103, south: 8, east: 118, north: 25 },
     highlight_countries: ["China", "Vietnam"],
     country_labels: [
-      { name: "CHINA", lng: 103.5, lat: 34.5 },
+      { name: "HONG KONG", lng: 114.2, lat: 23.2 },
       { name: "VIETNAM", lng: 106.8, lat: 12.5 }
     ],
-    depart_node: { from_label: "Đà Nẵng", caption: "Depart (DAD)" },
+    depart_node: { from_label: "Hong Kong", caption: "Depart (HKG)" },
     defaultTransit: [
-      { from: "Home", to: "Beijing", mode: "International flight", duration: "~13–14h" },
-      { from: "Beijing", to: "Hanoi", mode: "Flight", duration: "~4h" },
-      { from: "Hanoi", to: "Đà Nẵng", mode: "Flight", duration: "~1.25h" },
-      { from: "Đà Nẵng", to: "Home", mode: "Flight (connection)", duration: "~15–20h" }
+      { from: "Home", to: "Hong Kong", mode: "International flight", duration: "~19h" },
+      { from: "Hong Kong", to: "Ho Chi Minh City", mode: "Flight", duration: "2h 45m" },
+      { from: "Ho Chi Minh City", to: "Đà Nẵng", mode: "Flight", duration: "1h 20m" },
+      { from: "Đà Nẵng", to: "Hong Kong", mode: "Flight", duration: "2h" },
+      { from: "Hong Kong", to: "Home", mode: "International flight", duration: "~14h" }
     ]
   },
   "japan-2026": {

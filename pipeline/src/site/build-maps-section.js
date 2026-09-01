@@ -64,14 +64,17 @@ function listMyMapCsvs(slug) {
  * @returns {object | null}
  */
 export function buildMapsSection(slug, aspects) {
-  const hotels = aspects.get("hotel-comparison");
-  if (!hotels) return null;
+  const hotelsAspect = aspects.get("hotel-comparison");
+  if (!hotelsAspect) return null;
 
   loadEnvFromRepo();
-  const shopping = aspects.get("shopping-comparison");
-  const restaurants = aspects.get("restaurant-comparison");
+  const hotels = hotelsAspect.hotels || hotelsAspect;
+  const shoppingAspect = aspects.get("shopping-comparison");
+  const restaurantAspect = aspects.get("restaurant-comparison");
+  const shopping = shoppingAspect?.shopping || shoppingAspect;
+  const restaurants = restaurantAspect?.venues || restaurantAspect;
   let proximity = buildTripProximityMaps(slug, { hotels, shopping, restaurants });
-  if (!proximity.length) proximity = hotels.proximity || [];
+  if (!proximity.length) proximity = hotelsAspect.proximity || [];
   if (!proximity.length) return null;
 
   proximity = enrichProximityWithGoogle(JSON.parse(JSON.stringify(proximity)), slug);

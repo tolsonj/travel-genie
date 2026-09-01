@@ -16,7 +16,8 @@ const COMPARISON_SECTION_IDS = new Set([
   "spas",
   "shopping-comparison",
   "hotels",
-  "flights"
+  "flights",
+  "transport"
 ]);
 
 /**

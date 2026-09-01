@@ -13,10 +13,12 @@ export const VENUE_ADDRESS_RULES = [
   { pattern: /harbour city/i, address: "3-27 Canton Road, Tsim Sha Tsui, Hong Kong" },
 
   // Hong Kong — hotels
+  { pattern: /rosewood hong kong/i, address: "Victoria Dockside, 18 Salisbury Road, Tsim Sha Tsui, Kowloon, Hong Kong" },
   { pattern: /aki hotel|aki mgallery/i, address: "239 Jaffe Road, Wan Chai, Hong Kong" },
   { pattern: /silveri hong kong/i, address: "16 Tat Tung Road, Tung Chung, Hong Kong" },
   { pattern: /mondrian hong kong/i, address: "8A Hart Avenue, Tsim Sha Tsui, Hong Kong" },
   { pattern: /peninsula hong kong/i, address: "22 Salisbury Road, Tsim Sha Tsui, Hong Kong" },
+  { pattern: /reverie saigon/i, address: "22-36 Nguyen Hue Boulevard, District 1, Ho Chi Minh City, Vietnam" },
   { pattern: /peninsula spa/i, address: "The Peninsula Spa, 22 Salisbury Road, Tsim Sha Tsui, Hong Kong" },
 
   // Hong Kong — restaurants

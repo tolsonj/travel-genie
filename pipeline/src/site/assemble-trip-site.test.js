@@ -58,6 +58,7 @@ for (const id of [
   "spas",
   "shopping-comparison",
   "food",
+  "etiquette",
   "immigration"
 ]) {
   assert(sectionIds.includes(id), `sections includes "${id}"`);
@@ -84,6 +85,14 @@ if (existsSync(htmlPath)) {
   assert(html.includes('id="attractions"'), 'trip.html has id="attractions" section');
   assert(html.includes('id="spas"'), 'trip.html has id="spas" section');
   assert(html.includes('id="shopping-comparison"'), 'trip.html has id="shopping-comparison" section');
+  assert(html.includes('id="etiquette"'), 'trip.html has id="etiquette" section');
+  assert(html.includes("Tipping — Hong Kong"), "trip.html includes Hong Kong tipping table");
+  assert(html.includes("Tipping — Vietnam"), "trip.html includes Vietnam tipping table");
+  assert(html.includes("20,000–50,000"), "trip.html includes Vietnam hotel tip amounts");
+  assert(html.includes("Cash kit — totals"), "trip.html includes cash kit totals");
+  assert(html.includes("HKD 1,000"), "trip.html includes HKD landing amount");
+  assert(html.includes("4,000,000"), "trip.html includes VND ATM amount");
+  assert(html.includes("ten $20"), "trip.html includes USD $20 denomination");
   assert(html.includes("gantt.html"), "trip.html links to gantt.html");
   assert(html.includes("kennedy-saves.html"), "trip.html links to kennedy-saves.html");
   assert(html.includes(">Schedule<"), "trip.html nav includes Schedule");
@@ -95,7 +104,7 @@ const kennedyPath = join(PIPELINE_ROOT, "dist", SLUG, "kennedy-saves.html");
 if (existsSync(ganttPath)) {
   const gantt = readFileSync(ganttPath, "utf8");
   assert(gantt.includes("Daily schedule"), "gantt.html has schedule heading");
-  assert(gantt.includes("Peking Duck"), "gantt.html includes day activities");
+  assert(gantt.includes("Victoria Peak"), "gantt.html includes day activities");
 }
 if (existsSync(kennedyPath)) {
   const ken = readFileSync(kennedyPath, "utf8");
