@@ -47,6 +47,9 @@ fi
 if [[ -d "$DIST/maps" ]]; then
   cp -R "$DIST/maps" "$ROOT/trips/$TRIP/maps"
 fi
+if [[ -d "$DIST/hotel-info" ]]; then
+  cp -R "$DIST/hotel-info" "$ROOT/trips/$TRIP/hotel-info"
+fi
 # Extra canvas pages (gantt, saved places, …)
 shopt -s nullglob
 for extra in "$DIST"/*.html; do
@@ -76,6 +79,7 @@ shopt -u nullglob
 git -C "$ROOT" add index.html "trips/$TRIP/index.html"
 [[ -f "$ROOT/trips/$TRIP/deck.html" ]] && git -C "$ROOT" add "trips/$TRIP/deck.html"
 [[ -d "$ROOT/trips/$TRIP/maps" ]] && git -C "$ROOT" add -f "trips/$TRIP/maps"
+[[ -d "$ROOT/trips/$TRIP/hotel-info" ]] && git -C "$ROOT" add -f "trips/$TRIP/hotel-info"
 git -C "$ROOT" add "trips/$TRIP/"*.html 2>/dev/null || true
 git -C "$ROOT" commit -m "deploy: $TRIP site $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 git -C "$ROOT" push origin gh-pages
