@@ -34,6 +34,13 @@ else
   git -C "$ROOT" rm -rf . 2>/dev/null || true
 fi
 
+# Preserve booking artifacts already on gh-pages (not rebuilt from DIST)
+PRESERVE=$(mktemp -d)
+trap 'rm -rf "$PRESERVE"' EXIT
+if [[ -d "$ROOT/trips/$TRIP/hotel-info" ]]; then
+  cp -a "$ROOT/trips/$TRIP/hotel-info" "$PRESERVE/hotel-info"
+fi
+
 # Remove prior deploy for this trip (tracked + untracked source files)
 git -C "$ROOT" rm -rf "trips/$TRIP" 2>/dev/null || true
 rm -rf "$ROOT/trips/$TRIP"
@@ -50,7 +57,7 @@ fi
 if [[ -d "$DIST/hotel-info" ]]; then
   cp -R "$DIST/hotel-info" "$ROOT/trips/$TRIP/hotel-info"
 fi
-# Extra canvas pages (gantt, saved places, …)
+# Extra canvas pages (gantt, saved places, activity chart, …)
 shopt -s nullglob
 for extra in "$DIST"/*.html; do
   base=$(basename "$extra")
@@ -58,6 +65,16 @@ for extra in "$DIST"/*.html; do
   cp "$extra" "$ROOT/trips/$TRIP/$base"
 done
 shopt -u nullglob
+for companion in chart.html chart.md; do
+  if [[ -f "$DIST/$companion" && ! -f "$ROOT/trips/$TRIP/$companion" ]]; then
+    cp "$DIST/$companion" "$ROOT/trips/$TRIP/$companion"
+  fi
+done
+# Keep gh-pages hotel-info files that this build did not emit
+if [[ -d "$PRESERVE/hotel-info" ]]; then
+  mkdir -p "$ROOT/trips/$TRIP/hotel-info"
+  cp -an "$PRESERVE/hotel-info/." "$ROOT/trips/$TRIP/hotel-info/"
+fi
 
 # Root index listing published trips
 {
@@ -80,6 +97,8 @@ git -C "$ROOT" add index.html "trips/$TRIP/index.html"
 [[ -f "$ROOT/trips/$TRIP/deck.html" ]] && git -C "$ROOT" add "trips/$TRIP/deck.html"
 [[ -d "$ROOT/trips/$TRIP/maps" ]] && git -C "$ROOT" add -f "trips/$TRIP/maps"
 [[ -d "$ROOT/trips/$TRIP/hotel-info" ]] && git -C "$ROOT" add -f "trips/$TRIP/hotel-info"
+[[ -f "$ROOT/trips/$TRIP/chart.html" ]] && git -C "$ROOT" add -f "trips/$TRIP/chart.html"
+[[ -f "$ROOT/trips/$TRIP/chart.md" ]] && git -C "$ROOT" add -f "trips/$TRIP/chart.md"
 git -C "$ROOT" add "trips/$TRIP/"*.html 2>/dev/null || true
 git -C "$ROOT" commit -m "deploy: $TRIP site $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 git -C "$ROOT" push origin gh-pages
@@ -104,3 +123,4 @@ echo "Published → ${BASE}/trips/${TRIP}/"
 echo "Deck      → ${BASE}/trips/${TRIP}/deck.html"
 echo "Schedule  → ${BASE}/trips/${TRIP}/gantt.html"
 echo "Saves     → ${BASE}/trips/${TRIP}/kennedy-saves.html"
+echo "Chart     → ${BASE}/trips/${TRIP}/chart.html"
