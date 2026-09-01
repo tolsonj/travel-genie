@@ -186,59 +186,6 @@ a { color: inherit; }
   margin-bottom: 0.5rem;
 }
 
-/* ── Hotel website links ──────────────────────────────────────────── */
-.site-hotel-site-link {
-  color: #1a73e8;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.site-hotel-site-link:hover { color: #1557b0; }
-.site-hotel-site-link::after { content: " ↗"; font-size: 0.8em; text-decoration: none; }
-
-/* ── Activity highlights (booking queue) ──────────────────────────── */
-.site-activity-pill {
-  display: inline-block;
-  background: #ffd43b;
-  color: #3b2f00;
-  font-weight: 600;
-  padding: 0.2rem 0.55rem;
-  border-radius: 6px;
-  line-height: 1.4;
-}
-.site-activity-deadline {
-  color: #d9480f;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-/* ── Hotel confirmation PDFs ──────────────────────────────────────── */
-.site-hotel-docs {
-  margin: 0 0 1.25rem;
-  padding: 1rem 1.1rem;
-  background: #fff;
-  border: 1px solid #d4e4f7;
-  border-radius: 8px;
-}
-.site-hotel-doc-list {
-  margin: 0.5rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.45rem;
-}
-.site-hotel-doc-link {
-  display: block;
-  padding: 0.55rem 0.75rem;
-  background: #1a73e8;
-  color: #fff !important;
-  border-radius: 6px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-.site-hotel-doc-link:hover { background: #1557b0; }
-
 .site-section-title {
   font-size: 1.1rem;
   font-weight: 700;
@@ -711,6 +658,74 @@ a { color: inherit; }
 .site-map-csv-note a { color: #1a73e8; }
 .site-map-csv-list { margin: 0; padding-left: 1.25rem; font-size: 0.9rem; }
 .site-map-csv-meta { color: #999; font-size: 0.8rem; }
+
+.site-hotel-docs { margin: 1rem 0 1.25rem; }
+.site-hotel-doc-list {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+.site-hotel-doc-link { color: #1a73e8; text-decoration: none; }
+.site-hotel-doc-link:hover { text-decoration: underline; }
+
+/* ── Extra pages (gantt / saved places) ───────────────────────────── */
+.site-extra-back {
+  display: inline-block;
+  color: #9ec0e8;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+.site-extra-back:hover { text-decoration: underline; }
+.site-extra-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+.site-extra-lede { font-size: 0.95rem; color: #555; margin: 0 0 0.75rem; }
+.site-extra-lede a { color: #1a73e8; }
+.site-extra-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin: 1rem 0 1.5rem;
+}
+.site-extra-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.site-extra-stat strong { font-size: 1.6rem; letter-spacing: -0.03em; color: #1c2b3a; }
+.site-extra-stat span { font-size: 0.8rem; color: #666; }
+.site-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.1rem;
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0 0 1.25rem;
+}
+.site-legend-item { display: inline-flex; align-items: center; gap: 0.4rem; }
+.site-legend-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.site-gantt-wrap { overflow-x: auto; margin: 0.75rem 0 2rem; }
+.site-gantt { display: block; width: 100%; min-width: 848px; }
+.site-geo-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0; }
+.site-geo-chip {
+  border: 1px solid #dde3ea;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.site-geo-chip.is-active { background: #1c2b3a; color: #fff; border-color: #1c2b3a; }
+.site-geo-toolbar { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 0.5rem 0 1rem; }
+.site-geo-toolbar select,
+.site-geo-toolbar input {
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #dde3ea;
+  border-radius: 6px;
+}
+.site-geo-toolbar input { min-width: 16rem; flex: 1; }
+.site-geo-map { width: 100%; max-width: 640px; background: #eef1f4; border-radius: 6px; display: block; }
+.site-sidebar-link--page { font-weight: 600; }
 </style>
 </head>
 <body>
@@ -720,7 +735,6 @@ a { color: inherit; }
       <div class="site-hero-title">China · Vietnam 2026</div>
       <div class="site-hero-subtitle">2026-09-01 → 2026-09-14 · 3 travelers</div>
       <div class="site-hero-meta">
-        <span class="site-meta-item"><a href="chart.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">📊 Flights · Hotels · Activities</a></span>
         <span class="site-meta-item">💵 $30,000 total all-in; splurge in Vietnam</span>
         <span class="site-meta-item">👥 3</span>
       </div>
@@ -792,15 +806,16 @@ a { color: inherit; }
       </a>
     </nav>
     <nav class="site-sidebar-sections" aria-label="Reference sections">
-      <a class="site-sidebar-link site-sidebar-link--section" href="chart.html">Activity chart</a>
+      <a class="site-sidebar-link site-sidebar-link--section site-sidebar-link--page" href="gantt.html">Schedule</a>
+      <a class="site-sidebar-link site-sidebar-link--section site-sidebar-link--page" href="kennedy-saves.html">Saved places</a>
       <a class="site-sidebar-link site-sidebar-link--section" href="#maps">Maps</a>
       <a class="site-sidebar-link site-sidebar-link--section" href="#flights">Flights</a>
+      <a class="site-sidebar-link site-sidebar-link--section" href="#transport">Getting around</a>
       <a class="site-sidebar-link site-sidebar-link--section" href="#hotels">Hotels</a>
       <a class="site-sidebar-link site-sidebar-link--section" href="#restaurants">Restaurants</a>
       <a class="site-sidebar-link site-sidebar-link--section" href="#attractions">Attractions</a>
       <a class="site-sidebar-link site-sidebar-link--section" href="#spas">Spas &amp; Wellness</a>
       <a class="site-sidebar-link site-sidebar-link--section" href="#shopping-comparison">Shopping</a>
-      <a class="site-sidebar-link site-sidebar-link--section" href="#alternatives">Alternatives</a>
       <a class="site-sidebar-link site-sidebar-link--section" href="#food">Food &amp; Dining</a>
       <a class="site-sidebar-link site-sidebar-link--section" href="#immigration">Immigration</a>
     </nav>
@@ -817,53 +832,53 @@ a { color: inherit; }
           <tbody>
             <tr>
               <td>~~ATL⇄HKG via LAX~~ BOOKED</td>
-              <td><span class="site-activity-pill">Ha Long Bay day cruise — Sep 7 · vote first · 3 pax · premium boat (max 20 pax · 4.5★+)</span></td>
-              <td><strong class="site-activity-deadline">Aug 8 (T-30d)</strong></td>
+              <td>Ha Long Bay day cruise — Sep 7 · vote first · 3 pax · premium boat (max 20 pax · 4.5★+)</td>
+              <td>Aug 8 (T-30d)</td>
             </tr>
             <tr>
               <td>~~HKG→SGN CX767~~ BOOKED · D58TTR (Jack, Audrey) · ESAQVN (Kennedy)</td>
-              <td><span class="site-activity-pill">Duong&#39;s cooking class — Sep 7 eve · 3 seats</span></td>
-              <td><strong class="site-activity-deadline">Aug 24 (T-14d)</strong></td>
+              <td>Duong&#39;s cooking class — Sep 7 eve · 3 seats</td>
+              <td>Aug 24 (T-14d)</td>
             </tr>
             <tr>
               <td>~~SGN→DAD VJ630~~ BOOKED · MKJZ3W (Jack, Audrey) · ZW2FBG (Kennedy)</td>
-              <td><span class="site-activity-pill">Essence + Hong Hoai&#39;s dinner reservations — Sep 6 · table for 3</span></td>
-              <td><strong class="site-activity-deadline">Aug 24 (T-14d)</strong></td>
+              <td>Essence + Hong Hoai&#39;s dinner reservations — Sep 6 · table for 3</td>
+              <td>Aug 24 (T-14d)</td>
             </tr>
             <tr>
               <td>~~DAD→HKG UO559 · E73C9M~~ BOOKED</td>
-              <td><span class="site-activity-pill">Peninsula Spa — couples massage + solo slot — Sep 4 PM</span></td>
-              <td><strong class="site-activity-deadline">Aug 28 (T-7d)</strong></td>
+              <td>Peninsula Spa — couples massage + solo slot — Sep 4 PM</td>
+              <td>Aug 28 (T-7d)</td>
             </tr>
             <tr>
               <td>~~The Langham HK · 27404SG770342~~ BOOKED</td>
-              <td><span class="site-activity-pill">Peninsula Lobby tea + Zuma reservations — 3 pax</span></td>
-              <td><strong class="site-activity-deadline">Aug 28 (T-7d)</strong></td>
+              <td>Peninsula Lobby tea + Zuma reservations — 3 pax</td>
+              <td>Aug 28 (T-7d)</td>
             </tr>
             <tr>
               <td>~~Le Premier Hanoi · 3998735961041~~ BOOKED</td>
-              <td><span class="site-activity-pill">Hội An Ancient Town walking tour — Sep 9 PM · guide for 3</span></td>
-              <td><strong class="site-activity-deadline">by Sep 2</strong></td>
+              <td>Hội An Ancient Town walking tour — Sep 9 PM · guide for 3</td>
+              <td>by Sep 2</td>
             </tr>
             <tr>
               <td>~~Naman Retreat · BBA26072921033823~~ BOOKED</td>
-              <td><span class="site-activity-pill">Hội An Eco Cooking Class — Sep 12 · vote · book direct ×3</span></td>
-              <td><strong class="site-activity-deadline">by Sep 5</strong></td>
+              <td>Hội An Eco Cooking Class — Sep 12 · vote · book direct ×3</td>
+              <td>by Sep 5</td>
             </tr>
             <tr>
               <td>~~Regal Airport · RAH10913216420~~ BOOKED</td>
-              <td><span class="site-activity-pill">Peak Tram online tickets ×3 — Sep 4 early AM (skip queue)</span></td>
-              <td><strong class="site-activity-deadline">before Sep 4</strong></td>
+              <td>Peak Tram online tickets ×3 — Sep 4 early AM (skip queue)</td>
+              <td>before Sep 4</td>
             </tr>
             <tr>
               <td>Travel insurance (3 travelers)</td>
-              <td><span class="site-activity-pill">Marble Mountains guide — Sep 11</span></td>
-              <td><strong class="site-activity-deadline">Insurance before Naman payment · guide by Sep 8</strong></td>
+              <td>Marble Mountains guide — Sep 11</td>
+              <td>Insurance before Naman payment · guide by Sep 8</td>
             </tr>
             <tr>
               <td>—</td>
-              <td><span class="site-activity-pill">Hội An tailoring appointment (confirm — profile says no suits)</span></td>
-              <td><strong class="site-activity-deadline">decide by Sep 9</strong></td>
+              <td>Hội An tailoring appointment (confirm — profile says no suits)</td>
+              <td>decide by Sep 9</td>
             </tr>
           </tbody>
         </table>
@@ -897,7 +912,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 Home → ATL · Rideshare · ~30 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -945,7 +960,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 HKG T1 → The Langham TST · Airport Express to Kowloon + taxi/Grab · ~24–30 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -972,7 +987,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 Peak Tram · Langham TST → Garden Rd Lower Terminus · Taxi or MTR TST → Central + walk · ~15–20 min · Causeway Bay · Peak / Central → Causeway Bay · Peak Tram down + MTR Island line · ~25 min · Temple Street Night Market · Hotel / Causeway Bay → Yau Ma Tei · MTR · ~15–20 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -999,7 +1014,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 Mong Kok electronics · Langham → Mong Kok · MTR TST → Mong Kok (2 stops) · ~8 min · Star Ferry · TST Star Ferry pier → Central · Star Ferry · 10 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -1026,61 +1041,61 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 Langham → HKG T1 · Grab or Airport Express · ~25–35 min · SGN T2 → The Reverie · Grab 7-seater · ~30 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
         <article class="site-day" id="day-7">
-          <h2 class="site-day-title">Day 7 — Monday, Sep 7 · Hanoi · History + food</h2>
+          <h2 class="site-day-title">Day 7 — Monday, Sep 7 · Ho Chi Minh City · History + food</h2>
           <div class="site-day-events">
             
             <div class="site-event">
               <h3 class="site-event-name">Morning</h3>
               <ul class="site-event-lines">
-              <li>Temple of Literature — 8 AM open (crowd avoidance)</li>
+              <li>Walk from The Reverie: Notre-Dame Cathedral + Central Post Office (5–10 min)</li>
               </ul>
             </div>
             <div class="site-event">
               <h3 class="site-event-name">Afternoon</h3>
               <ul class="site-event-lines">
-              <li>Old Quarter food walk — bun cha, egg coffee; AC break at hotel</li>
+              <li>War Remnants Museum or Reunification Palace; AC lunch in District 1</li>
               </ul>
             </div>
             <div class="site-event">
               <h3 class="site-event-name">Evening</h3>
               <ul class="site-event-lines">
-              <li>Hong Hoai&#39;s Restaurant or street bia hơi corner</li>
+              <li>Dong Khoi / Nguyen Hue street food or dinner near the hotel</li>
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 District 1 walking · The Reverie → Notre-Dame / Post Office / Dong Khoi · Walk · 5–15 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
         <article class="site-day" id="day-8">
-          <h2 class="site-day-title">Day 8 — Tuesday, Sep 8 · Hanoi · Vote day</h2>
+          <h2 class="site-day-title">Day 8 — Tuesday, Sep 8 · Ho Chi Minh City · Vote day</h2>
           <div class="site-day-events">
             
             <div class="site-event">
               <h3 class="site-event-name">Morning</h3>
               <ul class="site-event-lines">
-              <li>Option A: Ha Long Bay day cruise (6 AM–6 PM) OR Option B: Hoa Lo Prison + West Lake walk</li>
+              <li>Option A: Cu Chi tunnels half-day (van pickup) OR Option B: Mekong Delta day trip</li>
               </ul>
             </div>
             <div class="site-event">
               <h3 class="site-event-name">Afternoon</h3>
               <ul class="site-event-lines">
-              <li>(If Option A: on boat) / (If Option B: Tran Quoc Pagoda)</li>
+              <li>(If Option A: back in District 1 — Ben Thanh / walking) / (If Option B: on the river)</li>
               </ul>
             </div>
             <div class="site-event">
               <h3 class="site-event-name">Evening</h3>
               <ul class="site-event-lines">
-              <li>Duong&#39;s Restaurant cooking class OR relaxed Old Quarter dinner</li>
+              <li>Cooking class or relaxed District 1 dinner</li>
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 Cu Chi or city museums · Reverie → pickup / War Remnants · Pre-booked van or Grab · 45 min–2 hr</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -1107,7 +1122,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 Reverie → SGN T1 · Grab 7-seater · ~30 min · DAD T2 → InterContinental Sơn Trà · Hotel car · ~35 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -1134,7 +1149,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 Hội An Ancient Town · InterContinental Sơn Trà → Hội An · Grab · ~45 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -1161,7 +1176,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 Marble Mountains · InterContinental → Ngũ Hành Sơn · Grab / hotel car · ~25 min · Mỹ Khê / Thìa Gỗ · Marble Mountains → Mỹ Khê · Grab · ~15 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -1188,7 +1203,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 An Bang Beach · InterContinental → An Bang · Grab · ~40 min · Hội An fitting + Vincom · An Bang / Hội An → Vincom Đà Nẵng · Grab · ~30 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -1215,7 +1230,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 InterContinental → DAD T2 · Hotel car 7-seater · ~35 min · HKG T1 → Regal Airport Hotel · Covered walkway / hotel shuttle · 5–10 min · Lady Buddha · InterContinental → Linh Ung Pagoda · Hotel car / Grab · ~10 min</span></div>
         </article>
         <hr class="site-day-divider" />
 
@@ -1242,7 +1257,7 @@ a { color: inherit; }
               </ul>
             </div>
           </div>
-          
+          <div class="site-day-footnotes"><span class="site-footnote site-footnote--transit">🚃 Regal → HKG T1 · Walk (T1 connector) · ~10 min · ATL → home · Rideshare · ~30 min</span></div>
         </article>
     </div>
   </main>
@@ -1271,13 +1286,7 @@ a { color: inherit; }
           <li>Or use a city bundle below for one layer with everything in that hub.</li>
           <li>On your phone: Google Maps app → <strong>Saved</strong> → <strong>Maps</strong> → open your map.</li>
         </ol>
-        <h4 class="site-map-csv-subtitle">City bundles (optional)</h4>
-        <ul class="site-map-csv-list">
-          <li><a href="maps/da-nang-all.csv" download>da nang (all types)</a> <span class="site-map-csv-meta">da-nang-all.csv — one layer, all hotels + POIs for this city</span></li>
-          <li><a href="maps/hanoi-all.csv" download>hanoi (all types)</a> <span class="site-map-csv-meta">hanoi-all.csv — one layer, all hotels + POIs for this city</span></li>
-          <li><a href="maps/hong-kong-all.csv" download>hong kong (all types)</a> <span class="site-map-csv-meta">hong-kong-all.csv — one layer, all hotels + POIs for this city</span></li>
-          <li><a href="maps/hong-kong-transit-all.csv" download>hong kong transit (all types)</a> <span class="site-map-csv-meta">hong-kong-transit-all.csv — one layer, all hotels + POIs for this city</span></li>
-        </ul>
+        
       </div>
     <p class="site-map-legend"><span class="site-map-legend-h">H</span> recommended hotel · <span class="site-map-legend-alt">2·3·4</span> other hotels · <span class="site-map-legend-s">S</span> shopping · <span class="site-map-legend-r">R</span> restaurant</p>
     <div class="site-map-cities">
@@ -1496,13 +1505,7 @@ a { color: inherit; }
           <li>Or use a city bundle below for one layer with everything in that hub.</li>
           <li>On your phone: Google Maps app → <strong>Saved</strong> → <strong>Maps</strong> → open your map.</li>
         </ol>
-        <h4 class="site-map-csv-subtitle">City bundles (optional)</h4>
-        <ul class="site-map-csv-list">
-          <li><a href="maps/da-nang-all.csv" download>da nang (all types)</a> <span class="site-map-csv-meta">da-nang-all.csv — one layer, all hotels + POIs for this city</span></li>
-          <li><a href="maps/hanoi-all.csv" download>hanoi (all types)</a> <span class="site-map-csv-meta">hanoi-all.csv — one layer, all hotels + POIs for this city</span></li>
-          <li><a href="maps/hong-kong-all.csv" download>hong kong (all types)</a> <span class="site-map-csv-meta">hong-kong-all.csv — one layer, all hotels + POIs for this city</span></li>
-          <li><a href="maps/hong-kong-transit-all.csv" download>hong kong transit (all types)</a> <span class="site-map-csv-meta">hong-kong-transit-all.csv — one layer, all hotels + POIs for this city</span></li>
-        </ul>
+        
       </div>
   </div>
 </section>
@@ -1512,7 +1515,7 @@ a { color: inherit; }
     <p class="site-ref-intro">*Booked Jul 29–30, 2026 · 3 adults · regional OW confirmed + Delta long-haul booked · 3rd seat added at matching fare*</p>
     <div class="site-hotel-docs">
   <h3 class="site-table-caption">Booking confirmations</h3>
-  <ul class="site-hotel-doc-list"><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-ESAQVN-change-penalty-receipt-Kennedy-Tolson.pdf" target="_blank" rel="noopener">Cathay Pacific ESAQVN change penalty receipt Kennedy Tolson</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-HAN-change-fee-payment-ESAQVN.pdf" target="_blank" rel="noopener">Cathay Pacific HKG HAN change fee payment ESAQVN</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-SGN-eticket-Audrey-Tolson.pdf" target="_blank" rel="noopener">Cathay Pacific HKG SGN eticket Audrey Tolson</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-SGN-John-Audrey-D58TTR.pdf" target="_blank" rel="noopener">Cathay CX767 — Jack &amp; Audrey (D58TTR)</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-SGN-Kennedy-ESAQVN.pdf" target="_blank" rel="noopener">Cathay CX767 — Kennedy (ESAQVN)</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-SGN-manage-bookings-D58TTR-ESAQVN.pdf" target="_blank" rel="noopener">Cathay CX767 — both bookings (D58TTR + ESAQVN)</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-to-Hanoi-confirmation-ESAQVN.pdf" target="_blank" rel="noopener">Cathay Pacific HKG to Hanoi confirmation ESAQVN</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-to-Hanoi-eticket-email-Kennedy-ESAQVN.pdf" target="_blank" rel="noopener">Cathay Pacific HKG to Hanoi eticket email Kennedy ESAQVN</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-to-Ho-Chi-Minh-confirmation-D58TTR.pdf" target="_blank" rel="noopener">Cathay Pacific HKG to Ho Chi Minh confirmation D58TTR</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-to-Ho-Chi-Minh-eticket-email-Audrey-D58TTR.pdf" target="_blank" rel="noopener">Cathay Pacific HKG to Ho Chi Minh eticket email Audrey D58TTR</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-to-Ho-Chi-Minh-eticket-email-John-D58TTR.pdf" target="_blank" rel="noopener">Cathay Pacific HKG to Ho Chi Minh eticket email John D58TTR</a></li><li><a class="site-hotel-doc-link" href="hotel-info/HK-Express-Da-Nang-to-Hong-Kong-itinerary-YCQ8SQ.pdf" target="_blank" rel="noopener">HK Express Da Nang to Hong Kong itinerary YCQ8SQ</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Itinerary-MKJZ3W.pdf" target="_blank" rel="noopener">Itinerary MKJZ3W</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Itinerary-ZW2FBG.pdf" target="_blank" rel="noopener">Itinerary ZW2FBG</a></li><li><a class="site-hotel-doc-link" href="hotel-info/JackAudreyVietJet.pdf" target="_blank" rel="noopener">JackAudreyVietJet</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Vietjet-Hanoi-to-Da-Nang-itinerary-MKJZ3W-original.pdf" target="_blank" rel="noopener">Vietjet Hanoi to Da Nang itinerary MKJZ3W original</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Vietjet-Hanoi-to-Da-Nang-itinerary-ZW2FBG-KT.pdf" target="_blank" rel="noopener">Vietjet Hanoi to Da Nang itinerary ZW2FBG KT</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Vietjet-Hanoi-to-Da-Nang-itinerary-ZW2FBG.pdf" target="_blank" rel="noopener">Vietjet Hanoi to Da Nang itinerary ZW2FBG</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Vietjet-Ho-Chi-Minh-to-Da-Nang-itinerary-MKJZ3W.pdf" target="_blank" rel="noopener">VietJet VJ630 SGN→DAD (Jack, Audrey)</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Vietjet-Ho-Chi-Minh-to-Da-Nang-itinerary-ZW2FBG.pdf" target="_blank" rel="noopener">VietJet VJ630 SGN→DAD (Kennedy)</a></li></ul>
+  <ul class="site-hotel-doc-list"><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-ESAQVN-change-penalty-receipt-Kennedy-Tolson.pdf" target="_blank" rel="noopener">Cathay Pacific ESAQVN change penalty receipt Kennedy Tolson</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-HAN-change-fee-payment-ESAQVN.pdf" target="_blank" rel="noopener">Cathay Pacific HKG HAN change fee payment ESAQVN</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-SGN-eticket-Audrey-Tolson.pdf" target="_blank" rel="noopener">Cathay Pacific HKG SGN eticket Audrey Tolson</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-SGN-John-Audrey-D58TTR.pdf" target="_blank" rel="noopener">Cathay CX767 — Jack &amp; Audrey (D58TTR)</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-SGN-Kennedy-ESAQVN.pdf" target="_blank" rel="noopener">Cathay CX767 — Kennedy (ESAQVN)</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-SGN-manage-bookings-D58TTR-ESAQVN.pdf" target="_blank" rel="noopener">Cathay CX767 — both bookings (D58TTR + ESAQVN)</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-to-Ho-Chi-Minh-confirmation-D58TTR.pdf" target="_blank" rel="noopener">Cathay Pacific HKG to Ho Chi Minh confirmation D58TTR</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-to-Ho-Chi-Minh-eticket-email-Audrey-D58TTR.pdf" target="_blank" rel="noopener">Cathay Pacific HKG to Ho Chi Minh eticket email Audrey D58TTR</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Cathay-Pacific-HKG-to-Ho-Chi-Minh-eticket-email-John-D58TTR.pdf" target="_blank" rel="noopener">Cathay Pacific HKG to Ho Chi Minh eticket email John D58TTR</a></li><li><a class="site-hotel-doc-link" href="hotel-info/HK-Express-Da-Nang-to-Hong-Kong-itinerary-YCQ8SQ.pdf" target="_blank" rel="noopener">HK Express Da Nang to Hong Kong itinerary YCQ8SQ</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Itinerary-MKJZ3W.pdf" target="_blank" rel="noopener">Itinerary MKJZ3W</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Itinerary-ZW2FBG.pdf" target="_blank" rel="noopener">Itinerary ZW2FBG</a></li><li><a class="site-hotel-doc-link" href="hotel-info/JackAudreyVietJet.pdf" target="_blank" rel="noopener">JackAudreyVietJet</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Vietjet-Hanoi-to-Da-Nang-itinerary-ZW2FBG-KT.pdf" target="_blank" rel="noopener">Vietjet Hanoi to Da Nang itinerary ZW2FBG KT</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Vietjet-Ho-Chi-Minh-to-Da-Nang-itinerary-MKJZ3W.pdf" target="_blank" rel="noopener">VietJet VJ630 SGN→DAD (Jack, Audrey)</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Vietjet-Ho-Chi-Minh-to-Da-Nang-itinerary-ZW2FBG.pdf" target="_blank" rel="noopener">VietJet VJ630 SGN→DAD (Kennedy)</a></li></ul>
 </div>
     <div class="site-bullet-group">
       <h3 class="site-bullet-heading">Booked itinerary (all legs)</h3>
@@ -1534,14 +1537,37 @@ a { color: inherit; }
 <h3 class="site-table-caption">Booking log</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Leg</th><th>Date</th><th>Source</th><th>Status</th><th>PNR / pick</th></tr></thead><tbody><tr><td>HKG → SGN</td><td>2026-09-06</td><td>Cathay confirmation</td><td>BOOKED</td><td>D58TTR + ESAQVN · CX767 08:20 → 10:05</td></tr><tr><td>SGN → DAD</td><td>2026-09-09</td><td>VietJet confirmation</td><td>BOOKED</td><td>MKJZ3W + ZW2FBG · VJ630 09:00 → 10:20 SkyBoss</td></tr><tr><td>DAD → HKG</td><td>2026-09-13</td><td>HK Express confirmation</td><td>BOOKED</td><td>E73C9M · UO559 18:10 → 21:10</td></tr></tbody></table></div>
   </div>
 </section>
+<section class="site-ref-section" id="transport">
+  <div class="site-section-inner">
+    <h2 class="site-ref-title">🚃 Getting around</h2>
+    <p class="site-ref-intro">Airport Express, MTR, Grab, and hotel cars — how to get to and from each airport and to the day’s activities.</p>
+    
+    
+    <h3 class="site-table-caption">Ground transport</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Hub</th><th>Mode</th><th>Notes</th></tr></thead><tbody><tr><td>Hong Kong</td><td>MTR + Airport Express + Grab</td><td>Octopus for MTR (×3 cards) · no street taxis · standard car fits 3 pax</td></tr><tr><td>HCMC</td><td>Grab only</td><td>Link Visa before Sep 6 · CX767 arr 10:05 → Reverie ~30 min · book 7-seater with luggage</td></tr><tr><td>Đà Nẵng / Sơn Trà</td><td>Hotel car + Grab</td><td>InterContinental ~35 min from DAD · 7-seater on luggage days</td></tr><tr><td>HKG airport</td><td>Regal shuttle / walk</td><td>Sep 13 · UO559 arr 21:10 · transit night</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Airport transfers</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Day</th><th>From → To</th><th>Mode</th><th>Time</th><th>Notes</th></tr></thead><tbody><tr><td>1</td><td>Home → ATL</td><td>Rideshare</td><td>~30 min</td><td>Arrive ~16:30 for DL0763 19:20 EDT</td></tr><tr><td>3</td><td>HKG T1 → The Langham TST</td><td>Airport Express to Kowloon + taxi/Grab</td><td>~24–30 min</td><td>First AEL ~05:54; buy Octopus at the station (×3)</td></tr><tr><td>6</td><td>Langham → HKG T1</td><td>Grab or Airport Express</td><td>~25–35 min</td><td>CX767 08:20 HKT — leave hotel ~05:45</td></tr><tr><td>6</td><td>SGN T2 → The Reverie</td><td>Grab 7-seater</td><td>~30 min</td><td>Link Visa in Grab before Sep 6; ignore airport touts</td></tr><tr><td>9</td><td>Reverie → SGN T1</td><td>Grab 7-seater</td><td>~30 min</td><td>VJ630 09:00 ICT — leave ~06:30 · SkyBoss 30kg</td></tr><tr><td>9</td><td>DAD T2 → InterContinental Sơn Trà</td><td>Hotel car</td><td>~35 min</td><td>Pre-book 7-seater with the hotel</td></tr><tr><td>13</td><td>InterContinental → DAD T2</td><td>Hotel car 7-seater</td><td>~35 min</td><td>UO559 18:10 ICT — leave ~15:30</td></tr><tr><td>13</td><td>HKG T1 → Regal Airport Hotel</td><td>Covered walkway / hotel shuttle</td><td>5–10 min</td><td>UO559 arr 21:10 HKT</td></tr><tr><td>14</td><td>Regal → HKG T1</td><td>Walk (T1 connector)</td><td>~10 min</td><td>DL0088 09:25 HKT — leave hotel ~07:00</td></tr><tr><td>14</td><td>ATL → home</td><td>Rideshare</td><td>~30 min</td><td>After US customs + shopping declaration</td></tr></tbody></table></div>
+<h3 class="site-table-caption">Activity transit</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Day</th><th>Activity</th><th>From → To</th><th>Mode</th><th>Time</th><th>Notes</th></tr></thead><tbody><tr><td>4</td><td>Peak Tram</td><td>Langham TST → Garden Rd Lower Terminus</td><td>Taxi or MTR TST → Central + walk</td><td>~15–20 min</td><td>Leave hotel by 7:30 AM</td></tr><tr><td>4</td><td>Causeway Bay</td><td>Peak / Central → Causeway Bay</td><td>Peak Tram down + MTR Island line</td><td>~25 min</td><td>Times Square / SOGO AC lunch</td></tr><tr><td>4</td><td>Temple Street Night Market</td><td>Hotel / Causeway Bay → Yau Ma Tei</td><td>MTR</td><td>~15–20 min</td><td>Browse only</td></tr><tr><td>5</td><td>Mong Kok electronics</td><td>Langham → Mong Kok</td><td>MTR TST → Mong Kok (2 stops)</td><td>~8 min</td><td>Sin Tat Plaza / Sin Centre</td></tr><tr><td>5</td><td>Star Ferry</td><td>TST Star Ferry pier → Central</td><td>Star Ferry</td><td>10 min</td><td>Then walk to Man Mo Dim Sum</td></tr><tr><td>7</td><td>District 1 walking</td><td>The Reverie → Notre-Dame / Post Office / Dong Khoi</td><td>Walk</td><td>5–15 min</td><td>Stay in District 1; Grab if raining</td></tr><tr><td>8</td><td>Cu Chi or city museums</td><td>Reverie → pickup / War Remnants</td><td>Pre-booked van or Grab</td><td>45 min–2 hr</td><td>Vote: Mekong / Cu Chi vs city day</td></tr><tr><td>10</td><td>Hội An Ancient Town</td><td>InterContinental Sơn Trà → Hội An</td><td>Grab</td><td>~45 min</td><td>Tailor fitting #1</td></tr><tr><td>11</td><td>Marble Mountains</td><td>InterContinental → Ngũ Hành Sơn</td><td>Grab / hotel car</td><td>~25 min</td><td>Am Phu Cave</td></tr><tr><td>11</td><td>Mỹ Khê / Thìa Gỗ</td><td>Marble Mountains → Mỹ Khê</td><td>Grab</td><td>~15 min</td><td>Seafood dinner</td></tr><tr><td>12</td><td>An Bang Beach</td><td>InterContinental → An Bang</td><td>Grab</td><td>~40 min</td><td>Quieter than Mỹ Khê</td></tr><tr><td>12</td><td>Hội An fitting + Vincom</td><td>An Bang / Hội An → Vincom Đà Nẵng</td><td>Grab</td><td>~30 min</td><td>Nike / Adidas / New Balance</td></tr><tr><td>13</td><td>Lady Buddha</td><td>InterContinental → Linh Ung Pagoda</td><td>Hotel car / Grab</td><td>~10 min</td><td>Same peninsula — morning only</td></tr></tbody></table></div>
+<h3 class="site-table-caption">How to ride</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Hub</th><th>Tickets / apps</th><th>Best for</th><th>Avoid</th></tr></thead><tbody><tr><td>Hong Kong</td><td>Octopus ×3 (Airport Express + MTR)</td><td>Airport Express, Peak Tram, Star Ferry, MTR between TST / Central / Mong Kok / Causeway Bay</td><td>Unmetered street taxis</td></tr><tr><td>HCMC</td><td>Grab with Visa linked before Sep 6</td><td>SGN airport runs (book 7-seater with luggage) + District 1 hops</td><td>Airport taxi touts</td></tr><tr><td>Đà Nẵng / Sơn Trà / Hội An</td><td>Hotel car + Grab</td><td>DAD airport (~35 min) · Hội An (~45 min) · Marble Mountains (~25 min)</td><td>Motorbike taxis with luggage</td></tr><tr><td>HKG transit night</td><td>Regal shuttle or T1 covered walk</td><td>UO559 arr 21:10 → Regal; walk to T1 for DL0088 09:25</td><td>Going back into the city</td></tr></tbody></table></div>
+  </div>
+</section>
 <section class="site-ref-section" id="hotels">
   <div class="site-section-inner">
     <h2 class="site-ref-title">🏨 Hotels</h2>
     <p class="site-ref-intro">*Booked Jul 28–29, 2026 · 1 room · 3 adults (extra bed requested at each property) · confirmation PDFs linked below*</p>
     <div class="site-hotel-docs">
   <h3 class="site-table-caption">Booking confirmations</h3>
-  <ul class="site-hotel-doc-list"><li><a class="site-hotel-doc-link" href="hotel-info/Booking%20cancellation%20at%20%20Naman%20Retreat.pdf" target="_blank" rel="noopener">Booking cancellation at Naman Retreat</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Langham-Brilliant-membership-welcome.pdf" target="_blank" rel="noopener">Langham Brilliant welcome</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Langham-Hong-Kong-cancellation-27404SG772119X.pdf" target="_blank" rel="noopener">Langham Hong Kong cancellation 27404SG772119X</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Langham-Hong-Kong-confirmation-27404SG770342.pdf" target="_blank" rel="noopener">The Langham Hong Kong confirmation</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Le-Premier-Hotel-Hanoi-add-guest-request.pdf" target="_blank" rel="noopener">Le Premier Hotel Hanoi add guest request</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Le-Premier-Hotel-Hanoi-confirmation-3998735961041.pdf" target="_blank" rel="noopener">Le Premier Hanoi confirmation</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Naman%20Retreat%20%20%20Cancellation.pdf" target="_blank" rel="noopener">Naman Retreat Cancellation</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Naman-Retreat-Da-Nang-confirmation.pdf" target="_blank" rel="noopener">Naman Retreat confirmation</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Regal-Airport-Hotel-Hong-Kong-add-guests-request.pdf" target="_blank" rel="noopener">Regal Airport Hotel Hong Kong add guests request</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Regal-Airport-Hotel-Hong-Kong-confirmation-RAH10913216420.pdf" target="_blank" rel="noopener">Regal Airport Hotel confirmation</a></li></ul>
+  <ul class="site-hotel-doc-list"><li><a class="site-hotel-doc-link" href="hotel-info/Booking%20cancellation%20at%20%20Naman%20Retreat.pdf" target="_blank" rel="noopener">Booking cancellation at Naman Retreat</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Langham-Hong-Kong-cancellation-27404SG772119X.pdf" target="_blank" rel="noopener">Langham Hong Kong cancellation 27404SG772119X</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Naman%20Retreat%20%20%20Cancellation.pdf" target="_blank" rel="noopener">Naman Retreat Cancellation</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Regal-Airport-Hotel-Hong-Kong-add-guests-request.pdf" target="_blank" rel="noopener">Regal Airport Hotel Hong Kong add guests request</a></li><li><a class="site-hotel-doc-link" href="hotel-info/Regal-Airport-Hotel-Hong-Kong-confirmation-RAH10913216420.pdf" target="_blank" rel="noopener">Regal Airport Hotel confirmation</a></li></ul>
 </div>
+    <div class="site-bullet-group">
+      <h3 class="site-bullet-heading">Booked hotels — BOOKED</h3>
+      <ul class="site-bullet-list">
+        <li>The Langham · conf 27404SG770342 · [langhamhotels.com](https://www.langhamhotels.com/en/the-langham/hong-kong/) · tlhkg.resv@langhamhotels.com · +852 2375 1133 · 8 Peking Road, Tsim Sha Tsui</li>
+        <li>Le Premier · conf 3998735961041 · [lepremierhotel.com](https://lepremierhotel.com/) · info@lepremierhotel.com · +84 915 933 688 · 27 Hang Hanh, Hang Trong, Hoan Kiem, Hanoi</li>
+        <li>InterContinental Danang Sun Peninsula · [danang.intercontinental.com](https://www.danang.intercontinental.com/) · reservations.icdanang@ihg.com · +84 236 393 8888 · Bai Bac, Son Tra Peninsula, Da Nang 550000</li>
+        <li>The Reverie Saigon · [thereveriesaigon.com](https://www.thereveriesaigon.com/) · info@thereveriesaigon.com · +84 28 3823 6688 · 22–36 Nguyen Hue Blvd &amp; 57–69F Dong Khoi, Sai Gon Ward, HCMC</li>
+        <li>Naman Retreat · conf BBA26072921033823 · superseded — confirm cancellation</li>
+        <li>Regal Airport · conf RAH10913216420 · stay@airport.regalhotel.com · +852 2286 8888 · 9 Cheong Tat Road, HKG Terminal 1</li>
+      </ul>
+    </div>
     <h3 class="site-table-caption">Hong Kong (2026-09-03 – 2026-09-06)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Hotel</th><th>Price / night</th><th>Area</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>The Langham, Hong Kong</td><td>~$194 (booked)</td><td>Tsim Sha Tsui</td><td>4.8★</td><td>BOOKED · Recommended · conf 27404SG770342 · Superior King · HKD 4,530.75 / 3n · East TST MTR · Food Gallery buffet · check-in 15:00</td></tr><tr><td>AKI Hotel MGallery</td><td>$197</td><td>Wan Chai</td><td>4.8★</td><td>Alt · Accor MGallery · Wan Chai MTR · value mid-tier</td></tr><tr><td>Silveri Hong Kong MGallery</td><td>$191</td><td>Central / Sheung Wan</td><td>4.8★</td><td>Island alt · design-forward · Sheung Wan MTR</td></tr><tr><td>Mondrian Hong Kong</td><td>$176</td><td>Tsim Sha Tsui</td><td>4.7★</td><td>Value pick · harbour-adjacent</td></tr><tr><td>The Peninsula Hong Kong</td><td>$516</td><td>Tsim Sha Tsui</td><td>4.9★</td><td>Splurge · harbor icon · Lobby brunch option (Day 3)</td></tr></tbody></table></div>
 <h3 class="site-table-caption">Hanoi (2026-09-06 – 2026-09-09)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Hotel</th><th>Price / night</th><th>Area</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>Le Premier Hotel</td><td>~$135 (booked)</td><td>Hoan Kiem / Old Quarter</td><td>5.0★</td><td>BOOKED · Recommended · conf 3998735961041 · Suite + balcony + breakfast · VND 10,360,000 / 3n · 27 Hang Hanh · check-in 14:00</td></tr><tr><td>InterContinental Hanoi Landmark72</td><td>$130</td><td>West Lake / Landmark 72</td><td>4.9★</td><td>Splurge-alt · skyline views · farther from Old Quarter</td></tr><tr><td>MAY DE VILLE Crown Hotel</td><td>$99</td><td>Hoan Kiem</td><td>4.8★</td><td>Boutique alt · near cathedral</td></tr><tr><td>Meritel Hanoi Hotel</td><td>$95</td><td>Old Quarter</td><td>4.7★</td><td>Value pick · compact rooms</td></tr></tbody></table></div>
 <h3 class="site-table-caption">Đà Nẵng (2026-09-09 – 2026-09-13)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Hotel</th><th>Price / night</th><th>Area</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>InterContinental Danang Sun Peninsula Resort</td><td>~$486 (booked)</td><td>Sơn Trà Peninsula</td><td>4.9★</td><td>BOOKED · Vietnam splurge · Bai Bac · +84 236 393 8888</td></tr><tr><td>Naman Retreat</td><td>~$141</td><td>Hội An corridor / beach</td><td>4.7★</td><td>Superseded · conf BBA26072921033823</td></tr><tr><td>Bliss Hoi An Beach Resort &amp; Wellness</td><td>$89</td><td>An Bang / Hội An beach</td><td>4.6★</td><td>Alt · near An Bang walks (Day 12)</td></tr><tr><td>Mikazuki Japanese Resorts &amp; Spa</td><td>$117</td><td>Ngũ Hành Sơn / beach</td><td>4.7★</td><td>Mid-range alt · spa focus · near Marble Mountains</td></tr><tr><td>Vinpearl Resort &amp; Spa Nam Hoi An</td><td>$72</td><td>Nam Hội An</td><td>4.5★</td><td>Value resort · shuttle-dependent · farthest from DAD</td></tr></tbody></table></div>
@@ -1600,26 +1626,6 @@ a { color: inherit; }
 <h3 class="site-table-caption">Customs/duty cheat sheet (US return via ATL)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Item</th><th>Rule</th></tr></thead><tbody><tr><td>Personal-use allowance</td><td>$800 duty-free per person — $2,400 for party of 3</td></tr><tr><td>Counterfeit watches / handbags</td><td>Prohibited — CBP may seize</td></tr><tr><td>Electronics</td><td>Declare if aggregate &gt; $800 · keep receipts</td></tr><tr><td>Tailored suits (worn)</td><td>Personal-use claim supported</td></tr></tbody></table></div>
   </div>
 </section>
-<section class="site-ref-section" id="alternatives">
-  <div class="site-section-inner">
-    <h2 class="site-ref-title">Alternatives</h2>
-    <p class="site-ref-intro">Optional just-in-case alternatives, not in the booked plan. Both were removed to keep the China leg Hong Kong–only, but each remains feasible as a same-day round trip from the Langham (Tsim Sha Tsui) that replaces one Hong Kong day — no flight or hotel changes needed. China&#39;s 15-day visa-free entry for US citizens was active as of mid-2026 but must be re-verified before committing.</p>
-    <div class="site-bullet-group">
-      <h3 class="site-bullet-heading">Decision guide</h3>
-      <ul class="site-bullet-list">
-        <li>Electronics + dupes are the priority → Shenzhen. It directly upgrades the Sep 5 plan (Huaqiangbei dwarfs Sham Shui Po) at trivial transit cost.</li>
-        <li>Guangzhou only makes sense for wholesale-scale buying — otherwise it&#39;s a longer, pricier day with less overlap with the profile&#39;s shopping list.</li>
-        <li>Doing neither stays the recommended plan — Hong Kong already covers every shopping category without a border crossing, which is why these were removed.</li>
-        <li>Heat + crowds deal-breakers: both cities are hotter and more crowded than Hong Kong in early September — keep the AC-break protocol.</li>
-        <li>Keep Day 4 (Sep 4 — Shopping + Peak) intact either way — it carries the Victoria Peak anchor and the crowd-avoidance early start.</li>
-      </ul>
-    </div>
-    <h3 class="site-table-caption">At a glance — pick at most one</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Option</th><th>Swap for</th><th>Travel each way</th><th>Transport (3 pax round trip)</th><th>Focus</th><th>Verdict</th></tr></thead><tbody><tr><td>Shenzhen day trip</td><td>Day 5 (Sep 5) — Electronics + dupes</td><td>~45–60 min</td><td>MTR East Rail → Lo Wu · ~HK$40/pp/way · ~HK$240 total</td><td>Huaqiangbei electronics mega-market · Luohu dupes</td><td>Recommended alternative — same categories as Sep 5, bigger selection, lower prices</td></tr><tr><td>Guangzhou day trip</td><td>Day 5 (Sep 5) — longer day</td><td>~50–70 min rail + 30–40 min metro into city</td><td>High-speed rail West Kowloon → Guangzhou South · ~HK$215–250/pp/way · ~HK$1,300–1,500 total</td><td>Wholesale markets · Shangxiajiu · Beijing Road · Canton Tower</td><td>Only if wholesale scale wanted — adds fatigue, less electronics-focused</td></tr></tbody></table></div>
-<h3 class="site-table-caption">Shenzhen day trip — how it fits (replaces Sep 5)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Time</th><th>Step</th><th>Notes</th></tr></thead><tbody><tr><td>08:00</td><td>MTR from Tsim Sha Tsui / East TST → East Rail Line</td><td>Octopus works to Lo Wu (~HK$40/pp)</td></tr><tr><td>~09:00</td><td>Arrive Lo Wu — exit HK immigration, walk across, enter China</td><td>US citizens: staffed counters only, no e-gates — allow 45–60 min</td></tr><tr><td>09:45–12:00</td><td>Luohu Commercial City (attached to border)</td><td>Dupe bags, watches — haggle hard, start at 25–30% of ask</td></tr><tr><td>12:00–13:00</td><td>Shenzhen Metro Line 1 Guomao → Huaqiang Rd + lunch</td><td>~20 min · mall food courts safest</td></tr><tr><td>13:00–16:30</td><td>Huaqiangbei / SEG Electronics Plaza</td><td>Phones, tablets, headphones, cameras — test everything before paying</td></tr><tr><td>17:00</td><td>Re-cross at Lo Wu → East Rail back</td><td>Bags occasionally inspected leaving Shenzhen — keep receipts, personal-use quantities only</td></tr><tr><td>~18:30</td><td>Back in Tsim Sha Tsui</td><td>Dinner as planned (Man Mo Dim Sum backup holds)</td></tr></tbody></table></div>
-<h3 class="site-table-caption">Guangzhou day trip — how it fits (replaces Sep 5, longer day)</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Time</th><th>Step</th><th>Notes</th></tr></thead><tbody><tr><td>07:15</td><td>Arrive Hong Kong West Kowloon station</td><td>HK exit + China entry immigration co-located here — arrive 45 min before train</td></tr><tr><td>08:00</td><td>High-speed rail → Guangzhou South</td><td>~50–70 min · book seats T-1d+ (12306 or trip.com) · ~HK$215–250/pp</td></tr><tr><td>09:30</td><td>Metro Line 2 into city (~35 min)</td><td>Guangzhou South is far from the center</td></tr><tr><td>10:00–13:00</td><td>Shangxiajiu Pedestrian Street + wholesale lanes</td><td>Clothing, shoes, gifts at wholesale scale</td></tr><tr><td>13:00–16:30</td><td>Beijing Road + lunch (dim sum birthplace)</td><td>Optional Canton Tower detour if energy allows</td></tr><tr><td>17:30</td><td>Metro back → 18:30 HSR → West Kowloon</td><td>Buy return seats in advance — evening trains fill</td></tr><tr><td>~20:00</td><td>Back in Tsim Sha Tsui</td><td>Late dinner · pushes past the relaxed-pace mandate — flag for group vote</td></tr></tbody></table></div>
-<h3 class="site-table-caption">Requirements — apply to both</h3><div class="site-table-wrap"><table class="site-table"><thead><tr><th>Requirement</th><th>Detail</th></tr></thead><tbody><tr><td>Visa</td><td>Verify China 15-day visa-free for US citizens still active before travel — policy can be paused without notice; fallback is 10-year tourist visa (4–6 weeks, Atlanta consulate)</td></tr><tr><td>Passports</td><td>Carry physical passports (all 3) — required for crossing and hotel/train checks</td></tr><tr><td>VPN</td><td>Install + test before crossing (ExpressVPN / NordVPN) — Google, WhatsApp, Gmail blocked on mainland networks</td></tr><tr><td>Payments</td><td>Set up Alipay or WeChat Pay with US Visa linked before the trip — many mainland vendors no longer take cash or foreign cards directly; carry ~¥500–800 cash backup</td></tr><tr><td>Connectivity</td><td>HK eSIMs may roam expensively — buy a mainland-capable eSIM day pass (×3 phones) or rely on VPN + venue WiFi</td></tr><tr><td>Customs — returning to HK</td><td>Counterfeits are inspected occasionally at Lo Wu; personal-use quantities only</td></tr><tr><td>Customs — returning to US</td><td>Same $800/person allowance ($2,400 party of 3) — mainland purchases count with everything else</td></tr><tr><td>Group decision</td><td>Majority vote of the 3 travelers — this swaps a booked-plan day, so decide by Sep 3</td></tr></tbody></table></div>
-  </div>
-</section>
 <section class="site-ref-section" id="food">
   <div class="site-section-inner">
     <h2 class="site-ref-title">Food &amp; Dining</h2>
@@ -1675,7 +1681,7 @@ a { color: inherit; }
     (function() {
       const links = document.querySelectorAll('.site-sidebar-link');
       const dayIds = ["day-1","day-2","day-3","day-4","day-5","day-6","day-7","day-8","day-9","day-10","day-11","day-12","day-13","day-14"];
-      const sectionIds = ["maps","flights","hotels","restaurants","attractions","spas","shopping-comparison","alternatives","food","immigration"];
+      const sectionIds = ["maps","flights","transport","hotels","restaurants","attractions","spas","shopping-comparison","food","immigration"];
       const anchors = [...dayIds, ...sectionIds]
         .map(id => document.getElementById(id))
         .filter(Boolean);
