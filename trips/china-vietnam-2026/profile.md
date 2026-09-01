@@ -19,8 +19,10 @@ When in China I would like to go shopping for realistic imitation products — w
 
 When in Vietnam, I want to buy sneakers that are sold in the US and Europe. No tailored suits.
 
-Routing note: China leg is **Hong Kong only** — no mainland China (Shenzhen/Guangzhou removed) so **no mainland China visa required**. All China shopping (electronics, purses, watches, sneakers) done in Hong Kong. Leave Vietnam one day earlier than the original Sep 14 plan (exit Đà Nẵng Sep 12).
+Routing note: China leg is **Hong Kong only** — no mainland China (Shenzhen/Guangzhou removed) so **no mainland China visa required**. All China shopping (electronics, purses, watches, sneakers) done in Hong Kong. Vietnam hubs are **Ho Chi Minh City** (Sep 6–9) then **Đà Nẵng / Hội An** (Sep 9–13). Leave Vietnam one day earlier than the original Sep 14 plan (exit Đà Nẵng Sep 12).
 
 Hotel decision (Hong Kong): **Rosewood Hong Kong** is the Hong Kong hotel, Sep 3–6 (3n) — Victoria Dockside, 18 Salisbury Road, Tsim Sha Tsui · +852 3891 8888. **The Langham is cancelled.**
+
+Hotel decision (Ho Chi Minh City): **The Reverie Saigon** is the HCMC hotel, Sep 6–9 (3n) — 22–36 Nguyen Hue / Dong Khoi, District 1 · +84 28 3823 6688.
 
 Hotel decision (Đà Nẵng): **InterContinental Danang Sun Peninsula Resort** is the Da Nang hotel, Sep 9–13 (4n) — Bai Bac, Sơn Trà Peninsula. Replaces Naman Retreat / generic city stay.

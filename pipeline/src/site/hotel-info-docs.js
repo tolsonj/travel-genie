@@ -7,7 +7,7 @@ import { tripSourceDir, PIPELINE_ROOT } from "../discover.js";
 
 /** Canceled / superseded / unused-hub PDFs — keep on disk, do not list or copy to the site. */
 const SKIP_RE =
-  /hanoi|naman|le[-_. ]?premier|hkg.{0,20}han|to[- ]hanoi|vietjet-hanoi|langham/i;
+  /hanoi|naman|le[-_. ]?premier|3998735961041|hkg.{0,20}han|to[- ]hanoi|vietjet-hanoi|langham/i;
 
 const LABEL_RULES = [
   { re: /cathay-pacific-hkg-sgn-manage-bookings/i, label: "Cathay CX767 — both bookings (D58TTR + ESAQVN)" },

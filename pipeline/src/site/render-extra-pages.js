@@ -187,7 +187,7 @@ function kennedyClientScript() {
   return `<script>
 (function () {
   const ITEMS = window.__GEO_ITEMS__;
-  const CITY_ORDER = ["Hong Kong","Shanghai","Guangzhou","Chongqing","Shenzhen","Nanjing","Beijing","China (unspecified)","Ho Chi Minh City","Da Nang","Hanoi","Hoi An","Ha Long","Vietnam (unspecified)"];
+  const CITY_ORDER = ["Hong Kong","Shanghai","Guangzhou","Chongqing","Shenzhen","Nanjing","Beijing","China (unspecified)","Ho Chi Minh City","Da Nang","Hoi An","Vietnam (unspecified)"];
   const CATS = ["All","Food","Shopping","Spa / Beauty","Hotel / Stay","Attraction","Fashion","Other"];
   const REGIONS = [
     { id: "all", label: "All", test: function () { return true; } },
@@ -204,8 +204,7 @@ function kennedyClientScript() {
     "Hong Kong": { dx: 16, dy: 5 }, Shenzhen: { dx: 16, dy: -12 }, Guangzhou: { dx: -16, dy: 4, anchor: "end" },
     Shanghai: { dx: 14, dy: 5 }, Nanjing: { dx: -12, dy: 4, anchor: "end" }, Beijing: { dx: 12, dy: 4 },
     Chongqing: { dx: -12, dy: 4, anchor: "end" }, "Ho Chi Minh City": { dx: 14, dy: 5 },
-    "Da Nang": { dx: 14, dy: -8 }, "Hoi An": { dx: 14, dy: 14 }, Hanoi: { dx: -12, dy: -6, anchor: "end" },
-    "Ha Long": { dx: 12, dy: 6 }
+    "Da Nang": { dx: 14, dy: -8 }, "Hoi An": { dx: 14, dy: 14 },
   };
   function mercatorY(lat) {
     const rad = lat * Math.PI / 180;
@@ -339,7 +338,14 @@ function kennedyClientScript() {
 function renderKennedyPage(slug) {
   const geoPath = join(tripSourceDir(slug), "Kennedy-Data", "geo-items.json");
   const payload = JSON.parse(readFileSync(geoPath, "utf8"));
-  const itemsJson = JSON.stringify(payload.items);
+  const dropCities = new Set(["Hanoi", "Ha Long"]);
+  const items = (payload.items || [])
+    .filter((it) => !dropCities.has(it.city))
+    .map((it) => ({
+      ...it,
+      otherCities: (it.otherCities || []).filter((c) => !dropCities.has(c))
+    }));
+  const itemsJson = JSON.stringify(items);
   const body = `
     <p class="site-extra-lede">Kennedy Instagram saves mapped to city centroids — Instagram did not export venue geotags. 150 items sit on 12 cities; 101 country-only saves are omitted from the map.</p>
     <p class="site-extra-lede"><a href="maps/kennedy-saves-by-city.csv">Download Google My Maps CSV</a></p>
@@ -360,7 +366,7 @@ function renderKennedyPage(slug) {
 
   return pageShell({
     title: "Saved Instagram items by city",
-    subtitle: "Kennedy export · China / Vietnam geography · " + payload.items.length + " items",
+    subtitle: "Kennedy export · China / Vietnam geography · " + items.length + " items",
     body,
     extraScript: `<script>window.__GEO_ITEMS__ = ${itemsJson};</script>\n${kennedyClientScript()}`
   });

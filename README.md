@@ -333,7 +333,7 @@ Per-city table format:
 ### Venue Snapshot — Restaurants
 *Search date: YYYY-MM-DD · Party of N · dietary: none*
 
-#### City: Hanoi (dinner slots Days 6–7)
+#### City: Ho Chi Minh City (dinner slots Days 6–7)
 
 | Restaurant | Rating | Reviews | Price | Cuisine | Notes |
 |------------|-------:|--------:|-------|---------|-------|

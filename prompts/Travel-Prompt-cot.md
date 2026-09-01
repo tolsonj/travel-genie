@@ -132,18 +132,18 @@ Write `trips/{slug}/hotel-comparison.md` with full tables; reference from Step 5
 ### Hotel Rate Snapshot
 *Search date: 2026-06-14 · 1 room · 2 adults + 1 child*
 
-#### City: Hanoi (2026-09-06 – 2026-09-08)
+#### City: Ho Chi Minh City (2026-09-06 – 2026-09-09)
 
 | Hotel | Price / night | Area | Rating | Notes |
 |-------|--------------:|------|--------|-------|
-| Sofitel Legend Metropole | $320 | Old Quarter | 4.8★ | **Recommended** · Booking.com $315 |
+| Sofitel Saigon Plaza | $320 | District 1 | 4.8★ | **Recommended** · Booking.com $315 |
 ```
 
 Include a **Lodging Total Summary** table (sum nights × rooms; compare to profile budget) and an **MCP search log**:
 
 | City | Check-in | Check-out | Tool |
 |------|----------|-----------|------|
-| Hanoi | 2026-09-06 | 2026-09-08 | search_hotels |
+| Ho Chi Minh City | 2026-09-06 | 2026-09-09 | search_hotels |
 
 ## Fallback
 
@@ -212,11 +212,11 @@ Collect in Step 1 / `profile.md` if missing:
 ### Venue Snapshot — Restaurants
 *Search date: 2026-06-14 · Party of 3 · dietary: none*
 
-#### City: Hanoi (dinner slots Days 6–7)
+#### City: Ho Chi Minh City (dinner slots Days 6–7)
 
 | Restaurant | Rating | Reviews | Price | Cuisine | Notes |
 |------------|-------:|--------:|-------|---------|-------|
-| Phở Gia Truyền | 4.5★ | 2,400 | $ | Vietnamese | **Recommended** |
+| Cuc Gach Quan | 4.5★ | 2,400 | $ | Vietnamese | **Recommended** |
 ```
 
 ## Output table format (attractions, per city)
@@ -225,18 +225,18 @@ Collect in Step 1 / `profile.md` if missing:
 ### Venue Snapshot — Attractions
 *Search date: 2026-06-14*
 
-#### City: Hanoi
+#### City: Ho Chi Minh City
 
 | Attraction | Rating | Reviews | Type | Notes |
 |------------|-------:|--------:|------|-------|
-| Hoan Kiem Lake | 4.7★ | 18,000 | Landmark | **Recommended** |
+| Notre-Dame Cathedral | 4.7★ | 18,000 | Landmark | **Recommended** |
 ```
 
 Include an **MCP search log**:
 
 | City | Query | Category | Tool |
 |------|-------|----------|------|
-| Hanoi | restaurants Old Quarter | restaurants | search_venues |
+| Ho Chi Minh City | restaurants District 1 | restaurants | search_venues |
 
 ## Fallback
 

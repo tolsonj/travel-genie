@@ -4,7 +4,7 @@ export const SearchVenuesSchema = z.object({
   query: z
     .string()
     .min(1)
-    .describe('Search query (e.g. "restaurants Old Quarter Hanoi", "things to do Beijing")'),
+    .describe('Search query (e.g. "restaurants District 1 Ho Chi Minh City", "things to do Hong Kong")'),
   category: z
     .enum(["restaurants", "attractions", "all"])
     .describe("Venue category filter: restaurants, attractions, or all"),

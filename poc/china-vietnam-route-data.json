@@ -5,21 +5,21 @@
   "slide_title": "ROUTE OPTIMIZATION",
   "recommended_route": {
     "label": "Recommended Route (14 Days)",
-    "name": "China-then-Vietnam Open-Jaw Circuit",
-    "rationale": "Selected: Beijing → Hanoi → Đà Nẵng/Hội An — best match for History #4, Food #2, and resort wind-down in Vietnam. Open-jaw (PEK in / DAD out) eliminates backtracking."
+    "name": "Hong Kong–Vietnam Open-Jaw Circuit",
+    "rationale": "Selected: Hong Kong → Ho Chi Minh City → Đà Nẵng/Hội An — shopping and harbor in HK, history and food in District 1, resort wind-down on Sơn Trà. Open-jaw (HKG in / DAD out via HKG) eliminates backtracking."
   },
   "hubs": [
     {
-      "hub": "Beijing",
-      "days": "1–5",
-      "region": "North China",
-      "primary_draw": "Forbidden City, Great Wall (Mutianyu), hutongs, Wangfujing shopping"
+      "hub": "Hong Kong",
+      "days": "3–6",
+      "region": "Hong Kong SAR",
+      "primary_draw": "Victoria Harbour, Peak, Causeway Bay / Mong Kok shopping"
     },
     {
-      "hub": "Hanoi",
+      "hub": "Ho Chi Minh City",
       "days": "6–8",
-      "region": "Northern Vietnam",
-      "primary_draw": "Old Quarter food, Hoan Kiem Lake, Temple of Literature"
+      "region": "Southern Vietnam",
+      "primary_draw": "District 1 walk, Notre-Dame, War Remnants, Dong Khoi food"
     },
     {
       "hub": "Đà Nẵng / Hội An",
@@ -31,54 +31,54 @@
       "hub": "Home",
       "days": "14",
       "region": "Departure",
-      "primary_draw": "Open-jaw exit via Đà Nẵng (DAD)"
+      "primary_draw": "Open-jaw exit via Đà Nẵng (DAD) and HKG"
     }
   ],
   "map_nodes": [
-    { "id": "beijing", "label": "Beijing", "marker": "B", "x": 72, "y": 28, "color": "#c0392b" },
-    { "id": "hanoi", "label": "Hanoi", "marker": "H", "x": 58, "y": 62, "color": "#d4a017" },
-    { "id": "danang", "label": "Đà Nẵng", "marker": "D", "x": 62, "y": 78, "color": "#27ae60" },
-    { "id": "end", "label": "End", "marker": "✈", "x": 78, "y": 82, "color": "#2c3e50" }
+    { "id": "hongkong", "label": "Hong Kong", "marker": "HK", "x": 78, "y": 48, "color": "#2E79B5" },
+    { "id": "hcmc", "label": "Ho Chi Minh City", "marker": "S", "x": 50, "y": 84, "color": "#C06028" },
+    { "id": "danang", "label": "Đà Nẵng", "marker": "D", "x": 58, "y": 72, "color": "#1F8A65" },
+    { "id": "end", "label": "End", "marker": "✈", "x": 82, "y": 52, "color": "#2c3e50" }
   ],
   "transit_legs": [
     {
       "from": "Home",
-      "to": "Beijing",
+      "to": "Hong Kong",
       "mode": "International flight",
-      "duration": "~13–14h",
-      "note": "Book 2–3 months out"
+      "duration": "~18h",
+      "note": "ATL → LAX → HKG"
     },
     {
-      "from": "Beijing",
-      "to": "Hanoi",
+      "from": "Hong Kong",
+      "to": "Ho Chi Minh City",
       "mode": "Flight",
-      "duration": "~4h",
-      "note": "Vietnam Airlines, Air China"
+      "duration": "~2.75h",
+      "note": "Cathay CX767"
     },
     {
-      "from": "Hanoi",
+      "from": "Ho Chi Minh City",
       "to": "Đà Nẵng",
       "mode": "Flight",
-      "duration": "~1.25h",
-      "note": "VietJet, Vietnam Airlines"
+      "duration": "~1.3h",
+      "note": "VietJet VJ630"
     },
     {
       "from": "Đà Nẵng",
       "to": "Home",
       "mode": "Flight (connection)",
-      "duration": "~15–20h",
-      "note": "Via Tokyo, Seoul, or Hong Kong"
+      "duration": "~18h",
+      "note": "Via Hong Kong"
     }
   ],
   "summary": {
-    "intercity_hours": 5.25,
+    "intercity_hours": 4.05,
     "intercity_moves": 2,
     "transit_ratio_percent": 18,
-    "message": "Total in-country intercity transit: ~5.25h across 2 moves = 18% transit days (under 20% threshold)"
+    "message": "Total in-country intercity transit: ~4h across 2 moves = under 20% transit-day threshold"
   },
   "validation_checks": [
-    { "status": "pass", "text": "Open-jaw routing eliminates backtracking" },
-    { "status": "pass", "text": "Transit ratio 18% < 20% threshold" },
+    { "status": "pass", "text": "Open-jaw routing via HKG eliminates backtracking" },
+    { "status": "pass", "text": "Transit ratio under 20% threshold" },
     { "status": "pass", "text": "Relaxed pace: resort base in Vietnam, no daily packing" }
   ]
 }
